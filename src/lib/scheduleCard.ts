@@ -1,19 +1,19 @@
 import { FIRST_INTERVAL, GRADE_QUALITY, MIN_EASE, MS_PER_DAY, SECOND_INTERVAL } from "@/constants"
-import type { CardState, Grade } from "@/types"
+import type { Grade, ReviewState } from "@/types"
 
 /**
- * Apply the SM-2 spaced-repetition algorithm to a card's state, returning a new
- * state with an updated interval, ease factor, and due date. Pure: the input
+ * Apply the SM-2 spaced-repetition algorithm to a question's state, returning a
+ * new state with an updated interval, ease factor, and due date. Pure: the input
  * state is not mutated.
  */
 export function scheduleCard(
-  /** The card's current scheduling state */
-  state: CardState,
-  /** How well the user recalled the card this review */
+  /** The question's current scheduling state */
+  state: ReviewState,
+  /** How well the user recalled the question this review */
   grade: Grade,
   /** The moment the review happened (defaults to now) */
   now: Date = new Date(),
-): CardState {
+): ReviewState {
   const quality = GRADE_QUALITY[grade]
   const passed = quality >= 3
 

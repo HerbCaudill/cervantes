@@ -14,8 +14,8 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "Dele Flashcards",
-        short_name: "dele-flashcards",
+        name: "CCSE practice",
+        short_name: "CCSE",
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
