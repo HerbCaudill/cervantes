@@ -1,0 +1,8 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "dele_flashcards",
+  "project_id": "a49929d0-aa4c-4934-9492-adb4340a755b",
+  "global_dolt_database": "beads_global"
+}
