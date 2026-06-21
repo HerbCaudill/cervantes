@@ -3,6 +3,7 @@
 This file provides instructions and context for AI coding agents working on this project.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:7510c1e2 -->
+
 ## Beads Issue Tracker
 
 This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
@@ -44,27 +45,44 @@ bd close <id>         # Complete work
 7. **Hand off** - Provide context for next session
 
 **CRITICAL RULES:**
+
 - Work is NOT complete until `git push` succeeds
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
 - If push fails, resolve and retry until it succeeds
 <!-- END BEADS INTEGRATION -->
 
-
 ## Build & Test
 
-_Add your build and test commands here_
-
 ```bash
-# Example:
-# npm install
-# npm test
+pnpm install      # install dependencies
+pnpm dev          # dev server (opens browser)
+pnpm build        # typecheck + production build (PWA)
+pnpm test run     # unit tests once (Vitest)
+pnpm test:pw      # end-to-end tests (Playwright)
+pnpm test:all     # typecheck + unit + e2e
+pnpm format       # format with Prettier
 ```
 
 ## Architecture Overview
 
-_Add a brief overview of your project architecture_
+A frontend-only PWA for studying Spanish for the DELE / Cervantes exam with
+spaced-repetition flash cards.
+
+- **Cards** are static data in `src/data/cards.ts`. To add cards, append entries
+  with a unique `id`, `front`, `back`, `category`, and optional `example`.
+- **Scheduling** uses the SM-2 algorithm in `src/lib/scheduleCard.ts`. Each card's
+  review state (`repetitions`, `easeFactor`, `interval`, `due`) is persisted to
+  `localStorage` (`src/lib/loadStates.ts` / `saveStates.ts`), keyed by card id, so
+  history survives edits to the deck.
+- **`useDeck`** (`src/hooks/useDeck.ts`) loads state, computes due cards
+  (`getDueCards.ts`), and records grades.
+- **`ReviewSession`** drives a session over a snapshot of due cards, holding its own
+  queue so a card graded "Again" reappears later in the same session.
 
 ## Conventions & Patterns
 
-_Add your project-specific conventions here_
+Follows the global conventions in `~/.claude/CLAUDE.md`: one component/function per
+file, `Props` type at the end of component files, shared types in `types.ts`, shared
+constants in `constants.ts`, block comments on every function, Tabler icons,
+sentence-cased UI text, tests under `tests/` subdirectories.
