@@ -121,14 +121,13 @@ test("uses a conventional table on wide screens and supports the dark palette", 
 })
 
 test("moves between topics across task boundaries", async ({ page }) => {
-  await page.goto("/manual/task-1/task-1-draft-page-17")
+  await page.goto("/manual/task-1/task-1-participacion-ciudadana")
 
   await page.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i }).click()
 
   await expect(page).toHaveURL("/manual/task-2/task-2-draft-page-28")
   await expect(page.getByText("T2 · 01")).toBeVisible()
-  await expect(page.getByRole("link", { name: /Anterior.*Gobierno/i })).toHaveAttribute(
-    "href",
-    "/manual/task-1/task-1-draft-page-17",
-  )
+  await expect(
+    page.getByRole("link", { name: /Anterior.*Participación ciudadana/i }),
+  ).toHaveAttribute("href", "/manual/task-1/task-1-participacion-ciudadana")
 })

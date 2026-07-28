@@ -56,3 +56,7 @@ command for deterministic 144-DPI figure rendering.
 The output is deliberately page-oriented draft content. Editorial verification
 tasks reconstruct final topic boundaries, resolve reading-order anomalies, and
 compare every block and crop with the source before the reader imports it.
+
+Task 1 has been reconstructed into source-heading topics and verified in full
+against the checksum-pinned 2026 manual. Tasks 2–5 remain page-oriented
+extraction drafts until their corresponding editorial verification is complete.

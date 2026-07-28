@@ -547,14 +547,9 @@
       "title": "Gobierno, legislación y participación ciudadana",
       "topics": [
         {
-          "id": "task-1-draft-page-6",
+          "id": "task-1-poderes-del-estado-gobierno-e-instituciones",
           "title": "PODERES DEL ESTADO, GOBIERNO E INSTITUCIONES",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "PODERES DEL ESTADO, GOBIERNO E INSTITUCIONES"
-            },
             {
               "type": "paragraph",
               "text": "La Constitución española fue aprobada en referéndum por los españoles el 6 de diciembre de 1978."
@@ -582,14 +577,6 @@
               "text": "El Reino de España es un Estado social y democrático de Derecho con la forma política de monarquía parlamentaria. Tiene como valores superiores la libertad, la justicia, la igualdad y el pluralismo político. En España, la soberanía nacional corresponde al pueblo español y de él derivan todos los poderes del Estado."
             },
             {
-              "type": "paragraph",
-              "text": "España es una patria común e indivisible, y la Constitución reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que la componen, y la solidaridad entre todas ellas."
-            },
-            {
-              "type": "paragraph",
-              "text": "La bandera de España tiene tres franjas (roja, amarilla y roja). Cada comunidad autónoma tiene su propia bandera y debe"
-            },
-            {
               "type": "callout",
               "blocks": [
                 {
@@ -597,17 +584,16 @@
                   "text": "El Reino de España es un Estado social y democrático de Derecho con la forma política de monarquía parlamentaria. Tiene como valores superiores la libertad, la justicia, la igualdad y el pluralismo político. En España, la soberanía nacional corresponde al pueblo español y de él derivan todos los poderes del Estado."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-7",
-          "title": "Gobierno, legislación y participación ciudadana",
-          "blocks": [
+            },
             {
               "type": "paragraph",
-              "text": "utilizarla junto a la española en sus edificios públicos y en sus actos oficiales."
+              "text": "España es una patria común e indivisible, y la Constitución reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que la componen, y la solidaridad entre todas ellas."
             },
+            {
+              "type": "paragraph",
+              "text": "La bandera de España tiene tres franjas (roja, amarilla y roja). Cada comunidad autónoma tiene su propia bandera y debe utilizarla junto a la española en sus edificios públicos y en sus actos oficiales."
+            },
+            { "type": "figure", "assetId": "figure-7-1", "caption": "FIGURA 1. Bandera de España" },
             {
               "type": "paragraph",
               "text": "En la Constitución se indica que el castellano es la lengua oficial de España. Todos los españoles tienen el derecho de usarla y el deber de conocerla. Las demás lenguas españolas serán también oficiales en las comunidades autónomas donde se usen, de acuerdo con sus respectivos estatutos. En España la enseñanza de las lenguas cooficiales es competencia de las comunidades autónomas."
@@ -617,6 +603,15 @@
               "text": "Además del castellano o español, se hablan otras lenguas oficiales en las siguientes comunidades autónomas: Galicia (gallego), Navarra y País Vasco (vasco o euskera), Cataluña (catalán y aranés), Islas Baleares (catalán), Comunidad Valenciana (catalán o valenciano)."
             },
             {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Además del castellano o español, se hablan otras lenguas oficiales en las siguientes comunidades autónomas: Galicia (gallego), Navarra y País Vasco (vasco o euskera), Cataluña (catalán y aranés), Islas Baleares (catalán), Comunidad Valenciana (catalán o valenciano)."
+                }
+              ]
+            },
+            {
               "type": "paragraph",
               "text": "En España existen diferentes instituciones encargadas de la regulación de las lenguas, así como de su difusión y de la promoción de la cultura, que se presentan en la Tabla 1."
             },
@@ -624,7 +619,6 @@
               "type": "paragraph",
               "text": "La capital de España es Madrid desde mediados del siglo XVI, antes lo fueron Valladolid y Toledo."
             },
-            { "type": "figure", "assetId": "figure-7-1", "caption": "FIGURA 1. Bandera de España" },
             {
               "type": "table",
               "headers": [
@@ -637,7 +631,7 @@
                 [
                   "Catalán",
                   "Institut d'Estudis Catalans",
-                  "Institut Ramon Llull Institut d'Estudis Baleàrics"
+                  "Institut Ramon Llull\nInstitut d'Estudis Baleàrics"
                 ],
                 [
                   "Valenciano",
@@ -647,63 +641,15 @@
                 ["Gallego", "Real Academia Galega", "Secretaría Xeral de Política Lingüística"],
                 [
                   "Vasco o euskera",
-                  "Real Academia de la Lengua Vasca -Euskaltzaindia",
-                  "Instituto Vasco Etxepare Instituto Navarro del Vascuence-Euskarabidea"
+                  "Real Academia de la Lengua Vasca\n-Euskaltzaindia",
+                  "Instituto Vasco Etxepare\nInstituto Navarro del Vascuence-Euskarabidea"
                 ]
               ],
               "caption": "TABLA 1. Instituciones para la normalización y promoción de las lenguas españolas"
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Además del castellano o español, se hablan otras lenguas oficiales en las siguientes comunidades autónomas: Galicia (gallego), Navarra y País Vasco (vasco o euskera), Cataluña (catalán y aranés), Islas Baleares (catalán), Comunidad Valenciana (catalán o valenciano)."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-8",
-          "title": "Representación de España en organismos internacionales",
-          "blocks": [
-            {
               "type": "paragraph",
               "text": "El rey de España es el jefe del Estado, tiene la máxima representación. Su papel consiste en actuar como mediador y garantizar el buen funcionamiento de las instituciones. Además, entre otras funciones, aprobar y ordenar la publicación oficial de las leyes, nombra a los miembros del Gobierno, a propuesta de su presidente, y tiene el mando supremo de las Fuerzas Armadas de España. La Corona es el símbolo de la unidad de España."
-            },
-            {
-              "type": "paragraph",
-              "text": "En España se permite reinar tanto a hombres como a mujeres. La Corona de España es hereditaria, y el heredero o heredera de la Corona tiene el título de Príncipe o Princesa de Asturias. El rey tiene su residencia oficial en el Palacio Real, pero vive en el Palacio de la Zarzuela."
-            },
-            {
-              "type": "paragraph",
-              "text": "Juan Carlos I fue rey de España desde el 22 de noviembre de 1975 hasta el 18 de junio de 2014. Durante su reinado, apoyó e impulsó el proceso hacia la democracia y el país se integró en la Unión Europea."
-            },
-            {
-              "type": "paragraph",
-              "text": "El 19 junio del año 2014, fue proclamado rey su hijo, Felipe VI."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Representación de España en organismos internacionales"
-            },
-            {
-              "type": "paragraph",
-              "text": "España se unió a la Comunidad Económica Europea (hoy Unión Europea) el 1 de enero de 1986. Desde entonces, España ha desarrollado siempre un papel activo en la construcción del proyecto europeo. España ha desempeñado cinco veces la Presidencia de turno semestral del Consejo de la Unión Europea: en 1989, 1995, 2002, 2010 y 2023)."
-            },
-            {
-              "type": "paragraph",
-              "text": "La bandera de la Unión Europea es azul con 12 estrellas amarillas en círculo."
-            },
-            {
-              "type": "paragraph",
-              "text": "España también forma parte de otras organizaciones internacionales, como la Organización de las Naciones Unidas (ONU); el Consejo de Europa (CE); la Organización del Tratado del Atlántico Norte (OTAN); al Fondo Monetario Internacional (FMI) y al Banco Mundial."
-            },
-            {
-              "type": "paragraph",
-              "text": "Un lugar especial en las relaciones internacionales de España lo ocupa la Comunidad Iberoamericana de Naciones, que está formada por los 19 países de América Latina que hablan español y portugués, y los 3 de la península ibérica (España, Portugal y Andorra)."
             },
             {
               "type": "callout",
@@ -720,6 +666,32 @@
               "caption": "FIGURA 2. Su Majestad el rey Felipe VI"
             },
             {
+              "type": "paragraph",
+              "text": "En España se permite reinar tanto a hombres como a mujeres. La Corona de España es hereditaria, y el heredero o heredera de la Corona tiene el título de Príncipe o Princesa de Asturias. El rey tiene su residencia oficial en el Palacio Real, pero vive en el Palacio de la Zarzuela."
+            },
+            {
+              "type": "paragraph",
+              "text": "Juan Carlos I fue rey de España desde el 22 de noviembre de 1975 hasta el 18 de junio de 2014. Durante su reinado, apoyó e impulsó el proceso hacia la democracia y el país se integró en la Unión Europea."
+            },
+            {
+              "type": "paragraph",
+              "text": "El 19 junio del año 2014, fue proclamado rey su hijo, Felipe VI."
+            }
+          ]
+        },
+        {
+          "id": "task-1-representacion-en-organismos-internacionales",
+          "title": "Representación de España en organismos internacionales",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "España se unió a la Comunidad Económica Europea (hoy Unión Europea) el 1 de enero de 1986. Desde entonces, España ha desarrollado siempre un papel activo en la construcción del proyecto europeo. España ha desempeñado cinco veces la Presidencia de turno semestral del Consejo de la Unión Europea: en 1989, 1995, 2002, 2010 y 2023)."
+            },
+            {
+              "type": "paragraph",
+              "text": "La bandera de la Unión Europea es azul con 12 estrellas amarillas en círculo."
+            },
+            {
               "type": "callout",
               "blocks": [
                 {
@@ -732,22 +704,43 @@
               "type": "figure",
               "assetId": "figure-8-3",
               "caption": "FIGURA 3. Bandera de la Unión Europea"
+            },
+            {
+              "type": "paragraph",
+              "text": "España también forma parte de otras organizaciones internacionales, como la Organización de las Naciones Unidas (ONU); el Consejo de Europa (CE); la Organización del Tratado del Atlántico Norte (OTAN); al Fondo Monetario Internacional (FMI) y al Banco Mundial."
+            },
+            {
+              "type": "paragraph",
+              "text": "Un lugar especial en las relaciones internacionales de España lo ocupa la Comunidad Iberoamericana de Naciones, que está formada por los 19 países de América Latina que hablan español y portugués, y los 3 de la península ibérica (España, Portugal y Andorra)."
+            },
+            {
+              "type": "paragraph",
+              "text": "El organismo internacional de apoyo a estos 22 países es la Secretaría General Iberoamericana."
             }
           ]
         },
         {
-          "id": "task-1-draft-page-9",
+          "id": "task-1-poder-ejecutivo",
           "title": "Poder Ejecutivo",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "El organismo internacional de apoyo a estos 22 países es la Secretaría General Iberoamericana."
-            },
-            {
-              "type": "paragraph",
               "text": "En la Constitución se establece la separación de los poderes ejecutivo, legislativo y judicial, lo que garantiza el funcionamiento de las instituciones españolas."
             },
-            { "type": "heading", "level": 3, "text": "Poder Ejecutivo" },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "En la Constitución se establece la separación de los poderes ejecutivo, legislativo y judicial, lo que garantiza el funcionamiento de las instituciones españolas."
+                }
+              ]
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-9-4",
+              "caption": "FIGURA 4. Los poderes del estado español"
+            },
             {
               "type": "paragraph",
               "text": "El Gobierno dirige la política interior y exterior de España, la Administración civil y militar, y la defensa del Estado. Es el órgano superior del poder ejecutivo."
@@ -755,8 +748,13 @@
             {
               "type": "paragraph",
               "text": "El Gobierno tiene su sede en Madrid, y está formado por el presidente, uno o varios vicepresidentes y los ministros. El presidente del Gobierno tiene su residencia oficial en el Palacio de la Moncloa. Los miembros del Gobierno juran o prometen su cargo ante un ejemplar de la Constitución española en presencia del rey."
-            },
-            { "type": "heading", "level": 3, "text": "Poder Legislativo" },
+            }
+          ]
+        },
+        {
+          "id": "task-1-poder-legislativo",
+          "title": "Poder Legislativo",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Las Cortes Generales (nombre oficial del Parlamento español) representan al pueblo español y están formadas por dos cámaras: el Congreso de los Diputados y el Senado. Las funciones principales de las Cortes Generales son elaborar, debatir y aprobar las leyes y los Presupuestos generales del Estado y controlar la acción del Gobierno."
@@ -778,38 +776,7 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "Ley orgánica. La Constitución exige regular así temas como los derechos fundamentales o los estatutos de autonomía."
-              ]
-            },
-            { "type": "heading", "level": 3, "text": "Poder Ejecutivo" },
-            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Gobierno" }] },
-            { "type": "heading", "level": 3, "text": "Poder Legislativo" },
-            {
-              "type": "callout",
-              "blocks": [{ "type": "paragraph", "text": "Parlamento (Cortes Generales)" }]
-            },
-            {
-              "type": "callout",
-              "blocks": [{ "type": "paragraph", "text": "Congreso de Diputados" }]
-            },
-            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Senado" }] },
-            { "type": "heading", "level": 3, "text": "Poder Judicial" },
-            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Justicia" }] },
-            {
-              "type": "figure",
-              "assetId": "figure-9-4",
-              "caption": "FIGURA 4. Los poderes del estado español"
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-10",
-          "title": "Poder Judicial",
-          "blocks": [
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
+                "Ley orgánica. La Constitución exige regular así temas como los derechos fundamentales o los estatutos de autonomía.",
                 "Decreto ley. Ley dictada por el Gobierno en casos de especial urgencia.",
                 "Ley ordinaria. Una forma de ley común que se aprueba en las Cortes por mayoría simple y regula todas las materias que no exigen el carácter reforzado de la ley orgánica."
               ]
@@ -821,8 +788,13 @@
             {
               "type": "paragraph",
               "text": "Las leyes, una vez aprobadas, necesitan desarrollarse con reglamentos u órdenes ministeriales, a través de normas del Gobierno o los ministerios competentes."
-            },
-            { "type": "heading", "level": 3, "text": "Poder Judicial" },
+            }
+          ]
+        },
+        {
+          "id": "task-1-poder-judicial",
+          "title": "Poder Judicial",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Está compuesto por jueces y magistrados y tiene la función de administrar la justicia. La base de la organización de los tribunales es el principio de unidad jurisdiccional, ya que todos los jueces y tribunales forman parte de un mismo poder judicial."
@@ -834,20 +806,31 @@
             {
               "type": "paragraph",
               "text": "El Tribunal Constitucional interpreta la Constitución española. Es independiente de los poderes del Estado."
-            },
-            { "type": "heading", "level": 3, "text": "Religión" },
+            }
+          ]
+        },
+        {
+          "id": "task-1-religion",
+          "title": "Religión",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "La Constitución garantiza la libertad religiosa de los individuos y las comunidades, y en este sentido, el Estado español es aconfesional. No reconoce ninguna religión como oficial, aunque hay una fuerte tradición católica."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Las Fuerzas Armadas y las Fuerzas y Cuerpos de Seguridad"
-            },
+            }
+          ]
+        },
+        {
+          "id": "task-1-fuerzas-armadas-y-cuerpos-de-seguridad",
+          "title": "Las Fuerzas Armadas y las Fuerzas y Cuerpos de Seguridad",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Las Fuerzas Armadas tienen como misión garantizar la autoridad y la independencia de España, defender su integridad territorial, además del orden constitucional. Su máxima autoridad es el rey, aunque la dirección corresponde al Ministerio de Defensa. Están compuestas por el Ejército de Tierra, el Ejército del Aire y la Armada."
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-10-5",
+              "caption": "FIGURA 5. Miembro de la Guardia Civil. © Barcex"
             },
             {
               "type": "paragraph",
@@ -855,31 +838,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Las Fuerzas y Cuerpos de Seguridad tienen como función"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En la Constitución se establece la separación de los poderes ejecutivo, legislativo y judicial, lo que garantiza el funcionamiento de las instituciones españolas."
-                }
-              ]
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-10-5",
-              "caption": "FIGURA 5. Miembro de la Guardia Civil. © Barcex"
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-11",
-          "title": "Organismos españoles",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana."
+              "text": "Las Fuerzas y Cuerpos de Seguridad tienen como función proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana."
             },
             {
               "type": "list",
@@ -890,7 +849,21 @@
                 "De ámbito local: Policía local. Entre las funciones de la Policía local están la protección de las instituciones y autoridades locales, la regulación del tráfico en pueblos y ciudades y la prestación de auxilio en caso de accidente."
               ]
             },
-            { "type": "heading", "level": 3, "text": "Organismos españoles" },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Entre las funciones de la Policía Nacional está la expedición del documento nacional de identidad y del pasaporte, cuestiones de extranjería como expedición de documentos, tramitación de autorizaciones, permisos de residencia y trabajo. También controla la entrada y salida del territorio nacional de españoles y extranjeros."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "task-1-organismos-espanoles",
+          "title": "Organismos españoles",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Son órganos consultivos del Gobierno el Consejo de Estado y el Consejo Económico y Social."
@@ -900,32 +873,13 @@
               "text": "Algunos ejemplos de organismos que pertenecen a ministerios de España son la Agencia Española de Meteorología (AEMET), la Agencia Tributaria (AEAT), la Dirección General de Tráfico (DGT), el Instituto de Comercio Exterior de España (ICEX), el Banco de España, el Instituto Cervantes, el Instituto de las Mujeres, el Instituto Nacional de Estadística (INE), Patrimonio Nacional, Turespaña, etc."
             },
             {
-              "type": "paragraph",
-              "text": "El Defensor del Pueblo garantiza el respeto de los derechos fundamentales y se hace eco de las quejas de los ciudadanos por el mal funcionamiento de las administraciones. Es elegido por el Congreso de los Diputados y el Senado. Su mandato es de cinco años, y no recibe órdenes ni instrucciones de ninguna autoridad. Cualquier ciudadano puede presentar una queja al Defensor del Pueblo y solicitar su intervención,"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Entre las funciones de la Policía Nacional está la expedición del documento nacional de identidad y del pasaporte, cuestiones de extranjería como expedición de documentos, tramitación de autorizaciones, permisos de residencia y trabajo. También controla la entrada y salida del territorio nacional de españoles y extranjeros."
-                }
-              ]
-            },
-            {
               "type": "figure",
               "assetId": "figure-11-6",
               "caption": "FIGURA 6. Sede del Instituto Cervantes en Madrid"
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-12",
-          "title": "Organización territorial y administrativa",
-          "blocks": [
+            },
             {
               "type": "paragraph",
-              "text": "que es gratuita, para que investigue cualquier actuación presuntamente irregular de la Administración pública española o sus agentes."
+              "text": "El Defensor del Pueblo garantiza el respeto de los derechos fundamentales y se hace eco de las quejas de los ciudadanos por el mal funcionamiento de las administraciones. Es elegido por el Congreso de los Diputados y el Senado. Su mandato es de cinco años, y no recibe órdenes ni instrucciones de ninguna autoridad. Cualquier ciudadano puede presentar una queja al Defensor del Pueblo y solicitar su intervención, que es gratuita, para que investigue cualquier actuación presuntamente irregular de la Administración pública española o sus agentes."
             },
             {
               "type": "paragraph",
@@ -938,11 +892,25 @@
             {
               "type": "paragraph",
               "text": "La Agencia Tributaria, que depende del Ministerio de Hacienda y Función Pública, es la encargada de la recaudación de impuestos que contribuyen al sostenimiento de los gastos públicos. También se encarga de la aplicación del sistema tributario en general."
-            },
-            { "type": "heading", "level": 3, "text": "Organización territorial y administrativa" },
+            }
+          ]
+        },
+        {
+          "id": "task-1-organizacion-territorial-y-administrativa",
+          "title": "Organización territorial y administrativa",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "En la Constitución de 1978 se establece que España se organiza a partir de ese momento en comunidades autónomas, provincias y municipios. Se distinguen tres niveles de organización de la Administración: central (del Estado), autonómica (de las comunidades autónomas) y local (en este nivel se incluyen las provincias y los municipios)."
+            },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A partir de la Constitución de 1978, España se organiza en comunidades autónomas, provincias y municipios. Se distinguen tres niveles de organización de la Administración: central (del Estado), autonómica (de las comunidades autónomas) y local (en este nivel se incluyen las provincias y los municipios)."
+                }
+              ]
             },
             {
               "type": "paragraph",
@@ -951,8 +919,13 @@
             {
               "type": "paragraph",
               "text": "El Estado posee competencias exclusivas sobre materias como nacionalidad, extranjería, inmigración, relaciones internacionales y administración de justicia."
-            },
-            { "type": "paragraph", "text": "Comunidades y ciudades autónomas" },
+            }
+          ]
+        },
+        {
+          "id": "task-1-comunidades-y-ciudades-autonomas",
+          "title": "Comunidades y ciudades autónomas",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Son 17 las comunidades y 2 las ciudades autónomas de España. La base para su formación fueron las características históricas, culturales y económicas comunes de provincias que tiene fronteras compartidas. La ley institucional básica de cada comunidad es el Estatuto de Autonomía, en el que se establece:"
@@ -964,43 +937,8 @@
                 "El nombre de la comunidad que corresponde a su identidad histórica.",
                 "La delimitación de su territorio.",
                 "El nombre, organización y sede de las instituciones autónomas propias.",
-                "Las competencias asumidas dentro del marco establecido"
+                "Las competencias asumidas dentro del marco establecido en la Constitución y las bases para el traspaso de los servicios correspondientes a la comunidad. Entre las más significativas se encuentran la sanidad y la educación."
               ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A partir de la Constitución de 1978, España se organiza en comunidades autónomas, provincias y municipios. Se distinguen tres niveles de organización de la Administración: central (del Estado), autonómica (de las comunidades autónomas) y local (en este nivel se incluyen las provincias y los municipios)."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-13",
-          "title": "Provincias",
-          "blocks": [
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "en la Constitución y las bases para el traspaso de los servicios correspondientes a la comunidad. Entre las más significativas se encuentran la sanidad y la educación."
-              ]
-            },
-            {
-              "type": "paragraph",
-              "text": "Las instituciones de las comunidades autónomas son: la asamblea legislativa (o parlamento autonómico), elegida por votación popular entre todos sus habitantes en las elecciones autonómicas; el consejo de gobierno, con funciones ejecutivas; y el presidente, que además de su función ejecutiva, representa a la comunidad autónoma."
-            },
-            {
-              "type": "paragraph",
-              "text": "El representante del Estado en una comunidad autónoma es el delegado del Gobierno, que coordina y supervisa la acción de la Administración del Estado en el territorio autonómico, coopera con el presidente y el gobierno autonómico, y coordina la actuación de medios estatales en catástrofes o situaciones de emergencia."
-            },
-            { "type": "heading", "level": 3, "text": "Provincias" },
-            {
-              "type": "paragraph",
-              "text": "Existen 50 provincias en España, a las que hay que sumar las ciudades autónomas de Ceuta y Melilla. El órgano de gobierno"
             },
             {
               "type": "callout",
@@ -1012,6 +950,24 @@
               ]
             },
             {
+              "type": "paragraph",
+              "text": "Las instituciones de las comunidades autónomas son: la asamblea legislativa (o parlamento autonómico), elegida por votación popular entre todos sus habitantes en las elecciones autonómicas; el consejo de gobierno, con funciones ejecutivas; y el presidente, que además de su función ejecutiva, representa a la comunidad autónoma."
+            },
+            {
+              "type": "paragraph",
+              "text": "El representante del Estado en una comunidad autónoma es el delegado del Gobierno, que coordina y supervisa la acción de la Administración del Estado en el territorio autonómico, coopera con el presidente y el gobierno autonómico, y coordina la actuación de medios estatales en catástrofes o situaciones de emergencia."
+            }
+          ]
+        },
+        {
+          "id": "task-1-provincias",
+          "title": "Provincias",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Existen 50 provincias en España, a las que hay que sumar las ciudades autónomas de Ceuta y Melilla. El órgano de gobierno de la provincia es la Diputación, excepto en Canarias e Islas Baleares. En Canarias los órganos de gobierno son los cabildos y en Baleares son los consejos insulares. Las comunidades autónomas uniprovinciales no tienen diputación."
+            },
+            {
               "type": "figure",
               "assetId": "figure-13-7",
               "caption": "FIGURA 7. Comunidades autónomas y provincias"
@@ -1019,14 +975,9 @@
           ]
         },
         {
-          "id": "task-1-draft-page-14",
+          "id": "task-1-municipios",
           "title": "Municipios",
           "blocks": [
-            {
-              "type": "paragraph",
-              "text": "de la provincia es la Diputación, excepto en Canarias e Islas Baleares. En Canarias los órganos de gobierno son los cabildos y en Baleares son los consejos insulares. Las comunidades autónomas uniprovinciales no tienen diputación."
-            },
-            { "type": "heading", "level": 3, "text": "Municipios" },
             {
               "type": "paragraph",
               "text": "Existen 8132 municipios en España. El órgano de gobierno es el ayuntamiento, formado por el alcalde y los concejales, que se encargan de gestionar los servicios públicos de la ciudad o del pueblo y que son elegidos por los habitantes de la localidad en las elecciones municipales."
@@ -1040,10 +991,33 @@
               "text": "El Gobierno y las comunidades autónomas cuentan con diversos medios para comunicarse con los ciudadanos, entre ellos, el Boletín Oficial del Estado (BOE) y los diferentes boletines de las comunidades autónomas, que informan de las leyes, decretos, nombramientos, etc."
             },
             {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "El Gobierno y las comunidades autónomas cuentan con diversos medios para comunicarse con los ciudadanos, entre ellos, el Boletín Oficial del Estado (BOE) y los diferentes boletines de las comunidades autónomas, que informan de las leyes, decretos, nombramientos, etc."
+                }
+              ]
+            },
+            {
               "type": "paragraph",
               "text": "Por otro lado, las distintas administraciones tienen sistemas de atención presencial, telefónica y electrónica, como el teléfono 060 (teléfono de información de la Administración General del Estado) y el Portal de la Administración Electrónica (PAe)."
             },
-            { "type": "heading", "level": 3, "text": "La Administración Electrónica" },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Las distintas administraciones tienen sistemas de atención presencial, telefónica y electrónica, como el teléfono 060 (teléfono de información de la Administración General del Estado) y el Portal de la Administración Electrónica (PAe)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "task-1-administracion-electronica",
+          "title": "La Administración Electrónica",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "El Portal de la Administración Electrónica (PAe) es una página web oficial del Gobierno de España que reúne información, servicios y recursos relacionados con la transformación digital de la Administración Pública."
@@ -1058,57 +1032,26 @@
             },
             {
               "type": "paragraph",
-              "text": "Para realizar trámites en sede electrónica es necesario disponer de una identidad digital. Los ciudadanos usan sistemas de"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El Gobierno y las comunidades autónomas cuentan con diversos medios para comunicarse con los ciudadanos, entre ellos, el Boletín Oficial del Estado (BOE) y los diferentes boletines de las comunidades autónomas, que informan de las leyes, decretos, nombramientos, etc."
-                }
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Las distintas administraciones tienen sistemas de atención presencial, telefónica y electrónica, como el teléfono 060 (teléfono de información de la Administración General del Estado) y el Portal de la Administración Electrónica (PAe)."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-15",
-          "title": "Población",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "identificación segura como el DNI electrónico, el certificado digital o la plataforma Cl@ve. Todos ellos sirven como firma electrónica que tiene el mismo valor que una firma en papel, pero válida para internet. Las firmas electrónicas dan seguridad jurídica."
+              "text": "Para realizar trámites en sede electrónica es necesario disponer de una identidad digital. Los ciudadanos usan sistemas de identificación segura como el DNI electrónico, el certificado digital o la plataforma Cl@ve. Todos ellos sirven como firma electrónica que tiene el mismo valor que una firma en papel, pero válida para internet. Las firmas electrónicas dan seguridad jurídica."
             },
             {
               "type": "paragraph",
               "text": "Los trámites en línea están disponibles en cualquier momento, no solo en horario de oficina, por lo que el ciudadano no necesita desplazarse ni hacer colas. Además, el ciudadano puede consultar en línea cómo va su expediente en cualquier momento."
             },
-            { "type": "heading", "level": 3, "text": "Población" },
+            {
+              "type": "figure",
+              "assetId": "figure-15-8",
+              "caption": "FIGURA 8. Sede electrónica de la Seguridad Social."
+            }
+          ]
+        },
+        {
+          "id": "task-1-poblacion",
+          "title": "Población",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "España es el cuarto país más poblado de la Unión Europea (por detrás de Alemania, Francia e Italia), con una población en 2025 de más de 49 millones de habitantes. Por otro lado, es el segundo país más extenso de la UE, con una superficie de 505 944 km² y una densidad de población de 96 habitantes por km²."
-            },
-            {
-              "type": "paragraph",
-              "text": "Las diez ciudades de España con mayor población son, por este orden: Madrid, Barcelona, Valencia, Sevilla, Zaragoza, Málaga, Murcia, Palma de Mallorca, Las Palmas de Gran Canaria y Alicante."
-            },
-            {
-              "type": "paragraph",
-              "text": "La distribución de la población española por comunidades autónomas es la que podemos visualizar en la Tabla 2."
-            },
-            { "type": "heading", "level": 3, "text": "Participación ciudadana" },
-            {
-              "type": "paragraph",
-              "text": "La Constitución establece que la base del sistema político es el derecho al voto de todos los españoles mediante"
             },
             {
               "type": "callout",
@@ -1120,27 +1063,12 @@
               ]
             },
             {
-              "type": "figure",
-              "assetId": "figure-15-8",
-              "caption": "FIGURA 8. Sede electrónica de la Seguridad Social."
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-16",
-          "title": "Gobierno, legislación y participación ciudadana",
-          "blocks": [
-            {
               "type": "paragraph",
-              "text": "sufragio universal, libre, igual, directo y secreto, en el que son electores y elegibles todos los españoles mayores de 18 años. En las elecciones municipales también se permite el voto de los ciudadanos residentes en España procedentes de la Unión Europea y de algunos países con los que España tiene firmados acuerdos."
+              "text": "Las diez ciudades de España con mayor población son, por este orden: Madrid, Barcelona, Valencia, Sevilla, Zaragoza, Málaga, Murcia, Palma de Mallorca, Las Palmas de Gran Canaria y Alicante."
             },
             {
               "type": "paragraph",
-              "text": "La Constitución señala que las elecciones las convoca el rey. En España se convocan cada cuatro años y pueden ser: generales, para elegir a los diputados y senadores del Congreso y del Senado, respectivamente; autonómicas, para elegir a los miembros de las asambleas y parlamentos autonómicos; y municipales, para elegir a los concejales de los ayuntamientos. Además, cada cinco años se celebran (como en el resto de la UE) las elecciones europeas, en las que se elige a los eurodiputados españoles en el Parlamento Europeo."
-            },
-            {
-              "type": "paragraph",
-              "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
+              "text": "La distribución de la población española por comunidades autónomas es la que podemos visualizar en la Tabla 2."
             },
             {
               "type": "table",
@@ -1183,6 +1111,16 @@
                 ["Castilla y León", "2 391 682", "Melilla", "85 985", null, null]
               ],
               "caption": "TABLA 2. Número de habitantes por comunidades autónomas"
+            }
+          ]
+        },
+        {
+          "id": "task-1-participacion-ciudadana",
+          "title": "Participación ciudadana",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "La Constitución establece que la base del sistema político es el derecho al voto de todos los españoles mediante sufragio universal, libre, igual, directo y secreto, en el que son electores y elegibles todos los españoles mayores de 18 años. En las elecciones municipales también se permite el voto de los ciudadanos residentes en España procedentes de la Unión Europea y de algunos países con los que España tiene firmados acuerdos."
             },
             {
               "type": "callout",
@@ -1192,13 +1130,24 @@
                   "text": "En las elecciones municipales también se permite el voto de los ciudadanos residentes en España procedentes de la Unión Europea y de algunos países con los que España tiene firmados acuerdos."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "task-1-draft-page-17",
-          "title": "Gobierno, legislación y participación ciudadana",
-          "blocks": [
+            },
+            {
+              "type": "paragraph",
+              "text": "La Constitución señala que las elecciones las convoca el rey. En España se convocan cada cuatro años y pueden ser: generales, para elegir a los diputados y senadores del Congreso y del Senado, respectivamente; autonómicas, para elegir a los miembros de las asambleas y parlamentos autonómicos; y municipales, para elegir a los concejales de los ayuntamientos. Además, cada cinco años se celebran (como en el resto de la UE) las elecciones europeas, en las que se elige a los eurodiputados españoles en el Parlamento Europeo."
+            },
+            {
+              "type": "paragraph",
+              "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
+            },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
+                }
+              ]
+            },
             {
               "type": "paragraph",
               "text": "Desde que se aprobó la Constitución española en 1978 hasta 2023, ha habido 7 presidentes de Gobierno, pertenecientes a 3 partidos, como se observa en la Tabla 3."
@@ -1218,15 +1167,6 @@
             {
               "type": "paragraph",
               "text": "Los sindicatos en España tienen gran importancia. Los más representativos participan tanto en negociaciones con empresarios y gobiernos, como en el órgano consultivo económico del Gobierno, el Consejo Económico y Social."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
-                }
-              ]
             },
             {
               "type": "table",

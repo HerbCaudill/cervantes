@@ -18,7 +18,6 @@ describe("manual reader", () => {
     const index = screen.getByRole("navigation", { name: "Índice completo del manual" })
 
     expect(within(index).getAllByRole("link")).toHaveLength(expectedTopics + 5)
-    expect(expectedTopics).toBe(65)
   })
 
   it("renders real paragraphs, lists, tables, figures, captions, and callouts semantically", () => {
@@ -61,10 +60,10 @@ describe("manual reader", () => {
   })
 
   it("shows running context, cross-task navigation, and one official-source attribution", () => {
-    window.history.replaceState(null, "", "/manual/task-1/task-1-draft-page-17")
+    window.history.replaceState(null, "", "/manual/task-1/task-1-participacion-ciudadana")
     render(<App />)
 
-    expect(screen.getByText("T1 · 12")).toBeInTheDocument()
+    expect(screen.getByText("T1 · 15")).toBeInTheDocument()
     expect(screen.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i })).toHaveAttribute(
       "href",
       "/manual/task-2/task-2-draft-page-28",
@@ -87,7 +86,11 @@ describe("manual reader", () => {
   })
 
   it("keeps key dates in a dedicated marginal column", () => {
-    window.history.replaceState(null, "", "/manual/task-1/task-1-draft-page-6")
+    window.history.replaceState(
+      null,
+      "",
+      "/manual/task-1/task-1-poderes-del-estado-gobierno-e-instituciones",
+    )
     render(<App />)
 
     const note = within(screen.getByRole("article")).getByText("1978", {
