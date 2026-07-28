@@ -2758,11 +2758,19 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "1 año: en casos especiales, por ejemplo:",
-                "a. Nacido en España.",
-                "b. Casado con un ciudadano español.",
-                "c. Viudo de un ciudadano español (si no había separación).",
-                "d. Haber residido bajo tutela o acogimiento de un ciudadano español."
+                {
+                  "text": "1 año: en casos especiales, por ejemplo:",
+                  "children": {
+                    "type": "list",
+                    "style": "unmarked",
+                    "items": [
+                      "a. Nacido en España.",
+                      "b. Casado con un ciudadano español.",
+                      "c. Viudo de un ciudadano español (si no había separación).",
+                      "d. Haber residido bajo tutela o acogimiento de un ciudadano español."
+                    ]
+                  }
+                }
               ]
             },
             {

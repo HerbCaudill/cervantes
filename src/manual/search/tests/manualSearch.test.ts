@@ -4,7 +4,7 @@ import { getManualSearchHighlightParts } from "@/manual/search/getManualSearchHi
 import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
 import manualDraft from "@/manual/manual.draft.json"
-import type { Manual } from "@/manual/types"
+import type { Manual, ManualBlock } from "@/manual/types"
 
 const manual = {
   id: "manual-search-fixture",
@@ -103,6 +103,29 @@ describe("manual search", () => {
       "task-1-constitution",
       "task-1-secondary",
     ])
+  })
+
+  it("indexes parent and recursively nested list item text", () => {
+    const nestedManual = structuredClone(manual) as Manual
+    nestedManual.sections[0].topics[0].blocks.push({
+      type: "list",
+      style: "unordered",
+      items: [
+        {
+          text: "Casos de nacionalidad",
+          children: {
+            type: "list",
+            style: "unmarked",
+            items: ["Residencia bajo tutela"],
+          },
+        },
+      ],
+    } as unknown as ManualBlock)
+
+    const index = buildManualSearchIndex(nestedManual)
+
+    expect(searchManualIndex(index, "casos nacionalidad")[0]?.topicId).toBe("task-1-constitution")
+    expect(searchManualIndex(index, "residencia tutela")[0]?.topicId).toBe("task-1-constitution")
   })
 
   it("matches Spanish accents, case, and repeated query whitespace", () => {

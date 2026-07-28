@@ -178,14 +178,16 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   ).toBe(true)
 })
 
-test("renders the four one-year nationality cases as distinct visible rows", async ({ page }) => {
+test("renders the one-year nationality cases as a nested unmarked list", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-5/identificacion-personal-y-tramites-administrativos-01")
 
   const article = page.getByRole("article")
-  const list = article.getByRole("list").filter({
+  const parentList = article.getByRole("list").filter({
     hasText: "1 año: en casos especiales, por ejemplo:",
   })
+  const parentItem = parentList.locator(":scope > li")
+  const childList = parentItem.locator(":scope > ul")
   const expectedCases = [
     "a. Nacido en España.",
     "b. Casado con un ciudadano español.",
@@ -193,9 +195,20 @@ test("renders the four one-year nationality cases as distinct visible rows", asy
     "d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
   ]
 
-  await expect(list.getByRole("listitem")).toHaveCount(5)
-  const caseRows = expectedCases.map(text => list.locator("li").filter({ hasText: text }))
+  await expect(parentItem).toHaveCount(1)
+  await expect(childList).toHaveCount(1)
+  await expect(childList).toHaveCSS("list-style-type", "none")
+  const caseRows = expectedCases.map(text =>
+    childList.locator(":scope > li").filter({ hasText: text }),
+  )
+  await expect(childList.locator(":scope > li")).toHaveCount(4)
   await Promise.all(caseRows.map((row, index) => expect(row).toHaveText(expectedCases[index])))
+
+  const parentBox = await parentItem.boundingBox()
+  const firstCaseBox = await caseRows[0].boundingBox()
+  expect(parentBox).not.toBeNull()
+  expect(firstCaseBox).not.toBeNull()
+  expect(firstCaseBox!.x).toBeGreaterThan(parentBox!.x)
 
   const rowTops = await Promise.all(
     caseRows.map(row => row.evaluate(element => element.getBoundingClientRect().top)),

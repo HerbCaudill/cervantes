@@ -21,9 +21,28 @@ export function validateManualBlock(
 
     case "list":
       if (block.items.length === 0) throw new Error(`${location} list is empty`)
-      block.items.forEach((item, index) =>
-        assertNonBlank(item, `${location} list item ${index + 1}`),
-      )
+      block.items.forEach((item, index) => {
+        const itemLocation = `${location} list item ${index + 1}`
+        if (typeof item === "string") {
+          assertNonBlank(item, itemLocation)
+          return
+        }
+        if (
+          !item ||
+          typeof item !== "object" ||
+          typeof item.text !== "string" ||
+          !item.children ||
+          item.children.type !== "list" ||
+          !Array.isArray(item.children.items) ||
+          (item.children.style !== "ordered" &&
+            item.children.style !== "unordered" &&
+            item.children.style !== "unmarked")
+        ) {
+          throw new Error(`${itemLocation} is an invalid nested list item`)
+        }
+        assertNonBlank(item.text, `${itemLocation} text`)
+        validateManualBlock(item.children, assetIds, `${itemLocation} child list`)
+      })
       return
 
     case "table": {

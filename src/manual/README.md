@@ -6,8 +6,10 @@ from or share storage with the question bank.
 `Manual` contains an ordered set of the five official task sections, their
 deep-linkable topics, and a manifest of locally bundled figure assets. Topic
 content is an ordered union of headings, paragraphs, lists, tables, figures,
-and callouts. Tables always carry explicit column headers so the reader can
-render labeled stacked records on narrow screens.
+and callouts. List items can contain recursively nested child lists; use the
+unmarked style when the source text already supplies explicit labels. Tables
+always carry explicit column headers so the reader can render labeled stacked
+records on narrow screens.
 
 IDs are persistent content keys, not display labels. Use the exported
 `MANUAL_SECTION_IDS` values for sections. Namespace topic IDs under their

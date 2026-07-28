@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { MANUAL_SECTION_IDS } from "@/manual/constants"
 import { validateManual } from "@/manual/validateManual"
-import type { Manual, ManualSectionId } from "@/manual/types"
+import type { Manual, ManualBlock, ManualSectionId } from "@/manual/types"
 
 describe("validateManual", () => {
   it("accepts a manual containing every semantic content form", () => {
@@ -117,6 +117,92 @@ describe("validateManual", () => {
     manual.sections[0].topics[0].blocks = []
 
     expect(() => validateManual(manual)).toThrow(/empty topic/i)
+  })
+
+  it("accepts recursively nested list items", () => {
+    const manual = createManual()
+    manual.sections[0].topics[0].blocks = [
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          {
+            text: "Casos especiales:",
+            children: {
+              type: "list",
+              style: "unmarked",
+              items: [
+                {
+                  text: "a. Primer caso.",
+                  children: {
+                    type: "list",
+                    style: "unmarked",
+                    items: ["Detalle del primer caso."],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      } as unknown as ManualBlock,
+    ]
+
+    expect(() => validateManual(manual)).not.toThrow()
+  })
+
+  it.each([
+    {
+      name: "blank parent text",
+      item: {
+        text: " ",
+        children: { type: "list", style: "unmarked", items: ["Detalle"] },
+      },
+    },
+    {
+      name: "empty child list",
+      item: {
+        text: "Casos especiales:",
+        children: { type: "list", style: "unmarked", items: [] },
+      },
+    },
+    {
+      name: "blank recursive child",
+      item: {
+        text: "Casos especiales:",
+        children: {
+          type: "list",
+          style: "unmarked",
+          items: [
+            {
+              text: "Caso a.",
+              children: { type: "list", style: "unmarked", items: [" "] },
+            },
+          ],
+        },
+      },
+    },
+    {
+      name: "missing child list",
+      item: { text: "Casos especiales:" },
+    },
+    {
+      name: "malformed child list",
+      item: {
+        text: "Casos especiales:",
+        children: { type: "list", style: "unmarked" },
+      },
+    },
+  ])("rejects a nested list item with $name", ({ item }) => {
+    const manual = createManual()
+    manual.sections[0].topics[0].blocks = [
+      {
+        type: "list",
+        style: "unordered",
+        items: [item],
+      } as unknown as ManualBlock,
+    ]
+
+    expect(() => validateManual(manual)).toThrow(/blank|empty|nested list item/i)
   })
 
   it.each([

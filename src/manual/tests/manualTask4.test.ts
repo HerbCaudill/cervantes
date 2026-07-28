@@ -123,8 +123,12 @@ describe("verified Task 4 manual content", () => {
       "Sara Mesa es una escritora española contemporánea conocida por su estilo sobrio y directo. Sus novelas exploran las relaciones humanas, el deseo y el poder, con atmósferas tensas y pocos adornos. Su libro más conocido es Un amor, una historia corta e intensa sobre una mujer que intenta empezar de cero en un pueblo y se enfrenta a límites y abusos.",
     )
     expect(
-      lists.find(list => list.type === "list" && list.items[0]?.startsWith("Los Premios Princesa"))
-        ?.items,
+      lists.find(
+        list =>
+          list.type === "list" &&
+          typeof list.items[0] === "string" &&
+          list.items[0].startsWith("Los Premios Princesa"),
+      )?.items,
     ).toHaveLength(8)
     expect(serialized).not.toMatch(
       /draft-page|\"text\":\"Re\"|histórico -artístico|c\\. 1043– 1099/,

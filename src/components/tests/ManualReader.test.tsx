@@ -77,7 +77,7 @@ describe("manual reader", () => {
     expect(cells[1]).toHaveAttribute("data-label", "Descripción")
   })
 
-  it("renders the four one-year nationality cases as separate list rows", () => {
+  it("renders the one-year nationality cases as a nested unmarked list", () => {
     window.history.replaceState(
       null,
       "",
@@ -90,15 +90,17 @@ describe("manual reader", () => {
       exact: false,
       selector: "li",
     })
-    const list = parentItem.closest("ul")
+    const parentList = parentItem.closest("ul")
+    const childList = within(parentItem).queryByRole("list")
 
-    expect(list).not.toBeNull()
+    expect(parentList).not.toBeNull()
+    expect(parentList!.querySelectorAll(":scope > li")).toHaveLength(1)
+    expect(childList).not.toBeNull()
     expect(
-      within(list!)
+      within(childList!)
         .getAllByRole("listitem")
         .map(item => item.textContent),
     ).toEqual([
-      "1 año: en casos especiales, por ejemplo:",
       "a. Nacido en España.",
       "b. Casado con un ciudadano español.",
       "c. Viudo de un ciudadano español (si no había separación).",

@@ -73,14 +73,25 @@ export interface ParagraphBlock {
   text: string
 }
 
-/** An ordered or unordered source list. */
+/** A semantic source list with optional visible markers. */
 export interface ListBlock {
   /** Semantic block discriminator */
   type: "list"
   /** Visual and semantic list style */
-  style: "ordered" | "unordered"
+  style: "ordered" | "unordered" | "unmarked"
   /** Verbatim list items in source order */
-  items: string[]
+  items: ListItem[]
+}
+
+/** Verbatim text or one parent item containing a nested source list. */
+export type ListItem = string | NestedListItem
+
+/** A source list item with semantically nested child items. */
+export interface NestedListItem {
+  /** Verbatim parent item text */
+  text: string
+  /** Child list belonging to this parent item */
+  children: ListBlock
 }
 
 /** A source table with explicit labels for responsive rendering. */

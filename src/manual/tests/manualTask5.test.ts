@@ -169,28 +169,42 @@ describe("verified Task 5 manual content", () => {
       "El sistema legal de unidades de medida es el Sistema Internacional de Unidades (SI) de la Conferencia General de Pesas y Medidas (CGPM) existente en la Unión Europea.",
     )
     expect(
-      lists.find(list => list.type === "list" && list.items[0]?.startsWith("ocupadas"))?.items,
+      lists.find(
+        list =>
+          list.type === "list" &&
+          typeof list.items[0] === "string" &&
+          list.items[0].startsWith("ocupadas"),
+      )?.items,
     ).toHaveLength(4)
     expect(serialized).not.toMatch(
       /draft-page|labora l|certicado|Ayudasscales|protección ocial|Escuelas Ociales|Canales privado s/,
     )
   })
 
-  it("keeps the four one-year nationality cases as distinct source list items", () => {
+  it("keeps the four one-year nationality cases nested under their source parent", () => {
     const oneYearCases = blocks.find(
       block =>
-        block.type === "list" && block.items[0] === "1 año: en casos especiales, por ejemplo:",
+        block.type === "list" &&
+        JSON.stringify(block).includes("1 año: en casos especiales, por ejemplo:"),
     )
 
     expect(oneYearCases).toMatchObject({
       type: "list",
       style: "unordered",
       items: [
-        "1 año: en casos especiales, por ejemplo:",
-        "a. Nacido en España.",
-        "b. Casado con un ciudadano español.",
-        "c. Viudo de un ciudadano español (si no había separación).",
-        "d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
+        {
+          text: "1 año: en casos especiales, por ejemplo:",
+          children: {
+            type: "list",
+            style: "unmarked",
+            items: [
+              "a. Nacido en España.",
+              "b. Casado con un ciudadano español.",
+              "c. Viudo de un ciudadano español (si no había separación).",
+              "d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
+            ],
+          },
+        },
       ],
     })
   })
