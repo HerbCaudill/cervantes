@@ -1,6 +1,7 @@
 import { ManualBlockList } from "@/components/ManualBlockList"
 import { ManualMarginLayout } from "@/components/ManualMarginLayout"
 import { getAdjacentManualTopics } from "@/manual/getAdjacentManualTopics"
+import { getVisibleManualBlocks } from "@/manual/getVisibleManualBlocks"
 import { getManualMarginNote } from "@/manual/getManualMarginNote"
 import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
 import type { Manual, ManualSection, ManualTopic } from "@/manual/types"
@@ -12,10 +13,11 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
   const topics = manual.sections.flatMap(candidate => candidate.topics)
   const topicPosition = topics.findIndex(candidate => candidate.id === topic.id) + 1
   const progress = Math.round((topicPosition / topics.length) * 100)
-  const blocks =
+  const sourceBlocks =
     topic.blocks[0]?.type === "heading" && topic.blocks[0].text === topic.title ?
       topic.blocks.slice(1)
     : topic.blocks
+  const blocks = getVisibleManualBlocks(manual, sourceBlocks)
 
   return (
     <article className="flex min-w-0 flex-col" data-reader-topic={topic.id}>

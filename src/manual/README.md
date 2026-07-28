@@ -47,6 +47,12 @@ measure. At viewports below 640px, semantic tables become stacked records whose
 cells retain their source column labels; wider viewports use conventional
 tables. The official body text remains 17px in both layouts.
 
+The structured manual remains source-faithful when the PDF repeats body prose
+inside a visual pull quote. `getVisibleManualBlocks` derives the reader and
+search representation by removing substantial normalized callout text already
+contained in any non-callout block across the manual. Short incidental matches
+stay visible, as do unique callout blocks and locally bundled figures.
+
 ## Offline build
 
 The production service worker precaches the application shell, compiled manual

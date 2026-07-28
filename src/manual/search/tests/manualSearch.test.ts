@@ -105,6 +105,27 @@ describe("manual search", () => {
     ])
   })
 
+  it("does not separately index a duplicated callout in another topic", () => {
+    const repeatedText =
+      "La soberanía nacional reside en el pueblo español y sostiene todas las instituciones democráticas establecidas por la Constitución."
+    const duplicatedCalloutManual = structuredClone(manual) as Manual
+    duplicatedCalloutManual.sections[0].topics[0].blocks.push({
+      type: "paragraph",
+      text: repeatedText,
+    })
+    duplicatedCalloutManual.sections[0].topics[1].blocks.push({
+      type: "callout",
+      blocks: [{ type: "paragraph", text: repeatedText }],
+    })
+
+    expect(
+      searchManualIndex(
+        buildManualSearchIndex(duplicatedCalloutManual),
+        "sostiene instituciones",
+      ).map(result => result.topicId),
+    ).toEqual(["task-1-constitution"])
+  })
+
   it("indexes parent and recursively nested list item text", () => {
     const nestedManual = structuredClone(manual) as Manual
     nestedManual.sections[0].topics[0].blocks.push({

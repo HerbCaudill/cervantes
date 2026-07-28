@@ -125,7 +125,7 @@ describe("manual reader", () => {
     )
   })
 
-  it("renders multiple untitled callouts as notes instead of unlabeled landmarks", () => {
+  it("suppresses duplicated untitled callouts instead of leaving empty notes", () => {
     window.history.replaceState(
       null,
       "",
@@ -133,8 +133,28 @@ describe("manual reader", () => {
     )
     render(<App />)
 
-    expect(within(screen.getByRole("article")).getAllByRole("note")).toHaveLength(3)
+    expect(within(screen.getByRole("article")).queryByRole("note")).not.toBeInTheDocument()
     expect(screen.queryByRole("complementary")).not.toBeInTheDocument()
+  })
+
+  it("renders the Felipe VI prose once while retaining its figure", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
+    )
+    render(<App />)
+
+    const article = screen.getByRole("article")
+    const repeatedText =
+      "El rey de España es el jefe del Estado, tiene la máxima representación. Su papel consiste en actuar como mediador y garantizar el buen funcionamiento de las instituciones."
+
+    expect(within(article).getAllByText(repeatedText, { exact: false })).toHaveLength(1)
+    expect(
+      within(article).getByRole("img", {
+        name: "Su Majestad el rey Felipe VI",
+      }),
+    ).toHaveAttribute("src", "/manual/figures/figure-8-2.jpg")
   })
 
   it("shows running context, cross-task navigation, and one official-source attribution", () => {

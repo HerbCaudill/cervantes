@@ -1,4 +1,6 @@
+import { getManualBodySearchSegments } from "@/manual/getManualBodySearchSegments"
 import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
+import { getVisibleManualBlocks } from "@/manual/getVisibleManualBlocks"
 import { getManualBlockSearchSegments } from "@/manual/search/getManualBlockSearchSegments"
 import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
 import { normalizeManualSearchText } from "@/manual/search/normalizeManualSearchText"
@@ -10,12 +12,15 @@ export function buildManualSearchIndex(
   /** Complete structured manual */
   manual: Manual,
 ): ManualSearchIndexEntry[] {
+  const bodySearchSegments = getManualBodySearchSegments(manual)
+
   return manual.sections.flatMap((section, sectionIndex) =>
     section.topics.map((topic, topicIndex) => {
+      const blocks = getVisibleManualBlocks(manual, topic.blocks, bodySearchSegments)
       const segments = [
         topic.title,
         section.title,
-        ...topic.blocks.flatMap(getManualBlockSearchSegments),
+        ...blocks.flatMap(getManualBlockSearchSegments),
       ].filter(text => text.trim().length > 0)
 
       return {
