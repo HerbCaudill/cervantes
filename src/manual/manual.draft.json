@@ -1195,10 +1195,9 @@
       "title": "Derechos y deberes fundamentales",
       "topics": [
         {
-          "id": "task-2-draft-page-28",
+          "id": "task-2-derechos-deberes-y-libertades",
           "title": "DESTACADOS DERECHOS, DEBERES Y LIBERTADES",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "DESTACADOS DERECHOS, DEBERES Y LIBERTADES" },
             {
               "type": "paragraph",
               "text": "En la Constitución de 1978 se recogen los derechos fundamentales, deberes y libertades de los españoles, dentro y fuera de España, y de los residentes extranjeros."
@@ -1206,27 +1205,6 @@
             {
               "type": "paragraph",
               "text": "Algunos de los derechos, deberes y libertades más importantes establecidos en la Constitución española de 1978 son los siguientes:"
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 6" },
-            {
-              "type": "paragraph",
-              "text": "Los partidos políticos expresan el pluralismo político de acuerdo con la voluntad popular y son instrumento para la participación política. Su creación es libre dentro del respeto a la Constitución y a la ley."
-            },
-            {
-              "type": "paragraph",
-              "text": "Su estructura y funcionamiento deberán ser democráticos."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 10" },
-            {
-              "type": "paragraph",
-              "text": "Las normas relativas a los derechos fundamentales y a las libertades —que reconoce la Constitución— se deben interpretar de conformidad con la Declaración Universal de los Derechos Humanos y los tratados y acuerdos internacionales firmados por España."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 12" },
-            { "type": "paragraph", "text": "Los españoles son mayores de edad a los 18 años." },
-            { "type": "heading", "level": 3, "text": "Artículo 14" },
-            {
-              "type": "paragraph",
-              "text": "Los españoles son iguales ante la ley y no podrá existir discriminación por su nacimiento, raza, sexo, religión o cualquier otra condición o circunstancia personal o social."
             },
             {
               "type": "figure",
@@ -1245,15 +1223,60 @@
           ]
         },
         {
-          "id": "task-2-draft-page-29",
+          "id": "task-2-articulo-6",
+          "title": "Artículo 6",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Los partidos políticos expresan el pluralismo político de acuerdo con la voluntad popular y son instrumento para la participación política. Su creación es libre dentro del respeto a la Constitución y a la ley."
+            },
+            {
+              "type": "paragraph",
+              "text": "Su estructura y funcionamiento deberán ser democráticos."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-10",
+          "title": "Artículo 10",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Las normas relativas a los derechos fundamentales y a las libertades —que reconoce la Constitución— se deben interpretar de conformidad con la Declaración Universal de los Derechos Humanos y los tratados y acuerdos internacionales firmados por España."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-12",
+          "title": "Artículo 12",
+          "blocks": [
+            { "type": "paragraph", "text": "Los españoles son mayores de edad a los 18 años." }
+          ]
+        },
+        {
+          "id": "task-2-articulo-14",
+          "title": "Artículo 14",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Los españoles son iguales ante la ley y no podrá existir discriminación por su nacimiento, raza, sexo, religión o cualquier otra condición o circunstancia personal o social."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-15",
           "title": "Artículo 15",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "Artículo 15" },
             {
               "type": "paragraph",
               "text": "Todos tienen derecho a la vida y a la integridad física y moral. Se elimina la pena de muerte y se prohíbe la tortura."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 16" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-16",
+          "title": "Artículo 16",
+          "blocks": [
             {
               "type": "list",
               "style": "ordered",
@@ -1262,8 +1285,13 @@
                 "2. Nadie puede ser obligado a decir cuáles son sus ideas políticas o religiosas.",
                 "3. No hay ninguna religión oficial en España, por eso España es un Estado aconfesional."
               ]
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 18" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-18",
+          "title": "Artículo 18",
+          "blocks": [
             {
               "type": "list",
               "style": "ordered",
@@ -1273,24 +1301,16 @@
                 "3. Se garantiza el secreto de las comunicaciones y, en especial, de las postales, telegráficas y telefónicas, excepto si hay resolución judicial.",
                 "4. La ley limita el uso de la informática para garantizar el honor y la intimidad. También se limita el acceso de terceras personas a datos de carácter personal"
               ]
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 19" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-19",
+          "title": "Artículo 19",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Los españoles tienen el derecho a elegir libremente dónde quieren vivir. Pueden desplazarse libremente por todo el territorio español y entrar y salir sin que pueda limitarse este derecho por motivos políticos o ideológicos."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 20" },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "1. Se reconocen y protegen los derechos: a. A expresar y difundir libremente los pensamientos, ideas y opiniones por cualquier medio escrito u oral. b. A la producción y creación literaria, artística, científica y técnica. c. A que los profesores puedan impartir sus enseñanzas con libertad. d. A comunicar o recibir libremente información verdadera por cualquier medio de difusión (libertad de prensa).",
-                "a. A expresar y difundir libremente los pensamientos, ideas y opiniones por cualquier medio escrito u oral.",
-                "b. A la producción y creación literaria, artística, científica y técnica.",
-                "c. A que los profesores puedan impartir sus enseñanzas con libertad.",
-                "d. A comunicar o recibir libremente información verdadera por cualquier medio de difusión (libertad de prensa).",
-                "2. Todas estas libertades no tendrán ningún tipo de censura, su único límite es el respeto a los derechos reconocidos a los españoles y, especialmente, el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia."
-              ]
             },
             {
               "type": "callout",
@@ -1299,6 +1319,24 @@
                   "type": "paragraph",
                   "text": "El artículo 19 reconoce el derecho de todo ciudadano a elegir libremente dónde quieren vivir. Pueden desplazarse libremente por todo el territorio español y entrar y salir sin que pueda limitarse este derecho por motivos políticos o ideológicos."
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-20",
+          "title": "Artículo 20",
+          "blocks": [
+            {
+              "type": "list",
+              "style": "ordered",
+              "items": [
+                "1. Se reconocen y protegen los derechos:",
+                "a. A expresar y difundir libremente los pensamientos, ideas y opiniones por cualquier medio escrito u oral.",
+                "b. A la producción y creación literaria, artística, científica y técnica.",
+                "c. A que los profesores puedan impartir sus enseñanzas con libertad.",
+                "d. A comunicar o recibir libremente información verdadera por cualquier medio de difusión (libertad de prensa).",
+                "2. Todas estas libertades no tendrán ningún tipo de censura, su único límite es el respeto a los derechos reconocidos a los españoles y, especialmente, el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia."
               ]
             },
             {
@@ -1313,10 +1351,9 @@
           ]
         },
         {
-          "id": "task-2-draft-page-30",
+          "id": "task-2-articulo-22",
           "title": "Artículo 22",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "Artículo 22" },
             {
               "type": "list",
               "style": "ordered",
@@ -1325,7 +1362,17 @@
                 "2. Están prohibidas las asociaciones con fines ilegales."
               ]
             },
-            { "type": "heading", "level": 3, "text": "Artículo 23" },
+            {
+              "type": "figure",
+              "assetId": "figure-30-10",
+              "caption": "FIGURA 10. Cartel por la unidad CNT UGT en la revolución española"
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-23",
+          "title": "Artículo 23",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Los ciudadanos tienen derecho a participar en los asuntos políticos, pudiéndose presentar ellos mismos a las elecciones o eligiendo a sus representantes."
@@ -1333,8 +1380,13 @@
             {
               "type": "paragraph",
               "text": "Tienen derecho al voto todos los españoles mayores de 18 años y a quienes no se les haya quitado este derecho por sentencia judicial."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 25" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-25",
+          "title": "Artículo 25",
+          "blocks": [
             {
               "type": "list",
               "style": "ordered",
@@ -1342,20 +1394,27 @@
                 "1. Una persona solo puede ser condenada por acciones u omisiones que en el momento de producirse sean delito. Explicación: el término «omisiones» se refiere a aquello que se ha dejado de decir o realizar, ya sea de manera involuntaria o intencional. Es una obligación que no se cumple.",
                 "2. Las penas de cárcel están orientadas a la reeducación y reinserción social."
               ]
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 27" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-27",
+          "title": "Artículo 27",
+          "blocks": [
             {
               "type": "list",
               "style": "ordered",
               "items": [
-                "1. Todos tienen el derecho a la educación. Se reconoce la libertad de enseñanza."
+                "1. Todos tienen el derecho a la educación. Se reconoce la libertad de enseñanza.",
+                "4. La enseñanza básica es obligatoria y gratuita. Consta de dos etapas: Educación Primaria (de 6 a 12 años) y Educación Secundaria Obligatoria (de 12 a 16 años)."
               ]
-            },
-            {
-              "type": "paragraph",
-              "text": "4. La enseñanza básica es obligatoria y gratuita. Consta de dos etapas: Educación Primaria (de 6 a 12 años) y Educación Secundaria Obligatoria (de 12 a 16 años)."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 28" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-28",
+          "title": "Artículo 28",
+          "blocks": [
             {
               "type": "list",
               "style": "ordered",
@@ -1364,29 +1423,6 @@
                 "2. Se reconoce el derecho a la huelga de los trabajadores para defender sus intereses y se prevé el mantenimiento de los servicios mínimos a la comunidad mientras esta dure."
               ]
             },
-            { "type": "heading", "level": 3, "text": "Artículo 30" },
-            {
-              "type": "list",
-              "style": "ordered",
-              "items": ["1. Los españoles tienen el derecho y el deber de defender a España."]
-            },
-            {
-              "type": "paragraph",
-              "text": "4. Los ciudadanos deben ayudar en los casos de grave riesgo, catástrofe o calamidad pública."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 31" },
-            {
-              "type": "list",
-              "style": "ordered",
-              "items": [
-                "1. Todos los ciudadanos deben pagar unos impuestos para contribuir a sostener los gastos públicos de acuerdo a su capacidad económica."
-              ]
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-30-10",
-              "caption": "FIGURA 10. Cartel por la unidad CNT UGT en la revolución española"
-            },
             {
               "type": "callout",
               "blocks": [
@@ -1394,6 +1430,34 @@
                   "type": "paragraph",
                   "text": "El artículo 28 reconoce el derecho de los ciudadanos a pertenecer a cualquier sindicato y a participar de una huelga para defender sus intereses."
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-30",
+          "title": "Artículo 30",
+          "blocks": [
+            {
+              "type": "list",
+              "style": "ordered",
+              "items": [
+                "1. Los españoles tienen el derecho y el deber de defender a España.",
+                "4. Los ciudadanos deben ayudar en los casos de grave riesgo, catástrofe o calamidad pública."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-31",
+          "title": "Artículo 31",
+          "blocks": [
+            {
+              "type": "list",
+              "style": "ordered",
+              "items": [
+                "1. Todos los ciudadanos deben pagar unos impuestos para contribuir a sostener los gastos públicos de acuerdo a su capacidad económica.",
+                "2. El gasto público administrará equitativamente los recursos públicos, es decir: de manera justa para todos."
               ]
             },
             {
@@ -1404,17 +1468,9 @@
           ]
         },
         {
-          "id": "task-2-draft-page-31",
+          "id": "task-2-articulo-32",
           "title": "Artículo 32",
           "blocks": [
-            {
-              "type": "list",
-              "style": "ordered",
-              "items": [
-                "2. El gasto público administrará equitativamente los recursos públicos, es decir: de manera justa para todos."
-              ]
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 32" },
             {
               "type": "list",
               "style": "ordered",
@@ -1422,46 +1478,26 @@
                 "1. La ley regulará las formas de matrimonio, la edad y capacidad para contraerlo, los derechos y deberes de los cónyuges, las causas de separación y divorcio y sus efectos.",
                 "2. La edad mínima para contraer matrimonio es de 16 años."
               ]
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 37" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-37",
+          "title": "Artículo 37",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "La ley garantizará el derecho a la negociación colectiva laboral entre los representantes de los trabajadores y empresarios, así como que se cumplan los convenios."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 41" },
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-41",
+          "title": "Artículo 41",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "Todos los ciudadanos tendrán acceso a un sistema de Seguridad Social público, que les garantizará atención en situaciones de necesidad, especialmente para los que no tienen trabajo."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 43" },
-            {
-              "type": "paragraph",
-              "text": "Los poderes públicos deben proteger la salud y promover la educación sanitaria, la educación física y el deporte."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 45" },
-            {
-              "type": "paragraph",
-              "text": "Todos tienen derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 47" },
-            {
-              "type": "paragraph",
-              "text": "Todos los españoles tienen derecho a disfrutar de una vivienda digna y adecuada."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 48" },
-            {
-              "type": "paragraph",
-              "text": "Los jóvenes tienen el derecho de participar libremente en el desarrollo político, social, económico y cultural del país."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 51" },
-            {
-              "type": "paragraph",
-              "text": "Los poderes públicos garantizarán la defensa y protección de los consumidores y usuarios, así como la seguridad, la salud y sus intereses económicos."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 54" },
-            {
-              "type": "paragraph",
-              "text": "El defensor del pueblo es designado por las Cortes Generales para la defensa de los derechos y libertades públicas de los ciudadanos. Tiene funciones de Alto Comisionado de las Cortes Generales y puede supervisar la actividad de la admi"
             },
             {
               "type": "callout",
@@ -1471,6 +1507,26 @@
                   "text": "El artículo 41 reconoce el derecho al acceso a un sistema de Seguridad Social público, que les garantizará atención en situaciones de necesidad, especialmente para los que no tienen trabajo."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-43",
+          "title": "Artículo 43",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Los poderes públicos deben proteger la salud y promover la educación sanitaria, la educación física y el deporte."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-45",
+          "title": "Artículo 45",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Todos tienen derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo."
             },
             {
               "type": "callout",
@@ -1480,6 +1536,50 @@
                   "text": "El artículo 45 reconoce el derecho del ciudadado a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-47",
+          "title": "Artículo 47",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Todos los españoles tienen derecho a disfrutar de una vivienda digna y adecuada."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-48",
+          "title": "Artículo 48",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Los jóvenes tienen el derecho de participar libremente en el desarrollo político, social, económico y cultural del país."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-51",
+          "title": "Artículo 51",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Los poderes públicos garantizarán la defensa y protección de los consumidores y usuarios, así como la seguridad, la salud y sus intereses económicos."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-54",
+          "title": "Artículo 54",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El defensor del pueblo es designado por las Cortes Generales para la defensa de los derechos y libertades públicas de los ciudadanos. Tiene funciones de Alto Comisionado de las Cortes Generales y puede supervisar la actividad de la administración pública. [Los ciudadanos pueden dirigirse a él para denunciar casos de malas prácticas]."
+            },
+            {
+              "type": "paragraph",
+              "text": "[Los españoles, como miembros de la Unión Europea, también pueden dirigirse o plantear reclamaciones a las instituciones y organismos europeos, como el Tribunal de Justicia de la UE de Luxemburgo, o el Centro Europeo del Consumidor]."
             },
             {
               "type": "figure",
@@ -1489,31 +1589,12 @@
           ]
         },
         {
-          "id": "task-2-draft-page-32",
+          "id": "task-2-articulo-117",
           "title": "Artículo 117",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "nistración pública. [Los ciudadanos pueden dirigirse a él para denunciar casos de malas prácticas]."
-            },
-            {
-              "type": "paragraph",
-              "text": "[Los españoles, como miembros de la Unión Europea, también pueden dirigirse o plantear reclamaciones a las instituciones y organismos europeos, como el Tribunal de Justicia de la UE de Luxemburgo, o el Centro Europeo del Consumidor]."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 117" },
-            {
-              "type": "paragraph",
               "text": "La justicia surge del pueblo y la administran jueces y magistrados de forma independiente y responsable."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 118" },
-            {
-              "type": "paragraph",
-              "text": "Hay que cumplir las sentencias de los jueces y tribunales, así como colaborar con ellos cuando se lo pidan."
-            },
-            { "type": "heading", "level": 3, "text": "Artículo 119" },
-            {
-              "type": "paragraph",
-              "text": "La justicia será gratuita cuando así lo diga la ley y, en todo caso, para aquellos sin recursos económicos."
             },
             {
               "type": "callout",
@@ -1523,6 +1604,26 @@
                   "text": "El artículo 117 designa a los jueces como los responsables de administrar la justicia de forma independiente y responsable. Mientras que el artículo 18 obliga a los ciudadanos a cumplir con las sentencias de los jueces y tribunales y colaborar con ellos cuando éstos lo requieran."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-118",
+          "title": "Artículo 118",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Hay que cumplir las sentencias de los jueces y tribunales, así como colaborar con ellos cuando se lo pidan."
+            }
+          ]
+        },
+        {
+          "id": "task-2-articulo-119",
+          "title": "Artículo 119",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "La justicia será gratuita cuando así lo diga la ley y, en todo caso, para aquellos sin recursos económicos."
             },
             {
               "type": "figure",

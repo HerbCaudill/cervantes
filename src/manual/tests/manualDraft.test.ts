@@ -226,4 +226,181 @@ describe("manual extraction draft", () => {
       "5 319 285",
     ])
   })
+
+  it("reconstructs Task 2 around every source heading instead of PDF pages", () => {
+    const task = manual.sections.find(section => section.id === "task-2")
+
+    expect(task?.topics.map(topic => [topic.id, topic.title])).toEqual([
+      ["task-2-derechos-deberes-y-libertades", "DESTACADOS DERECHOS, DEBERES Y LIBERTADES"],
+      ["task-2-articulo-6", "Artículo 6"],
+      ["task-2-articulo-10", "Artículo 10"],
+      ["task-2-articulo-12", "Artículo 12"],
+      ["task-2-articulo-14", "Artículo 14"],
+      ["task-2-articulo-15", "Artículo 15"],
+      ["task-2-articulo-16", "Artículo 16"],
+      ["task-2-articulo-18", "Artículo 18"],
+      ["task-2-articulo-19", "Artículo 19"],
+      ["task-2-articulo-20", "Artículo 20"],
+      ["task-2-articulo-22", "Artículo 22"],
+      ["task-2-articulo-23", "Artículo 23"],
+      ["task-2-articulo-25", "Artículo 25"],
+      ["task-2-articulo-27", "Artículo 27"],
+      ["task-2-articulo-28", "Artículo 28"],
+      ["task-2-articulo-30", "Artículo 30"],
+      ["task-2-articulo-31", "Artículo 31"],
+      ["task-2-articulo-32", "Artículo 32"],
+      ["task-2-articulo-37", "Artículo 37"],
+      ["task-2-articulo-41", "Artículo 41"],
+      ["task-2-articulo-43", "Artículo 43"],
+      ["task-2-articulo-45", "Artículo 45"],
+      ["task-2-articulo-47", "Artículo 47"],
+      ["task-2-articulo-48", "Artículo 48"],
+      ["task-2-articulo-51", "Artículo 51"],
+      ["task-2-articulo-54", "Artículo 54"],
+      ["task-2-articulo-117", "Artículo 117"],
+      ["task-2-articulo-118", "Artículo 118"],
+      ["task-2-articulo-119", "Artículo 119"],
+    ])
+  })
+
+  it("joins Task 2 prose and numbered lists split across source pages", () => {
+    const task = manual.sections.find(section => section.id === "task-2")
+    const article31 = task?.topics.find(topic => topic.id === "task-2-articulo-31")
+    const article54 = task?.topics.find(topic => topic.id === "task-2-articulo-54")
+
+    expect(article31?.blocks[0]).toEqual({
+      type: "list",
+      style: "ordered",
+      items: [
+        "1. Todos los ciudadanos deben pagar unos impuestos para contribuir a sostener los gastos públicos de acuerdo a su capacidad económica.",
+        "2. El gasto público administrará equitativamente los recursos públicos, es decir: de manera justa para todos.",
+      ],
+    })
+    expect(article54?.blocks.slice(0, 2)).toEqual([
+      {
+        type: "paragraph",
+        text: "El defensor del pueblo es designado por las Cortes Generales para la defensa de los derechos y libertades públicas de los ciudadanos. Tiene funciones de Alto Comisionado de las Cortes Generales y puede supervisar la actividad de la administración pública. [Los ciudadanos pueden dirigirse a él para denunciar casos de malas prácticas].",
+      },
+      {
+        type: "paragraph",
+        text: "[Los españoles, como miembros de la Unión Europea, también pueden dirigirse o plantear reclamaciones a las instituciones y organismos europeos, como el Tribunal de Justicia de la UE de Luxemburgo, o el Centro Europeo del Consumidor].",
+      },
+    ])
+  })
+
+  it("retains each Task 2 numbered and lettered list item exactly once", () => {
+    const task = manual.sections.find(section => section.id === "task-2")
+    const article20 = task?.topics.find(topic => topic.id === "task-2-articulo-20")
+
+    expect(article20?.blocks[0]).toEqual({
+      type: "list",
+      style: "ordered",
+      items: [
+        "1. Se reconocen y protegen los derechos:",
+        "a. A expresar y difundir libremente los pensamientos, ideas y opiniones por cualquier medio escrito u oral.",
+        "b. A la producción y creación literaria, artística, científica y técnica.",
+        "c. A que los profesores puedan impartir sus enseñanzas con libertad.",
+        "d. A comunicar o recibir libremente información verdadera por cualquier medio de difusión (libertad de prensa).",
+        "2. Todas estas libertades no tendrán ningún tipo de censura, su único límite es el respeto a los derechos reconocidos a los españoles y, especialmente, el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia.",
+      ],
+    })
+  })
+
+  it("keeps Task 2 callouts with their articles and figures beside source-page topics", () => {
+    const task = manual.sections.find(section => section.id === "task-2")
+    const topicBlocks = new Map(
+      task?.topics.map(topic => [
+        topic.id,
+        topic.blocks.map(block =>
+          block.type === "figure" ? block.assetId
+          : block.type === "callout" ?
+            block.blocks
+              .flatMap(calloutBlock =>
+                calloutBlock.type === "paragraph" || calloutBlock.type === "heading" ?
+                  [calloutBlock.text]
+                : calloutBlock.type === "list" ? calloutBlock.items
+                : [],
+              )
+              .join(" ")
+          : block.type,
+        ),
+      ]),
+    )
+
+    expect(topicBlocks.get("task-2-derechos-deberes-y-libertades")).toContain("figure-28-9")
+    expect(topicBlocks.get("task-2-articulo-19")?.join(" ")).toContain("El artículo 19 reconoce")
+    expect(topicBlocks.get("task-2-articulo-20")?.join(" ")).toContain("El artículo 20 reconoce")
+    expect(topicBlocks.get("task-2-articulo-22")).toContain("figure-30-10")
+    expect(topicBlocks.get("task-2-articulo-28")?.join(" ")).toContain("El artículo 28 reconoce")
+    expect(topicBlocks.get("task-2-articulo-31")).toContain("figure-30-11")
+    expect(topicBlocks.get("task-2-articulo-41")?.join(" ")).toContain("El artículo 41 reconoce")
+    expect(topicBlocks.get("task-2-articulo-45")?.join(" ")).toContain("El artículo 45 reconoce")
+    expect(topicBlocks.get("task-2-articulo-54")).toContain("figure-31-12")
+    expect(topicBlocks.get("task-2-articulo-117")?.join(" ")).toContain("El artículo 117 designa")
+    expect(topicBlocks.get("task-2-articulo-119")).toContain("figure-32-13")
+  })
+
+  it("retains the complete Task 2 semantic inventory", () => {
+    const task = manual.sections.find(section => section.id === "task-2")
+    const blocks = task?.topics.flatMap(topic => topic.blocks) ?? []
+    const figures = blocks.flatMap(block =>
+      block.type === "figure" ? [[block.assetId, block.caption]] : [],
+    )
+
+    expect({
+      callouts: blocks.filter(block => block.type === "callout").length,
+      figures: blocks.filter(block => block.type === "figure").length,
+      headings: blocks.filter(block => block.type === "heading").length,
+      lists: blocks.filter(block => block.type === "list").length,
+      paragraphs: blocks.filter(block => block.type === "paragraph").length,
+    }).toEqual({
+      callouts: 7,
+      figures: 5,
+      headings: 0,
+      lists: 10,
+      paragraphs: 23,
+    })
+    expect(
+      blocks
+        .filter(block => block.type === "list")
+        .reduce((total, block) => total + (block.type === "list" ? block.items.length : 0), 0),
+    ).toBe(27)
+    expect(figures).toEqual([
+      ["figure-28-9", "FIGURA 9. Primera página de la Constitución española de 1978"],
+      ["figure-30-10", "FIGURA 10. Cartel por la unidad CNT UGT en la revolución española"],
+      [
+        "figure-30-11",
+        "FIGURA 11. Recuento de votos en las elecciones municipales y forales realizadas el 28 de mayo de 2023. © Txo",
+      ],
+      [
+        "figure-31-12",
+        "FIGURA 12. Estanque del Parque del Retiro, Madrid, España.© Carlos Delgado",
+      ],
+      ["figure-32-13", "FIGURA 13. Tribunal Constitucional, Madrid. © Javier Perez Montes"],
+    ])
+  })
+
+  it("preserves apparent Task 2 source errors without editorial rewriting", () => {
+    const task = manual.sections.find(section => section.id === "task-2")
+    const callouts =
+      task?.topics.flatMap(topic =>
+        topic.blocks.flatMap(block =>
+          block.type === "callout" ?
+            block.blocks.flatMap(calloutBlock =>
+              calloutBlock.type === "paragraph" || calloutBlock.type === "heading" ?
+                [calloutBlock.text]
+              : calloutBlock.type === "list" ? calloutBlock.items
+              : [],
+            )
+          : [],
+        ),
+      ) ?? []
+
+    expect(callouts).toContain(
+      "El artículo 45 reconoce el derecho del ciudadado a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo.",
+    )
+    expect(callouts).toContain(
+      "El artículo 117 designa a los jueces como los responsables de administrar la justicia de forma independiente y responsable. Mientras que el artículo 18 obliga a los ciudadanos a cumplir con las sentencias de los jueces y tribunales y colaborar con ellos cuando éstos lo requieran.",
+    )
+  })
 })

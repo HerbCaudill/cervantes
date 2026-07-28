@@ -105,7 +105,7 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
 
 test("keeps a real article note on one line inside the 40px margin at 390px", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-2/articulo-15-02")
+  await page.goto("/manual/task-2/articulo-15-06")
 
   const note = page.locator("[data-margin-note='Art.15']").first()
   const noteBox = await note.boundingBox()
@@ -186,7 +186,7 @@ test("moves between topics across task boundaries", async ({ page }) => {
 
 test("keeps meaningful small manual text legible in both themes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-2/articulo-22-03")
+  await page.goto("/manual/task-2/articulo-22-11")
 
   const previousLabel = page.getByText("‹ Anterior")
   await expect(previousLabel).toHaveCSS("color", "rgb(92, 95, 90)")
@@ -222,7 +222,7 @@ test("keeps meaningful small manual text legible in both themes", async ({ page 
   await page.locator("html").evaluate(element => element.classList.add("dark"))
   await expect(firstTopicNumber).toHaveCSS("color", "rgb(163, 164, 157)")
 
-  await page.goto("/manual/task-2/articulo-22-03")
+  await page.goto("/manual/task-2/articulo-22-11")
   await page.locator("html").evaluate(element => element.classList.add("dark"))
   const darkPreviousLabel = page.getByText("‹ Anterior")
   await expect(darkPreviousLabel).toHaveCSS("color", "rgb(163, 164, 157)")
