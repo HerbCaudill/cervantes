@@ -25,6 +25,7 @@ export function ManualScreen({ manual, route }: Props) {
 
   return (
     <ManualTopicShell
+      manual={manual}
       section={section}
       topic={topic}
       sectionNumber={sectionNumber}

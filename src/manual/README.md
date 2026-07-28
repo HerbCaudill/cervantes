@@ -28,6 +28,21 @@ inside the Manual destination at `/manual/buscar`. All in-app links use the
 browser history API, so these paths are directly loadable and retain native
 back and forward behavior.
 
+## Reader components
+
+`ManualScreen` resolves route IDs against the structured manual. The index
+links all five tasks and every topic, while each task also has its own compact
+topic index. `ManualTopicShell` renders semantic blocks in source order and
+provides a running head, source-order previous/next links across task
+boundaries, and one link to the official source.
+
+Reader blocks use native headings, paragraphs, lists, tables, figures,
+captions, and complementary regions. Their fixed 40px marginal column carries
+article numbers, dates, and figure numbers without changing the body measure.
+At viewports below 640px, semantic tables become stacked records whose cells
+retain their source column labels; wider viewports use conventional tables.
+The official body text remains 17px in both layouts.
+
 ## Extraction draft
 
 Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and

@@ -69,3 +69,66 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
   await expect(page.getByRole("link", { name: "Práctica" })).toBeVisible()
   await expect(page.getByRole("link", { name: "Manual", exact: true })).toBeVisible()
 })
+
+test("reads every manual block accessibly on a narrow screen", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/manual/task-5/task-5-draft-page-78")
+
+  const article = page.getByRole("article")
+  const table = article.getByRole("table")
+  const firstCell = table.getByRole("cell").first()
+
+  await expect(article.getByText("En España hay tres tipos de centros educativos")).toBeVisible()
+  await expect(table.getByRole("columnheader", { name: "Nivel educativo" })).toBeAttached()
+  await expect(firstCell).toHaveAttribute("data-label", "Nivel educativo")
+  await expect(firstCell).toHaveCSS("display", "grid")
+  await expect(article.getByRole("figure").getByRole("img")).toBeVisible()
+  await expect(article.getByRole("complementary")).toBeVisible()
+  await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(1)
+
+  const bodyText = article.getByText(
+    "En España hay tres tipos de centros educativos según su financiación:",
+  )
+  await expect(bodyText).toHaveCSS("font-size", "17px")
+
+  const marginalRow = bodyText.locator("xpath=../..")
+  expect(
+    await marginalRow.evaluate(element => getComputedStyle(element).gridTemplateColumns),
+  ).toMatch(/^40px /)
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+    ),
+  ).toBe(true)
+})
+
+test("uses a conventional table on wide screens and supports the dark palette", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1000, height: 900 })
+  await page.goto("/manual/task-5/task-5-draft-page-78")
+
+  const article = page.getByRole("article")
+  const table = article.getByRole("table")
+  const firstCell = table.getByRole("cell").first()
+
+  await expect(table).toHaveCSS("display", "table")
+  await expect(firstCell).toHaveCSS("display", "table-cell")
+
+  await page.locator("html").evaluate(element => element.classList.add("dark"))
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(23, 24, 26)")
+  await expect(article).toHaveCSS("color", "rgb(232, 231, 224)")
+})
+
+test("moves between topics across task boundaries", async ({ page }) => {
+  await page.goto("/manual/task-1/task-1-draft-page-17")
+
+  await page.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i }).click()
+
+  await expect(page).toHaveURL("/manual/task-2/task-2-draft-page-28")
+  await expect(page.getByText("T2 · 01")).toBeVisible()
+  await expect(page.getByRole("link", { name: /Anterior.*Gobierno/i })).toHaveAttribute(
+    "href",
+    "/manual/task-1/task-1-draft-page-17",
+  )
+})
