@@ -109,7 +109,7 @@ describe("manual reader", () => {
   })
 
   it("keeps article numbers in a dedicated marginal column", () => {
-    window.history.replaceState(null, "", "/manual/task-2/articulo-15-02")
+    window.history.replaceState(null, "", "/manual/task-2/articulo-15-06")
     render(<App />)
 
     const note = within(screen.getByRole("article")).getByText("Art.15", {
@@ -148,14 +148,14 @@ describe("manual reader", () => {
     )
   })
 
-  it("does not skip heading ranks beneath the topic title", () => {
-    window.history.replaceState(null, "", "/manual/task-2/articulo-22-03")
+  it("uses the source heading as the topic title without a redundant subheading", () => {
+    window.history.replaceState(null, "", "/manual/task-2/articulo-22-11")
     render(<App />)
 
     const article = screen.getByRole("article")
 
     expect(within(article).getByRole("heading", { level: 2, name: "Artículo 22" })).toBeVisible()
-    expect(within(article).getByRole("heading", { level: 3, name: "Artículo 23" })).toBeVisible()
+    expect(within(article).queryByRole("heading", { level: 3 })).not.toBeInTheDocument()
     expect(within(article).queryByRole("heading", { level: 4 })).not.toBeInTheDocument()
   })
 })
