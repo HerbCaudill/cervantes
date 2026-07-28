@@ -19,3 +19,16 @@ Every figure block references an entry in `Manual.assets`; asset paths point to
 files bundled for offline use. Run `validateManual` before serializing imported
 content. It rejects blank or empty content, duplicate IDs, malformed tables,
 and figure references without a valid local asset, caption, or alt text.
+
+## Extraction draft
+
+Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and
+rebuild `manual.draft.json` plus the ordered figure crops under
+`public/manual/figures`. The importer uses the PDF's semantic tags to remove
+page furniture while retaining headings, prose, lists, tables, captions, and
+sidebar callouts. It requires Poppler's `pdftoppm` command for deterministic
+144-DPI figure rendering.
+
+The output is deliberately page-oriented draft content. Editorial verification
+tasks reconstruct final topic boundaries, resolve reading-order anomalies, and
+compare every block and crop with the source before the reader imports it.
