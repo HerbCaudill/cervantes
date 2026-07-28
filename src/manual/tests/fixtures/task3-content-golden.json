@@ -1,0 +1,12 @@
+{
+  "sourcePages": [37, 42],
+  "sourceSha256": "26c4e8d55e9e436090be40aa553a46399a3efbca20d39903af575471f7a7e0b9",
+  "canonicalization": "JSON.stringify of the complete task-3 section",
+  "taskSha256": "979d72b16c2024d56d6cd7445c9d95526b46c31df52c1889507a65a76d1ce001",
+  "canonicalCharacters": 9580,
+  "canonicalBytes": 9772,
+  "topicCount": 4,
+  "blockCount": 36,
+  "tableRowCount": 52,
+  "tableCellCount": 208
+}

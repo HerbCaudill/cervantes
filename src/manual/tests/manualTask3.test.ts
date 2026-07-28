@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest"
 import manualDraft from "@/manual/manual.draft.json"
 import type { Manual, ManualBlock } from "@/manual/types"
+import task3ContentGolden from "./fixtures/task3-content-golden.json"
+import { getManualContentDigest } from "./getManualContentDigest"
 
 const manual = manualDraft as Manual
 const task = manual.sections.find(section => section.id === "task-3")
@@ -8,6 +10,42 @@ const topics = task?.topics ?? []
 const blocks = topics.flatMap(topic => topic.blocks)
 
 describe("verified Task 3 manual content", () => {
+  it("matches the complete ordered source-audited content golden", async () => {
+    const canonical = JSON.stringify(task)
+    const table = blocks.find(block => block.type === "table")
+
+    expect({
+      blockCount: blocks.length,
+      canonicalBytes: new TextEncoder().encode(canonical).length,
+      canonicalCharacters: canonical.length,
+      tableCellCount: table?.rows.reduce((total, row) => total + row.length, 0) ?? 0,
+      tableRowCount: table?.rows.length ?? 0,
+      taskSha256: await getManualContentDigest(task),
+      topicCount: topics.length,
+    }).toEqual({
+      blockCount: task3ContentGolden.blockCount,
+      canonicalBytes: task3ContentGolden.canonicalBytes,
+      canonicalCharacters: task3ContentGolden.canonicalCharacters,
+      tableCellCount: task3ContentGolden.tableCellCount,
+      tableRowCount: task3ContentGolden.tableRowCount,
+      taskSha256: task3ContentGolden.taskSha256,
+      topicCount: task3ContentGolden.topicCount,
+    })
+  })
+
+  it("changes the golden digest when a nested null table cell changes", async () => {
+    if (!task) throw new Error("Task 3 is missing")
+    const mutatedTask = structuredClone(task)
+    const table = mutatedTask.topics
+      .flatMap(topic => topic.blocks)
+      .find(block => block.type === "table")
+    if (!table) throw new Error("Task 3 table is missing")
+
+    table.rows[1][0] = "unexpected value"
+
+    expect(await getManualContentDigest(mutatedTask)).not.toBe(task3ContentGolden.taskSha256)
+  })
+
   it("keeps all maps, figures, callouts, and the table with their source topics", () => {
     const contentByTopic = new Map(
       topics.map(topic => [

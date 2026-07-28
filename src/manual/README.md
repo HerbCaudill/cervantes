@@ -62,3 +62,11 @@ compare every block and crop with the source before the reader imports it.
 Tasks 1–3 have been reconstructed into source-heading topics and verified in full
 against the checksum-pinned 2026 manual. Tasks 4 and 5 remain page-oriented
 extraction drafts until their corresponding editorial verification is complete.
+
+Task 3's complete ordered content is protected by
+`tests/fixtures/task3-content-golden.json`. Its digest is calculated from
+`JSON.stringify` on the full Task 3 section, so topic and block order, every text
+value, list item, table header and cell (including `null` cells), callout, figure
+asset ID, and caption contribute to the golden. Update it only after comparing
+PDF pages 37–42 against the pinned source, recording the new canonical character
+and byte counts, and running the Task 3 unit and Playwright tests.
