@@ -2,14 +2,20 @@ import type { AppRoute } from "@/navigation/types"
 
 /** Match an application pathname to a practice or manual destination. */
 export function parseRoute(
-  /** Browser pathname */
-  pathname: string,
+  /** Browser pathname with an optional query string */
+  locationPath: string,
 ): AppRoute {
+  const [pathname, queryString = ""] = locationPath.split("?", 2)
   const normalizedPath = pathname.replace(/\/+$/, "") || "/"
 
   if (normalizedPath === "/" || normalizedPath === "/practica") return { type: "practice" }
   if (normalizedPath === "/manual") return { type: "manual-index" }
-  if (normalizedPath === "/manual/buscar") return { type: "manual-search" }
+  if (normalizedPath === "/manual/buscar") {
+    return {
+      type: "manual-search",
+      query: new URLSearchParams(queryString).get("q") ?? "",
+    }
+  }
 
   const segments = normalizedPath.split("/").filter(Boolean)
   if (segments[0] !== "manual") return { type: "not-found" }

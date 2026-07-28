@@ -13,7 +13,7 @@ export function ManualScreen({ manual, route, readerState, resumePath }: Props) 
   if (route.type === "manual-index") {
     return <ManualIndex manual={manual} readerState={readerState} resumePath={resumePath} />
   }
-  if (route.type === "manual-search") return <ManualSearch />
+  if (route.type === "manual-search") return <ManualSearch manual={manual} query={route.query} />
   if (route.type === "not-found" || route.type === "practice") return <ManualNotFound />
 
   const section = manual.sections.find(candidate => candidate.id === route.sectionId)

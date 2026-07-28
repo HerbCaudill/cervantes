@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { NAVIGATION_EVENT } from "@/navigation/constants"
 
-/** Keep React synchronized with in-app navigation and browser back/forward. */
+/** Keep React synchronized with routed path and query changes in browser history. */
 export function usePathname() {
-  const [pathname, setPathname] = useState(window.location.pathname)
+  const [locationPath, setLocationPath] = useState(
+    `${window.location.pathname}${window.location.search}`,
+  )
 
   useEffect(() => {
-    /** Read the current pathname after either kind of history navigation. */
-    const handleNavigation = () => setPathname(window.location.pathname)
+    /** Read the current routed location after either kind of history navigation. */
+    const handleNavigation = () =>
+      setLocationPath(`${window.location.pathname}${window.location.search}`)
 
     window.addEventListener("popstate", handleNavigation)
     window.addEventListener(NAVIGATION_EVENT, handleNavigation)
@@ -17,5 +20,5 @@ export function usePathname() {
     }
   }, [])
 
-  return pathname
+  return locationPath
 }

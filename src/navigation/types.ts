@@ -2,7 +2,7 @@
 export type AppRoute =
   | { type: "practice" }
   | { type: "manual-index" }
-  | { type: "manual-search" }
+  | { type: "manual-search"; query: string }
   | { type: "manual-section"; sectionId: string }
   | { type: "manual-topic"; sectionId: string; topicSlug: string }
   | { type: "not-found" }
