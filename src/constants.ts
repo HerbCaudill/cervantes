@@ -12,6 +12,9 @@ export const FIRST_INTERVAL = 1
 /** Interval (days) for a question answered correctly for the second time. */
 export const SECOND_INTERVAL = 6
 
+/** Minimum interval in days for a question to count as learned. */
+export const LEARNED_INTERVAL = 21
+
 /** Milliseconds in a day, used to advance due dates. */
 export const MS_PER_DAY = 24 * 60 * 60 * 1000
 

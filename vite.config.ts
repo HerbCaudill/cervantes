@@ -14,12 +14,12 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "CCSE practice",
-        short_name: "CCSE",
+        name: "Boletín CCSE",
+        short_name: "Boletín",
         start_url: "/",
         display: "standalone",
-        background_color: "#ffffff",
-        theme_color: "#000000",
+        background_color: "#f3f3ef",
+        theme_color: "#14161a",
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],

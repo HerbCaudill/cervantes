@@ -6,12 +6,12 @@ export function SessionComplete({ reviewedCount }: Props) {
     <div className="flex min-h-64 flex-col items-center justify-center gap-3 text-center">
       <IconCircleCheck className="text-primary size-12" stroke={1.5} />
       <h2 className="text-xl font-medium">
-        {reviewedCount > 0 ? "Session complete" : "All caught up"}
+        {reviewedCount > 0 ? "Repaso terminado" : "Todo al día"}
       </h2>
       <p className="text-muted-foreground">
         {reviewedCount > 0 ?
-          `You reviewed ${reviewedCount} ${reviewedCount === 1 ? "card" : "cards"}. ¡Buen trabajo!`
-        : "No cards are due right now. Check back later."}
+          `Has repasado ${reviewedCount} ${reviewedCount === 1 ? "pregunta" : "preguntas"}.`
+        : "No hay preguntas pendientes ahora mismo."}
       </p>
     </div>
   )

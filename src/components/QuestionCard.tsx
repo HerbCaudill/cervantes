@@ -12,50 +12,56 @@ export function QuestionCard({ question, selectedIndex, onSelect }: Props) {
   const answered = selectedIndex !== null
 
   return (
-    <div className="bg-card text-card-foreground flex flex-col gap-5 rounded-xl border p-6 shadow-sm">
-      <span className="text-muted-foreground text-xs font-medium tracking-widest uppercase">
-        {formatSection(question.section)}
+    <article className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-[0.6rem] px-[0.9rem]">
+      <span className="text-red pt-[0.15rem] font-mono text-[10.5px] leading-[1.35] tabular-nums">
+        {question.id}
       </span>
-      <p className="text-xl font-medium">{question.prompt}</p>
-
-      <div
-        className={cn("grid gap-2", question.type === "true-false" ? "grid-cols-2" : "grid-cols-1")}
-      >
-        {question.options.map((option, index) => {
-          const isCorrect = index === question.answerIndex
-          const isChosen = index === selectedIndex
-          return (
-            <button
-              key={index}
-              type="button"
-              disabled={answered}
-              onClick={() => onSelect(index)}
-              className={cn(
-                "flex items-center justify-between gap-2 rounded-lg border px-4 py-3 text-left transition",
-                !answered && "hover:border-primary hover:bg-accent",
-                answered && isCorrect && "border-green-600 bg-green-50 text-green-900",
-                answered && isChosen && !isCorrect && "border-red-600 bg-red-50 text-red-900",
-                answered && !isCorrect && !isChosen && "opacity-60",
-              )}
-            >
-              <span>{option}</span>
-              {answered && isCorrect ?
-                <IconCheck className="size-5 shrink-0" stroke={2} />
-              : null}
-              {answered && isChosen && !isCorrect ?
-                <IconX className="size-5 shrink-0" stroke={2} />
-              : null}
-            </button>
-          )
-        })}
-      </div>
-
-      {answered && question.explanation ?
-        <p className="text-muted-foreground border-border border-l-2 pl-3 text-sm">
-          {question.explanation}
+      <div className="min-w-0">
+        <p className="text-soft mb-[0.85rem] font-sans text-[11px] tracking-[0.14em] uppercase">
+          {formatSection(question.section)}
         </p>
-      : null}
-    </div>
+        <p className="mb-[0.85rem] font-serif text-xl leading-[1.3]">{question.prompt}</p>
+
+        <div className="border-rule-hard border-t">
+          {question.options.map((option, index) => {
+            const isCorrect = index === question.answerIndex
+            const isChosen = index === selectedIndex
+            return (
+              <button
+                key={index}
+                type="button"
+                disabled={answered}
+                onClick={() => onSelect(index)}
+                className={cn(
+                  "border-rule flex min-h-11 w-full items-center gap-3 border-b py-2 pr-2 text-left font-serif text-base leading-[1.3] transition-colors",
+                  !answered && "hover:bg-rule/40",
+                  answered && isCorrect && "text-green",
+                  answered && isChosen && !isCorrect && "text-red",
+                  answered && !isCorrect && !isChosen && "text-faint",
+                )}
+              >
+                <span aria-hidden="true" className="text-soft w-5 shrink-0 font-mono text-xs">
+                  {String.fromCharCode(97 + index)}
+                </span>
+                <span className="flex-1">{option}</span>
+                {answered && isCorrect ?
+                  <IconCheck className="size-5 shrink-0" stroke={1.8} aria-hidden="true" />
+                : null}
+                {answered && isChosen && !isCorrect ?
+                  <IconX className="size-5 shrink-0" stroke={1.8} aria-hidden="true" />
+                : null}
+              </button>
+            )
+          })}
+        </div>
+
+        {answered && question.explanation ?
+          <p className="border-red text-soft mt-[0.85rem] border-l-2 pl-3 font-serif text-sm leading-[1.4]">
+            {question.explanation}
+          </p>
+        : null}
+      </div>
+    </article>
   )
 }
 

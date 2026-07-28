@@ -1,20 +1,21 @@
 import { useState } from "react"
 import { GradeControls } from "@/components/GradeControls"
 import { QuestionCard } from "@/components/QuestionCard"
-import { SessionComplete } from "@/components/SessionComplete"
+import { QueueStrip, type QueueResult } from "@/components/QueueStrip"
+import { ReviewStateRow } from "@/components/ReviewStateRow"
 import { createInitialState } from "@/lib/createInitialState"
 import type { Grade, Question, StateMap } from "@/types"
 
 /**
  * Drives a study session over a fixed list of due questions. Holds its own queue
  * so a lapsed question (answered wrong, graded "again") goes back to the end to be
- * seen again this session, while a correct answer removes it. Shows
- * `SessionComplete` when the queue empties.
+ * seen again this session, while a correct answer removes it. Returns to the
+ * resting practice screen when the queue empties.
  */
-export function ReviewSession({ initialQuestions, states, onReview }: Props) {
+export function ReviewSession({ initialQuestions, states, onReview, onComplete }: Props) {
   const [queue, setQueue] = useState<Question[]>(initialQuestions)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
-  const [reviewedCount, setReviewedCount] = useState(0)
+  const [results, setResults] = useState<QueueResult[]>([])
 
   const current = queue[0]
 
@@ -22,22 +23,33 @@ export function ReviewSession({ initialQuestions, states, onReview }: Props) {
   const handleGrade = (grade: Grade) => {
     if (!current) return
     onReview(current.id, grade)
-    setReviewedCount(n => n + 1)
+    const result = grade === "again" ? "fail" : "pass"
+    setResults(previous => [...previous, result])
     setSelectedIndex(null)
+    if (grade !== "again" && queue.length === 1) {
+      onComplete()
+      return
+    }
     setQueue(([, ...rest]) => (grade === "again" ? [...rest, current] : rest))
   }
 
-  if (!current) return <SessionComplete reviewedCount={reviewedCount} />
+  if (!current) return null
 
   const state = states[current.id] ?? createInitialState(current.id)
   const answered = selectedIndex !== null
   const correct = answered && selectedIndex === current.answerIndex
 
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="flex w-full flex-1 flex-col pt-[0.85rem]">
+      <QueueStrip results={results} queueLength={queue.length} />
       <QuestionCard question={current} selectedIndex={selectedIndex} onSelect={setSelectedIndex} />
+      <div className="mt-[0.85rem] px-[0.9rem]">
+        <ReviewStateRow state={state} />
+      </div>
       {answered ?
-        <GradeControls correct={correct} state={state} onGrade={handleGrade} />
+        <div className="mt-auto pt-[0.85rem]">
+          <GradeControls correct={correct} state={state} onGrade={handleGrade} />
+        </div>
       : null}
     </div>
   )
@@ -50,4 +62,6 @@ interface Props {
   states: StateMap
   /** Called to record a grade for a question */
   onReview: (questionId: string, grade: Grade) => void
+  /** Return to the resting screen when the queue empties */
+  onComplete: () => void
 }

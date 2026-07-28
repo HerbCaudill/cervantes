@@ -71,3 +71,23 @@ export interface ReviewState {
 
 /** Map of question id to its scheduling state, as persisted to storage. */
 export type StateMap = Record<string, ReviewState>
+
+/** Practice-bank counts for one manual section. */
+export interface SectionStats {
+  /** Section key shared by its questions */
+  section: string
+  /** Questions due now, including questions without saved state */
+  due: number
+  /** Total questions in this section */
+  bank: number
+  /** Questions whose current interval is at least the learned threshold */
+  learned: number
+}
+
+/** Number of questions due on one day of the seven-day forecast. */
+export interface ForecastDay {
+  /** Local calendar date in YYYY-MM-DD form */
+  date: string
+  /** Questions due on this date, with overdue and new questions counted today */
+  due: number
+}
