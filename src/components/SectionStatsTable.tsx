@@ -7,9 +7,8 @@ export function SectionStatsTable({ stats }: Props) {
     (total, section) => ({
       due: total.due + section.due,
       bank: total.bank + section.bank,
-      learned: total.learned + section.learned,
     }),
-    { due: 0, bank: 0, learned: 0 },
+    { due: 0, bank: 0 },
   )
 
   return (
@@ -23,7 +22,6 @@ export function SectionStatsTable({ stats }: Props) {
             <th className="w-[55%] py-2 text-left font-medium">Sección</th>
             <th className="py-2 text-right font-medium">Pend.</th>
             <th className="py-2 text-right font-medium">Banco</th>
-            <th className="py-2 text-right font-medium">Fijadas</th>
           </tr>
         </thead>
         <tbody>
@@ -34,11 +32,6 @@ export function SectionStatsTable({ stats }: Props) {
                 {section.due}
               </td>
               <td className="py-2 text-right">{section.bank}</td>
-              <td
-                className={section.learned === 0 ? "text-faint py-2 text-right" : "py-2 text-right"}
-              >
-                {section.learned}
-              </td>
             </tr>
           ))}
         </tbody>
@@ -47,7 +40,6 @@ export function SectionStatsTable({ stats }: Props) {
             <th className="py-2 text-left">Total</th>
             <td className="py-2 text-right">{totals.due}</td>
             <td className="py-2 text-right">{totals.bank}</td>
-            <td className="py-2 text-right">{totals.learned}</td>
           </tr>
         </tfoot>
       </table>

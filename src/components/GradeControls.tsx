@@ -1,15 +1,11 @@
-import { formatInterval } from "@/lib/formatInterval"
-import { scheduleCard } from "@/lib/scheduleCard"
-import type { Grade, ReviewState } from "@/types"
+import type { Grade } from "@/types"
 
 /**
  * The controls shown after a question is answered. A wrong answer offers a single
  * "Otra vez" action that lapses the card ("again", so it returns soon and reappears
- * later this session). A correct answer offers positive-grade buttons that each
- * preview the resulting interval, computed with the same `scheduleCard` function
- * used to actually reschedule.
+ * later this session). A correct answer offers the three positive grade actions.
  */
-export function GradeControls({ correct, state, onGrade }: Props) {
+export function GradeControls({ correct, onGrade }: Props) {
   if (!correct) {
     return (
       <div className="border-ink border-t">
@@ -26,26 +22,20 @@ export function GradeControls({ correct, state, onGrade }: Props) {
 
   return (
     <div className="border-ink grid grid-cols-3 border-t">
-      {POSITIVE_GRADES.map(({ grade, label }) => {
-        const preview = scheduleCard(state, grade)
-        return (
-          <button
-            key={grade}
-            type="button"
-            onClick={() => onGrade(grade)}
-            className={
-              grade === "good" ?
-                "bg-rule/45 border-rule-hard flex min-h-14 flex-col items-center justify-center gap-1 border-r font-sans last:border-r-0"
-              : "border-rule-hard flex min-h-14 flex-col items-center justify-center gap-1 border-r font-sans last:border-r-0"
-            }
-          >
-            <span className="text-xs font-bold tracking-[0.1em] uppercase">{label}</span>
-            <span className="text-soft font-mono text-[11px]">
-              {formatInterval(preview.interval)}
-            </span>
-          </button>
-        )
-      })}
+      {POSITIVE_GRADES.map(({ grade, label }) => (
+        <button
+          key={grade}
+          type="button"
+          onClick={() => onGrade(grade)}
+          className={
+            grade === "good" ?
+              "bg-rule/45 border-rule-hard flex min-h-14 items-center justify-center border-r font-sans last:border-r-0"
+            : "border-rule-hard flex min-h-14 items-center justify-center border-r font-sans last:border-r-0"
+          }
+        >
+          <span className="text-xs font-bold tracking-[0.1em] uppercase">{label}</span>
+        </button>
+      ))}
     </div>
   )
 }
@@ -60,8 +50,6 @@ const POSITIVE_GRADES: { grade: Grade; label: string }[] = [
 interface Props {
   /** Whether the user answered correctly */
   correct: boolean
-  /** Current scheduling state of the question, used for the interval previews */
-  state: ReviewState
   /** Called with the chosen grade */
   onGrade: (grade: Grade) => void
 }

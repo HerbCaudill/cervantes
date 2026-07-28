@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test"
 import manualDraft from "../src/manual/manual.draft.json" with { type: "json" }
+import questionBank from "../src/data/questions.json" with { type: "json" }
 
 test("answers a question and grades it", async ({ page }) => {
   const externalFontRequests: string[] = []
@@ -39,6 +40,76 @@ test("answers a question and grades it", async ({ page }) => {
   await page.getByRole("link", { name: "Práctica" }).click()
   await expect(page.getByRole("button", { name: "Constitución." })).toBeVisible()
   await expect(page.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeVisible()
+})
+
+test.describe("simplified practice interface", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(
+      ({ questions }) => {
+        const states = Object.fromEntries(
+          questions.map(({ id }, index) => [
+            id,
+            {
+              questionId: id,
+              repetitions: index === 0 ? 17 : 1,
+              easeFactor: index === 0 ? 2.37 : 2.5,
+              interval: index < 17 ? 23 : 1,
+              due: index === 0 ? "2000-01-01T12:00:00.000Z" : "2100-01-01T12:00:00.000Z",
+            },
+          ]),
+        )
+        localStorage.setItem("ccse-flashcards:states", JSON.stringify(states))
+      },
+      { questions: questionBank },
+    )
+  })
+
+  test("shows only the actionable queue count on the resting screen", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto("/")
+
+    await expect(page.getByRole("button", { name: "Empezar repaso · 1 pregunta" })).toBeVisible()
+    await expect(page.getByText("Fijadas", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("17", { exact: true })).toHaveCount(0)
+    await expect(page.getByRole("heading", { name: "Próximos 7 días" })).toHaveCount(0)
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+      ),
+    ).toBe(true)
+  })
+
+  test("keeps grading and scheduling without showing scheduler details", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto("/")
+    await page.getByRole("button", { name: "Empezar repaso · 1 pregunta" }).click()
+
+    await expect(page.getByRole("list", { name: "0 repasadas, 1 en la cola" })).toBeVisible()
+    await expect(page.getByText("Repasos", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("Facil.", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("Visto", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("Interv.", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("2,37", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("23 d", { exact: true })).toHaveCount(0)
+
+    await page.getByRole("button", { name: "una monarquía parlamentaria." }).click()
+    await expect(page.getByRole("button", { name: "Difícil", exact: true })).toBeVisible()
+    await expect(page.getByRole("button", { name: "Bien", exact: true })).toBeVisible()
+    await expect(page.getByRole("button", { name: "Fácil", exact: true })).toBeVisible()
+    await expect(page.getByText("55 d", { exact: true })).toHaveCount(0)
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+      ),
+    ).toBe(true)
+
+    await page.getByRole("button", { name: "Bien", exact: true }).click()
+    await expect(page.getByText("No hay preguntas pendientes")).toBeVisible()
+    const savedState = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem("ccse-flashcards:states") ?? "{}"),
+    )
+    expect(savedState["1001"]).toMatchObject({ repetitions: 18, interval: 55 })
+  })
 })
 
 test("navigates direct manual routes with browser history", async ({ page }) => {

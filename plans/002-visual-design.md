@@ -16,23 +16,25 @@ reader and practice cards read as one document, and the one whose typographic
 approach scales to the manual's real content — tables, callouts, figure captions
 — without needing new components.
 
-Decided: two tabs, no search tab, all in-app copy in Spanish, IBM Plex
-throughout, `Fijadas` defined as interval ≥ 21 days.
+Decided: two tabs, no search tab, all in-app copy in Spanish, and IBM Plex
+throughout. Scheduler diagnostics stay out of the interface for now: show
+actionable due-question counts, but not learned counts, future forecasts,
+per-question scheduling state, or interval previews.
 
 ## Design tokens
 
 ### Color — light
 
-| Token         | Value     | Use                                                  |
-| ------------- | --------- | ---------------------------------------------------- |
-| `--paper`     | `#f3f3ef` | Page ground. Slightly green-grey, not cream.         |
-| `--ink`       | `#14161a` | Body text, hard rules, the bottom action bar.        |
-| `--soft`      | `#5c5f5a` | Explanations, secondary chrome.                      |
-| `--faint`     | `#8e918a` | Labels, inactive tabs, zero values.                  |
-| `--rule`      | `#d5d5cb` | Hairline separators (the workhorse).                 |
-| `--rule-hard` | `#a8a89e` | Structural rules: table heads, block quotes.         |
+| Token         | Value     | Use                                                                                                                                                   |
+| ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--paper`     | `#f3f3ef` | Page ground. Slightly green-grey, not cream.                                                                                                          |
+| `--ink`       | `#14161a` | Body text, hard rules, the bottom action bar.                                                                                                         |
+| `--soft`      | `#5c5f5a` | Explanations, secondary chrome.                                                                                                                       |
+| `--faint`     | `#8e918a` | Labels, inactive tabs, zero values.                                                                                                                   |
+| `--rule`      | `#d5d5cb` | Hairline separators (the workhorse).                                                                                                                  |
+| `--rule-hard` | `#a8a89e` | Structural rules: table heads, block quotes.                                                                                                          |
 | `--red`       | `#a51c30` | The single accent. Due counts, active tab, margin numbers, explanation rule. Appears about twice per screen — if it appears more, something is wrong. |
-| `--green`     | `#2f6b4f` | Correct answers only. Not a general-purpose accent.  |
+| `--green`     | `#2f6b4f` | Correct answers only. Not a general-purpose accent.                                                                                                   |
 
 ### Color — dark
 
@@ -56,11 +58,11 @@ values.
 Three faces, each with a fixed job. Never mix the jobs — a number in the body
 column is still set in mono, a heading in the chrome is still set in sans.
 
-| Face                | Job                                                                 |
-| ------------------- | ------------------------------------------------------------------- |
-| **IBM Plex Serif**  | Everything you read: prompts, option text, manual body, headings.   |
-| **IBM Plex Sans**   | Chrome: labels, tabs, table text, buttons, running heads.           |
-| **IBM Plex Mono**   | Data: question ids, article numbers, dates, intervals, counts.      |
+| Face               | Job                                                               |
+| ------------------ | ----------------------------------------------------------------- |
+| **IBM Plex Serif** | Everything you read: prompts, option text, manual body, headings. |
+| **IBM Plex Sans**  | Chrome: labels, tabs, table text, buttons, running heads.         |
+| **IBM Plex Mono**  | Data: question ids, article numbers, dates, counts.               |
 
 Packages — note that **only Sans has a variable build**; Serif and Mono are
 static, so import just the weights listed and no others, to keep the PWA
@@ -77,26 +79,23 @@ pnpm add @fontsource/ibm-plex-mono            # static: 400 only
 
 Real device pixels at a 390px viewport. Nothing goes below 10px.
 
-| Element                        | Face  | Size / leading      | Notes                          |
-| ------------------------------ | ----- | ------------------- | ------------------------------ |
-| Question prompt                | serif | 20 / 1.3            | Do not shrink.                 |
-| Manual body                    | serif | 17 / 1.5            | Do not shrink.                 |
-| Option text                    | serif | 16 / 1.3            |                                |
-| Topic heading                  | serif | 23 / 1.12, wt 700   | `text-wrap: balance`           |
-| Block quotation                | serif | 16 / 1.4, italic    |                                |
-| Section label                  | sans  | 11, tracking .14em  | uppercase                      |
-| Table body                     | sans  | 13                  | `tabular-nums`                 |
-| Table header                   | sans  | 10, tracking .1em   | uppercase                      |
-| Tabs                           | sans  | 12, tracking .11em  | uppercase                      |
-| Grade label                    | sans  | 12, tracking .1em   | uppercase, wt 700              |
-| Masthead title                 | sans  | 12, tracking .18em  | uppercase, wt 700              |
-| Masthead counts                | mono  | 11                  | `tabular-nums`                 |
-| Margin id / article no.        | mono  | 10.5 / 1.35         | `tabular-nums`                 |
-| Review-state values            | mono  | 12.5                | `tabular-nums`                 |
-| Review-state labels            | mono  | 10, tracking .08em  | uppercase — the floor          |
+| Element                 | Face  | Size / leading     | Notes                |
+| ----------------------- | ----- | ------------------ | -------------------- |
+| Question prompt         | serif | 20 / 1.3           | Do not shrink.       |
+| Manual body             | serif | 17 / 1.5           | Do not shrink.       |
+| Option text             | serif | 16 / 1.3           |                      |
+| Topic heading           | serif | 23 / 1.12, wt 700  | `text-wrap: balance` |
+| Block quotation         | serif | 16 / 1.4, italic   |                      |
+| Section label           | sans  | 11, tracking .14em | uppercase            |
+| Table body              | sans  | 13                 | `tabular-nums`       |
+| Table header            | sans  | 10, tracking .1em  | uppercase            |
+| Tabs                    | sans  | 12, tracking .11em | uppercase            |
+| Grade label             | sans  | 12, tracking .1em  | uppercase, wt 700    |
+| Masthead title          | sans  | 12, tracking .18em | uppercase, wt 700    |
+| Masthead counts         | mono  | 11                 | `tabular-nums`       |
+| Margin id / article no. | mono  | 10.5 / 1.35        | `tabular-nums`       |
 
 Use `font-variant-numeric: tabular-nums` anywhere digits stack in a column.
-Spanish decimal comma for the ease factor: `2,36`.
 
 ## Layout rules
 
@@ -134,11 +133,11 @@ holds a single contextual action (`Salir` during a session) or nothing.
 What you land on before starting, and what you return to when the queue empties.
 This replaces the empty state that would otherwise have needed its own design.
 
-Top to bottom: sections table (`Sección / Pend. / Banco / Fijadas` with a totals
-row); a seven-day forecast strip of due counts, today highlighted in `--red`;
+Top to bottom: sections table (`Sección / Pend. / Banco` with a totals row);
 manual reading progress by tarea, where the 1px rule under each row doubles as
 its progress bar; a `Seguir leyendo` row; and a full-width bottom bar in `--ink`
-reading `Empezar repaso · N preguntas`.
+reading `Empezar repaso · N preguntas`. Do not show learned counts or a future
+due forecast.
 
 ### 2. Práctica — answering
 
@@ -146,13 +145,11 @@ A queue strip of one tick per card (green pass, red fail, ink current, grey
 remaining). Then the question: id in the margin, section label, prompt, options
 as ruled rows lettered a–d in mono, explanation behind a `--red` left rule.
 
-Below that, the four `ReviewState` fields (`src/types.ts`) as a mono row —
-`Repasos · Facil. · Visto · Interv.` This is the "why did this card come back
-today" data; it is already persisted, nothing new is computed. If it becomes
-noise, it is a one-line removal.
+Do not show the question's persisted scheduling state. Ease factor, repetition
+count, last-review date, and interval remain implementation details.
 
-Bottom bar: three grades, each previewing its interval via `scheduleCard`, with
-`Bien` faintly tinted as the default. A wrong answer replaces all three with a
+Bottom bar: three grades, with `Bien` faintly tinted as the default. Do not
+preview their resulting intervals. A wrong answer replaces all three with a
 single `Otra vez`.
 
 ### 3. Manual — topic
@@ -167,21 +164,16 @@ topic to the bank. Footer: `‹ Anterior` / `Siguiente ›`.
 
 All in-app copy is Spanish. Comments, identifiers, and docs stay English.
 
-| On screen                | Meaning                                                       |
-| ------------------------ | ------------------------------------------------------------- |
-| Pendientes               | Questions due today                                           |
-| Banco                    | Total questions in the bank for that section                  |
-| Fijadas                  | Questions considered learned — **interval ≥ 21 days**         |
-| Empezar repaso           | Start the session                                             |
-| Difícil / Bien / Fácil   | The three grades after a correct answer (`hard`/`good`/`easy`)|
-| Otra vez                 | The single action after a wrong answer (`again`); requeues it |
-| Repasos                  | `repetitions`                                                 |
-| Facil.                   | `easeFactor`                                                  |
-| Visto                    | Date of last review                                           |
-| Interv.                  | `interval`, in days                                           |
-| Seguir leyendo           | Resume at the last reading position                           |
-| Salir                    | Leave the session                                             |
-| Practicar                | Jump to this topic's due questions                            |
+| On screen              | Meaning                                                        |
+| ---------------------- | -------------------------------------------------------------- |
+| Pendientes             | Questions due today                                            |
+| Banco                  | Total questions in the bank for that section                   |
+| Empezar repaso         | Start the session                                              |
+| Difícil / Bien / Fácil | The three grades after a correct answer (`hard`/`good`/`easy`) |
+| Otra vez               | The single action after a wrong answer (`again`); requeues it  |
+| Seguir leyendo         | Resume at the last reading position                            |
+| Salir                  | Leave the session                                              |
+| Practicar              | Jump to this topic's due questions                             |
 
 ## Tasks
 
@@ -190,17 +182,14 @@ All in-app copy is Spanish. Comments, identifiers, and docs stay English.
    `src/index.css`.
 2. Replace the shadcn neutral scale in `src/index.css` with the tokens above,
    both themes, and do a contrast pass on the dark values.
-3. Add `LEARNED_INTERVAL = 21` to `src/constants.ts` and a `getSectionStats`
-   helper for the due / bank / fijadas counts.
-4. Add a `getForecast` helper returning due counts for the next seven days.
-5. Restyle `QuestionCard` to the marginal-column layout with ruled options.
-6. Add the review-state row, reading `ReviewState` straight from `useDeck`.
-7. Translate all UI copy to Spanish, including `GradeControls`.
-8. Build the Práctica resting screen; wire it as both the pre-session and
+3. Add a `getSectionStats` helper for the due / bank counts.
+4. Restyle `QuestionCard` to the marginal-column layout with ruled options.
+5. Translate all UI copy to Spanish, including `GradeControls`.
+6. Build the Práctica resting screen; wire it as both the pre-session and
    queue-empty state.
-9. Restyle `DeckHeader` as the masthead plus tab row.
-10. Unit-test `getSectionStats` and `getForecast`; update the existing Playwright
-    specs for the Spanish copy.
+7. Restyle `DeckHeader` as the masthead plus tab row.
+8. Unit-test `getSectionStats`; update the existing Playwright specs for the
+   Spanish copy and the absence of scheduler diagnostics.
 
 ## Acceptance criteria
 
@@ -211,6 +200,8 @@ All in-app copy is Spanish. Comments, identifiers, and docs stay English.
 - Prompt and manual body render at 20px and 17px respectively.
 - Every tap target measures ≥ 44px.
 - All user-visible copy is Spanish; the glossary above is the authority.
+- No learned count, future due forecast, per-question scheduling state, or grade
+  interval preview is visible.
 - `--red` appears roughly twice per screen, `--green` only on correct answers.
 - Type checks, unit tests, and Playwright specs pass.
 
@@ -223,8 +214,6 @@ All in-app copy is Spanish. Comments, identifiers, and docs stay English.
 - **The dark palette is underived.** It has not been seen in the mockups or
   contrast-checked. If dark mode matters, it deserves its own pass rather than
   shipping the values above unexamined.
-- **Does the review-state row earn its place?** Interesting while the scheduler
-  is new; possibly noise in three months. Cheap to move behind a long-press.
 
 ## Reference
 

@@ -14,7 +14,7 @@ import type { Question } from "@/types"
 
 /** Root of the CCSE app: shared chrome plus the routed practice or manual screen. */
 export function App() {
-  const { dueQuestions, states, totalCount, sectionStats, forecast, review } = useDeck()
+  const { dueQuestions, totalCount, sectionStats, review } = useDeck()
   const [sessionQuestions, setSessionQuestions] = useState<Question[] | null>(null)
   const manual = manualDraft as Manual
   const route = parseRoute(usePathname())
@@ -39,13 +39,11 @@ export function App() {
           {sessionQuestions ?
             <ReviewSession
               initialQuestions={sessionQuestions}
-              states={states}
               onReview={review}
               onComplete={() => setSessionQuestions(null)}
             />
           : <PracticeHome
               stats={sectionStats}
-              forecast={forecast}
               dueCount={dueQuestions.length}
               manual={manual}
               readerState={readerProgress.state}

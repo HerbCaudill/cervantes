@@ -1,27 +1,17 @@
-import { ForecastStrip } from "@/components/ForecastStrip"
 import { ManualProgress } from "@/components/ManualProgress"
 import { SectionStatsTable } from "@/components/SectionStatsTable"
 import type { Manual } from "@/manual/types"
 import type { ReaderState } from "@/reader/types"
-import type { ForecastDay, SectionStats } from "@/types"
+import type { SectionStats } from "@/types"
 
 /** Resting practice screen shown before a session and after its queue empties. */
-export function PracticeHome({
-  stats,
-  forecast,
-  dueCount,
-  manual,
-  readerState,
-  resumePath,
-  onStart,
-}: Props) {
+export function PracticeHome({ stats, dueCount, manual, readerState, resumePath, onStart }: Props) {
   const questionLabel = dueCount === 1 ? "pregunta" : "preguntas"
 
   return (
     <div className="flex flex-1 flex-col">
       <div className="flex flex-col gap-[0.85rem] px-[0.9rem] py-[0.85rem]">
         <SectionStatsTable stats={stats} />
-        <ForecastStrip forecast={forecast} />
         <ManualProgress manual={manual} readerState={readerState} resumePath={resumePath} />
       </div>
       <button
@@ -41,8 +31,6 @@ export function PracticeHome({
 interface Props {
   /** Bank status grouped by section */
   stats: SectionStats[]
-  /** Due counts for the next seven local calendar days */
-  forecast: ForecastDay[]
   /** Questions currently available to start */
   dueCount: number
   /** Structured manual summarized in the reading section */
