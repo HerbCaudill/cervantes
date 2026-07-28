@@ -1,0 +1,22 @@
+{
+  "sourcePages": [70, 91],
+  "sourceSha256": "26c4e8d55e9e436090be40aa553a46399a3efbca20d39903af575471f7a7e0b9",
+  "canonicalization": "JSON.stringify of the complete task-5 section",
+  "taskSha256": "c6533c1d2ecdcaf59eb700fbdc31a224089464b7f6a2510b283bd8a6cc70342c",
+  "canonicalCharacters": 50414,
+  "canonicalBytes": 51294,
+  "topicCount": 16,
+  "blockCount": 170,
+  "tableRowCount": 19,
+  "tableCellCount": 56,
+  "sourceAudit": {
+    "normalization": "PDF text from pages 70–91 and visible task text: NFKD, combining marks removed, lowercase, non-letter/non-number characters collapsed; source line-end hyphenation joined before normalization",
+    "sourceRawCharacters": 61324,
+    "sourceNormalizedCharacters": 42172,
+    "sourceTokenCount": 6986,
+    "contentNormalizedCharacters": 40854,
+    "contentTokenCount": 6765,
+    "unmatchedSourceTokenTypes": 48,
+    "unmatchedSourceTokensReviewed": "All were running furniture or PDF column/line-break fragments; no source prose was absent from Task 5."
+  }
+}

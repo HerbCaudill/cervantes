@@ -396,6 +396,11 @@
       "alt": "Tarjeta sanitaria de Cataluña, es un documentos necesario para recibir atención médica en la sanidad pública. © Ayuntamiento de Barcelona"
     },
     {
+      "id": "figure-72-family",
+      "src": "/manual/figures/figure-72-family.jpg",
+      "alt": "Un adulto lleva a un bebé en una mochila portabebés"
+    },
+    {
       "id": "figure-73-2",
       "src": "/manual/figures/figure-73-2.jpg",
       "alt": "Vista aérea de Madrid. © Dmitry Dzhus"
@@ -464,6 +469,11 @@
       "id": "figure-82-81",
       "src": "/manual/figures/figure-82-81.jpg",
       "alt": "Logotipo de la Organización Nacional de Ciegos Españoles (ONCE), organización no gubernamental que trabaja para conseguir la integración de las personas con discapacidad visual y colabora en la atención y defensa de los derechos de las personas con distintos tipos de discapacidad. © ONCE"
+    },
+    {
+      "id": "figure-82-emergency-112",
+      "src": "/manual/figures/figure-82-emergency-112.jpg",
+      "alt": "Número europeo de emergencias 112 rodeado por estrellas de la Unión Europea"
     },
     {
       "id": "figure-83-82",
@@ -2657,14 +2667,9 @@
       "title": "Sociedad española",
       "topics": [
         {
-          "id": "task-5-draft-page-70",
+          "id": "task-5-identificacion-personal-y-tramites-administrativos",
           "title": "IDENTIFICACIÓN PERSONAL Y TRÁMITES ADMINISTRATIVOS",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "IDENTIFICACIÓN PERSONAL Y TRÁMITES ADMINISTRATIVOS"
-            },
             {
               "type": "paragraph",
               "text": "En España, las personas tienen un nombre, que puede ser simple (Ana) o compuesto (Juan Carlos), y dos apellidos. Generalmente, el primero es el primer apellido del padre y el segundo, el primer apellido de la madre, aunque los padres pueden decidir invertir el orden, de modo que el apellido de la madre sea el primero."
@@ -2693,22 +2698,16 @@
                   "text": "Desde el 1 de mayo de 2021, el libro de familia convive con el registro electrónico individual, en él se anota el nacimiento, la mayoría de edad o la adquisición de la nacionalidad de una persona."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-71",
-          "title": "Sociedad española",
-          "blocks": [
+            },
             {
               "type": "list",
               "style": "unordered",
               "items": [
                 "El número de la Seguridad Social. Lo recibe una persona cuando empieza a trabajar y a cotizar en la Seguridad Social. Se obtiene en la Tesorería General de la Seguridad Social.",
-                "El informe de vida labora l. Es un documento que muestra la cotización a la Seguridad Social y toda la trayectoria profesional (las empresas en las que se ha trabajado y las fechas y tipos de los contratos).",
+                "El informe de vida laboral. Es un documento que muestra la cotización a la Seguridad Social y toda la trayectoria profesional (las empresas en las que se ha trabajado y las fechas y tipos de los contratos).",
                 "La tarjeta sanitaria. Es la que identifica a una persona para ser atendida en la sanidad pública española. Se tramita en el centro de salud que corresponde al domicilio.",
                 "El carné o permiso de conducir. Sirve para conducir legalmente por España y lo pueden conseguir las personas mayores de 18 años. Para obtenerlo hay que aprobar un examen teórico y uno práctico, presentar un informe de aptitud psicofísica, el DNI o pasaporte en vigor y una fotografía. El organismo responsable de examinar y expedir el documento es la Dirección General de Tráfico (DGT).",
-                "El certicado de empadronamiento. Muestra el lugar de residencia. Para empadronarse, es necesario justificar que se reside en una vivienda y presentar un documento original de identidad (pasaporte, tarjeta de identificación de extranjero (TIE), etc.) en el ayuntamiento del municipio donde se vive."
+                "El certificado de empadronamiento. Muestra el lugar de residencia. Para empadronarse, es necesario justificar que se reside en una vivienda y presentar un documento original de identidad (pasaporte, tarjeta de identificación de extranjero (TIE), etc.) en el ayuntamiento del municipio donde se vive."
               ]
             },
             {
@@ -2754,22 +2753,12 @@
                   "text": "El documento que certifica el lugar de residencia es el certificado de empadronamiento y es expedido por el Ayuntamiento."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-72",
-          "title": "Sociedad española",
-          "blocks": [
+            },
             {
               "type": "list",
               "style": "unordered",
               "items": [
-                "1 año: en casos especiales, por ejemplo: a. Nacido en España. b. Casado con un ciudadano español. c. Viudo de un ciudadano español (si no había separación). d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
-                "a. Nacido en España.",
-                "b. Casado con un ciudadano español.",
-                "c. Viudo de un ciudadano español (si no había separación).",
-                "d. Haber residido bajo tutela o acogimiento de un ciudadano español."
+                "1 año: en casos especiales, por ejemplo:\na. Nacido en España.\nb. Casado con un ciudadano español.\nc. Viudo de un ciudadano español (si no había separación).\nd. Haber residido bajo tutela o acogimiento de un ciudadano español."
               ]
             },
             {
@@ -2805,14 +2794,8 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "Permisos laborales por nacimiento (o adopción) y cuidado del menor (19 semanas para la madre y 19 para el padre), el permiso de lactancia, o la reducción de la jornada de trabajo por tener a cargo hijos menores de 12 años."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Ayudasscales a las familias: desgravación por hijos en la declaración de la renta y otras ayudas nacionales y autonómicas, como descuentos en transporte público, matrículas universitarias, tarifas de guardería o comedores escolares."
+                "Permisos laborales por nacimiento (o adopción) y cuidado del menor (19 semanas para la madre y 19 para el padre), el permiso de lactancia, o la reducción de la jornada de trabajo por tener a cargo hijos menores de 12 años.",
+                "Ayudas fiscales a las familias: desgravación por hijos en la declaración de la renta y otras ayudas nacionales y autonómicas, como descuentos en transporte público, matrículas universitarias, tarifas de guardería o comedores escolares."
               ]
             },
             {
@@ -2824,7 +2807,7 @@
                 }
               ]
             },
-            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "© Unsplash" }] },
+            { "type": "figure", "assetId": "figure-72-family", "caption": "© Unsplash" },
             {
               "type": "callout",
               "blocks": [
@@ -2837,10 +2820,9 @@
           ]
         },
         {
-          "id": "task-5-draft-page-73",
+          "id": "task-5-guia-de-la-vida-diaria",
           "title": "GUÍA DE LA VIDA DIARIA",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "GUÍA DE LA VIDA DIARIA" },
             { "type": "heading", "level": 3, "text": "Vivienda" },
             {
               "type": "paragraph",
@@ -2848,7 +2830,7 @@
             },
             {
               "type": "paragraph",
-              "text": "En España, alrededor del 75% de las viviendas son en propiedad (un 30% de ellas con hipoteca), mientras que cerca del 25% se alquilan. El alquiler se regula mediante un contrato en el que se fijan datos básicos como la duración, el precio y las obligaciones de arrendador e inquilino, con un mínimo legal de cinco años si el propietario es persona física"
+              "text": "En España, alrededor del 75 % de las viviendas son en propiedad (un 30 % de ellas con hipoteca), mientras que cerca del 25 % se alquilan. El alquiler se regula mediante un contrato en el que se fijan datos básicos como la duración, el precio y las obligaciones de arrendador e inquilino, con un mínimo legal de cinco años si el propietario es persona física (siete si es jurídica). Al firmar, el arrendatario debe entregar una fianza, equivalente, en la mayoría de los casos, a una mensualidad, que el propietario ha de depositar en el organismo autonómico y que sirve para cubrir posibles impagos o desperfectos. Esta fianza se devolverá al finalizar el contrato si no hay incidencias."
             },
             {
               "type": "callout",
@@ -2863,31 +2845,40 @@
               "type": "figure",
               "assetId": "figure-73-2",
               "caption": "FIGURA 2. Vista aérea de Madrid. © Dmitry Dzhus"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-74",
-          "title": "Animales domésticos",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "(siete si es jurídica). Al firmar, el arrendatario debe entregar una fianza, equivalente, en la mayoría de los casos, a una mensualidad, que el propietario ha de depositar en el organismo autonómico y que sirve para cubrir posibles impagos o desperfectos. Esta fianza se devolverá al finalizar el contrato si no hay incidencias."
             },
             {
               "type": "paragraph",
-              "text": "También existen viviendas de protección ocial que tienen un precio limitado y generalmente están subvencionadas por la Administración local o autonómica."
+              "text": "También existen viviendas de protección oficial que tienen un precio limitado y generalmente están subvencionadas por la Administración local o autonómica."
+            },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "También existen viviendas de protección oficial que tienen un precio limitado y generalmente están subvencionadas por la Administración local o autonómica."
+                }
+              ]
             },
             {
               "type": "paragraph",
               "text": "En las comunidades de vecinos hay normas básicas de comportamiento social que se deben respetar, por ejemplo: pagar los gastos de la comunidad; no molestar a los demás vecinos con ruidos, sobre todo a partir de las 22:00 horas; reciclar la basura y cuidar los espacios comunes."
-            },
-            { "type": "heading", "level": 3, "text": "Animales domésticos" },
+            }
+          ]
+        },
+        {
+          "id": "task-5-animales-domesticos",
+          "title": "Animales domésticos",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "En España muchas personas tienen animales en casa, en su mayoría perros, gatos y pájaros. Los animales se pueden adoptar o comprar, siendo preferible lo primero, ya que en España las protectoras y perreras están llenas de animales abandonados que necesitan un hogar. Estos animales deben registrarse obligatoriamente con un microchip electrónico —sobre todo los perros y los gatos—; vacunarse y llevarse a revisiones veterinarias periódicas, además del seguro de responsabilidad civil por daños a terceros para todos los perros. Se debe velar por su salud y prestarles los cuidados y atenciones necesarias para su correcto desarrollo físico y emocional, así como respetar la convivencia con el resto de ciudadanos, recogiendo sus excrementos de vías públicas y jardines y cumpliendo con las medidas de seguridad obligatorias en la calle (correa, bozal, etc.)."
-            },
-            { "type": "heading", "level": 3, "text": "Comidas y bebidas" },
+            }
+          ]
+        },
+        {
+          "id": "task-5-comidas-y-bebidas",
+          "title": "Comidas y bebidas",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "La gastronomía de España es muy rica y variada. Las diversas regiones del país tienen sus propios platos típicos, resultado de la variedad cultural y climática."
@@ -2898,31 +2889,12 @@
             },
             {
               "type": "paragraph",
-              "text": "Algunas de las comidas o bebidas españolas más conocidas internacionalmente son: la paella (arroz con verduras, aza"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "También existen viviendas de protección ocial que tienen un precio limitado y generalmente están subvencionadas por la Administración local o autonómica."
-                }
-              ]
+              "text": "Algunas de las comidas o bebidas españolas más conocidas internacionalmente son: la paella (arroz con verduras, azafrán, pollo, mariscos o carne) la tortilla de patatas o tortilla española (huevos, patata, cebolla), los churros (harina, agua y aceite), el gazpacho (tomate, pepino, pimiento, ajo, cebolla, etc.) o la sangría (vino, frutas, refrescos, etc.). Por otro lado, también son conocidos productos típicos como el aceite de oliva, diversas frutas y verduras, marisco y pescado, productos ibéricos de cerdo (jamón, lomo, chorizo); dulces como turrón, mazapanes, roscón de Reyes y torrijas; bebidas como vino, cava y sidra, etc."
             },
             {
               "type": "figure",
               "assetId": "figure-74-70",
               "caption": "FIGURA 70. Ferran Adrià. © Gobierno de Cataluña"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-75",
-          "title": "Sociedad española",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "frán, pollo, mariscos o carne) la tortilla de patatas o tortilla española (huevos, patata, cebolla), los churros (harina, agua y aceite), el gazpacho (tomate, pepino, pimiento, ajo, cebolla, etc.) o la sangría (vino, frutas, refrescos, etc.). Por otro lado, también son conocidos productos típicos como el aceite de oliva, diversas frutas y verduras, marisco y pescado, productos ibéricos de cerdo (jamón, lomo, chorizo); dulces como turrón, mazapanes, roscón de Reyes y torrijas; bebidas como vino, cava y sidra, etc."
             },
             {
               "type": "paragraph",
@@ -2967,10 +2939,9 @@
           ]
         },
         {
-          "id": "task-5-draft-page-76",
+          "id": "task-5-calendario-dias-festivos-y-horarios",
           "title": "Calendario: días festivos y horarios",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "Calendario: días festivos y horarios" },
             {
               "type": "paragraph",
               "text": "Calendario escolar: comienza en septiembre y termina en el mes de junio. Cada comunidad autónoma decide las fechas de inicio y finalización de las clases."
@@ -2981,7 +2952,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Las principalesestas de España son: 1 de enero o Año Nuevo; 6 de enero o Día de Reyes; Viernes Santo; 1 de mayo o Día del Trabajo; 15 de agosto o Asunción de la Virgen; 12 de octubre o Fiesta Nacional de España; 1 de noviembre o Todos los Santos; 6 de diciembre o Día de la Constitución española; 8 de diciembre o la Inmaculada Concepción, y 25 de diciembre o Navidad."
+              "text": "Las principales fiestas de España son: 1 de enero o Año Nuevo; 6 de enero o Día de Reyes; Viernes Santo; 1 de mayo o Día del Trabajo; 15 de agosto o Asunción de la Virgen; 12 de octubre o Fiesta Nacional de España; 1 de noviembre o Todos los Santos; 6 de diciembre o Día de la Constitución española; 8 de diciembre o la Inmaculada Concepción, y 25 de diciembre o Navidad."
             },
             {
               "type": "paragraph",
@@ -2994,15 +2965,6 @@
             {
               "type": "paragraph",
               "text": "El horario de España es GMT/UTC + 1 hora en invierno o + 2 horas en verano, excepto en Canarias, que es una hora menos. Los horarios comerciales pueden variar según los establecimientos: la mayoría de las tiendas tiene un horario aproximado de 10:00 a 20:00 horas, con una pausa larga para la comida, de lunes a viernes y el sábado solo abren por la mañana; los domingos suelen estar cerradas."
-            },
-            { "type": "heading", "level": 3, "text": "Educación" },
-            {
-              "type": "paragraph",
-              "text": "La educación es un derecho de los ciudadanos; es obligatoria y gratuita (excepto libros y materiales educativos) desde los 6 hasta los 16 años, lo que se llama educación básica."
-            },
-            {
-              "type": "paragraph",
-              "text": "Las leyes de educación recogen el derecho de los padres, madres y tutores legales a elegir el tipo de educación y el centro para sus hijos. La ley actual es la LOMLOE, conocida como Ley Celáa (2020)."
             },
             {
               "type": "figure",
@@ -3017,9 +2979,17 @@
           ]
         },
         {
-          "id": "task-5-draft-page-77",
-          "title": "Sociedad española",
+          "id": "task-5-educacion",
+          "title": "Educación",
           "blocks": [
+            {
+              "type": "paragraph",
+              "text": "La educación es un derecho de los ciudadanos; es obligatoria y gratuita (excepto libros y materiales educativos) desde los 6 hasta los 16 años, lo que se llama educación básica."
+            },
+            {
+              "type": "paragraph",
+              "text": "Las leyes de educación recogen el derecho de los padres, madres y tutores legales a elegir el tipo de educación y el centro para sus hijos. La ley actual es la LOMLOE, conocida como Ley Celáa (2020)."
+            },
             {
               "type": "paragraph",
               "text": "También la ley regula la organización y funcionamiento de los centros educativos y se promueve la colaboración entre la familia y la escuela, para una mayor participación y responsabilidad de los alumnos y de los padres en el funcionamiento de los centros."
@@ -3030,7 +3000,7 @@
               "rows": [
                 [
                   "Educación Infantil",
-                  "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
+                  "No es obligatoria. Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
                 ],
                 [
                   "Educación Primaria",
@@ -3047,6 +3017,14 @@
                 [
                   "Formación profesional (FP)",
                   "Formación Profesional Básica: tiene una duración de dos cursos académicos y al finalizar se obtiene el Título Profesional Básico, que permite acceder a ciclos formativos de Grado Medio y equivale, a efectos laborales, al título de ESO. Ciclos formativos de Grado Medio: tienen una duración de dos cursos académicos y al completarlos se obtiene el título de Técnico, que permite incorporarse al mundo laboral o continuar con un ciclo formativo de Grado Superior. Para acceder es necesario contar con el título de Graduado en ESO o con el Título Profesional Básico. Ciclos formativos de Grado Superior: son estudios de educación superior. Duran dos años y permiten obtener el título de Técnico Superior, además de permitir acceder a estudios universitarios."
+                ],
+                [
+                  "Enseñanza universitaria",
+                  "Para acceder se requiere el título de Bachillerato o un título de Técnico Superior de Formación Profesional. Los titulados en Bachillerato deberán realizar una Prueba de Acceso a la Universidad (PAU). Las enseñanzas universitarias se dividen en 3 ciclos: Grado: formación general orientada al ejercicio de actividades de carácter profesional. Se obtiene el título de Graduado, consta de un mínimo de 240 créditos² y una duración de unos 4 años. Máster: formación avanzada orientada a la especialización académica o profesional. El Máster Universitario consta de entre 60 y 120 créditos, según sea su duración de 1 o 2 años. Doctorado: formación avanzada en técnicas de investigación. Se obtiene el título de Doctor tras superar un período de formación e investigación, así como tras la elaboración y presentación de la tesis doctoral."
+                ],
+                [
+                  "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas.",
+                  "Enseñanzas artísticas: de música, danza, arte dramático, diseño o artes plásticas en ciclos formativos de grado elemental, medio o superior, según la categoría. Enseñanzas deportivas: se organizan en ciclos formativos de nivel medio y superior con los que se obtiene respectivamente el título de Técnico Deportivo o Técnico Deportivo Superior en la especialidad deportiva correspondiente. Enseñanza de idiomas en Escuelas Oficiales de Idiomas (EOI): se organizan en los tres niveles correspondientes al Marco Común Europeo de Referencia para las Lenguas y para acceder es requisito tener 16 años o más."
                 ]
               ],
               "caption": "TABLA 8. Sistema educativo español"
@@ -3055,26 +3033,6 @@
               "type": "figure",
               "assetId": "figure-77-75",
               "caption": "FIGURA 75. La educación infantil no es obligatoria y se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-78",
-          "title": "Sociedad española",
-          "blocks": [
-            {
-              "type": "table",
-              "headers": ["Nivel educativo", "Descripción"],
-              "rows": [
-                [
-                  "Enseñanza universitaria",
-                  "Para acceder se requiere el título de Bachillerato o un título de Técnico Superior de Formación Profesional. Los titulados en Bachillerato deberán realizar una Prueba de Acceso a la Universidad (PAU). Las enseñanzas universitarias se dividen en 3 ciclos: Grado: formación general orientada al ejercicio de actividades de carácter profesional. Se obtiene el título de Graduado, consta de un mínimo de 240 créditos² y una duración de unos 4 años. Máster: formación avanzada orientada a la especialización académica o profesional. El Máster Universitario consta de entre 60 y 120 créditos, según sea su duración de 1 o 2 años. Doctorado: formación avanzada en técnicas de investigación. Se obtiene el título de Doctor tras superar un período de formación e investigación, así como tras la elaboración y presentación de la tesis doctoral."
-                ],
-                [
-                  "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas.",
-                  "Enseñanzas artísticas: de música, danza, arte dramático, diseño o artes plásticas en ciclos formativos de grado elemental, medio o superior, según la categoría. Enseñanzas deportivas: se organizan en ciclos formativos de nivel medio y superior con los que se obtiene respectivamente el título de Técnico Deportivo o Técnico Deportivo Superior en la especialidad deportiva correspondiente. Enseñanza de idiomas en Escuelas Ociales de Idiomas (EOI): se organizan en los tres niveles correspondientes al Marco Común Europeo de Referencia para las Lenguas y para acceder es requisito tener 16 años o más."
-                ]
-              ]
             },
             {
               "type": "figure",
@@ -3098,80 +3056,25 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "Centros públicos: son centros laicos, financiados por la Administración pública. Tienen plazas limitadas y para"
+                "Centros públicos: son centros laicos, financiados por la Administración pública. Tienen plazas limitadas y para acceder a ellos es necesario cumplir una serie de requisitos (por ejemplo, cercanía de la vivienda). En su control y gestión participan los alumnos, padres y profesores del centro.",
+                "Centros concertados: son centros privados, que reciben subvenciones de la Administración pública. La mayoría son religiosos. Tienen libertad de gestión, aunque la Administración establece límite de alumnos por clase, calendario escolar, etc.",
+                "Centros privados: están financiados exclusivamente por los padres de los alumnos. Tienen completa libertad de gestión y cierta libertad de currículum, dentro de los límites de la normativa."
               ]
             },
             {
               "type": "paragraph",
-              "text": "2 Cada crédito equivale a unas 25 horas de clases, estudio y tareas. 1 1"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-79",
-          "title": "Sociedad española",
-          "blocks": [
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "acceder a ellos es necesario cumplir una serie de requisitos (por ejemplo, cercanía de la vivienda). En su control y gestión participan los alumnos, padres y profesores del centro."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Centros concertados: son centros privados, que reciben subvenciones de la Administración pública. La mayoría son religiosos. Tienen libertad de gestión, aunque la Administración establece límite de alumnos por clase, calendario escolar, etc."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Centros privados: están financiados exclusivamente por los padres de los alumnos. Tienen completa libertad de gestión y cierta libertad de currículum, dentro de los límites de la normativa."
-              ]
+              "text": "2 Cada crédito equivale a unas 25 horas de clases, estudio y tareas."
             },
             { "type": "paragraph", "text": "Los tipos de centros educativos que encontramos son:" },
             {
               "type": "list",
               "style": "unordered",
               "items": [
-                "Escuelas infantiles: es una etapa educativa de carácter voluntario para niñas y niños de 0 a 6 años. Consta de dos ciclos, el primero comprende hasta los 3 años de edad y el segundo, abarca de los 3 a los 6 años."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Colegios: que pueden tener educación primaria y secundaria, y en algunos casos también bachillerato."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Institutos de educación secundaria: centros donde se ofrece toda la enseñanza secundaria obligatoria entre los 12 y los 16 años y el bachillerato (enseñanza secundaria no obligatoria), y programas de educación compensatoria;"
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "centros de formación profesional: que puede ser básica, de grado medio o superior."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Centros de educación de personas adultas (CEPA): para proporcionar a las personas mayores de 18 años la posibilidad de completar estudios (obtener el Título de Graduado en Educación Secundaria Obligatoria), actualizar o ampliar su formación; también se imparten cursos de preparación para el acceso a la universidad para mayores de 25 años."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
+                "Escuelas infantiles: es una etapa educativa de carácter voluntario para niñas y niños de 0 a 6 años. Consta de dos ciclos, el primero comprende hasta los 3 años de edad y el segundo, abarca de los 3 a los 6 años.",
+                "Colegios: que pueden tener educación primaria y secundaria, y en algunos casos también bachillerato.",
+                "Institutos de educación secundaria: centros donde se ofrece toda la enseñanza secundaria obligatoria entre los 12 y los 16 años y el bachillerato (enseñanza secundaria no obligatoria), y programas de educación compensatoria;",
+                "centros de formación profesional: que puede ser básica, de grado medio o superior.",
+                "Centros de educación de personas adultas (CEPA): para proporcionar a las personas mayores de 18 años la posibilidad de completar estudios (obtener el Título de Graduado en Educación Secundaria Obligatoria), actualizar o ampliar su formación; también se imparten cursos de preparación para el acceso a la universidad para mayores de 25 años.",
                 "Universidades: son centros de enseñanza superior en los que se estudian grados, másteres y doctorados."
               ]
             },
@@ -3192,13 +3095,7 @@
               "type": "figure",
               "assetId": "figure-79-77",
               "caption": "FIGURA 77. Paraninfo de la Universidad de Barcelona. © Universidad de Barcelona"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-80",
-          "title": "Salud",
-          "blocks": [
+            },
             {
               "type": "paragraph",
               "text": "Las becas abarcan desde la educación infantil, primaria y secundaria, hasta el bachillerato, la formación profesional, las enseñanzas artísticas y deportivas, el aprendizaje de idiomas y los estudios universitarios."
@@ -3214,17 +3111,11 @@
             {
               "type": "list",
               "style": "unordered",
-              "items": ["tener un rendimiento académico mínimo;"]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": ["que la renta familiar no supere ciertos límites;"]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": ["estar matriculado en un centro autorizado y solicitar la ayuda en plazo."]
+              "items": [
+                "tener un rendimiento académico mínimo;",
+                "que la renta familiar no supere ciertos límites;",
+                "estar matriculado en un centro autorizado y solicitar la ayuda en plazo."
+              ]
             },
             {
               "type": "paragraph",
@@ -3238,25 +3129,10 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "Las bibliotecas: de acceso gratuito y donde se pueden consultar o sacar en préstamo libros; con videoteca, sala de ordenadores, conexión wifi, lugar de estudio, etc."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": ["Los museos: ofrecen visitas virtuales o guiadas, talleres, etc."]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
+                "Las bibliotecas: de acceso gratuito y donde se pueden consultar o sacar en préstamo libros; con videoteca, sala de ordenadores, conexión wifi, lugar de estudio, etc.",
+                "Los museos: ofrecen visitas virtuales o guiadas, talleres, etc.",
                 "Los centros culturales públicos: ofrecen visitas virtuales o guiadas, talleres, etc."
               ]
-            },
-            { "type": "heading", "level": 3, "text": "Salud" },
-            {
-              "type": "paragraph",
-              "text": "El Sistema Nacional de Salud en España está formado por el conjunto de servicios y prestaciones sanitarias que garantizan los poderes públicos. La gestión sanitaria se reparte entre la Administración General del Estado, a través del Ministerio de Sanidad, y las comunidades autónomas, que tienen transferidas la mayoría de competencias. El Ministerio de Sanidad se encarga de coordinar y proponer la política sanitaria del Gobierno, así como de planificar y asegurar el derecho de la ciudadanía a la protección de la salud."
             },
             {
               "type": "callout",
@@ -3275,21 +3151,19 @@
           ]
         },
         {
-          "id": "task-5-draft-page-81",
-          "title": "Servicios sociales y programas de ayuda",
+          "id": "task-5-salud",
+          "title": "Salud",
           "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El Sistema Nacional de Salud en España está formado por el conjunto de servicios y prestaciones sanitarias que garantizan los poderes públicos. La gestión sanitaria se reparte entre la Administración General del Estado, a través del Ministerio de Sanidad, y las comunidades autónomas, que tienen transferidas la mayoría de competencias. El Ministerio de Sanidad se encarga de coordinar y proponer la política sanitaria del Gobierno, así como de planificar y asegurar el derecho de la ciudadanía a la protección de la salud."
+            },
             { "type": "paragraph", "text": "Los establecimientos sanitarios son:" },
             {
               "type": "list",
               "style": "unordered",
               "items": [
-                "Centro de salud: para una atención primaria³ de salud donde médicos de familia, pediatras, enfermeros prestan su servicio."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
+                "Centro de salud: para una atención primaria³ de salud donde médicos de familia, pediatras, enfermeros prestan su servicio.",
                 "Centro de especialidades: donde diferentes profesionales sanitarios atienden a pacientes con determinadas enfermedades o de un determinado grupo de edad.",
                 "Hospital: para el internamiento clínico de un paciente o asistencia especializada, especialmente cirugía."
               ]
@@ -3314,12 +3188,6 @@
               "type": "paragraph",
               "text": "España sobresale por el alto porcentaje de donaciones de órganos, ya que lleva 30 años consecutivos siendo líder mundial de donaciones. La Organización Nacional de Trasplantes recibió en 2010 el Premio Príncipe de Asturias."
             },
-            { "type": "heading", "level": 3, "text": "Servicios sociales y programas de ayuda" },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El Ministerio de Derechos Sociales, Consumo y Agenda 2030 y el Ministerio de Inclusión, Seguridad Social y Migraciones se encargan de las cuestiones relacionadas con la integración social, la familia, la protección del menor y la atención a las personas dependientes o con discapacidad. El Ministerio de Igualdad se encarga de luchar contra la"
-            },
             {
               "type": "figure",
               "assetId": "figure-81-79",
@@ -3337,51 +3205,39 @@
           ]
         },
         {
-          "id": "task-5-draft-page-82",
-          "title": "discriminación y la violencia de género.",
+          "id": "task-5-servicios-sociales-y-programas-de-ayuda",
+          "title": "Servicios sociales y programas de ayuda",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "discriminación y la violencia de género." },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
+              "text": "El Ministerio de Derechos Sociales, Consumo y Agenda 2030 y el Ministerio de Inclusión, Seguridad Social y Migraciones se encargan de las cuestiones relacionadas con la integración social, la familia, la protección del menor y la atención a las personas dependientes o con discapacidad. El Ministerio de Igualdad se encarga de luchar contra la discriminación y la violencia de género."
+            },
+            {
+              "type": "paragraph",
               "text": "El Estado ofrece, a través de la Seguridad Social, ayudas como, por ejemplo, el Ingreso Mínimo Vital para prevenir el riesgo de pobreza y exclusión social; pensión por viudedad, por orfandad o por incapacidad laboral permanente. Por su parte, las distintas comunidades autónomas también ofrecen ayudas destinadas a la familia, infancia, juventud o mayores de 65 años: reducción en el precio de los medicamentos recetados en el Sistema Público de Salud, en el precio del transporte público, de los espectáculos y de los museos, etc., así como condiciones especiales en los viajes promovidos por el Instituto de Mayores y Servicios Sociales (IMSERSO)."
             },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
               "text": "Hay organizaciones no gubernamentales (ONG), como Cáritas, Cruz Roja o la Asociación Española Contra el Cáncer (AECC), que ofrecen atención social, económica o sanitaria de gran importancia."
             },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
               "text": "La Organización Nacional de Ciegos Españoles (ONCE) trabaja para conseguir la integración de las personas con discapacidad visual y colabora en la atención y defensa de los derechos de las personas con distintos tipos de discapacidad. Fue premiada por su labor internacional con el Premio Príncipe de Asturias de la Concordia en el año 2013."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Las distintas comunidades autónomas y la Administración central son responsables de la protección civil y la atención de emergencias en España, además de los Cuerpos y Fuerzas de Seguridad del Estado."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El número de teléfono 112 es gratuito y ofrece ayuda al ciudadano ante cualquier tipo de emergencia (sanitaria, incendio, salvamento o seguridad ciudadana) en la Unión Europea."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El número de teléfono 016 es un servicio gratuito de atención a víctimas de violencia de género. Está disponible las 24 horas del día, los 365 días del año, y no deja rastro en la factura telefónica. Además, se ofrece atención en 53 idiomas, lo que facilita el acceso a mujeres de diferentes orígenes. El 016 proporciona información sobre recursos y derechos, asesoramiento jurídico en el momento y apoyo inmediato en situaciones de riesgo."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Este servicio también cuenta con canales alternativos:"
-            },
-            { "type": "list", "style": "unordered", "items": ["WhatsApp: 600 000 016"] },
             {
               "type": "figure",
               "assetId": "figure-82-81",
               "caption": "FIGURA 81. Logotipo de la Organización Nacional de Ciegos Españoles (ONCE), organización no gubernamental que trabaja para conseguir la integración de las personas con discapacidad visual y colabora en la atención y defensa de los derechos de las personas con distintos tipos de discapacidad. © ONCE"
             },
+            {
+              "type": "paragraph",
+              "text": "Las distintas comunidades autónomas y la Administración central son responsables de la protección civil y la atención de emergencias en España, además de los Cuerpos y Fuerzas de Seguridad del Estado."
+            },
+            {
+              "type": "paragraph",
+              "text": "El número de teléfono 112 es gratuito y ofrece ayuda al ciudadano ante cualquier tipo de emergencia (sanitaria, incendio, salvamento o seguridad ciudadana) en la Unión Europea."
+            },
+            { "type": "figure", "assetId": "figure-82-emergency-112", "caption": "112" },
             {
               "type": "callout",
               "blocks": [
@@ -3390,37 +3246,45 @@
                   "text": "El número de teléfono 112 es gratuito y ofrece ayuda al ciudadano ante cualquier tipo de emergencia (sanitaria, incendio, salvamento o seguridad ciudadana) en la Unión Europea."
                 }
               ]
+            },
+            {
+              "type": "paragraph",
+              "text": "El número de teléfono 016 es un servicio gratuito de atención a víctimas de violencia de género. Está disponible las 24 horas del día, los 365 días del año, y no deja rastro en la factura telefónica. Además, se ofrece atención en 53 idiomas, lo que facilita el acceso a mujeres de diferentes orígenes. El 016 proporciona información sobre recursos y derechos, asesoramiento jurídico en el momento y apoyo inmediato en situaciones de riesgo."
+            },
+            {
+              "type": "paragraph",
+              "text": "Este servicio también cuenta con canales alternativos:"
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "items": ["WhatsApp: 600 000 016", "Correo electrónico: 016-online@igualdad.gob.es"]
+            },
+            {
+              "type": "paragraph",
+              "text": "Las llamadas y consultas se atienden de forma confidencial, anónima y sin necesidad de aportar datos personales."
+            },
+            {
+              "type": "paragraph",
+              "text": "En el portal web de recursos contra la violencia de género (violenciagenero.igualdad.gob.es) se puede consultar información sobre derechos, recursos disponibles, servicios de apoyo y normativa vigente."
+            },
+            {
+              "type": "paragraph",
+              "text": "El servicio depende del Ministerio de Igualdad y forma parte de la red de recursos públicos destinados a la prevención y atención integral frente a la violencia de género."
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-83-82",
+              "caption": "FIGURA 82. Punto Violeta es un instrumento para implicar al conjunto de la sociedad en la lucha contra la violencia machista. © Ministerio de Igualdad"
             }
           ]
         },
         {
-          "id": "task-5-draft-page-83",
-          "title": "Las llamadas y consultas se atienden de forma confidencial, anónima y sin necesidad de aportar datos personales.",
+          "id": "task-5-medios-de-comunicacion-e-informacion",
+          "title": "Medios de comunicación e información",
           "blocks": [
             {
-              "type": "list",
-              "style": "unordered",
-              "items": ["Correo electrónico: 016-online@igualdad.gob.es"]
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Las llamadas y consultas se atienden de forma confidencial, anónima y sin necesidad de aportar datos personales."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "En el portal web de recursos contra la violencia de género (violenciagenero.igualdad.gob.es) se puede consultar información sobre derechos, recursos disponibles, servicios de apoyo y normativa vigente."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El servicio depende del Ministerio de Igualdad y forma parte de la red de recursos públicos destinados a la prevención y atención integral frente a la violencia de género."
-            },
-            { "type": "heading", "level": 3, "text": "Medios de comunicación e información" },
-            {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
               "text": "Los medios de comunicación tienen una función social, porque informan y ayudan a crear opinión en la cultura y la política. Con Internet y las redes sociales esta función cambia: ahora la información llega más rápido y más personas pueden participar, aunque también existe el riesgo de no poder distinguir entre información fiable y no fiable."
             },
             {
@@ -3428,13 +3292,12 @@
               "style": "unordered",
               "items": [
                 "Canales públicos. Corporación RTVE (Radio Televisión Española): La 1 (generalista), La 2 (cultural), Clan (infantil), 24 horas (noticias) y Teledeporte (deportes).",
-                "Canales privado s: En España los principales grupos de televisión son Atresmedia (Antena 3, LaSexta, Neox, Nova, Mega, Atreseries) y Mediaset España (Telecinco, Cuatro, FDF, Boing, Divinity, Energy, Be Mad). Además, hay canales autonómicos y temáticos, y servicios de televisión por Internet, fibra o cable, como Movistar Plus+, Vodafone TV u Orange TV.",
+                "Canales privados: En España los principales grupos de televisión son Atresmedia (Antena 3, LaSexta, Neox, Nova, Mega, Atreseries) y Mediaset España (Telecinco, Cuatro, FDF, Boing, Divinity, Energy, Be Mad). Además, hay canales autonómicos y temáticos, y servicios de televisión por Internet, fibra o cable, como Movistar Plus+, Vodafone TV u Orange TV.",
                 "Cadenas autonómicas de televisión pública: Canal Sur (Andalucía), ETB Euskal Telebista (País Vasco), Telemadrid (Comunidad de Madrid), TV3 Corporació Catalana de Mitjans Audiovisuals (Cataluña), TVG Compañía de Radio Televisión de Galicia, etc."
               ]
             },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
               "text": "En la prensa escrita en España se pueden distinguir varios tipos de medios, que hoy en día publican tanto en papel como en formato digital:"
             },
             {
@@ -3442,13 +3305,10 @@
               "style": "unordered",
               "items": [
                 "Medios nacionales: ABC, El Mundo, El País, La Razón, La Vanguardia.",
-                "Regionales: El Correo, La Voz de Galicia, El Periódico de"
+                "Regionales: El Correo, La Voz de Galicia, El Periódico de Catalunya, El Diario Vasco.",
+                "Deportivos: As, Marca, Mundo Deportivo.",
+                "Económicos: Cinco Días, Expansión."
               ]
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-83-82",
-              "caption": "FIGURA 82. Punto Violeta es un instrumento para implicar al conjunto de la sociedad en la lucha contra la violencia machista. © Ministerio de Igualdad"
             },
             {
               "type": "figure",
@@ -3463,32 +3323,20 @@
                   "text": "Los medios de comunicación tienen una función social, porque informan y ayudan a crear opinión en la cultura y la política."
                 }
               ]
+            },
+            {
+              "type": "paragraph",
+              "text": "La radio tiene una gran presencia en España. La cadena pública es Radio Nacional, y entre las privadas con mayor audiencia están la Cadena Ser, la COPE y Onda Cero."
             }
           ]
         },
         {
-          "id": "task-5-draft-page-84",
-          "title": "La radio tiene una gran presencia en España. La cadena pública es Radio Nacional, y entre las privadas con mayor audiencia están la Cadena Ser, la COPE y Onda Cero.",
+          "id": "task-5-unidades-de-medida",
+          "title": "Unidades de medida",
           "blocks": [
             {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Catalunya, El Diario Vasco.",
-                "Deportivos: As, Marca, Mundo Deportivo.",
-                "Económicos: Cinco Días, Expansión."
-              ]
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "La radio tiene una gran presencia en España. La cadena pública es Radio Nacional, y entre las privadas con mayor audiencia están la Cadena Ser, la COPE y Onda Cero."
-            },
-            { "type": "heading", "level": 3, "text": "Unidades de medida" },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El sistema legal de unidades de medida es el Sistema Internacional de Unidades (SI) de la Conferencia General de"
+              "type": "paragraph",
+              "text": "El sistema legal de unidades de medida es el Sistema Internacional de Unidades (SI) de la Conferencia General de Pesas y Medidas (CGPM) existente en la Unión Europea."
             },
             {
               "type": "table",
@@ -3505,41 +3353,13 @@
               "headers": ["Magnitud", "Nombre de la unidad", "Símbolo", "Valor en unidades SI"],
               "rows": [
                 ["Tiempo", "minuto", "min", "1 min = 60 s"],
-                ["hora", "h", "1 h = 60 min", null],
-                ["día", "d", "1 d = 24 h", null],
+                [null, "hora", "h", "1 h = 60 min"],
+                [null, "día", "d", "1 d = 24 h"],
                 ["Área", "hectárea", "ha", "1 ha = 10 000 m²"],
                 ["Volumen", "litro", "l", "1 l = 1 dm³"],
                 ["Masa", "tonelada", "t", "1 t = 1000 kg"]
               ],
               "caption": "TABLA 10. Unidades que no pertenecen al SI cuyo uso es aceptado por el Sistema y que están autorizadas"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-85",
-          "title": "Pesas y Medidas (CGPM) existente en la Unión Europea.",
-          "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Pesas y Medidas (CGPM) existente en la Unión Europea."
-            },
-            { "type": "heading", "level": 3, "text": "Horarios comerciales" },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "La mayoría de tiendas abre de 10:00 a 14:00 horas y de 17:00 a 20:00 horas de lunes a viernes y el sábado solo abren por la mañana. Muchos hipermercados y centros comerciales abren de 10:00 a 22:00 horas todos los días."
-            },
-            { "type": "heading", "level": 3, "text": "Normativa de comercio" },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El artículo 51 de la Constitución española garantiza la seguridad, la salud y los intereses económicos de los consumidores y usuarios mediante procedimientos eficaces."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "En la normativa de los comercios hay medidas relativas al etiquetado (fecha de caducidad de los productos, precio antes y después de las rebajas…), a la información que se"
             },
             {
               "type": "table",
@@ -3559,23 +3379,43 @@
           ]
         },
         {
-          "id": "task-5-draft-page-86",
-          "title": "da al consumidor sobre el producto (productos bancarios, seguros, marcas blancas 4 …), a la garantía del producto (tres años para productos nuevos), o las condiciones de cambio, reparación o devolución.",
+          "id": "task-5-horarios-comerciales",
+          "title": "Horarios comerciales",
           "blocks": [
             {
-              "type": "heading",
-              "level": 3,
-              "text": "da al consumidor sobre el producto (productos bancarios, seguros, marcas blancas 4 …), a la garantía del producto (tres años para productos nuevos), o las condiciones de cambio, reparación o devolución."
+              "type": "paragraph",
+              "text": "La mayoría de tiendas abre de 10:00 a 14:00 horas y de 17:00 a 20:00 horas de lunes a viernes y el sábado solo abren por la mañana. Muchos hipermercados y centros comerciales abren de 10:00 a 22:00 horas todos los días."
+            }
+          ]
+        },
+        {
+          "id": "task-5-normativa-de-comercio",
+          "title": "Normativa de comercio",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El artículo 51 de la Constitución española garantiza la seguridad, la salud y los intereses económicos de los consumidores y usuarios mediante procedimientos eficaces."
             },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
+              "text": "En la normativa de los comercios hay medidas relativas al etiquetado (fecha de caducidad de los productos, precio antes y después de las rebajas…), a la información que se da al consumidor sobre el producto (productos bancarios, seguros, marcas blancas⁴…), a la garantía del producto (tres años para productos nuevos), o las condiciones de cambio, reparación o devolución."
+            },
+            {
+              "type": "paragraph",
               "text": "Por una parte, la Agencia Española de Consumo, Seguridad Alimentaria y Nutrición protege a los consumidores y usuarios y, por otra, el Consejo de Consumidores defiende los intereses de los consumidores y usuarios y toma decisiones relacionadas con la política de consumo."
             },
-            { "type": "heading", "level": 3, "text": "Servicios y espacios públicos" },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
+              "text": "4 Las marcas blancas son productos que se venden con el nombre o etiqueta de una cadena de distribución (como puede ser la marca comercial de un supermercado), en lugar de llevar la marca del fabricante."
+            }
+          ]
+        },
+        {
+          "id": "task-5-servicios-y-espacios-publicos",
+          "title": "Servicios y espacios públicos",
+          "blocks": [
+            {
+              "type": "paragraph",
               "text": "Los comercios habituales que ofrecen servicios a los ciudadanos son:"
             },
             {
@@ -3591,8 +3431,7 @@
               ]
             },
             {
-              "type": "heading",
-              "level": 3,
+              "type": "paragraph",
               "text": "En las ciudades hay zonas de recreo y de descanso, como parques, jardines o instalaciones deportivas. En estos lugares de actividades de ocio al aire libre, hay unas normas:"
             },
             {
@@ -3600,7 +3439,12 @@
               "style": "ordered",
               "items": [
                 "1. Respetar a las demás personas, a los representantes del orden (público y privado) y el mobiliario urbano.",
-                "2. Respetar las normas escritas del establecimiento o vía"
+                "2. Respetar las normas escritas del establecimiento o vía pública en la que uno se encuentre.",
+                "3. Respetar los horarios de apertura y cierre de las instalaciones.",
+                "4. No consumir bebidas, ni alimentos, si no está permitido.",
+                "5. No fumar, en el caso de que el lugar público esté frente a un hospital o centro educativo.",
+                "6. No pisar el césped, ni arrancar flores.",
+                "7. Colaborar con los agentes de seguridad, si fuera necesario."
               ]
             },
             {
@@ -3620,33 +3464,17 @@
             },
             {
               "type": "paragraph",
-              "text": "4 Las marcas blancas son productos que se venden con el nombre o etiqueta de una cadena de distribución (como puede ser la marca comercial de un supermercado), en lugar de llevar la marca del fabricante."
+              "text": "Es necesario tener cuidado en parques naturales y espacios protegidos para evitar incendios."
             }
           ]
         },
         {
-          "id": "task-5-draft-page-87",
-          "title": "Sociedad española",
+          "id": "task-5-transporte-urbano-e-interurbano-en-espana",
+          "title": "Transporte urbano e interurbano en España",
           "blocks": [
             {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "pública en la que uno se encuentre.",
-                "3. Respetar los horarios de apertura y cierre de las instalaciones.",
-                "4. No consumir bebidas, ni alimentos, si no está permitido.",
-                "5. No fumar, en el caso de que el lugar público esté frente a un hospital o centro educativo.",
-                "6. No pisar el césped, ni arrancar flores.",
-                "7. Colaborar con los agentes de seguridad, si fuera necesario."
-              ]
-            },
-            {
               "type": "paragraph",
-              "text": "Es necesario tener cuidado en parques naturales y espacios protegidos para evitar incendios."
-            },
-            {
-              "type": "paragraph",
-              "text": "Transporte urbano e interurbano en España En España existe una extensa red de carreteras, autopistas de peaje y autovías que recorren todo el país. La red de carreteras puede ser estatal, autonómica o local."
+              "text": "En España existe una extensa red de carreteras, autopistas de peaje y autovías que recorren todo el país. La red de carreteras puede ser estatal, autonómica o local."
             },
             {
               "type": "paragraph",
@@ -3667,7 +3495,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Respecto al transporte urbano, España presenta un buen sistema combinado de medios de transporte público (metro, autobús, tranvía, taxi), que se completa con la red de trenes"
+              "text": "Respecto al transporte urbano, España presenta un buen sistema combinado de medios de transporte público (metro, autobús, tranvía, taxi), que se completa con la red de trenes (de cercanías, y de media y larga distancia)."
             },
             {
               "type": "figure",
@@ -3687,14 +3515,7 @@
               "type": "figure",
               "assetId": "figure-87-89",
               "caption": "FIGURA 89. Bilbobus, transporte público de pasajeros de Bilbao. © Antonio Vera"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-88",
-          "title": "Sociedad española",
-          "blocks": [
-            { "type": "paragraph", "text": "(de cercanías, y de media y larga distancia)." },
+            },
             {
               "type": "paragraph",
               "text": "El color de los taxis depende de la ciudad, los precios varían de una zona a otra y se pueden tomar en las paradas de taxis o en circulación si tienen una luz verde encendida o el cartel de «Libre»."
@@ -3707,27 +3528,9 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "Renfe Operadora: pública, la más grande; gestiona Cercanías, Media y Larga Distancia, AVE y mercancías."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "OUIGO España: privada, ofrece trenes de alta velocidad a precios económicos."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "Iryo: privada, también de alta velocidad, en competencia con Renfe y OUIGO."
-              ]
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
+                "Renfe Operadora: pública, la más grande; gestiona Cercanías, Media y Larga Distancia, AVE y mercancías.",
+                "OUIGO España: privada, ofrece trenes de alta velocidad a precios económicos.",
+                "Iryo: privada, también de alta velocidad, en competencia con Renfe y OUIGO.",
                 "Captrain España: privada, especializada en transporte de mercancías por tren."
               ]
             },
@@ -3750,27 +3553,15 @@
                 "5. Dejar salir antes de entrar.",
                 "6. No fumar.",
                 "7. Ceder el asiento a las personas mayores, con movilidad reducida o embarazadas.",
-                "8. No permanecer en los pasillos durante el viaje en autobuses y trenes, o en lugares de paso, ni permanecer en las puertas de acceso del transporte."
+                "8. No permanecer en los pasillos durante el viaje en autobuses y trenes, o en lugares de paso, ni permanecer en las puertas de acceso del transporte.",
+                "9. En un autobús, se recomienda llevar el dinero justo del billete.",
+                "10. Cuando las plazas son numeradas, ocupar el asiento asignado en el billete."
               ]
             },
             {
               "type": "figure",
               "assetId": "figure-88-90",
               "caption": "FIGURA90 AVE son los trenes de alta velocidad de Renfe. © Mikel Ortega"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-89",
-          "title": "Economía y trabajo",
-          "blocks": [
-            {
-              "type": "list",
-              "style": "ordered",
-              "items": [
-                "9. En un autobús, se recomienda llevar el dinero justo del billete.",
-                "10. Cuando las plazas son numeradas, ocupar el asiento asignado en el billete."
-              ]
             },
             {
               "type": "paragraph",
@@ -3784,32 +3575,6 @@
                 "Aeropuertos más importantes: Madrid (Adolfo Suárez Madrid-Barajas), Barcelona (Josep Tarradellas Barcelona-El Prat), Palma de Mallorca (Son Sant Joan) y Málaga (Pablo Picasso).",
                 "Puertos más importantes: Algeciras, Barcelona, Las Palmas, Bilbao, Valencia y Vigo."
               ]
-            },
-            { "type": "heading", "level": 3, "text": "Economía y trabajo" },
-            {
-              "type": "paragraph",
-              "text": "La economía de España, en términos absolutos, ocupa la quinta posición en la Unión Europea y es la número 14 del mundo."
-            },
-            {
-              "type": "paragraph",
-              "text": "En términos relativos (poder adquisitivo), el FMI estima que España se encontraba en la posición 16 del mundo en 2024. La moneda de España es, desde 2002, el euro; antes era la peseta."
-            },
-            { "type": "heading", "level": 3, "text": "Características de la economía española" },
-            {
-              "type": "paragraph",
-              "text": "En primer lugar, se encuentra el sector terciario (servicios), en segundo lugar, se sitúa el sector secundario (industria y construcción) y, en tercer lugar, el primario (agricultura, pesca y ganadería)."
-            },
-            {
-              "type": "paragraph",
-              "text": "El PIB per cápita en España se sitúa por debajo de la media de la UE (en la UE el PIB per cápita ronda los 38 000 € y en España unos 30 700 € en 2024). Las comunidades con mayor PIB por habitante son Madrid, País Vasco, Navarra y Cataluña; y con un menor índice son Andalucía, Melilla y Extremadura."
-            },
-            {
-              "type": "paragraph",
-              "text": "El mercado laboral español se caracteriza por una alta tasa de paro (10,29% según datos del INE en el segundo trimestre de 2025), así como una tasa de contratos temporales todavía elevada, aunque en descenso tras la reforma laboral de 2022."
-            },
-            {
-              "type": "paragraph",
-              "text": "Las empresas españolas destacan en las actividades relacio"
             },
             {
               "type": "figure",
@@ -3829,45 +3594,51 @@
           ]
         },
         {
-          "id": "task-5-draft-page-90",
-          "title": "Sociedad española",
+          "id": "task-5-economia-y-trabajo",
+          "title": "Economía y trabajo",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "nadas con las infraestructuras y las telecomunicaciones; los sectores ferroviario, financiero y textil; y el turismo."
+              "text": "La economía de España, en términos absolutos, ocupa la quinta posición en la Unión Europea y es la número 14 del mundo."
+            },
+            {
+              "type": "paragraph",
+              "text": "En términos relativos (poder adquisitivo), el FMI estima que España se encontraba en la posición 16 del mundo en 2024. La moneda de España es, desde 2002, el euro; antes era la peseta."
+            }
+          ]
+        },
+        {
+          "id": "task-5-caracteristicas-de-la-economia-espanola",
+          "title": "Características de la economía española",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "En primer lugar, se encuentra el sector terciario (servicios), en segundo lugar, se sitúa el sector secundario (industria y construcción) y, en tercer lugar, el primario (agricultura, pesca y ganadería)."
+            },
+            {
+              "type": "paragraph",
+              "text": "El PIB per cápita en España se sitúa por debajo de la media de la UE (en la UE el PIB per cápita ronda los 38 000 € y en España unos 30 700 € en 2024). Las comunidades con mayor PIB por habitante son Madrid, País Vasco, Navarra y Cataluña; y con un menor índice son Andalucía, Melilla y Extremadura."
+            },
+            {
+              "type": "paragraph",
+              "text": "El mercado laboral español se caracteriza por una alta tasa de paro (10,29 % según datos del INE en el segundo trimestre de 2025), así como una tasa de contratos temporales todavía elevada, aunque en descenso tras la reforma laboral de 2022."
+            },
+            {
+              "type": "paragraph",
+              "text": "Las empresas españolas destacan en las actividades relacionadas con las infraestructuras y las telecomunicaciones; los sectores ferroviario, financiero y textil; y el turismo."
             },
             {
               "type": "paragraph",
               "text": "Respecto al turismo, el Gobierno informó de que 93,8 millones de turistas internacionales visitaron España en 2023. Según el informe de 2017 de la Organización Mundial de Turismo (OMT), España es el tercer país del mundo en número de turistas extranjeros. El sector turístico es un motor importante en el aumento de nuevos empleos."
             },
             {
+              "type": "figure",
+              "assetId": "figure-90-94",
+              "caption": "FIGURA 94. Playa de Benidorm. © EFE / Manuel Lorenzo"
+            },
+            {
               "type": "paragraph",
               "text": "España importa petróleo y derivados, componentes del automóvil, textiles, confección, etc.; y exporta automóviles, frutas y legumbres, vino, aceite, calzado, medicamentos, etc. Estas transacciones se realizan principalmente con países de la Unión Europea."
-            },
-            {
-              "type": "paragraph",
-              "text": "España cuenta con una importante posición en innovación, con desarrollos importantes en energías renovables, en biotecnología, en el sector farmacéutico, de transportes y en las pequeñas y medianas industrias tecnológicas."
-            },
-            {
-              "type": "paragraph",
-              "text": "Algunas de las instituciones económicas más importantes de España son el Banco de España, la Bolsa (el IBEX 35), el Instituto Español de Comercio Exterior (ICEX), el Consejo Económico y Social de España (CES) o la Seguridad Social de España."
-            },
-            {
-              "type": "paragraph",
-              "text": "La edad mínima para trabajar en España es de 16 años. Las personas pueden ser clasificadas como:"
-            },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "ocupadas (personas que tienen un empleo);",
-                "paradas o desempleadas (personas mayores de 16 años que se encuentran sin trabajo, pero están disponibles"
-              ]
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-90-95",
-              "caption": "FIGURA 95. Presa de Aldeadávila, Salamanca. © CGRM"
             },
             {
               "type": "callout",
@@ -3879,33 +3650,36 @@
               ]
             },
             {
+              "type": "paragraph",
+              "text": "España cuenta con una importante posición en innovación, con desarrollos importantes en energías renovables, en biotecnología, en el sector farmacéutico, de transportes y en las pequeñas y medianas industrias tecnológicas."
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-90-95",
+              "caption": "FIGURA 95. Presa de Aldeadávila, Salamanca. © CGRM"
+            },
+            {
+              "type": "paragraph",
+              "text": "Algunas de las instituciones económicas más importantes de España son el Banco de España, la Bolsa (el IBEX 35), el Instituto Español de Comercio Exterior (ICEX), el Consejo Económico y Social de España (CES) o la Seguridad Social de España."
+            },
+            {
               "type": "figure",
               "assetId": "figure-90-96",
               "caption": "FIGURA 96. Vista de la sede central del Banco de España, Madrid. © Luis García"
             },
             {
-              "type": "figure",
-              "assetId": "figure-90-94",
-              "caption": "FIGURA 94. Playa de Benidorm. © EFE / Manuel Lorenzo"
-            }
-          ]
-        },
-        {
-          "id": "task-5-draft-page-91",
-          "title": "Sociedad española",
-          "blocks": [
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "para ejercer uno);",
-                "inactivas (personas no incluidas en ninguno de los conceptos anteriores);"
-              ]
+              "type": "paragraph",
+              "text": "La edad mínima para trabajar en España es de 16 años. Las personas pueden ser clasificadas como:"
             },
             {
               "type": "list",
               "style": "unordered",
-              "items": ["y jubiladas (personas mayores que se han retirado)."]
+              "items": [
+                "ocupadas (personas que tienen un empleo);",
+                "paradas o desempleadas (personas mayores de 16 años que se encuentran sin trabajo, pero están disponibles para ejercer uno);",
+                "inactivas (personas no incluidas en ninguno de los conceptos anteriores);",
+                "y jubiladas (personas mayores que se han retirado)."
+              ]
             },
             {
               "type": "paragraph",

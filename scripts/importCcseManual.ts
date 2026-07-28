@@ -6,6 +6,7 @@ import { createFigureCrops } from "./ccse-manual-import/createFigureCrops.ts"
 import { createTaggedTextById } from "./ccse-manual-import/createTaggedTextById.ts"
 import { MANUAL_CONTENT_RANGES } from "./ccse-manual-import/constants.ts"
 import { extractTaggedBlocks } from "./ccse-manual-import/extractTaggedBlocks.ts"
+import { getManualFigureAlt } from "./ccse-manual-import/getManualFigureAlt.ts"
 import { insertArtworkFigureBlocks } from "./ccse-manual-import/insertArtworkFigureBlocks.ts"
 import { renderFigureCrop } from "./ccse-manual-import/renderFigureCrop.ts"
 import type {
@@ -83,7 +84,7 @@ try {
   const assets: DraftManualAsset[] = crops.map(crop => ({
     id: crop.assetId,
     src: `/manual/figures/${crop.assetId}.jpg`,
-    alt: crop.caption.replace(/^FIGURA\s*\d+\.?\s*/i, ""),
+    alt: getManualFigureAlt(crop.assetId, crop.caption),
   }))
   const manual: DraftManual = {
     id: "ccse-manual-2026",

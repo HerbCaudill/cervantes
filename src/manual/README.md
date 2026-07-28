@@ -69,11 +69,10 @@ The output is deliberately page-oriented draft content. Editorial verification
 tasks reconstruct final topic boundaries, resolve reading-order anomalies, and
 compare every block and crop with the source before the reader imports it.
 
-Tasks 1–4 have been reconstructed into source-heading topics and verified in full
-against the checksum-pinned 2026 manual. Task 5 remains a page-oriented extraction
-draft until its corresponding editorial verification is complete.
+Tasks 1–5 have been reconstructed into source-heading topics and verified in full
+against the checksum-pinned 2026 manual.
 
-Tasks 3 and 4 have complete ordered-content goldens in `tests/fixtures`. Each
+Tasks 3–5 have complete ordered-content goldens in `tests/fixtures`. Each
 digest is calculated from `JSON.stringify` on the full task section, so topic
 and block order, every text value, list item, table header and cell (including
 `null` cells), callout, figure asset ID, and caption contribute to the golden.
@@ -81,8 +80,9 @@ and block order, every text value, list item, table header and cell (including
 To regenerate verified content, run `pnpm manual:extract`, reconstruct the task's
 semantic topics, and audit every ordered block and figure crop against the
 checksum-pinned source PDF. For Task 3 compare pages 37–42; for Task 4 compare
-pages 46–65. Only after that audit, update the corresponding fixture's task
-digest, canonical character and UTF-8 byte counts, topic and block counts, and
-table row and cell counts. Keep the audited source page range and PDF checksum
-in the fixture, then run that task's unit and Playwright tests before accepting
-the new golden.
+pages 46–65; for Task 5 compare pages 70–91. Include both numbered figures and
+meaningful standalone source visuals. Only after that audit, update the
+corresponding fixture's task digest, canonical character and UTF-8 byte counts,
+topic and block counts, table row and cell counts, and source text audit. Keep
+the audited source page range and PDF checksum in the fixture, then run that
+task's unit and Playwright tests before accepting the new golden.

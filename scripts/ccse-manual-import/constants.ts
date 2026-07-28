@@ -1,4 +1,4 @@
-import type { ManualSectionId, PdfBounds } from "./types.ts"
+import type { FigureCrop, ManualSectionId, PdfBounds } from "./types.ts"
 
 /** Visually audited bounds for numbered figures whose PDF structure omits the full artwork. */
 export const NUMBERED_FIGURE_CROP_OVERRIDES: Readonly<Partial<Record<string, PdfBounds>>> = {
@@ -64,6 +64,60 @@ export const NUMBERED_FIGURE_CROP_OVERRIDES: Readonly<Partial<Record<string, Pdf
   "figure-64-65": [440.0787048, 145.6556211, 561.27324, 305.1968689],
   "figure-65-66": [440.0653076, 379.1255219, 561.2598333, 530.1968384],
   "figure-65-67": [439.0198182, 110.196846, 562.3053226, 260.1968325],
+  "figure-70-68": [437.1022949, 451.4077422, 563.5275046, 531.3255726],
+  "figure-71-69": [440.0787354, 691.0232291, 561.4238230000001, 770.1959229],
+  "figure-73-2": [34.0157471, 80.1968753, 326.0157229, 299.1968384],
+  "figure-74-70": [438.9560706, 129.9131668, 561.3727265, 290.1968384],
+  "figure-75-3": [34.0157471, 409.0577141, 380.1439564, 620.1959229],
+  "figure-75-71": [440.0853882, 608.4772187, 561.3751487, 770.1968994],
+  "figure-75-72": [440.0787964, 209.7250471, 561.2598997, 290.1968689],
+  "figure-76-73": [438.9077215, 500.1968417, 562.345219, 650.1968383],
+  "figure-76-74": [440.0787048, 138.7436563, 561.2732424000001, 291.2011797],
+  "figure-77-75": [439.045019, 500.1968277, 562.3001945000001, 650.1968383],
+  "figure-78-76": [438.9496619, 620.1968838, 562.2793222, 770.1959229],
+  "figure-79-77": [439.0600633, 185.1968824, 562.2991259, 290.1959229],
+  "figure-80-78": [440.0787048, 319.8856559, 560.9086145, 410.5080871],
+  "figure-81-79": [440.0787354, 679.5462561, 560.9086615, 770.5081177000001],
+  "figure-81-80": [440.0787354, 454.2348282, 561.4238029, 530.1968383999999],
+  "figure-82-81": [440, 743.8, 562, 770.2],
+  "figure-83-82": [440.0787354, 649.3660035, 560.9086548, 770.1959229],
+  "figure-83-83": [440.0787354, 335.1968741, 560.9086553, 411.2442065],
+  "figure-85-84": [33.040863, 320.1968603, 381.8152432, 560.1968384],
+  "figure-86-85": [438.9035071, 665.1968614, 562.2711082000001, 767.9055175999999],
+  "figure-86-86": [439.9147339, 497.690541, 561.2598063, 575.1968383999999],
+  "figure-86-87": [438.7691326, 275.196874, 562.4054774, 395.19686889999997],
+  "figure-87-88": [439.0497431, 650.196875, 562.4992412, 770.1959228],
+  "figure-87-89": [440.0787354, 204.2694314, 561.4238186, 290.1968384],
+  "figure-88-90": [438.9087551, 650.1968616, 562.2655832, 770.1959228000001],
+  "figure-89-91": [439.0369968, 650.1968444, 562.4655658, 770.1968384],
+  "figure-89-92": [439.0459328, 410.1968346, 562.4565875, 530.1968383999999],
+  "figure-89-93": [438.9596998, 184.583819, 562.509956, 290.1968689],
+  "figure-90-94": [32.8173853, 80.1968229, 381.8644364, 290.1968384],
+  "figure-90-95": [438.9020081, 605.1968266, 562.2725823, 770.1968384],
+  "figure-90-96": [439.8366699, 215.2116602, 561.337897, 291.2215625],
+}
+
+/** Audited source visuals that have no numbered FIGURA caption. */
+export const STANDALONE_FIGURE_CROPS: readonly FigureCrop[] = [
+  {
+    assetId: "figure-72-family",
+    caption: "© Unsplash",
+    pageNumber: 72,
+    bounds: [439.052765, 320.1968403, 562.2756673, 425.19683840000005],
+  },
+  {
+    assetId: "figure-82-emergency-112",
+    caption: "112",
+    pageNumber: 82,
+    bounds: [440, 290, 562, 410],
+  },
+]
+
+/** Useful alternative text for standalone visuals whose source has no descriptive caption. */
+export const STANDALONE_FIGURE_ALTS: Readonly<Record<string, string>> = {
+  "figure-72-family": "Un adulto lleva a un bebé en una mochila portabebés",
+  "figure-82-emergency-112":
+    "Número europeo de emergencias 112 rodeado por estrellas de la Unión Europea",
 }
 
 /** Source pages containing explanatory content, excluding task questions and solutions. */

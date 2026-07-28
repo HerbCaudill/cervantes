@@ -33,7 +33,7 @@ describe("manual reader", () => {
   })
 
   it("renders real paragraphs, lists, tables, figures, captions, and callouts semantically", () => {
-    window.history.replaceState(null, "", "/manual/task-5/sociedad-espanola-09")
+    window.history.replaceState(null, "", "/manual/task-5/educacion-06")
     render(<App />)
     const article = screen.getByRole("article")
 
@@ -42,26 +42,32 @@ describe("manual reader", () => {
         "En España hay tres tipos de centros educativos según su financiación:",
       ),
     ).toBeInTheDocument()
-    expect(within(article).getByRole("list")).toBeInTheDocument()
+    expect(within(article).getAllByRole("list").length).toBeGreaterThan(0)
 
     const table = within(article).getByRole("table")
     expect(within(table).getByRole("columnheader", { name: "Nivel educativo" })).toBeInTheDocument()
     expect(within(table).getByText("Enseñanza universitaria")).toBeInTheDocument()
 
-    const figure = screen.getByRole("figure")
+    const image = within(article).getByRole("img", {
+      name: /Estatua de Fray Luis de León frente a un patio/i,
+    })
+    const figure = image.closest("figure")
+    expect(figure).not.toBeNull()
+    expect(image).toHaveAttribute("src", "/manual/figures/figure-78-76.jpg")
+    expect(within(figure!).getByText(/^FIGURA 76\./)).toBeInTheDocument()
     expect(
-      within(figure).getByRole("img", {
-        name: /Estatua de Fray Luis de León frente a un patio/i,
-      }),
-    ).toHaveAttribute("src", "/manual/figures/figure-78-76.jpg")
-    expect(within(figure).getByText(/^FIGURA 76\./)).toBeInTheDocument()
-    expect(screen.getByRole("note")).toHaveTextContent(
-      "Para acceder a la Universidad se requiere el título de Bachillerato",
-    )
+      within(article)
+        .getAllByRole("note")
+        .some(note =>
+          note.textContent?.includes(
+            "Para acceder a la Universidad se requiere el título de Bachillerato",
+          ),
+        ),
+    ).toBe(true)
   })
 
   it("labels every table cell for the stacked mobile presentation", () => {
-    window.history.replaceState(null, "", "/manual/task-5/sociedad-espanola-09")
+    window.history.replaceState(null, "", "/manual/task-5/educacion-06")
     render(<App />)
 
     const firstRow = within(screen.getByRole("article")).getAllByRole("row")[1]

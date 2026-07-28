@@ -144,7 +144,7 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
 
 test("reads every manual block accessibly on a narrow screen", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-5/sociedad-espanola-09")
+  await page.goto("/manual/task-5/educacion-06")
 
   const article = page.getByRole("article")
   const table = article.getByRole("table")
@@ -154,8 +154,12 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   await expect(table.getByRole("columnheader", { name: "Nivel educativo" })).toBeAttached()
   await expect(firstCell).toHaveAttribute("data-label", "Nivel educativo")
   await expect(firstCell).toHaveCSS("display", "grid")
-  await expect(article.getByRole("figure").getByRole("img")).toBeVisible()
-  await expect(article.getByRole("note")).toBeVisible()
+  await expect(article.getByRole("figure").getByRole("img").first()).toBeVisible()
+  await expect(
+    article.getByRole("note").filter({
+      hasText: "Para acceder a la Universidad se requiere el título de Bachillerato",
+    }),
+  ).toBeVisible()
   await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(1)
 
   const bodyText = article.getByText(
@@ -229,7 +233,7 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   page,
 }) => {
   await page.setViewportSize({ width: 1000, height: 900 })
-  await page.goto("/manual/task-5/sociedad-espanola-09")
+  await page.goto("/manual/task-5/educacion-06")
 
   const article = page.getByRole("article")
   const table = article.getByRole("table")

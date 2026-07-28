@@ -1,5 +1,5 @@
 import type { PDFPageProxy } from "pdfjs-dist/legacy/build/pdf.mjs"
-import { NUMBERED_FIGURE_CROP_OVERRIDES } from "./constants.ts"
+import { NUMBERED_FIGURE_CROP_OVERRIDES, STANDALONE_FIGURE_CROPS } from "./constants.ts"
 import { createArtworkFigureCrops } from "./createArtworkFigureCrops.ts"
 import { extractPaintedImages } from "./extractPaintedImages.ts"
 import { findFigureCaptionNodes } from "./findFigureCaptionNodes.ts"
@@ -10,7 +10,7 @@ import { getTaggedNodeY } from "./getTaggedNodeY.ts"
 import type { FigureCrop, PdfBounds, TaggedNode, TaggedTextById } from "./types.ts"
 import { unionPdfBounds } from "./unionPdfBounds.ts"
 
-/** Infer one render crop for every numbered source figure on a page. */
+/** Infer render crops for numbered figures, artwork grids, and audited standalone visuals. */
 export async function createFigureCrops(
   /** Loaded PDF page */
   page: PDFPageProxy,
@@ -82,7 +82,11 @@ export async function createFigureCrops(
     }
   })
 
-  return [...numberedCrops, ...artworkCrops].sort((left, right) => {
+  const standaloneCrops = STANDALONE_FIGURE_CROPS.filter(
+    crop => crop.pageNumber === page.pageNumber,
+  )
+
+  return [...numberedCrops, ...artworkCrops, ...standaloneCrops].sort((left, right) => {
     const topDifference = right.bounds[3] - left.bounds[3]
     return Math.abs(topDifference) <= 30 ? left.bounds[0] - right.bounds[0] : topDifference
   })
