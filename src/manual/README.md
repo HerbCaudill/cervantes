@@ -45,6 +45,16 @@ measure. At viewports below 640px, semantic tables become stacked records whose
 cells retain their source column labels; wider viewports use conventional
 tables. The official body text remains 17px in both layouts.
 
+## Offline build
+
+The production service worker precaches the application shell, compiled manual
+content and search index, local font files, and every file under
+`public/manual`. `pnpm build` verifies the generated Workbox manifest against
+the current manual assets so newly added figures or formats cannot be omitted
+silently. Use `pnpm test:pw:pwa` for the Chromium production-preview scenario
+covering offline deep links, figures, search, navigation, progress, and
+service-worker updates without loss of reader or flashcard state.
+
 ## Extraction draft
 
 Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and

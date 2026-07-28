@@ -9,15 +9,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/pwa/verifyPwaBuild.ts",
     "preview": "vite preview",
     "manual:extract": "node scripts/importCcseManual.ts",
     "questions:import": "node scripts/importCcseQuestions.ts",
     "test": "NODE_OPTIONS=--no-experimental-webstorage vitest",
     "test:pw": "playwright test",
+    "test:pw:pwa": "playwright test --config playwright.pwa.config.ts",
     "test:pw:ui": "playwright test --ui",
     "test:pw:headed": "playwright test --headed",
-    "test:all": "pnpm typecheck && pnpm test run && pnpm test:pw --max-failures=1",
+    "test:all": "pnpm typecheck && pnpm test run && pnpm test:pw --max-failures=1 && pnpm test:pw:pwa --max-failures=1",
     "typecheck": "tsc -b",
     "format": "prettier --write .",
     "ralph": "npx @herbcaudill/ralph"
