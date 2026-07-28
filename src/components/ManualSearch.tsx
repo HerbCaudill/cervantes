@@ -63,7 +63,7 @@ export function ManualSearch({ manual, query }: Props) {
             onChange={event => setDraft(event.target.value)}
             placeholder="Escribe una palabra o frase"
             autoComplete="off"
-            className="bg-paper text-ink min-h-11 min-w-0 px-2 font-serif text-[17px] outline-none"
+            className="bg-paper text-ink focus-visible:outline-red min-h-11 min-w-0 px-2 font-serif text-[17px] focus-visible:outline-2 focus-visible:-outline-offset-2"
           />
           <button
             type="submit"

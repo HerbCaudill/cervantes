@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 import { buildManualSearchIndex } from "@/manual/search/buildManualSearchIndex"
 import { getManualSearchHighlightParts } from "@/manual/search/getManualSearchHighlightParts"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
+import manualDraft from "@/manual/manual.draft.json"
 import type { Manual } from "@/manual/types"
 
 const manual = {
@@ -117,6 +118,75 @@ describe("manual search", () => {
     expect(results[0]?.excerpt).toContain("Constitución española")
   })
 
+  it("matches whole normalized words next to punctuation without matching substrings or plurals", () => {
+    const punctuationManual = {
+      ...manual,
+      sections: [
+        {
+          ...manual.sections[0],
+          topics: [
+            {
+              id: "task-1-year",
+              title: "Fechas",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "El año, termina; otros años continúan para el español.",
+                },
+              ],
+            },
+            {
+              id: "task-1-festival",
+              title: "Fiestas",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "Los ninots forman parte de las Fallas.",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    } satisfies Manual
+    const index = buildManualSearchIndex(punctuationManual)
+
+    expect(searchManualIndex(index, "ANO").map(result => result.topicId)).toEqual(["task-1-year"])
+    expect(searchManualIndex(index, "años").map(result => result.topicId)).toEqual(["task-1-year"])
+    expect(searchManualIndex(index, "niño")).toEqual([])
+  })
+
+  it("does not return real-manual español or ninots substring false positives", () => {
+    const index = buildManualSearchIndex(manualDraft as Manual)
+    const yearResults = searchManualIndex(index, "año")
+    const childResults = searchManualIndex(index, "niño")
+    const spanishOnlyTopic = index.find(
+      entry =>
+        entry.normalizedTokens.includes("espanol") && !entry.normalizedTokens.includes("ano"),
+    )
+    const ninotsOnlyTopic = index.find(
+      entry =>
+        entry.normalizedTokens.includes("ninots") && !entry.normalizedTokens.includes("nino"),
+    )
+
+    expect(spanishOnlyTopic).toBeDefined()
+    expect(ninotsOnlyTopic).toBeDefined()
+    expect(yearResults.length).toBeGreaterThan(0)
+    expect(childResults.length).toBeGreaterThan(0)
+    expect(yearResults.map(result => result.topicId)).not.toContain(spanishOnlyTopic?.topicId)
+    expect(childResults.map(result => result.topicId)).not.toContain(ninotsOnlyTopic?.topicId)
+    expect(
+      yearResults.every(result =>
+        index.find(entry => entry.topicId === result.topicId)?.normalizedTokens.includes("ano"),
+      ),
+    ).toBe(true)
+    expect(
+      childResults.every(result =>
+        index.find(entry => entry.topicId === result.topicId)?.normalizedTokens.includes("nino"),
+      ),
+    ).toBe(true)
+  })
+
   it("requires every query term while allowing them outside an exact phrase", () => {
     const results = searchManualIndex(buildManualSearchIndex(manual), "pueblo soberanía española")
 
@@ -161,6 +231,18 @@ describe("manual search", () => {
       { text: " ", highlighted: false },
       { text: "ESPAÑOLA", highlighted: true },
       { text: " reconoce derechos.", highlighted: false },
+    ])
+  })
+
+  it("highlights whole accented words without marking longer words or plurals", () => {
+    expect(getManualSearchHighlightParts("español, años y año.", "ANO")).toEqual([
+      { text: "español, años y ", highlighted: false },
+      { text: "año", highlighted: true },
+      { text: ".", highlighted: false },
+    ])
+    expect(getManualSearchHighlightParts("ninots y niño", "NIÑO")).toEqual([
+      { text: "ninots y ", highlighted: false },
+      { text: "niño", highlighted: true },
     ])
   })
 })

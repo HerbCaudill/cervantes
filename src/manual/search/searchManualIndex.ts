@@ -1,5 +1,7 @@
 import { createManualSearchExcerpt } from "@/manual/search/createManualSearchExcerpt"
 import { getManualSearchTerms } from "@/manual/search/getManualSearchTerms"
+import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
+import { hasManualSearchPhrase } from "@/manual/search/hasManualSearchPhrase"
 import { normalizeManualSearchText } from "@/manual/search/normalizeManualSearchText"
 import type { ManualSearchIndexEntry, ManualSearchResult } from "@/manual/search/types"
 
@@ -15,25 +17,20 @@ export function searchManualIndex(
   if (!normalizedQuery || terms.length === 0) return []
 
   const ranked = index
-    .filter(entry => terms.every(term => entry.normalizedText.includes(term)))
+    .filter(entry => terms.every(term => entry.normalizedTokens.includes(term)))
     .map((entry, sourcePosition) => {
-      const titleTermCount = terms.filter(term => entry.normalizedTitle.includes(term)).length
-      const occurrences = terms.reduce((total, term) => {
-        let count = 0
-        let offset = 0
-        while (count < 5) {
-          const position = entry.normalizedText.indexOf(term, offset)
-          if (position < 0) break
-          count += 1
-          offset = position + term.length
-        }
-        return total + count
-      }, 0)
+      const titleTokens = getManualSearchTokens(entry.topicTitle).map(token => token.normalized)
+      const titleTermCount = terms.filter(term => titleTokens.includes(term)).length
+      const occurrences = terms.reduce(
+        (total, term) =>
+          total + Math.min(5, entry.normalizedTokens.filter(token => token === term).length),
+        0,
+      )
       const score =
         (entry.normalizedTitle === normalizedQuery ? 1_000 : 0) +
-        (entry.normalizedTitle.includes(normalizedQuery) ? 500 : 0) +
+        (hasManualSearchPhrase(titleTokens, terms) ? 500 : 0) +
         titleTermCount * 100 +
-        (entry.normalizedText.includes(normalizedQuery) ? 50 : 0) +
+        (hasManualSearchPhrase(entry.normalizedTokens, terms) ? 50 : 0) +
         occurrences
 
       return {

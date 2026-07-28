@@ -1,5 +1,7 @@
 import { getManualSearchTerms } from "@/manual/search/getManualSearchTerms"
-import { normalizeManualSearchText } from "@/manual/search/normalizeManualSearchText"
+import { getManualSearchMatchRanges } from "@/manual/search/getManualSearchMatchRanges"
+import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
+import { hasManualSearchPhrase } from "@/manual/search/hasManualSearchPhrase"
 
 /** Select and shorten the original source fragment with the strongest query match. */
 export function createManualSearchExcerpt(
@@ -8,18 +10,17 @@ export function createManualSearchExcerpt(
   /** Reader-entered query */
   query: string,
 ): string {
-  const normalizedQuery = normalizeManualSearchText(query)
   const terms = getManualSearchTerms(query)
-  if (!normalizedQuery || terms.length === 0) return ""
+  if (terms.length === 0) return ""
 
   const selected =
     segments
       .map((segment, index) => {
-        const normalized = normalizeManualSearchText(segment)
-        const termCount = terms.filter(term => normalized.includes(term)).length
-        const score = (normalized.includes(normalizedQuery) ? 100 : 0) + termCount
+        const tokens = getManualSearchTokens(segment).map(token => token.normalized)
+        const termCount = terms.filter(term => tokens.includes(term)).length
+        const score = (hasManualSearchPhrase(tokens, terms) ? 100 : 0) + termCount
 
-        return { segment, normalized, score, index }
+        return { segment, score, index }
       })
       .filter(candidate => candidate.score > 0)
       .sort((left, right) => right.score - left.score || left.index - right.index)[0] ?? null
@@ -27,10 +28,7 @@ export function createManualSearchExcerpt(
   if (!selected) return ""
   if (selected.segment.length <= 160) return selected.segment
 
-  const matchPositions = terms
-    .map(term => selected.normalized.indexOf(term))
-    .filter(position => position >= 0)
-  const firstMatch = matchPositions.length > 0 ? Math.min(...matchPositions) : 0
+  const firstMatch = getManualSearchMatchRanges(selected.segment, query)[0]?.start ?? 0
   let start = Math.max(0, firstMatch - 55)
   let end = Math.min(selected.segment.length, start + 160)
 

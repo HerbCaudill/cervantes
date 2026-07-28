@@ -20,8 +20,8 @@ export interface ManualSearchIndexEntry {
   segments: string[]
   /** Normalized topic title used for ranking */
   normalizedTitle: string
-  /** Normalized complete topic text used for matching */
-  normalizedText: string
+  /** Unicode-aware whole-word tokens used for matching and ranking */
+  normalizedTokens: string[]
 }
 
 /** One topic-level manual search result. */
@@ -50,4 +50,22 @@ export interface ManualSearchHighlightPart {
   text: string
   /** Whether this source fragment matches one of the query terms */
   highlighted: boolean
+}
+
+/** One Unicode-aware whole-word token and its original-text location. */
+export interface ManualSearchToken {
+  /** Accent- and case-normalized whole word */
+  normalized: string
+  /** Inclusive UTF-16 offset in the original text */
+  start: number
+  /** Exclusive UTF-16 offset in the original text */
+  end: number
+}
+
+/** One highlighted query term's original-text location. */
+export interface ManualSearchMatchRange {
+  /** Inclusive UTF-16 offset in the original text */
+  start: number
+  /** Exclusive UTF-16 offset in the original text */
+  end: number
 }

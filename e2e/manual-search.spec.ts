@@ -80,7 +80,12 @@ test("keeps search accessible within a 390px viewport in both palettes", async (
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/buscar?q=constitucion")
 
-  await expect(page.getByRole("searchbox", { name: "Buscar en el manual" })).toBeVisible()
+  const input = page.getByRole("searchbox", { name: "Buscar en el manual" })
+  await expect(input).toBeVisible()
+  await input.focus()
+  await expect(input).toHaveCSS("outline-style", "solid")
+  await expect(input).toHaveCSS("outline-width", "2px")
+  await expect(input).toHaveCSS("outline-color", "rgb(165, 28, 48)")
   await expect(page.getByRole("status")).toContainText(/resultados?/)
   for (const name of ["Buscar", "Limpiar búsqueda"]) {
     const box = await page.getByRole("button", { name, exact: true }).boundingBox()
@@ -94,6 +99,8 @@ test("keeps search accessible within a 390px viewport in both palettes", async (
 
   await page.locator("html").evaluate(element => element.classList.add("dark"))
   await expect(page.locator("body")).toHaveCSS("background-color", "rgb(23, 24, 26)")
+  await input.focus()
+  await expect(input).toHaveCSS("outline-color", "rgb(212, 112, 124)")
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
