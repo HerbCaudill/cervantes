@@ -1,7 +1,6 @@
-import { LEARNED_INTERVAL } from "@/constants"
 import type { Question, SectionStats, StateMap } from "@/types"
 
-/** Count due, bank, and learned questions in each section. */
+/** Count due and bank questions in each section. */
 export function getSectionStats(
   /** All questions in the bank */
   questions: Question[],
@@ -18,13 +17,11 @@ export function getSectionStats(
       section: question.section,
       due: 0,
       bank: 0,
-      learned: 0,
     }
     bySection.set(question.section, {
       ...existing,
       due: existing.due + (!state || new Date(state.due).getTime() <= now.getTime() ? 1 : 0),
       bank: existing.bank + 1,
-      learned: existing.learned + (state?.interval >= LEARNED_INTERVAL ? 1 : 0),
     })
   }
 

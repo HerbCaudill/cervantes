@@ -5,22 +5,22 @@ import type { Question, StateMap } from "@/types"
 const now = new Date("2026-07-28T12:00:00.000Z")
 
 describe("getSectionStats", () => {
-  it("counts due, bank, and learned questions by section", () => {
+  it("returns only due and bank counts by section", () => {
     const questions = [
       question("due", "one"),
       question("future", "one"),
-      question("learned", "two"),
+      question("scheduled", "two"),
       question("new", "two"),
     ]
     const states: StateMap = {
-      due: state("due", 3, "2026-07-28T11:00:00.000Z"),
-      future: state("future", 2, "2026-07-29T12:00:00.000Z"),
-      learned: state("learned", 21, "2026-08-18T12:00:00.000Z"),
+      due: state("due", "2026-07-28T11:00:00.000Z"),
+      future: state("future", "2026-07-29T12:00:00.000Z"),
+      scheduled: state("scheduled", "2026-08-18T12:00:00.000Z"),
     }
 
     expect(getSectionStats(questions, states, now)).toEqual([
-      { section: "one", due: 1, bank: 2, learned: 0 },
-      { section: "two", due: 1, bank: 2, learned: 1 },
+      { section: "one", due: 1, bank: 2 },
+      { section: "two", due: 1, bank: 2 },
     ])
   })
 
@@ -42,6 +42,6 @@ function question(id: string, section: string): Question {
 }
 
 /** Build a scheduling state for section-stat tests. */
-function state(questionId: string, interval: number, due: string) {
-  return { questionId, repetitions: 1, easeFactor: 2.5, interval, due }
+function state(questionId: string, due: string) {
+  return { questionId, repetitions: 1, easeFactor: 2.5, interval: 3, due }
 }

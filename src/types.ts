@@ -80,14 +80,4 @@ export interface SectionStats {
   due: number
   /** Total questions in this section */
   bank: number
-  /** Questions whose current interval is at least the learned threshold */
-  learned: number
-}
-
-/** Number of questions due on one day of the seven-day forecast. */
-export interface ForecastDay {
-  /** Local calendar date in YYYY-MM-DD form */
-  date: string
-  /** Questions due on this date, with overdue and new questions counted today */
-  due: number
 }

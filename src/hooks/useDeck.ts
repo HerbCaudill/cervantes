@@ -2,7 +2,6 @@ import { useCallback, useState } from "react"
 import { questions } from "@/data/questions"
 import { createInitialState } from "@/lib/createInitialState"
 import { getDueQuestions } from "@/lib/getDueQuestions"
-import { getForecast } from "@/lib/getForecast"
 import { getSectionStats } from "@/lib/getSectionStats"
 import { loadStates } from "@/lib/loadStates"
 import { saveStates } from "@/lib/saveStates"
@@ -28,10 +27,8 @@ export function useDeck() {
   }, [])
 
   return {
-    states,
     dueQuestions: getDueQuestions(questions, states),
     sectionStats: getSectionStats(questions, states),
-    forecast: getForecast(questions, states),
     totalCount: questions.length,
     review,
   }
