@@ -65,7 +65,7 @@ describe("manual extraction draft", () => {
     expect(task?.topics.map(topic => [topic.id, topic.title])).toEqual([
       [
         "task-1-poderes-del-estado-gobierno-e-instituciones",
-        "PODERES DEL ESTADO, GOBIERNO E INSTITUCIONES",
+        "Poderes del Estado, Gobierno e Instituciones",
       ],
       [
         "task-1-representacion-en-organismos-internacionales",
