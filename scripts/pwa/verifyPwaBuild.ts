@@ -19,11 +19,13 @@ export function verifyPwaBuild(): void {
   const unsupportedManualAssets = manualSourcePaths.filter(
     path => !CACHEABLE_EXTENSIONS.has(extname(path)),
   )
-  assert.deepEqual(
-    unsupportedManualAssets,
-    [],
-    `unsupported manual asset extensions: ${unsupportedManualAssets
-      .map(path => relative("public", path))
+  assert(
+    unsupportedManualAssets.length === 0,
+    `unsupported manual asset formats: ${unsupportedManualAssets
+      .map(path => {
+        const extension = extname(path) || "<none>"
+        return `${relative("public", path)} (unsupported extension ${extension})`
+      })
       .join(", ")}`,
   )
   const manualAssetPaths = manualSourcePaths.map(path => relative("public", path)).sort()
