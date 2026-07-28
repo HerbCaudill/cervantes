@@ -7,7 +7,7 @@ export function hasManualSearchPhrase(
 ): boolean {
   if (terms.length === 0 || terms.length > tokens.length) return false
 
-  return tokens.some((token, start) =>
+  return tokens.some((_token, start) =>
     terms.every((term, offset) => tokens[start + offset] === term),
   )
 }
