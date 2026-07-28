@@ -1,34 +1,25 @@
 import assert from "node:assert/strict"
 import { existsSync, globSync, readFileSync, statSync } from "node:fs"
 import { extname, relative } from "node:path"
-import { PWA_GLOB_PATTERN, PWA_MAXIMUM_FILE_SIZE_TO_CACHE_IN_BYTES } from "./constants.ts"
+import { PWA_CACHEABLE_EXTENSIONS, PWA_MAXIMUM_FILE_SIZE_TO_CACHE_IN_BYTES } from "./constants.ts"
+import { getManualAssetInventory } from "./getManualAssetInventory.ts"
 
 /** Extensions that must be available from the production precache. */
-const CACHEABLE_EXTENSIONS = new Set(
-  PWA_GLOB_PATTERN.match(/\{(.+)\}/)?.[1]
-    .split(",")
-    .map(extension => `.${extension}`),
-)
+const CACHEABLE_EXTENSIONS = new Set<string>(PWA_CACHEABLE_EXTENSIONS)
 
 /** Assert that the production service worker contains the complete offline reader. */
 export function verifyPwaBuild(): void {
-  const allManualPaths = globSync("public/manual/**/*")
-    .filter(path => statSync(path).isFile())
-    .sort()
-  const manualSourcePaths = allManualPaths.filter(path => extname(path).toLowerCase() !== ".pdf")
-  const unsupportedManualAssets = manualSourcePaths.filter(
-    path => !CACHEABLE_EXTENSIONS.has(extname(path)),
-  )
+  const manualAssetInventory = getManualAssetInventory()
   assert(
-    unsupportedManualAssets.length === 0,
-    `unsupported manual asset formats: ${unsupportedManualAssets
+    manualAssetInventory.unsupportedPaths.length === 0,
+    `unsupported manual asset formats: ${manualAssetInventory.unsupportedPaths
       .map(path => {
         const extension = extname(path) || "<none>"
         return `${relative("public", path)} (unsupported extension ${extension})`
       })
       .join(", ")}`,
   )
-  const manualAssetPaths = manualSourcePaths.map(path => relative("public", path)).sort()
+  const manualAssetPaths = manualAssetInventory.assetPaths
 
   const serviceWorkerPath = "dist/sw.js"
   assert(existsSync(serviceWorkerPath), "dist/sw.js must exist before verifying the PWA build")

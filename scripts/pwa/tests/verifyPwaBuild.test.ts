@@ -1,10 +1,14 @@
 import { rmSync, writeFileSync } from "node:fs"
 import { describe, expect, it } from "vitest"
+import { getManualAssetInventory } from "../getManualAssetInventory.ts"
 import { verifyPwaBuild } from "../verifyPwaBuild.ts"
 
 describe("verifyPwaBuild", () => {
   it("accepts every currently supported manual figure", () => {
-    expect(() => verifyPwaBuild()).not.toThrow()
+    const inventory = getManualAssetInventory()
+
+    expect(inventory.assetPaths.length).toBeGreaterThanOrEqual(108)
+    expect(inventory.unsupportedPaths).toEqual([])
   })
 
   it.each(["pwa-unsupported-fixture.tif", "figures/pwa-unsupported-fixture.tiff"])(
@@ -28,7 +32,10 @@ describe("verifyPwaBuild", () => {
     writeFileSync(sourcePdfPath, "excluded source")
 
     try {
-      expect(() => verifyPwaBuild()).not.toThrow(/pwa-source-fixture\.PDF/)
+      const inventory = getManualAssetInventory()
+
+      expect(inventory.assetPaths).not.toContain("manual/pwa-source-fixture.PDF")
+      expect(inventory.unsupportedPaths).not.toContain(sourcePdfPath)
     } finally {
       rmSync(sourcePdfPath)
     }
