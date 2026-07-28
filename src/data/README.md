@@ -35,12 +35,11 @@ True/false:
 
 ```json
 {
-  "id": "ccse-cg-0001",
-  "section": "constitution-government",
+  "id": "2003",
+  "section": "rights-participation",
   "type": "true-false",
-  "prompt": "La forma política del Estado español es la monarquía parlamentaria.",
-  "answer": true,
-  "explanation": "Artículo 1.3 de la Constitución."
+  "prompt": "En España, la Constitución prohíbe la tortura y la pena de muerte.",
+  "answer": true
 }
 ```
 
@@ -48,13 +47,12 @@ Multiple-choice:
 
 ```json
 {
-  "id": "ccse-geo-0002",
-  "section": "geography",
+  "id": "1001",
+  "section": "constitution-government",
   "type": "multiple-choice",
-  "prompt": "¿Cuál es el río más largo de la península ibérica?",
-  "options": ["El Ebro", "El Guadalquivir", "El Tajo", "El Duero"],
-  "answer": 2,
-  "explanation": "El Tajo mide algo más de 1.000 km."
+  "prompt": "España es…",
+  "options": ["una monarquía parlamentaria.", "una república federal.", "una monarquía federal."],
+  "answer": 0
 }
 ```
 
@@ -63,9 +61,9 @@ Multiple-choice:
 Defined in [`src/constants.ts`](../constants.ts) (`SECTION_LABELS`). Add new keys
 there to give them a custom label; otherwise the key is title-cased for display.
 
-- `constitution-government` — Gobierno, Constitución y leyes
-- `territorial-organization` — Organización territorial
-- `rights-participation` — Derechos y participación ciudadana
+- `constitution-government` — Gobierno, legislación y participación ciudadana
+- `territorial-organization` — Organización territorial de España. Geografía física y política
+- `rights-participation` — Derechos y deberes fundamentales
 - `geography` — Geografía
-- `culture-history` — Cultura e historia
-- `society` — Sociedad y vida cotidiana
+- `culture-history` — Cultura e historia de España
+- `society` — Sociedad española
