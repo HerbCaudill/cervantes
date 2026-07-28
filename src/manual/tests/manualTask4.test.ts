@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest"
 import manualDraft from "@/manual/manual.draft.json"
 import type { Manual, ManualBlock } from "@/manual/types"
+import task4ContentGolden from "./fixtures/task4-content-golden.json"
+import { getManualContentDigest } from "./getManualContentDigest"
 
 const manual = manualDraft as Manual
 const task = manual.sections.find(section => section.id === "task-4")
@@ -8,6 +10,92 @@ const topics = task?.topics ?? []
 const blocks = topics.flatMap(topic => topic.blocks)
 
 describe("verified Task 4 manual content", () => {
+  it("matches the complete ordered source-audited content golden", async () => {
+    const canonical = JSON.stringify(task)
+    const tables = blocks.filter(block => block.type === "table")
+
+    expect({
+      blockCount: blocks.length,
+      canonicalBytes: new TextEncoder().encode(canonical).length,
+      canonicalCharacters: canonical.length,
+      tableCellCount: tables.reduce(
+        (total, table) =>
+          total +
+          (table.type === "table" ? table.rows.reduce((sum, row) => sum + row.length, 0) : 0),
+        0,
+      ),
+      tableRowCount: tables.reduce(
+        (total, table) => total + (table.type === "table" ? table.rows.length : 0),
+        0,
+      ),
+      taskSha256: await getManualContentDigest(task),
+      topicCount: topics.length,
+    }).toEqual({
+      blockCount: task4ContentGolden.blockCount,
+      canonicalBytes: task4ContentGolden.canonicalBytes,
+      canonicalCharacters: task4ContentGolden.canonicalCharacters,
+      tableCellCount: task4ContentGolden.tableCellCount,
+      tableRowCount: task4ContentGolden.tableRowCount,
+      taskSha256: task4ContentGolden.taskSha256,
+      topicCount: task4ContentGolden.topicCount,
+    })
+  })
+
+  it("changes the golden digest for representative nested content and order mutations", async () => {
+    if (!task) throw new Error("Task 4 is missing")
+
+    const mutations = [
+      (mutatedTask: typeof task) => {
+        mutatedTask.topics.reverse()
+      },
+      (mutatedTask: typeof task) => {
+        mutatedTask.topics[0].blocks.reverse()
+      },
+      (mutatedTask: typeof task) => {
+        const callout = mutatedTask.topics
+          .flatMap(topic => topic.blocks)
+          .find(block => block.type === "callout")
+        if (!callout || callout.blocks[0]?.type !== "paragraph") {
+          throw new Error("Task 4 paragraph callout is missing")
+        }
+        callout.blocks[0].text = "unexpected callout text"
+      },
+      (mutatedTask: typeof task) => {
+        const list = mutatedTask.topics
+          .flatMap(topic => topic.blocks)
+          .find(block => block.type === "list")
+        if (!list) throw new Error("Task 4 list is missing")
+        list.items[0] = "unexpected list item"
+      },
+      (mutatedTask: typeof task) => {
+        const table = mutatedTask.topics
+          .flatMap(topic => topic.blocks)
+          .find(block => block.type === "table")
+        if (!table) throw new Error("Task 4 table is missing")
+        table.rows[0][0] = null
+      },
+      (mutatedTask: typeof task) => {
+        const figure = mutatedTask.topics
+          .flatMap(topic => topic.blocks)
+          .find(block => block.type === "figure")
+        if (!figure) throw new Error("Task 4 figure is missing")
+        figure.assetId = "unexpected-asset"
+        figure.caption = "unexpected caption"
+      },
+    ]
+
+    const mutatedDigests = await Promise.all(
+      mutations.map(async mutate => {
+        const mutatedTask = structuredClone(task)
+        mutate(mutatedTask)
+        return getManualContentDigest(mutatedTask)
+      }),
+    )
+
+    expect(mutatedDigests).not.toContain(task4ContentGolden.taskSha256)
+    expect(new Set(mutatedDigests)).toHaveLength(mutations.length)
+  })
+
   it("reconstructs the source around its seven semantic headings", () => {
     expect(topics.map(topic => [topic.id, topic.title])).toEqual([
       ["task-4-literatura-musica-y-artes-escenicas", "LITERATURA, MÚSICA Y ARTES ESCÉNICAS"],

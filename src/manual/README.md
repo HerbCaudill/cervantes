@@ -73,10 +73,16 @@ Tasks 1–4 have been reconstructed into source-heading topics and verified in f
 against the checksum-pinned 2026 manual. Task 5 remains a page-oriented extraction
 draft until its corresponding editorial verification is complete.
 
-Task 3's complete ordered content is protected by
-`tests/fixtures/task3-content-golden.json`. Its digest is calculated from
-`JSON.stringify` on the full Task 3 section, so topic and block order, every text
-value, list item, table header and cell (including `null` cells), callout, figure
-asset ID, and caption contribute to the golden. Update it only after comparing
-PDF pages 37–42 against the pinned source, recording the new canonical character
-and byte counts, and running the Task 3 unit and Playwright tests.
+Tasks 3 and 4 have complete ordered-content goldens in `tests/fixtures`. Each
+digest is calculated from `JSON.stringify` on the full task section, so topic
+and block order, every text value, list item, table header and cell (including
+`null` cells), callout, figure asset ID, and caption contribute to the golden.
+
+To regenerate verified content, run `pnpm manual:extract`, reconstruct the task's
+semantic topics, and audit every ordered block and figure crop against the
+checksum-pinned source PDF. For Task 3 compare pages 37–42; for Task 4 compare
+pages 46–65. Only after that audit, update the corresponding fixture's task
+digest, canonical character and UTF-8 byte counts, topic and block counts, and
+table row and cell counts. Keep the audited source page range and PDF checksum
+in the fixture, then run that task's unit and Playwright tests before accepting
+the new golden.
