@@ -23,6 +23,10 @@ test("resumes a topic after navigation and reload without touching flashcard sta
     value: flashcardState,
   })
   await page.goto(firstTopicPath)
+  await expect(page.getByRole("article")).toBeVisible()
+  await page.evaluate(async () => {
+    await document.fonts.ready
+  })
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
   const savedPosition = await page.evaluate(() => {
     const maximumScroll = document.documentElement.scrollHeight - window.innerHeight
