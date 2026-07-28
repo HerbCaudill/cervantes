@@ -4,11 +4,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "España es…",
-    "options": [
-      "una monarquía parlamentaria.",
-      "una república federal.",
-      "una monarquía federal."
-    ],
+    "options": ["una monarquía parlamentaria.", "una república federal.", "una monarquía federal."],
     "answer": 0
   },
   {
@@ -16,11 +12,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La ley fundamental de España se llama…",
-    "options": [
-      "Constitución.",
-      "Ley básica.",
-      "Ordenamiento esencial."
-    ],
+    "options": ["Constitución.", "Ley básica.", "Ordenamiento esencial."],
     "answer": 0
   },
   {
@@ -28,11 +20,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Según la Constitución española, la soberanía nacional reside en…",
-    "options": [
-      "el pueblo español.",
-      "el Gobierno del Estado.",
-      "el Congreso de los Diputados."
-    ],
+    "options": ["el pueblo español.", "el Gobierno del Estado.", "el Congreso de los Diputados."],
     "answer": 0
   },
   {
@@ -40,11 +28,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El Instituto de las Mujeres es…",
-    "options": [
-      "una institución europea.",
-      "un organismo español.",
-      "una ONG."
-    ],
+    "options": ["una institución europea.", "un organismo español.", "una ONG."],
     "answer": 1
   },
   {
@@ -52,11 +36,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuándo puedo hacer los trámites en la sede electrónica?",
-    "options": [
-      "En cualquier horario.",
-      "Únicamente por la mañana.",
-      "De lunes a viernes."
-    ],
+    "options": ["En cualquier horario.", "Únicamente por la mañana.", "De lunes a viernes."],
     "answer": 0
   },
   {
@@ -76,11 +56,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estas fuerzas de seguridad es de ámbito autonómico?",
-    "options": [
-      "Policía local.",
-      "Guardia Civil.",
-      "Policía Foral de Navarra."
-    ],
+    "options": ["Policía local.", "Guardia Civil.", "Policía Foral de Navarra."],
     "answer": 2
   },
   {
@@ -100,11 +76,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "En la Constitución se establece la separación de poderes: el poder ejecutivo, el legislativo y el…",
-    "options": [
-      "judicial.",
-      "informativo.",
-      "político."
-    ],
+    "options": ["judicial.", "informativo.", "político."],
     "answer": 0
   },
   {
@@ -124,11 +96,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién es el jefe del Estado en España?",
-    "options": [
-      "El presidente del Gobierno.",
-      "El rey.",
-      "El ministro de Economía."
-    ],
+    "options": ["El presidente del Gobierno.", "El rey.", "El ministro de Economía."],
     "answer": 1
   },
   {
@@ -136,11 +104,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La gestión de la sanidad es competencia de…",
-    "options": [
-      "el Estado.",
-      "las comunidades autónomas.",
-      "los ayuntamientos."
-    ],
+    "options": ["el Estado.", "las comunidades autónomas.", "los ayuntamientos."],
     "answer": 1
   },
   {
@@ -148,11 +112,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién fue el primer presidente del Gobierno de España en democracia?",
-    "options": [
-      "Mariano Rajoy.",
-      "Adolfo Suárez.",
-      "José Luis Rodríguez Zapatero."
-    ],
+    "options": ["Mariano Rajoy.", "Adolfo Suárez.", "José Luis Rodríguez Zapatero."],
     "answer": 1
   },
   {
@@ -184,11 +144,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama la cámara de representación territorial en España?",
-    "options": [
-      "Senado.",
-      "Diputación permanente.",
-      "Congreso de los Diputados."
-    ],
+    "options": ["Senado.", "Diputación permanente.", "Congreso de los Diputados."],
     "answer": 0
   },
   {
@@ -196,11 +152,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Qué se necesita para hacer trámites por internet con la Administración?",
-    "options": [
-      "Un pasaporte válido.",
-      "Una firma electrónica.",
-      "Una firma en papel."
-    ],
+    "options": ["Un pasaporte válido.", "Una firma electrónica.", "Una firma en papel."],
     "answer": 1
   },
   {
@@ -208,11 +160,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se aprobó la Constitución?",
-    "options": [
-      "Por imposición legal.",
-      "Por referéndum.",
-      "Por el Tribunal Constitucional."
-    ],
+    "options": ["Por imposición legal.", "Por referéndum.", "Por el Tribunal Constitucional."],
     "answer": 1
   },
   {
@@ -220,11 +168,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama la ley más importante de cada comunidad autónoma?",
-    "options": [
-      "Estatuto de Autonomía.",
-      "Normativa autonómica.",
-      "Ley de la comunidad."
-    ],
+    "options": ["Estatuto de Autonomía.", "Normativa autonómica.", "Ley de la comunidad."],
     "answer": 0
   },
   {
@@ -244,11 +188,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién dirige la administración militar de España?",
-    "options": [
-      "Los ayuntamientos.",
-      "El Gobierno.",
-      "Las Cortes Generales."
-    ],
+    "options": ["Los ayuntamientos.", "El Gobierno.", "Las Cortes Generales."],
     "answer": 1
   },
   {
@@ -256,11 +196,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Qué hay en las Islas Baleares, en vez de diputaciones?",
-    "options": [
-      "Cabildos.",
-      "Consejos insulares.",
-      "Centros de diputados."
-    ],
+    "options": ["Cabildos.", "Consejos insulares.", "Centros de diputados."],
     "answer": 1
   },
   {
@@ -268,11 +204,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Qué ciudad tiene más habitantes?",
-    "options": [
-      "Sevilla.",
-      "Barcelona.",
-      "Zaragoza."
-    ],
+    "options": ["Sevilla.", "Barcelona.", "Zaragoza."],
     "answer": 1
   },
   {
@@ -280,11 +212,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Las Cortes Generales representan…",
-    "options": [
-      "al pueblo español.",
-      "a los partidos políticos.",
-      "a los ministros."
-    ],
+    "options": ["al pueblo español.", "a los partidos políticos.", "a los ministros."],
     "answer": 0
   },
   {
@@ -292,11 +220,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El Congreso de los Diputados y el Senado constituyen el poder…",
-    "options": [
-      "ejecutivo.",
-      "legislativo.",
-      "judicial."
-    ],
+    "options": ["ejecutivo.", "legislativo.", "judicial."],
     "answer": 1
   },
   {
@@ -304,11 +228,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo pueden los ciudadanos proponer nuevas leyes al Congreso?",
-    "options": [
-      "Reuniendo 500 000 firmas.",
-      "Solicitándolo al rey.",
-      "Creando una asociación."
-    ],
+    "options": ["Reuniendo 500 000 firmas.", "Solicitándolo al rey.", "Creando una asociación."],
     "answer": 0
   },
   {
@@ -316,11 +236,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántas comunidades autónomas hay en España?",
-    "options": [
-      "8.",
-      "17.",
-      "25."
-    ],
+    "options": ["8.", "17.", "25."],
     "answer": 1
   },
   {
@@ -328,11 +244,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Los colores de la bandera española son…",
-    "options": [
-      "blanco y rojo.",
-      "rojo y amarillo.",
-      "amarillo y blanco."
-    ],
+    "options": ["blanco y rojo.", "rojo y amarillo.", "amarillo y blanco."],
     "answer": 1
   },
   {
@@ -340,11 +252,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Dónde está la sede del Gobierno de España?",
-    "options": [
-      "En Madrid.",
-      "En Barcelona.",
-      "En Sevilla."
-    ],
+    "options": ["En Madrid.", "En Barcelona.", "En Sevilla."],
     "answer": 0
   },
   {
@@ -352,11 +260,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La bandera azul con 12 estrellas amarillas en círculo es la bandera de…",
-    "options": [
-      "la Unión Europea.",
-      "el Parlamento Europeo.",
-      "la Comisión de Europa."
-    ],
+    "options": ["la Unión Europea.", "el Parlamento Europeo.", "la Comisión de Europa."],
     "answer": 0
   },
   {
@@ -364,11 +268,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "En las elecciones municiales se vota a…",
-    "options": [
-      "alcaldes y concejales",
-      "ministros y ministras.",
-      "diputados y senadores."
-    ],
+    "options": ["alcaldes y concejales", "ministros y ministras.", "diputados y senadores."],
     "answer": 0
   },
   {
@@ -376,11 +276,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Qué lengua es oficial en el País Vasco?",
-    "options": [
-      "El bable.",
-      "El aragonés.",
-      "El euskera."
-    ],
+    "options": ["El bable.", "El aragonés.", "El euskera."],
     "answer": 2
   },
   {
@@ -388,11 +284,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Todos los españoles tienen el deber de conocer la lengua…",
-    "options": [
-      "autonómica del Estado.",
-      "oficial del Estado.",
-      "local del Estado."
-    ],
+    "options": ["autonómica del Estado.", "oficial del Estado.", "local del Estado."],
     "answer": 1
   },
   {
@@ -400,11 +292,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El aranés es una lengua cooficial que se habla en un pequeño territorio de…",
-    "options": [
-      "Cataluña.",
-      "La Rioja.",
-      "Aragón."
-    ],
+    "options": ["Cataluña.", "La Rioja.", "Aragón."],
     "answer": 0
   },
   {
@@ -412,11 +300,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Las instituciones de una comunidad autónoma son: el consejo de gobierno, el presidente y…",
-    "options": [
-      "el ayuntamiento.",
-      "la asamblea legislativa.",
-      "la delegación de gobierno."
-    ],
+    "options": ["el ayuntamiento.", "la asamblea legislativa.", "la delegación de gobierno."],
     "answer": 1
   },
   {
@@ -424,11 +308,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estas opciones es una lengua cooficial en alguna comunidad autónoma?",
-    "options": [
-      "El gallego.",
-      "El aragonés.",
-      "El murciano."
-    ],
+    "options": ["El gallego.", "El aragonés.", "El murciano."],
     "answer": 0
   },
   {
@@ -472,11 +352,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de los siguientes cuerpos forma parte de las Fuerzas Armadas de España?",
-    "options": [
-      "La Policía Foral.",
-      "La Guardia Civil.",
-      "El Ejército del Aire."
-    ],
+    "options": ["La Policía Foral.", "La Guardia Civil.", "El Ejército del Aire."],
     "answer": 2
   },
   {
@@ -484,11 +360,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quiénes forman parte del Gobierno?",
-    "options": [
-      "Los ministros.",
-      "Los concejales.",
-      "Los alcaldes."
-    ],
+    "options": ["Los ministros.", "Los concejales.", "Los alcaldes."],
     "answer": 0
   },
   {
@@ -508,11 +380,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de las siguientes siglas corresponde a un partido político?",
-    "options": [
-      "PP.",
-      "PIB.",
-      "UE."
-    ],
+    "options": ["PP.", "PIB.", "UE."],
     "answer": 0
   },
   {
@@ -520,11 +388,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Qué título tiene la futura reina, hija del rey?",
-    "options": [
-      "Princesa de Asturias.",
-      "Princesa de Aragón.",
-      "Duquesa de Alba."
-    ],
+    "options": ["Princesa de Asturias.", "Princesa de Aragón.", "Duquesa de Alba."],
     "answer": 0
   },
   {
@@ -532,11 +396,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Con qué rey se restaura la democracia en España después del régimen de Franco?",
-    "options": [
-      "Con Carlos III.",
-      "Con Alfonso XIII.",
-      "Con Juan Carlos I."
-    ],
+    "options": ["Con Carlos III.", "Con Alfonso XIII.", "Con Juan Carlos I."],
     "answer": 2
   },
   {
@@ -544,11 +404,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿En qué año se aprobó la Constitución española?",
-    "options": [
-      "En 1957.",
-      "En 1978.",
-      "En 2001."
-    ],
+    "options": ["En 1957.", "En 1978.", "En 2001."],
     "answer": 1
   },
   {
@@ -556,11 +412,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántas comunidades autónomas tienen su propia bandera?",
-    "options": [
-      "Ninguna.",
-      "Todas.",
-      "Las que tienen una lengua cooficial."
-    ],
+    "options": ["Ninguna.", "Todas.", "Las que tienen una lengua cooficial."],
     "answer": 1
   },
   {
@@ -580,11 +432,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántas firmas, como mínimo, deben recoger los ciudadanos para poder presentar una proposición de ley?",
-    "options": [
-      "250 000.",
-      "100 000.",
-      "500 000."
-    ],
+    "options": ["250 000.", "100 000.", "500 000."],
     "answer": 2
   },
   {
@@ -604,11 +452,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "En la organización de la Administración se distinguen tres niveles: central, autonómica y…",
-    "options": [
-      "estatal.",
-      "regional.",
-      "local."
-    ],
+    "options": ["estatal.", "regional.", "local."],
     "answer": 2
   },
   {
@@ -640,11 +484,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El nombre oficial del parlamento español es…",
-    "options": [
-      "Cortes Generales.",
-      "Congreso de los Diputados.",
-      "Senado."
-    ],
+    "options": ["Cortes Generales.", "Congreso de los Diputados.", "Senado."],
     "answer": 0
   },
   {
@@ -664,11 +504,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién puede reinar en España?",
-    "options": [
-      "Solo los hombres.",
-      "Solo las mujeres.",
-      "Tanto los hombres como las mujeres."
-    ],
+    "options": ["Solo los hombres.", "Solo las mujeres.", "Tanto los hombres como las mujeres."],
     "answer": 2
   },
   {
@@ -700,11 +536,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Qué lengua cooficial se habla en las Islas Baleares?",
-    "options": [
-      "Gallego.",
-      "Catalán.",
-      "Euskera."
-    ],
+    "options": ["Gallego.", "Catalán.", "Euskera."],
     "answer": 1
   },
   {
@@ -712,11 +544,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La Constitución defiende valores tales como la libertad, la igualdad, el pluralismo político y…",
-    "options": [
-      "la justicia.",
-      "la solidaridad.",
-      "la fraternidad."
-    ],
+    "options": ["la justicia.", "la solidaridad.", "la fraternidad."],
     "answer": 0
   },
   {
@@ -724,11 +552,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Cuando una ley ya está aprobada, ¿qué necesita para poder aplicarse?",
-    "options": [
-      "Nada.",
-      "Normas que la desarrollen.",
-      "Ser revisada por el Parlamento."
-    ],
+    "options": ["Nada.", "Normas que la desarrollen.", "Ser revisada por el Parlamento."],
     "answer": 1
   },
   {
@@ -736,11 +560,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántos habitantes hay en España?",
-    "options": [
-      "95 millones.",
-      "49 millones.",
-      "67 millones."
-    ],
+    "options": ["95 millones.", "49 millones.", "67 millones."],
     "answer": 1
   },
   {
@@ -748,11 +568,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos es un órgano consultivo del Gobierno de España?",
-    "options": [
-      "El Parlamento Europeo.",
-      "El Consejo de Estado.",
-      "El Tribunal Constitucional."
-    ],
+    "options": ["El Parlamento Europeo.", "El Consejo de Estado.", "El Tribunal Constitucional."],
     "answer": 1
   },
   {
@@ -760,11 +576,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién dirige la política interior y exterior de España?",
-    "options": [
-      "El rey.",
-      "El Gobierno.",
-      "El Congreso de los Diputados."
-    ],
+    "options": ["El rey.", "El Gobierno.", "El Congreso de los Diputados."],
     "answer": 1
   },
   {
@@ -772,11 +584,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El Defensor del Pueblo depende de…",
-    "options": [
-      "el Consejo de Ministros.",
-      "el Tribunal de Cuentas.",
-      "las Cortes Generales."
-    ],
+    "options": ["el Consejo de Ministros.", "el Tribunal de Cuentas.", "las Cortes Generales."],
     "answer": 2
   },
   {
@@ -796,11 +604,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estas ciudades se encuentra entre las 10 más pobladas de España?",
-    "options": [
-      "Cádiz.",
-      "Málaga.",
-      "Albacete."
-    ],
+    "options": ["Cádiz.", "Málaga.", "Albacete."],
     "answer": 1
   },
   {
@@ -808,11 +612,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién puede realizar trámites en línea ante la Administración Pública?",
-    "options": [
-      "Jueces y magistrados.",
-      "Cualquier ciudadano.",
-      "Abogados colegiados."
-    ],
+    "options": ["Jueces y magistrados.", "Cualquier ciudadano.", "Abogados colegiados."],
     "answer": 1
   },
   {
@@ -820,11 +620,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama el rey de España?",
-    "options": [
-      "Juan Carlos I.",
-      "Felipe VI.",
-      "Alfonso XIII."
-    ],
+    "options": ["Juan Carlos I.", "Felipe VI.", "Alfonso XIII."],
     "answer": 1
   },
   {
@@ -832,11 +628,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama el órgano de gobierno de los jueces y magistrados?",
-    "options": [
-      "Tribunal Supremo.",
-      "Consejo General del Poder Judicial.",
-      "Consejo de Estado."
-    ],
+    "options": ["Tribunal Supremo.", "Consejo General del Poder Judicial.", "Consejo de Estado."],
     "answer": 1
   },
   {
@@ -844,11 +636,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién aprueba los presupuestos generales del Estado?",
-    "options": [
-      "Las Cortes Generales.",
-      "El Tribunal de Cuentas.",
-      "El Gobierno de España."
-    ],
+    "options": ["Las Cortes Generales.", "El Tribunal de Cuentas.", "El Gobierno de España."],
     "answer": 0
   },
   {
@@ -856,11 +644,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La Constitución española es…",
-    "options": [
-      "la ley fundamental.",
-      "parte de otra ley.",
-      "una ley secundaria."
-    ],
+    "options": ["la ley fundamental.", "parte de otra ley.", "una ley secundaria."],
     "answer": 0
   },
   {
@@ -868,11 +652,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Las Cortes Generales están compuestas por el Senado y…",
-    "options": [
-      "el Congreso de los Diputados.",
-      "el Tribunal Supremo.",
-      "el Consejo de Estado."
-    ],
+    "options": ["el Congreso de los Diputados.", "el Tribunal Supremo.", "el Consejo de Estado."],
     "answer": 0
   },
   {
@@ -880,11 +660,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién elabora las leyes?",
-    "options": [
-      "El poder ejecutivo.",
-      "El poder legislativo.",
-      "El poder judicial."
-    ],
+    "options": ["El poder ejecutivo.", "El poder legislativo.", "El poder judicial."],
     "answer": 1
   },
   {
@@ -916,11 +692,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién vigila puertos y aeropuertos, fronteras y costas?",
-    "options": [
-      "La Guardia Civil.",
-      "La Policía local.",
-      "La Policía Nacional."
-    ],
+    "options": ["La Guardia Civil.", "La Policía local.", "La Policía Nacional."],
     "answer": 0
   },
   {
@@ -928,11 +700,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién hace el control de pasaportes en las fronteras de España?",
-    "options": [
-      "La Guardia Civil.",
-      "La Policía local.",
-      "La Policía Nacional."
-    ],
+    "options": ["La Guardia Civil.", "La Policía local.", "La Policía Nacional."],
     "answer": 2
   },
   {
@@ -940,11 +708,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de los siguientes políticos ha sido presidente del Gobierno en España?",
-    "options": [
-      "Manuel Fraga.",
-      "José María Aznar.",
-      "Yolanda Díaz."
-    ],
+    "options": ["Manuel Fraga.", "José María Aznar.", "Yolanda Díaz."],
     "answer": 1
   },
   {
@@ -952,11 +716,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama la policía autonómica de Cataluña?",
-    "options": [
-      "Guardia Civil.",
-      "Ertzaintza.",
-      "Mossos d'Esquadra."
-    ],
+    "options": ["Guardia Civil.", "Ertzaintza.", "Mossos d'Esquadra."],
     "answer": 2
   },
   {
@@ -964,11 +724,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama la policía autonómica del País Vasco?",
-    "options": [
-      "Ertzaintza.",
-      "Guardia Civil.",
-      "Mossos d'Esquadra."
-    ],
+    "options": ["Ertzaintza.", "Guardia Civil.", "Mossos d'Esquadra."],
     "answer": 0
   },
   {
@@ -976,11 +732,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Desde qué año es rey Felipe VI?",
-    "options": [
-      "Desde 1975.",
-      "Desde 2014.",
-      "Desde 2020."
-    ],
+    "options": ["Desde 1975.", "Desde 2014.", "Desde 2020."],
     "answer": 1
   },
   {
@@ -988,11 +740,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién regula el tráfico en los pueblos y ciudades?",
-    "options": [
-      "La Guardia Civil.",
-      "Protección Civil.",
-      "La Policía Local."
-    ],
+    "options": ["La Guardia Civil.", "Protección Civil.", "La Policía Local."],
     "answer": 2
   },
   {
@@ -1012,11 +760,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "En España el voto en las elecciones es…",
-    "options": [
-      "un derecho.",
-      "un deber.",
-      "una obligación."
-    ],
+    "options": ["un derecho.", "un deber.", "una obligación."],
     "answer": 0
   },
   {
@@ -1024,11 +768,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién vigila el tráfico en las carreteras?",
-    "options": [
-      "La Guardia Civil.",
-      "La Policía Nacional.",
-      "El Ejército de Tierra."
-    ],
+    "options": ["La Guardia Civil.", "La Policía Nacional.", "El Ejército de Tierra."],
     "answer": 0
   },
   {
@@ -1060,11 +800,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llaman los órganos de gobierno que solo existen en Canarias?",
-    "options": [
-      "Cabildos.",
-      "Consejos insulares.",
-      "Diputaciones."
-    ],
+    "options": ["Cabildos.", "Consejos insulares.", "Diputaciones."],
     "answer": 0
   },
   {
@@ -1072,11 +808,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos trámites administrativos puede realizarse en la sede electrónica?",
-    "options": [
-      "Tramitar el DNI.",
-      "Renovar el pasaporte.",
-      "Pagar los impuestos."
-    ],
+    "options": ["Tramitar el DNI.", "Renovar el pasaporte.", "Pagar los impuestos."],
     "answer": 2
   },
   {
@@ -1084,11 +816,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el número de teléfono de información de la Administración General del Estado?",
-    "options": [
-      "010.",
-      "060.",
-      "091."
-    ],
+    "options": ["010.", "060.", "091."],
     "answer": 1
   },
   {
@@ -1096,11 +824,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "España está organizada en…",
-    "options": [
-      "cantones.",
-      "comunidades autónomas.",
-      "estados federales."
-    ],
+    "options": ["cantones.", "comunidades autónomas.", "estados federales."],
     "answer": 1
   },
   {
@@ -1108,11 +832,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántos partidos políticos hay en España?",
-    "options": [
-      "Ninguno.",
-      "Uno.",
-      "Muchos."
-    ],
+    "options": ["Ninguno.", "Uno.", "Muchos."],
     "answer": 2
   },
   {
@@ -1132,11 +852,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién tiene el mando supremo de las Fuerzas Armadas?",
-    "options": [
-      "El rey.",
-      "El presidente del Gobierno.",
-      "El ministro de Defensa."
-    ],
+    "options": ["El rey.", "El presidente del Gobierno.", "El ministro de Defensa."],
     "answer": 0
   },
   {
@@ -1156,11 +872,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántas provincias hay en España?",
-    "options": [
-      "45.",
-      "50.",
-      "55."
-    ],
+    "options": ["45.", "50.", "55."],
     "answer": 1
   },
   {
@@ -1168,11 +880,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La enseñanza de las lenguas cooficiales es competencia…",
-    "options": [
-      "del Estado.",
-      "de la comunidad autónoma.",
-      "de la provincia."
-    ],
+    "options": ["del Estado.", "de la comunidad autónoma.", "de la provincia."],
     "answer": 1
   },
   {
@@ -1192,11 +900,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántas cámaras hay en el Parlamento español?",
-    "options": [
-      "Una.",
-      "Dos.",
-      "Tres."
-    ],
+    "options": ["Una.", "Dos.", "Tres."],
     "answer": 1
   },
   {
@@ -1216,11 +920,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "En materias como nacionalidad, inmigración, emigración o extranjería solo tiene competencia…",
-    "options": [
-      "el Estado.",
-      "las comunidades autónomas.",
-      "los ayuntamientos."
-    ],
+    "options": ["el Estado.", "las comunidades autónomas.", "los ayuntamientos."],
     "answer": 0
   },
   {
@@ -1228,11 +928,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántas mujeres han sido presidentas de Gobierno en España?",
-    "options": [
-      "Ninguna.",
-      "Una.",
-      "Dos."
-    ],
+    "options": ["Ninguna.", "Una.", "Dos."],
     "answer": 0
   },
   {
@@ -1240,11 +936,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Las relaciones internacionales son competencia de…",
-    "options": [
-      "el Estado.",
-      "las comunidades autónomas.",
-      "los ayuntamientos."
-    ],
+    "options": ["el Estado.", "las comunidades autónomas.", "los ayuntamientos."],
     "answer": 0
   },
   {
@@ -1252,11 +944,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El Ayuntamiento está formado por el alcalde y…",
-    "options": [
-      "los concejales.",
-      "los diputados.",
-      "los senadores."
-    ],
+    "options": ["los concejales.", "los diputados.", "los senadores."],
     "answer": 0
   },
   {
@@ -1276,11 +964,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el órgano de gobierno en los municipios?",
-    "options": [
-      "El ayuntamiento.",
-      "La diputación.",
-      "El cabildo."
-    ],
+    "options": ["El ayuntamiento.", "La diputación.", "El cabildo."],
     "answer": 0
   },
   {
@@ -1288,11 +972,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llaman los órganos de gobierno de las provincias españolas?",
-    "options": [
-      "Cabildos.",
-      "Consejos insulares.",
-      "Diputaciones."
-    ],
+    "options": ["Cabildos.", "Consejos insulares.", "Diputaciones."],
     "answer": 2
   },
   {
@@ -1300,11 +980,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el órgano superior del poder ejecutivo?",
-    "options": [
-      "El Gobierno.",
-      "Las Fuerzas Armadas.",
-      "Las Cortes Generales."
-    ],
+    "options": ["El Gobierno.", "Las Fuerzas Armadas.", "Las Cortes Generales."],
     "answer": 0
   },
   {
@@ -1312,11 +988,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "El idioma español también se llama…",
-    "options": [
-      "aragonés.",
-      "castellano.",
-      "leonés."
-    ],
+    "options": ["aragonés.", "castellano.", "leonés."],
     "answer": 1
   },
   {
@@ -1324,11 +996,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿A quiénes se elige en las elecciones al Parlamento Europeo?",
-    "options": [
-      "A los ministros europeos.",
-      "A los consejeros delegados.",
-      "A los eurodiputados."
-    ],
+    "options": ["A los ministros europeos.", "A los consejeros delegados.", "A los eurodiputados."],
     "answer": 2
   },
   {
@@ -1336,11 +1004,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Los españoles pueden votar a partir de los…",
-    "options": [
-      "16 años.",
-      "18 años.",
-      "21 años."
-    ],
+    "options": ["16 años.", "18 años.", "21 años."],
     "answer": 1
   },
   {
@@ -1348,11 +1012,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Algunos ciudadanos extranjeros pueden votar en las elecciones…",
-    "options": [
-      "municipales.",
-      "autonómicas.",
-      "generales."
-    ],
+    "options": ["municipales.", "autonómicas.", "generales."],
     "answer": 0
   },
   {
@@ -1360,11 +1020,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién controla la gestión financiera del Estado?",
-    "options": [
-      "El Banco de España.",
-      "La Agencia Tributaria.",
-      "El Tribunal de Cuentas."
-    ],
+    "options": ["El Banco de España.", "La Agencia Tributaria.", "El Tribunal de Cuentas."],
     "answer": 2
   },
   {
@@ -1372,11 +1028,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿A quiénes se elige en las elecciones generales?",
-    "options": [
-      "A los senadores y diputados.",
-      "A los eurodiputados.",
-      "A los concejales."
-    ],
+    "options": ["A los senadores y diputados.", "A los eurodiputados.", "A los concejales."],
     "answer": 0
   },
   {
@@ -1384,11 +1036,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cuántos miembros tiene el Congreso de los Diputados?",
-    "options": [
-      "300.",
-      "350.",
-      "400."
-    ],
+    "options": ["300.", "350.", "400."],
     "answer": 1
   },
   {
@@ -1396,11 +1044,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "Los municipios y provincias forman parte de la Administración…",
-    "options": [
-      "autonómica.",
-      "local.",
-      "central."
-    ],
+    "options": ["autonómica.", "local.", "central."],
     "answer": 1
   },
   {
@@ -1408,11 +1052,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "La comunidad autónoma más poblada de España es…",
-    "options": [
-      "Andalucía.",
-      "Cataluña.",
-      "Castilla y León."
-    ],
+    "options": ["Andalucía.", "Cataluña.", "Castilla y León."],
     "answer": 0
   },
   {
@@ -1420,11 +1060,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama la organización que defiende los intereses de los trabajadores?",
-    "options": [
-      "Asociación.",
-      "Partido.",
-      "Sindicato."
-    ],
+    "options": ["Asociación.", "Partido.", "Sindicato."],
     "answer": 2
   },
   {
@@ -1432,11 +1068,7 @@
     "section": "constitution-government",
     "type": "multiple-choice",
     "prompt": "¿Quién elige al presidente del Gobierno?",
-    "options": [
-      "El Congreso de los Diputados.",
-      "El rey.",
-      "El Tribunal Supremo."
-    ],
+    "options": ["El Congreso de los Diputados.", "El rey.", "El Tribunal Supremo."],
     "answer": 0
   },
   {
@@ -1696,11 +1328,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Dónde están Cáceres y Badajoz?",
-    "options": [
-      "En el Principado de Asturias.",
-      "En Andalucía.",
-      "En Extremadura."
-    ],
+    "options": ["En el Principado de Asturias.", "En Andalucía.", "En Extremadura."],
     "answer": 2
   },
   {
@@ -1708,11 +1336,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Cuál es la capital la Comunidad Valenciana?",
-    "options": [
-      "Alicante.",
-      "Castellón.",
-      "Valencia."
-    ],
+    "options": ["Alicante.", "Castellón.", "Valencia."],
     "answer": 2
   },
   {
@@ -1720,11 +1344,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Dónde están las islas Baleares?",
-    "options": [
-      "En el mar Cantábrico.",
-      "En el mar Mediterráneo.",
-      "En el océano Atlántico."
-    ],
+    "options": ["En el mar Cantábrico.", "En el mar Mediterráneo.", "En el océano Atlántico."],
     "answer": 1
   },
   {
@@ -1732,11 +1352,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Cómo se llama la extensa llanura situada en el centro de la península ibérica?",
-    "options": [
-      "Marisma.",
-      "Cordillera.",
-      "Meseta."
-    ],
+    "options": ["Marisma.", "Cordillera.", "Meseta."],
     "answer": 2
   },
   {
@@ -1744,11 +1360,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "El parque nacional de Ordesa está en...",
-    "options": [
-      "Aragón.",
-      "Navarra.",
-      "Castilla-La Mancha."
-    ],
+    "options": ["Aragón.", "Navarra.", "Castilla-La Mancha."],
     "answer": 0
   },
   {
@@ -1756,11 +1368,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿En qué comunidad autónoma están Guadalajara y Cuenca?",
-    "options": [
-      "En Castilla y León.",
-      "En Castilla-La Mancha.",
-      "En Cantabria."
-    ],
+    "options": ["En Castilla y León.", "En Castilla-La Mancha.", "En Cantabria."],
     "answer": 1
   },
   {
@@ -1768,11 +1376,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Qué comunidad autónoma tiene como capital Santiago de Compostela?",
-    "options": [
-      "Galicia.",
-      "Asturias.",
-      "Cantabria."
-    ],
+    "options": ["Galicia.", "Asturias.", "Cantabria."],
     "answer": 0
   },
   {
@@ -1780,11 +1384,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Dónde está Almería?",
-    "options": [
-      "En Andalucía.",
-      "En Canarias.",
-      "En Aragón."
-    ],
+    "options": ["En Andalucía.", "En Canarias.", "En Aragón."],
     "answer": 0
   },
   {
@@ -1792,11 +1392,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "La capital de la comunidad autónoma de Galicia es…",
-    "options": [
-      "A Coruña.",
-      "Vigo.",
-      "Santiago de Compostela."
-    ],
+    "options": ["A Coruña.", "Vigo.", "Santiago de Compostela."],
     "answer": 2
   },
   {
@@ -1804,11 +1400,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos ríos desemboca en el mar Mediterráneo?",
-    "options": [
-      "El Tajo.",
-      "El Júcar.",
-      "El Duero."
-    ],
+    "options": ["El Tajo.", "El Júcar.", "El Duero."],
     "answer": 1
   },
   {
@@ -1816,11 +1408,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Dónde está el monte Aneto?",
-    "options": [
-      "En los Pirineos.",
-      "En el Sistema Central.",
-      "En Sierra Nevada."
-    ],
+    "options": ["En los Pirineos.", "En el Sistema Central.", "En Sierra Nevada."],
     "answer": 0
   },
   {
@@ -1828,11 +1416,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "La ciudad de Vitoria es la sede administrativa de…",
-    "options": [
-      "Navarra.",
-      "País Vasco.",
-      "La Rioja."
-    ],
+    "options": ["Navarra.", "País Vasco.", "La Rioja."],
     "answer": 1
   },
   {
@@ -1852,11 +1436,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "El parque nacional de Aigüestortes está en...",
-    "options": [
-      "Cataluña.",
-      "Aragón",
-      "Castilla y León."
-    ],
+    "options": ["Cataluña.", "Aragón", "Castilla y León."],
     "answer": 0
   },
   {
@@ -1864,11 +1444,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "En el norte de África están Ceuta y…",
-    "options": [
-      "Almería.",
-      "Melilla.",
-      "Cádiz."
-    ],
+    "options": ["Almería.", "Melilla.", "Cádiz."],
     "answer": 1
   },
   {
@@ -1876,11 +1452,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿En qué lugar de España hay un clima que se caracteriza por inviernos fríos y veranos muy calurosos?",
-    "options": [
-      "Canarias.",
-      "Comunidad Valenciana.",
-      "Madrid."
-    ],
+    "options": ["Canarias.", "Comunidad Valenciana.", "Madrid."],
     "answer": 2
   },
   {
@@ -1888,11 +1460,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos ríos desemboca en el océano Atlántico?",
-    "options": [
-      "El Guadalquivir.",
-      "El Manzanares.",
-      "El Júcar."
-    ],
+    "options": ["El Guadalquivir.", "El Manzanares.", "El Júcar."],
     "answer": 0
   },
   {
@@ -1900,11 +1468,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estas provincias forma parte de la Comunidad de Castilla y León?",
-    "options": [
-      "Burgos.",
-      "Huesca.",
-      "Guadalajara."
-    ],
+    "options": ["Burgos.", "Huesca.", "Guadalajara."],
     "answer": 0
   },
   {
@@ -1912,11 +1476,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿En qué comunidad autónoma está la ciudad de Huesca?",
-    "options": [
-      "Castilla-La Mancha.",
-      "Aragón.",
-      "Extremadura."
-    ],
+    "options": ["Castilla-La Mancha.", "Aragón.", "Extremadura."],
     "answer": 1
   },
   {
@@ -1924,11 +1484,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "Canarias tiene un clima…",
-    "options": [
-      "mediterráneo.",
-      "oceánico.",
-      "subtropical."
-    ],
+    "options": ["mediterráneo.", "oceánico.", "subtropical."],
     "answer": 2
   },
   {
@@ -1936,11 +1492,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "El principal río que desemboca en el mar Mediterráneo es el…",
-    "options": [
-      "Ebro.",
-      "Duero.",
-      "Tajo."
-    ],
+    "options": ["Ebro.", "Duero.", "Tajo."],
     "answer": 0
   },
   {
@@ -1948,11 +1500,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "España está entre los países de Europa más…",
-    "options": [
-      "lluviosos.",
-      "montañosos.",
-      "fríos."
-    ],
+    "options": ["lluviosos.", "montañosos.", "fríos."],
     "answer": 1
   },
   {
@@ -1960,11 +1508,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿En qué provincia está el parque nacional de Monfragüe?",
-    "options": [
-      "En Cáceres.",
-      "En Murcia.",
-      "En Ciudad Real."
-    ],
+    "options": ["En Cáceres.", "En Murcia.", "En Ciudad Real."],
     "answer": 0
   },
   {
@@ -1972,11 +1516,7 @@
     "section": "territorial-organization",
     "type": "multiple-choice",
     "prompt": "¿Cuál es la capital de la comunidad autónoma de Extremadura?",
-    "options": [
-      "Cáceres.",
-      "Badajoz.",
-      "Mérida."
-    ],
+    "options": ["Cáceres.", "Badajoz.", "Mérida."],
     "answer": 2
   },
   {
@@ -1984,11 +1524,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "Los personajes principales de la novela el Quijote son don Quijote y…",
-    "options": [
-      "Don Juan.",
-      "Sancho Panza.",
-      "Doña Inés."
-    ],
+    "options": ["Don Juan.", "Sancho Panza.", "Doña Inés."],
     "answer": 1
   },
   {
@@ -1996,11 +1532,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué científica española es reconocida por sus investigaciones?",
-    "options": [
-      "Almudena Grandes.",
-      "Montserrat Caballé.",
-      "Margarita Salas."
-    ],
+    "options": ["Almudena Grandes.", "Montserrat Caballé.", "Margarita Salas."],
     "answer": 2
   },
   {
@@ -2008,11 +1540,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Quién escribió La casa de Bernarda Alba?",
-    "options": [
-      "Federico García Lorca.",
-      "Miguel de Cervantes.",
-      "Antonio Machado."
-    ],
+    "options": ["Federico García Lorca.", "Miguel de Cervantes.", "Antonio Machado."],
     "answer": 0
   },
   {
@@ -2020,11 +1548,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Quién escribió Nada, una novela sobre la posguerra española?",
-    "options": [
-      "Carmen Laforet.",
-      "Ana María Matute.",
-      "María Dueñas."
-    ],
+    "options": ["Carmen Laforet.", "Ana María Matute.", "María Dueñas."],
     "answer": 0
   },
   {
@@ -2032,11 +1556,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué músico compuso El amor brujo?",
-    "options": [
-      "Manuel de Falla.",
-      "Isaac Albéniz.",
-      "Joaquín Rodrigo."
-    ],
+    "options": ["Manuel de Falla.", "Isaac Albéniz.", "Joaquín Rodrigo."],
     "answer": 0
   },
   {
@@ -2044,11 +1564,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué es típico en la Noche de San Juan?",
-    "options": [
-      "Comer uvas.",
-      "Encender hogueras.",
-      "Regalar libros."
-    ],
+    "options": ["Comer uvas.", "Encender hogueras.", "Regalar libros."],
     "answer": 1
   },
   {
@@ -2056,11 +1572,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el instrumento más característico de la música flamenca?",
-    "options": [
-      "La gaita.",
-      "La guitarra.",
-      "El piano."
-    ],
+    "options": ["La gaita.", "La guitarra.", "El piano."],
     "answer": 1
   },
   {
@@ -2068,11 +1580,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "Isabel Coixet es una…",
-    "options": [
-      "cantante pop.",
-      "bailarina clásica.",
-      "directora de cine."
-    ],
+    "options": ["cantante pop.", "bailarina clásica.", "directora de cine."],
     "answer": 2
   },
   {
@@ -2080,11 +1588,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "Una de las cantantes españolas más famosas actualmente es...",
-    "options": [
-      "Rosalía.",
-      "Marisol.",
-      "Lola Flores."
-    ],
+    "options": ["Rosalía.", "Marisol.", "Lola Flores."],
     "answer": 0
   },
   {
@@ -2092,11 +1596,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿En qué ciudad de España hay una mezquita que es Patrimonio de la Humanidad?",
-    "options": [
-      "Santiago de Compostela.",
-      "Madrid.",
-      "Córdoba."
-    ],
+    "options": ["Santiago de Compostela.", "Madrid.", "Córdoba."],
     "answer": 2
   },
   {
@@ -2104,11 +1604,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿En qué ciudad de España se encuentra La Alhambra, que es Patrimonio de la Humanidad?",
-    "options": [
-      "En Sevilla.",
-      "En Córdoba.",
-      "En Granada."
-    ],
+    "options": ["En Sevilla.", "En Córdoba.", "En Granada."],
     "answer": 2
   },
   {
@@ -2116,11 +1612,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el nombre de la directora española que ha destacado por su mirada crítica y por modernizar el cine nacional?",
-    "options": [
-      "Pilar Miró.",
-      "Sara Baras.",
-      "Penélope Cruz."
-    ],
+    "options": ["Pilar Miró.", "Sara Baras.", "Penélope Cruz."],
     "answer": 0
   },
   {
@@ -2128,11 +1620,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué novela de éxito ha escrito Irene Vallejo?",
-    "options": [
-      "El infinito en un junco.",
-      "El tiempo entre costuras.",
-      "El camino."
-    ],
+    "options": ["El infinito en un junco.", "El tiempo entre costuras.", "El camino."],
     "answer": 0
   },
   {
@@ -2152,11 +1640,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "Paco de Lucía fue un famoso….",
-    "options": [
-      "científico.",
-      "guitarrista.",
-      "pintor."
-    ],
+    "options": ["científico.", "guitarrista.", "pintor."],
     "answer": 1
   },
   {
@@ -2164,11 +1648,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué celebramos el 24 de diciembre?",
-    "options": [
-      "Carnaval.",
-      "Nochebuena.",
-      "San Juan."
-    ],
+    "options": ["Carnaval.", "Nochebuena.", "San Juan."],
     "answer": 1
   },
   {
@@ -2176,11 +1656,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "Juan Mari Arzak es un famoso....",
-    "options": [
-      "escritor.",
-      "músico",
-      "cocinero."
-    ],
+    "options": ["escritor.", "músico", "cocinero."],
     "answer": 2
   },
   {
@@ -2200,11 +1676,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué canciones típicas se cantan en Navidad?",
-    "options": [
-      "Flamenco.",
-      "Villancicos.",
-      "Jotas."
-    ],
+    "options": ["Flamenco.", "Villancicos.", "Jotas."],
     "answer": 1
   },
   {
@@ -2212,11 +1684,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "La Liga y la Copa del Rey son competiciones de…",
-    "options": [
-      "natación.",
-      "atletismo.",
-      "fútbol."
-    ],
+    "options": ["natación.", "atletismo.", "fútbol."],
     "answer": 2
   },
   {
@@ -2224,11 +1692,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Quién ha recibido el premio Nobel de Literatura?",
-    "options": [
-      "María Zambrano.",
-      "Pablo Picasso.",
-      "Vicente Aleixandre."
-    ],
+    "options": ["María Zambrano.", "Pablo Picasso.", "Vicente Aleixandre."],
     "answer": 2
   },
   {
@@ -2236,11 +1700,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué fiesta se celebra en Pamplona el 7 de julio?",
-    "options": [
-      "Los sanfermines.",
-      "Las Fallas.",
-      "La Feria de Abril."
-    ],
+    "options": ["Los sanfermines.", "Las Fallas.", "La Feria de Abril."],
     "answer": 0
   },
   {
@@ -2248,11 +1708,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "Teresa Perales y Daniel Molina son...",
-    "options": [
-      "campeones paraolímpicos.",
-      "músicos famosos.",
-      "artistas de cine."
-    ],
+    "options": ["campeones paraolímpicos.", "músicos famosos.", "artistas de cine."],
     "answer": 0
   },
   {
@@ -2260,11 +1716,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué toman los españoles la noche del 31 de diciembre para celebrar el cambio de año?",
-    "options": [
-      "Lentejas.",
-      "Uvas.",
-      "Aceitunas."
-    ],
+    "options": ["Lentejas.", "Uvas.", "Aceitunas."],
     "answer": 1
   },
   {
@@ -2272,11 +1724,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué mujer es autora del cuadro La verbena?",
-    "options": [
-      "Maruja Mallo.",
-      "Carmen Maura.",
-      "Clara Lago."
-    ],
+    "options": ["Maruja Mallo.", "Carmen Maura.", "Clara Lago."],
     "answer": 0
   },
   {
@@ -2284,11 +1732,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿En qué museo español puedes ver el cuadro Guernica de Picasso?",
-    "options": [
-      "Museo del Prado.",
-      "Museo Reina Sofía.",
-      "Museo Thyssen-Bornemisza."
-    ],
+    "options": ["Museo del Prado.", "Museo Reina Sofía.", "Museo Thyssen-Bornemisza."],
     "answer": 1
   },
   {
@@ -2296,11 +1740,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué escritora española escribe en otra lengua oficial de España?",
-    "options": [
-      "Mercè Rodoreda.",
-      "Almudena Grandes.",
-      "Ana María Matute."
-    ],
+    "options": ["Mercè Rodoreda.", "Almudena Grandes.", "Ana María Matute."],
     "answer": 0
   },
   {
@@ -2332,11 +1772,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué ciudad fue un centro científico en Al-Ándalus, donde se estudiaba medicina y astronomía?",
-    "options": [
-      "Barcelona.",
-      "Madrid.",
-      "Córdoba."
-    ],
+    "options": ["Barcelona.", "Madrid.", "Córdoba."],
     "answer": 2
   },
   {
@@ -2344,11 +1780,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿En qué ciudad española está el Museo Guggenheim?",
-    "options": [
-      "Bilbao.",
-      "Madrid.",
-      "Valencia."
-    ],
+    "options": ["Bilbao.", "Madrid.", "Valencia."],
     "answer": 0
   },
   {
@@ -2356,11 +1788,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "El Premio Cervantes se da a…",
-    "options": [
-      "actores.",
-      "escritores.",
-      "pintores."
-    ],
+    "options": ["actores.", "escritores.", "pintores."],
     "answer": 1
   },
   {
@@ -2368,11 +1796,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué premio reconoce a los mejores actores y películas?",
-    "options": [
-      "Premio Goya.",
-      "Premio Nobel.",
-      "Premio Cervantes."
-    ],
+    "options": ["Premio Goya.", "Premio Nobel.", "Premio Cervantes."],
     "answer": 0
   },
   {
@@ -2380,11 +1804,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Qué premios promueven en España valores científicos, culturales y humanísticos?",
-    "options": [
-      "Los Premios Cervantes.",
-      "Los Premios Princesa de Asturias.",
-      "Los Premios Goya."
-    ],
+    "options": ["Los Premios Cervantes.", "Los Premios Princesa de Asturias.", "Los Premios Goya."],
     "answer": 1
   },
   {
@@ -2392,11 +1812,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos deportes es muy popular en España?",
-    "options": [
-      "El fútbol.",
-      "El esquí",
-      "El golf."
-    ],
+    "options": ["El fútbol.", "El esquí", "El golf."],
     "answer": 0
   },
   {
@@ -2404,11 +1820,7 @@
     "section": "culture-history",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos deportistas juega al tenis?",
-    "options": [
-      "Pau Gasol.",
-      "Carlos Sainz.",
-      "Carlos Alcaraz."
-    ],
+    "options": ["Pau Gasol.", "Carlos Sainz.", "Carlos Alcaraz."],
     "answer": 2
   },
   {
@@ -2440,11 +1852,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿A qué sustituye el registro electrónico individual?",
-    "options": [
-      "Al DNI.",
-      "Al permiso de conducir.",
-      "Al libro de familia."
-    ],
+    "options": ["Al DNI.", "Al permiso de conducir.", "Al libro de familia."],
     "answer": 2
   },
   {
@@ -2452,11 +1860,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es la edad mínima para conducir un coche en España?",
-    "options": [
-      "16 años.",
-      "18 años.",
-      "20 años."
-    ],
+    "options": ["16 años.", "18 años.", "20 años."],
     "answer": 1
   },
   {
@@ -2476,11 +1880,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Para sacar el carné de conducir hay que aprobar…",
-    "options": [
-      "un examen teórico.",
-      "un examen práctico.",
-      "un examen teórico y otro práctico."
-    ],
+    "options": ["un examen teórico.", "un examen práctico.", "un examen teórico y otro práctico."],
     "answer": 2
   },
   {
@@ -2500,11 +1900,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos canales de televisión es autonómico?",
-    "options": [
-      "Telecinco.",
-      "Nova.",
-      "Canal Sur."
-    ],
+    "options": ["Telecinco.", "Nova.", "Canal Sur."],
     "answer": 2
   },
   {
@@ -2512,11 +1908,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuánto dura el permiso de maternidad o paternidad?",
-    "options": [
-      "12 semanas.",
-      "19 semanas.",
-      "22 semanas."
-    ],
+    "options": ["12 semanas.", "19 semanas.", "22 semanas."],
     "answer": 1
   },
   {
@@ -2524,11 +1916,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es la tasa máxima de alcohol en sangre permitida a los conductores, en gramos por litro (g/l)?",
-    "options": [
-      "0,5.",
-      "0,7.",
-      "0,9."
-    ],
+    "options": ["0,5.", "0,7.", "0,9."],
     "answer": 0
   },
   {
@@ -2536,11 +1924,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el tipo de residencia más habitual en España?",
-    "options": [
-      "Casa rural.",
-      "Piso en un edificio de viviendas.",
-      "Chalé independiente."
-    ],
+    "options": ["Casa rural.", "Piso en un edificio de viviendas.", "Chalé independiente."],
     "answer": 1
   },
   {
@@ -2548,11 +1932,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué comunidad autónoma es conocida por la calidad de su aceite de oliva?",
-    "options": [
-      "Cantabria.",
-      "Andalucía.",
-      "La Rioja."
-    ],
+    "options": ["Cantabria.", "Andalucía.", "La Rioja."],
     "answer": 1
   },
   {
@@ -2572,11 +1952,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "El aperitivo que acompaña a la bebida en bares y restaurantes se llama...",
-    "options": [
-      "bocadillo.",
-      "tapa.",
-      "primer plato."
-    ],
+    "options": ["bocadillo.", "tapa.", "primer plato."],
     "answer": 1
   },
   {
@@ -2596,11 +1972,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Con cuántos hijos una familia es numerosa?",
-    "options": [
-      "Con 1 hijo.",
-      "Con 2 hijos.",
-      "Con 3 hijos."
-    ],
+    "options": ["Con 1 hijo.", "Con 2 hijos.", "Con 3 hijos."],
     "answer": 2
   },
   {
@@ -2620,11 +1992,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Los propietarios de perros deben registrarlos en…",
-    "options": [
-      "el Ministerio de Justicia.",
-      "la comisaría de policía.",
-      "el Ayuntamiento."
-    ],
+    "options": ["el Ministerio de Justicia.", "la comisaría de policía.", "el Ayuntamiento."],
     "answer": 2
   },
   {
@@ -2632,11 +2000,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Los principales ingredientes de la tortilla española son huevos y…",
-    "options": [
-      "pimientos.",
-      "patatas.",
-      "tomates."
-    ],
+    "options": ["pimientos.", "patatas.", "tomates."],
     "answer": 1
   },
   {
@@ -2644,11 +2008,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es uno de los platos más conocidos internacionalmente de la gastronomía española?",
-    "options": [
-      "Gazpacho.",
-      "Pizza.",
-      "Pasta."
-    ],
+    "options": ["Gazpacho.", "Pizza.", "Pasta."],
     "answer": 0
   },
   {
@@ -2656,11 +2016,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos canales de televisión es público?",
-    "options": [
-      "Tele 5.",
-      "La 1.",
-      "Antena 3."
-    ],
+    "options": ["Tele 5.", "La 1.", "Antena 3."],
     "answer": 1
   },
   {
@@ -2680,11 +2036,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos es el principal ingrediente de la paella valenciana?",
-    "options": [
-      "Arroz.",
-      "Chorizo.",
-      "Garbanzos."
-    ],
+    "options": ["Arroz.", "Chorizo.", "Garbanzos."],
     "answer": 0
   },
   {
@@ -2692,11 +2044,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "La sidra es una bebida típica de…",
-    "options": [
-      "Asturias.",
-      "Valencia.",
-      "Canarias."
-    ],
+    "options": ["Asturias.", "Valencia.", "Canarias."],
     "answer": 0
   },
   {
@@ -2716,11 +2064,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "La Fiesta Nacional de España es el…",
-    "options": [
-      "6 de diciembre.",
-      "15 de agosto.",
-      "12 de octubre."
-    ],
+    "options": ["6 de diciembre.", "15 de agosto.", "12 de octubre."],
     "answer": 2
   },
   {
@@ -2728,11 +2072,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué días suelen cerrar la mayoría de las tiendas o el pequeño comercio?",
-    "options": [
-      "Los lunes.",
-      "Los domingos.",
-      "Los sábados por la tarde."
-    ],
+    "options": ["Los lunes.", "Los domingos.", "Los sábados por la tarde."],
     "answer": 1
   },
   {
@@ -2740,11 +2080,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Dónde se hace el pasaporte?",
-    "options": [
-      "En el registro civil.",
-      "En una comisaría de policía.",
-      "En el Ayuntamiento."
-    ],
+    "options": ["En el registro civil.", "En una comisaría de policía.", "En el Ayuntamiento."],
     "answer": 1
   },
   {
@@ -2752,11 +2088,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "El Ministerio de Igualdad es el encargado de luchar contra la violencia de género y la…",
-    "options": [
-      "separación.",
-      "discriminación.",
-      "solidaridad."
-    ],
+    "options": ["separación.", "discriminación.", "solidaridad."],
     "answer": 1
   },
   {
@@ -2764,11 +2096,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué comunidad autónoma es conocida por la calidad de sus cavas?",
-    "options": [
-      "Galicia.",
-      "Cataluña.",
-      "Castilla-La Mancha."
-    ],
+    "options": ["Galicia.", "Cataluña.", "Castilla-La Mancha."],
     "answer": 1
   },
   {
@@ -2776,11 +2104,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué documento se necesita para recibir atención médica en la sanidad pública?",
-    "options": [
-      "El pasaporte.",
-      "La tarjeta sanitaria.",
-      "El certificado de nacimiento."
-    ],
+    "options": ["El pasaporte.", "La tarjeta sanitaria.", "El certificado de nacimiento."],
     "answer": 1
   },
   {
@@ -2788,11 +2112,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "El horario de Canarias, con respecto a la Península, es de…",
-    "options": [
-      "dos horas menos.",
-      "una hora menos.",
-      "una hora más."
-    ],
+    "options": ["dos horas menos.", "una hora menos.", "una hora más."],
     "answer": 1
   },
   {
@@ -2800,11 +2120,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Para acceder a la Universidad se debe superar una prueba de evaluación llamada…",
-    "options": [
-      "Selectividad.",
-      "Examen preuniversitario.",
-      "Prueba de Acceso a la Universidad."
-    ],
+    "options": ["Selectividad.", "Examen preuniversitario.", "Prueba de Acceso a la Universidad."],
     "answer": 2
   },
   {
@@ -2812,11 +2128,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos productos necesita importar España de otros países?",
-    "options": [
-      "Petróleo.",
-      "Aceite de oliva.",
-      "Medicamentos."
-    ],
+    "options": ["Petróleo.", "Aceite de oliva.", "Medicamentos."],
     "answer": 0
   },
   {
@@ -2836,11 +2148,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Los adultos sin Bachillerato pueden estudiar en la Universidad haciendo una prueba especial a partir de los…",
-    "options": [
-      "18 años.",
-      "23 años.",
-      "25 años."
-    ],
+    "options": ["18 años.", "23 años.", "25 años."],
     "answer": 2
   },
   {
@@ -2848,11 +2156,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Dónde puede encontrarse la siguiente norma «No pisar el césped, ni arrancar flores»?",
-    "options": [
-      "En zonas de recreo.",
-      "En los teatros.",
-      "En los estadios de fútbol."
-    ],
+    "options": ["En zonas de recreo.", "En los teatros.", "En los estadios de fútbol."],
     "answer": 0
   },
   {
@@ -2884,11 +2188,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué número reciben los trabajadores al comenzar su primer empleo?",
-    "options": [
-      "El de la Seguridad Social.",
-      "El del pasaporte.",
-      "El número de servicio."
-    ],
+    "options": ["El de la Seguridad Social.", "El del pasaporte.", "El número de servicio."],
     "answer": 0
   },
   {
@@ -2908,11 +2208,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos puertos es uno de los principales de España?",
-    "options": [
-      "Tenerife.",
-      "Alicante.",
-      "Algeciras."
-    ],
+    "options": ["Tenerife.", "Alicante.", "Algeciras."],
     "answer": 2
   },
   {
@@ -2932,11 +2228,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "España exporta productos principalmente a países…",
-    "options": [
-      "de Hispanoamérica.",
-      "de la Unión Europea.",
-      "del norte de África."
-    ],
+    "options": ["de Hispanoamérica.", "de la Unión Europea.", "del norte de África."],
     "answer": 1
   },
   {
@@ -2944,11 +2236,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Las bibliotecas públicas son gratuitas para…",
-    "options": [
-      "todos.",
-      "los parados.",
-      "los niños."
-    ],
+    "options": ["todos.", "los parados.", "los niños."],
     "answer": 0
   },
   {
@@ -2956,11 +2244,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos productos exporta España más que importa?",
-    "options": [
-      "Gas.",
-      "Ropa.",
-      "Calzado."
-    ],
+    "options": ["Gas.", "Ropa.", "Calzado."],
     "answer": 2
   },
   {
@@ -2992,11 +2276,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Adónde vamos para ver al médico de familia o al pediatra?",
-    "options": [
-      "Al hospital.",
-      "Al centro de salud.",
-      "A la farmacia."
-    ],
+    "options": ["Al hospital.", "Al centro de salud.", "A la farmacia."],
     "answer": 1
   },
   {
@@ -3004,11 +2284,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Para cuántos años vale la tarjeta sanitaria europea?",
-    "options": [
-      "Para un año.",
-      "Para dos años.",
-      "Para 10 años."
-    ],
+    "options": ["Para un año.", "Para dos años.", "Para 10 años."],
     "answer": 1
   },
   {
@@ -3016,11 +2292,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿A qué hora se cena normalmente en España?",
-    "options": [
-      "A las 18 h.",
-      "A las 23 h.",
-      "A las 21 o 22 h."
-    ],
+    "options": ["A las 18 h.", "A las 23 h.", "A las 21 o 22 h."],
     "answer": 2
   },
   {
@@ -3028,11 +2300,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el número de teléfono único para cualquier emergencia?",
-    "options": [
-      "060.",
-      "112.",
-      "911."
-    ],
+    "options": ["060.", "112.", "911."],
     "answer": 1
   },
   {
@@ -3040,11 +2308,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos periódicos se publica a nivel nacional?",
-    "options": [
-      "El Diario Vasco.",
-      "El País.",
-      "La Voz de Galicia."
-    ],
+    "options": ["El Diario Vasco.", "El País.", "La Voz de Galicia."],
     "answer": 1
   },
   {
@@ -3052,11 +2316,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Dónde se venden sellos y tabaco?",
-    "options": [
-      "En el quiosco.",
-      "En la farmacia.",
-      "En el estanco."
-    ],
+    "options": ["En el quiosco.", "En la farmacia.", "En el estanco."],
     "answer": 2
   },
   {
@@ -3064,11 +2324,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuándo se puede llamar al número de teléfono para atención a víctimas de violencia de género?",
-    "options": [
-      "Las 24 horas del día.",
-      "En horario de mañana.",
-      "De lunes a viernes."
-    ],
+    "options": ["Las 24 horas del día.", "En horario de mañana.", "De lunes a viernes."],
     "answer": 0
   },
   {
@@ -3076,11 +2332,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "La organización que trabaja para conseguir la integración de las personas con discapacidad visual es…",
-    "options": [
-      "la ONCE.",
-      "Unicef.",
-      "Cáritas."
-    ],
+    "options": ["la ONCE.", "Unicef.", "Cáritas."],
     "answer": 0
   },
   {
@@ -3100,11 +2352,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el canal de televisión estatal que transmite noticias de actualidad nacional e internacional continuamente?",
-    "options": [
-      "Teledeporte.",
-      "La 1.",
-      "Canal 24 horas."
-    ],
+    "options": ["Teledeporte.", "La 1.", "Canal 24 horas."],
     "answer": 2
   },
   {
@@ -3112,11 +2360,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "El teléfono gratuito para las víctimas de violencia de género es el…",
-    "options": [
-      "091.",
-      "112.",
-      "016."
-    ],
+    "options": ["091.", "112.", "016."],
     "answer": 2
   },
   {
@@ -3124,11 +2368,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "En España, la red de trenes puede ser de larga distancia, de media distancia y…",
-    "options": [
-      "de cercanías.",
-      "rural.",
-      "transnacional."
-    ],
+    "options": ["de cercanías.", "rural.", "transnacional."],
     "answer": 0
   },
   {
@@ -3136,11 +2376,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué está prohibido en la puerta de un colegio?",
-    "options": [
-      "Fumar un cigarrillo.",
-      "Conducir un coche.",
-      "Vender refrescos."
-    ],
+    "options": ["Fumar un cigarrillo.", "Conducir un coche.", "Vender refrescos."],
     "answer": 0
   },
   {
@@ -3148,11 +2384,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué título se obtiene al finalizar un ciclo de grado medio de Formación Profesional?",
-    "options": [
-      "Bachiller.",
-      "Técnico.",
-      "Graduado en ESO."
-    ],
+    "options": ["Bachiller.", "Técnico.", "Graduado en ESO."],
     "answer": 1
   },
   {
@@ -3160,11 +2392,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Qué título se obtiene tras realizar una tesis doctoral en España?",
-    "options": [
-      "Máster.",
-      "Graduado.",
-      "Doctor."
-    ],
+    "options": ["Máster.", "Graduado.", "Doctor."],
     "answer": 2
   },
   {
@@ -3172,11 +2400,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Dónde se compran las medicinas con receta?",
-    "options": [
-      "En el hospital",
-      "En el centro de salud.",
-      "En la farmacia."
-    ],
+    "options": ["En el hospital", "En el centro de salud.", "En la farmacia."],
     "answer": 2
   },
   {
@@ -3196,11 +2420,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de las siguientes cosas es obligatoria para el propietario de un coche en España?",
-    "options": [
-      "El garaje",
-      "El seguro.",
-      "La alarma."
-    ],
+    "options": ["El garaje", "El seguro.", "La alarma."],
     "answer": 1
   },
   {
@@ -3208,11 +2428,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "El aeropuerto Adolfo Suárez está en…",
-    "options": [
-      "Barcelona.",
-      "Madrid",
-      "Bilbao."
-    ],
+    "options": ["Barcelona.", "Madrid", "Bilbao."],
     "answer": 1
   },
   {
@@ -3232,11 +2448,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el límite de velocidad en autopista?",
-    "options": [
-      "90 km/h.",
-      "120 km/h.",
-      "150 km/h."
-    ],
+    "options": ["90 km/h.", "120 km/h.", "150 km/h."],
     "answer": 1
   },
   {
@@ -3244,11 +2456,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Ceder el asiento a las personas con movilidad reducida es una norma que encontramos indicada en…",
-    "options": [
-      "el transporte público.",
-      "las bibliotecas.",
-      "los museos."
-    ],
+    "options": ["el transporte público.", "las bibliotecas.", "los museos."],
     "answer": 0
   },
   {
@@ -3256,11 +2464,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el medio de transporte público que tiene una luz verde encendida si está libre?",
-    "options": [
-      "El autobús.",
-      "El taxi.",
-      "El tranvía."
-    ],
+    "options": ["El autobús.", "El taxi.", "El tranvía."],
     "answer": 1
   },
   {
@@ -3280,11 +2484,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "Los españoles necesitan el pasaporte para viajar a…",
-    "options": [
-      "Italia.",
-      "China.",
-      "Alemania."
-    ],
+    "options": ["Italia.", "China.", "Alemania."],
     "answer": 1
   },
   {
@@ -3292,11 +2492,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es la edad mínima para trabajar en España?",
-    "options": [
-      "16 años.",
-      "18 años.",
-      "21 años."
-    ],
+    "options": ["16 años.", "18 años.", "21 años."],
     "answer": 0
   },
   {
@@ -3304,11 +2500,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál es el sector de mayor peso en la economía española?",
-    "options": [
-      "Agricultura.",
-      "Servicios.",
-      "Construcción."
-    ],
+    "options": ["Agricultura.", "Servicios.", "Construcción."],
     "answer": 1
   },
   {
@@ -3316,11 +2508,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "España es innovadora en el sector de…",
-    "options": [
-      "la ingeniería aeroespacial.",
-      "las energías renovables.",
-      "la energía nuclear."
-    ],
+    "options": ["la ingeniería aeroespacial.", "las energías renovables.", "la energía nuclear."],
     "answer": 1
   },
   {
@@ -3340,11 +2528,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuál de estos establecimientos está abierto 24 horas si es necesario?",
-    "options": [
-      "Farmacia.",
-      "Pescadería.",
-      "Librería."
-    ],
+    "options": ["Farmacia.", "Pescadería.", "Librería."],
     "answer": 0
   },
   {
@@ -3352,11 +2536,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "La educación infantil en España…",
-    "options": [
-      "es obligatoria.",
-      "tiene dos ciclos.",
-      "empieza a los 4 años."
-    ],
+    "options": ["es obligatoria.", "tiene dos ciclos.", "empieza a los 4 años."],
     "answer": 1
   },
   {
@@ -3364,11 +2544,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿Cuándo empieza el calendario escolar?",
-    "options": [
-      "En agosto.",
-      "En septiembre.",
-      "En octubre."
-    ],
+    "options": ["En agosto.", "En septiembre.", "En octubre."],
     "answer": 1
   },
   {
@@ -3412,11 +2588,7 @@
     "section": "society",
     "type": "multiple-choice",
     "prompt": "¿En cuál de estos sectores destaca España?",
-    "options": [
-      "En el turismo.",
-      "En la industria automovilística.",
-      "En tecnología digital."
-    ],
+    "options": ["En el turismo.", "En la industria automovilística.", "En tecnología digital."],
     "answer": 0
   }
 ]
