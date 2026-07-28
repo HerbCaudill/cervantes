@@ -40,9 +40,11 @@ export function validateManualBlock(
             `${location} table row ${rowIndex + 1} must have ${block.headers.length} cells`,
           )
         }
-        row.forEach((cell, cellIndex) =>
-          assertNonBlank(cell, `${location} table row ${rowIndex + 1} cell ${cellIndex + 1}`),
-        )
+        row.forEach((cell, cellIndex) => {
+          if (cell !== null) {
+            assertNonBlank(cell, `${location} table row ${rowIndex + 1} cell ${cellIndex + 1}`)
+          }
+        })
       })
       return
     }

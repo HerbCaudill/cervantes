@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest"
+import { MANUAL_SECTION_IDS } from "@/manual/constants"
 import { validateManual } from "@/manual/validateManual"
-import type { Manual } from "@/manual/types"
+import type { Manual, ManualSectionId } from "@/manual/types"
 
 describe("validateManual", () => {
   it("accepts a manual containing every semantic content form", () => {
@@ -66,6 +67,42 @@ describe("validateManual", () => {
     manual.sections = []
 
     expect(() => validateManual(manual)).toThrow(/section/i)
+  })
+
+  it.each([
+    {
+      name: "missing",
+      update: (manual: Manual) => {
+        manual.sections = manual.sections.slice(0, -1)
+      },
+    },
+    {
+      name: "extra",
+      update: (manual: Manual) => {
+        manual.sections.push({
+          id: "task-6" as ManualSectionId,
+          title: "Tarea 6",
+          topics: [
+            {
+              id: "task-6-extra",
+              title: "Contenido adicional",
+              blocks: [{ type: "paragraph", text: "Contenido adicional." }],
+            },
+          ],
+        })
+      },
+    },
+    {
+      name: "reordered",
+      update: (manual: Manual) => {
+        ;[manual.sections[0], manual.sections[1]] = [manual.sections[1], manual.sections[0]]
+      },
+    },
+  ])("rejects $name official sections", ({ update }) => {
+    const manual = createManual()
+    update(manual)
+
+    expect(() => validateManual(manual)).toThrow(/section ids.*in order/i)
   })
 
   it("rejects a section without topics", () => {
@@ -147,6 +184,19 @@ describe("validateManual", () => {
     expect(() => validateManual(manual)).toThrow(/table/i)
   })
 
+  it("accepts explicit empty cells in a partially filled table row", () => {
+    const manual = createManual()
+    manual.sections[0].topics[0].blocks = [
+      {
+        type: "table",
+        headers: ["Comunidad", "Población", "Comunidad", "Población", "Comunidad", "Población"],
+        rows: [["Andalucía", "8 500 187", "Aragón", "1 351 591", null, null]],
+      },
+    ]
+
+    expect(() => validateManual(manual)).not.toThrow()
+  })
+
   it("rejects a figure that refers to an unknown asset", () => {
     const manual = createManual()
     manual.sections[0].topics[0].blocks = [
@@ -202,45 +252,43 @@ function createManual(): Manual {
         alt: "Fachada del Congreso de los Diputados",
       },
     ],
-    sections: [
-      {
-        id: "task-1",
-        title: "Tarea 1",
-        topics: [
-          {
-            id: "task-1-poder-legislativo",
-            title: "El poder legislativo",
-            blocks: [
-              { type: "heading", level: 2, text: "Las Cortes Generales" },
-              { type: "paragraph", text: "Las Cortes Generales representan al pueblo español." },
-              {
-                type: "list",
-                style: "unordered",
-                items: ["El Congreso de los Diputados", "El Senado"],
-              },
-              {
-                type: "table",
-                caption: "Instituciones y sedes",
-                headers: ["Institución", "Sede"],
-                rows: [["Congreso de los Diputados", "Madrid"]],
-              },
-              {
-                type: "figure",
-                assetId: "figure-congreso",
-                caption: "El Congreso de los Diputados.",
-              },
-              {
-                type: "callout",
-                title: "Importante",
-                blocks: [
-                  { type: "paragraph", text: "Las Cortes Generales tienen dos cámaras." },
-                  { type: "list", style: "ordered", items: ["Congreso", "Senado"] },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    sections: MANUAL_SECTION_IDS.map((sectionId, index) => ({
+      id: sectionId,
+      title: `Tarea ${index + 1}`,
+      topics: [
+        {
+          id: `${sectionId}-poder-legislativo`,
+          title: "El poder legislativo",
+          blocks: [
+            { type: "heading", level: 2, text: "Las Cortes Generales" },
+            { type: "paragraph", text: "Las Cortes Generales representan al pueblo español." },
+            {
+              type: "list",
+              style: "unordered",
+              items: ["El Congreso de los Diputados", "El Senado"],
+            },
+            {
+              type: "table",
+              caption: "Instituciones y sedes",
+              headers: ["Institución", "Sede"],
+              rows: [["Congreso de los Diputados", "Madrid"]],
+            },
+            {
+              type: "figure",
+              assetId: "figure-congreso",
+              caption: "El Congreso de los Diputados.",
+            },
+            {
+              type: "callout",
+              title: "Importante",
+              blocks: [
+                { type: "paragraph", text: "Las Cortes Generales tienen dos cámaras." },
+                { type: "list", style: "ordered", items: ["Congreso", "Senado"] },
+              ],
+            },
+          ],
+        },
+      ],
+    })),
   }
 }

@@ -1,4 +1,5 @@
 import { assertNonBlank } from "@/manual/assertNonBlank"
+import { MANUAL_SECTION_IDS } from "@/manual/constants"
 import { registerManualId } from "@/manual/registerManualId"
 import { validateManualBlock } from "@/manual/validateManualBlock"
 import type { Manual } from "@/manual/types"
@@ -43,5 +44,12 @@ export function validateManual(
         validateManualBlock(block, assetIds, `Manual topic "${topic.id}" block ${index + 1}`),
       )
     }
+  }
+
+  const hasOfficialSections =
+    manual.sections.length === MANUAL_SECTION_IDS.length &&
+    manual.sections.every((section, index) => section.id === MANUAL_SECTION_IDS[index])
+  if (!hasOfficialSections) {
+    throw new Error(`Manual section IDs must be exactly ${MANUAL_SECTION_IDS.join(", ")} in order`)
   }
 }

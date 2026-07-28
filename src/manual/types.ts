@@ -91,9 +91,12 @@ export interface TableBlock {
   caption?: string
   /** Column labels used by both wide and stacked layouts */
   headers: string[]
-  /** Data rows whose cells correspond positionally to the headers */
-  rows: string[][]
+  /** Data rows; null marks an intentionally empty source cell */
+  rows: TableCell[][]
 }
+
+/** Verbatim table text or an explicitly empty source cell. */
+export type TableCell = string | null
 
 /** A source figure referenced through the manual's local asset manifest. */
 export interface FigureBlock {
