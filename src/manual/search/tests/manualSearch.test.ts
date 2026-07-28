@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { buildManualSearchIndex } from "@/manual/search/buildManualSearchIndex"
 import { getManualSearchHighlightParts } from "@/manual/search/getManualSearchHighlightParts"
+import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
 import manualDraft from "@/manual/manual.draft.json"
 import type { Manual } from "@/manual/types"
@@ -243,6 +244,54 @@ describe("manual search", () => {
     expect(getManualSearchHighlightParts("ninots y niño", "NIÑO")).toEqual([
       { text: "ninots y ", highlighted: false },
       { text: "niño", highlighted: true },
+    ])
+  })
+
+  it.each([
+    ["La tasa de paro fue del 10,29%.", "10,29", ["10", "29"]],
+    ["Visitaron España 93,8 millones.", "93,8", ["93", "8"]],
+    ["Institut d'Estudis Catalans", "d Estudis", ["d", "Estudis"]],
+    ["Mossos d’Esquadra en Cataluña", "d Esquadra", ["d", "Esquadra"]],
+  ])("reconstructs %s exactly after highlighting %s", (source, query, highlighted) => {
+    const parts = getManualSearchHighlightParts(source, query)
+
+    expect(parts.map(part => part.text).join("")).toBe(source)
+    expect(parts.filter(part => part.highlighted).map(part => part.text)).toEqual(highlighted)
+  })
+
+  it.each([
+    ["10,29", "10,29", ["10", "29"]],
+    ["93,8", "93,8", ["93", "8"]],
+    ["d'Estudis", "d Estudis", ["d", "Estudis"]],
+    ["d’Esquadra", "d Esquadra", ["d", "Esquadra"]],
+  ])("reconstructs the real manual segment containing %s exactly", (marker, query, highlighted) => {
+    const source = buildManualSearchIndex(manualDraft as Manual)
+      .flatMap(entry => entry.segments)
+      .find(segment => segment.includes(marker))
+
+    expect(source).toBeDefined()
+    const parts = getManualSearchHighlightParts(source!, query)
+    expect(parts.map(part => part.text).join("")).toBe(source)
+    expect(parts.filter(part => part.highlighted).map(part => part.text)).toEqual(highlighted)
+  })
+
+  it.each([
+    ["La tasa fue del 10,29%.", "29", ["29"]],
+    ["Institut d'Estudis Catalans", "Estudis", ["Estudis"]],
+  ])("highlights only the precise token in %s for %s", (source, query, highlighted) => {
+    const parts = getManualSearchHighlightParts(source, query)
+
+    expect(parts.map(part => part.text).join("")).toBe(source)
+    expect(parts.filter(part => part.highlighted).map(part => part.text)).toEqual(highlighted)
+  })
+
+  it("retains precise UTF-16 offsets for punctuation and decomposed accents", () => {
+    expect(getManualSearchTokens("10,29 d'Estudis nin\u0303o")).toEqual([
+      { normalized: "10", start: 0, end: 2 },
+      { normalized: "29", start: 3, end: 5 },
+      { normalized: "d", start: 6, end: 7 },
+      { normalized: "estudis", start: 8, end: 15 },
+      { normalized: "nino", start: 16, end: 21 },
     ])
   })
 })

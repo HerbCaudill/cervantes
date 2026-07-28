@@ -12,7 +12,21 @@ export function getManualSearchMatchRanges(
   const terms = new Set(getManualSearchTerms(query))
   if (terms.size === 0) return []
 
-  return getManualSearchTokens(text)
+  const ranges = getManualSearchTokens(text)
     .filter(token => terms.has(token.normalized))
     .map(token => ({ start: token.start, end: token.end }))
+    .sort((left, right) => left.start - right.start || left.end - right.end)
+
+  return ranges.reduce<ManualSearchMatchRange[]>((merged, range) => {
+    const previous = merged.at(-1)
+    if (!previous || range.start >= previous.end) return [...merged, range]
+
+    return [
+      ...merged.slice(0, -1),
+      {
+        start: previous.start,
+        end: Math.max(previous.end, range.end),
+      },
+    ]
+  }, [])
 }
