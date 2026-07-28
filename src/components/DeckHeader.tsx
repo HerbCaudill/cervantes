@@ -5,7 +5,7 @@ export function DeckHeader({ dueCount, totalCount, inSession, onExit }: Props) {
       <div className="border-ink flex min-h-11 items-center justify-between border-b-2 px-[0.9rem]">
         <h1 className="text-xs font-bold tracking-[0.18em] uppercase">Boletín CCSE</h1>
         <span className="font-mono text-[11px] tabular-nums">
-          <span className={dueCount > 0 ? "text-red" : "text-faint"}>{dueCount} pend.</span>
+          <span className={dueCount > 0 ? undefined : "text-faint"}>{dueCount} pend.</span>
           {" · "}
           {totalCount} banco
         </span>

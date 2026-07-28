@@ -1,7 +1,20 @@
 import { test, expect } from "@playwright/test"
 
 test("answers a question and grades it", async ({ page }) => {
+  const externalFontRequests: string[] = []
+  page.on("request", request => {
+    if (
+      request.url().includes("fonts.googleapis.com") ||
+      request.url().includes("fonts.gstatic.com")
+    ) {
+      externalFontRequests.push(request.url())
+    }
+  })
+
   await page.goto("/")
+
+  await expect(page.locator("html")).toHaveAttribute("lang", "es")
+  expect(externalFontRequests).toEqual([])
 
   // the header is always present
   await expect(page.getByRole("heading", { name: /Boletín CCSE/i })).toBeVisible()

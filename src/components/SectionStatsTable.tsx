@@ -30,11 +30,7 @@ export function SectionStatsTable({ stats }: Props) {
           {stats.map(section => (
             <tr key={section.section} className="border-rule border-b">
               <th className="py-2 pr-3 text-left font-normal">{formatSection(section.section)}</th>
-              <td
-                className={
-                  section.due > 0 ? "text-red py-2 text-right" : "text-faint py-2 text-right"
-                }
-              >
+              <td className={section.due > 0 ? "py-2 text-right" : "text-faint py-2 text-right"}>
                 {section.due}
               </td>
               <td className="py-2 text-right">{section.bank}</td>
@@ -49,7 +45,7 @@ export function SectionStatsTable({ stats }: Props) {
         <tfoot className="border-ink border-b font-medium">
           <tr>
             <th className="py-2 text-left">Total</th>
-            <td className="text-red py-2 text-right">{totals.due}</td>
+            <td className="py-2 text-right">{totals.due}</td>
             <td className="py-2 text-right">{totals.bank}</td>
             <td className="py-2 text-right">{totals.learned}</td>
           </tr>
