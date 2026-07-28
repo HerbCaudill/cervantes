@@ -403,4 +403,150 @@ describe("manual extraction draft", () => {
       "El artículo 117 designa a los jueces como los responsables de administrar la justicia de forma independiente y responsable. Mientras que el artículo 18 obliga a los ciudadanos a cumplir con las sentencias de los jueces y tribunales y colaborar con ellos cuando éstos lo requieran.",
     )
   })
+
+  it("reconstructs Task 3 around every source heading instead of PDF pages", () => {
+    const task = manual.sections.find(section => section.id === "task-3")
+
+    expect(task?.topics.map(topic => [topic.id, topic.title])).toEqual([
+      ["task-3-geografia-fisica-y-politica", "GEOGRAFÍA FÍSICA Y POLÍTICA"],
+      [
+        "task-3-accidentes-geograficos-mas-importantes-de-espana",
+        "Accidentes geográficos más importantes de España",
+      ],
+      ["task-3-el-clima", "El clima"],
+      ["task-3-division-territorial-de-espana", "División territorial de España"],
+    ])
+  })
+
+  it("joins Task 3 prose split across source pages and preserves source typography", () => {
+    const task = manual.sections.find(section => section.id === "task-3")
+    const blocks = task?.topics.flatMap(topic => topic.blocks) ?? []
+    const paragraphs = blocks.flatMap(block => (block.type === "paragraph" ? [block.text] : []))
+
+    expect(paragraphs).toContain(
+      "España está situada en el sur de Europa y tiene frontera con Andorra, Francia, Portugal y Marruecos. Es el cuarto país más grande del continente, con una extensión de 505 944 km². Es uno de los países más montañosos de Europa, con una altitud media de 650 metros sobre el nivel del mar. La cifra oficial de habitantes es de 49 315 949 a 1 de julio de 2025.",
+    )
+    expect(paragraphs).toContain(
+      "Montañas: las principales montañas de la península ibérica, de norte a sur, son los Pirineos, donde se sitúa el tercer monte más alto de España, el Aneto; el Sistema Central y los Sistemas Bético y Penibético, donde se localiza el segundo pico más alto de España, el Mulhacén, en Sierra Nevada. La montaña más alta de España es un volcán situado en la isla de Tenerife, el Teide.",
+    )
+    expect(paragraphs).not.toContain(
+      "Montañas: las principales montañas de la península ibérica, de norte a sur, son los Pirineos, donde se sitúa el tercer monte más alto de España, el Aneto; el Sistema Central y los",
+    )
+  })
+
+  it("keeps the complete Task 3 table and footnote as structured content", () => {
+    const task = manual.sections.find(section => section.id === "task-3")
+    const topic = task?.topics.find(topic => topic.id === "task-3-division-territorial-de-espana")
+    const tables = topic?.blocks.filter(block => block.type === "table") ?? []
+    const paragraphs =
+      topic?.blocks.flatMap(block => (block.type === "paragraph" ? [block.text] : [])) ?? []
+
+    expect(tables).toHaveLength(1)
+    expect(tables[0]).toMatchObject({
+      caption:
+        "TABLA 4 Comunidades autónomas, provincias, capitales de provincia y capitales de comunidades autónomas",
+      headers: [
+        "Comunidades autónomas",
+        "Provincias",
+        "Capital de provincia",
+        "Capital de la comunidad autónoma",
+      ],
+    })
+    expect(tables[0]?.rows).toHaveLength(52)
+    expect(tables[0]?.rows).toContainEqual(["Castilla-La Mancha", "Albacete", "Albacete", "Toledo"])
+    expect(tables[0]?.rows).toContainEqual([
+      "Castilla y León",
+      "Ávila",
+      "Ávila",
+      "No hay una capital oficial. La sede de las administraciones está en Valladolid¹",
+    ])
+    expect(tables[0]?.rows).toContainEqual([null, "Valladolid", "VallaVdolid", null])
+    expect(tables[0]?.rows.at(-1)).toEqual([null, "Melilla", null, null])
+    expect(paragraphs).toContain(
+      "1 En el Estatuto de Autonomía no se establece una capitalidad, pero la Junta de Castilla y León y las Cortes tienen su sede en Valladolid.",
+    )
+  })
+
+  it("retains the complete Task 3 semantic inventory", () => {
+    const task = manual.sections.find(section => section.id === "task-3")
+    const blocks = task?.topics.flatMap(topic => topic.blocks) ?? []
+    const figures = blocks.flatMap(block =>
+      block.type === "figure" ? [[block.assetId, block.caption]] : [],
+    )
+
+    expect({
+      callouts: blocks.filter(block => block.type === "callout").length,
+      figures: blocks.filter(block => block.type === "figure").length,
+      headings: blocks.filter(block => block.type === "heading").length,
+      lists: blocks.filter(block => block.type === "list").length,
+      paragraphs: blocks.filter(block => block.type === "paragraph").length,
+      tables: blocks.filter(block => block.type === "table").length,
+    }).toEqual({
+      callouts: 5,
+      figures: 15,
+      headings: 0,
+      lists: 1,
+      paragraphs: 14,
+      tables: 1,
+    })
+    expect(
+      blocks
+        .filter(block => block.type === "list")
+        .reduce((total, block) => total + (block.type === "list" ? block.items.length : 0), 0),
+    ).toBe(4)
+    expect(figures).toEqual([
+      [
+        "figure-37-14",
+        "FIGURA 14. Volcán de El Teide, el pico montañoso más alto de España, Tenerife, Islas Canarias. © Falk2",
+      ],
+      ["figure-38-15", "FIGURA 15. Mapa de ríos y mares de España"],
+      [
+        "figure-38-17",
+        "FIGURA 17. Domingo en Córdoba a orillas del Guadalquivir, Rafael Romero Barros",
+      ],
+      ["figure-38-16", "FIGURA 16. Sistemas montañosos y picos más importantes."],
+      [
+        "figure-39-18",
+        "FIGURA 18. Parque Nacional Sierra de Guadarrama, Madrid, España. © Mark Theobald",
+      ],
+      [
+        "figure-39-19",
+        "FIGURA 19. Faja de Pelay, Parque Nacional de Ordesa y Monte Perdido, Aragón. © Moahim",
+      ],
+      ["figure-40-20", "FIGURA 20. Localidad de Mancha Blanca, Lanzarote. © Marc-Lautenbacher"],
+      ["figure-40-21", "FIGURA 21. Mapa político de España"],
+      ["figure-40-22", "FIGURA 22. Costa Brava, Girona. © Gordito1869"],
+      [
+        "figure-41-23",
+        "FIGURA 23. Vista de la Catedral de Palma de Mallorca. © Holger Uwe Schmitt",
+      ],
+      ["figure-41-24", "FIGURA 24. Ruta de los Molinos, Castilla-La Mancha"],
+      ["figure-41-25", "FIGURA 25. Toledo. © Dmitry Dzhus"],
+      ["figure-42-26", "FIGURA 26. Ovejas pastando en un dehesa, Trujillo, Extremadura. © LBM1948"],
+      ["figure-42-27", "FIGURA 27. Cabo de Finisterre. © Deensel"],
+      ["figure-42-28", "FIGURA 28. Fachadas típicas de Bilbao. © PA"],
+    ])
+  })
+
+  it("preserves apparent Task 3 source errors without editorial rewriting", () => {
+    const task = manual.sections.find(section => section.id === "task-3")
+    const texts =
+      task?.topics.flatMap(topic =>
+        topic.blocks.flatMap(block =>
+          block.type === "paragraph" ? [block.text]
+          : block.type === "callout" ?
+            block.blocks.flatMap(calloutBlock =>
+              calloutBlock.type === "paragraph" ? [calloutBlock.text] : [],
+            )
+          : [],
+        ),
+      ) ?? []
+
+    expect(texts).toContain(
+      "Los parques nacionales de España son, en la actualidad: Islas Atlánticas de Galicia, Picos de Europa (Asturias, Castilla y León y Cantabria), Ordesa y Monte Perdido (Aragón), Aigüestortes y Estany de Sant Maurici (Cataluña), Monfragüe (Extremadura), Sierra de Guadarrama (Madrid), Cabañeros y Tablas de Daimiel (Castilla-La Mancha), Doñana, Sierra Nevada y Sierra de la Nieves (Andalucía), Archipiélago de Cabrera (Islas Baleares) y Caldera de Taburiente, Teide, Timanfaya y Garajonay (Canarias).",
+    )
+    expect(texts).toContain(
+      "España en 1916 aprueba la primera Ley de Parques Nacionales, comvirtiéndose en uno de los primeros países de Europa en proteger su naturaleza.",
+    )
+  })
 })

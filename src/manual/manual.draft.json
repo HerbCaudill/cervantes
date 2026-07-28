@@ -118,7 +118,7 @@
     {
       "id": "figure-41-24",
       "src": "/manual/figures/figure-41-24.jpg",
-      "alt": "Ruta de los Molinos, Castilla- La Mancha"
+      "alt": "Ruta de los Molinos, Castilla-La Mancha"
     },
     {
       "id": "figure-41-25",
@@ -1639,13 +1639,12 @@
       "title": "Organización territorial de España. Geografía física y política",
       "topics": [
         {
-          "id": "task-3-draft-page-37",
+          "id": "task-3-geografia-fisica-y-politica",
           "title": "GEOGRAFÍA FÍSICA Y POLÍTICA",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "GEOGRAFÍA FÍSICA Y POLÍTICA" },
             {
               "type": "paragraph",
-              "text": "España está situada en el sur de Europa y tiene frontera con Andorra, Francia, Portugal y Marruecos. Es el cuarto país más grande del continente, con una extensión de 505 944 km 2. Es uno de los países más montañosos de Europa, con una altitud media de 650 metros sobre el nivel del mar. La cifra oficial de habitantes es de 49 315 949 a 1 de julio de 2025."
+              "text": "España está situada en el sur de Europa y tiene frontera con Andorra, Francia, Portugal y Marruecos. Es el cuarto país más grande del continente, con una extensión de 505 944 km². Es uno de los países más montañosos de Europa, con una altitud media de 650 metros sobre el nivel del mar. La cifra oficial de habitantes es de 49 315 949 a 1 de julio de 2025."
             },
             { "type": "paragraph", "text": "España está compuesta por:" },
             {
@@ -1659,23 +1658,6 @@
               ]
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Accidentes geográficos más importantes de España"
-            },
-            {
-              "type": "paragraph",
-              "text": "Ríos: los ríos más importantes de España que desembocan en el océano Atlántico son: Miño, Duero, Tajo, Guadiana y Guadalquivir. En el mar Mediterráneo desembocan los ríos Ebro, Júcar, Segura y Turia."
-            },
-            {
-              "type": "paragraph",
-              "text": "Meseta: es una extensa llanura situada en el centro de la península ibérica, con una altura media de más de 600 m sobre el nivel del mar, dividida por una cordillera que la atraviesa de lado a lado y que es el Sistema Central."
-            },
-            {
-              "type": "paragraph",
-              "text": "Montañas: las principales montañas de la península ibérica, de norte a sur, son los Pirineos, donde se sitúa el tercer monte más alto de España, el Aneto; el Sistema Central y los"
-            },
-            {
               "type": "figure",
               "assetId": "figure-37-14",
               "caption": "FIGURA 14. Volcán de El Teide, el pico montañoso más alto de España, Tenerife, Islas Canarias. © Falk2"
@@ -1683,17 +1665,12 @@
           ]
         },
         {
-          "id": "task-3-draft-page-38",
-          "title": "Organización territorial de España. Geografía física y política",
+          "id": "task-3-accidentes-geograficos-mas-importantes-de-espana",
+          "title": "Accidentes geográficos más importantes de España",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Sistemas Bético y Penibético, donde se localiza el segundo pico más alto de España, el Mulhacén, en Sierra Nevada. La montaña más alta de España es un volcán situado en la isla de Tenerife, el Teide."
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-38-17",
-              "caption": "FIGURA 17. Domingo en Córdoba a orillas del Guadalquivir, Rafael Romero Barros"
+              "text": "Ríos: los ríos más importantes de España que desembocan en el océano Atlántico son: Miño, Duero, Tajo, Guadiana y Guadalquivir. En el mar Mediterráneo desembocan los ríos Ebro, Júcar, Segura y Turia."
             },
             {
               "type": "figure",
@@ -1702,19 +1679,31 @@
             },
             {
               "type": "paragraph",
-              "text": "La meseta es una extensa llanura que se ubica en el centro de la península ibérica dividida por una cordillera que la atraviesa de lado a lado llamada Sistema Central."
+              "text": "Meseta: es una extensa llanura situada en el centro de la península ibérica, con una altura media de más de 600 m sobre el nivel del mar, dividida por una cordillera que la atraviesa de lado a lado y que es el Sistema Central."
+            },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "La meseta es una extensa llanura que se ubica en el centro de la península ibérica dividida por una cordillera que la atraviesa de lado a lado llamada Sistema Central."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Montañas: las principales montañas de la península ibérica, de norte a sur, son los Pirineos, donde se sitúa el tercer monte más alto de España, el Aneto; el Sistema Central y los Sistemas Bético y Penibético, donde se localiza el segundo pico más alto de España, el Mulhacén, en Sierra Nevada. La montaña más alta de España es un volcán situado en la isla de Tenerife, el Teide."
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-38-17",
+              "caption": "FIGURA 17. Domingo en Córdoba a orillas del Guadalquivir, Rafael Romero Barros"
             },
             {
               "type": "figure",
               "assetId": "figure-38-16",
               "caption": "FIGURA 16. Sistemas montañosos y picos más importantes."
-            }
-          ]
-        },
-        {
-          "id": "task-3-draft-page-39",
-          "title": "El clima",
-          "blocks": [
+            },
             {
               "type": "paragraph",
               "text": "España fue uno de los primeros países de Europa en comenzar a proteger la naturaleza; la primera Ley de Parques Nacionales se aprobó en 1916. Tiene 16 parques nacionales; su gestión y protección se hace a través de la Red de Parques Nacionales."
@@ -1722,19 +1711,6 @@
             {
               "type": "paragraph",
               "text": "Los parques nacionales de España son, en la actualidad: Islas Atlánticas de Galicia, Picos de Europa (Asturias, Castilla y León y Cantabria), Ordesa y Monte Perdido (Aragón), Aigüestortes y Estany de Sant Maurici (Cataluña), Monfragüe (Extremadura), Sierra de Guadarrama (Madrid), Cabañeros y Tablas de Daimiel (Castilla-La Mancha), Doñana, Sierra Nevada y Sierra de la Nieves (Andalucía), Archipiélago de Cabrera (Islas Baleares) y Caldera de Taburiente, Teide, Timanfaya y Garajonay (Canarias)."
-            },
-            { "type": "heading", "level": 3, "text": "El clima" },
-            {
-              "type": "paragraph",
-              "text": "España tiene más de 3000 horas de sol al año, por lo que es uno de los países más cálidos de Europa. Debido a su situación geográfica, España se caracteriza por su variedad de climas:"
-            },
-            {
-              "type": "paragraph",
-              "text": "Clima oceánico: es el de las comunidades del norte de España que están junto al mar Cantábrico y al océano Atlántico. Tiene temperaturas suaves todo el año. Llueve mucho."
-            },
-            {
-              "type": "paragraph",
-              "text": "Clima mediterráneo: es el de los territorios situados cerca del mar Mediterráneo. Tiene temperaturas suaves en invierno y calurosas en verano. Llueve poco, aunque a veces de forma intensa."
             },
             {
               "type": "figure",
@@ -1749,6 +1725,16 @@
                   "text": "España en 1916 aprueba la primera Ley de Parques Nacionales, comvirtiéndose en uno de los primeros países de Europa en proteger su naturaleza."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "task-3-el-clima",
+          "title": "El clima",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "España tiene más de 3000 horas de sol al año, por lo que es uno de los países más cálidos de Europa. Debido a su situación geográfica, España se caracteriza por su variedad de climas:"
             },
             {
               "type": "callout",
@@ -1760,16 +1746,18 @@
               ]
             },
             {
+              "type": "paragraph",
+              "text": "Clima oceánico: es el de las comunidades del norte de España que están junto al mar Cantábrico y al océano Atlántico. Tiene temperaturas suaves todo el año. Llueve mucho."
+            },
+            {
+              "type": "paragraph",
+              "text": "Clima mediterráneo: es el de los territorios situados cerca del mar Mediterráneo. Tiene temperaturas suaves en invierno y calurosas en verano. Llueve poco, aunque a veces de forma intensa."
+            },
+            {
               "type": "figure",
               "assetId": "figure-39-19",
               "caption": "FIGURA 19. Faja de Pelay, Parque Nacional de Ordesa y Monte Perdido, Aragón. © Moahim"
-            }
-          ]
-        },
-        {
-          "id": "task-3-draft-page-40",
-          "title": "División territorial de España",
-          "blocks": [
+            },
             {
               "type": "paragraph",
               "text": "Clima continental: es el de las comunidades del centro de la península ibérica. Las temperaturas son extremas con inviernos fríos, veranos muy calurosos, lluvias moderadas y, a veces, nieva."
@@ -1778,7 +1766,26 @@
               "type": "paragraph",
               "text": "Clima subtropical: es el de las islas Canarias. Tiene temperaturas suaves todo el año, con una media de 22 ºC. Llueve poco, aunque a veces de manera intensa."
             },
-            { "type": "heading", "level": 3, "text": "División territorial de España" },
+            {
+              "type": "callout",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A diferencia de los climas que podemos encontrar en la Península, en las islas Canarias podemos encontrar temperaturas suaves todo el año, con una media de 22ºC."
+                }
+              ]
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-40-20",
+              "caption": "FIGURA 20. Localidad de Mancha Blanca, Lanzarote. © Marc-Lautenbacher"
+            }
+          ]
+        },
+        {
+          "id": "task-3-division-territorial-de-espana",
+          "title": "División territorial de España",
+          "blocks": [
             {
               "type": "paragraph",
               "text": "En el mapa político de España, se puede observar la división de España en comunidades autónomas, divididas en provincias, y ciudades autónomas."
@@ -1793,7 +1800,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A diferencia de los climas que podemos encontrar en la Península, en las islas Canarias podemos encontrar temperaturas suaves todo el año, con una media de 22ºC."
+                  "text": "España se divide en comunidades autónomas, divididas en provincias, y ciudades autónomas."
                 }
               ]
             },
@@ -1802,17 +1809,6 @@
               "assetId": "figure-40-22",
               "caption": "FIGURA 22. Costa Brava, Girona. © Gordito1869"
             },
-            {
-              "type": "figure",
-              "assetId": "figure-40-20",
-              "caption": "FIGURA 20. Localidad de Mancha Blanca, Lanzarote. © Marc-Lautenbacher"
-            }
-          ]
-        },
-        {
-          "id": "task-3-draft-page-41",
-          "title": "Organización territorial de España. Geografía física y política",
-          "blocks": [
             {
               "type": "table",
               "headers": [
@@ -1843,7 +1839,7 @@
                 ],
                 [null, "Santa Cruz de Tenerife", "Santa Cruz de Tenerife", null],
                 ["Cantabria", "Cantabria", "Santander", "Santander"],
-                ["Castilla- La Mancha", "Albacete", "Albacete", "Toledo"],
+                ["Castilla-La Mancha", "Albacete", "Albacete", "Toledo"],
                 [null, "Ciudad Real", "Ciudad Real", null],
                 [null, "Cuenca", "Cuenca", null],
                 [null, "Guadalajara", "Guadalajara", null],
@@ -1852,7 +1848,7 @@
                   "Castilla y León",
                   "Ávila",
                   "Ávila",
-                  "No hay una capital oficial. La sede de las administraciones está en Valladolid 1 1 En el Estatuto de Autonomía no se establece una capitalidad, pero la Junta de Castilla y León y las Cortes tienen su sede en Valladolid."
+                  "No hay una capital oficial. La sede de las administraciones está en Valladolid¹"
                 ],
                 [null, "Burgos", "Burgos", null],
                 [null, "León", "León", null],
@@ -1861,49 +1857,7 @@
                 [null, "Segovia", "Segovia", null],
                 [null, "Soria", "Soria", null],
                 [null, "Valladolid", "VallaVdolid", null],
-                [null, "Zamora", "Zamora", null]
-              ],
-              "caption": "TABLA 4 Comunidades autónomas, provincias, capitales de provincia y capitales de comunidades autónomas"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España se divide en comunidades autónomas, divididas en provincias, y ciudades autónomas."
-                }
-              ]
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-41-23",
-              "caption": "FIGURA 23. Vista de la Catedral de Palma de Mallorca. © Holger Uwe Schmitt"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-41-24",
-              "caption": "FIGURA 24. Ruta de los Molinos, Castilla- La Mancha"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-41-25",
-              "caption": "FIGURA 25. Toledo. © Dmitry Dzhus"
-            }
-          ]
-        },
-        {
-          "id": "task-3-draft-page-42",
-          "title": "Organización territorial de España. Geografía física y política",
-          "blocks": [
-            {
-              "type": "table",
-              "headers": [
-                "Comunidades autónomas",
-                "Provincias",
-                "Capital de provincia",
-                "Capital de la comunidad autónoma"
-              ],
-              "rows": [
+                [null, "Zamora", "Zamora", null],
                 ["Cataluña", "Barcelona", "Barcelona", "Barcelona"],
                 [null, "Gerona", "Gerona", null],
                 [null, "Lérida", "Lérida", null],
@@ -1931,7 +1885,27 @@
                 [null, "Vizcaya", "Bilbao", null],
                 ["Ciudades autónomas", "Ceuta", null, null],
                 [null, "Melilla", null, null]
-              ]
+              ],
+              "caption": "TABLA 4 Comunidades autónomas, provincias, capitales de provincia y capitales de comunidades autónomas"
+            },
+            {
+              "type": "paragraph",
+              "text": "1 En el Estatuto de Autonomía no se establece una capitalidad, pero la Junta de Castilla y León y las Cortes tienen su sede en Valladolid."
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-41-23",
+              "caption": "FIGURA 23. Vista de la Catedral de Palma de Mallorca. © Holger Uwe Schmitt"
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-41-24",
+              "caption": "FIGURA 24. Ruta de los Molinos, Castilla-La Mancha"
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-41-25",
+              "caption": "FIGURA 25. Toledo. © Dmitry Dzhus"
             },
             {
               "type": "figure",
