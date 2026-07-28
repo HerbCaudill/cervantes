@@ -11,29 +11,42 @@ import { READER_STATE_STORAGE_KEY } from "../../src/reader/constants"
 /** Complete manual compiled into the application bundle. */
 const manual = manualDraft as Manual
 
-/** A topic whose lazy figure proves that binary manual assets are available offline. */
-const figureLocation = manual.sections
+/** Topics whose figures exercise online state and independent offline provenance. */
+const figureLocations = manual.sections
   .flatMap(section => section.topics.map(topic => ({ section, topic })))
-  .find(({ topic }) => topic.blocks.some(block => block.type === "figure"))
+  .filter(({ topic }) => topic.blocks.some(block => block.type === "figure"))
 
-if (!figureLocation) throw new Error("The manual must contain a topic with a figure")
+if (figureLocations.length < 2)
+  throw new Error("The manual must contain at least two figure topics")
 
-/** Representative figure block in the selected topic. */
-const figureBlock = figureLocation.topic.blocks.find(
+/** Online topic used to create representative reader progress. */
+const onlineFigureLocation = figureLocations[0]
+
+/** Independent topic whose figure has never been requested by a page before offline mode. */
+const offlineFigureLocation = figureLocations.at(-1)!
+
+/** Figure block requested only after Chromium's HTTP cache has been cleared. */
+const offlineFigureBlock = offlineFigureLocation.topic.blocks.find(
   (block): block is FigureBlock => block.type === "figure",
 )
 
-if (!figureBlock) throw new Error("The selected topic must contain a figure")
+if (!offlineFigureBlock) throw new Error("The offline topic must contain a figure")
 
-/** Locally bundled asset resolved by the representative figure block. */
-const figureAsset = manual.assets.find(asset => asset.id === figureBlock.assetId)
+/** Locally bundled asset whose response must come from the service worker. */
+const offlineFigureAsset = manual.assets.find(asset => asset.id === offlineFigureBlock.assetId)
 
-if (!figureAsset) throw new Error(`Missing manual asset ${figureBlock.assetId}`)
+if (!offlineFigureAsset) throw new Error(`Missing manual asset ${offlineFigureBlock.assetId}`)
 
-/** Semantic route used for offline reload and previous/next navigation. */
-const figureTopicPath = `/manual/${figureLocation.section.id}/${getManualTopicSlug(
-  figureLocation.section,
-  figureLocation.topic,
+/** Online semantic route used to create reader state before losing the network. */
+const onlineFigureTopicPath = `/manual/${onlineFigureLocation.section.id}/${getManualTopicSlug(
+  onlineFigureLocation.section,
+  onlineFigureLocation.topic,
+)}`
+
+/** Independent semantic route loaded only after losing the network. */
+const offlineFigureTopicPath = `/manual/${offlineFigureLocation.section.id}/${getManualTopicSlug(
+  offlineFigureLocation.section,
+  offlineFigureLocation.topic,
 )}`
 
 test("keeps the complete reader and local state available through offline use and an update", async ({
@@ -48,7 +61,7 @@ test("keeps the complete reader and local state available through offline use an
     },
   })
 
-  await page.goto(figureTopicPath)
+  await page.goto(onlineFigureTopicPath)
   await expect
     .poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller)))
     .toBe(true)
@@ -62,16 +75,7 @@ test("keeps the complete reader and local state available through offline use an
     { key: STORAGE_KEY, value: flashcardState },
   )
 
-  const image = page.getByRole("img", { name: figureAsset.alt }).first()
-  await image.scrollIntoViewIfNeeded()
-  await expect
-    .poll(() =>
-      image.evaluate(element => {
-        const loadedImage = element as HTMLImageElement
-        return loadedImage.complete && loadedImage.naturalWidth > 0
-      }),
-    )
-    .toBe(true)
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
   await expect
     .poll(() =>
       page.evaluate(
@@ -79,32 +83,42 @@ test("keeps the complete reader and local state available through offline use an
           JSON.parse(localStorage.getItem(key) ?? "null")?.topics?.[topicId]?.maximumProgress ?? 0,
         {
           key: READER_STATE_STORAGE_KEY,
-          topicId: figureLocation.topic.id,
+          topicId: onlineFigureLocation.topic.id,
         },
       ),
     )
     .toBeGreaterThan(0)
 
+  const cdpSession = await page.context().newCDPSession(page)
+  await cdpSession.send("Network.enable")
+  await cdpSession.send("Network.clearBrowserCache")
+  await cdpSession.detach()
+  const offlineImageResponse = page.waitForResponse(
+    response => new URL(response.url()).pathname === offlineFigureAsset.src,
+  )
   await page.context().setOffline(true)
-  await page.reload()
+  await page.goto(offlineFigureTopicPath)
   await expect(page.getByRole("article")).toBeVisible()
-  await image.scrollIntoViewIfNeeded()
+  const offlineImage = page.getByRole("img", { name: offlineFigureAsset.alt }).first()
+  await offlineImage.scrollIntoViewIfNeeded()
   await expect
     .poll(() =>
-      image.evaluate(element => {
+      offlineImage.evaluate(element => {
         const loadedImage = element as HTMLImageElement
         return loadedImage.complete && loadedImage.naturalWidth > 0
       }),
     )
     .toBe(true)
+  expect((await offlineImageResponse).fromServiceWorker()).toBe(true)
 
   await page
     .getByRole("navigation", { name: "Temas anterior y siguiente" })
-    .getByRole("link", { name: /Siguiente/ })
+    .getByRole("link")
+    .first()
     .click()
   await expect(page.getByRole("article")).toBeVisible()
   await page.goBack()
-  await expect(page).toHaveURL(figureTopicPath)
+  await expect(page).toHaveURL(offlineFigureTopicPath)
 
   await page.goto("/manual/buscar?q=constitucion")
   await expect(page.getByRole("status")).toContainText(/resultados?/)
@@ -154,7 +168,7 @@ test("keeps the complete reader and local state available through offline use an
         JSON.parse(localStorage.getItem(key) ?? "null")?.topics?.[topicId]?.maximumProgress ?? 0,
       {
         key: READER_STATE_STORAGE_KEY,
-        topicId: figureLocation.topic.id,
+        topicId: onlineFigureLocation.topic.id,
       },
     ),
   ).toBeGreaterThan(0)
@@ -163,4 +177,21 @@ test("keeps the complete reader and local state available through offline use an
   await page.reload()
   await expect(page.getByRole("status")).toContainText(/resultados?/)
   expect(await page.evaluate(key => localStorage.getItem(key), STORAGE_KEY)).toBe(flashcardState)
+})
+
+test("never serves the application shell for API navigations", async ({ context, page }) => {
+  await page.goto("/")
+  await expect
+    .poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller)))
+    .toBe(true)
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready
+  })
+  await context.setOffline(true)
+
+  for (const path of ["/api", "/api/", "/api?x=1", "/api/thing"]) {
+    const apiPage = await context.newPage()
+    await expect(apiPage.goto(path)).rejects.toThrow(/ERR_INTERNET_DISCONNECTED/)
+    await apiPage.close()
+  }
 })

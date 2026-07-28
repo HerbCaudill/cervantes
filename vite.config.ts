@@ -31,7 +31,7 @@ export default defineConfig({
         globPatterns: [PWA_GLOB_PATTERN],
         maximumFileSizeToCacheInBytes: PWA_MAXIMUM_FILE_SIZE_TO_CACHE_IN_BYTES,
         navigateFallback: "index.html",
-        navigateFallbackDenylist: [/^\/api(?:\/|$)/, /\/[^/?]+\.[^/]+$/],
+        navigateFallbackDenylist: [/^\/api(?:[/?]|$)/, /\/[^/?]+\.[^/]+$/],
       },
     }),
   ],

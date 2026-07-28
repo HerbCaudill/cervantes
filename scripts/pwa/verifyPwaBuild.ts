@@ -12,6 +12,22 @@ const CACHEABLE_EXTENSIONS = new Set(
 
 /** Assert that the production service worker contains the complete offline reader. */
 export function verifyPwaBuild(): void {
+  const allManualPaths = globSync("public/manual/**/*")
+    .filter(path => statSync(path).isFile())
+    .sort()
+  const manualSourcePaths = allManualPaths.filter(path => extname(path).toLowerCase() !== ".pdf")
+  const unsupportedManualAssets = manualSourcePaths.filter(
+    path => !CACHEABLE_EXTENSIONS.has(extname(path)),
+  )
+  assert.deepEqual(
+    unsupportedManualAssets,
+    [],
+    `unsupported manual asset extensions: ${unsupportedManualAssets
+      .map(path => relative("public", path))
+      .join(", ")}`,
+  )
+  const manualAssetPaths = manualSourcePaths.map(path => relative("public", path)).sort()
+
   const serviceWorkerPath = "dist/sw.js"
   assert(existsSync(serviceWorkerPath), "dist/sw.js must exist before verifying the PWA build")
 
@@ -19,10 +35,6 @@ export function verifyPwaBuild(): void {
   const precacheUrls = new Set(
     [...serviceWorker.matchAll(/\burl:"([^"]+)"/g)].map(match => match[1]),
   )
-  const manualAssetPaths = globSync("public/manual/**/*", { exclude: ["**/*.pdf"] })
-    .filter(path => CACHEABLE_EXTENSIONS.has(extname(path)))
-    .map(path => relative("public", path))
-    .sort()
   assert(
     manualAssetPaths.length >= 108,
     `expected at least 108 manual assets, found ${manualAssetPaths.length}`,
@@ -54,7 +66,9 @@ export function verifyPwaBuild(): void {
     `assets exceed the configured precache limit: ${oversizedAssets.join(", ")}`,
   )
 
-  const sourcePdfs = globSync("dist/**/*.pdf")
+  const sourcePdfs = globSync("dist/**/*").filter(
+    path => statSync(path).isFile() && extname(path).toLowerCase() === ".pdf",
+  )
   assert.deepEqual(sourcePdfs, [], `source PDFs must not ship in dist: ${sourcePdfs.join(", ")}`)
 
   const applicationJavaScript = globSync("dist/assets/*.js")
@@ -72,5 +86,3 @@ export function verifyPwaBuild(): void {
   assert.match(serviceWorker, /createHandlerBoundToURL\("index\.html"\)/)
   assert.match(serviceWorker, /NavigationRoute/)
 }
-
-verifyPwaBuild()

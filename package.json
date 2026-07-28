@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "tsc -b && vite build && node scripts/pwa/verifyPwaBuild.ts",
+    "build": "tsc -b && vite build && node scripts/pwa/checkPwaBuild.ts",
     "preview": "vite preview",
     "manual:extract": "node scripts/importCcseManual.ts",
     "questions:import": "node scripts/importCcseQuestions.ts",
