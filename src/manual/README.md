@@ -69,9 +69,9 @@ The output is deliberately page-oriented draft content. Editorial verification
 tasks reconstruct final topic boundaries, resolve reading-order anomalies, and
 compare every block and crop with the source before the reader imports it.
 
-Tasks 1–3 have been reconstructed into source-heading topics and verified in full
-against the checksum-pinned 2026 manual. Tasks 4 and 5 remain page-oriented
-extraction drafts until their corresponding editorial verification is complete.
+Tasks 1–4 have been reconstructed into source-heading topics and verified in full
+against the checksum-pinned 2026 manual. Task 5 remains a page-oriented extraction
+draft until its corresponding editorial verification is complete.
 
 Task 3's complete ordered content is protected by
 `tests/fixtures/task3-content-golden.json`. Its digest is calculated from
