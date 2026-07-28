@@ -126,6 +126,45 @@ describe("manual search", () => {
     ).toEqual(["task-1-constitution"])
   })
 
+  it("promotes unique nested-list children without indexing their repeated parent", () => {
+    const repeatedParent =
+      "La soberanía nacional reside en el pueblo español y sostiene todas las instituciones democráticas establecidas por la Constitución."
+    const uniqueChild =
+      "La oficina provincial entrega un justificante firmado para esta solicitud extraordinaria."
+    const nestedCalloutManual = structuredClone(manual) as Manual
+    nestedCalloutManual.sections[0].topics[0].blocks.push({
+      type: "paragraph",
+      text: repeatedParent,
+    })
+    nestedCalloutManual.sections[0].topics[1].blocks.push({
+      type: "callout",
+      blocks: [
+        {
+          type: "list",
+          style: "unordered",
+          items: [
+            {
+              text: repeatedParent,
+              children: {
+                type: "list",
+                style: "unmarked",
+                items: [uniqueChild],
+              },
+            },
+          ],
+        },
+      ],
+    })
+    const index = buildManualSearchIndex(nestedCalloutManual)
+
+    expect(searchManualIndex(index, "justificante firmado").map(result => result.topicId)).toEqual([
+      "task-1-secondary",
+    ])
+    expect(
+      searchManualIndex(index, "sostiene instituciones").map(result => result.topicId),
+    ).toEqual(["task-1-constitution"])
+  })
+
   it("indexes parent and recursively nested list item text", () => {
     const nestedManual = structuredClone(manual) as Manual
     nestedManual.sections[0].topics[0].blocks.push({

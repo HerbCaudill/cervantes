@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest"
 import { getVisibleManualBlocks } from "@/manual/getVisibleManualBlocks"
+import { getManualBodySearchSegments } from "@/manual/getManualBodySearchSegments"
+import { isDuplicatedManualCalloutText } from "@/manual/isDuplicatedManualCalloutText"
 import manualDraft from "@/manual/manual.draft.json"
+import { getManualBlockSearchSegments } from "@/manual/search/getManualBlockSearchSegments"
 import type { CalloutBlock, ListBlock, Manual, ManualBlock, ParagraphBlock } from "@/manual/types"
 
 const duplicatedQuote =
@@ -28,6 +31,38 @@ describe("visible manual blocks", () => {
 
     expect(getVisibleManualBlocks(manual, manual.sections[0].topics[0].blocks)).toEqual([
       paragraph(longerBodyParagraph),
+    ])
+  })
+
+  it("removes contained body prose while retaining a meaningful unique callout suffix", () => {
+    const uniqueSuffix =
+      "La solicitud extraordinaria se presenta únicamente en la oficina provincial durante el mes de septiembre."
+    const manual = createManual([
+      paragraph(duplicatedQuote),
+      callout([paragraph(`${duplicatedQuote} ${uniqueSuffix}`)]),
+    ])
+
+    expect(getVisibleManualBlocks(manual, manual.sections[0].topics[0].blocks)).toEqual([
+      paragraph(duplicatedQuote),
+      callout([paragraph(uniqueSuffix)]),
+    ])
+  })
+
+  it("retains meaningful text on both sides of a substantial partial overlap", () => {
+    const uniquePrefix =
+      "La guía municipal añade una excepción aplicable solamente a solicitudes presentadas por correo."
+    const sharedText =
+      "Las personas interesadas deben acreditar su identidad y entregar la documentación original en el registro correspondiente."
+    const uniqueSuffix =
+      "La oficina devolverá los originales una vez que haya terminado formalmente la comprobación."
+    const manual = createManual([
+      paragraph(`El procedimiento general establece lo siguiente: ${sharedText}`),
+      callout([paragraph(`${uniquePrefix} ${sharedText} ${uniqueSuffix}`)]),
+    ])
+
+    expect(getVisibleManualBlocks(manual, manual.sections[0].topics[0].blocks)).toEqual([
+      paragraph(`El procedimiento general establece lo siguiente: ${sharedText}`),
+      callout([paragraph(uniquePrefix), paragraph(uniqueSuffix)]),
     ])
   })
 
@@ -140,6 +175,89 @@ describe("visible manual blocks", () => {
     ])
   })
 
+  it("promotes unique children when their repeated parent is removed", () => {
+    const uniqueChild =
+      "La solicitud extraordinaria puede presentarse durante septiembre en la oficina provincial."
+    const manual = createManual([
+      paragraph(duplicatedQuote),
+      callout([
+        {
+          type: "list",
+          style: "unordered",
+          items: [
+            {
+              text: duplicatedQuote,
+              children: {
+                type: "list",
+                style: "unmarked",
+                items: [uniqueChild],
+              },
+            },
+          ],
+        },
+      ]),
+    ])
+
+    expect(getVisibleManualBlocks(manual, manual.sections[0].topics[0].blocks)).toEqual([
+      paragraph(duplicatedQuote),
+      callout([
+        {
+          type: "list",
+          style: "unordered",
+          items: [uniqueChild],
+        },
+      ]),
+    ])
+  })
+
+  it("promotes unique descendants through multiple repeated list parents", () => {
+    const secondRepeatedParent =
+      "Las administraciones coordinan sus registros electrónicos para tramitar solicitudes presentadas desde cualquier provincia española."
+    const uniqueGrandchild =
+      "Las personas solicitantes reciben un justificante firmado al finalizar la entrega presencial."
+    const manual = createManual([
+      paragraph(duplicatedQuote),
+      paragraph(secondRepeatedParent),
+      callout([
+        {
+          type: "list",
+          style: "unordered",
+          items: [
+            {
+              text: duplicatedQuote,
+              children: {
+                type: "list",
+                style: "unmarked",
+                items: [
+                  {
+                    text: secondRepeatedParent,
+                    children: {
+                      type: "list",
+                      style: "unmarked",
+                      items: [uniqueGrandchild],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      ]),
+    ])
+
+    expect(getVisibleManualBlocks(manual, manual.sections[0].topics[0].blocks)).toEqual([
+      paragraph(duplicatedQuote),
+      paragraph(secondRepeatedParent),
+      callout([
+        {
+          type: "list",
+          style: "unordered",
+          items: [uniqueGrandchild],
+        },
+      ]),
+    ])
+  })
+
   it("keeps a genuinely unique callout unchanged", () => {
     const manual = createManual([
       paragraph(duplicatedQuote),
@@ -153,12 +271,13 @@ describe("visible manual blocks", () => {
 
   it("audits duplicated callouts across all five official tasks", () => {
     const officialManual = manualDraft as Manual
+    const bodySearchSegments = getManualBodySearchSegments(officialManual)
     const audit = officialManual.sections.map(section => {
       const sourceCallouts = section.topics.flatMap(topic =>
         topic.blocks.filter(block => block.type === "callout"),
       ).length
       const visibleCallouts = section.topics.flatMap(topic =>
-        getVisibleManualBlocks(officialManual, topic.blocks).filter(
+        getVisibleManualBlocks(officialManual, topic.blocks, bodySearchSegments).filter(
           block => block.type === "callout",
         ),
       ).length
@@ -172,12 +291,61 @@ describe("visible manual blocks", () => {
     })
 
     expect(audit).toEqual([
-      { sectionId: "task-1", sourceCallouts: 13, hiddenCallouts: 10, visibleCallouts: 3 },
-      { sectionId: "task-2", sourceCallouts: 7, hiddenCallouts: 1, visibleCallouts: 6 },
-      { sectionId: "task-3", sourceCallouts: 5, hiddenCallouts: 1, visibleCallouts: 4 },
-      { sectionId: "task-4", sourceCallouts: 5, hiddenCallouts: 2, visibleCallouts: 3 },
-      { sectionId: "task-5", sourceCallouts: 16, hiddenCallouts: 7, visibleCallouts: 9 },
+      { sectionId: "task-1", sourceCallouts: 13, hiddenCallouts: 11, visibleCallouts: 2 },
+      { sectionId: "task-2", sourceCallouts: 7, hiddenCallouts: 4, visibleCallouts: 3 },
+      { sectionId: "task-3", sourceCallouts: 5, hiddenCallouts: 2, visibleCallouts: 3 },
+      { sectionId: "task-4", sourceCallouts: 5, hiddenCallouts: 3, visibleCallouts: 2 },
+      { sectionId: "task-5", sourceCallouts: 16, hiddenCallouts: 11, visibleCallouts: 5 },
     ])
+  })
+
+  it.each([
+    ["task-1-comunidades-y-ciudades-autonomas", "La ley institucional básica de cada comunidad"],
+    [
+      "task-5-identificacion-personal-y-tramites-administrativos",
+      "En España existen los permisos laborales por nacimiento",
+    ],
+    [
+      "task-5-transporte-urbano-e-interurbano-en-espana",
+      "En los últimos años hay menos accidentes mortales",
+    ],
+  ])("removes stitched pull quotes from %s", (topicId, duplicateText) => {
+    const officialManual = manualDraft as Manual
+    const topic = officialManual.sections
+      .flatMap(section => section.topics)
+      .find(candidate => candidate.id === topicId)
+
+    expect(topic).toBeDefined()
+    expect(
+      getVisibleManualBlocks(officialManual, topic!.blocks)
+        .filter(block => block.type === "callout")
+        .flatMap(getManualBlockSearchSegments)
+        .some(segment => segment.includes(duplicateText)),
+    ).toBe(false)
+  })
+
+  it("leaves no visible callout segment with a substantial corpus overlap", () => {
+    const officialManual = manualDraft as Manual
+    const bodySearchSegments = getManualBodySearchSegments(officialManual)
+
+    for (const section of officialManual.sections) {
+      for (const topic of section.topics) {
+        const calloutSegments = getVisibleManualBlocks(
+          officialManual,
+          topic.blocks,
+          bodySearchSegments,
+        )
+          .filter(block => block.type === "callout")
+          .flatMap(getManualBlockSearchSegments)
+
+        expect(
+          calloutSegments.filter(segment =>
+            isDuplicatedManualCalloutText(segment, bodySearchSegments),
+          ),
+          topic.id,
+        ).toEqual([])
+      }
+    }
   })
 })
 

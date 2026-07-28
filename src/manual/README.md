@@ -49,9 +49,11 @@ tables. The official body text remains 17px in both layouts.
 
 The structured manual remains source-faithful when the PDF repeats body prose
 inside a visual pull quote. `getVisibleManualBlocks` derives the reader and
-search representation by removing substantial normalized callout text already
-contained in any non-callout block across the manual. Short incidental matches
-stay visible, as do unique callout blocks and locally bundled figures.
+search representation by removing callout sentences with at least 64
+contiguous normalized characters already present in any non-callout block
+across the manual. The comparison works in both containment directions and
+retains complete unique sentences from mixed callouts. Short incidental
+matches stay visible, as do unique callout blocks and locally bundled figures.
 
 ## Offline build
 
