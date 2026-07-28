@@ -1,116 +1,3422 @@
 [
   {
-    "id": "ccse-cg-0001",
-    "section": "constitution-government",
-    "type": "true-false",
-    "prompt": "La forma política del Estado español es la monarquía parlamentaria.",
-    "answer": true,
-    "explanation": "El artículo 1.3 de la Constitución establece que la forma política del Estado es la monarquía parlamentaria."
-  },
-  {
-    "id": "ccse-cg-0002",
-    "section": "constitution-government",
-    "type": "true-false",
-    "prompt": "La Constitución española fue aprobada en referéndum en el año 1978.",
-    "answer": true,
-    "explanation": "La Constitución se aprobó en referéndum el 6 de diciembre de 1978."
-  },
-  {
-    "id": "ccse-cg-0003",
+    "id": "1001",
     "section": "constitution-government",
     "type": "multiple-choice",
-    "prompt": "¿Quién sanciona y promulga las leyes en España?",
+    "prompt": "España es…",
     "options": [
-      "El presidente del Gobierno",
-      "El Rey",
-      "El presidente del Congreso",
-      "El Tribunal Constitucional"
+      "una monarquía parlamentaria.",
+      "una república federal.",
+      "una monarquía federal."
     ],
-    "answer": 1,
-    "explanation": "El Rey sanciona y promulga las leyes, según el artículo 62 de la Constitución."
+    "answer": 0
   },
   {
-    "id": "ccse-cg-0004",
+    "id": "1002",
     "section": "constitution-government",
     "type": "multiple-choice",
-    "prompt": "Las Cortes Generales están formadas por:",
+    "prompt": "La ley fundamental de España se llama…",
     "options": [
-      "El Congreso de los Diputados y el Senado",
-      "El Gobierno y el Senado",
-      "El Congreso y el Tribunal Supremo",
-      "El Senado y el Consejo de Ministros"
+      "Constitución.",
+      "Ley básica.",
+      "Ordenamiento esencial."
     ],
-    "answer": 0,
-    "explanation": "Las Cortes Generales son bicamerales: Congreso de los Diputados y Senado."
+    "answer": 0
   },
   {
-    "id": "ccse-cg-0005",
+    "id": "1003",
     "section": "constitution-government",
     "type": "multiple-choice",
-    "prompt": "¿A qué edad se adquiere el derecho a votar en España?",
-    "options": ["A los 16 años", "A los 18 años", "A los 21 años", "A los 25 años"],
-    "answer": 1,
-    "explanation": "La mayoría de edad y el derecho de sufragio se alcanzan a los 18 años."
+    "prompt": "Según la Constitución española, la soberanía nacional reside en…",
+    "options": [
+      "el pueblo español.",
+      "el Gobierno del Estado.",
+      "el Congreso de los Diputados."
+    ],
+    "answer": 0
   },
   {
-    "id": "ccse-to-0001",
+    "id": "1004",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Instituto de las Mujeres es…",
+    "options": [
+      "una institución europea.",
+      "un organismo español.",
+      "una ONG."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1005",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuándo puedo hacer los trámites en la sede electrónica?",
+    "options": [
+      "En cualquier horario.",
+      "Únicamente por la mañana.",
+      "De lunes a viernes."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1006",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El castellano o español es lengua oficial…",
+    "options": [
+      "en toda España.",
+      "solo donde no hay otras lenguas.",
+      "en toda la península ibérica."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1007",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estas fuerzas de seguridad es de ámbito autonómico?",
+    "options": [
+      "Policía local.",
+      "Guardia Civil.",
+      "Policía Foral de Navarra."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1008",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué fuerza de seguridad está en toda España?",
+    "options": [
+      "La Policía Foral de Navarra.",
+      "El Cuerpo Nacional de Policía.",
+      "Los Mossos d’Esquadra."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1009",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "En la Constitución se establece la separación de poderes: el poder ejecutivo, el legislativo y el…",
+    "options": [
+      "judicial.",
+      "informativo.",
+      "político."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1010",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La bandera de España debe utilizarse…",
+    "options": [
+      "solo los días de fiesta oficial.",
+      "en todos los edificios públicos.",
+      "solo en actos del Gobierno español."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1011",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién es el jefe del Estado en España?",
+    "options": [
+      "El presidente del Gobierno.",
+      "El rey.",
+      "El ministro de Economía."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1012",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La gestión de la sanidad es competencia de…",
+    "options": [
+      "el Estado.",
+      "las comunidades autónomas.",
+      "los ayuntamientos."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1013",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién fue el primer presidente del Gobierno de España en democracia?",
+    "options": [
+      "Mariano Rajoy.",
+      "Adolfo Suárez.",
+      "José Luis Rodríguez Zapatero."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1014",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos organismos se encarga de interpretar la Constitución?",
+    "options": [
+      "El Poder Constitucional.",
+      "El Tribunal Constitucional.",
+      "El Consejo General del Poder Judicial."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1015",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién modera el funcionamiento de las instituciones españolas?",
+    "options": [
+      "El presidente del Gobierno.",
+      "El rey.",
+      "El director de la Real Academia Española."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1016",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la cámara de representación territorial en España?",
+    "options": [
+      "Senado.",
+      "Diputación permanente.",
+      "Congreso de los Diputados."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1017",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué se necesita para hacer trámites por internet con la Administración?",
+    "options": [
+      "Un pasaporte válido.",
+      "Una firma electrónica.",
+      "Una firma en papel."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1018",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se aprobó la Constitución?",
+    "options": [
+      "Por imposición legal.",
+      "Por referéndum.",
+      "Por el Tribunal Constitucional."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1019",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la ley más importante de cada comunidad autónoma?",
+    "options": [
+      "Estatuto de Autonomía.",
+      "Normativa autonómica.",
+      "Ley de la comunidad."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1020",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Las instalaciones culturales y deportivas públicas son competencia del…",
+    "options": [
+      "Ayuntamiento.",
+      "Ministerio de Educación, Formación Profesional y Deportes.",
+      "Ministerio de Igualdad."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1021",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién dirige la administración militar de España?",
+    "options": [
+      "Los ayuntamientos.",
+      "El Gobierno.",
+      "Las Cortes Generales."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1022",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué hay en las Islas Baleares, en vez de diputaciones?",
+    "options": [
+      "Cabildos.",
+      "Consejos insulares.",
+      "Centros de diputados."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1023",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué ciudad tiene más habitantes?",
+    "options": [
+      "Sevilla.",
+      "Barcelona.",
+      "Zaragoza."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1024",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Las Cortes Generales representan…",
+    "options": [
+      "al pueblo español.",
+      "a los partidos políticos.",
+      "a los ministros."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1025",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Congreso de los Diputados y el Senado constituyen el poder…",
+    "options": [
+      "ejecutivo.",
+      "legislativo.",
+      "judicial."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1026",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo pueden los ciudadanos proponer nuevas leyes al Congreso?",
+    "options": [
+      "Reuniendo 500 000 firmas.",
+      "Solicitándolo al rey.",
+      "Creando una asociación."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1027",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántas comunidades autónomas hay en España?",
+    "options": [
+      "8.",
+      "17.",
+      "25."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1028",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Los colores de la bandera española son…",
+    "options": [
+      "blanco y rojo.",
+      "rojo y amarillo.",
+      "amarillo y blanco."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1029",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde está la sede del Gobierno de España?",
+    "options": [
+      "En Madrid.",
+      "En Barcelona.",
+      "En Sevilla."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1030",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La bandera azul con 12 estrellas amarillas en círculo es la bandera de…",
+    "options": [
+      "la Unión Europea.",
+      "el Parlamento Europeo.",
+      "la Comisión de Europa."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1031",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "En las elecciones municiales se vota a…",
+    "options": [
+      "alcaldes y concejales",
+      "ministros y ministras.",
+      "diputados y senadores."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1032",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué lengua es oficial en el País Vasco?",
+    "options": [
+      "El bable.",
+      "El aragonés.",
+      "El euskera."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1033",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Todos los españoles tienen el deber de conocer la lengua…",
+    "options": [
+      "autonómica del Estado.",
+      "oficial del Estado.",
+      "local del Estado."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1034",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El aranés es una lengua cooficial que se habla en un pequeño territorio de…",
+    "options": [
+      "Cataluña.",
+      "La Rioja.",
+      "Aragón."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1035",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Las instituciones de una comunidad autónoma son: el consejo de gobierno, el presidente y…",
+    "options": [
+      "el ayuntamiento.",
+      "la asamblea legislativa.",
+      "la delegación de gobierno."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1036",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estas opciones es una lengua cooficial en alguna comunidad autónoma?",
+    "options": [
+      "El gallego.",
+      "El aragonés.",
+      "El murciano."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1037",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué institución tiene como fin la promoción de la enseñanza de la lengua española y la difusión de la cultura en español?",
+    "options": [
+      "El Instituto Nacional de Administración Pública.",
+      "El Instituto Nacional de Estadística.",
+      "El Instituto Cervantes."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1038",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de los siguientes organismos trabaja para conseguir la normalización lingüística?",
+    "options": [
+      "El Institut Ramon Llull.",
+      "El Instituto Cervantes.",
+      "La Real Academia Española."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1039",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde vive el presidente del Gobierno?",
+    "options": [
+      "En el Palacio Real.",
+      "En el Palacio de la Zarzuela.",
+      "En el Palacio de la Moncloa."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1040",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de los siguientes cuerpos forma parte de las Fuerzas Armadas de España?",
+    "options": [
+      "La Policía Foral.",
+      "La Guardia Civil.",
+      "El Ejército del Aire."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1041",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quiénes forman parte del Gobierno?",
+    "options": [
+      "Los ministros.",
+      "Los concejales.",
+      "Los alcaldes."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1042",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "España es un…",
+    "options": [
+      "estado social y democrático de Derecho.",
+      "estado libre asociado.",
+      "estado confederado."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1043",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de las siguientes siglas corresponde a un partido político?",
+    "options": [
+      "PP.",
+      "PIB.",
+      "UE."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1044",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué título tiene la futura reina, hija del rey?",
+    "options": [
+      "Princesa de Asturias.",
+      "Princesa de Aragón.",
+      "Duquesa de Alba."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1045",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Con qué rey se restaura la democracia en España después del régimen de Franco?",
+    "options": [
+      "Con Carlos III.",
+      "Con Alfonso XIII.",
+      "Con Juan Carlos I."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1046",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿En qué año se aprobó la Constitución española?",
+    "options": [
+      "En 1957.",
+      "En 1978.",
+      "En 2001."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1047",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántas comunidades autónomas tienen su propia bandera?",
+    "options": [
+      "Ninguna.",
+      "Todas.",
+      "Las que tienen una lengua cooficial."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1048",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué organismo oficial atiende las quejas de los ciudadanos por el mal funcionamiento de las administraciones?",
+    "options": [
+      "La Oficina de Atención al Consumidor.",
+      "La Policía Nacional.",
+      "El Defensor del Pueblo."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1049",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántas firmas, como mínimo, deben recoger los ciudadanos para poder presentar una proposición de ley?",
+    "options": [
+      "250 000.",
+      "100 000.",
+      "500 000."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1050",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿A cuál de las siguientes organizaciones internacionales pertenece España?",
+    "options": [
+      "Comunidad de Estados Independientes (CEI).",
+      "Fondo Monetario Internacional (FMI).",
+      "Unión Económica Euroasiática (UEE)."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1051",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "En la organización de la Administración se distinguen tres niveles: central, autonómica y…",
+    "options": [
+      "estatal.",
+      "regional.",
+      "local."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1052",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El poder legislativo corresponde...",
+    "options": [
+      "al presidente y los ministros.",
+      "a los jueces y magistrados.",
+      "a los diputados y senadores."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1053",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde vive el rey?",
+    "options": [
+      "En el Palacio de la Moneda.",
+      "En el Palacio de la Zarzuela.",
+      "En el Palacio de la Moncloa."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1054",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El nombre oficial del parlamento español es…",
+    "options": [
+      "Cortes Generales.",
+      "Congreso de los Diputados.",
+      "Senado."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1055",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Instituto de Comercio Exterior de España, el Instituto de las Mujeres y la Dirección General de Tráfico…",
+    "options": [
+      "son organismos autónomos.",
+      "dependen de ministerios.",
+      "son organismos internacionales."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1056",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién puede reinar en España?",
+    "options": [
+      "Solo los hombres.",
+      "Solo las mujeres.",
+      "Tanto los hombres como las mujeres."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1057",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Tribunal de Cuentas depende de…",
+    "options": [
+      "la Presidencia del Gobierno.",
+      "las Cortes Generales.",
+      "el Ministerio de Hacienda."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1058",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién es la tercera autoridad del Estado, después del rey y el presidente del Gobierno?",
+    "options": [
+      "El presidente del Senado.",
+      "El ministro de Economía.",
+      "El presidente del Congreso de los Diputados."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1059",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué lengua cooficial se habla en las Islas Baleares?",
+    "options": [
+      "Gallego.",
+      "Catalán.",
+      "Euskera."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1060",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La Constitución defiende valores tales como la libertad, la igualdad, el pluralismo político y…",
+    "options": [
+      "la justicia.",
+      "la solidaridad.",
+      "la fraternidad."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1061",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Cuando una ley ya está aprobada, ¿qué necesita para poder aplicarse?",
+    "options": [
+      "Nada.",
+      "Normas que la desarrollen.",
+      "Ser revisada por el Parlamento."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1062",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántos habitantes hay en España?",
+    "options": [
+      "95 millones.",
+      "49 millones.",
+      "67 millones."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1063",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos es un órgano consultivo del Gobierno de España?",
+    "options": [
+      "El Parlamento Europeo.",
+      "El Consejo de Estado.",
+      "El Tribunal Constitucional."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1064",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién dirige la política interior y exterior de España?",
+    "options": [
+      "El rey.",
+      "El Gobierno.",
+      "El Congreso de los Diputados."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1065",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Defensor del Pueblo depende de…",
+    "options": [
+      "el Consejo de Ministros.",
+      "el Tribunal de Cuentas.",
+      "las Cortes Generales."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1066",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Instituto Etxepare tiene como misión la difusión del…",
+    "options": [
+      "euskera y la cultura vasca.",
+      "bable y la cultura cántabra.",
+      "gallego y la cultura galaica."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1067",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estas ciudades se encuentra entre las 10 más pobladas de España?",
+    "options": [
+      "Cádiz.",
+      "Málaga.",
+      "Albacete."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1068",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién puede realizar trámites en línea ante la Administración Pública?",
+    "options": [
+      "Jueces y magistrados.",
+      "Cualquier ciudadano.",
+      "Abogados colegiados."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1069",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama el rey de España?",
+    "options": [
+      "Juan Carlos I.",
+      "Felipe VI.",
+      "Alfonso XIII."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1070",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama el órgano de gobierno de los jueces y magistrados?",
+    "options": [
+      "Tribunal Supremo.",
+      "Consejo General del Poder Judicial.",
+      "Consejo de Estado."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1071",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién aprueba los presupuestos generales del Estado?",
+    "options": [
+      "Las Cortes Generales.",
+      "El Tribunal de Cuentas.",
+      "El Gobierno de España."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1072",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La Constitución española es…",
+    "options": [
+      "la ley fundamental.",
+      "parte de otra ley.",
+      "una ley secundaria."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1073",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Las Cortes Generales están compuestas por el Senado y…",
+    "options": [
+      "el Congreso de los Diputados.",
+      "el Tribunal Supremo.",
+      "el Consejo de Estado."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1074",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién elabora las leyes?",
+    "options": [
+      "El poder ejecutivo.",
+      "El poder legislativo.",
+      "El poder judicial."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1075",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La defensa de la integridad territorial de España corresponde a…",
+    "options": [
+      "la Policía Nacional y la Guardia Civil.",
+      "las Fuerzas Armadas.",
+      "la Policía Nacional y las policías autonómicas."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1076",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Ejército español participa desde 1989 en misiones de paz de la…",
+    "options": [
+      "Organización de Estados Iberoamericanos (OEI).",
+      "Unión Europea Occidental (UEO).",
+      "Organización de las Naciones Unidas (ONU)."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1077",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién vigila puertos y aeropuertos, fronteras y costas?",
+    "options": [
+      "La Guardia Civil.",
+      "La Policía local.",
+      "La Policía Nacional."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1078",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién hace el control de pasaportes en las fronteras de España?",
+    "options": [
+      "La Guardia Civil.",
+      "La Policía local.",
+      "La Policía Nacional."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1079",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de los siguientes políticos ha sido presidente del Gobierno en España?",
+    "options": [
+      "Manuel Fraga.",
+      "José María Aznar.",
+      "Yolanda Díaz."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1080",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la policía autonómica de Cataluña?",
+    "options": [
+      "Guardia Civil.",
+      "Ertzaintza.",
+      "Mossos d'Esquadra."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1081",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la policía autonómica del País Vasco?",
+    "options": [
+      "Ertzaintza.",
+      "Guardia Civil.",
+      "Mossos d'Esquadra."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1082",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Desde qué año es rey Felipe VI?",
+    "options": [
+      "Desde 1975.",
+      "Desde 2014.",
+      "Desde 2020."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1083",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién regula el tráfico en los pueblos y ciudades?",
+    "options": [
+      "La Guardia Civil.",
+      "Protección Civil.",
+      "La Policía Local."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1084",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién puede presentar una queja al Defensor del Pueblo?",
+    "options": [
+      "Solo los ciudadanos legalmente residentes.",
+      "Solo los españoles mayores de 18 años.",
+      "Todos los ciudadanos, españoles o extranjeros."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1085",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "En España el voto en las elecciones es…",
+    "options": [
+      "un derecho.",
+      "un deber.",
+      "una obligación."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1086",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién vigila el tráfico en las carreteras?",
+    "options": [
+      "La Guardia Civil.",
+      "La Policía Nacional.",
+      "El Ejército de Tierra."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1087",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Qué organismo se encarga de recaudar los impuestos?",
+    "options": [
+      "El Tribunal de Cuentas.",
+      "La Agencia Tributaria.",
+      "El Consejo Económico y Social."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1088",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde se publican las leyes nacionales?",
+    "options": [
+      "En el boletín del Instituto Nacional de Estadística (INE).",
+      "En el Portal de la Administración Electrónica (PAe).",
+      "En el Boletín Oficial del Estado (BOE)."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1089",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llaman los órganos de gobierno que solo existen en Canarias?",
+    "options": [
+      "Cabildos.",
+      "Consejos insulares.",
+      "Diputaciones."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1090",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos trámites administrativos puede realizarse en la sede electrónica?",
+    "options": [
+      "Tramitar el DNI.",
+      "Renovar el pasaporte.",
+      "Pagar los impuestos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1091",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el número de teléfono de información de la Administración General del Estado?",
+    "options": [
+      "010.",
+      "060.",
+      "091."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1092",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "España está organizada en…",
+    "options": [
+      "cantones.",
+      "comunidades autónomas.",
+      "estados federales."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1093",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántos partidos políticos hay en España?",
+    "options": [
+      "Ninguno.",
+      "Uno.",
+      "Muchos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1094",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde tiene lugar la investidura del presidente del Gobierno?",
+    "options": [
+      "En el Palacio de la Moncloa.",
+      "En el Congreso de los Diputados.",
+      "En el Senado."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1095",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién tiene el mando supremo de las Fuerzas Armadas?",
+    "options": [
+      "El rey.",
+      "El presidente del Gobierno.",
+      "El ministro de Defensa."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1096",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién es el representante del Estado en una comunidad autónoma?",
+    "options": [
+      "El presidente de la comunidad autónoma.",
+      "El delegado del Gobierno.",
+      "El presidente de la Asamblea autonómica."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1097",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántas provincias hay en España?",
+    "options": [
+      "45.",
+      "50.",
+      "55."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1098",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La enseñanza de las lenguas cooficiales es competencia…",
+    "options": [
+      "del Estado.",
+      "de la comunidad autónoma.",
+      "de la provincia."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1099",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El poder ejecutivo corresponde…",
+    "options": [
+      "al Gobierno del Estado.",
+      "al Congreso y al Senado.",
+      "a los jueces y magistrados."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1100",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántas cámaras hay en el Parlamento español?",
+    "options": [
+      "Una.",
+      "Dos.",
+      "Tres."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1101",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El suministro de agua y el alumbrado de las ciudades es competencia de…",
+    "options": [
+      "el ayuntamiento.",
+      "el Gobierno autonómico.",
+      "el Ministerio de Obras Públicas y Urbanismo."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1102",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "En materias como nacionalidad, inmigración, emigración o extranjería solo tiene competencia…",
+    "options": [
+      "el Estado.",
+      "las comunidades autónomas.",
+      "los ayuntamientos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1103",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántas mujeres han sido presidentas de Gobierno en España?",
+    "options": [
+      "Ninguna.",
+      "Una.",
+      "Dos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1104",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Las relaciones internacionales son competencia de…",
+    "options": [
+      "el Estado.",
+      "las comunidades autónomas.",
+      "los ayuntamientos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1105",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El Ayuntamiento está formado por el alcalde y…",
+    "options": [
+      "los concejales.",
+      "los diputados.",
+      "los senadores."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1106",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quiénes forman el gobierno de las comunidades autónomas?",
+    "options": [
+      "El presidente y los ministros.",
+      "El alcalde y los concejales.",
+      "El presidente y los consejeros."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1107",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el órgano de gobierno en los municipios?",
+    "options": [
+      "El ayuntamiento.",
+      "La diputación.",
+      "El cabildo."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1108",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llaman los órganos de gobierno de las provincias españolas?",
+    "options": [
+      "Cabildos.",
+      "Consejos insulares.",
+      "Diputaciones."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1109",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el órgano superior del poder ejecutivo?",
+    "options": [
+      "El Gobierno.",
+      "Las Fuerzas Armadas.",
+      "Las Cortes Generales."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1110",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "El idioma español también se llama…",
+    "options": [
+      "aragonés.",
+      "castellano.",
+      "leonés."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1111",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿A quiénes se elige en las elecciones al Parlamento Europeo?",
+    "options": [
+      "A los ministros europeos.",
+      "A los consejeros delegados.",
+      "A los eurodiputados."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1112",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Los españoles pueden votar a partir de los…",
+    "options": [
+      "16 años.",
+      "18 años.",
+      "21 años."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1113",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Algunos ciudadanos extranjeros pueden votar en las elecciones…",
+    "options": [
+      "municipales.",
+      "autonómicas.",
+      "generales."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1114",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién controla la gestión financiera del Estado?",
+    "options": [
+      "El Banco de España.",
+      "La Agencia Tributaria.",
+      "El Tribunal de Cuentas."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1115",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿A quiénes se elige en las elecciones generales?",
+    "options": [
+      "A los senadores y diputados.",
+      "A los eurodiputados.",
+      "A los concejales."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1116",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cuántos miembros tiene el Congreso de los Diputados?",
+    "options": [
+      "300.",
+      "350.",
+      "400."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1117",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "Los municipios y provincias forman parte de la Administración…",
+    "options": [
+      "autonómica.",
+      "local.",
+      "central."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "1118",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "La comunidad autónoma más poblada de España es…",
+    "options": [
+      "Andalucía.",
+      "Cataluña.",
+      "Castilla y León."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "1119",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la organización que defiende los intereses de los trabajadores?",
+    "options": [
+      "Asociación.",
+      "Partido.",
+      "Sindicato."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "1120",
+    "section": "constitution-government",
+    "type": "multiple-choice",
+    "prompt": "¿Quién elige al presidente del Gobierno?",
+    "options": [
+      "El Congreso de los Diputados.",
+      "El rey.",
+      "El Tribunal Supremo."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "2001",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España, la Constitución obliga a todos los ciudadanos a practicar una religión.",
+    "answer": false
+  },
+  {
+    "id": "2002",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los españoles que obtienen la nacionalidad por residencia deben esperar tres años para poder votar en las elecciones.",
+    "answer": false
+  },
+  {
+    "id": "2003",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España, la Constitución prohíbe la tortura y la pena de muerte.",
+    "answer": true
+  },
+  {
+    "id": "2004",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "El funcionamiento de los partidos políticos tiene que ser democrático.",
+    "answer": true
+  },
+  {
+    "id": "2005",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Se puede obligar a alguien a decir cuáles son sus ideas políticas o religiosas.",
+    "answer": false
+  },
+  {
+    "id": "2006",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Se puede limitar a una persona el derecho a entrar y salir libremente de España por motivos ideológicos.",
+    "answer": false
+  },
+  {
+    "id": "2007",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La Educación Primaria (de 6 a 12 años) es gratuita y obligatoria.",
+    "answer": true
+  },
+  {
+    "id": "2008",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La Constitución garantiza el derecho de los españoles a una vivienda digna.",
+    "answer": true
+  },
+  {
+    "id": "2009",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España la policía puede entrar en cualquier casa sin resolución judicial en cualquier momento.",
+    "answer": false
+  },
+  {
+    "id": "2010",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Se garantiza el secreto de las comunicaciones de los españoles, salvo resolución judicial.",
+    "answer": true
+  },
+  {
+    "id": "2011",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La Constitución reconoce el derecho de los ciudadanos a asociarse libremente.",
+    "answer": true
+  },
+  {
+    "id": "2012",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los profesores pueden enseñar con libertad, dentro de los límites de la Constitución.",
+    "answer": true
+  },
+  {
+    "id": "2013",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La Constitución reconoce únicamente los derechos fundamentales de los españoles.",
+    "answer": false
+  },
+  {
+    "id": "2014",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los ciudadanos deben colaborar con los jueces si se lo piden.",
+    "answer": true
+  },
+  {
+    "id": "2015",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La ley limita el acceso de terceras personas a datos de carácter personal.",
+    "answer": true
+  },
+  {
+    "id": "2016",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La libertad de prensa está limitada por el respeto al honor de las personas.",
+    "answer": true
+  },
+  {
+    "id": "2017",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España las causas de separación y divorcio están reguladas por la ley.",
+    "answer": true
+  },
+  {
+    "id": "2018",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La atención sanitaria gratuita es solo para personas mayores de 65 años.",
+    "answer": false
+  },
+  {
+    "id": "2019",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España los hombres y las mujeres tienen los mismos derechos.",
+    "answer": true
+  },
+  {
+    "id": "2020",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La enseñanza obligatoria consta de dos etapas: Educación Primaria y Educación Secundaria Obligatoria.",
+    "answer": true
+  },
+  {
+    "id": "2021",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España hay una religión oficial.",
+    "answer": false
+  },
+  {
+    "id": "2022",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La atención sanitaria pública es gratuita.",
+    "answer": true
+  },
+  {
+    "id": "2023",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La enseñanza básica en España es solo para los extranjeros.",
+    "answer": false
+  },
+  {
+    "id": "2024",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España está reconocido el derecho de asociación.",
+    "answer": true
+  },
+  {
+    "id": "2025",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los sindicatos pueden participar en negociaciones con empresarios y con el Gobierno.",
+    "answer": true
+  },
+  {
+    "id": "2026",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los trabajadores tienen derecho a hacer huelga.",
+    "answer": true
+  },
+  {
+    "id": "2027",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La libertad ideológica está garantizada solo en parte del territorio nacional.",
+    "answer": false
+  },
+  {
+    "id": "2028",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Todos los ciudadanos tienen acceso al sistema de Seguridad Social público, excepto si están desempleados.",
+    "answer": false
+  },
+  {
+    "id": "2029",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Todos tienen derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo.",
+    "answer": true
+  },
+  {
+    "id": "2030",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España, los poderes públicos deben proteger la salud y promover el deporte.",
+    "answer": true
+  },
+  {
+    "id": "2031",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La enseñanza básica en España es obligatoria y gratuita.",
+    "answer": true
+  },
+  {
+    "id": "2032",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "La ley prohíbe la discriminación por cualquier circunstancia personal o social.",
+    "answer": true
+  },
+  {
+    "id": "2033",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España, los ciudadanos pueden desplazarse libremente por todo el territorio nacional.",
+    "answer": true
+  },
+  {
+    "id": "2034",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los jueces administran la justicia en España según las indicaciones del Gobierno.",
+    "answer": false
+  },
+  {
+    "id": "2035",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "Los españoles deben ayudar en los casos de catástrofe o calamidad pública.",
+    "answer": true
+  },
+  {
+    "id": "2036",
+    "section": "rights-participation",
+    "type": "true-false",
+    "prompt": "En España los ciudadanos pueden elegir en qué ciudad quieren vivir.",
+    "answer": true
+  },
+  {
+    "id": "3001",
     "section": "territorial-organization",
     "type": "multiple-choice",
-    "prompt": "¿En cuántas comunidades autónomas se organiza España?",
-    "options": ["15", "17", "19", "50"],
-    "answer": 1,
-    "explanation": "España se organiza en 17 comunidades autónomas, además de las ciudades autónomas de Ceuta y Melilla."
+    "prompt": "¿Dónde están Cáceres y Badajoz?",
+    "options": [
+      "En el Principado de Asturias.",
+      "En Andalucía.",
+      "En Extremadura."
+    ],
+    "answer": 2
   },
   {
-    "id": "ccse-to-0002",
+    "id": "3002",
     "section": "territorial-organization",
-    "type": "true-false",
-    "prompt": "Ceuta y Melilla son ciudades autónomas.",
-    "answer": true,
-    "explanation": "Ceuta y Melilla tienen el estatus de ciudades autónomas."
-  },
-  {
-    "id": "ccse-geo-0001",
-    "section": "geography",
-    "type": "true-false",
-    "prompt": "Las Islas Canarias se encuentran en el océano Atlántico.",
-    "answer": true,
-    "explanation": "El archipiélago canario está situado en el océano Atlántico, frente a la costa noroeste de África."
-  },
-  {
-    "id": "ccse-geo-0002",
-    "section": "geography",
     "type": "multiple-choice",
-    "prompt": "¿Cuál es el río más largo de la península ibérica?",
-    "options": ["El Ebro", "El Guadalquivir", "El Tajo", "El Duero"],
-    "answer": 2,
-    "explanation": "El Tajo es el río más largo de la península ibérica, con algo más de 1.000 km."
+    "prompt": "¿Cuál es la capital la Comunidad Valenciana?",
+    "options": [
+      "Alicante.",
+      "Castellón.",
+      "Valencia."
+    ],
+    "answer": 2
   },
   {
-    "id": "ccse-ch-0001",
+    "id": "3003",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde están las islas Baleares?",
+    "options": [
+      "En el mar Cantábrico.",
+      "En el mar Mediterráneo.",
+      "En el océano Atlántico."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3004",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la extensa llanura situada en el centro de la península ibérica?",
+    "options": [
+      "Marisma.",
+      "Cordillera.",
+      "Meseta."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "3005",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "El parque nacional de Ordesa está en...",
+    "options": [
+      "Aragón.",
+      "Navarra.",
+      "Castilla-La Mancha."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3006",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿En qué comunidad autónoma están Guadalajara y Cuenca?",
+    "options": [
+      "En Castilla y León.",
+      "En Castilla-La Mancha.",
+      "En Cantabria."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3007",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Qué comunidad autónoma tiene como capital Santiago de Compostela?",
+    "options": [
+      "Galicia.",
+      "Asturias.",
+      "Cantabria."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3008",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde está Almería?",
+    "options": [
+      "En Andalucía.",
+      "En Canarias.",
+      "En Aragón."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3009",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "La capital de la comunidad autónoma de Galicia es…",
+    "options": [
+      "A Coruña.",
+      "Vigo.",
+      "Santiago de Compostela."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "3010",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos ríos desemboca en el mar Mediterráneo?",
+    "options": [
+      "El Tajo.",
+      "El Júcar.",
+      "El Duero."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3011",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde está el monte Aneto?",
+    "options": [
+      "En los Pirineos.",
+      "En el Sistema Central.",
+      "En Sierra Nevada."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3012",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "La ciudad de Vitoria es la sede administrativa de…",
+    "options": [
+      "Navarra.",
+      "País Vasco.",
+      "La Rioja."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3013",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "España se divide en…",
+    "options": [
+      "departamentos y regiones.",
+      "comunidades y ciudades autónomas.",
+      "regiones autónomas y distritos."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3014",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "El parque nacional de Aigüestortes está en...",
+    "options": [
+      "Cataluña.",
+      "Aragón",
+      "Castilla y León."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3015",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "En el norte de África están Ceuta y…",
+    "options": [
+      "Almería.",
+      "Melilla.",
+      "Cádiz."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3016",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿En qué lugar de España hay un clima que se caracteriza por inviernos fríos y veranos muy calurosos?",
+    "options": [
+      "Canarias.",
+      "Comunidad Valenciana.",
+      "Madrid."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "3017",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos ríos desemboca en el océano Atlántico?",
+    "options": [
+      "El Guadalquivir.",
+      "El Manzanares.",
+      "El Júcar."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3018",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estas provincias forma parte de la Comunidad de Castilla y León?",
+    "options": [
+      "Burgos.",
+      "Huesca.",
+      "Guadalajara."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3019",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿En qué comunidad autónoma está la ciudad de Huesca?",
+    "options": [
+      "Castilla-La Mancha.",
+      "Aragón.",
+      "Extremadura."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3020",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "Canarias tiene un clima…",
+    "options": [
+      "mediterráneo.",
+      "oceánico.",
+      "subtropical."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "3021",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "El principal río que desemboca en el mar Mediterráneo es el…",
+    "options": [
+      "Ebro.",
+      "Duero.",
+      "Tajo."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3022",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "España está entre los países de Europa más…",
+    "options": [
+      "lluviosos.",
+      "montañosos.",
+      "fríos."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "3023",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿En qué provincia está el parque nacional de Monfragüe?",
+    "options": [
+      "En Cáceres.",
+      "En Murcia.",
+      "En Ciudad Real."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "3024",
+    "section": "territorial-organization",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es la capital de la comunidad autónoma de Extremadura?",
+    "options": [
+      "Cáceres.",
+      "Badajoz.",
+      "Mérida."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4001",
     "section": "culture-history",
     "type": "multiple-choice",
-    "prompt": "¿Qué pintor español es autor del cuadro «Guernica»?",
-    "options": ["Salvador Dalí", "Francisco de Goya", "Diego Velázquez", "Pablo Picasso"],
-    "answer": 3,
-    "explanation": "El «Guernica» (1937) fue pintado por Pablo Picasso."
+    "prompt": "Los personajes principales de la novela el Quijote son don Quijote y…",
+    "options": [
+      "Don Juan.",
+      "Sancho Panza.",
+      "Doña Inés."
+    ],
+    "answer": 1
   },
   {
-    "id": "ccse-ch-0002",
+    "id": "4002",
     "section": "culture-history",
     "type": "multiple-choice",
-    "prompt": "¿En qué año entró España en la Comunidad Económica Europea (hoy Unión Europea)?",
-    "options": ["1975", "1981", "1986", "1992"],
-    "answer": 2,
-    "explanation": "España ingresó en la CEE el 1 de enero de 1986."
+    "prompt": "¿Qué científica española es reconocida por sus investigaciones?",
+    "options": [
+      "Almudena Grandes.",
+      "Montserrat Caballé.",
+      "Margarita Salas."
+    ],
+    "answer": 2
   },
   {
-    "id": "ccse-soc-0001",
+    "id": "4003",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Quién escribió La casa de Bernarda Alba?",
+    "options": [
+      "Federico García Lorca.",
+      "Miguel de Cervantes.",
+      "Antonio Machado."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4004",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Quién escribió Nada, una novela sobre la posguerra española?",
+    "options": [
+      "Carmen Laforet.",
+      "Ana María Matute.",
+      "María Dueñas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4005",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué músico compuso El amor brujo?",
+    "options": [
+      "Manuel de Falla.",
+      "Isaac Albéniz.",
+      "Joaquín Rodrigo."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4006",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué es típico en la Noche de San Juan?",
+    "options": [
+      "Comer uvas.",
+      "Encender hogueras.",
+      "Regalar libros."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4007",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el instrumento más característico de la música flamenca?",
+    "options": [
+      "La gaita.",
+      "La guitarra.",
+      "El piano."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4008",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "Isabel Coixet es una…",
+    "options": [
+      "cantante pop.",
+      "bailarina clásica.",
+      "directora de cine."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4009",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "Una de las cantantes españolas más famosas actualmente es...",
+    "options": [
+      "Rosalía.",
+      "Marisol.",
+      "Lola Flores."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4010",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿En qué ciudad de España hay una mezquita que es Patrimonio de la Humanidad?",
+    "options": [
+      "Santiago de Compostela.",
+      "Madrid.",
+      "Córdoba."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4011",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿En qué ciudad de España se encuentra La Alhambra, que es Patrimonio de la Humanidad?",
+    "options": [
+      "En Sevilla.",
+      "En Córdoba.",
+      "En Granada."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4012",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el nombre de la directora española que ha destacado por su mirada crítica y por modernizar el cine nacional?",
+    "options": [
+      "Pilar Miró.",
+      "Sara Baras.",
+      "Penélope Cruz."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4013",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué novela de éxito ha escrito Irene Vallejo?",
+    "options": [
+      "El infinito en un junco.",
+      "El tiempo entre costuras.",
+      "El camino."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4014",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la mayor institución pública dedicada a la investigación en España?",
+    "options": [
+      "Real Academia Española (RAE).",
+      "Consejo Superior de investigaciones Científicas (CSIC).",
+      "La sociedad General de Autores (SGAE)."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4015",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "Paco de Lucía fue un famoso….",
+    "options": [
+      "científico.",
+      "guitarrista.",
+      "pintor."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4016",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué celebramos el 24 de diciembre?",
+    "options": [
+      "Carnaval.",
+      "Nochebuena.",
+      "San Juan."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4017",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "Juan Mari Arzak es un famoso....",
+    "options": [
+      "escritor.",
+      "músico",
+      "cocinero."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4018",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Quién fue Clara Campoamor?",
+    "options": [
+      "Una defensora de los derechos de la mujer.",
+      "Una cantante lírica.",
+      "Una directora de cine."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4019",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué canciones típicas se cantan en Navidad?",
+    "options": [
+      "Flamenco.",
+      "Villancicos.",
+      "Jotas."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4020",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "La Liga y la Copa del Rey son competiciones de…",
+    "options": [
+      "natación.",
+      "atletismo.",
+      "fútbol."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4021",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Quién ha recibido el premio Nobel de Literatura?",
+    "options": [
+      "María Zambrano.",
+      "Pablo Picasso.",
+      "Vicente Aleixandre."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4022",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué fiesta se celebra en Pamplona el 7 de julio?",
+    "options": [
+      "Los sanfermines.",
+      "Las Fallas.",
+      "La Feria de Abril."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4023",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "Teresa Perales y Daniel Molina son...",
+    "options": [
+      "campeones paraolímpicos.",
+      "músicos famosos.",
+      "artistas de cine."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4024",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué toman los españoles la noche del 31 de diciembre para celebrar el cambio de año?",
+    "options": [
+      "Lentejas.",
+      "Uvas.",
+      "Aceitunas."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4025",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué mujer es autora del cuadro La verbena?",
+    "options": [
+      "Maruja Mallo.",
+      "Carmen Maura.",
+      "Clara Lago."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4026",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿En qué museo español puedes ver el cuadro Guernica de Picasso?",
+    "options": [
+      "Museo del Prado.",
+      "Museo Reina Sofía.",
+      "Museo Thyssen-Bornemisza."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4027",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué escritora española escribe en otra lengua oficial de España?",
+    "options": [
+      "Mercè Rodoreda.",
+      "Almudena Grandes.",
+      "Ana María Matute."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4028",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué tres culturas convivieron en la España medieval?",
+    "options": [
+      "La cristiana, la judía y la musulmana.",
+      "La fenicia, la judía y la musulmana.",
+      "La griega, la cristiana y la judía."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4029",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "El 6 de diciembre se celebra en España…",
+    "options": [
+      "el Día de la Constitución.",
+      "la llegada de Colón a América.",
+      "el Día del Libro."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4030",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué ciudad fue un centro científico en Al-Ándalus, donde se estudiaba medicina y astronomía?",
+    "options": [
+      "Barcelona.",
+      "Madrid.",
+      "Córdoba."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "4031",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿En qué ciudad española está el Museo Guggenheim?",
+    "options": [
+      "Bilbao.",
+      "Madrid.",
+      "Valencia."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4032",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "El Premio Cervantes se da a…",
+    "options": [
+      "actores.",
+      "escritores.",
+      "pintores."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4033",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué premio reconoce a los mejores actores y películas?",
+    "options": [
+      "Premio Goya.",
+      "Premio Nobel.",
+      "Premio Cervantes."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4034",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Qué premios promueven en España valores científicos, culturales y humanísticos?",
+    "options": [
+      "Los Premios Cervantes.",
+      "Los Premios Princesa de Asturias.",
+      "Los Premios Goya."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "4035",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos deportes es muy popular en España?",
+    "options": [
+      "El fútbol.",
+      "El esquí",
+      "El golf."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "4036",
+    "section": "culture-history",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos deportistas juega al tenis?",
+    "options": [
+      "Pau Gasol.",
+      "Carlos Sainz.",
+      "Carlos Alcaraz."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5001",
     "section": "society",
     "type": "multiple-choice",
-    "prompt": "¿Qué día se celebra la Fiesta Nacional de España?",
-    "options": ["1 de mayo", "12 de octubre", "6 de diciembre", "25 de julio"],
-    "answer": 1,
-    "explanation": "La Fiesta Nacional de España se celebra el 12 de octubre."
+    "prompt": "¿Qué documento deben solicitar los extranjeros para residir legalmente en España?",
+    "options": [
+      "El Documento Nacional de Identidad (DNI).",
+      "La Tarjeta de Identidad de Extranjero (TIE).",
+      "El certificado de empadronamiento."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5002",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el documento que certifica el lugar de residencia del titular?",
+    "options": [
+      "El certificado de empadronamiento.",
+      "La partida de nacimiento.",
+      "El carné de conducir."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5003",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿A qué sustituye el registro electrónico individual?",
+    "options": [
+      "Al DNI.",
+      "Al permiso de conducir.",
+      "Al libro de familia."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5004",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es la edad mínima para conducir un coche en España?",
+    "options": [
+      "16 años.",
+      "18 años.",
+      "20 años."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5005",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El carné de conducir se hace en…",
+    "options": [
+      "la Dirección General de Tráfico (DGT).",
+      "la Policía Nacional.",
+      "el Registro Civil."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5006",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Para sacar el carné de conducir hay que aprobar…",
+    "options": [
+      "un examen teórico.",
+      "un examen práctico.",
+      "un examen teórico y otro práctico."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5007",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde se tramita el libro de familia?",
+    "options": [
+      "En el Registro Civil.",
+      "En la Seguridad Social.",
+      "En las comisarías de policía."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5008",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos canales de televisión es autonómico?",
+    "options": [
+      "Telecinco.",
+      "Nova.",
+      "Canal Sur."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5009",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuánto dura el permiso de maternidad o paternidad?",
+    "options": [
+      "12 semanas.",
+      "19 semanas.",
+      "22 semanas."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5010",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es la tasa máxima de alcohol en sangre permitida a los conductores, en gramos por litro (g/l)?",
+    "options": [
+      "0,5.",
+      "0,7.",
+      "0,9."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5011",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el tipo de residencia más habitual en España?",
+    "options": [
+      "Casa rural.",
+      "Piso en un edificio de viviendas.",
+      "Chalé independiente."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5012",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué comunidad autónoma es conocida por la calidad de su aceite de oliva?",
+    "options": [
+      "Cantabria.",
+      "Andalucía.",
+      "La Rioja."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5013",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la revisión que deben pasar obligatoriamente los coches?",
+    "options": [
+      "IBI (Impuesto sobre Bienes Inmuebles).",
+      "ITV (Inspección Técnica de Vehículos).",
+      "ITE (Inspección Técnica de Edificios)."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5014",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El aperitivo que acompaña a la bebida en bares y restaurantes se llama...",
+    "options": [
+      "bocadillo.",
+      "tapa.",
+      "primer plato."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5015",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde se tramita la tarjeta sanitaria?",
+    "options": [
+      "En la comisaría de policía.",
+      "En el centro de salud.",
+      "En el Ministerio de Sanidad."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5016",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Con cuántos hijos una familia es numerosa?",
+    "options": [
+      "Con 1 hijo.",
+      "Con 2 hijos.",
+      "Con 3 hijos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5017",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "En España está permitido el matrimonio…",
+    "options": [
+      "solo entre personas del mismo sexo.",
+      "entre personas del mismo y diferente sexo.",
+      "solo entre personas de diferente sexo."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5018",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los propietarios de perros deben registrarlos en…",
+    "options": [
+      "el Ministerio de Justicia.",
+      "la comisaría de policía.",
+      "el Ayuntamiento."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5019",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los principales ingredientes de la tortilla española son huevos y…",
+    "options": [
+      "pimientos.",
+      "patatas.",
+      "tomates."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5020",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es uno de los platos más conocidos internacionalmente de la gastronomía española?",
+    "options": [
+      "Gazpacho.",
+      "Pizza.",
+      "Pasta."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5021",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos canales de televisión es público?",
+    "options": [
+      "Tele 5.",
+      "La 1.",
+      "Antena 3."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5022",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "En una comunidad de vecinos, una de las normas es…",
+    "options": [
+      "abrir la puerta al cartero.",
+      "no molestar con ruido.",
+      "limpiar los espacios comunes."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5023",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos es el principal ingrediente de la paella valenciana?",
+    "options": [
+      "Arroz.",
+      "Chorizo.",
+      "Garbanzos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5024",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "La sidra es una bebida típica de…",
+    "options": [
+      "Asturias.",
+      "Valencia.",
+      "Canarias."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5025",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los españoles tienen dos apellidos, el primero es…",
+    "options": [
+      "obligatoriamente el de la madre.",
+      "obligatoriamente el del padre.",
+      "puede ser el de la madre o el del padre."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5026",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "La Fiesta Nacional de España es el…",
+    "options": [
+      "6 de diciembre.",
+      "15 de agosto.",
+      "12 de octubre."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5027",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué días suelen cerrar la mayoría de las tiendas o el pequeño comercio?",
+    "options": [
+      "Los lunes.",
+      "Los domingos.",
+      "Los sábados por la tarde."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5028",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde se hace el pasaporte?",
+    "options": [
+      "En el registro civil.",
+      "En una comisaría de policía.",
+      "En el Ayuntamiento."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5029",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El Ministerio de Igualdad es el encargado de luchar contra la violencia de género y la…",
+    "options": [
+      "separación.",
+      "discriminación.",
+      "solidaridad."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5030",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué comunidad autónoma es conocida por la calidad de sus cavas?",
+    "options": [
+      "Galicia.",
+      "Cataluña.",
+      "Castilla-La Mancha."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5031",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué documento se necesita para recibir atención médica en la sanidad pública?",
+    "options": [
+      "El pasaporte.",
+      "La tarjeta sanitaria.",
+      "El certificado de nacimiento."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5032",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El horario de Canarias, con respecto a la Península, es de…",
+    "options": [
+      "dos horas menos.",
+      "una hora menos.",
+      "una hora más."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5033",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Para acceder a la Universidad se debe superar una prueba de evaluación llamada…",
+    "options": [
+      "Selectividad.",
+      "Examen preuniversitario.",
+      "Prueba de Acceso a la Universidad."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5034",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos productos necesita importar España de otros países?",
+    "options": [
+      "Petróleo.",
+      "Aceite de oliva.",
+      "Medicamentos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5035",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué tipo de impuestos tienen que pagar los ciudadanos en España?",
+    "options": [
+      "Impuestos directos como el IRPF.",
+      "Impuestos indirectos como el IVA.",
+      "Impuestos directos e indirectos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5036",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los adultos sin Bachillerato pueden estudiar en la Universidad haciendo una prueba especial a partir de los…",
+    "options": [
+      "18 años.",
+      "23 años.",
+      "25 años."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5037",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde puede encontrarse la siguiente norma «No pisar el césped, ni arrancar flores»?",
+    "options": [
+      "En zonas de recreo.",
+      "En los teatros.",
+      "En los estadios de fútbol."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5038",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El Bachillerato en España…",
+    "options": [
+      "es obligatorio.",
+      "se compone de dos cursos académicos.",
+      "es la enseñanza a alumnos de 14 a 16 años."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5039",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El Impuesto sobre el Valor Añadido (IVA) forma parte de los…",
+    "options": [
+      "Impuestos indirectos.",
+      "Impuestos sobre la renta.",
+      "Impuestos sobre sociedades."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5040",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué número reciben los trabajadores al comenzar su primer empleo?",
+    "options": [
+      "El de la Seguridad Social.",
+      "El del pasaporte.",
+      "El número de servicio."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5041",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los colegios públicos…",
+    "options": [
+      "pueden decidir su número de plazas.",
+      "pueden contratar a los profesores que quieran.",
+      "son gratuitos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5042",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos puertos es uno de los principales de España?",
+    "options": [
+      "Tenerife.",
+      "Alicante.",
+      "Algeciras."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5043",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Un colegio concertado es un colegio privado que…",
+    "options": [
+      "recibe dinero de la Administración.",
+      "financian los padres de los alumnos.",
+      "recibe dinero de los bancos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5044",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "España exporta productos principalmente a países…",
+    "options": [
+      "de Hispanoamérica.",
+      "de la Unión Europea.",
+      "del norte de África."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5045",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Las bibliotecas públicas son gratuitas para…",
+    "options": [
+      "todos.",
+      "los parados.",
+      "los niños."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5046",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos productos exporta España más que importa?",
+    "options": [
+      "Gas.",
+      "Ropa.",
+      "Calzado."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5047",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Una persona mayor de 18 años puede obtener el título de Graduado en Educación Secundaria Obligatoria en…",
+    "options": [
+      "un Centro de Educación de Personas Adultas.",
+      "un centro de enseñanza primaria.",
+      "una universidad."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5048",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "La formación profesional…",
+    "options": [
+      "es para mayores de 25 años.",
+      "puede ser de grado medio o superior.",
+      "es obligatoria."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5049",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Adónde vamos para ver al médico de familia o al pediatra?",
+    "options": [
+      "Al hospital.",
+      "Al centro de salud.",
+      "A la farmacia."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5050",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Para cuántos años vale la tarjeta sanitaria europea?",
+    "options": [
+      "Para un año.",
+      "Para dos años.",
+      "Para 10 años."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5051",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿A qué hora se cena normalmente en España?",
+    "options": [
+      "A las 18 h.",
+      "A las 23 h.",
+      "A las 21 o 22 h."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5052",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el número de teléfono único para cualquier emergencia?",
+    "options": [
+      "060.",
+      "112.",
+      "911."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5053",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos periódicos se publica a nivel nacional?",
+    "options": [
+      "El Diario Vasco.",
+      "El País.",
+      "La Voz de Galicia."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5054",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde se venden sellos y tabaco?",
+    "options": [
+      "En el quiosco.",
+      "En la farmacia.",
+      "En el estanco."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5055",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuándo se puede llamar al número de teléfono para atención a víctimas de violencia de género?",
+    "options": [
+      "Las 24 horas del día.",
+      "En horario de mañana.",
+      "De lunes a viernes."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5056",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "La organización que trabaja para conseguir la integración de las personas con discapacidad visual es…",
+    "options": [
+      "la ONCE.",
+      "Unicef.",
+      "Cáritas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5057",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El Camino de Santiago es…",
+    "options": [
+      "Patrimonio de la Humanidad.",
+      "una vía de ferrocarril.",
+      "una ruta para excursionistas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5058",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el canal de televisión estatal que transmite noticias de actualidad nacional e internacional continuamente?",
+    "options": [
+      "Teledeporte.",
+      "La 1.",
+      "Canal 24 horas."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5059",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El teléfono gratuito para las víctimas de violencia de género es el…",
+    "options": [
+      "091.",
+      "112.",
+      "016."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5060",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "En España, la red de trenes puede ser de larga distancia, de media distancia y…",
+    "options": [
+      "de cercanías.",
+      "rural.",
+      "transnacional."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5061",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué está prohibido en la puerta de un colegio?",
+    "options": [
+      "Fumar un cigarrillo.",
+      "Conducir un coche.",
+      "Vender refrescos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5062",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué título se obtiene al finalizar un ciclo de grado medio de Formación Profesional?",
+    "options": [
+      "Bachiller.",
+      "Técnico.",
+      "Graduado en ESO."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5063",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué título se obtiene tras realizar una tesis doctoral en España?",
+    "options": [
+      "Máster.",
+      "Graduado.",
+      "Doctor."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5064",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Dónde se compran las medicinas con receta?",
+    "options": [
+      "En el hospital",
+      "En el centro de salud.",
+      "En la farmacia."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5065",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estas tres recomendaciones podemos encontrar en un parque?",
+    "options": [
+      "No pisar el césped.",
+      "Se recomienda pagar el billete con el dinero justo.",
+      "Respetar las normas sobre equipaje."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5066",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de las siguientes cosas es obligatoria para el propietario de un coche en España?",
+    "options": [
+      "El garaje",
+      "El seguro.",
+      "La alarma."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5067",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "El aeropuerto Adolfo Suárez está en…",
+    "options": [
+      "Barcelona.",
+      "Madrid",
+      "Bilbao."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5068",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "En un coche es obligatorio el uso del cinturón de seguridad...",
+    "options": [
+      "solo en el asiento del conductor.",
+      "en los asientos delanteros.",
+      "en todos los asientos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "5069",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el límite de velocidad en autopista?",
+    "options": [
+      "90 km/h.",
+      "120 km/h.",
+      "150 km/h."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5070",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Ceder el asiento a las personas con movilidad reducida es una norma que encontramos indicada en…",
+    "options": [
+      "el transporte público.",
+      "las bibliotecas.",
+      "los museos."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5071",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el medio de transporte público que tiene una luz verde encendida si está libre?",
+    "options": [
+      "El autobús.",
+      "El taxi.",
+      "El tranvía."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5072",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Qué debes hacer si tienes un perro?",
+    "options": [
+      "Pasearlo sin correa.",
+      "Ponerle un microchip y vacunarlo",
+      "No recoger sus excrementos."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5073",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los españoles necesitan el pasaporte para viajar a…",
+    "options": [
+      "Italia.",
+      "China.",
+      "Alemania."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5074",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es la edad mínima para trabajar en España?",
+    "options": [
+      "16 años.",
+      "18 años.",
+      "21 años."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5075",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el sector de mayor peso en la economía española?",
+    "options": [
+      "Agricultura.",
+      "Servicios.",
+      "Construcción."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5076",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "España es innovadora en el sector de…",
+    "options": [
+      "la ingeniería aeroespacial.",
+      "las energías renovables.",
+      "la energía nuclear."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5077",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cómo se llama la ley laboral más importante de España?",
+    "options": [
+      "La Constitución.",
+      "El Estatuto de los Trabajadores.",
+      "El Servicio Público de Empleo Estatal."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5078",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál de estos establecimientos está abierto 24 horas si es necesario?",
+    "options": [
+      "Farmacia.",
+      "Pescadería.",
+      "Librería."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5079",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "La educación infantil en España…",
+    "options": [
+      "es obligatoria.",
+      "tiene dos ciclos.",
+      "empieza a los 4 años."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5080",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuándo empieza el calendario escolar?",
+    "options": [
+      "En agosto.",
+      "En septiembre.",
+      "En octubre."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5081",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Las Escuelas Oficiales de Idiomas…",
+    "options": [
+      "son centros de enseñanza privada.",
+      "son para mayores de 16 años.",
+      "dependen del Instituto Cervantes."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "5082",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿Cuál es el documento que recoge los años de cotización a la Seguridad Social?",
+    "options": [
+      "Informe de vida laboral.",
+      "Recibo de finiquito.",
+      "Certificado de profesionalidad."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5083",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "Los convenios colectivos de una empresa son los que se firman con los representantes de los trabajadores sobre…",
+    "options": [
+      "las condiciones laborales.",
+      "el futuro de la empresa.",
+      "la relación con los clientes."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "5084",
+    "section": "society",
+    "type": "multiple-choice",
+    "prompt": "¿En cuál de estos sectores destaca España?",
+    "options": [
+      "En el turismo.",
+      "En la industria automovilística.",
+      "En tecnología digital."
+    ],
+    "answer": 0
   }
 ]

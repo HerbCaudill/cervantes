@@ -2,17 +2,22 @@
   "name": "cervantes",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "pnpm@11.17.0",
+  "engines": {
+    "node": ">=24"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest",
+    "questions:import": "node scripts/importCcseQuestions.ts",
+    "test": "NODE_OPTIONS=--no-experimental-webstorage vitest",
     "test:pw": "playwright test",
     "test:pw:ui": "playwright test --ui",
     "test:pw:headed": "playwright test --headed",
     "test:all": "pnpm typecheck && pnpm test run && pnpm test:pw --max-failures=1",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc -b",
     "format": "prettier --write .",
     "ralph": "npx @herbcaudill/ralph"
   },
@@ -40,6 +45,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "jsdom": "^29.1.1",
+    "pdfjs-dist": "^6.1.200",
     "prettier": "^3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.3.1",

@@ -1,14 +1,21 @@
 # Question bank format
 
-The CCSE question bank lives in [`questions.json`](./questions.json) — a single
-JSON array of question objects. To seed or grow the bank, append objects to that
-array. They're validated and normalized at load time by
-[`parseQuestions`](../lib/parseQuestions.ts); malformed entries are skipped with a
-console warning (they won't crash the app), so a bad row in a large import is easy
-to spot and fix.
+The CCSE question bank lives in [`questions.json`](./questions.json) as a single
+JSON array. It contains the 300 official questions from the Instituto Cervantes
+[2026 preparation manual](https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf).
 
-This format is intended for **bulk import**: a separate task compiles the full
-~500-question pool, and the output can be dropped straight into `questions.json`.
+Regenerate it from the official PDF with:
+
+```bash
+pnpm questions:import
+```
+
+The TypeScript importer downloads the manual, extracts the five task sections
+and answer tables, verifies every official ID and answer shape, and then
+overwrites `questions.json`. The app validates and normalizes the result at load
+time with [`parseQuestions`](../lib/parseQuestions.ts). The importer also pins
+the PDF checksum, so a revised official manual must be reviewed explicitly
+before updating the source metadata in `scripts/ccse-import/constants.ts`.
 
 ## Fields
 

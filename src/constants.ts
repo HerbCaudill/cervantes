@@ -35,10 +35,10 @@ export const TRUE_FALSE_OPTIONS: [string, string] = ["Verdadero", "Falso"]
  * version of the key via `formatSection`.
  */
 export const SECTION_LABELS: Record<string, string> = {
-  "constitution-government": "Gobierno, Constitución y leyes",
-  "territorial-organization": "Organización territorial",
-  "rights-participation": "Derechos y participación ciudadana",
+  "constitution-government": "Gobierno, legislación y participación ciudadana",
+  "territorial-organization": "Organización territorial de España. Geografía física y política",
+  "rights-participation": "Derechos y deberes fundamentales",
   geography: "Geografía",
-  "culture-history": "Cultura e historia",
-  society: "Sociedad y vida cotidiana",
+  "culture-history": "Cultura e historia de España",
+  society: "Sociedad española",
 }
