@@ -131,4 +131,31 @@ describe("manual reader", () => {
     })
     expect(note).toHaveAttribute("aria-hidden", "true")
   })
+
+  it("renders in-prose article references from the integrated source in the margin", () => {
+    window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
+    render(<App />)
+
+    const article = screen.getByRole("article")
+
+    expect(within(article).getByText("Art.22", { selector: "[data-margin-note]" })).toHaveAttribute(
+      "aria-hidden",
+      "true",
+    )
+    expect(within(article).getByText("Art.6", { selector: "[data-margin-note]" })).toHaveAttribute(
+      "aria-hidden",
+      "true",
+    )
+  })
+
+  it("does not skip heading ranks beneath the topic title", () => {
+    window.history.replaceState(null, "", "/manual/task-2/articulo-22-03")
+    render(<App />)
+
+    const article = screen.getByRole("article")
+
+    expect(within(article).getByRole("heading", { level: 2, name: "Artículo 22" })).toBeVisible()
+    expect(within(article).getByRole("heading", { level: 3, name: "Artículo 23" })).toBeVisible()
+    expect(within(article).queryByRole("heading", { level: 4 })).not.toBeInTheDocument()
+  })
 })

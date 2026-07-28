@@ -44,7 +44,7 @@ export function ManualIndex({ manual }: Props) {
                         href={`/manual/${section.id}/${getManualTopicSlug(section, topic)}`}
                         className="grid min-h-11 grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-1"
                       >
-                        <span className="text-faint font-mono text-[10px] tabular-nums">
+                        <span className="text-soft font-mono text-[10px] tabular-nums">
                           {String(topicIndex + 1).padStart(2, "0")}
                         </span>
                         <span className="font-serif text-sm">{topic.title}</span>

@@ -183,3 +183,68 @@ test("moves between topics across task boundaries", async ({ page }) => {
     page.getByRole("link", { name: /Anterior.*Participación ciudadana/i }),
   ).toHaveAttribute("href", "/manual/task-1/participacion-ciudadana-15")
 })
+
+test("keeps meaningful small manual text legible in both themes", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/manual/task-2/articulo-22-03")
+
+  const previousLabel = page.getByText("‹ Anterior")
+  await expect(previousLabel).toHaveCSS("color", "rgb(92, 95, 90)")
+  expect(
+    await previousLabel.evaluate(element => {
+      const colors = [
+        getComputedStyle(element).color,
+        getComputedStyle(document.body).backgroundColor,
+      ]
+      const luminances = colors.map(color =>
+        color
+          .match(/\d+/g)!
+          .slice(0, 3)
+          .map(channel => Number(channel) / 255)
+          .map(channel =>
+            channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4,
+          )
+          .reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0),
+      )
+      const [lighter, darker] = luminances.sort((left, right) => right - left)
+
+      return (lighter + 0.05) / (darker + 0.05)
+    }),
+  ).toBeGreaterThanOrEqual(4.5)
+
+  await page.goto("/manual")
+  const firstTopicNumber = page
+    .getByRole("navigation", { name: "Índice completo del manual" })
+    .getByText("01", { exact: true })
+    .nth(1)
+  await expect(firstTopicNumber).toHaveCSS("color", "rgb(92, 95, 90)")
+
+  await page.locator("html").evaluate(element => element.classList.add("dark"))
+  await expect(firstTopicNumber).toHaveCSS("color", "rgb(163, 164, 157)")
+
+  await page.goto("/manual/task-2/articulo-22-03")
+  await page.locator("html").evaluate(element => element.classList.add("dark"))
+  const darkPreviousLabel = page.getByText("‹ Anterior")
+  await expect(darkPreviousLabel).toHaveCSS("color", "rgb(163, 164, 157)")
+  expect(
+    await darkPreviousLabel.evaluate(element => {
+      const colors = [
+        getComputedStyle(element).color,
+        getComputedStyle(document.body).backgroundColor,
+      ]
+      const luminances = colors.map(color =>
+        color
+          .match(/\d+/g)!
+          .slice(0, 3)
+          .map(channel => Number(channel) / 255)
+          .map(channel =>
+            channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4,
+          )
+          .reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0),
+      )
+      const [lighter, darker] = luminances.sort((left, right) => right - left)
+
+      return (lighter + 0.05) / (darker + 0.05)
+    }),
+  ).toBeGreaterThanOrEqual(4.5)
+})

@@ -75,7 +75,7 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
               )}`}
               className="border-rule flex min-h-14 min-w-0 flex-col justify-center border-r pr-3"
             >
-              <span className="text-faint tracking-[0.08em] uppercase">‹ Anterior</span>
+              <span className="text-soft tracking-[0.08em] uppercase">‹ Anterior</span>
               <span className="truncate font-serif text-sm">{adjacent.previous.topic.title}</span>
             </AppLink>
           : <span aria-hidden="true" />}
@@ -87,7 +87,7 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
               )}`}
               className="flex min-h-14 min-w-0 flex-col justify-center pl-3 text-right"
             >
-              <span className="text-faint tracking-[0.08em] uppercase">Siguiente ›</span>
+              <span className="text-soft tracking-[0.08em] uppercase">Siguiente ›</span>
               <span className="truncate font-serif text-sm">{adjacent.next.topic.title}</span>
             </AppLink>
           : <span aria-hidden="true" />}
