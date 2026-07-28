@@ -2758,7 +2758,11 @@
               "type": "list",
               "style": "unordered",
               "items": [
-                "1 año: en casos especiales, por ejemplo:\na. Nacido en España.\nb. Casado con un ciudadano español.\nc. Viudo de un ciudadano español (si no había separación).\nd. Haber residido bajo tutela o acogimiento de un ciudadano español."
+                "1 año: en casos especiales, por ejemplo:",
+                "a. Nacido en España.",
+                "b. Casado con un ciudadano español.",
+                "c. Viudo de un ciudadano español (si no había separación).",
+                "d. Haber residido bajo tutela o acogimiento de un ciudadano español."
               ]
             },
             {
@@ -3000,7 +3004,7 @@
               "rows": [
                 [
                   "Educación Infantil",
-                  "No es obligatoria. Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
+                  "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
                 ],
                 [
                   "Educación Primaria",

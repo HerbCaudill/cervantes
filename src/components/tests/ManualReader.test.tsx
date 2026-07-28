@@ -77,6 +77,35 @@ describe("manual reader", () => {
     expect(cells[1]).toHaveAttribute("data-label", "Descripción")
   })
 
+  it("renders the four one-year nationality cases as separate list rows", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/manual/task-5/identificacion-personal-y-tramites-administrativos-01",
+    )
+    render(<App />)
+
+    const article = screen.getByRole("article")
+    const parentItem = within(article).getByText("1 año: en casos especiales, por ejemplo:", {
+      exact: false,
+      selector: "li",
+    })
+    const list = parentItem.closest("ul")
+
+    expect(list).not.toBeNull()
+    expect(
+      within(list!)
+        .getAllByRole("listitem")
+        .map(item => item.textContent),
+    ).toEqual([
+      "1 año: en casos especiales, por ejemplo:",
+      "a. Nacido en España.",
+      "b. Casado con un ciudadano español.",
+      "c. Viudo de un ciudadano español (si no había separación).",
+      "d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
+    ])
+  })
+
   it("renders repeated table headers without duplicate React keys", () => {
     const error = vi.spyOn(console, "error").mockImplementation(() => undefined)
     window.history.replaceState(null, "", "/manual/task-1/poblacion-14")

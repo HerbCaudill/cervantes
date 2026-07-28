@@ -176,6 +176,25 @@ describe("verified Task 5 manual content", () => {
     )
   })
 
+  it("keeps the four one-year nationality cases as distinct source list items", () => {
+    const oneYearCases = blocks.find(
+      block =>
+        block.type === "list" && block.items[0] === "1 año: en casos especiales, por ejemplo:",
+    )
+
+    expect(oneYearCases).toMatchObject({
+      type: "list",
+      style: "unordered",
+      items: [
+        "1 año: en casos especiales, por ejemplo:",
+        "a. Nacido en España.",
+        "b. Casado con un ciudadano español.",
+        "c. Viudo de un ciudadano español (si no había separación).",
+        "d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
+      ],
+    })
+  })
+
   it("preserves all four source tables including the two-page education table", () => {
     const tables = blocks.filter(block => block.type === "table")
 
@@ -186,6 +205,10 @@ describe("verified Task 5 manual content", () => {
       "TABLA 11. Expresiones de medidas habituales",
     ])
     expect(tables[0]?.rows).toHaveLength(7)
+    expect(tables[0]?.rows[0]).toEqual([
+      "Educación Infantil",
+      "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito.",
+    ])
     expect(tables[0]?.rows.at(-1)?.[0]).toBe(
       "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas.",
     )

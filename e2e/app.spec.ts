@@ -178,6 +178,31 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   ).toBe(true)
 })
 
+test("renders the four one-year nationality cases as distinct visible rows", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/manual/task-5/identificacion-personal-y-tramites-administrativos-01")
+
+  const article = page.getByRole("article")
+  const list = article.getByRole("list").filter({
+    hasText: "1 año: en casos especiales, por ejemplo:",
+  })
+  const expectedCases = [
+    "a. Nacido en España.",
+    "b. Casado con un ciudadano español.",
+    "c. Viudo de un ciudadano español (si no había separación).",
+    "d. Haber residido bajo tutela o acogimiento de un ciudadano español.",
+  ]
+
+  await expect(list.getByRole("listitem")).toHaveCount(5)
+  const caseRows = expectedCases.map(text => list.locator("li").filter({ hasText: text }))
+  await Promise.all(caseRows.map((row, index) => expect(row).toHaveText(expectedCases[index])))
+
+  const rowTops = await Promise.all(
+    caseRows.map(row => row.evaluate(element => element.getBoundingClientRect().top)),
+  )
+  expect(new Set(rowTops).size).toBe(4)
+})
+
 test("keeps a real article note on one line inside the 40px margin at 390px", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-2/articulo-15-06")
