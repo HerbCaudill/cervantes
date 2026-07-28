@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test"
+import manualDraft from "../src/manual/manual.draft.json" with { type: "json" }
 
 test("answers a question and grades it", async ({ page }) => {
   const externalFontRequests: string[] = []
@@ -72,7 +73,7 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
 
 test("reads every manual block accessibly on a narrow screen", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-5/task-5-draft-page-78")
+  await page.goto("/manual/task-5/sociedad-espanola-09")
 
   const article = page.getByRole("article")
   const table = article.getByRole("table")
@@ -83,7 +84,7 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   await expect(firstCell).toHaveAttribute("data-label", "Nivel educativo")
   await expect(firstCell).toHaveCSS("display", "grid")
   await expect(article.getByRole("figure").getByRole("img")).toBeVisible()
-  await expect(article.getByRole("complementary")).toBeVisible()
+  await expect(article.getByRole("note")).toBeVisible()
   await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(1)
 
   const bodyText = article.getByText(
@@ -102,11 +103,62 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   ).toBe(true)
 })
 
+test("keeps a real article note on one line inside the 40px margin at 390px", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/manual/task-2/articulo-15-02")
+
+  const note = page.locator("[data-margin-note='Art.15']").first()
+  const noteBox = await note.boundingBox()
+
+  expect(noteBox).not.toBeNull()
+  expect(noteBox?.width).toBeLessThanOrEqual(40)
+  expect(noteBox?.height).toBeLessThanOrEqual(19)
+  await expect(page.getByRole("heading", { name: "Artículo 15" })).toBeVisible()
+})
+
+test("loads every semantic topic route accessibly at 390px", async ({ page }) => {
+  test.setTimeout(120_000)
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/manual")
+
+  const topicUrls = await page
+    .getByRole("navigation", { name: "Índice completo del manual" })
+    .locator("a")
+    .evaluateAll(links =>
+      links
+        .map(link => link.getAttribute("href"))
+        .filter(
+          (href): href is string => href !== null && href.split("/").filter(Boolean).length === 3,
+        ),
+    )
+  const expectedTopicCount = manualDraft.sections.reduce(
+    (count, section) => count + section.topics.length,
+    0,
+  )
+
+  expect(topicUrls).toHaveLength(expectedTopicCount)
+  expect(new Set(topicUrls).size).toBe(expectedTopicCount)
+  expect(topicUrls.every(url => !url.includes("draft-page"))).toBe(true)
+
+  for (const topicUrl of topicUrls) {
+    await page.goto(topicUrl)
+
+    await expect(page.getByRole("article")).toBeVisible()
+    await expect(page.getByRole("article").getByRole("heading", { level: 2 })).toBeVisible()
+    await expect(page.getByRole("complementary")).toHaveCount(0)
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+      ),
+    ).toBe(true)
+  }
+})
+
 test("uses a conventional table on wide screens and supports the dark palette", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1000, height: 900 })
-  await page.goto("/manual/task-5/task-5-draft-page-78")
+  await page.goto("/manual/task-5/sociedad-espanola-09")
 
   const article = page.getByRole("article")
   const table = article.getByRole("table")
@@ -121,13 +173,13 @@ test("uses a conventional table on wide screens and supports the dark palette", 
 })
 
 test("moves between topics across task boundaries", async ({ page }) => {
-  await page.goto("/manual/task-1/task-1-participacion-ciudadana")
+  await page.goto("/manual/task-1/participacion-ciudadana-15")
 
   await page.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i }).click()
 
-  await expect(page).toHaveURL("/manual/task-2/task-2-draft-page-28")
+  await expect(page).toHaveURL("/manual/task-2/destacados-derechos-deberes-y-libertades-01")
   await expect(page.getByText("T2 · 01")).toBeVisible()
   await expect(
     page.getByRole("link", { name: /Anterior.*Participación ciudadana/i }),
-  ).toHaveAttribute("href", "/manual/task-1/task-1-participacion-ciudadana")
+  ).toHaveAttribute("href", "/manual/task-1/participacion-ciudadana-15")
 })

@@ -1,11 +1,15 @@
 import { render, screen, within } from "@testing-library/react"
-import { beforeEach, describe, expect, it } from "vitest"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { App } from "@/App"
 import manualDraft from "@/manual/manual.draft.json"
 
 describe("manual reader", () => {
   beforeEach(() => {
     window.history.replaceState(null, "", "/manual")
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
   })
 
   it("makes every extracted topic reachable from the manual index", () => {
@@ -21,7 +25,7 @@ describe("manual reader", () => {
   })
 
   it("renders real paragraphs, lists, tables, figures, captions, and callouts semantically", () => {
-    window.history.replaceState(null, "", "/manual/task-5/task-5-draft-page-78")
+    window.history.replaceState(null, "", "/manual/task-5/sociedad-espanola-09")
     render(<App />)
     const article = screen.getByRole("article")
 
@@ -43,13 +47,13 @@ describe("manual reader", () => {
       }),
     ).toHaveAttribute("src", "/manual/figures/figure-78-76.jpg")
     expect(within(figure).getByText(/^FIGURA 76\./)).toBeInTheDocument()
-    expect(screen.getByRole("complementary")).toHaveTextContent(
+    expect(screen.getByRole("note")).toHaveTextContent(
       "Para acceder a la Universidad se requiere el título de Bachillerato",
     )
   })
 
   it("labels every table cell for the stacked mobile presentation", () => {
-    window.history.replaceState(null, "", "/manual/task-5/task-5-draft-page-78")
+    window.history.replaceState(null, "", "/manual/task-5/sociedad-espanola-09")
     render(<App />)
 
     const firstRow = within(screen.getByRole("article")).getAllByRole("row")[1]
@@ -59,14 +63,43 @@ describe("manual reader", () => {
     expect(cells[1]).toHaveAttribute("data-label", "Descripción")
   })
 
+  it("renders repeated table headers without duplicate React keys", () => {
+    const error = vi.spyOn(console, "error").mockImplementation(() => undefined)
+    window.history.replaceState(null, "", "/manual/task-1/poblacion-14")
+    render(<App />)
+
+    const table = within(screen.getByRole("article")).getByRole("table")
+
+    expect(
+      within(table).getAllByRole("columnheader", {
+        name: "Comunidades y ciudades autónomas",
+      }),
+    ).toHaveLength(3)
+    expect(error.mock.calls.flat().join(" ")).not.toContain(
+      "Encountered two children with the same key",
+    )
+  })
+
+  it("renders multiple untitled callouts as notes instead of unlabeled landmarks", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
+    )
+    render(<App />)
+
+    expect(within(screen.getByRole("article")).getAllByRole("note")).toHaveLength(3)
+    expect(screen.queryByRole("complementary")).not.toBeInTheDocument()
+  })
+
   it("shows running context, cross-task navigation, and one official-source attribution", () => {
-    window.history.replaceState(null, "", "/manual/task-1/task-1-participacion-ciudadana")
+    window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
     render(<App />)
 
     expect(screen.getByText("T1 · 15")).toBeInTheDocument()
     expect(screen.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i })).toHaveAttribute(
       "href",
-      "/manual/task-2/task-2-draft-page-28",
+      "/manual/task-2/destacados-derechos-deberes-y-libertades-01",
     )
 
     const sourceLinks = screen.getAllByRole("link", { name: /fuente oficial/i })
@@ -76,10 +109,10 @@ describe("manual reader", () => {
   })
 
   it("keeps article numbers in a dedicated marginal column", () => {
-    window.history.replaceState(null, "", "/manual/task-2/task-2-draft-page-29")
+    window.history.replaceState(null, "", "/manual/task-2/articulo-15-02")
     render(<App />)
 
-    const note = within(screen.getByRole("article")).getByText("Artículo 15", {
+    const note = within(screen.getByRole("article")).getByText("Art.15", {
       selector: "[data-margin-note]",
     })
     expect(note).toHaveAttribute("aria-hidden", "true")
@@ -89,7 +122,7 @@ describe("manual reader", () => {
     window.history.replaceState(
       null,
       "",
-      "/manual/task-1/task-1-poderes-del-estado-gobierno-e-instituciones",
+      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
     )
     render(<App />)
 

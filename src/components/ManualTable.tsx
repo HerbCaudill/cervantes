@@ -13,8 +13,8 @@ export function ManualTable({ block }: Props) {
           : null}
           <thead>
             <tr>
-              {block.headers.map(header => (
-                <th key={header} scope="col">
+              {block.headers.map((header, columnIndex) => (
+                <th key={`${header}-${columnIndex}`} scope="col">
                   {header}
                 </th>
               ))}

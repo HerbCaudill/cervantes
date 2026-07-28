@@ -12,8 +12,9 @@ render labeled stacked records on narrow screens.
 IDs are persistent content keys, not display labels. Use the exported
 `MANUAL_SECTION_IDS` values for sections. Namespace topic IDs under their
 section (for example, `task-1-poder-legislativo`) and figure asset IDs with
-`figure-`. Never rename or reuse an ID after content ships, because routes and
-saved reader state will depend on them.
+`figure-`. Never rename or reuse an ID after content ships, because saved reader
+state will depend on them. Public topic routes deliberately use semantic title
+slugs with a source-order suffix, keeping page-oriented draft IDs out of URLs.
 
 Every figure block references an entry in `Manual.assets`; asset paths point to
 files bundled for offline use. Run `validateManual` before serializing imported
@@ -23,10 +24,11 @@ and figure references without a valid local asset, caption, or alt text.
 ## Routes
 
 The Manual tab links to `/manual`. Task indexes use
-`/manual/:sectionId`, topics use `/manual/:sectionId/:topicId`, and search stays
-inside the Manual destination at `/manual/buscar`. All in-app links use the
-browser history API, so these paths are directly loadable and retain native
-back and forward behavior.
+`/manual/:sectionId`, topics use `/manual/:sectionId/:topicSlug`, and search
+stays inside the Manual destination at `/manual/buscar`. `getManualTopicSlug`
+constructs topic links and `findManualTopicBySlug` resolves direct routes. All
+in-app links use the browser history API, so these paths are directly loadable
+and retain native back and forward behavior.
 
 ## Reader components
 
@@ -36,12 +38,12 @@ topic index. `ManualTopicShell` renders semantic blocks in source order and
 provides a running head, source-order previous/next links across task
 boundaries, and one link to the official source.
 
-Reader blocks use native headings, paragraphs, lists, tables, figures,
-captions, and complementary regions. Their fixed 40px marginal column carries
-article numbers, dates, and figure numbers without changing the body measure.
-At viewports below 640px, semantic tables become stacked records whose cells
-retain their source column labels; wider viewports use conventional tables.
-The official body text remains 17px in both layouts.
+Reader blocks use native headings, paragraphs, lists, tables, figures, captions,
+and note roles for source callouts. Their fixed 40px marginal column carries
+compact article references, dates, and figure numbers without changing the body
+measure. At viewports below 640px, semantic tables become stacked records whose
+cells retain their source column labels; wider viewports use conventional
+tables. The official body text remains 17px in both layouts.
 
 ## Extraction draft
 

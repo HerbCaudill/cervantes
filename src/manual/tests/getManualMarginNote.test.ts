@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest"
 import { getManualMarginNote } from "@/manual/getManualMarginNote"
 
 describe("getManualMarginNote", () => {
-  it("places article numbers in the marginal column", () => {
-    expect(getManualMarginNote("Artículo 14")).toBe("Artículo 14")
+  it("compacts article numbers to fit the marginal column", () => {
+    expect(getManualMarginNote("Artículo 14")).toBe("Art.14")
   })
 
   it("places a key date in the marginal column without altering the source text", () => {

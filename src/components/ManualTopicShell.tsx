@@ -2,6 +2,7 @@ import { ManualBlockList } from "@/components/ManualBlockList"
 import { ManualMarginLayout } from "@/components/ManualMarginLayout"
 import { getAdjacentManualTopics } from "@/manual/getAdjacentManualTopics"
 import { getManualMarginNote } from "@/manual/getManualMarginNote"
+import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
 import type { Manual, ManualSection, ManualTopic } from "@/manual/types"
 import { AppLink } from "@/navigation/AppLink"
 
@@ -68,7 +69,10 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
         >
           {adjacent.previous ?
             <AppLink
-              href={`/manual/${adjacent.previous.section.id}/${adjacent.previous.topic.id}`}
+              href={`/manual/${adjacent.previous.section.id}/${getManualTopicSlug(
+                adjacent.previous.section,
+                adjacent.previous.topic,
+              )}`}
               className="border-rule flex min-h-14 min-w-0 flex-col justify-center border-r pr-3"
             >
               <span className="text-faint tracking-[0.08em] uppercase">‹ Anterior</span>
@@ -77,7 +81,10 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
           : <span aria-hidden="true" />}
           {adjacent.next ?
             <AppLink
-              href={`/manual/${adjacent.next.section.id}/${adjacent.next.topic.id}`}
+              href={`/manual/${adjacent.next.section.id}/${getManualTopicSlug(
+                adjacent.next.section,
+                adjacent.next.topic,
+              )}`}
               className="flex min-h-14 min-w-0 flex-col justify-center pl-3 text-right"
             >
               <span className="text-faint tracking-[0.08em] uppercase">Siguiente ›</span>

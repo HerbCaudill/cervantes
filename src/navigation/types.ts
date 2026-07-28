@@ -4,5 +4,5 @@ export type AppRoute =
   | { type: "manual-index" }
   | { type: "manual-search" }
   | { type: "manual-section"; sectionId: string }
-  | { type: "manual-topic"; sectionId: string; topicId: string }
+  | { type: "manual-topic"; sectionId: string; topicSlug: string }
   | { type: "not-found" }

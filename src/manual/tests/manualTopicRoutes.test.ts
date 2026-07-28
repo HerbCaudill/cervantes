@@ -1,0 +1,29 @@
+import { describe, expect, it } from "vitest"
+import manualDraft from "@/manual/manual.draft.json"
+import { findManualTopicBySlug } from "@/manual/findManualTopicBySlug"
+import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
+import type { Manual } from "@/manual/types"
+
+const manual = manualDraft as Manual
+
+describe("manual topic routes", () => {
+  it("gives every topic a unique semantic public slug without draft page IDs", () => {
+    for (const section of manual.sections) {
+      const slugs = section.topics.map(topic => getManualTopicSlug(section, topic))
+
+      expect(new Set(slugs).size).toBe(section.topics.length)
+      expect(slugs.every(slug => !slug.includes("draft-page"))).toBe(true)
+      expect(slugs.every(slug => /[a-z]/.test(slug))).toBe(true)
+    }
+  })
+
+  it("resolves every public slug back to its source topic", () => {
+    for (const section of manual.sections) {
+      for (const topic of section.topics) {
+        const slug = getManualTopicSlug(section, topic)
+
+        expect(findManualTopicBySlug(section, slug)).toBe(topic)
+      }
+    }
+  })
+})

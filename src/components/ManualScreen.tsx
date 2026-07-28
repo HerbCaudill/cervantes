@@ -3,6 +3,7 @@ import { ManualNotFound } from "@/components/ManualNotFound"
 import { ManualSearch } from "@/components/ManualSearch"
 import { ManualSectionIndex } from "@/components/ManualSectionIndex"
 import { ManualTopicShell } from "@/components/ManualTopicShell"
+import { findManualTopicBySlug } from "@/manual/findManualTopicBySlug"
 import type { Manual } from "@/manual/types"
 import type { AppRoute } from "@/navigation/types"
 
@@ -20,7 +21,7 @@ export function ManualScreen({ manual, route }: Props) {
     return <ManualSectionIndex section={section} sectionNumber={sectionNumber} />
   }
 
-  const topic = section.topics.find(candidate => candidate.id === route.topicId)
+  const topic = findManualTopicBySlug(section, route.topicSlug)
   if (!topic) return <ManualNotFound />
 
   return (

@@ -1,7 +1,8 @@
 import { AppLink } from "@/navigation/AppLink"
+import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
 import type { Manual } from "@/manual/types"
 
-/** Manual landing page with direct routes to all five tasks and all 65 extracted topics. */
+/** Manual landing page with direct routes to all five tasks and every extracted topic. */
 export function ManualIndex({ manual }: Props) {
   return (
     <div className="flex flex-col px-[0.9rem] py-[0.85rem]">
@@ -40,7 +41,7 @@ export function ManualIndex({ manual }: Props) {
                   {section.topics.map((topic, topicIndex) => (
                     <li key={topic.id} className="border-rule border-b last:border-b-0">
                       <AppLink
-                        href={`/manual/${section.id}/${topic.id}`}
+                        href={`/manual/${section.id}/${getManualTopicSlug(section, topic)}`}
                         className="grid min-h-11 grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-1"
                       >
                         <span className="text-faint font-mono text-[10px] tabular-nums">

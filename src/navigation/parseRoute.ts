@@ -18,7 +18,7 @@ export function parseRoute(
     return {
       type: "manual-topic",
       sectionId: segments[1],
-      topicId: segments[2],
+      topicSlug: segments[2],
     }
   }
 

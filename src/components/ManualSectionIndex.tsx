@@ -1,4 +1,5 @@
 import type { ManualSection } from "@/manual/types"
+import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
 import { AppLink } from "@/navigation/AppLink"
 
 /** Task index with a stable route for each manual topic. */
@@ -20,7 +21,7 @@ export function ManualSectionIndex({ section, sectionNumber }: Props) {
           {section.topics.map((topic, index) => (
             <li key={topic.id} className="border-rule border-b">
               <AppLink
-                href={`/manual/${section.id}/${topic.id}`}
+                href={`/manual/${section.id}/${getManualTopicSlug(section, topic)}`}
                 className="grid min-h-14 grid-cols-[2.5rem_1fr] items-center gap-[0.6rem]"
               >
                 <span className="text-red font-mono text-[10.5px] tabular-nums">
