@@ -1,5 +1,8 @@
-/** App header: title and a live count of questions due versus the bank total. */
-export function DeckHeader({ dueCount, totalCount, inSession, onExit }: Props) {
+import { cn } from "@/lib/utils"
+import { AppLink } from "@/navigation/AppLink"
+
+/** App header: title, live counts, top-level destinations, and session action. */
+export function DeckHeader({ dueCount, totalCount, activeDestination, inSession, onExit }: Props) {
   return (
     <header className="font-sans">
       <div className="border-ink flex min-h-11 items-center justify-between border-b-2 px-[0.9rem]">
@@ -11,21 +14,27 @@ export function DeckHeader({ dueCount, totalCount, inSession, onExit }: Props) {
         </span>
       </div>
       <div className="border-rule flex min-h-11 items-stretch border-b px-[0.9rem]">
-        <button
-          type="button"
-          aria-current="page"
-          className="text-red border-red min-h-11 border-b-2 pr-5 text-xs tracking-[0.11em] uppercase"
+        <AppLink
+          href="/"
+          ariaCurrent={activeDestination === "practice" ? "page" : undefined}
+          className={cn(
+            "flex min-h-11 items-center pr-5 text-xs tracking-[0.11em] uppercase",
+            activeDestination === "practice" ? "text-red border-red border-b-2" : "text-faint",
+          )}
         >
           Práctica
-        </button>
-        <button
-          type="button"
-          disabled
-          className="text-faint min-h-11 px-5 text-xs tracking-[0.11em] uppercase disabled:cursor-not-allowed"
+        </AppLink>
+        <AppLink
+          href="/manual"
+          ariaCurrent={activeDestination === "manual" ? "page" : undefined}
+          className={cn(
+            "flex min-h-11 items-center px-5 text-xs tracking-[0.11em] uppercase",
+            activeDestination === "manual" ? "text-red border-red border-b-2" : "text-faint",
+          )}
         >
           Manual
-        </button>
-        {inSession ?
+        </AppLink>
+        {inSession && activeDestination === "practice" ?
           <button
             type="button"
             onClick={onExit}
@@ -44,6 +53,8 @@ interface Props {
   dueCount: number
   /** Total number of questions in the bank */
   totalCount: number
+  /** Top-level destination represented by the current route */
+  activeDestination: "practice" | "manual"
   /** Whether a practice session is currently active */
   inSession: boolean
   /** Leave the active practice session */

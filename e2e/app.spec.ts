@@ -31,3 +31,33 @@ test("answers a question and grades it", async ({ page }) => {
   // the next official question's options are now shown
   await expect(page.getByRole("button", { name: "Constitución." })).toBeVisible()
 })
+
+test("navigates direct manual routes with browser history", async ({ page }) => {
+  await page.goto("/manual")
+  await expect(page.getByRole("heading", { name: "Manual CCSE" })).toBeVisible()
+
+  await page.getByRole("link", { name: "Tarea 1" }).click()
+  await expect(
+    page.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
+  ).toBeVisible()
+
+  await page
+    .getByRole("link", { name: /Poderes del Estado/i })
+    .first()
+    .click()
+  await expect(page.getByRole("heading", { name: /Poderes del Estado/i })).toBeVisible()
+
+  await page.goBack()
+  await expect(
+    page.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
+  ).toBeVisible()
+
+  await page.goForward()
+  await expect(page.getByRole("heading", { name: /Poderes del Estado/i })).toBeVisible()
+
+  await page.getByRole("link", { name: "Manual" }).click()
+  await page.getByRole("link", { name: "Buscar en el manual" }).click()
+  await expect(page.getByRole("searchbox", { name: "Buscar en el manual" })).toBeVisible()
+  await expect(page.getByRole("link", { name: "Práctica" })).toBeVisible()
+  await expect(page.getByRole("link", { name: "Manual", exact: true })).toBeVisible()
+})

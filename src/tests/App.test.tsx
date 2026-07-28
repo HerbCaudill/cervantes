@@ -1,10 +1,13 @@
-import { fireEvent, render, screen } from "@testing-library/react"
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react"
 import { beforeEach, describe, expect, it } from "vitest"
 import { App } from "@/App"
 import { questions } from "@/data/questions"
 
 describe("App", () => {
-  beforeEach(() => localStorage.clear())
+  beforeEach(() => {
+    localStorage.clear()
+    window.history.replaceState(null, "", "/")
+  })
 
   it("shows the Spanish masthead and resting screen before a session", () => {
     render(<App />)
@@ -72,5 +75,65 @@ describe("App", () => {
     fireEvent.click(screen.getByRole("button", { name: first.options[wrongIndex] }))
     const correctButton = screen.getByRole("button", { name: first.options[first.answerIndex] })
     expect(correctButton).toBeDisabled()
+  })
+
+  it("opens the manual from the top-level navigation", () => {
+    render(<App />)
+
+    fireEvent.click(screen.getByRole("link", { name: "Manual" }))
+
+    expect(window.location.pathname).toBe("/manual")
+    expect(screen.getByRole("heading", { name: "Manual CCSE" })).toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "Buscar en el manual" })).toBeInTheDocument()
+    expect(screen.getAllByRole("link", { name: /Tarea \d/ })).toHaveLength(5)
+  })
+
+  it("supports direct links to manual tasks, topics, and search", () => {
+    window.history.replaceState(null, "", "/manual/task-1")
+    const { unmount } = render(<App />)
+
+    expect(
+      screen.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
+    ).toBeInTheDocument()
+
+    const topicLink = screen.getAllByRole("link", { name: /Poderes del Estado/i })[0]
+    const topicPath = topicLink.getAttribute("href")
+    expect(topicPath).toMatch(/^\/manual\/task-1\//)
+
+    unmount()
+    window.history.replaceState(null, "", topicPath)
+    render(<App />)
+    expect(screen.getByRole("heading", { name: /Poderes del Estado/i })).toBeInTheDocument()
+
+    unmount()
+    window.history.replaceState(null, "", "/manual/buscar")
+    render(<App />)
+    expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
+  })
+
+  it("restores manual and practice screens with browser history", async () => {
+    render(<App />)
+
+    fireEvent.click(screen.getByRole("link", { name: "Manual" }))
+    fireEvent.click(screen.getByRole("link", { name: "Práctica" }))
+    expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument()
+
+    await act(() => {
+      window.history.back()
+      return new Promise(resolve => window.setTimeout(resolve, 0))
+    })
+
+    await waitFor(() =>
+      expect(screen.getByRole("heading", { name: "Manual CCSE" })).toBeInTheDocument(),
+    )
+
+    await act(() => {
+      window.history.forward()
+      return new Promise(resolve => window.setTimeout(resolve, 0))
+    })
+
+    await waitFor(() =>
+      expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument(),
+    )
   })
 })

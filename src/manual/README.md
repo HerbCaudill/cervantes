@@ -20,6 +20,14 @@ files bundled for offline use. Run `validateManual` before serializing imported
 content. It rejects blank or empty content, duplicate IDs, malformed tables,
 and figure references without a valid local asset, caption, or alt text.
 
+## Routes
+
+The Manual tab links to `/manual`. Task indexes use
+`/manual/:sectionId`, topics use `/manual/:sectionId/:topicId`, and search stays
+inside the Manual destination at `/manual/buscar`. All in-app links use the
+browser history API, so these paths are directly loadable and retain native
+back and forward behavior.
+
 ## Extraction draft
 
 Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and
