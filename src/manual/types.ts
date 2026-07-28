@@ -35,6 +35,14 @@ export interface Manual {
   sections: ManualSection[]
 }
 
+/** Indexed normalized body windows used for linear-time pull-quote comparison. */
+export interface ManualBodyTextIndex {
+  /** Normalized character width of every indexed window */
+  windowLength: number
+  /** Unique normalized body windows */
+  windows: ReadonlySet<string>
+}
+
 /** One of the manual's five source tasks. */
 export interface ManualSection {
   /** Stable identifier such as `task-1` */

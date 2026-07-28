@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import type { FormEvent } from "react"
 import { ManualSearchHighlight } from "@/components/ManualSearchHighlight"
-import { buildManualSearchIndex } from "@/manual/search/buildManualSearchIndex"
+import { getManualSearchIndex } from "@/manual/search/getManualSearchIndex"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
+import type { ManualSearchIndexEntry } from "@/manual/search/types"
 import type { Manual } from "@/manual/types"
 import { AppLink } from "@/navigation/AppLink"
 import { navigate } from "@/navigation/navigate"
@@ -10,10 +11,14 @@ import { navigate } from "@/navigation/navigate"
 /** Local full-text search contained within the Manual destination. */
 export function ManualSearch({ manual, query }: Props) {
   const [draft, setDraft] = useState(query)
+  const [index, setIndex] = useState<ManualSearchIndexEntry[] | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-  const index = useMemo(() => buildManualSearchIndex(manual), [manual])
-  const results = useMemo(() => searchManualIndex(index, query), [index, query])
+  const results = useMemo(() => (index ? searchManualIndex(index, query) : []), [index, query])
   const normalizedQuery = query.trim().replace(/\s+/g, " ")
+
+  useEffect(() => {
+    setIndex(getManualSearchIndex(manual))
+  }, [manual])
 
   useEffect(() => {
     setDraft(query)
@@ -89,11 +94,13 @@ export function ManualSearch({ manual, query }: Props) {
             aria-live="polite"
             className="text-soft border-rule-hard border-b pb-[0.85rem] font-sans text-xs"
           >
-            {results.length === 0 ?
+            {!index ?
+              "Preparando búsqueda…"
+            : results.length === 0 ?
               `No hay resultados para «${normalizedQuery}».`
             : `${results.length} ${results.length === 1 ? "resultado" : "resultados"}`}
           </p>
-          {results.length > 0 ?
+          {index && results.length > 0 ?
             <ol aria-label="Resultados de búsqueda">
               {results.map(result => (
                 <li key={result.topicId} className="border-rule border-b">

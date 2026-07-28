@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { buildManualSearchIndex } from "@/manual/search/buildManualSearchIndex"
+import { getManualSearchIndex } from "@/manual/search/getManualSearchIndex"
 import { getManualSearchHighlightParts } from "@/manual/search/getManualSearchHighlightParts"
 import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
@@ -269,6 +270,31 @@ describe("manual search", () => {
         index.find(entry => entry.topicId === result.topicId)?.normalizedTokens.includes("nino"),
       ),
     ).toBe(true)
+  })
+
+  it("constructs one body index while staying within a generous computation budget", () => {
+    const sourceManual = manualDraft as Manual
+    let sectionReads = 0
+    const observedManual = {
+      ...sourceManual,
+      get sections() {
+        sectionReads += 1
+        return sourceManual.sections
+      },
+    }
+    const startedAt = performance.now()
+
+    const index = buildManualSearchIndex(observedManual)
+
+    expect(index.length).toBeGreaterThan(0)
+    expect(sectionReads).toBe(2)
+    expect(performance.now() - startedAt).toBeLessThan(250)
+  })
+
+  it("reuses the lazily built index for the same immutable manual", () => {
+    const sourceManual = manualDraft as Manual
+
+    expect(getManualSearchIndex(sourceManual)).toBe(getManualSearchIndex(sourceManual))
   })
 
   it("requires every query term while allowing them outside an exact phrase", () => {

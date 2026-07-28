@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test"
-import { getManualBodySearchSegments } from "../src/manual/getManualBodySearchSegments"
+import { getManualBodyTextIndex } from "../src/manual/getManualBodyTextIndex"
 import { getManualTopicSlug } from "../src/manual/getManualTopicSlug"
 import { getVisibleManualBlocks } from "../src/manual/getVisibleManualBlocks"
 import manualDraft from "../src/manual/manual.draft.json" with { type: "json" }
@@ -7,7 +7,7 @@ import { getManualBlockSearchSegments } from "../src/manual/search/getManualBloc
 import type { Manual } from "../src/manual/types"
 
 const manual = manualDraft as Manual
-const bodySearchSegments = getManualBodySearchSegments(manual)
+const bodyTextIndex = getManualBodyTextIndex(manual)
 
 test("renders the Felipe VI prose once and loads its figure at 390px", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
@@ -44,11 +44,9 @@ test("renders the audited projection on every source callout route", async ({ pa
     for (const topic of section.topics) {
       if (!topic.blocks.some(block => block.type === "callout")) continue
 
-      const expectedCallouts = getVisibleManualBlocks(
-        manual,
-        topic.blocks,
-        bodySearchSegments,
-      ).filter(block => block.type === "callout")
+      const expectedCallouts = getVisibleManualBlocks(manual, topic.blocks, bodyTextIndex).filter(
+        block => block.type === "callout",
+      )
       await page.goto(`/manual/${section.id}/${getManualTopicSlug(section, topic)}`)
 
       const notes = page.getByRole("article").getByRole("note")

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { getVisibleManualBlocks } from "@/manual/getVisibleManualBlocks"
-import { getManualBodySearchSegments } from "@/manual/getManualBodySearchSegments"
+import { getManualBodyTextIndex } from "@/manual/getManualBodyTextIndex"
 import { isDuplicatedManualCalloutText } from "@/manual/isDuplicatedManualCalloutText"
 import manualDraft from "@/manual/manual.draft.json"
 import { getManualBlockSearchSegments } from "@/manual/search/getManualBlockSearchSegments"
@@ -271,13 +271,13 @@ describe("visible manual blocks", () => {
 
   it("audits duplicated callouts across all five official tasks", () => {
     const officialManual = manualDraft as Manual
-    const bodySearchSegments = getManualBodySearchSegments(officialManual)
+    const bodyTextIndex = getManualBodyTextIndex(officialManual)
     const audit = officialManual.sections.map(section => {
       const sourceCallouts = section.topics.flatMap(topic =>
         topic.blocks.filter(block => block.type === "callout"),
       ).length
       const visibleCallouts = section.topics.flatMap(topic =>
-        getVisibleManualBlocks(officialManual, topic.blocks, bodySearchSegments).filter(
+        getVisibleManualBlocks(officialManual, topic.blocks, bodyTextIndex).filter(
           block => block.type === "callout",
         ),
       ).length
@@ -326,22 +326,16 @@ describe("visible manual blocks", () => {
 
   it("leaves no visible callout segment with a substantial corpus overlap", () => {
     const officialManual = manualDraft as Manual
-    const bodySearchSegments = getManualBodySearchSegments(officialManual)
+    const bodyTextIndex = getManualBodyTextIndex(officialManual)
 
     for (const section of officialManual.sections) {
       for (const topic of section.topics) {
-        const calloutSegments = getVisibleManualBlocks(
-          officialManual,
-          topic.blocks,
-          bodySearchSegments,
-        )
+        const calloutSegments = getVisibleManualBlocks(officialManual, topic.blocks, bodyTextIndex)
           .filter(block => block.type === "callout")
           .flatMap(getManualBlockSearchSegments)
 
         expect(
-          calloutSegments.filter(segment =>
-            isDuplicatedManualCalloutText(segment, bodySearchSegments),
-          ),
+          calloutSegments.filter(segment => isDuplicatedManualCalloutText(segment, bodyTextIndex)),
           topic.id,
         ).toEqual([])
       }
