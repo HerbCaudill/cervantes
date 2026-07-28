@@ -6,10 +6,13 @@ import { ManualTopicShell } from "@/components/ManualTopicShell"
 import { findManualTopicBySlug } from "@/manual/findManualTopicBySlug"
 import type { Manual } from "@/manual/types"
 import type { AppRoute } from "@/navigation/types"
+import type { ReaderState } from "@/reader/types"
 
 /** Resolve a manual route against structured content and render its route shell. */
-export function ManualScreen({ manual, route }: Props) {
-  if (route.type === "manual-index") return <ManualIndex manual={manual} />
+export function ManualScreen({ manual, route, readerState, resumePath }: Props) {
+  if (route.type === "manual-index") {
+    return <ManualIndex manual={manual} readerState={readerState} resumePath={resumePath} />
+  }
   if (route.type === "manual-search") return <ManualSearch />
   if (route.type === "not-found" || route.type === "practice") return <ManualNotFound />
 
@@ -18,7 +21,13 @@ export function ManualScreen({ manual, route }: Props) {
 
   const sectionNumber = manual.sections.indexOf(section) + 1
   if (route.type === "manual-section") {
-    return <ManualSectionIndex section={section} sectionNumber={sectionNumber} />
+    return (
+      <ManualSectionIndex
+        section={section}
+        sectionNumber={sectionNumber}
+        readerState={readerState}
+      />
+    )
   }
 
   const topic = findManualTopicBySlug(section, route.topicSlug)
@@ -40,4 +49,8 @@ interface Props {
   manual: Manual
   /** Current manual route */
   route: AppRoute
+  /** Current local reader state */
+  readerState: ReaderState
+  /** Route for the most recently opened valid topic */
+  resumePath: string | null
 }

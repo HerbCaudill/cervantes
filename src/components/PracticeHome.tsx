@@ -1,10 +1,20 @@
 import { ForecastStrip } from "@/components/ForecastStrip"
 import { ManualProgress } from "@/components/ManualProgress"
 import { SectionStatsTable } from "@/components/SectionStatsTable"
+import type { Manual } from "@/manual/types"
+import type { ReaderState } from "@/reader/types"
 import type { ForecastDay, SectionStats } from "@/types"
 
 /** Resting practice screen shown before a session and after its queue empties. */
-export function PracticeHome({ stats, forecast, dueCount, onStart }: Props) {
+export function PracticeHome({
+  stats,
+  forecast,
+  dueCount,
+  manual,
+  readerState,
+  resumePath,
+  onStart,
+}: Props) {
   const questionLabel = dueCount === 1 ? "pregunta" : "preguntas"
 
   return (
@@ -12,7 +22,7 @@ export function PracticeHome({ stats, forecast, dueCount, onStart }: Props) {
       <div className="flex flex-col gap-[0.85rem] px-[0.9rem] py-[0.85rem]">
         <SectionStatsTable stats={stats} />
         <ForecastStrip forecast={forecast} />
-        <ManualProgress />
+        <ManualProgress manual={manual} readerState={readerState} resumePath={resumePath} />
       </div>
       <button
         type="button"
@@ -35,6 +45,12 @@ interface Props {
   forecast: ForecastDay[]
   /** Questions currently available to start */
   dueCount: number
+  /** Structured manual summarized in the reading section */
+  manual: Manual
+  /** Current local manual-reading progress */
+  readerState: ReaderState
+  /** Route for continuing the most recently opened topic */
+  resumePath: string | null
   /** Start a session from the current due queue */
   onStart: () => void
 }

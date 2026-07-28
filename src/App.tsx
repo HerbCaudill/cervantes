@@ -9,13 +9,16 @@ import manualDraft from "@/manual/manual.draft.json"
 import type { Manual } from "@/manual/types"
 import { parseRoute } from "@/navigation/parseRoute"
 import { usePathname } from "@/navigation/usePathname"
+import { useReaderProgress } from "@/reader/useReaderProgress"
 import type { Question } from "@/types"
 
 /** Root of the CCSE app: shared chrome plus the routed practice or manual screen. */
 export function App() {
   const { dueQuestions, states, totalCount, sectionStats, forecast, review } = useDeck()
   const [sessionQuestions, setSessionQuestions] = useState<Question[] | null>(null)
+  const manual = manualDraft as Manual
   const route = parseRoute(usePathname())
+  const readerProgress = useReaderProgress(manual, route)
   const activeDestination = route.type.startsWith("manual") ? "manual" : "practice"
 
   return (
@@ -44,6 +47,9 @@ export function App() {
               stats={sectionStats}
               forecast={forecast}
               dueCount={dueQuestions.length}
+              manual={manual}
+              readerState={readerProgress.state}
+              resumePath={readerProgress.resumePath}
               onStart={() => setSessionQuestions(dueQuestions)}
             />
           }
@@ -51,7 +57,12 @@ export function App() {
         {route.type === "not-found" ?
           <ManualNotFound />
         : activeDestination === "manual" ?
-          <ManualScreen manual={manualDraft as Manual} route={route} />
+          <ManualScreen
+            manual={manual}
+            route={route}
+            readerState={readerProgress.state}
+            resumePath={readerProgress.resumePath}
+          />
         : null}
       </main>
     </div>

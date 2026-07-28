@@ -6,3 +6,12 @@ export type AppRoute =
   | { type: "manual-section"; sectionId: string }
   | { type: "manual-topic"; sectionId: string; topicSlug: string }
   | { type: "not-found" }
+
+/** Scroll behavior requested for a new in-app history entry. */
+export type NavigationScrollMode = "top" | "restore"
+
+/** Metadata supplied with an in-app navigation event. */
+export interface NavigationEventDetail {
+  /** Whether the destination should begin at the top or restore saved progress */
+  scroll: NavigationScrollMode
+}

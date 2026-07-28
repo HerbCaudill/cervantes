@@ -18,7 +18,7 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
     : topic.blocks
 
   return (
-    <article className="flex min-w-0 flex-col">
+    <article className="flex min-w-0 flex-col" data-reader-topic={topic.id}>
       <div className="border-rule-hard flex min-h-11 items-center justify-between border-b px-[0.9rem]">
         <AppLink
           href={`/manual/${section.id}`}
