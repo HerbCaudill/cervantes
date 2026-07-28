@@ -1,4 +1,5 @@
 import type { PDFPageProxy } from "pdfjs-dist/legacy/build/pdf.mjs"
+import { NUMBERED_FIGURE_CROP_OVERRIDES } from "./constants.ts"
 import { createArtworkFigureCrops } from "./createArtworkFigureCrops.ts"
 import { extractPaintedImages } from "./extractPaintedImages.ts"
 import { findFigureCaptionNodes } from "./findFigureCaptionNodes.ts"
@@ -77,7 +78,7 @@ export async function createFigureCrops(
       assetId: caption.assetId,
       caption: caption.caption,
       pageNumber: page.pageNumber,
-      bounds: padded,
+      bounds: NUMBERED_FIGURE_CROP_OVERRIDES[caption.assetId] ?? padded,
     }
   })
 

@@ -1,4 +1,11 @@
-import type { ManualSectionId } from "./types.ts"
+import type { ManualSectionId, PdfBounds } from "./types.ts"
+
+/** Visually audited bounds for numbered figures whose PDF structure omits the full artwork. */
+export const NUMBERED_FIGURE_CROP_OVERRIDES: Readonly<Partial<Record<string, PdfBounds>>> = {
+  "figure-7-1": [440, 688.89, 562, 770.39],
+  "figure-13-7": [34, 79.89, 562, 440.39],
+  "figure-15-8": [34.0157471, 379.0954075, 380.7874088, 606.2870139],
+}
 
 /** Source pages containing explanatory content, excluding task questions and solutions. */
 export const MANUAL_CONTENT_RANGES: ManualContentRange[] = [
