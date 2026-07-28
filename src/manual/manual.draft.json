@@ -4,11 +4,7 @@
   "edition": "2026",
   "sourceUrl": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf",
   "assets": [
-    {
-      "id": "figure-7-1",
-      "src": "/manual/figures/figure-7-1.jpg",
-      "alt": "Bandera de España"
-    },
+    { "id": "figure-7-1", "src": "/manual/figures/figure-7-1.jpg", "alt": "Bandera de España" },
     {
       "id": "figure-8-2",
       "src": "/manual/figures/figure-8-2.jpg",
@@ -75,14 +71,14 @@
       "alt": "Volcán de El Teide, el pico montañoso más alto de España, Tenerife, Islas Canarias. © Falk2"
     },
     {
-      "id": "figure-38-17",
-      "src": "/manual/figures/figure-38-17.jpg",
-      "alt": "Domingo en Córdoba a orillas del Guadalquivir, Rafael Romero Barros"
-    },
-    {
       "id": "figure-38-15",
       "src": "/manual/figures/figure-38-15.jpg",
       "alt": "Mapa de ríos y mares de España"
+    },
+    {
+      "id": "figure-38-17",
+      "src": "/manual/figures/figure-38-17.jpg",
+      "alt": "Domingo en Córdoba a orillas del Guadalquivir, Rafael Romero Barros"
     },
     {
       "id": "figure-38-16",
@@ -190,14 +186,24 @@
       "alt": "La Alhambra de Granada. © Jebulon"
     },
     {
+      "id": "figure-52-38",
+      "src": "/manual/figures/figure-52-38.jpg",
+      "alt": "Museo del Prado, Madrid. Museo del Prado, Madrid. © Emilio J. Rodríguez Posada"
+    },
+    {
       "id": "figure-52-39",
       "src": "/manual/figures/figure-52-39.jpg",
       "alt": "Museo Guggenheim, Bilbao. © Naotake Murayama"
     },
     {
-      "id": "figure-52-38",
-      "src": "/manual/figures/figure-52-38.jpg",
-      "alt": "Museo del Prado, Madrid. Museo del Prado, Madrid. © Emilio J. Rodríguez Posada"
+      "id": "figure-53-artwork-1",
+      "src": "/manual/figures/figure-53-artwork-1.jpg",
+      "alt": "San Francisco en oración — Francisco de Zurbarán (1598-1664) — Museo del Prado Madrid"
+    },
+    {
+      "id": "figure-53-artwork-2",
+      "src": "/manual/figures/figure-53-artwork-2.jpg",
+      "alt": "Las meninas — Diego Rodríguez de Silva y Velázquez (1599-1660) — Museo del Prado Madrid"
     },
     {
       "id": "figure-53-40",
@@ -205,9 +211,24 @@
       "alt": "Museo Reina Sofía, Madrid. © Luis García"
     },
     {
+      "id": "figure-53-artwork-3",
+      "src": "/manual/figures/figure-53-artwork-3.jpg",
+      "alt": "Los fusilamientos del 3 de mayo — Francisco de Goya (1746-1828) — Museo del Prado Madrid"
+    },
+    {
+      "id": "figure-53-artwork-4",
+      "src": "/manual/figures/figure-53-artwork-4.jpg",
+      "alt": "La maja desnuda — Francisco de Goya (1746-1828) — Museo del Prado Madrid"
+    },
+    {
       "id": "figure-53-41",
       "src": "/manual/figures/figure-53-41.jpg",
       "alt": "Museo Picasso, Barcelona. © uayebt"
+    },
+    {
+      "id": "figure-54-artwork-1",
+      "src": "/manual/figures/figure-54-artwork-1.jpg",
+      "alt": "Guernica — Pablo Picasso (1881-1973) — Museo Reina Sofía Madrid"
     },
     {
       "id": "figure-54-42",
@@ -215,14 +236,39 @@
       "alt": "Palacio de Villahermosa (Museo Thyssen-Bornemisza). © Luis García"
     },
     {
+      "id": "figure-54-artwork-2",
+      "src": "/manual/figures/figure-54-artwork-2.jpg",
+      "alt": "Paseo a la orilla del mar — Joaquín Sorolla (1863-1923) — Casa Museo Sorolla Madrid"
+    },
+    {
+      "id": "figure-54-artwork-3",
+      "src": "/manual/figures/figure-54-artwork-3.jpg",
+      "alt": "Logotipo de Turespaña — Joan Miró (1893-1983) — Mural del Palacio de Congresos de Madrid"
+    },
+    {
       "id": "figure-54-43",
       "src": "/manual/figures/figure-54-43.jpg",
       "alt": "Fundación Miró, Barcelona. © Amador Álvarez"
     },
     {
+      "id": "figure-55-artwork-1",
+      "src": "/manual/figures/figure-55-artwork-1.jpg",
+      "alt": "La verbena — Maruja Mallo (1902-1995) — Museo Reina Sofía Madrid"
+    },
+    {
       "id": "figure-55-44",
       "src": "/manual/figures/figure-55-44.jpg",
       "alt": "Centro Pompidou, Málaga. © Epizentrum"
+    },
+    {
+      "id": "figure-55-artwork-2",
+      "src": "/manual/figures/figure-55-artwork-2.jpg",
+      "alt": "Figura en una ventana — Salvador Dalí (1904-1989) — Museo Reina Sofía Madrid"
+    },
+    {
+      "id": "figure-55-artwork-3",
+      "src": "/manual/figures/figure-55-artwork-3.jpg",
+      "alt": "Madrid desde Capitán Haya — Antonio López (1936) — Museo Reina Sofía Madrid"
     },
     {
       "id": "figure-55-45",
@@ -360,14 +406,14 @@
       "alt": "Ferran Adrià. © Gobierno de Cataluña"
     },
     {
-      "id": "figure-75-3",
-      "src": "/manual/figures/figure-75-3.jpg",
-      "alt": "Paella. © Jan Harenburg"
-    },
-    {
       "id": "figure-75-71",
       "src": "/manual/figures/figure-75-71.jpg",
       "alt": "Mercado de San Miguel, Madrid. © Unsplash"
+    },
+    {
+      "id": "figure-75-3",
+      "src": "/manual/figures/figure-75-3.jpg",
+      "alt": "Paella. © Jan Harenburg"
     },
     {
       "id": "figure-75-72",
@@ -485,14 +531,14 @@
       "alt": "Presa de Aldeadávila, Salamanca. © CGRM"
     },
     {
-      "id": "figure-90-96",
-      "src": "/manual/figures/figure-90-96.jpg",
-      "alt": "Vista de la sede central del Banco de España, Madrid. © Luis García"
-    },
-    {
       "id": "figure-90-94",
       "src": "/manual/figures/figure-90-94.jpg",
       "alt": "Playa de Benidorm. © EFE / Manuel Lorenzo"
+    },
+    {
+      "id": "figure-90-96",
+      "src": "/manual/figures/figure-90-96.jpg",
+      "alt": "Vista de la sede central del Banco de España, Madrid. © Luis García"
     }
   ],
   "sections": [
@@ -578,11 +624,7 @@
               "type": "paragraph",
               "text": "La capital de España es Madrid desde mediados del siglo XVI, antes lo fueron Valladolid y Toledo."
             },
-            {
-              "type": "figure",
-              "assetId": "figure-7-1",
-              "caption": "FIGURA 1. Bandera de España"
-            },
+            { "type": "figure", "assetId": "figure-7-1", "caption": "FIGURA 1. Bandera de España" },
             {
               "type": "table",
               "headers": [
@@ -591,11 +633,7 @@
                 "Organismos para la difusión y promoción de las lenguas y las culturas"
               ],
               "rows": [
-                [
-                  "Castellano o español",
-                  "Real Academia Española (RAE)",
-                  "Instituto Cervantes"
-                ],
+                ["Castellano o español", "Real Academia Española (RAE)", "Instituto Cervantes"],
                 [
                   "Catalán",
                   "Institut d'Estudis Catalans",
@@ -606,11 +644,7 @@
                   "Acadèmia Valenciana de la Llengua",
                   "Direcció General de Política Lingüística i Gestió del Multilingüisme"
                 ],
-                [
-                  "Gallego",
-                  "Real Academia Galega",
-                  "Secretaría Xeral de Política Lingüística"
-                ],
+                ["Gallego", "Real Academia Galega", "Secretaría Xeral de Política Lingüística"],
                 [
                   "Vasco o euskera",
                   "Real Academia de la Lengua Vasca -Euskaltzaindia",
@@ -713,11 +747,7 @@
               "type": "paragraph",
               "text": "En la Constitución se establece la separación de los poderes ejecutivo, legislativo y judicial, lo que garantiza el funcionamiento de las instituciones españolas."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Poder Ejecutivo"
-            },
+            { "type": "heading", "level": 3, "text": "Poder Ejecutivo" },
             {
               "type": "paragraph",
               "text": "El Gobierno dirige la política interior y exterior de España, la Administración civil y militar, y la defensa del Estado. Es el órgano superior del poder ejecutivo."
@@ -726,11 +756,7 @@
               "type": "paragraph",
               "text": "El Gobierno tiene su sede en Madrid, y está formado por el presidente, uno o varios vicepresidentes y los ministros. El presidente del Gobierno tiene su residencia oficial en el Palacio de la Moncloa. Los miembros del Gobierno juran o prometen su cargo ante un ejemplar de la Constitución española en presencia del rey."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Poder Legislativo"
-            },
+            { "type": "heading", "level": 3, "text": "Poder Legislativo" },
             {
               "type": "paragraph",
               "text": "Las Cortes Generales (nombre oficial del Parlamento español) representan al pueblo español y están formadas por dos cámaras: el Congreso de los Diputados y el Senado. Las funciones principales de las Cortes Generales son elaborar, debatir y aprobar las leyes y los Presupuestos generales del Estado y controlar la acción del Gobierno."
@@ -747,10 +773,7 @@
               "type": "paragraph",
               "text": "En el Congreso de los Diputados también tiene lugar la investidura del presidente del Gobierno, a propuesta del rey, y es el sitio en el que se debaten las cuestiones de confianza o las mociones de censura al presidente. Por su parte, el Senado es la cámara de representación territorial de España."
             },
-            {
-              "type": "paragraph",
-              "text": "Hay distintos tipos de leyes:"
-            },
+            { "type": "paragraph", "text": "Hay distintos tipos de leyes:" },
             {
               "type": "list",
               "style": "unordered",
@@ -758,66 +781,20 @@
                 "Ley orgánica. La Constitución exige regular así temas como los derechos fundamentales o los estatutos de autonomía."
               ]
             },
+            { "type": "heading", "level": 3, "text": "Poder Ejecutivo" },
+            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Gobierno" }] },
+            { "type": "heading", "level": 3, "text": "Poder Legislativo" },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Poder Ejecutivo"
+              "type": "callout",
+              "blocks": [{ "type": "paragraph", "text": "Parlamento (Cortes Generales)" }]
             },
             {
               "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Gobierno"
-                }
-              ]
+              "blocks": [{ "type": "paragraph", "text": "Congreso de Diputados" }]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Poder Legislativo"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Parlamento (Cortes Generales)"
-                }
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Congreso de Diputados"
-                }
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Senado"
-                }
-              ]
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Poder Judicial"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Justicia"
-                }
-              ]
-            },
+            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Senado" }] },
+            { "type": "heading", "level": 3, "text": "Poder Judicial" },
+            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Justicia" }] },
             {
               "type": "figure",
               "assetId": "figure-9-4",
@@ -845,11 +822,7 @@
               "type": "paragraph",
               "text": "Las leyes, una vez aprobadas, necesitan desarrollarse con reglamentos u órdenes ministeriales, a través de normas del Gobierno o los ministerios competentes."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Poder Judicial"
-            },
+            { "type": "heading", "level": 3, "text": "Poder Judicial" },
             {
               "type": "paragraph",
               "text": "Está compuesto por jueces y magistrados y tiene la función de administrar la justicia. La base de la organización de los tribunales es el principio de unidad jurisdiccional, ya que todos los jueces y tribunales forman parte de un mismo poder judicial."
@@ -862,11 +835,7 @@
               "type": "paragraph",
               "text": "El Tribunal Constitucional interpreta la Constitución española. Es independiente de los poderes del Estado."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Religión"
-            },
+            { "type": "heading", "level": 3, "text": "Religión" },
             {
               "type": "paragraph",
               "text": "La Constitución garantiza la libertad religiosa de los individuos y las comunidades, y en este sentido, el Estado español es aconfesional. No reconoce ninguna religión como oficial, aunque hay una fuerte tradición católica."
@@ -921,11 +890,7 @@
                 "De ámbito local: Policía local. Entre las funciones de la Policía local están la protección de las instituciones y autoridades locales, la regulación del tráfico en pueblos y ciudades y la prestación de auxilio en caso de accidente."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Organismos españoles"
-            },
+            { "type": "heading", "level": 3, "text": "Organismos españoles" },
             {
               "type": "paragraph",
               "text": "Son órganos consultivos del Gobierno el Consejo de Estado y el Consejo Económico y Social."
@@ -974,11 +939,7 @@
               "type": "paragraph",
               "text": "La Agencia Tributaria, que depende del Ministerio de Hacienda y Función Pública, es la encargada de la recaudación de impuestos que contribuyen al sostenimiento de los gastos públicos. También se encarga de la aplicación del sistema tributario en general."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Organización territorial y administrativa"
-            },
+            { "type": "heading", "level": 3, "text": "Organización territorial y administrativa" },
             {
               "type": "paragraph",
               "text": "En la Constitución de 1978 se establece que España se organiza a partir de ese momento en comunidades autónomas, provincias y municipios. Se distinguen tres niveles de organización de la Administración: central (del Estado), autonómica (de las comunidades autónomas) y local (en este nivel se incluyen las provincias y los municipios)."
@@ -991,10 +952,7 @@
               "type": "paragraph",
               "text": "El Estado posee competencias exclusivas sobre materias como nacionalidad, extranjería, inmigración, relaciones internacionales y administración de justicia."
             },
-            {
-              "type": "paragraph",
-              "text": "Comunidades y ciudades autónomas"
-            },
+            { "type": "paragraph", "text": "Comunidades y ciudades autónomas" },
             {
               "type": "paragraph",
               "text": "Son 17 las comunidades y 2 las ciudades autónomas de España. La base para su formación fueron las características históricas, culturales y económicas comunes de provincias que tiene fronteras compartidas. La ley institucional básica de cada comunidad es el Estatuto de Autonomía, en el que se establece:"
@@ -1039,11 +997,7 @@
               "type": "paragraph",
               "text": "El representante del Estado en una comunidad autónoma es el delegado del Gobierno, que coordina y supervisa la acción de la Administración del Estado en el territorio autonómico, coopera con el presidente y el gobierno autonómico, y coordina la actuación de medios estatales en catástrofes o situaciones de emergencia."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Provincias"
-            },
+            { "type": "heading", "level": 3, "text": "Provincias" },
             {
               "type": "paragraph",
               "text": "Existen 50 provincias en España, a las que hay que sumar las ciudades autónomas de Ceuta y Melilla. El órgano de gobierno"
@@ -1072,11 +1026,7 @@
               "type": "paragraph",
               "text": "de la provincia es la Diputación, excepto en Canarias e Islas Baleares. En Canarias los órganos de gobierno son los cabildos y en Baleares son los consejos insulares. Las comunidades autónomas uniprovinciales no tienen diputación."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Municipios"
-            },
+            { "type": "heading", "level": 3, "text": "Municipios" },
             {
               "type": "paragraph",
               "text": "Existen 8132 municipios en España. El órgano de gobierno es el ayuntamiento, formado por el alcalde y los concejales, que se encargan de gestionar los servicios públicos de la ciudad o del pueblo y que son elegidos por los habitantes de la localidad en las elecciones municipales."
@@ -1093,11 +1043,7 @@
               "type": "paragraph",
               "text": "Por otro lado, las distintas administraciones tienen sistemas de atención presencial, telefónica y electrónica, como el teléfono 060 (teléfono de información de la Administración General del Estado) y el Portal de la Administración Electrónica (PAe)."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "La Administración Electrónica"
-            },
+            { "type": "heading", "level": 3, "text": "La Administración Electrónica" },
             {
               "type": "paragraph",
               "text": "El Portal de la Administración Electrónica (PAe) es una página web oficial del Gobierno de España que reúne información, servicios y recursos relacionados con la transformación digital de la Administración Pública."
@@ -1146,11 +1092,7 @@
               "type": "paragraph",
               "text": "Los trámites en línea están disponibles en cualquier momento, no solo en horario de oficina, por lo que el ciudadano no necesita desplazarse ni hacer colas. Además, el ciudadano puede consultar en línea cómo va su expediente en cualquier momento."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Población"
-            },
+            { "type": "heading", "level": 3, "text": "Población" },
             {
               "type": "paragraph",
               "text": "España es el cuarto país más poblado de la Unión Europea (por detrás de Alemania, Francia e Italia), con una población en 2025 de más de 49 millones de habitantes. Por otro lado, es el segundo país más extenso de la UE, con una superficie de 505 944 km² y una densidad de población de 96 habitantes por km²."
@@ -1163,11 +1105,7 @@
               "type": "paragraph",
               "text": "La distribución de la población española por comunidades autónomas es la que podemos visualizar en la Tabla 2."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Participación ciudadana"
-            },
+            { "type": "heading", "level": 3, "text": "Participación ciudadana" },
             {
               "type": "paragraph",
               "text": "La Constitución establece que la base del sistema político es el derecho al voto de todos los españoles mediante"
@@ -1190,7 +1128,7 @@
         },
         {
           "id": "task-1-draft-page-16",
-          "title": "Comunidades y ciudades autónomas Población Comunidades y ciudades autónomas Población Comunidades y ciudades autónomas Población Andalucía 8 631 862 Castilla - La Mancha 2 104 433 Murcia 1 568 492 Aragón 1 351 591 Cataluña 8 012 231 Navarra 678 333 Principado de Asturias 1 009 599 Ceuta 83 179 País Vasco 2 227 684 Islas Baleares 1 231 768 Extremadura 1 054 681 La Rioja 324 182 Canarias 2 238 754 Galicia 2 705 833 Comunidad Valencia 5 319 285 Cantabria 590 851 Madrid 7 009 268 Castilla y León 2 391 682 Melilla 85 985",
+          "title": "Gobierno, legislación y participación ciudadana",
           "blocks": [
             {
               "type": "paragraph",
@@ -1205,14 +1143,46 @@
               "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Comunidades y ciudades autónomas Población Comunidades y ciudades autónomas Población Comunidades y ciudades autónomas Población Andalucía 8 631 862 Castilla - La Mancha 2 104 433 Murcia 1 568 492 Aragón 1 351 591 Cataluña 8 012 231 Navarra 678 333 Principado de Asturias 1 009 599 Ceuta 83 179 País Vasco 2 227 684 Islas Baleares 1 231 768 Extremadura 1 054 681 La Rioja 324 182 Canarias 2 238 754 Galicia 2 705 833 Comunidad Valencia 5 319 285 Cantabria 590 851 Madrid 7 009 268 Castilla y León 2 391 682 Melilla 85 985"
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "TABLA 2. Número de habitantes por comunidades autónomas"
+              "type": "table",
+              "headers": [
+                "Comunidades y ciudades autónomas",
+                "Población",
+                "Comunidades y ciudades autónomas",
+                "Población",
+                "Comunidades y ciudades autónomas",
+                "Población"
+              ],
+              "rows": [
+                [
+                  "Andalucía",
+                  "8 631 862",
+                  "Castilla - La Mancha",
+                  "2 104 433",
+                  "Murcia",
+                  "1 568 492"
+                ],
+                ["Aragón", "1 351 591", "Cataluña", "8 012 231", "Navarra", "678 333"],
+                [
+                  "Principado de Asturias",
+                  "1 009 599",
+                  "Ceuta",
+                  "83 179",
+                  "País Vasco",
+                  "2 227 684"
+                ],
+                ["Islas Baleares", "1 231 768", "Extremadura", "1 054 681", "La Rioja", "324 182"],
+                [
+                  "Canarias",
+                  "2 238 754",
+                  "Galicia",
+                  "2 705 833",
+                  "Comunidad Valencia",
+                  "5 319 285"
+                ],
+                ["Cantabria", "590 851", "Madrid", "7 009 268", null, null],
+                ["Castilla y León", "2 391 682", "Melilla", "85 985", null, null]
+              ],
+              "caption": "TABLA 2. Número de habitantes por comunidades autónomas"
             },
             {
               "type": "callout",
@@ -1227,7 +1197,7 @@
         },
         {
           "id": "task-1-draft-page-17",
-          "title": "Período Presidentes de Gobierno Partido político 1979-1981 Adolfo Suárez Unión de Centro Democrático (UCD) 1981-1982 Leopoldo Calvo-Sotelo Unión de Centro Democrático (UCD) 1982-1996 Felipe González Partido Socialista Obrero Español (PSOE) 1996-2004 José María Aznar Partido Popular (PP) 2004-2011 José Luis Rodríguez Zapatero Partido Socialista Obrero Español (PSOE) 2011-2018 Mariano Rajoy Partido Popular (PP) 2018- Pedro Sánchez Partido Socialista Obrero Español (PSOE)",
+          "title": "Gobierno, legislación y participación ciudadana",
           "blocks": [
             {
               "type": "paragraph",
@@ -1259,14 +1229,22 @@
               ]
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Período Presidentes de Gobierno Partido político 1979-1981 Adolfo Suárez Unión de Centro Democrático (UCD) 1981-1982 Leopoldo Calvo-Sotelo Unión de Centro Democrático (UCD) 1982-1996 Felipe González Partido Socialista Obrero Español (PSOE) 1996-2004 José María Aznar Partido Popular (PP) 2004-2011 José Luis Rodríguez Zapatero Partido Socialista Obrero Español (PSOE) 2011-2018 Mariano Rajoy Partido Popular (PP) 2018- Pedro Sánchez Partido Socialista Obrero Español (PSOE)"
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "TABLA 3. Relación de presidentes de Gobierno y sus partidos políticos entre 1979 y 2024"
+              "type": "table",
+              "headers": ["Período", "Presidentes de Gobierno", "Partido político"],
+              "rows": [
+                ["1979-1981", "Adolfo Suárez", "Unión de Centro Democrático (UCD)"],
+                ["1981-1982", "Leopoldo Calvo-Sotelo", "Unión de Centro Democrático (UCD)"],
+                ["1982-1996", "Felipe González", "Partido Socialista Obrero Español (PSOE)"],
+                ["1996-2004", "José María Aznar", "Partido Popular (PP)"],
+                [
+                  "2004-2011",
+                  "José Luis Rodríguez Zapatero",
+                  "Partido Socialista Obrero Español (PSOE)"
+                ],
+                ["2011-2018", "Mariano Rajoy", "Partido Popular (PP)"],
+                ["2018-", "Pedro Sánchez", "Partido Socialista Obrero Español (PSOE)"]
+              ],
+              "caption": "TABLA 3. Relación de presidentes de Gobierno y sus partidos políticos entre 1979 y 2024"
             }
           ]
         }
@@ -1280,11 +1258,7 @@
           "id": "task-2-draft-page-28",
           "title": "DESTACADOS DERECHOS, DEBERES Y LIBERTADES",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "DESTACADOS DERECHOS, DEBERES Y LIBERTADES"
-            },
+            { "type": "heading", "level": 3, "text": "DESTACADOS DERECHOS, DEBERES Y LIBERTADES" },
             {
               "type": "paragraph",
               "text": "En la Constitución de 1978 se recogen los derechos fundamentales, deberes y libertades de los españoles, dentro y fuera de España, y de los residentes extranjeros."
@@ -1293,11 +1267,7 @@
               "type": "paragraph",
               "text": "Algunos de los derechos, deberes y libertades más importantes establecidos en la Constitución española de 1978 son los siguientes:"
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 6"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 6" },
             {
               "type": "paragraph",
               "text": "Los partidos políticos expresan el pluralismo político de acuerdo con la voluntad popular y son instrumento para la participación política. Su creación es libre dentro del respeto a la Constitución y a la ley."
@@ -1306,29 +1276,14 @@
               "type": "paragraph",
               "text": "Su estructura y funcionamiento deberán ser democráticos."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 10"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 10" },
             {
               "type": "paragraph",
               "text": "Las normas relativas a los derechos fundamentales y a las libertades —que reconoce la Constitución— se deben interpretar de conformidad con la Declaración Universal de los Derechos Humanos y los tratados y acuerdos internacionales firmados por España."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 12"
-            },
-            {
-              "type": "paragraph",
-              "text": "Los españoles son mayores de edad a los 18 años."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 14"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 12" },
+            { "type": "paragraph", "text": "Los españoles son mayores de edad a los 18 años." },
+            { "type": "heading", "level": 3, "text": "Artículo 14" },
             {
               "type": "paragraph",
               "text": "Los españoles son iguales ante la ley y no podrá existir discriminación por su nacimiento, raza, sexo, religión o cualquier otra condición o circunstancia personal o social."
@@ -1353,20 +1308,12 @@
           "id": "task-2-draft-page-29",
           "title": "Artículo 15",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 15"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 15" },
             {
               "type": "paragraph",
               "text": "Todos tienen derecho a la vida y a la integridad física y moral. Se elimina la pena de muerte y se prohíbe la tortura."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 16"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 16" },
             {
               "type": "list",
               "style": "ordered",
@@ -1376,11 +1323,7 @@
                 "3. No hay ninguna religión oficial en España, por eso España es un Estado aconfesional."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 18"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 18" },
             {
               "type": "list",
               "style": "ordered",
@@ -1391,20 +1334,12 @@
                 "4. La ley limita el uso de la informática para garantizar el honor y la intimidad. También se limita el acceso de terceras personas a datos de carácter personal"
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 19"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 19" },
             {
               "type": "paragraph",
               "text": "Los españoles tienen el derecho a elegir libremente dónde quieren vivir. Pueden desplazarse libremente por todo el territorio español y entrar y salir sin que pueda limitarse este derecho por motivos políticos o ideológicos."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 20"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 20" },
             {
               "type": "list",
               "style": "unordered",
@@ -1441,11 +1376,7 @@
           "id": "task-2-draft-page-30",
           "title": "Artículo 22",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 22"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 22" },
             {
               "type": "list",
               "style": "ordered",
@@ -1454,11 +1385,7 @@
                 "2. Están prohibidas las asociaciones con fines ilegales."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 23"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 23" },
             {
               "type": "paragraph",
               "text": "Los ciudadanos tienen derecho a participar en los asuntos políticos, pudiéndose presentar ellos mismos a las elecciones o eligiendo a sus representantes."
@@ -1467,11 +1394,7 @@
               "type": "paragraph",
               "text": "Tienen derecho al voto todos los españoles mayores de 18 años y a quienes no se les haya quitado este derecho por sentencia judicial."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 25"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 25" },
             {
               "type": "list",
               "style": "ordered",
@@ -1480,11 +1403,7 @@
                 "2. Las penas de cárcel están orientadas a la reeducación y reinserción social."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 27"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 27" },
             {
               "type": "list",
               "style": "ordered",
@@ -1496,11 +1415,7 @@
               "type": "paragraph",
               "text": "4. La enseñanza básica es obligatoria y gratuita. Consta de dos etapas: Educación Primaria (de 6 a 12 años) y Educación Secundaria Obligatoria (de 12 a 16 años)."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 28"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 28" },
             {
               "type": "list",
               "style": "ordered",
@@ -1509,27 +1424,17 @@
                 "2. Se reconoce el derecho a la huelga de los trabajadores para defender sus intereses y se prevé el mantenimiento de los servicios mínimos a la comunidad mientras esta dure."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 30"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 30" },
             {
               "type": "list",
               "style": "ordered",
-              "items": [
-                "1. Los españoles tienen el derecho y el deber de defender a España."
-              ]
+              "items": ["1. Los españoles tienen el derecho y el deber de defender a España."]
             },
             {
               "type": "paragraph",
               "text": "4. Los ciudadanos deben ayudar en los casos de grave riesgo, catástrofe o calamidad pública."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 31"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 31" },
             {
               "type": "list",
               "style": "ordered",
@@ -1569,11 +1474,7 @@
                 "2. El gasto público administrará equitativamente los recursos públicos, es decir: de manera justa para todos."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 32"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 32" },
             {
               "type": "list",
               "style": "ordered",
@@ -1582,74 +1483,42 @@
                 "2. La edad mínima para contraer matrimonio es de 16 años."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 37"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 37" },
             {
               "type": "paragraph",
               "text": "La ley garantizará el derecho a la negociación colectiva laboral entre los representantes de los trabajadores y empresarios, así como que se cumplan los convenios."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 41"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 41" },
             {
               "type": "paragraph",
               "text": "Todos los ciudadanos tendrán acceso a un sistema de Seguridad Social público, que les garantizará atención en situaciones de necesidad, especialmente para los que no tienen trabajo."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 43"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 43" },
             {
               "type": "paragraph",
               "text": "Los poderes públicos deben proteger la salud y promover la educación sanitaria, la educación física y el deporte."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 45"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 45" },
             {
               "type": "paragraph",
               "text": "Todos tienen derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 47"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 47" },
             {
               "type": "paragraph",
               "text": "Todos los españoles tienen derecho a disfrutar de una vivienda digna y adecuada."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 48"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 48" },
             {
               "type": "paragraph",
               "text": "Los jóvenes tienen el derecho de participar libremente en el desarrollo político, social, económico y cultural del país."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 51"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 51" },
             {
               "type": "paragraph",
               "text": "Los poderes públicos garantizarán la defensa y protección de los consumidores y usuarios, así como la seguridad, la salud y sus intereses económicos."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 54"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 54" },
             {
               "type": "paragraph",
               "text": "El defensor del pueblo es designado por las Cortes Generales para la defensa de los derechos y libertades públicas de los ciudadanos. Tiene funciones de Alto Comisionado de las Cortes Generales y puede supervisar la actividad de la admi"
@@ -1691,29 +1560,17 @@
               "type": "paragraph",
               "text": "[Los españoles, como miembros de la Unión Europea, también pueden dirigirse o plantear reclamaciones a las instituciones y organismos europeos, como el Tribunal de Justicia de la UE de Luxemburgo, o el Centro Europeo del Consumidor]."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 117"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 117" },
             {
               "type": "paragraph",
               "text": "La justicia surge del pueblo y la administran jueces y magistrados de forma independiente y responsable."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 118"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 118" },
             {
               "type": "paragraph",
               "text": "Hay que cumplir las sentencias de los jueces y tribunales, así como colaborar con ellos cuando se lo pidan."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Artículo 119"
-            },
+            { "type": "heading", "level": 3, "text": "Artículo 119" },
             {
               "type": "paragraph",
               "text": "La justicia será gratuita cuando así lo diga la ley y, en todo caso, para aquellos sin recursos económicos."
@@ -1744,19 +1601,12 @@
           "id": "task-3-draft-page-37",
           "title": "GEOGRAFÍA FÍSICA Y POLÍTICA",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "GEOGRAFÍA FÍSICA Y POLÍTICA"
-            },
+            { "type": "heading", "level": 3, "text": "GEOGRAFÍA FÍSICA Y POLÍTICA" },
             {
               "type": "paragraph",
               "text": "España está situada en el sur de Europa y tiene frontera con Andorra, Francia, Portugal y Marruecos. Es el cuarto país más grande del continente, con una extensión de 505 944 km 2. Es uno de los países más montañosos de Europa, con una altitud media de 650 metros sobre el nivel del mar. La cifra oficial de habitantes es de 49 315 949 a 1 de julio de 2025."
             },
-            {
-              "type": "paragraph",
-              "text": "España está compuesta por:"
-            },
+            { "type": "paragraph", "text": "España está compuesta por:" },
             {
               "type": "list",
               "style": "unordered",
@@ -1832,11 +1682,7 @@
               "type": "paragraph",
               "text": "Los parques nacionales de España son, en la actualidad: Islas Atlánticas de Galicia, Picos de Europa (Asturias, Castilla y León y Cantabria), Ordesa y Monte Perdido (Aragón), Aigüestortes y Estany de Sant Maurici (Cataluña), Monfragüe (Extremadura), Sierra de Guadarrama (Madrid), Cabañeros y Tablas de Daimiel (Castilla-La Mancha), Doñana, Sierra Nevada y Sierra de la Nieves (Andalucía), Archipiélago de Cabrera (Islas Baleares) y Caldera de Taburiente, Teide, Timanfaya y Garajonay (Canarias)."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "El clima"
-            },
+            { "type": "heading", "level": 3, "text": "El clima" },
             {
               "type": "paragraph",
               "text": "España tiene más de 3000 horas de sol al año, por lo que es uno de los países más cálidos de Europa. Debido a su situación geográfica, España se caracteriza por su variedad de climas:"
@@ -1891,11 +1737,7 @@
               "type": "paragraph",
               "text": "Clima subtropical: es el de las islas Canarias. Tiene temperaturas suaves todo el año, con una media de 22 ºC. Llueve poco, aunque a veces de manera intensa."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "División territorial de España"
-            },
+            { "type": "heading", "level": 3, "text": "División territorial de España" },
             {
               "type": "paragraph",
               "text": "En el mapa político de España, se puede observar la división de España en comunidades autónomas, divididas en provincias, y ciudades autónomas."
@@ -1939,186 +1781,46 @@
                 "Capital de la comunidad autónoma"
               ],
               "rows": [
-                [
-                  "Andalucía",
-                  "Almería",
-                  "Almería",
-                  "Sevilla"
-                ],
-                [
-                  null,
-                  "Cádiz",
-                  "Cádiz",
-                  null
-                ],
-                [
-                  null,
-                  "Córdoba",
-                  "Córdoba",
-                  null
-                ],
-                [
-                  null,
-                  "Granada",
-                  "Granada",
-                  null
-                ],
-                [
-                  null,
-                  "Huelva",
-                  "Huelva",
-                  null
-                ],
-                [
-                  null,
-                  "Jaén",
-                  "Jaén",
-                  null
-                ],
-                [
-                  null,
-                  "Málaga",
-                  "Málaga",
-                  null
-                ],
-                [
-                  null,
-                  "Sevilla",
-                  "Sevilla",
-                  null
-                ],
-                [
-                  "Aragón",
-                  "Huesca",
-                  "Huesca",
-                  "Zaragoza"
-                ],
-                [
-                  null,
-                  "Teruel",
-                  "Teruel",
-                  null
-                ],
-                [
-                  null,
-                  "Zaragoza",
-                  "Zaragoza",
-                  null
-                ],
-                [
-                  "Principado de Asturias",
-                  "Asturias",
-                  "Oviedo",
-                  "Oviedo"
-                ],
-                [
-                  "Islas Baleares",
-                  "Baleares",
-                  "Palma de Mallorca",
-                  "Palma de Mallorca"
-                ],
+                ["Andalucía", "Almería", "Almería", "Sevilla"],
+                [null, "Cádiz", "Cádiz", null],
+                [null, "Córdoba", "Córdoba", null],
+                [null, "Granada", "Granada", null],
+                [null, "Huelva", "Huelva", null],
+                [null, "Jaén", "Jaén", null],
+                [null, "Málaga", "Málaga", null],
+                [null, "Sevilla", "Sevilla", null],
+                ["Aragón", "Huesca", "Huesca", "Zaragoza"],
+                [null, "Teruel", "Teruel", null],
+                [null, "Zaragoza", "Zaragoza", null],
+                ["Principado de Asturias", "Asturias", "Oviedo", "Oviedo"],
+                ["Islas Baleares", "Baleares", "Palma de Mallorca", "Palma de Mallorca"],
                 [
                   "Canarias",
                   "Las Palmas",
                   "Las Palmas de Gran Canaria",
                   "Capitalidad compartida entre Las Palmas de Gran Canaria y Santa Cruz de Tenerife"
                 ],
-                [
-                  null,
-                  "Santa Cruz de Tenerife",
-                  "Santa Cruz de Tenerife",
-                  null
-                ],
-                [
-                  "Cantabria",
-                  "Cantabria",
-                  "Santander",
-                  "Santander"
-                ],
-                [
-                  "Castilla- La Mancha",
-                  "Albacete",
-                  "Albacete",
-                  "Toledo"
-                ],
-                [
-                  null,
-                  "Ciudad Real",
-                  "Ciudad Real",
-                  null
-                ],
-                [
-                  null,
-                  "Cuenca",
-                  "Cuenca",
-                  null
-                ],
-                [
-                  null,
-                  "Guadalajara",
-                  "Guadalajara",
-                  null
-                ],
-                [
-                  null,
-                  "Toledo",
-                  "Toledo",
-                  null
-                ],
+                [null, "Santa Cruz de Tenerife", "Santa Cruz de Tenerife", null],
+                ["Cantabria", "Cantabria", "Santander", "Santander"],
+                ["Castilla- La Mancha", "Albacete", "Albacete", "Toledo"],
+                [null, "Ciudad Real", "Ciudad Real", null],
+                [null, "Cuenca", "Cuenca", null],
+                [null, "Guadalajara", "Guadalajara", null],
+                [null, "Toledo", "Toledo", null],
                 [
                   "Castilla y León",
                   "Ávila",
                   "Ávila",
                   "No hay una capital oficial. La sede de las administraciones está en Valladolid 1 1 En el Estatuto de Autonomía no se establece una capitalidad, pero la Junta de Castilla y León y las Cortes tienen su sede en Valladolid."
                 ],
-                [
-                  null,
-                  "Burgos",
-                  "Burgos",
-                  null
-                ],
-                [
-                  null,
-                  "León",
-                  "León",
-                  null
-                ],
-                [
-                  null,
-                  "Palencia",
-                  "Palencia",
-                  null
-                ],
-                [
-                  null,
-                  "Salamanca",
-                  "Salamanca",
-                  null
-                ],
-                [
-                  null,
-                  "Segovia",
-                  "Segovia",
-                  null
-                ],
-                [
-                  null,
-                  "Soria",
-                  "Soria",
-                  null
-                ],
-                [
-                  null,
-                  "Valladolid",
-                  "VallaVdolid",
-                  null
-                ],
-                [
-                  null,
-                  "Zamora",
-                  "Zamora",
-                  null
-                ]
+                [null, "Burgos", "Burgos", null],
+                [null, "León", "León", null],
+                [null, "Palencia", "Palencia", null],
+                [null, "Salamanca", "Salamanca", null],
+                [null, "Segovia", "Segovia", null],
+                [null, "Soria", "Soria", null],
+                [null, "Valladolid", "VallaVdolid", null],
+                [null, "Zamora", "Zamora", null]
               ],
               "caption": "TABLA 4 Comunidades autónomas, provincias, capitales de provincia y capitales de comunidades autónomas"
             },
@@ -2161,138 +1863,33 @@
                 "Capital de la comunidad autónoma"
               ],
               "rows": [
-                [
-                  "Cataluña",
-                  "Barcelona",
-                  "Barcelona",
-                  "Barcelona"
-                ],
-                [
-                  null,
-                  "Gerona",
-                  "Gerona",
-                  null
-                ],
-                [
-                  null,
-                  "Lérida",
-                  "Lérida",
-                  null
-                ],
-                [
-                  null,
-                  "Tarragona",
-                  "Tarragona",
-                  null
-                ],
-                [
-                  "Comunidad Valenciana",
-                  "Alicante",
-                  "Alicante",
-                  "Valencia"
-                ],
-                [
-                  null,
-                  "Castellón",
-                  "Castellón de la Plana",
-                  null
-                ],
-                [
-                  null,
-                  "Valencia",
-                  "Valencia",
-                  null
-                ],
-                [
-                  "Extremadura",
-                  "Badajoz",
-                  "Badajoz",
-                  "Mérida"
-                ],
-                [
-                  null,
-                  "Cáceres",
-                  "Cáceres",
-                  null
-                ],
-                [
-                  "Galicia",
-                  "La Coruña",
-                  "La Coruña",
-                  "Santiago de Compostela"
-                ],
-                [
-                  null,
-                  "Lugo",
-                  "Lugo",
-                  null
-                ],
-                [
-                  null,
-                  "Orense",
-                  "Orense",
-                  null
-                ],
-                [
-                  null,
-                  "Pontevedra",
-                  "Pontevedra",
-                  null
-                ],
-                [
-                  "La Rioja",
-                  "La Rioja",
-                  "Logroño",
-                  "Logroño"
-                ],
-                [
-                  "Comunidad de Madrid",
-                  "Madrid",
-                  "Madrid",
-                  "Madrid"
-                ],
-                [
-                  "Región de Murcia",
-                  "Murcia",
-                  "Murcia",
-                  "Murcia"
-                ],
-                [
-                  "Comunidad Foral de Navarra",
-                  "Navarra",
-                  "Pamplona",
-                  "Pamplona"
-                ],
+                ["Cataluña", "Barcelona", "Barcelona", "Barcelona"],
+                [null, "Gerona", "Gerona", null],
+                [null, "Lérida", "Lérida", null],
+                [null, "Tarragona", "Tarragona", null],
+                ["Comunidad Valenciana", "Alicante", "Alicante", "Valencia"],
+                [null, "Castellón", "Castellón de la Plana", null],
+                [null, "Valencia", "Valencia", null],
+                ["Extremadura", "Badajoz", "Badajoz", "Mérida"],
+                [null, "Cáceres", "Cáceres", null],
+                ["Galicia", "La Coruña", "La Coruña", "Santiago de Compostela"],
+                [null, "Lugo", "Lugo", null],
+                [null, "Orense", "Orense", null],
+                [null, "Pontevedra", "Pontevedra", null],
+                ["La Rioja", "La Rioja", "Logroño", "Logroño"],
+                ["Comunidad de Madrid", "Madrid", "Madrid", "Madrid"],
+                ["Región de Murcia", "Murcia", "Murcia", "Murcia"],
+                ["Comunidad Foral de Navarra", "Navarra", "Pamplona", "Pamplona"],
                 [
                   "País Vasco",
                   "Álava",
                   "Vitoria",
                   "No declarada. Sede de las administraciones: Vitoria"
                 ],
-                [
-                  null,
-                  "Guipúzcoa",
-                  "San Sebastián",
-                  null
-                ],
-                [
-                  null,
-                  "Vizcaya",
-                  "Bilbao",
-                  null
-                ],
-                [
-                  "Ciudades autónomas",
-                  "Ceuta",
-                  null,
-                  null
-                ],
-                [
-                  null,
-                  "Melilla",
-                  null,
-                  null
-                ]
+                [null, "Guipúzcoa", "San Sebastián", null],
+                [null, "Vizcaya", "Bilbao", null],
+                ["Ciudades autónomas", "Ceuta", null, null],
+                [null, "Melilla", null, null]
               ]
             },
             {
@@ -2322,11 +1919,7 @@
           "id": "task-4-draft-page-46",
           "title": "LITERATURA, MÚSICA Y ARTES ESCÉNICAS",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "LITERATURA, MÚSICA Y ARTES ESCÉNICAS"
-            },
+            { "type": "heading", "level": 3, "text": "LITERATURA, MÚSICA Y ARTES ESCÉNICAS" },
             {
               "type": "paragraph",
               "text": "España posee una larga tradición literaria. Muchos de sus autores y obras son reconocidos internacionalmente."
@@ -2382,24 +1975,8 @@
               "type": "paragraph",
               "text": "En este período, han destacado figuras como Miguel Delibes que representó la mirada cercana al campo, la naturaleza y la vida sencilla, como en Los santos inocentes. En el cambio de siglo siguió siendo una referencia moral y literaria, muy querido por sus lectores."
             },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Re"
-                }
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Re"
-                }
-              ]
-            },
+            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Re" }] },
+            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "Re" }] },
             {
               "type": "figure",
               "assetId": "figure-47-30",
@@ -2550,9 +2127,7 @@
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "El Ballet Nacional de España, que ofrece diversos estilos de baile;"
-              ]
+              "items": ["El Ballet Nacional de España, que ofrece diversos estilos de baile;"]
             },
             {
               "type": "list",
@@ -2586,11 +2161,7 @@
           "id": "task-4-draft-page-51",
           "title": "ARQUITECTURA Y ARTES PLÁSTICAS",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "ARQUITECTURA Y ARTES PLÁSTICAS"
-            },
+            { "type": "heading", "level": 3, "text": "ARQUITECTURA Y ARTES PLÁSTICAS" },
             {
               "type": "paragraph",
               "text": "España tiene un rico patrimonio. La UNESCO ha reconocido 49 bienes españoles como Patrimonio de la Humanidad (bienes culturales, naturales y mixtos), lo que sitúa a España como el tercer país con más bienes reconocidos, por detrás de Italia (58) y China (56)."
@@ -2677,20 +2248,24 @@
               "caption": "FIGURA 40. Museo Reina Sofía, Madrid. © Luis García"
             },
             {
+              "type": "figure",
+              "assetId": "figure-53-artwork-1",
+              "caption": "San Francisco en oración — Francisco de Zurbarán (1598-1664) — Museo del Prado Madrid"
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-53-artwork-2",
+              "caption": "Las meninas — Diego Rodríguez de Silva y Velázquez (1599-1660) — Museo del Prado Madrid"
+            },
+            {
               "type": "table",
-              "headers": [
-                "San Francisco en oración",
-                "Las meninas"
-              ],
+              "headers": ["San Francisco en oración", "Las meninas"],
               "rows": [
                 [
                   "Francisco de Zurbarán (1598-1664)",
                   "Diego Rodríguez de Silva y Velázquez (1599-1660)"
                 ],
-                [
-                  "Museo del Prado Madrid",
-                  "Museo del Prado Madrid"
-                ]
+                ["Museo del Prado Madrid", "Museo del Prado Madrid"]
               ]
             },
             {
@@ -2699,20 +2274,21 @@
               "caption": "FIGURA 41. Museo Picasso, Barcelona. © uayebt"
             },
             {
+              "type": "figure",
+              "assetId": "figure-53-artwork-3",
+              "caption": "Los fusilamientos del 3 de mayo — Francisco de Goya (1746-1828) — Museo del Prado Madrid"
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-53-artwork-4",
+              "caption": "La maja desnuda — Francisco de Goya (1746-1828) — Museo del Prado Madrid"
+            },
+            {
               "type": "table",
-              "headers": [
-                "Los fusilamientos del 3 de mayo",
-                "La maja desnuda"
-              ],
+              "headers": ["Los fusilamientos del 3 de mayo", "La maja desnuda"],
               "rows": [
-                [
-                  "Francisco de Goya (1746-1828)",
-                  "Francisco de Goya (1746-1828)"
-                ],
-                [
-                  "Museo del Prado Madrid",
-                  "Museo del Prado Madrid"
-                ]
+                ["Francisco de Goya (1746-1828)", "Francisco de Goya (1746-1828)"],
+                ["Museo del Prado Madrid", "Museo del Prado Madrid"]
               ]
             }
           ]
@@ -2722,18 +2298,14 @@
           "title": "Cultura e historia de España",
           "blocks": [
             {
+              "type": "figure",
+              "assetId": "figure-54-artwork-1",
+              "caption": "Guernica — Pablo Picasso (1881-1973) — Museo Reina Sofía Madrid"
+            },
+            {
               "type": "table",
-              "headers": [
-                "Guernica"
-              ],
-              "rows": [
-                [
-                  "Pablo Picasso (1881-1973)"
-                ],
-                [
-                  "Museo Reina Sofía Madrid"
-                ]
-              ]
+              "headers": ["Guernica"],
+              "rows": [["Pablo Picasso (1881-1973)"], ["Museo Reina Sofía Madrid"]]
             },
             {
               "type": "figure",
@@ -2741,20 +2313,21 @@
               "caption": "FIGURA 42. Palacio de Villahermosa (Museo Thyssen-Bornemisza). © Luis García"
             },
             {
+              "type": "figure",
+              "assetId": "figure-54-artwork-2",
+              "caption": "Paseo a la orilla del mar — Joaquín Sorolla (1863-1923) — Casa Museo Sorolla Madrid"
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-54-artwork-3",
+              "caption": "Logotipo de Turespaña — Joan Miró (1893-1983) — Mural del Palacio de Congresos de Madrid"
+            },
+            {
               "type": "table",
-              "headers": [
-                "Paseo a la orilla del mar",
-                "Logotipo de Turespaña"
-              ],
+              "headers": ["Paseo a la orilla del mar", "Logotipo de Turespaña"],
               "rows": [
-                [
-                  "Joaquín Sorolla (1863-1923)",
-                  "Joan Miró (1893-1983)"
-                ],
-                [
-                  "Casa Museo Sorolla Madrid",
-                  "Mural del Palacio de Congresos de Madrid"
-                ]
+                ["Joaquín Sorolla (1863-1923)", "Joan Miró (1893-1983)"],
+                ["Casa Museo Sorolla Madrid", "Mural del Palacio de Congresos de Madrid"]
               ]
             },
             {
@@ -2769,18 +2342,14 @@
           "title": "Cultura e historia de España",
           "blocks": [
             {
+              "type": "figure",
+              "assetId": "figure-55-artwork-1",
+              "caption": "La verbena — Maruja Mallo (1902-1995) — Museo Reina Sofía Madrid"
+            },
+            {
               "type": "table",
-              "headers": [
-                "La verbena"
-              ],
-              "rows": [
-                [
-                  "Maruja Mallo (1902-1995)"
-                ],
-                [
-                  "Museo Reina Sofía Madrid"
-                ]
-              ]
+              "headers": ["La verbena"],
+              "rows": [["Maruja Mallo (1902-1995)"], ["Museo Reina Sofía Madrid"]]
             },
             {
               "type": "figure",
@@ -2793,20 +2362,21 @@
               "caption": "FIGURA 45. Teatro- Museo Dalí, Figueres. © Luidger"
             },
             {
+              "type": "figure",
+              "assetId": "figure-55-artwork-2",
+              "caption": "Figura en una ventana — Salvador Dalí (1904-1989) — Museo Reina Sofía Madrid"
+            },
+            {
+              "type": "figure",
+              "assetId": "figure-55-artwork-3",
+              "caption": "Madrid desde Capitán Haya — Antonio López (1936) — Museo Reina Sofía Madrid"
+            },
+            {
               "type": "table",
-              "headers": [
-                "Figura en una ventana",
-                "Madrid desde Capitán Haya"
-              ],
+              "headers": ["Figura en una ventana", "Madrid desde Capitán Haya"],
               "rows": [
-                [
-                  "Salvador Dalí (1904-1989)",
-                  "Antonio López (1936)"
-                ],
-                [
-                  "Museo Reina Sofía Madrid",
-                  "Museo Reina Sofía Madrid"
-                ]
+                ["Salvador Dalí (1904-1989)", "Antonio López (1936)"],
+                ["Museo Reina Sofía Madrid", "Museo Reina Sofía Madrid"]
               ]
             }
           ]
@@ -2815,11 +2385,7 @@
           "id": "task-4-draft-page-56",
           "title": "CIENCIA Y TECNOLOGÍA",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "CIENCIA Y TECNOLOGÍA"
-            },
+            { "type": "heading", "level": 3, "text": "CIENCIA Y TECNOLOGÍA" },
             {
               "type": "paragraph",
               "text": "En la Edad Media, España vivió un gran momento de esplendor científico gracias a Al-Ándalus. Ciudades como Córdoba se convirtieron en centros de cultura donde se estudiaban medicina, filosofía, matemáticas y astronomía. Pensadores como Averroes y Maimónides tuvieron un papel muy importante porque difundieron y desarrollaron conocimientos que más tarde influyeron en toda Europa."
@@ -2858,11 +2424,7 @@
             },
             {
               "type": "table",
-              "headers": [
-                "Fecha",
-                "Época histórica",
-                "Descripción"
-              ],
+              "headers": ["Fecha", "Época histórica", "Descripción"],
               "rows": [
                 [
                   "1252",
@@ -2905,11 +2467,7 @@
           "blocks": [
             {
               "type": "table",
-              "headers": [
-                "Fecha",
-                "Época histórica",
-                "Descripción"
-              ],
+              "headers": ["Fecha", "Época histórica", "Descripción"],
               "rows": [
                 [
                   "Siglos XVI-XVII",
@@ -2967,11 +2525,7 @@
           "blocks": [
             {
               "type": "table",
-              "headers": [
-                "Fecha",
-                "Época histórica",
-                "Descripción"
-              ],
+              "headers": ["Fecha", "Época histórica", "Descripción"],
               "rows": [
                 [
                   "1975-1982",
@@ -3021,11 +2575,7 @@
           "id": "task-4-draft-page-60",
           "title": "FIESTAS, CELEBRACIONES Y FOLCLORE",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "FIESTAS, CELEBRACIONES Y FOLCLORE"
-            },
+            { "type": "heading", "level": 3, "text": "FIESTAS, CELEBRACIONES Y FOLCLORE" },
             {
               "type": "paragraph",
               "text": "Cada comunidad autónoma y cada municipio tiene sus fiestas particulares."
@@ -3071,11 +2621,7 @@
             },
             {
               "type": "table",
-              "headers": [
-                "Fiestas",
-                "Fecha y localidad",
-                "Símbolos relacionados con las fiestas"
-              ],
+              "headers": ["Fiestas", "Fecha y localidad", "Símbolos relacionados con las fiestas"],
               "rows": [
                 [
                   "Navidades",
@@ -3118,11 +2664,7 @@
           "blocks": [
             {
               "type": "table",
-              "headers": [
-                "Fiestas",
-                "Fecha y localidad",
-                "Símbolos relacionados con las fiestas"
-              ],
+              "headers": ["Fiestas", "Fecha y localidad", "Símbolos relacionados con las fiestas"],
               "rows": [
                 [
                   "Sant Jordi",
@@ -3173,11 +2715,7 @@
           "id": "task-4-draft-page-63",
           "title": "ACONTECIMIENTOS CULTURALES Y DEPORTIVOS",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "ACONTECIMIENTOS CULTURALES Y DEPORTIVOS"
-            },
+            { "type": "heading", "level": 3, "text": "ACONTECIMIENTOS CULTURALES Y DEPORTIVOS" },
             {
               "type": "paragraph",
               "text": "En España se celebran todos los años acontecimientos culturales de gran importancia, como:"
@@ -3229,52 +2767,16 @@
             },
             {
               "type": "table",
-              "headers": [
-                "Año",
-                "Fecha y localidad",
-                "Especialidad"
-              ],
+              "headers": ["Año", "Fecha y localidad", "Especialidad"],
               "rows": [
-                [
-                  "1904",
-                  "José Echegaray",
-                  "Literatura"
-                ],
-                [
-                  "1906",
-                  "Santiago Ramón y Cajal",
-                  "Fisiología y Medicina"
-                ],
-                [
-                  "1922",
-                  "Jacinto Benavente",
-                  "Literatura"
-                ],
-                [
-                  "1956",
-                  "Juan Ramón Jiménez",
-                  "Literatura"
-                ],
-                [
-                  "1959",
-                  "Severo Ochoa",
-                  "Fisiología y Medicina"
-                ],
-                [
-                  "1977",
-                  "Vicente Aleixandre",
-                  "Literatura"
-                ],
-                [
-                  "1989",
-                  "Camilo José Cela",
-                  "Literatura"
-                ],
-                [
-                  "2010",
-                  "Mario Vargas Llosa",
-                  "Literatura"
-                ]
+                ["1904", "José Echegaray", "Literatura"],
+                ["1906", "Santiago Ramón y Cajal", "Fisiología y Medicina"],
+                ["1922", "Jacinto Benavente", "Literatura"],
+                ["1956", "Juan Ramón Jiménez", "Literatura"],
+                ["1959", "Severo Ochoa", "Fisiología y Medicina"],
+                ["1977", "Vicente Aleixandre", "Literatura"],
+                ["1989", "Camilo José Cela", "Literatura"],
+                ["2010", "Mario Vargas Llosa", "Literatura"]
               ],
               "caption": "TABLA 7. Españoles galardonados con el premio Nobel"
             },
@@ -3289,11 +2791,7 @@
           "id": "task-4-draft-page-65",
           "title": "DEPORTES",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "DEPORTES"
-            },
+            { "type": "heading", "level": 3, "text": "DEPORTES" },
             {
               "type": "paragraph",
               "text": "En España tienen mucha importancia los campeonatos de Liga y de Copa del Rey de fútbol y baloncesto, la Vuelta ciclista a España, así como la participación de los deportistas españoles en campeonatos europeos, mundiales o Juegos Olímpicos."
@@ -3341,10 +2839,7 @@
               "type": "paragraph",
               "text": "En España, las personas tienen un nombre, que puede ser simple (Ana) o compuesto (Juan Carlos), y dos apellidos. Generalmente, el primero es el primer apellido del padre y el segundo, el primer apellido de la madre, aunque los padres pueden decidir invertir el orden, de modo que el apellido de la madre sea el primero."
             },
-            {
-              "type": "paragraph",
-              "text": "Algunos documentos importantes en España son:"
-            },
+            { "type": "paragraph", "text": "Algunos documentos importantes en España son:" },
             {
               "type": "list",
               "style": "unordered",
@@ -3499,15 +2994,7 @@
                 }
               ]
             },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "© Unsplash"
-                }
-              ]
-            },
+            { "type": "callout", "blocks": [{ "type": "paragraph", "text": "© Unsplash" }] },
             {
               "type": "callout",
               "blocks": [
@@ -3523,16 +3010,8 @@
           "id": "task-5-draft-page-73",
           "title": "GUÍA DE LA VIDA DIARIA",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "GUÍA DE LA VIDA DIARIA"
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Vivienda"
-            },
+            { "type": "heading", "level": 3, "text": "GUÍA DE LA VIDA DIARIA" },
+            { "type": "heading", "level": 3, "text": "Vivienda" },
             {
               "type": "paragraph",
               "text": "En España hay diferentes tipos de vivienda, según el lugar (zona urbana o zona rural) y la situación económica de las personas. El tipo de residencia más habitual es el piso en un edificio de viviendas. Otra modalidad es la vivienda unifamiliar, chalé o casa adosada a otras viviendas, con servicios comunes."
@@ -3573,20 +3052,12 @@
               "type": "paragraph",
               "text": "En las comunidades de vecinos hay normas básicas de comportamiento social que se deben respetar, por ejemplo: pagar los gastos de la comunidad; no molestar a los demás vecinos con ruidos, sobre todo a partir de las 22:00 horas; reciclar la basura y cuidar los espacios comunes."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Animales domésticos"
-            },
+            { "type": "heading", "level": 3, "text": "Animales domésticos" },
             {
               "type": "paragraph",
               "text": "En España muchas personas tienen animales en casa, en su mayoría perros, gatos y pájaros. Los animales se pueden adoptar o comprar, siendo preferible lo primero, ya que en España las protectoras y perreras están llenas de animales abandonados que necesitan un hogar. Estos animales deben registrarse obligatoriamente con un microchip electrónico —sobre todo los perros y los gatos—; vacunarse y llevarse a revisiones veterinarias periódicas, además del seguro de responsabilidad civil por daños a terceros para todos los perros. Se debe velar por su salud y prestarles los cuidados y atenciones necesarias para su correcto desarrollo físico y emocional, así como respetar la convivencia con el resto de ciudadanos, recogiendo sus excrementos de vías públicas y jardines y cumpliendo con las medidas de seguridad obligatorias en la calle (correa, bozal, etc.)."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Comidas y bebidas"
-            },
+            { "type": "heading", "level": 3, "text": "Comidas y bebidas" },
             {
               "type": "paragraph",
               "text": "La gastronomía de España es muy rica y variada. Las diversas regiones del país tienen sus propios platos típicos, resultado de la variedad cultural y climática."
@@ -3669,11 +3140,7 @@
           "id": "task-5-draft-page-76",
           "title": "Calendario: días festivos y horarios",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Calendario: días festivos y horarios"
-            },
+            { "type": "heading", "level": 3, "text": "Calendario: días festivos y horarios" },
             {
               "type": "paragraph",
               "text": "Calendario escolar: comienza en septiembre y termina en el mes de junio. Cada comunidad autónoma decide las fechas de inicio y finalización de las clases."
@@ -3698,11 +3165,7 @@
               "type": "paragraph",
               "text": "El horario de España es GMT/UTC + 1 hora en invierno o + 2 horas en verano, excepto en Canarias, que es una hora menos. Los horarios comerciales pueden variar según los establecimientos: la mayoría de las tiendas tiene un horario aproximado de 10:00 a 20:00 horas, con una pausa larga para la comida, de lunes a viernes y el sábado solo abren por la mañana; los domingos suelen estar cerradas."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Educación"
-            },
+            { "type": "heading", "level": 3, "text": "Educación" },
             {
               "type": "paragraph",
               "text": "La educación es un derecho de los ciudadanos; es obligatoria y gratuita (excepto libros y materiales educativos) desde los 6 hasta los 16 años, lo que se llama educación básica."
@@ -3733,10 +3196,7 @@
             },
             {
               "type": "table",
-              "headers": [
-                "Nivel educativo",
-                "Descripción"
-              ],
+              "headers": ["Nivel educativo", "Descripción"],
               "rows": [
                 [
                   "Educación Infantil",
@@ -3774,10 +3234,7 @@
           "blocks": [
             {
               "type": "table",
-              "headers": [
-                "Nivel educativo",
-                "Descripción"
-              ],
+              "headers": ["Nivel educativo", "Descripción"],
               "rows": [
                 [
                   "Enseñanza universitaria",
@@ -3845,10 +3302,7 @@
                 "Centros privados: están financiados exclusivamente por los padres de los alumnos. Tienen completa libertad de gestión y cierta libertad de currículum, dentro de los límites de la normativa."
               ]
             },
-            {
-              "type": "paragraph",
-              "text": "Los tipos de centros educativos que encontramos son:"
-            },
+            { "type": "paragraph", "text": "Los tipos de centros educativos que encontramos son:" },
             {
               "type": "list",
               "style": "unordered",
@@ -3930,23 +3384,17 @@
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "tener un rendimiento académico mínimo;"
-              ]
+              "items": ["tener un rendimiento académico mínimo;"]
             },
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "que la renta familiar no supere ciertos límites;"
-              ]
+              "items": ["que la renta familiar no supere ciertos límites;"]
             },
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "estar matriculado en un centro autorizado y solicitar la ayuda en plazo."
-              ]
+              "items": ["estar matriculado en un centro autorizado y solicitar la ayuda en plazo."]
             },
             {
               "type": "paragraph",
@@ -3966,9 +3414,7 @@
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "Los museos: ofrecen visitas virtuales o guiadas, talleres, etc."
-              ]
+              "items": ["Los museos: ofrecen visitas virtuales o guiadas, talleres, etc."]
             },
             {
               "type": "list",
@@ -3977,11 +3423,7 @@
                 "Los centros culturales públicos: ofrecen visitas virtuales o guiadas, talleres, etc."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Salud"
-            },
+            { "type": "heading", "level": 3, "text": "Salud" },
             {
               "type": "paragraph",
               "text": "El Sistema Nacional de Salud en España está formado por el conjunto de servicios y prestaciones sanitarias que garantizan los poderes públicos. La gestión sanitaria se reparte entre la Administración General del Estado, a través del Ministerio de Sanidad, y las comunidades autónomas, que tienen transferidas la mayoría de competencias. El Ministerio de Sanidad se encarga de coordinar y proponer la política sanitaria del Gobierno, así como de planificar y asegurar el derecho de la ciudadanía a la protección de la salud."
@@ -4006,10 +3448,7 @@
           "id": "task-5-draft-page-81",
           "title": "Servicios sociales y programas de ayuda",
           "blocks": [
-            {
-              "type": "paragraph",
-              "text": "Los establecimientos sanitarios son:"
-            },
+            { "type": "paragraph", "text": "Los establecimientos sanitarios son:" },
             {
               "type": "list",
               "style": "unordered",
@@ -4045,11 +3484,7 @@
               "type": "paragraph",
               "text": "España sobresale por el alto porcentaje de donaciones de órganos, ya que lleva 30 años consecutivos siendo líder mundial de donaciones. La Organización Nacional de Trasplantes recibió en 2010 el Premio Príncipe de Asturias."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Servicios sociales y programas de ayuda"
-            },
+            { "type": "heading", "level": 3, "text": "Servicios sociales y programas de ayuda" },
             {
               "type": "heading",
               "level": 3,
@@ -4075,11 +3510,7 @@
           "id": "task-5-draft-page-82",
           "title": "discriminación y la violencia de género.",
           "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "discriminación y la violencia de género."
-            },
+            { "type": "heading", "level": 3, "text": "discriminación y la violencia de género." },
             {
               "type": "heading",
               "level": 3,
@@ -4115,13 +3546,7 @@
               "level": 3,
               "text": "Este servicio también cuenta con canales alternativos:"
             },
-            {
-              "type": "list",
-              "style": "unordered",
-              "items": [
-                "WhatsApp: 600 000 016"
-              ]
-            },
+            { "type": "list", "style": "unordered", "items": ["WhatsApp: 600 000 016"] },
             {
               "type": "figure",
               "assetId": "figure-82-81",
@@ -4145,9 +3570,7 @@
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "Correo electrónico: 016-online@igualdad.gob.es"
-              ]
+              "items": ["Correo electrónico: 016-online@igualdad.gob.es"]
             },
             {
               "type": "heading",
@@ -4164,11 +3587,7 @@
               "level": 3,
               "text": "El servicio depende del Ministerio de Igualdad y forma parte de la red de recursos públicos destinados a la prevención y atención integral frente a la violencia de género."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Medios de comunicación e información"
-            },
+            { "type": "heading", "level": 3, "text": "Medios de comunicación e información" },
             {
               "type": "heading",
               "level": 3,
@@ -4235,11 +3654,7 @@
               "level": 3,
               "text": "La radio tiene una gran presencia en España. La cadena pública es Radio Nacional, y entre las privadas con mayor audiencia están la Cadena Ser, la COPE y Onda Cero."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Unidades de medida"
-            },
+            { "type": "heading", "level": 3, "text": "Unidades de medida" },
             {
               "type": "heading",
               "level": 3,
@@ -4247,75 +3662,24 @@
             },
             {
               "type": "table",
-              "headers": [
-                "Magnitud",
-                "Nombre de la unidad",
-                "Símbolo"
-              ],
+              "headers": ["Magnitud", "Nombre de la unidad", "Símbolo"],
               "rows": [
-                [
-                  "Longitud",
-                  "metro",
-                  "m"
-                ],
-                [
-                  "Masa",
-                  "kilogramo",
-                  "kg"
-                ],
-                [
-                  "Tiempo/ duración",
-                  "segundo",
-                  "s"
-                ]
+                ["Longitud", "metro", "m"],
+                ["Masa", "kilogramo", "kg"],
+                ["Tiempo/ duración", "segundo", "s"]
               ],
               "caption": "TABLA 9. Principales magnitudes de medidas del SI"
             },
             {
               "type": "table",
-              "headers": [
-                "Magnitud",
-                "Nombre de la unidad",
-                "Símbolo",
-                "Valor en unidades SI"
-              ],
+              "headers": ["Magnitud", "Nombre de la unidad", "Símbolo", "Valor en unidades SI"],
               "rows": [
-                [
-                  "Tiempo",
-                  "minuto",
-                  "min",
-                  "1 min = 60 s"
-                ],
-                [
-                  "hora",
-                  "h",
-                  "1 h = 60 min",
-                  null
-                ],
-                [
-                  "día",
-                  "d",
-                  "1 d = 24 h",
-                  null
-                ],
-                [
-                  "Área",
-                  "hectárea",
-                  "ha",
-                  "1 ha = 10 000 m²"
-                ],
-                [
-                  "Volumen",
-                  "litro",
-                  "l",
-                  "1 l = 1 dm³"
-                ],
-                [
-                  "Masa",
-                  "tonelada",
-                  "t",
-                  "1 t = 1000 kg"
-                ]
+                ["Tiempo", "minuto", "min", "1 min = 60 s"],
+                ["hora", "h", "1 h = 60 min", null],
+                ["día", "d", "1 d = 24 h", null],
+                ["Área", "hectárea", "ha", "1 ha = 10 000 m²"],
+                ["Volumen", "litro", "l", "1 l = 1 dm³"],
+                ["Masa", "tonelada", "t", "1 t = 1000 kg"]
               ],
               "caption": "TABLA 10. Unidades que no pertenecen al SI cuyo uso es aceptado por el Sistema y que están autorizadas"
             }
@@ -4330,21 +3694,13 @@
               "level": 3,
               "text": "Pesas y Medidas (CGPM) existente en la Unión Europea."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Horarios comerciales"
-            },
+            { "type": "heading", "level": 3, "text": "Horarios comerciales" },
             {
               "type": "heading",
               "level": 3,
               "text": "La mayoría de tiendas abre de 10:00 a 14:00 horas y de 17:00 a 20:00 horas de lunes a viernes y el sábado solo abren por la mañana. Muchos hipermercados y centros comerciales abren de 10:00 a 22:00 horas todos los días."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Normativa de comercio"
-            },
+            { "type": "heading", "level": 3, "text": "Normativa de comercio" },
             {
               "type": "heading",
               "level": 3,
@@ -4357,27 +3713,11 @@
             },
             {
               "type": "table",
-              "headers": [
-                "Término",
-                "Volumen",
-                "Masa"
-              ],
+              "headers": ["Término", "Volumen", "Masa"],
               "rows": [
-                [
-                  "Un cuarto…",
-                  "Un cuarto de litro (250 ml)",
-                  "Un cuarto de kilo (250 g)"
-                ],
-                [
-                  "Medio…",
-                  "Medio litro (500 ml)",
-                  "Medio kilo (500 g)"
-                ],
-                [
-                  "Tres cuartos…",
-                  "Tres cuartos de litro (750 ml)",
-                  "Tres cuartos de kilo (750 g)"
-                ]
+                ["Un cuarto…", "Un cuarto de litro (250 ml)", "Un cuarto de kilo (250 g)"],
+                ["Medio…", "Medio litro (500 ml)", "Medio kilo (500 g)"],
+                ["Tres cuartos…", "Tres cuartos de litro (750 ml)", "Tres cuartos de kilo (750 g)"]
               ],
               "caption": "TABLA 11. Expresiones de medidas habituales"
             },
@@ -4402,11 +3742,7 @@
               "level": 3,
               "text": "Por una parte, la Agencia Española de Consumo, Seguridad Alimentaria y Nutrición protege a los consumidores y usuarios y, por otra, el Consejo de Consumidores defiende los intereses de los consumidores y usuarios y toma decisiones relacionadas con la política de consumo."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Servicios y espacios públicos"
-            },
+            { "type": "heading", "level": 3, "text": "Servicios y espacios públicos" },
             {
               "type": "heading",
               "level": 3,
@@ -4528,10 +3864,7 @@
           "id": "task-5-draft-page-88",
           "title": "Sociedad española",
           "blocks": [
-            {
-              "type": "paragraph",
-              "text": "(de cercanías, y de media y larga distancia)."
-            },
+            { "type": "paragraph", "text": "(de cercanías, y de media y larga distancia)." },
             {
               "type": "paragraph",
               "text": "El color de los taxis depende de la ciudad, los precios varían de una zona a otra y se pueden tomar en las paradas de taxis o en circulación si tienen una luz verde encendida o el cartel de «Libre»."
@@ -4622,11 +3955,7 @@
                 "Puertos más importantes: Algeciras, Barcelona, Las Palmas, Bilbao, Valencia y Vigo."
               ]
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Economía y trabajo"
-            },
+            { "type": "heading", "level": 3, "text": "Economía y trabajo" },
             {
               "type": "paragraph",
               "text": "La economía de España, en términos absolutos, ocupa la quinta posición en la Unión Europea y es la número 14 del mundo."
@@ -4635,11 +3964,7 @@
               "type": "paragraph",
               "text": "En términos relativos (poder adquisitivo), el FMI estima que España se encontraba en la posición 16 del mundo en 2024. La moneda de España es, desde 2002, el euro; antes era la peseta."
             },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Características de la economía española"
-            },
+            { "type": "heading", "level": 3, "text": "Características de la economía española" },
             {
               "type": "paragraph",
               "text": "En primer lugar, se encuentra el sector terciario (servicios), en segundo lugar, se sitúa el sector secundario (industria y construcción) y, en tercer lugar, el primario (agricultura, pesca y ganadería)."
@@ -4750,9 +4075,7 @@
             {
               "type": "list",
               "style": "unordered",
-              "items": [
-                "y jubiladas (personas mayores que se han retirado)."
-              ]
+              "items": ["y jubiladas (personas mayores que se han retirado)."]
             },
             {
               "type": "paragraph",

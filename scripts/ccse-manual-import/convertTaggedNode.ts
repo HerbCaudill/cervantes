@@ -24,6 +24,15 @@ export function convertTaggedNode(
     return list ? [{ block: list, x: getTaggedNodeX(node, textById) }] : []
   }
 
+  const hasNestedSemanticNode = (node.children ?? []).some(
+    child =>
+      findTaggedNodesByRole(child, "Table").length > 0 ||
+      findTaggedNodesByRole(child, "L").length > 0,
+  )
+  if (hasNestedSemanticNode) {
+    return (node.children ?? []).flatMap(child => convertTaggedNode(child, textById))
+  }
+
   if (/^H[1-6]$/.test(node.role ?? "")) {
     const text = getTaggedNodeText(node, textById)
     if (!text) return []
@@ -40,15 +49,6 @@ export function convertTaggedNode(
   }
 
   if (node.role === "P") {
-    const nestedSemanticNode = (node.children ?? []).some(
-      child =>
-        findTaggedNodesByRole(child, "Table").length > 0 ||
-        findTaggedNodesByRole(child, "L").length > 0,
-    )
-    if (nestedSemanticNode) {
-      return (node.children ?? []).flatMap(child => convertTaggedNode(child, textById))
-    }
-
     const text = getTaggedNodeText(node, textById)
     if (!text) return []
     const x = getTaggedNodeX(node, textById)

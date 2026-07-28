@@ -1,4 +1,5 @@
 import type { PDFPageProxy } from "pdfjs-dist/legacy/build/pdf.mjs"
+import { createArtworkFigureCrops } from "./createArtworkFigureCrops.ts"
 import { extractPaintedImages } from "./extractPaintedImages.ts"
 import { findFigureCaptionNodes } from "./findFigureCaptionNodes.ts"
 import { findTaggedNodesByRole } from "./findTaggedNodesByRole.ts"
@@ -31,8 +32,22 @@ export async function createFigureCrops(
   })
   const taggedFigures = findTaggedNodesByRole(tree, "Figure").filter(node => node.bbox)
   const paintedImages = await extractPaintedImages(page)
+  const artworkCrops = createArtworkFigureCrops(tree, textById, paintedImages, page.pageNumber)
+  const unassignedImages = paintedImages.filter(
+    image =>
+      !artworkCrops.some(
+        crop =>
+          crop.bounds[0] + 4 === image.bounds[0] &&
+          crop.bounds[1] + 4 === image.bounds[1] &&
+          crop.bounds[2] - 4 === image.bounds[2] &&
+          crop.bounds[3] - 4 === image.bounds[3],
+      ),
+  )
 
-  for (const visual of [...taggedFigures.map(node => ({ bounds: node.bbox! })), ...paintedImages]) {
+  for (const visual of [
+    ...taggedFigures.map(node => ({ bounds: node.bbox! })),
+    ...unassignedImages,
+  ]) {
     if (captions.length === 0) continue
     const centerX = (visual.bounds[0] + visual.bounds[2]) / 2
     const closest = captions.reduce((best, caption) => {
@@ -46,7 +61,7 @@ export async function createFigureCrops(
   }
 
   const [, , pageWidth, pageHeight] = page.view
-  return captions.map(caption => {
+  const numberedCrops = captions.map(caption => {
     const inferred: PdfBounds =
       caption.x < 410 ?
         [30, caption.y + 14, Math.min(390, pageWidth - 20), Math.min(caption.y + 300, 775)]
@@ -64,5 +79,10 @@ export async function createFigureCrops(
       pageNumber: page.pageNumber,
       bounds: padded,
     }
+  })
+
+  return [...numberedCrops, ...artworkCrops].sort((left, right) => {
+    const topDifference = right.bounds[3] - left.bounds[3]
+    return Math.abs(topDifference) <= 30 ? left.bounds[0] - right.bounds[0] : topDifference
   })
 }

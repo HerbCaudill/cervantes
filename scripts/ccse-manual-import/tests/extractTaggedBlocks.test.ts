@@ -96,6 +96,34 @@ describe("extractTaggedBlocks", () => {
     ])
   })
 
+  it("descends through a heading wrapper to retain a nested table and its caption", () => {
+    const textById = createTextById({
+      header: "Comunidades y ciudades autónomas",
+      valueHeader: "Población",
+      city: "Andalucía",
+      population: "8 631 862",
+      caption: "TABLA 2. Número de habitantes por comunidades autónomas",
+    })
+    const tree = node("Root", [
+      node("H5", [
+        node("Table", [
+          node("TR", [node("TH", [content("header")]), node("TH", [content("valueHeader")])]),
+          node("TR", [node("TD", [content("city")]), node("TD", [content("population")])]),
+        ]),
+      ]),
+      node("H5", [content("caption")]),
+    ])
+
+    expect(extractTaggedBlocks(tree, textById)).toEqual([
+      {
+        type: "table",
+        caption: "TABLA 2. Número de habitantes por comunidades autónomas",
+        headers: ["Comunidades y ciudades autónomas", "Población"],
+        rows: [["Andalucía", "8 631 862"]],
+      },
+    ])
+  })
+
   it("retains right-column source text as a callout", () => {
     const textById: TaggedTextById = new Map([
       [

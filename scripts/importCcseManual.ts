@@ -6,6 +6,7 @@ import { createFigureCrops } from "./ccse-manual-import/createFigureCrops.ts"
 import { createTaggedTextById } from "./ccse-manual-import/createTaggedTextById.ts"
 import { MANUAL_CONTENT_RANGES } from "./ccse-manual-import/constants.ts"
 import { extractTaggedBlocks } from "./ccse-manual-import/extractTaggedBlocks.ts"
+import { insertArtworkFigureBlocks } from "./ccse-manual-import/insertArtworkFigureBlocks.ts"
 import { renderFigureCrop } from "./ccse-manual-import/renderFigureCrop.ts"
 import type {
   DraftManual,
@@ -16,11 +17,11 @@ import type {
   TaggedNode,
 } from "./ccse-manual-import/types.ts"
 import { validateGeneratedManual } from "./ccse-manual-import/validateGeneratedManual.ts"
+import { writeManualDraft } from "./ccse-manual-import/writeManualDraft.ts"
 import { EXPECTED_MANUAL_SHA256, EXPECTED_PAGE_COUNT, MANUAL_URL } from "./ccse-import/constants.ts"
 import { downloadCcseManual } from "./ccse-import/downloadCcseManual.ts"
 import { hashBytes } from "./ccse-import/hashBytes.ts"
 
-const outputUrl = new URL("../src/manual/manual.draft.json", import.meta.url)
 const assetDirectoryUrl = new URL("../public/manual/figures/", import.meta.url)
 const temporaryDirectory = await mkdtemp(join(tmpdir(), "cervantes-manual-"))
 const temporaryPdfPath = join(temporaryDirectory, "manual.pdf")
@@ -52,11 +53,13 @@ try {
       const textContent = await page.getTextContent({ includeMarkedContent: true })
       const textById = createTaggedTextById(textContent.items)
       const tree = (await page.getStructTree()) as TaggedNode
-      const blocks = extractTaggedBlocks(tree, textById).map(block => {
+      const extractedBlocks = extractTaggedBlocks(tree, textById).map(block => {
         if (block.type !== "figure") return block
         const sourceNumber = Number(block.assetId.replace("figure-", ""))
         return { ...block, assetId: `figure-${pageNumber}-${sourceNumber}` }
       })
+      const pageCrops = await createFigureCrops(page, tree, textById)
+      const blocks = insertArtworkFigureBlocks(extractedBlocks, pageCrops)
       if (blocks.length === 0)
         throw new Error(`No semantic content extracted from page ${pageNumber}`)
 
@@ -66,7 +69,7 @@ try {
         title: firstHeading?.type === "heading" ? firstHeading.text : range.title,
         blocks,
       })
-      crops.push(...(await createFigureCrops(page, tree, textById)))
+      crops.push(...pageCrops)
       page.cleanup()
     }
     sections.push({ id: range.id, title: range.title, topics })
@@ -97,7 +100,7 @@ try {
   const oldAssets = await readdir(assetDirectoryUrl)
   await Promise.all(
     oldAssets
-      .filter(name => /^figure-\d+-\d+\.(?:jpg|png)$/.test(name))
+      .filter(name => /^figure-\d+-(?:\d+|artwork-\d+)\.(?:jpg|png)$/.test(name))
       .map(name => unlink(new URL(name, assetDirectoryUrl))),
   )
 
@@ -112,7 +115,7 @@ try {
     page.cleanup()
   }
 
-  await writeFile(outputUrl, `${JSON.stringify(manual, null, 2)}\n`)
+  await writeManualDraft(manual)
   await loadingTask.destroy()
 
   const blockCount = sections
