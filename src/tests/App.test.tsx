@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen, waitFor } from "@testing-library/react"
 import { beforeEach, describe, expect, it } from "vitest"
 import { App } from "@/App"
 import { questions } from "@/data/questions"
+import { loadStates } from "@/lib/loadStates"
 
 describe("App", () => {
   beforeEach(() => {
@@ -135,5 +136,26 @@ describe("App", () => {
     await waitFor(() =>
       expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument(),
     )
+  })
+
+  it("preserves the live review queue while visiting the manual", () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole("button", { name: /empezar repaso/i }))
+
+    const first = questions[0]
+    fireEvent.click(screen.getByRole("button", { name: first.options[first.answerIndex] }))
+    fireEvent.click(screen.getByRole("button", { name: /bien/i }))
+
+    expect(screen.getByText(questions[1].prompt)).toBeInTheDocument()
+    expect(screen.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeInTheDocument()
+    expect(loadStates()[first.id]?.repetitions).toBe(1)
+
+    fireEvent.click(screen.getByRole("link", { name: "Manual" }))
+    fireEvent.click(screen.getByRole("link", { name: "Práctica" }))
+
+    expect(screen.queryByText(first.prompt)).not.toBeInTheDocument()
+    expect(screen.getByText(questions[1].prompt)).toBeInTheDocument()
+    expect(screen.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeInTheDocument()
+    expect(loadStates()[first.id]?.repetitions).toBe(1)
   })
 })

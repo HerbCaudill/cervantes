@@ -28,24 +28,31 @@ export function App() {
         onExit={() => setSessionQuestions(null)}
       />
       <main className="flex flex-1 flex-col">
+        <div
+          className={
+            activeDestination === "practice" && route.type !== "not-found" ? "contents" : "hidden"
+          }
+        >
+          {sessionQuestions ?
+            <ReviewSession
+              initialQuestions={sessionQuestions}
+              states={states}
+              onReview={review}
+              onComplete={() => setSessionQuestions(null)}
+            />
+          : <PracticeHome
+              stats={sectionStats}
+              forecast={forecast}
+              dueCount={dueQuestions.length}
+              onStart={() => setSessionQuestions(dueQuestions)}
+            />
+          }
+        </div>
         {route.type === "not-found" ?
           <ManualNotFound />
         : activeDestination === "manual" ?
           <ManualScreen manual={manualDraft as Manual} route={route} />
-        : sessionQuestions ?
-          <ReviewSession
-            initialQuestions={sessionQuestions}
-            states={states}
-            onReview={review}
-            onComplete={() => setSessionQuestions(null)}
-          />
-        : <PracticeHome
-            stats={sectionStats}
-            forecast={forecast}
-            dueCount={dueQuestions.length}
-            onStart={() => setSessionQuestions(dueQuestions)}
-          />
-        }
+        : null}
       </main>
     </div>
   )

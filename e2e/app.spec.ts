@@ -30,6 +30,14 @@ test("answers a question and grades it", async ({ page }) => {
 
   // the next official question's options are now shown
   await expect(page.getByRole("button", { name: "Constitución." })).toBeVisible()
+  await expect(page.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeVisible()
+
+  // visiting the manual does not restart the live review queue
+  await page.getByRole("link", { name: "Manual", exact: true }).click()
+  await expect(page.getByRole("heading", { name: "Manual CCSE" })).toBeVisible()
+  await page.getByRole("link", { name: "Práctica" }).click()
+  await expect(page.getByRole("button", { name: "Constitución." })).toBeVisible()
+  await expect(page.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeVisible()
 })
 
 test("navigates direct manual routes with browser history", async ({ page }) => {
