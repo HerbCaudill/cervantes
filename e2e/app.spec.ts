@@ -160,7 +160,7 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
       hasText: "Para acceder a la Universidad se requiere el título de Bachillerato",
     }),
   ).toBeVisible()
-  await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(1)
+  await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(0)
 
   const bodyText = article.getByText(
     "En España hay tres tipos de centros educativos según su financiación:",

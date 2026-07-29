@@ -174,7 +174,7 @@ describe("manual reader", () => {
     ).toHaveAttribute("src", "/manual/figures/figure-8-2.jpg")
   })
 
-  it("shows running context, cross-task navigation, and one official-source attribution", () => {
+  it("shows running context and cross-task navigation without a repeated source attribution", () => {
     window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
     render(<App />)
 
@@ -184,9 +184,8 @@ describe("manual reader", () => {
       "/manual/task-2/destacados-derechos-deberes-y-libertades-01",
     )
 
-    const sourceLinks = screen.getAllByRole("link", { name: /fuente oficial/i })
-    expect(sourceLinks).toHaveLength(1)
-    expect(sourceLinks[0]).toHaveAttribute("href", manualDraft.sourceUrl)
+    expect(screen.queryByRole("link", { name: /fuente oficial/i })).not.toBeInTheDocument()
+    expect(document.body).not.toHaveTextContent(/Fuente oficial/i)
     expect(document.body).not.toHaveTextContent(/Página PDF/i)
   })
 

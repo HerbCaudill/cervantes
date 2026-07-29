@@ -55,16 +55,6 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
           </h2>
         </ManualMarginLayout>
         <ManualBlockList blocks={blocks} assets={manual.assets} />
-        <p className="text-soft border-rule-hard border-t pt-[0.85rem] font-sans text-[11px] leading-[1.4]">
-          <a
-            href={manual.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-11 items-center underline underline-offset-4"
-          >
-            Fuente oficial · Instituto Cervantes · {manual.edition}
-          </a>
-        </p>
         <nav
           aria-label="Temas anterior y siguiente"
           className="border-rule-hard grid grid-cols-2 border-y font-sans text-xs"
