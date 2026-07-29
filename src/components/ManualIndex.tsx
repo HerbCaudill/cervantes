@@ -49,12 +49,6 @@ export function ManualIndex({ manual, readerState, resumePath }: Props) {
                       style={{ width: `${progress}%` }}
                     />
                   </span>
-                  <AppLink
-                    href={`/manual/${section.id}`}
-                    className="border-rule-hard ml-[3.1rem] flex min-h-11 items-center border-y font-sans text-[10px] tracking-[0.08em] uppercase"
-                  >
-                    Índice de la Tarea {index + 1} →
-                  </AppLink>
                   <ol className="ml-[3.1rem]">
                     {section.topics.map((topic, topicIndex) => (
                       <li key={topic.id} className="border-rule border-b last:border-b-0">

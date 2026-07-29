@@ -9,10 +9,7 @@ describe("parseRoute", () => {
     })
   })
 
-  it("ignores unrelated query parameters on manual routes", () => {
-    expect(parseRoute("/manual/task-1?from=search")).toEqual({
-      type: "manual-section",
-      sectionId: "task-1",
-    })
+  it("does not recognize removed task index routes", () => {
+    expect(parseRoute("/manual/task-1?from=search")).toEqual({ type: "not-found" })
   })
 })

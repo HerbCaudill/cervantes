@@ -29,7 +29,7 @@ describe("manual reader", () => {
     )
     const index = screen.getByRole("navigation", { name: "Índice completo del manual" })
 
-    expect(within(index).getAllByRole("link")).toHaveLength(expectedTopics + 5)
+    expect(within(index).getAllByRole("link")).toHaveLength(expectedTopics)
   })
 
   it("renders real paragraphs, lists, tables, figures, and captions semantically", () => {
@@ -169,6 +169,17 @@ describe("manual reader", () => {
     expect(screen.queryByRole("link", { name: /fuente oficial/i })).not.toBeInTheDocument()
     expect(document.body).not.toHaveTextContent(/Fuente oficial/i)
     expect(document.body).not.toHaveTextContent(/Página PDF/i)
+  })
+
+  it("returns directly from a topic to the main manual index", () => {
+    window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
+    render(<App />)
+
+    expect(screen.getByRole("link", { name: "← Índice del manual" })).toHaveAttribute(
+      "href",
+      "/manual",
+    )
+    expect(screen.queryByRole("link", { name: "← Tarea 1" })).not.toBeInTheDocument()
   })
 
   it("does not repeat article numbers or dates in a marginal column", () => {

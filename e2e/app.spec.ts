@@ -117,11 +117,6 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
   await page.goto("/manual")
   await expect(page.getByRole("heading", { name: "Manual CCSE" })).toBeVisible()
 
-  await page.getByRole("link", { name: "Tarea 1" }).click()
-  await expect(
-    page.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
-  ).toBeVisible()
-
   await page
     .getByRole("link", { name: /Poderes del Estado/i })
     .first()
@@ -129,14 +124,15 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
   await expect(page.getByRole("heading", { name: /Poderes del Estado/i })).toBeVisible()
 
   await page.goBack()
-  await expect(
-    page.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
-  ).toBeVisible()
+  await expect(page.getByRole("heading", { name: "Manual CCSE" })).toBeVisible()
 
   await page.goForward()
   await expect(page.getByRole("heading", { name: /Poderes del Estado/i })).toBeVisible()
 
-  await page.getByRole("link", { name: "Manual", exact: true }).click()
+  await page.getByRole("link", { name: "← Índice del manual" }).click()
+  await expect(page).toHaveURL("/manual")
+  await expect(page.getByRole("heading", { name: "Manual CCSE" })).toBeVisible()
+
   await page.getByRole("link", { name: "Buscar en el manual" }).click()
   await expect(page.getByRole("searchbox", { name: "Buscar en el manual" })).toBeVisible()
   await expect(page.getByRole("link", { name: "Práctica" })).toBeVisible()

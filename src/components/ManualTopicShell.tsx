@@ -19,10 +19,10 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
     <article className="flex min-w-0 flex-col" data-reader-topic={topic.id}>
       <div className="border-rule-hard flex min-h-11 items-center justify-between border-b px-[0.9rem]">
         <AppLink
-          href={`/manual/${section.id}`}
+          href="/manual"
           className="text-soft flex min-h-11 items-center font-sans text-xs tracking-[0.08em] uppercase"
         >
-          ← Tarea {sectionNumber}
+          ← Índice del manual
         </AppLink>
         <span
           className="max-w-[55%] truncate text-right font-sans text-[10px] tracking-[0.08em] uppercase"

@@ -97,7 +97,7 @@ describe("App", () => {
 
     expect(window.location.pathname).toBe("/manual")
     expect(screen.getByRole("heading", { name: "Manual CCSE" })).toBeInTheDocument()
-    expect(screen.getAllByRole("link", { name: /Tarea \d/ })).toHaveLength(5)
+    expect(screen.queryByRole("link", { name: /Índice de la Tarea \d/ })).not.toBeInTheDocument()
   })
 
   it("opens manual search from an icon in the primary navigation", () => {
@@ -115,27 +115,30 @@ describe("App", () => {
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
   })
 
-  it("supports direct links to manual tasks, topics, and search", () => {
-    window.history.replaceState(null, "", "/manual/task-1")
+  it("supports direct links to manual topics and search", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
+    )
     const { unmount } = render(<App />)
 
-    expect(
-      screen.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
-    ).toBeInTheDocument()
-
-    const topicLink = screen.getAllByRole("link", { name: /Poderes del Estado/i })[0]
-    const topicPath = topicLink.getAttribute("href")
-    expect(topicPath).toMatch(/^\/manual\/task-1\//)
-
-    unmount()
-    window.history.replaceState(null, "", topicPath)
-    render(<App />)
     expect(screen.getByRole("heading", { name: /Poderes del Estado/i })).toBeInTheDocument()
 
     unmount()
     window.history.replaceState(null, "", "/manual/buscar")
     render(<App />)
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
+  })
+
+  it("does not support removed manual task index routes", () => {
+    window.history.replaceState(null, "", "/manual/task-1")
+    render(<App />)
+
+    expect(screen.getByRole("heading", { name: "Página no encontrada" })).toBeInTheDocument()
+    expect(
+      screen.queryByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
+    ).not.toBeInTheDocument()
   })
 
   it("restores manual and practice screens with browser history", async () => {

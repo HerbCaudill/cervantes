@@ -1,7 +1,6 @@
 import { ManualIndex } from "@/components/ManualIndex"
 import { ManualNotFound } from "@/components/ManualNotFound"
 import { ManualSearch } from "@/components/ManualSearch"
-import { ManualSectionIndex } from "@/components/ManualSectionIndex"
 import { ManualTopicShell } from "@/components/ManualTopicShell"
 import { findManualTopicBySlug } from "@/manual/findManualTopicBySlug"
 import type { Manual } from "@/manual/types"
@@ -20,16 +19,6 @@ export function ManualScreen({ manual, route, readerState, resumePath }: Props) 
   if (!section) return <ManualNotFound />
 
   const sectionNumber = manual.sections.indexOf(section) + 1
-  if (route.type === "manual-section") {
-    return (
-      <ManualSectionIndex
-        section={section}
-        sectionNumber={sectionNumber}
-        readerState={readerState}
-      />
-    )
-  }
-
   const topic = findManualTopicBySlug(section, route.topicSlug)
   if (!topic) return <ManualNotFound />
 

@@ -25,20 +25,19 @@ and figure references without a valid local asset, caption, or alt text.
 
 ## Routes
 
-The Manual tab links to `/manual`. Task indexes use
-`/manual/:sectionId`, topics use `/manual/:sectionId/:topicSlug`, and search
-stays inside the Manual destination at `/manual/buscar`. `getManualTopicSlug`
-constructs topic links and `findManualTopicBySlug` resolves direct routes. All
-in-app links use the browser history API, so these paths are directly loadable
-and retain native back and forward behavior.
+The Manual tab links to `/manual`, topics use
+`/manual/:sectionId/:topicSlug`, and search stays inside the Manual destination
+at `/manual/buscar`. `getManualTopicSlug` constructs topic links and
+`findManualTopicBySlug` resolves direct routes. All in-app links use the browser
+history API, so these paths are directly loadable and retain native back and
+forward behavior.
 
 ## Reader components
 
 `ManualScreen` resolves route IDs against the structured manual. The index
-links all five tasks and every topic, while each task also has its own compact
-topic index. `ManualTopicShell` renders semantic blocks in source order and
-provides a running head, source-order previous/next links across task
-boundaries, and one link to the official source.
+groups every topic under its task. `ManualTopicShell` renders semantic blocks
+in source order and provides a running head, a direct link back to the main
+index, and source-order previous/next links across task boundaries.
 
 Reader blocks use native headings, paragraphs, lists, tables, figures, and
 captions. At viewports below 640px, semantic tables become stacked records whose
@@ -97,7 +96,7 @@ body typography; no undecodable, out-of-bounds, or non-contained
 figures; no missing captions; no mismatched mobile table labels (including
 `null` source cells); and no topic control below the 44px target size.
 
-Representative practice, manual index, task index, search, and topic routes
+Representative practice, manual index, search, and topic routes
 were also checked at 390 × 844 for landmarks, keyboard focus visibility,
 horizontal overflow, and 44px controls. Browser scenarios cover direct and
 history navigation, previous/next links across task boundaries, search and

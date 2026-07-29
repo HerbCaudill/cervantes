@@ -20,13 +20,16 @@ describe("manual index", () => {
     const index = screen.getByRole("navigation", { name: "Índice completo del manual" })
     const tareas = index.querySelectorAll("details")
     const expectedLinkCount = manual.sections.reduce(
-      (count, section) => count + section.topics.length + 1,
+      (count, section) => count + section.topics.length,
       0,
     )
 
     expect(tareas).toHaveLength(manual.sections.length)
     tareas.forEach(tarea => expect(tarea).toHaveAttribute("open"))
     expect(within(index).getAllByRole("link")).toHaveLength(expectedLinkCount)
+    expect(
+      within(index).queryByRole("link", { name: /Índice de la Tarea/i }),
+    ).not.toBeInTheDocument()
   })
 
   it("lets readers collapse and reopen a tarea", () => {

@@ -19,7 +19,6 @@ export function parseRoute(
 
   const segments = normalizedPath.split("/").filter(Boolean)
   if (segments[0] !== "manual") return { type: "not-found" }
-  if (segments.length === 2) return { type: "manual-section", sectionId: segments[1] }
   if (segments.length === 3) {
     return {
       type: "manual-topic",
