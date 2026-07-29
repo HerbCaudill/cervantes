@@ -81,15 +81,23 @@ describe("manual reader", () => {
     expect(within(figure!).getByText(/^FIGURA 76\./)).toBeInTheDocument()
   })
 
-  it("labels every table cell for the stacked mobile presentation", () => {
+  it("renders Table 8 as two labeled columns with its image after the description", () => {
     window.history.replaceState(null, "", "/manual/task-5#educacion-06")
     render(<App />)
 
-    const firstRow = within(screen.getByRole("article")).getAllByRole("row")[1]
+    const table = within(screen.getByRole("article")).getByRole("table", {
+      name: "TABLA 8. Sistema educativo español",
+    })
+    const firstRow = within(table).getAllByRole("row")[1]
     const cells = within(firstRow).getAllByRole("cell")
+    const image = within(firstRow).getByRole("img", {
+      name: /La educación infantil no es obligatoria/i,
+    })
 
+    expect(cells).toHaveLength(2)
     expect(cells[0]).toHaveAttribute("data-label", "Nivel educativo")
     expect(cells[1]).toHaveAttribute("data-label", "Descripción")
+    expect(image.closest("td")).toBe(cells[1])
   })
 
   it("renders each population entry as a complete labeled two-cell row", () => {

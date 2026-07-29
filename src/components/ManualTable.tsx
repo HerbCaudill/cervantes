@@ -5,7 +5,7 @@ import type { ManualAsset, TableBlock } from "@/manual/types"
 export function ManualTable({ block, assets }: Props) {
   const captionMatch = block.caption ? /^TABLA\s+(\d+)\.?\s+(.+)$/s.exec(block.caption) : null
   const tableNumber = captionMatch?.[1]
-  const mobileLayout = tableNumber === "2" || tableNumber === "3" ? "table" : "stacked"
+  const mobileLayout = block.headers.length === 2 || tableNumber === "3" ? "table" : "stacked"
 
   return (
     <div className="max-w-full overflow-x-auto">

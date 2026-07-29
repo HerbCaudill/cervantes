@@ -51,12 +51,12 @@ describe("manual table row figures", () => {
   it("adds Figure 75 to Educación Infantil in Table 8", () => {
     const table = tables.find(block => block.caption?.startsWith("TABLA 8."))
 
-    expect(table?.headers).toEqual(["Nivel educativo", "Descripción", "Imagen"])
+    expect(table?.headers).toEqual(["Nivel educativo", "Descripción"])
+    expect(table?.rows.every(row => row.length === 2)).toBe(true)
     expect(table?.rows[0]).toMatchObject([
       { text: "Educación Infantil" },
-      { text: expect.stringContaining("No es obligatoria") },
       {
-        text: null,
+        text: expect.stringContaining("No es obligatoria"),
         figures: [
           {
             assetId: "figure-77-75",
@@ -65,7 +65,7 @@ describe("manual table row figures", () => {
         ],
       },
     ])
-    expect(table?.rows.slice(1).every(row => row[2].text === null)).toBe(true)
+    expect(table?.rows.slice(1).every(row => row[1].figures === undefined)).toBe(true)
   })
 
   it("removes embedded standalone copies while preserving unrelated folklore figures", () => {

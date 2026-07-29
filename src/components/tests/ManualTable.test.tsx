@@ -83,6 +83,19 @@ describe("ManualTable", () => {
     expect(within(row).getByText("© MrCarlos11", { exact: true })).toBeInTheDocument()
     expect(within(row).getByText("Símbolos: ninots.", { exact: true })).toBeInTheDocument()
   })
+
+  it("uses the conventional mobile layout for a two-column table", () => {
+    const block = {
+      type: "table",
+      caption: "TABLA 8. Sistema educativo español",
+      headers: ["Nivel educativo", "Descripción"],
+      rows: [[{ text: "Educación Infantil" }, { text: "No es obligatoria." }]],
+    } as TableBlock
+
+    render(<ManualTable block={block} assets={[]} />)
+
+    expect(screen.getByRole("table")).toHaveAttribute("data-mobile-layout", "table")
+  })
 })
 
 /** Create the smallest valid table block needed by caption rendering tests. */

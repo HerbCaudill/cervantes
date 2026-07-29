@@ -213,7 +213,6 @@ describe("verified Task 5 manual content", () => {
     expect(tables[0]?.rows[0].map(cell => cell.text)).toEqual([
       "Educación Infantil",
       "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito.",
-      null,
     ])
     expect(tables[0]?.rows.at(-1)?.[0].text).toBe(
       "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas.",

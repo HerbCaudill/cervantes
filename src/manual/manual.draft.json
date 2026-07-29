@@ -3818,17 +3818,14 @@
             },
             {
               "type": "table",
-              "headers": ["Nivel educativo", "Descripción", "Imagen"],
+              "headers": ["Nivel educativo", "Descripción"],
               "rows": [
                 [
                   {
                     "text": "Educación Infantil"
                   },
                   {
-                    "text": "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
-                  },
-                  {
-                    "text": null,
+                    "text": "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito.",
                     "figures": [
                       {
                         "type": "figure",
@@ -3844,9 +3841,6 @@
                   },
                   {
                     "text": "Es obligatoria y gratuita. Consta de seis cursos académicos. Es la primera etapa obligatoria, de los 6 a los 12 años."
-                  },
-                  {
-                    "text": null
                   }
                 ],
                 [
@@ -3855,9 +3849,6 @@
                   },
                   {
                     "text": "Es la segunda y última etapa obligatoria. Consta de cuatro cursos académicos. Se cursa de los 12 a los 16 años."
-                  },
-                  {
-                    "text": null
                   }
                 ],
                 [
@@ -3866,9 +3857,6 @@
                   },
                   {
                     "text": "Dura dos cursos académicos. Se cursa entre los 16 y los 18 años. Este título permite el acceso a las distintas enseñanzas de educación superior."
-                  },
-                  {
-                    "text": null
                   }
                 ],
                 [
@@ -3877,9 +3865,6 @@
                   },
                   {
                     "text": "Formación Profesional Básica: tiene una duración de dos cursos académicos y al finalizar se obtiene el Título Profesional Básico, que permite acceder a ciclos formativos de Grado Medio y equivale, a efectos laborales, al título de ESO. Ciclos formativos de Grado Medio: tienen una duración de dos cursos académicos y al completarlos se obtiene el título de Técnico, que permite incorporarse al mundo laboral o continuar con un ciclo formativo de Grado Superior. Para acceder es necesario contar con el título de Graduado en ESO o con el Título Profesional Básico. Ciclos formativos de Grado Superior: son estudios de educación superior. Duran dos años y permiten obtener el título de Técnico Superior, además de permitir acceder a estudios universitarios."
-                  },
-                  {
-                    "text": null
                   }
                 ],
                 [
@@ -3888,9 +3873,6 @@
                   },
                   {
                     "text": "Para acceder se requiere el título de Bachillerato o un título de Técnico Superior de Formación Profesional. Los titulados en Bachillerato deberán realizar una Prueba de Acceso a la Universidad (PAU). Las enseñanzas universitarias se dividen en 3 ciclos: Grado: formación general orientada al ejercicio de actividades de carácter profesional. Se obtiene el título de Graduado, consta de un mínimo de 240 créditos² y una duración de unos 4 años. Máster: formación avanzada orientada a la especialización académica o profesional. El Máster Universitario consta de entre 60 y 120 créditos, según sea su duración de 1 o 2 años. Doctorado: formación avanzada en técnicas de investigación. Se obtiene el título de Doctor tras superar un período de formación e investigación, así como tras la elaboración y presentación de la tesis doctoral."
-                  },
-                  {
-                    "text": null
                   }
                 ],
                 [
@@ -3899,9 +3881,6 @@
                   },
                   {
                     "text": "Enseñanzas artísticas: de música, danza, arte dramático, diseño o artes plásticas en ciclos formativos de grado elemental, medio o superior, según la categoría. Enseñanzas deportivas: se organizan en ciclos formativos de nivel medio y superior con los que se obtiene respectivamente el título de Técnico Deportivo o Técnico Deportivo Superior en la especialidad deportiva correspondiente. Enseñanza de idiomas en Escuelas Oficiales de Idiomas (EOI): se organizan en los tres niveles correspondientes al Marco Común Europeo de Referencia para las Lenguas y para acceder es requisito tener 16 años o más."
-                  },
-                  {
-                    "text": null
                   }
                 ]
               ],

@@ -20,7 +20,7 @@ test("uses the reader red accent for wide table headings and figure numbers", as
 
 test("uses the reader red accent for narrow responsive table labels", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-5#educacion-06")
+  await page.goto("/manual/task-4#fiestas-celebraciones-y-folclore-05")
 
   const table = page.getByRole("table")
   const firstCell = table.getByRole("cell").first()
@@ -29,5 +29,5 @@ test("uses the reader red accent for narrow responsive table labels", async ({ p
   )
 
   expect(responsiveLabelColor).toBe("rgb(165, 28, 48)")
-  await expect(table.getByRole("columnheader", { name: "Nivel educativo" })).toBeAttached()
+  await expect(table.getByRole("columnheader", { name: "Fiestas", exact: true })).toBeAttached()
 })

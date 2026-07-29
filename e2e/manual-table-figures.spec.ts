@@ -46,13 +46,20 @@ test("keeps row-associated figures inside responsive table cells", async ({ page
             const cell = figure.locator("xpath=ancestor::td")
             const cellBox = await cell.boundingBox()
             const figureBox = await figure.boundingBox()
+            const mobileLayout = await table.getAttribute("data-mobile-layout")
 
             expect(cellBox).not.toBeNull()
             expect(figureBox).not.toBeNull()
-            expect(figureBox!.x).toBeGreaterThanOrEqual(cellBox!.x + cellBox!.width * 0.35)
+            expect(figureBox!.x).toBeGreaterThanOrEqual(
+              mobileLayout === "stacked" ? cellBox!.x + cellBox!.width * 0.35 : cellBox!.x,
+            )
             expect(figureBox!.x + figureBox!.width).toBeLessThanOrEqual(
               cellBox!.x + cellBox!.width + 1,
             )
+
+            if (topic.tableName.startsWith("TABLA 8.")) {
+              await expect(cell).toHaveAttribute("data-label", "Descripción")
+            }
           }
         }
       }

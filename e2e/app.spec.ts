@@ -162,7 +162,7 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   await expect(article.getByText("En España hay tres tipos de centros educativos")).toBeVisible()
   await expect(table.getByRole("columnheader", { name: "Nivel educativo" })).toBeAttached()
   await expect(firstCell).toHaveAttribute("data-label", "Nivel educativo")
-  await expect(firstCell).toHaveCSS("display", "grid")
+  await expect(firstCell).toHaveCSS("display", "table-cell")
   await expect(educationTopic.getByRole("figure").getByRole("img").first()).toBeVisible()
   await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(0)
 
