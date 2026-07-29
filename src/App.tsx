@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { DeckNavigation } from "@/components/DeckNavigation"
 import { ManualNotFound } from "@/components/ManualNotFound"
 import { ManualScreen } from "@/components/ManualScreen"
 import { PracticeHome } from "@/components/PracticeHome"
@@ -11,7 +12,7 @@ import { usePathname } from "@/navigation/usePathname"
 import { useReaderProgress } from "@/reader/useReaderProgress"
 import type { Question } from "@/types"
 
-/** Root of the CCSE app: render the routed practice or manual screen. */
+/** Root of the CCSE app: render shared navigation and the current routed screen. */
 export function App() {
   const { dueQuestions, sectionStats, review } = useDeck()
   const [sessionQuestions, setSessionQuestions] = useState<Question[] | null>(null)
@@ -22,6 +23,11 @@ export function App() {
 
   return (
     <div className="bg-paper text-ink mx-auto flex min-h-dvh w-full max-w-xl flex-col">
+      <DeckNavigation
+        activeDestination={activeDestination}
+        inSession={sessionQuestions !== null}
+        onExit={() => setSessionQuestions(null)}
+      />
       <main className="flex flex-1 flex-col">
         <div
           className={

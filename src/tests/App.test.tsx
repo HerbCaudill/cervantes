@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen, waitFor } from "@testing-library/react"
 import { beforeEach, describe, expect, it } from "vitest"
 import { App } from "@/App"
 import { questions } from "@/data/questions"
+import { loadStates } from "@/lib/loadStates"
 
 describe("App", () => {
   beforeEach(() => {
@@ -9,9 +10,12 @@ describe("App", () => {
     window.history.replaceState(null, "", "/")
   })
 
-  it("shows the resting screen without a shared header", () => {
+  it("shows navigation without the title and question-count masthead", () => {
     render(<App />)
-    expect(screen.queryByRole("banner")).not.toBeInTheDocument()
+    expect(screen.queryByText(/boletín ccse/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/300 banco/i)).not.toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "Práctica" })).toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "Manual" })).toBeInTheDocument()
     expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument()
     expect(screen.getByRole("columnheader", { name: "Sección" })).toBeInTheDocument()
   })
@@ -77,10 +81,21 @@ describe("App", () => {
     expect(correctButton).toBeDisabled()
   })
 
-  it("opens the manual index from its route", () => {
-    window.history.replaceState(null, "", "/manual")
+  it("exits an active session from the navigation row", () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole("button", { name: /empezar repaso/i }))
+
+    fireEvent.click(screen.getByRole("button", { name: "Salir" }))
+
+    expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument()
+  })
+
+  it("opens the manual from the top-level navigation", () => {
     render(<App />)
 
+    fireEvent.click(screen.getByRole("link", { name: "Manual" }))
+
+    expect(window.location.pathname).toBe("/manual")
     expect(screen.getByRole("heading", { name: "Manual CCSE" })).toBeInTheDocument()
     expect(screen.getByRole("link", { name: "Buscar en el manual" })).toBeInTheDocument()
     expect(screen.getAllByRole("link", { name: /Tarea \d/ })).toHaveLength(5)
@@ -109,14 +124,12 @@ describe("App", () => {
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
   })
 
-  it("restores manual screens with browser history", async () => {
-    window.history.replaceState(null, "", "/manual")
+  it("restores manual and practice screens with browser history", async () => {
     render(<App />)
 
-    fireEvent.click(screen.getByRole("link", { name: /Tarea 1/ }))
-    expect(
-      screen.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
-    ).toBeInTheDocument()
+    fireEvent.click(screen.getByRole("link", { name: "Manual" }))
+    fireEvent.click(screen.getByRole("link", { name: "Práctica" }))
+    expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument()
 
     await act(() => {
       window.history.back()
@@ -133,9 +146,28 @@ describe("App", () => {
     })
 
     await waitFor(() =>
-      expect(
-        screen.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
-      ).toBeInTheDocument(),
+      expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument(),
     )
+  })
+
+  it("preserves the live review queue while visiting the manual", () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole("button", { name: /empezar repaso/i }))
+
+    const first = questions[0]
+    fireEvent.click(screen.getByRole("button", { name: first.options[first.answerIndex] }))
+    fireEvent.click(screen.getByRole("button", { name: /bien/i }))
+
+    expect(screen.getByText(questions[1].prompt)).toBeInTheDocument()
+    expect(screen.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeInTheDocument()
+    expect(loadStates()[first.id]?.repetitions).toBe(1)
+
+    fireEvent.click(screen.getByRole("link", { name: "Manual" }))
+    fireEvent.click(screen.getByRole("link", { name: "Práctica" }))
+
+    expect(screen.queryByText(first.prompt)).not.toBeInTheDocument()
+    expect(screen.getByText(questions[1].prompt)).toBeInTheDocument()
+    expect(screen.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeInTheDocument()
+    expect(loadStates()[first.id]?.repetitions).toBe(1)
   })
 })
