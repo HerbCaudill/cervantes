@@ -130,7 +130,9 @@ rebuild `manual.draft.json` plus the ordered figure crops under
 page furniture while retaining headings, prose, lists, tables, captions, and
 sidebar callouts. Captioned artwork grids are split into individual assets with
 their title, artist, and location metadata. It requires Poppler's `pdftoppm`
-command for deterministic 144-DPI figure rendering.
+command for deterministic 144-DPI figure rendering. The source population table
+is normalized during extraction from three horizontal community/population pairs
+into one ordered two-column list.
 
 The output is deliberately page-oriented draft content. Editorial verification
 tasks reconstruct final topic boundaries, resolve reading-order anomalies, and

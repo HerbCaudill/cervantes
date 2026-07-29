@@ -77,21 +77,24 @@ describe("manual reader", () => {
     expect(cells[1]).toHaveAttribute("data-label", "Descripción")
   })
 
-  it("keeps source nulls as empty labeled cells in partially filled table rows", () => {
+  it("renders each population entry as a complete labeled two-cell row", () => {
     window.history.replaceState(null, "", "/manual/task-1/poblacion-14")
     render(<App />)
 
     const table = within(screen.getByRole("article")).getByRole("table", {
       name: "TABLA 2. Número de habitantes por comunidades autónomas",
     })
-    const row = within(table).getByRole("cell", { name: "Cantabria" }).closest("tr")
-    const cells = within(row!).getAllByRole("cell")
+    const rows = within(table).getAllByRole("row")
 
-    expect(cells).toHaveLength(6)
-    expect(cells[4]).toBeEmptyDOMElement()
-    expect(cells[4]).toHaveAttribute("data-label", "Comunidades y ciudades autónomas")
-    expect(cells[5]).toBeEmptyDOMElement()
-    expect(cells[5]).toHaveAttribute("data-label", "Población")
+    expect(rows).toHaveLength(20)
+    for (const row of rows.slice(1)) {
+      const cells = within(row).getAllByRole("cell")
+      expect(cells).toHaveLength(2)
+      expect(cells[0]).toHaveAttribute("data-label", "Comunidades y ciudades autónomas")
+      expect(cells[1]).toHaveAttribute("data-label", "Población")
+      expect(cells[0]).not.toBeEmptyDOMElement()
+      expect(cells[1]).not.toBeEmptyDOMElement()
+    }
   })
 
   it("renders the one-year nationality cases as a nested unmarked list", () => {
@@ -125,7 +128,7 @@ describe("manual reader", () => {
     ])
   })
 
-  it("renders repeated table headers without duplicate React keys", () => {
+  it("renders the normalized population headers without React key warnings", () => {
     const error = vi.spyOn(console, "error").mockImplementation(() => undefined)
     window.history.replaceState(null, "", "/manual/task-1/poblacion-14")
     render(<App />)
@@ -133,10 +136,10 @@ describe("manual reader", () => {
     const table = within(screen.getByRole("article")).getByRole("table")
 
     expect(
-      within(table).getAllByRole("columnheader", {
-        name: "Comunidades y ciudades autónomas",
-      }),
-    ).toHaveLength(3)
+      within(table)
+        .getAllByRole("columnheader")
+        .map(header => header.textContent),
+    ).toEqual(["Comunidades y ciudades autónomas", "Población"])
     expect(error.mock.calls.flat().join(" ")).not.toContain(
       "Encountered two children with the same key",
     )

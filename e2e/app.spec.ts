@@ -347,21 +347,26 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   await expect(article).toHaveCSS("color", "rgb(232, 231, 224)")
 })
 
-test("keeps every population table column visible on wide screens", async ({ page }) => {
-  await page.setViewportSize({ width: 1280, height: 900 })
+test("stacks complete population rows readably on narrow screens", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-1/poblacion-14")
 
   const table = page.getByRole("table", {
     name: "TABLA 2. Número de habitantes por comunidades autónomas",
   })
   const wrapper = table.locator("..")
-  const lastPopulatedCell = table.getByRole("cell", { name: "1 568 492" })
+  const firstCell = table.getByRole("cell", { name: "Andalucía" })
+  const lastCell = table.getByRole("cell", { name: "5 319 285" })
   const wrapperBox = await wrapper.boundingBox()
-  const cellBox = await lastPopulatedCell.boundingBox()
+  const lastCellBox = await lastCell.boundingBox()
 
+  await expect(table.getByRole("columnheader")).toHaveCount(2)
+  await expect(table.getByRole("row")).toHaveCount(20)
+  await expect(firstCell).toHaveCSS("display", "grid")
+  await expect(lastCell).toBeVisible()
   expect(wrapperBox).not.toBeNull()
-  expect(cellBox).not.toBeNull()
-  expect(cellBox!.x + cellBox!.width).toBeLessThanOrEqual(wrapperBox!.x + wrapperBox!.width)
+  expect(lastCellBox).not.toBeNull()
+  expect(lastCellBox!.x + lastCellBox!.width).toBeLessThanOrEqual(wrapperBox!.x + wrapperBox!.width)
 })
 
 test("moves between topics across task boundaries", async ({ page }) => {

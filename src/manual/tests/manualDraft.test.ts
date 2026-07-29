@@ -207,7 +207,7 @@ describe("manual extraction draft", () => {
     ])
     expect(tables).toEqual([
       [3, 5],
-      [6, 7],
+      [2, 19],
       [3, 7],
     ])
   })
@@ -231,14 +231,7 @@ describe("manual extraction draft", () => {
     ])
     expect(
       tables.find(table => table.type === "table" && table.caption?.startsWith("TABLA 2."))?.rows,
-    ).toContainEqual([
-      "Canarias",
-      "2 238 754",
-      "Galicia",
-      "2 705 833",
-      "Comunidad Valencia",
-      "5 319 285",
-    ])
+    ).toContainEqual(["Comunidad Valencia", "5 319 285"])
   })
 
   it("reconstructs Task 2 around every source heading instead of PDF pages", () => {
