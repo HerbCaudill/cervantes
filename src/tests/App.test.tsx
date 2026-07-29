@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react"
+import { act, fireEvent, render, screen, waitFor, within } from "@testing-library/react"
 import { beforeEach, describe, expect, it } from "vitest"
 import { App } from "@/App"
 import { questions } from "@/data/questions"
@@ -97,8 +97,22 @@ describe("App", () => {
 
     expect(window.location.pathname).toBe("/manual")
     expect(screen.getByRole("heading", { name: "Manual CCSE" })).toBeInTheDocument()
-    expect(screen.getByRole("link", { name: "Buscar en el manual" })).toBeInTheDocument()
     expect(screen.getAllByRole("link", { name: /Tarea \d/ })).toHaveLength(5)
+  })
+
+  it("opens manual search from an icon in the primary navigation", () => {
+    render(<App />)
+    const primaryNavigation = screen.getByRole("navigation", { name: "Principal" })
+
+    const searchLink = within(primaryNavigation).getByRole("link", {
+      name: "Buscar en el manual",
+    })
+    expect(searchLink).not.toHaveTextContent("Buscar en el manual")
+
+    fireEvent.click(searchLink)
+
+    expect(window.location.pathname).toBe("/manual/buscar")
+    expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
   })
 
   it("supports direct links to manual tasks, topics, and search", () => {

@@ -2,7 +2,14 @@ import type { MouseEvent, ReactNode } from "react"
 import { navigate } from "@/navigation/navigate"
 
 /** Same-origin link that preserves browser history without reloading the app. */
-export function AppLink({ href, children, className, ariaCurrent, restoreScroll }: Props) {
+export function AppLink({
+  href,
+  children,
+  className,
+  ariaCurrent,
+  ariaLabel,
+  restoreScroll,
+}: Props) {
   /** Use native link behavior for modified clicks and in-app history otherwise. */
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (
@@ -21,7 +28,13 @@ export function AppLink({ href, children, className, ariaCurrent, restoreScroll 
   }
 
   return (
-    <a href={href} className={className} aria-current={ariaCurrent} onClick={handleClick}>
+    <a
+      href={href}
+      className={className}
+      aria-current={ariaCurrent}
+      aria-label={ariaLabel}
+      onClick={handleClick}
+    >
       {children}
     </a>
   )
@@ -36,6 +49,8 @@ interface Props {
   className?: string
   /** Current-page state for navigation links */
   ariaCurrent?: "page"
+  /** Accessible name when the visible content does not provide one */
+  ariaLabel?: string
   /** Restore saved reader progress instead of starting the destination at its top */
   restoreScroll?: boolean
 }

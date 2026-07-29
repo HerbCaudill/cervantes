@@ -29,7 +29,10 @@ test("searches locally, opens semantic results, and preserves query history", as
     },
   )
   await page.goto("/manual")
-  await page.getByRole("link", { name: "Buscar en el manual" }).click()
+  const primaryNavigation = page.getByRole("navigation", { name: "Principal" })
+  const searchLink = primaryNavigation.getByRole("link", { name: "Buscar en el manual" })
+  await expect(searchLink.locator("svg")).toBeVisible()
+  await searchLink.click()
 
   const input = page.getByRole("searchbox", { name: "Buscar en el manual" })
   await input.fill("  CONSTITUCION   ESPANOLA  ")
@@ -107,6 +110,12 @@ test("keeps search accessible within a 390px viewport in both palettes", async (
   await page.goto("/manual/buscar?q=constitucion")
 
   const input = page.getByRole("searchbox", { name: "Buscar en el manual" })
+  const searchLink = page
+    .getByRole("navigation", { name: "Principal" })
+    .getByRole("link", { name: "Buscar en el manual" })
+  const searchLinkBox = await searchLink.boundingBox()
+  expect(searchLinkBox?.width).toBeGreaterThanOrEqual(44)
+  expect(searchLinkBox?.height).toBeGreaterThanOrEqual(44)
   await expect(input).toBeVisible()
   await input.focus()
   await expect(input).toHaveCSS("outline-style", "solid")

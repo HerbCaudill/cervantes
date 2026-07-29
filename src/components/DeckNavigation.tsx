@@ -1,3 +1,4 @@
+import { IconSearch } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 import { AppLink } from "@/navigation/AppLink"
 
@@ -27,6 +28,13 @@ export function DeckNavigation({ activeDestination, inSession, onExit }: Props) 
         )}
       >
         Manual
+      </AppLink>
+      <AppLink
+        href="/manual/buscar"
+        ariaLabel="Buscar en el manual"
+        className="text-soft ml-auto flex min-h-11 min-w-11 items-center justify-center"
+      >
+        <IconSearch aria-hidden="true" size={20} stroke={1.6} />
       </AppLink>
       {inSession && activeDestination === "practice" ?
         <button
