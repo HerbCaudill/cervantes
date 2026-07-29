@@ -11,16 +11,13 @@ export function insertArtworkFigureBlocks(
   const family = crops.find(crop => crop.assetId === "figure-72-family")
   const emergency = crops.find(crop => crop.assetId === "figure-82-emergency-112")
 
-  return blocks.flatMap((block): DraftManualBlock[] => {
-    const calloutText =
-      block.type === "callout" && block.blocks[0]?.type === "paragraph" ?
-        block.blocks[0].text
-      : undefined
-    if (family && calloutText === family.caption) {
-      return [{ type: "figure", assetId: family.assetId, caption: family.caption }]
-    }
-    if (emergency && calloutText?.startsWith("El número de teléfono 112 es gratuito")) {
-      return [{ type: "figure", assetId: emergency.assetId, caption: emergency.caption }, block]
+  const orderedBlocks = blocks.flatMap((block): DraftManualBlock[] => {
+    if (
+      emergency &&
+      block.type === "paragraph" &&
+      block.text.startsWith("El número de teléfono 112 es gratuito")
+    ) {
+      return [block, { type: "figure", assetId: emergency.assetId, caption: emergency.caption }]
     }
     if (block.type !== "table") return [block]
     const tableArtworks = block.headers.flatMap(header =>
@@ -35,4 +32,7 @@ export function insertArtworkFigureBlocks(
       block,
     ]
   })
+
+  if (!family) return orderedBlocks
+  return [...orderedBlocks, { type: "figure", assetId: family.assetId, caption: family.caption }]
 }

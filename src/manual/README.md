@@ -5,11 +5,11 @@ from or share storage with the question bank.
 
 `Manual` contains an ordered set of the five official task sections, their
 deep-linkable topics, and a manifest of locally bundled figure assets. Topic
-content is an ordered union of headings, paragraphs, lists, tables, figures,
-and callouts. List items can contain recursively nested child lists; use the
-unmarked style when the source text already supplies explicit labels. Tables
-always carry explicit column headers so the reader can render labeled stacked
-records on narrow screens.
+content is an ordered union of headings, paragraphs, lists, tables, and figures.
+List items can contain recursively nested child lists; use the unmarked style
+when the source text already supplies explicit labels. Tables always carry
+explicit column headers so the reader can render labeled stacked records on
+narrow screens.
 
 IDs are persistent content keys, not display labels. Use the exported
 `MANUAL_SECTION_IDS` values for sections. Namespace topic IDs under their
@@ -40,28 +40,19 @@ topic index. `ManualTopicShell` renders semantic blocks in source order and
 provides a running head, source-order previous/next links across task
 boundaries, and one link to the official source.
 
-Reader blocks use native headings, paragraphs, lists, tables, figures, captions,
-and note roles for source callouts. Their fixed 40px marginal column carries
-compact article references, dates, and figure numbers without changing the body
-measure. At viewports below 640px, semantic tables become stacked records whose
+Reader blocks use native headings, paragraphs, lists, tables, figures, and
+captions. At viewports below 640px, semantic tables become stacked records whose
 cells retain their source column labels; wider viewports use conventional
 tables. The official body text uses the same compact 16px size and 1.45 leading
 in both layouts.
 
-The structured manual remains source-faithful when the PDF repeats body prose
-inside a visual pull quote. `getVisibleManualBlocks` derives the reader and
-search representation by removing callout sentences with at least 64
-contiguous normalized characters already present in any non-callout block
-across the manual. The comparison works in both containment directions and
-retains complete unique sentences from mixed callouts. Each projection builds
-one rolling-hash body-window index and reuses it for every callout, so overlap
-checks scale with the callout text rather than the full body corpus. Hash hits
-retain their source segment and offset, are verified against the original
-normalized text, and extend only along consecutive source positions. Short
-incidental matches stay visible, as do unique callout blocks and locally
-bundled figures. The search screen lazily builds and caches this projection in
-bounded main-thread phases after its first paint, while cached remounts render
-synchronously without eager module-load work.
+The PDF's sidebar callouts repeat ordinary body prose, so the importer omits
+right-column text instead of storing or deduplicating it at runtime. Standalone
+source visuals discovered beside those sidebars remain ordinary figure blocks
+in their original reading position. The search screen lazily builds and caches
+the resulting body-only index in bounded main-thread phases after its first
+paint, while cached remounts render synchronously without eager module-load
+work.
 
 ## Offline build
 
@@ -82,7 +73,6 @@ be repeated in every browser scenario:
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Schema and source integrity                                        | `tests/validateManual.test.ts`, `tests/manualDraft.test.ts`, and the Task 3–5 content goldens                                             |
 | Semantic rendering and responsive layout                           | `components/tests/ManualReader.test.tsx`, `components/tests/ManualList.test.tsx`, `e2e/app.spec.ts`, and the task-specific browser suites |
-| Callout deduplication                                              | `tests/getVisibleManualBlocks.test.ts` and `e2e/manual-callout-deduplication.spec.ts`                                                     |
 | Routes, direct links, and history                                  | `tests/manualTopicRoutes.test.ts`, `navigation/tests/parseRoute.test.ts`, `tests/App.test.tsx`, and `e2e/app.spec.ts`                     |
 | Search normalization, excerpts, highlighting, and lazy cache reuse | `search/tests/manualSearch.test.ts`, `components/tests/ManualSearch.test.tsx`, and `e2e/manual-search.spec.ts`                            |
 | Progress, resume, corrupt state, and storage isolation             | `reader/tests`, `components/tests/ManualReader.test.tsx`, and `e2e/reader-progress.spec.ts`                                               |
@@ -112,9 +102,8 @@ were also checked at 390 × 844 for landmarks, keyboard focus visibility,
 horizontal overflow, and 44px controls. Browser scenarios cover direct and
 history navigation, previous/next links across task boundaries, search and
 query history, progress and resume behavior, practice/manual switching, and
-offline PWA navigation. The callout projection was compared on every source
-callout route; the Felipe VI pull quote reported by the visual review appears
-once, with its local figure and caption intact.
+offline PWA navigation. The Felipe VI prose appears once, with its local figure
+and caption intact.
 
 The pass exposed and fixed two presentation defects: the six-column population
 table clipped its final column at the wide reader measure, and light-palette
@@ -127,12 +116,12 @@ Both have browser regressions in `e2e/app.spec.ts`.
 Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and
 rebuild `manual.draft.json` plus the ordered figure crops under
 `public/manual/figures`. The importer uses the PDF's semantic tags to remove
-page furniture while retaining headings, prose, lists, tables, captions, and
-sidebar callouts. Captioned artwork grids are split into individual assets with
-their title, artist, and location metadata. It requires Poppler's `pdftoppm`
-command for deterministic 144-DPI figure rendering. The source population table
-is normalized during extraction from three horizontal community/population pairs
-into one ordered two-column list.
+page furniture while retaining headings, prose, lists, tables, and captions and
+omitting right-column sidebar callouts. Captioned artwork grids are split into
+individual assets with their title, artist, and location metadata. It requires
+Poppler's `pdftoppm` command for deterministic 144-DPI figure rendering. The
+source population table is normalized during extraction from three horizontal
+community/population pairs into one ordered two-column list.
 
 The output is deliberately page-oriented draft content. Editorial verification
 tasks reconstruct final topic boundaries, resolve reading-order anomalies, and
@@ -144,7 +133,7 @@ against the checksum-pinned 2026 manual.
 Tasks 3–5 have complete ordered-content goldens in `tests/fixtures`. Each
 digest is calculated from `JSON.stringify` on the full task section, so topic
 and block order, every text value, list item, table header and cell (including
-`null` cells), callout, figure asset ID, and caption contribute to the golden.
+`null` cells), figure asset ID, and caption contribute to the golden.
 
 To regenerate verified content, run `pnpm manual:extract`, reconstruct the task's
 semantic topics, and audit every ordered block and figure crop against the

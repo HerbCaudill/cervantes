@@ -144,19 +144,6 @@ test("keeps search accessible within a 390px viewport in both palettes", async (
   expect(browserErrors).toEqual([])
 })
 
-test("does not return a topic supported only by a duplicated cross-task callout", async ({
-  page,
-}) => {
-  await page.goto("/manual/buscar?q=maxima+representacion+mediador")
-
-  const results = page.getByRole("list", { name: "Resultados de búsqueda" })
-  await expect(results.getByRole("link")).toHaveCount(1)
-  await expect(results.getByRole("link")).toHaveAttribute(
-    "href",
-    "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
-  )
-})
-
 interface ManualSearchObservedWindow extends Window {
   /** Preparation-state DOM mutations observed after the first completed search */
   manualSearchPreparationMutations: string[]

@@ -35,29 +35,6 @@ export interface Manual {
   sections: ManualSection[]
 }
 
-/** Indexed normalized body windows used for linear-time pull-quote comparison. */
-export interface ManualBodyTextIndex {
-  /** Normalized character width of every indexed window */
-  windowLength: number
-  /** Leading-character multiplier used to advance the rolling hash */
-  hashLeadingPower: number
-  /** Original normalized segments used to verify hash candidates */
-  segments: readonly string[]
-  /** Source occurrences grouped by unsigned 32-bit window hash */
-  occurrencesByHash: ReadonlyMap<
-    number,
-    ManualBodyTextOccurrence | readonly ManualBodyTextOccurrence[]
-  >
-}
-
-/** Provenance for one normalized fixed-width body window. */
-export interface ManualBodyTextOccurrence {
-  /** Zero-based source segment index */
-  segmentIndex: number
-  /** Zero-based window start within the source segment */
-  start: number
-}
-
 /** One of the manual's five source tasks. */
 export interface ManualSection {
   /** Stable identifier such as `task-1` */
@@ -142,23 +119,5 @@ export interface FigureBlock {
   caption: string
 }
 
-/** Source content set apart in a sidebar or highlighted box. */
-export interface CalloutBlock {
-  /** Semantic block discriminator */
-  type: "callout"
-  /** Optional verbatim callout heading */
-  title?: string
-  /** Semantic content retained in callout reading order */
-  blocks: CalloutContentBlock[]
-}
-
-/** Content forms supported inside a callout. */
-export type CalloutContentBlock =
-  | HeadingBlock
-  | ParagraphBlock
-  | ListBlock
-  | TableBlock
-  | FigureBlock
-
 /** Any semantic source block supported by the manual reader. */
-export type ManualBlock = CalloutContentBlock | CalloutBlock
+export type ManualBlock = HeadingBlock | ParagraphBlock | ListBlock | TableBlock | FigureBlock

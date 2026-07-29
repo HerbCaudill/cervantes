@@ -52,15 +52,6 @@ describe("verified Task 4 manual content", () => {
         mutatedTask.topics[0].blocks.reverse()
       },
       (mutatedTask: typeof task) => {
-        const callout = mutatedTask.topics
-          .flatMap(topic => topic.blocks)
-          .find(block => block.type === "callout")
-        if (!callout || callout.blocks[0]?.type !== "paragraph") {
-          throw new Error("Task 4 paragraph callout is missing")
-        }
-        callout.blocks[0].text = "unexpected callout text"
-      },
-      (mutatedTask: typeof task) => {
         const list = mutatedTask.topics
           .flatMap(topic => topic.blocks)
           .find(block => block.type === "list")
@@ -298,30 +289,19 @@ describe("verified Task 4 manual content", () => {
     expect(architecture?.blocks.filter(block => block.type === "table")).toHaveLength(0)
   })
 
-  it("retains every Task 4 list, data table, callout, and cultural figure", () => {
+  it("retains every Task 4 list, data table, and cultural figure", () => {
     const count = (type: ManualBlock["type"]) => blocks.filter(block => block.type === type).length
     const tables = blocks.filter(block => block.type === "table")
-    const callouts = blocks.flatMap(block =>
-      block.type === "callout" ? getParagraphs(block.blocks) : [],
-    )
 
     expect({
-      callouts: count("callout"),
       figures: count("figure"),
       lists: count("list"),
       tables: count("table"),
-    }).toEqual({ callouts: 5, figures: 49, lists: 5, tables: 3 })
+    }).toEqual({ figures: 49, lists: 5, tables: 3 })
     expect(tables.map(table => (table.type === "table" ? table.caption : undefined))).toEqual([
       "TABLA 5. Acontecimientos relevantes en la historia de España",
       "TABLA 6. Fiestas españolas más conocidas",
       "TABLA 7. Españoles galardonados con el premio Nobel",
-    ])
-    expect(callouts).toEqual([
-      "En el siglo XX, la literatura vivió otro gran momento con autores como Antonio Machado, Miguel de Unamuno, Valle-Inclán, José Ortega y Gasset, Clara Campoamor y Federico García Lorca, etre muchos otros.",
-      "En los años 90 y 2000, la memoria histórica se volvió un tema recurrente entre escritores, entre los que destacan Almudena Grandes, Javier Cercas y Fernando Aramburu, entre otros.",
-      "Con la llegada de la Transición, la movida madrileña abrió la puerta a la experimentación y a la modernidad urbana, mientras artistas como Joaquín Sabina encarnaban la mezcla de crónica social, ironía y bohemia, consolidando un movimiento musical que estaba entre la memoria de la tradición y la búsqueda de libertad creativa.",
-      "En la historia del cine español, resulta imprescindible mencionar a Luis Buñuel, considerado uno de los directores más importantes e influyentes del cine mundial, especialmente por su relación con el surrealismo y su capacidad de provocar reflexiones sociales y políticas a través de la imagen.",
-      "Además de los museos nacionales del Prado y Reina Sofía, hay otros muy conocidos internacionalmente: el Museo Picasso, en Barcelona; el Museo Thyssen-Bornemisza, en Madrid, y el Museo Guggenheim de Bilbao.",
     ])
   })
 })

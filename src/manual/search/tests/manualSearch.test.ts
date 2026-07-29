@@ -55,16 +55,6 @@ const manual = {
               assetId: "figure-1",
               caption: "FIGURA 1. Congreso de los Diputados.",
             },
-            {
-              type: "callout",
-              title: "Recuerde",
-              blocks: [
-                {
-                  type: "paragraph",
-                  text: "La mayoría de edad se alcanza a los dieciocho años.",
-                },
-              ],
-            },
           ],
         },
         {
@@ -91,8 +81,6 @@ describe("manual search", () => {
     ["Institución", "table header"],
     ["Ayuntamiento", "table cell"],
     ["Congreso de los Diputados", "figure caption"],
-    ["Recuerde", "callout title"],
-    ["dieciocho años", "nested callout prose"],
   ])("indexes %s from a %s", (query, _source) => {
     const results = searchManualIndex(buildManualSearchIndex(manual), query)
 
@@ -106,66 +94,6 @@ describe("manual search", () => {
       "task-1-constitution",
       "task-1-secondary",
     ])
-  })
-
-  it("does not separately index a duplicated callout in another topic", () => {
-    const repeatedText =
-      "La soberanía nacional reside en el pueblo español y sostiene todas las instituciones democráticas establecidas por la Constitución."
-    const duplicatedCalloutManual = structuredClone(manual) as Manual
-    duplicatedCalloutManual.sections[0].topics[0].blocks.push({
-      type: "paragraph",
-      text: repeatedText,
-    })
-    duplicatedCalloutManual.sections[0].topics[1].blocks.push({
-      type: "callout",
-      blocks: [{ type: "paragraph", text: repeatedText }],
-    })
-
-    expect(
-      searchManualIndex(
-        buildManualSearchIndex(duplicatedCalloutManual),
-        "sostiene instituciones",
-      ).map(result => result.topicId),
-    ).toEqual(["task-1-constitution"])
-  })
-
-  it("promotes unique nested-list children without indexing their repeated parent", () => {
-    const repeatedParent =
-      "La soberanía nacional reside en el pueblo español y sostiene todas las instituciones democráticas establecidas por la Constitución."
-    const uniqueChild =
-      "La oficina provincial entrega un justificante firmado para esta solicitud extraordinaria."
-    const nestedCalloutManual = structuredClone(manual) as Manual
-    nestedCalloutManual.sections[0].topics[0].blocks.push({
-      type: "paragraph",
-      text: repeatedParent,
-    })
-    nestedCalloutManual.sections[0].topics[1].blocks.push({
-      type: "callout",
-      blocks: [
-        {
-          type: "list",
-          style: "unordered",
-          items: [
-            {
-              text: repeatedParent,
-              children: {
-                type: "list",
-                style: "unmarked",
-                items: [uniqueChild],
-              },
-            },
-          ],
-        },
-      ],
-    })
-    const index = buildManualSearchIndex(nestedCalloutManual)
-
-    expect(searchManualIndex(index, "justificante firmado").map(result => result.topicId)).toEqual([
-      "task-1-secondary",
-    ])
-    expect(
-      searchManualIndex(index, "sostiene instituciones").map(result => result.topicId),
-    ).toEqual(["task-1-constitution"])
   })
 
   it("indexes parent and recursively nested list item text", () => {
@@ -274,7 +202,7 @@ describe("manual search", () => {
     ).toBe(true)
   })
 
-  it("constructs one body index while staying within a generous computation budget", () => {
+  it("constructs the search index in one manual traversal within a generous computation budget", () => {
     const sourceManual = manualDraft as Manual
     let sectionReads = 0
     const observedManual = {
@@ -289,7 +217,7 @@ describe("manual search", () => {
     const index = buildManualSearchIndex(observedManual)
 
     expect(index.length).toBeGreaterThan(0)
-    expect(sectionReads).toBe(2)
+    expect(sectionReads).toBe(1)
     expect(performance.now() - startedAt).toBeLessThan(250)
   })
 

@@ -587,15 +587,6 @@
               "text": "El Reino de España es un Estado social y democrático de Derecho con la forma política de monarquía parlamentaria. Tiene como valores superiores la libertad, la justicia, la igualdad y el pluralismo político. En España, la soberanía nacional corresponde al pueblo español y de él derivan todos los poderes del Estado."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El Reino de España es un Estado social y democrático de Derecho con la forma política de monarquía parlamentaria. Tiene como valores superiores la libertad, la justicia, la igualdad y el pluralismo político. En España, la soberanía nacional corresponde al pueblo español y de él derivan todos los poderes del Estado."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "España es una patria común e indivisible, y la Constitución reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que la componen, y la solidaridad entre todas ellas."
             },
@@ -611,15 +602,6 @@
             {
               "type": "paragraph",
               "text": "Además del castellano o español, se hablan otras lenguas oficiales en las siguientes comunidades autónomas: Galicia (gallego), Navarra y País Vasco (vasco o euskera), Cataluña (catalán y aranés), Islas Baleares (catalán), Comunidad Valenciana (catalán o valenciano)."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Además del castellano o español, se hablan otras lenguas oficiales en las siguientes comunidades autónomas: Galicia (gallego), Navarra y País Vasco (vasco o euskera), Cataluña (catalán y aranés), Islas Baleares (catalán), Comunidad Valenciana (catalán o valenciano)."
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -662,15 +644,6 @@
               "text": "El rey de España es el jefe del Estado, tiene la máxima representación. Su papel consiste en actuar como mediador y garantizar el buen funcionamiento de las instituciones. Además, entre otras funciones, aprobar y ordenar la publicación oficial de las leyes, nombra a los miembros del Gobierno, a propuesta de su presidente, y tiene el mando supremo de las Fuerzas Armadas de España. La Corona es el símbolo de la unidad de España."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El rey de España es el jefe del Estado, tiene la máxima representación. Su papel consiste en actuar como mediador y garantizar el buen funcionamiento de las instituciones."
-                }
-              ]
-            },
-            {
               "type": "figure",
               "assetId": "figure-8-2",
               "caption": "FIGURA 2. Su Majestad el rey Felipe VI"
@@ -702,15 +675,6 @@
               "text": "La bandera de la Unión Europea es azul con 12 estrellas amarillas en círculo."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "La bandera de la Unión Europea es azul con 12 estrellas amarillas en círculo."
-                }
-              ]
-            },
-            {
               "type": "figure",
               "assetId": "figure-8-3",
               "caption": "FIGURA 3. Bandera de la Unión Europea"
@@ -736,15 +700,6 @@
             {
               "type": "paragraph",
               "text": "En la Constitución se establece la separación de los poderes ejecutivo, legislativo y judicial, lo que garantiza el funcionamiento de las instituciones españolas."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En la Constitución se establece la separación de los poderes ejecutivo, legislativo y judicial, lo que garantiza el funcionamiento de las instituciones españolas."
-                }
-              ]
             },
             {
               "type": "figure",
@@ -858,15 +813,6 @@
                 "De ámbito autonómico: Ertzaintza en el País Vasco, Mossos d’Esquadra en Cataluña, Policía Foral de Navarra, Cuerpo General de la Policía de Canarias.",
                 "De ámbito local: Policía local. Entre las funciones de la Policía local están la protección de las instituciones y autoridades locales, la regulación del tráfico en pueblos y ciudades y la prestación de auxilio en caso de accidente."
               ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Entre las funciones de la Policía Nacional está la expedición del documento nacional de identidad y del pasaporte, cuestiones de extranjería como expedición de documentos, tramitación de autorizaciones, permisos de residencia y trabajo. También controla la entrada y salida del territorio nacional de españoles y extranjeros."
-                }
-              ]
             }
           ]
         },
@@ -914,15 +860,6 @@
               "text": "En la Constitución de 1978 se establece que España se organiza a partir de ese momento en comunidades autónomas, provincias y municipios. Se distinguen tres niveles de organización de la Administración: central (del Estado), autonómica (de las comunidades autónomas) y local (en este nivel se incluyen las provincias y los municipios)."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A partir de la Constitución de 1978, España se organiza en comunidades autónomas, provincias y municipios. Se distinguen tres niveles de organización de la Administración: central (del Estado), autonómica (de las comunidades autónomas) y local (en este nivel se incluyen las provincias y los municipios)."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "En cada uno de los niveles las entidades de gobierno tienen autonomía para la gestión de sus respectivos intereses, de acuerdo con la ley."
             },
@@ -948,15 +885,6 @@
                 "La delimitación de su territorio.",
                 "El nombre, organización y sede de las instituciones autónomas propias.",
                 "Las competencias asumidas dentro del marco establecido en la Constitución y las bases para el traspaso de los servicios correspondientes a la comunidad. Entre las más significativas se encuentran la sanidad y la educación."
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "La ley institucional básica de cada comunidad es el Estatuto de Autonomía, en el que se establecen las competencias asumidas dentro del marco establecido en la Constitución y las bases para el traspaso de los servicios correspondientes a la comunidad. Entre las más significativas se encuentran la sanidad y la educación."
-                }
               ]
             },
             {
@@ -1001,26 +929,8 @@
               "text": "El Gobierno y las comunidades autónomas cuentan con diversos medios para comunicarse con los ciudadanos, entre ellos, el Boletín Oficial del Estado (BOE) y los diferentes boletines de las comunidades autónomas, que informan de las leyes, decretos, nombramientos, etc."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El Gobierno y las comunidades autónomas cuentan con diversos medios para comunicarse con los ciudadanos, entre ellos, el Boletín Oficial del Estado (BOE) y los diferentes boletines de las comunidades autónomas, que informan de las leyes, decretos, nombramientos, etc."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "Por otro lado, las distintas administraciones tienen sistemas de atención presencial, telefónica y electrónica, como el teléfono 060 (teléfono de información de la Administración General del Estado) y el Portal de la Administración Electrónica (PAe)."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Las distintas administraciones tienen sistemas de atención presencial, telefónica y electrónica, como el teléfono 060 (teléfono de información de la Administración General del Estado) y el Portal de la Administración Electrónica (PAe)."
-                }
-              ]
             }
           ]
         },
@@ -1062,15 +972,6 @@
             {
               "type": "paragraph",
               "text": "España es el cuarto país más poblado de la Unión Europea (por detrás de Alemania, Francia e Italia), con una población en 2025 de más de 49 millones de habitantes. Por otro lado, es el segundo país más extenso de la UE, con una superficie de 505 944 km² y una densidad de población de 96 habitantes por km²."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España es el cuarto país más poblado de la Unión Europea con una población en 2025 de más de 49 millones de habitantes. Por otro lado, es el segundo país más extenso de la UE, con una superficie de 505 944 km² y una densidad de población de 96 habitantes por km²."
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -1117,30 +1018,12 @@
               "text": "La Constitución establece que la base del sistema político es el derecho al voto de todos los españoles mediante sufragio universal, libre, igual, directo y secreto, en el que son electores y elegibles todos los españoles mayores de 18 años. En las elecciones municipales también se permite el voto de los ciudadanos residentes en España procedentes de la Unión Europea y de algunos países con los que España tiene firmados acuerdos."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En las elecciones municipales también se permite el voto de los ciudadanos residentes en España procedentes de la Unión Europea y de algunos países con los que España tiene firmados acuerdos."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "La Constitución señala que las elecciones las convoca el rey. En España se convocan cada cuatro años y pueden ser: generales, para elegir a los diputados y senadores del Congreso y del Senado, respectivamente; autonómicas, para elegir a los miembros de las asambleas y parlamentos autonómicos; y municipales, para elegir a los concejales de los ayuntamientos. Además, cada cinco años se celebran (como en el resto de la UE) las elecciones europeas, en las que se elige a los eurodiputados españoles en el Parlamento Europeo."
             },
             {
               "type": "paragraph",
               "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España tiene un sistema pluripartidista, es decir, los ciudadanos pueden elegir entre diversas opciones políticas o partidos, tanto en el ámbito nacional como en el autonómico o en el local. Todos los españoles mayores de edad pueden ejercer su derecho al voto en las elecciones."
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -1204,15 +1087,6 @@
               "type": "figure",
               "assetId": "figure-28-9",
               "caption": "FIGURA 9. Primera página de la Constitución española de 1978"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En la Constitución de 1978 se recogen los derechos fundamentales, deberes y libertades de los españoles, dentro y fuera de España, y de los residentes extranjeros."
-                }
-              ]
             }
           ]
         },
@@ -1305,15 +1179,6 @@
             {
               "type": "paragraph",
               "text": "Los españoles tienen el derecho a elegir libremente dónde quieren vivir. Pueden desplazarse libremente por todo el territorio español y entrar y salir sin que pueda limitarse este derecho por motivos políticos o ideológicos."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El artículo 19 reconoce el derecho de todo ciudadano a elegir libremente dónde quieren vivir. Pueden desplazarse libremente por todo el territorio español y entrar y salir sin que pueda limitarse este derecho por motivos políticos o ideológicos."
-                }
-              ]
             }
           ]
         },
@@ -1331,15 +1196,6 @@
                 "c. A que los profesores puedan impartir sus enseñanzas con libertad.",
                 "d. A comunicar o recibir libremente información verdadera por cualquier medio de difusión (libertad de prensa).",
                 "2. Todas estas libertades no tendrán ningún tipo de censura, su único límite es el respeto a los derechos reconocidos a los españoles y, especialmente, el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia."
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El artículo 20 reconoce que todas las libertades no tendrán ningún tipo de censura, su único límite es el respeto a los derechos reconocidos a los españoles y, especialmente, el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia."
-                }
               ]
             }
           ]
@@ -1416,15 +1272,6 @@
                 "1. Los ciudadanos tienen derecho a pertenecer a cualquier sindicato.",
                 "2. Se reconoce el derecho a la huelga de los trabajadores para defender sus intereses y se prevé el mantenimiento de los servicios mínimos a la comunidad mientras esta dure."
               ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El artículo 28 reconoce el derecho de los ciudadanos a pertenecer a cualquier sindicato y a participar de una huelga para defender sus intereses."
-                }
-              ]
             }
           ]
         },
@@ -1492,15 +1339,6 @@
             {
               "type": "paragraph",
               "text": "Todos los ciudadanos tendrán acceso a un sistema de Seguridad Social público, que les garantizará atención en situaciones de necesidad, especialmente para los que no tienen trabajo."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El artículo 41 reconoce el derecho al acceso a un sistema de Seguridad Social público, que les garantizará atención en situaciones de necesidad, especialmente para los que no tienen trabajo."
-                }
-              ]
             }
           ]
         },
@@ -1521,15 +1359,6 @@
             {
               "type": "paragraph",
               "text": "Todos tienen derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El artículo 45 reconoce el derecho del ciudadado a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo."
-                }
-              ]
             }
           ]
         },
@@ -1589,15 +1418,6 @@
             {
               "type": "paragraph",
               "text": "La justicia surge del pueblo y la administran jueces y magistrados de forma independiente y responsable."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El artículo 117 designa a los jueces como los responsables de administrar la justicia de forma independiente y responsable. Mientras que el artículo 18 obliga a los ciudadanos a cumplir con las sentencias de los jueces y tribunales y colaborar con ellos cuando éstos lo requieran."
-                }
-              ]
             }
           ]
         },
@@ -1676,15 +1496,6 @@
               "text": "Meseta: es una extensa llanura situada en el centro de la península ibérica, con una altura media de más de 600 m sobre el nivel del mar, dividida por una cordillera que la atraviesa de lado a lado y que es el Sistema Central."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "La meseta es una extensa llanura que se ubica en el centro de la península ibérica dividida por una cordillera que la atraviesa de lado a lado llamada Sistema Central."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "Montañas: las principales montañas de la península ibérica, de norte a sur, son los Pirineos, donde se sitúa el tercer monte más alto de España, el Aneto; el Sistema Central y los Sistemas Bético y Penibético, donde se localiza el segundo pico más alto de España, el Mulhacén, en Sierra Nevada. La montaña más alta de España es un volcán situado en la isla de Tenerife, el Teide."
             },
@@ -1710,15 +1521,6 @@
               "type": "figure",
               "assetId": "figure-39-18",
               "caption": "FIGURA 18. Parque Nacional Sierra de Guadarrama, Madrid, España. © Mark Theobald"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España en 1916 aprueba la primera Ley de Parques Nacionales, comvirtiéndose en uno de los primeros países de Europa en proteger su naturaleza."
-                }
-              ]
             }
           ]
         },
@@ -1729,15 +1531,6 @@
             {
               "type": "paragraph",
               "text": "España tiene más de 3000 horas de sol al año, por lo que es uno de los países más cálidos de Europa. Debido a su situación geográfica, España se caracteriza por su variedad de climas:"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España tiene más de 3000 horas de sol al año, por lo que es uno de los países más cálidos de Europa. Debido a su situación geográfica, España se caracteriza por su variedad de climas:"
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -1761,15 +1554,6 @@
               "text": "Clima subtropical: es el de las islas Canarias. Tiene temperaturas suaves todo el año, con una media de 22 ºC. Llueve poco, aunque a veces de manera intensa."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A diferencia de los climas que podemos encontrar en la Península, en las islas Canarias podemos encontrar temperaturas suaves todo el año, con una media de 22ºC."
-                }
-              ]
-            },
-            {
               "type": "figure",
               "assetId": "figure-40-20",
               "caption": "FIGURA 20. Localidad de Mancha Blanca, Lanzarote. © Marc-Lautenbacher"
@@ -1788,15 +1572,6 @@
               "type": "figure",
               "assetId": "figure-40-21",
               "caption": "FIGURA 21. Mapa político de España"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España se divide en comunidades autónomas, divididas en provincias, y ciudades autónomas."
-                }
-              ]
             },
             {
               "type": "figure",
@@ -1967,15 +1742,6 @@
               "caption": "FIGURA 30. Retrato de Antonio Machado. © Autor desconocido."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En el siglo XX, la literatura vivió otro gran momento con autores como Antonio Machado, Miguel de Unamuno, Valle-Inclán, José Ortega y Gasset, Clara Campoamor y Federico García Lorca, etre muchos otros."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "Además, no puede olvidarse la riqueza de las otras lenguas de España, donde también surgieron obras de gran valor universal: en gallego, Rosalía de Castro con Follas Novas; en euskera, Bernardo Atxaga con Obabakoak; y en catalán, Mercè Rodoreda con La plaça del Diamant."
             },
@@ -2017,15 +1783,6 @@
               "text": "Otro autor que se volvió fundamental es Fernando Aramburu. Su novela Patria (2016) aborda el terrorismo de ETA y sus efectos en la sociedad vasca, mostrando cómo la violencia marcó la vida de muchas familias."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En los años 90 y 2000, la memoria histórica se volvió un tema recurrente entre escritores, entre los que destacan Almudena Grandes, Javier Cercas y Fernando Aramburu, entre otros."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "En el ensayo narrativo, Irene Vallejo sorprendió con El infinito en un junco, donde cuenta la historia del libro y de la lectura, convirtiéndose en un fenómeno cultural."
             },
@@ -2059,15 +1816,6 @@
               "caption": "FIGURA 33. Rosalía, una de las cantantes españolas más famosas de la actualidad. © Pedro J Pacheco"
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Con la llegada de la Transición, la movida madrileña abrió la puerta a la experimentación y a la modernidad urbana, mientras artistas como Joaquín Sabina encarnaban la mezcla de crónica social, ironía y bohemia, consolidando un movimiento musical que estaba entre la memoria de la tradición y la búsqueda de libertad creativa."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "En la historia del cine español, resulta imprescindible mencionar a Luis Buñuel, considerado uno de los directores más importantes e influyentes del cine mundial, especialmente por su relación con el surrealismo y su capacidad de provocar reflexiones sociales y políticas a través de la imagen. Sin embargo, el cine español no se limita a su figura: a lo largo de las décadas han surgido otros grandes cineastas que han marcado etapas y estilos muy distintos."
             },
@@ -2083,15 +1831,6 @@
               "type": "figure",
               "assetId": "figure-50-34",
               "caption": "FIGURA 34. Fotograma de Un perro Andaluz de Luis Buñuel. © Jennifer Mei"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En la historia del cine español, resulta imprescindible mencionar a Luis Buñuel, considerado uno de los directores más importantes e influyentes del cine mundial, especialmente por su relación con el surrealismo y su capacidad de provocar reflexiones sociales y políticas a través de la imagen."
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -2169,15 +1908,6 @@
             {
               "type": "paragraph",
               "text": "Además de los museos nacionales del Prado y Reina Sofía, hay otros muy conocidos internacionalmente: el Museo Picasso, en Barcelona; el Museo Thyssen-Bornemisza, en Madrid, y el Museo Guggenheim de Bilbao."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Además de los museos nacionales del Prado y Reina Sofía, hay otros muy conocidos internacionalmente: el Museo Picasso, en Barcelona; el Museo Thyssen-Bornemisza, en Madrid, y el Museo Guggenheim de Bilbao."
-                }
-              ]
             },
             {
               "type": "figure",
@@ -2675,15 +2405,6 @@
               "caption": "FIGURA 68. Nuevo documento de identidad español (anverso). © Gobierno de España"
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Desde el 1 de mayo de 2021, el libro de familia convive con el registro electrónico individual, en él se anota el nacimiento, la mayoría de edad o la adquisición de la nacionalidad de una persona."
-                }
-              ]
-            },
-            {
               "type": "list",
               "style": "unordered",
               "items": [
@@ -2719,24 +2440,6 @@
               "type": "figure",
               "assetId": "figure-71-69",
               "caption": "FIGURA 69. Tarjeta sanitaria de Cataluña, es un documentos necesario para recibir atención médica en la sanidad pública. © Ayuntamiento de Barcelona"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El carné o permiso de conducir sirve para conducir legalmente por España y lo pueden conseguir las personas mayores de 18 años. Para obtenerlo hay que aprobar un examen teórico y uno práctico en la Dirección General de Tráfico (DGT)."
-                }
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El documento que certifica el lugar de residencia es el certificado de empadronamiento y es expedido por el Ayuntamiento."
-                }
-              ]
             },
             {
               "type": "list",
@@ -2794,25 +2497,7 @@
                 "Ayudas fiscales a las familias: desgravación por hijos en la declaración de la renta y otras ayudas nacionales y autonómicas, como descuentos en transporte público, matrículas universitarias, tarifas de guardería o comedores escolares."
               ]
             },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En España, los matrimonios pueden ser religiosos o civiles. Se permite el matrimonio entre personas del mismo sexo. Los ciudadanos que no quieren casarse pueden registrarse como pareja de hecho."
-                }
-              ]
-            },
-            { "type": "figure", "assetId": "figure-72-family", "caption": "© Unsplash" },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En España existen los permisos laborales por nacimiento (o adopción) y cuidado del menor (19 semanas para la madre y 19 para el padre), el permiso de lactancia, o la reducción de la jornada de trabajo por tener a cargo hijos menores de 12 años."
-                }
-              ]
-            }
+            { "type": "figure", "assetId": "figure-72-family", "caption": "© Unsplash" }
           ]
         },
         {
@@ -2829,15 +2514,6 @@
               "text": "En España, alrededor del 75 % de las viviendas son en propiedad (un 30 % de ellas con hipoteca), mientras que cerca del 25 % se alquilan. El alquiler se regula mediante un contrato en el que se fijan datos básicos como la duración, el precio y las obligaciones de arrendador e inquilino, con un mínimo legal de cinco años si el propietario es persona física (siete si es jurídica). Al firmar, el arrendatario debe entregar una fianza, equivalente, en la mayoría de los casos, a una mensualidad, que el propietario ha de depositar en el organismo autonómico y que sirve para cubrir posibles impagos o desperfectos. Esta fianza se devolverá al finalizar el contrato si no hay incidencias."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El alquiler se regula mediante un contrato en el que se fijan datos básicos como la duración, el precio y las obligaciones de arrendador e inquilino, con un mínimo legal de cinco años si el propietario es persona física (siete si es jurídica)."
-                }
-              ]
-            },
-            {
               "type": "figure",
               "assetId": "figure-73-2",
               "caption": "FIGURA 2. Vista aérea de Madrid. © Dmitry Dzhus"
@@ -2845,15 +2521,6 @@
             {
               "type": "paragraph",
               "text": "También existen viviendas de protección oficial que tienen un precio limitado y generalmente están subvencionadas por la Administración local o autonómica."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "También existen viviendas de protección oficial que tienen un precio limitado y generalmente están subvencionadas por la Administración local o autonómica."
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -2917,15 +2584,6 @@
               "type": "figure",
               "assetId": "figure-75-71",
               "caption": "FIGURA 71. Mercado de San Miguel, Madrid. © Unsplash"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El aperitivo, que se toma en bares o restaurantes antes de comer, tiene una gran importancia en la gastronomía española. Se llama de forma diferente según tamaño, presentación u origen: tapa, banderilla, pincho, ración..."
-                }
-              ]
             },
             {
               "type": "figure",
@@ -3036,15 +2694,6 @@
               "caption": "FIGURA 76. Estatua de Fray Luis de León frente a un patio de la Universidad de Salamanca, la primera institución educativa europea en obtener el título propiamente de Universidad, por la real cédula de Alfonso X el Sabio fechada el 9 de noviembre de 1252. © Victoria Rachitzky"
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Para acceder a la Universidad se requiere el título de Bachillerato o un título de ciclo formativo de FP. Los titulados en Bachillerato también deberán realizar una Prueba de Acceso a la Universidad (PAU)."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "En España hay tres tipos de centros educativos según su financiación:"
             },
@@ -3077,15 +2726,6 @@
             {
               "type": "paragraph",
               "text": "En España, el sistema educativo ofrece diferentes tipos de becas y ayudas tanto para las distintas etapas y modalidades de enseñanza como para los gastos asociados a la escolarización."
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Los centros públicos son centros laicos y financiados por la Administración pública. Tienen plazas limitadas y para acceder a ellos es necesario cumplir una serie de requisitos."
-                }
-              ]
             },
             {
               "type": "figure",
@@ -3128,15 +2768,6 @@
                 "Las bibliotecas: de acceso gratuito y donde se pueden consultar o sacar en préstamo libros; con videoteca, sala de ordenadores, conexión wifi, lugar de estudio, etc.",
                 "Los museos: ofrecen visitas virtuales o guiadas, talleres, etc.",
                 "Los centros culturales públicos: ofrecen visitas virtuales o guiadas, talleres, etc."
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El rey de España es el jefe del Estado, tiene la máxima representación. Su papel consiste en actuar como mediador y garantizar el buen funcionamiento de las instituciones."
-                }
               ]
             },
             {
@@ -3235,15 +2866,6 @@
             },
             { "type": "figure", "assetId": "figure-82-emergency-112", "caption": "112" },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El número de teléfono 112 es gratuito y ofrece ayuda al ciudadano ante cualquier tipo de emergencia (sanitaria, incendio, salvamento o seguridad ciudadana) en la Unión Europea."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "El número de teléfono 016 es un servicio gratuito de atención a víctimas de violencia de género. Está disponible las 24 horas del día, los 365 días del año, y no deja rastro en la factura telefónica. Además, se ofrece atención en 53 idiomas, lo que facilita el acceso a mujeres de diferentes orígenes. El 016 proporciona información sobre recursos y derechos, asesoramiento jurídico en el momento y apoyo inmediato en situaciones de riesgo."
             },
@@ -3310,15 +2932,6 @@
               "type": "figure",
               "assetId": "figure-83-83",
               "caption": "FIGURA 83. Marca de Corporación RTVE (Radio Televisión Española). © RTVE"
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Los medios de comunicación tienen una función social, porque informan y ayudan a crear opinión en la cultura y la política."
-                }
-              ]
             },
             {
               "type": "paragraph",
@@ -3499,15 +3112,6 @@
               "caption": "FIGURA 88. Control de tránsito. © DGT"
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "En los últimos años hay menos accidentes mortales en las carreteras gracias al control de velocidad, el uso obligatorio del cinturón de seguridad de todos los ocupantes y el control de alcoholemia."
-                }
-              ]
-            },
-            {
               "type": "figure",
               "assetId": "figure-87-89",
               "caption": "FIGURA 89. Bilbobus, transporte público de pasajeros de Bilbao. © Antonio Vera"
@@ -3637,15 +3241,6 @@
               "text": "España importa petróleo y derivados, componentes del automóvil, textiles, confección, etc.; y exporta automóviles, frutas y legumbres, vino, aceite, calzado, medicamentos, etc. Estas transacciones se realizan principalmente con países de la Unión Europea."
             },
             {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "España exporta principalmente a países de la Unión Europea, donde se destacan los automóviles, las frutas y las legumbres, el vino, el aceite, el calzado y los medicamentos entre otros."
-                }
-              ]
-            },
-            {
               "type": "paragraph",
               "text": "España cuenta con una importante posición en innovación, con desarrollos importantes en energías renovables, en biotecnología, en el sector farmacéutico, de transportes y en las pequeñas y medianas industrias tecnológicas."
             },
@@ -3695,15 +3290,6 @@
               "items": [
                 "Impuestos directos: se aplican sobre la posesión de un patrimonio y la obtención de una renta, como el Impuesto sobre la Renta de las Personas Físicas (IRPF), el Impuesto sobre la Renta de no Residentes o el Impuesto de Sociedades. Anualmente, particulares y empresas deben realizar la declaración de la renta para pagar los impuestos al Estado.",
                 "Impuestos indirectos: se aplican al consumo o por actos de transmisión como el IVA o los Impuestos Especiales, sobre el alcohol y bebidas alcohólicas, los hidrocarburos, el tabaco o la matriculación de medios de transporte."
-              ]
-            },
-            {
-              "type": "callout",
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "El IVA es un impuesto indirecto y se aplica al consumo."
-                }
               ]
             }
           ]

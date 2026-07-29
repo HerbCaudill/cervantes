@@ -47,19 +47,23 @@ describe("validateManual", () => {
         ]
       },
     },
-    {
-      name: "callout content",
-      update: (manual: Manual) => {
-        manual.sections[0].topics[0].blocks = [
-          { type: "callout", blocks: [{ type: "paragraph", text: " " }] },
-        ]
-      },
-    },
   ])("rejects missing $name content", ({ update }) => {
     const manual = createManual()
     update(manual)
 
     expect(() => validateManual(manual)).toThrow(/empty|blank/i)
+  })
+
+  it("rejects obsolete callout blocks", () => {
+    const manual = createManual()
+    manual.sections[0].topics[0].blocks = [
+      {
+        type: "callout",
+        blocks: [{ type: "paragraph", text: "Texto duplicado." }],
+      } as unknown as ManualBlock,
+    ]
+
+    expect(() => validateManual(manual)).toThrow(/unsupported block type/i)
   })
 
   it("rejects a manual without sections", () => {
@@ -363,14 +367,6 @@ function createManual(): Manual {
               type: "figure",
               assetId: "figure-congreso",
               caption: "El Congreso de los Diputados.",
-            },
-            {
-              type: "callout",
-              title: "Importante",
-              blocks: [
-                { type: "paragraph", text: "Las Cortes Generales tienen dos cámaras." },
-                { type: "list", style: "ordered", items: ["Congreso", "Senado"] },
-              ],
             },
           ],
         },

@@ -1,4 +1,3 @@
-import { ManualCallout } from "@/components/ManualCallout"
 import { ManualFigure } from "@/components/ManualFigure"
 import { ManualHeading } from "@/components/ManualHeading"
 import { ManualList } from "@/components/ManualList"
@@ -19,8 +18,6 @@ export function ManualBlock({ block, assets }: Props) {
       return <ManualTable block={block} />
     case "figure":
       return <ManualFigure block={block} assets={assets} />
-    case "callout":
-      return <ManualCallout block={block} assets={assets} />
   }
 }
 

@@ -2,11 +2,11 @@
   "sourcePages": [37, 42],
   "sourceSha256": "26c4e8d55e9e436090be40aa553a46399a3efbca20d39903af575471f7a7e0b9",
   "canonicalization": "JSON.stringify of the complete task-3 section",
-  "taskSha256": "60282739cdca6e48e41178445a2e77b604636ee0c265c970e11507759df6bd1c",
-  "canonicalCharacters": 9580,
-  "canonicalBytes": 9772,
+  "taskSha256": "432f004b5021f1c02c95eafe5355ee672b4ffc589bd855f02bed6b83262bf7df",
+  "canonicalCharacters": 8533,
+  "canonicalBytes": 8705,
   "topicCount": 4,
-  "blockCount": 36,
+  "blockCount": 31,
   "tableRowCount": 52,
   "tableCellCount": 208
 }

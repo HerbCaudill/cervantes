@@ -2,11 +2,11 @@
   "sourcePages": [70, 91],
   "sourceSha256": "26c4e8d55e9e436090be40aa553a46399a3efbca20d39903af575471f7a7e0b9",
   "canonicalization": "JSON.stringify of the complete task-5 section",
-  "taskSha256": "3a1066e3fe29de70c6b3d14bbfb12e00616d8b2dc6e3a28f5b5819a8bd8c10c9",
-  "canonicalCharacters": 50482,
-  "canonicalBytes": 51362,
+  "taskSha256": "816b0af0f95819269c622851aa82b6af3af547d7ec71ef1c81d5a73cb9b65481",
+  "canonicalCharacters": 46610,
+  "canonicalBytes": 47433,
   "topicCount": 16,
-  "blockCount": 170,
+  "blockCount": 154,
   "tableRowCount": 19,
   "tableCellCount": 56,
   "sourceAudit": {
@@ -14,9 +14,9 @@
     "sourceRawCharacters": 61324,
     "sourceNormalizedCharacters": 42172,
     "sourceTokenCount": 6986,
-    "contentNormalizedCharacters": 40854,
-    "contentTokenCount": 6765,
+    "contentNormalizedCharacters": 38004,
+    "contentTokenCount": 6287,
     "unmatchedSourceTokenTypes": 48,
-    "unmatchedSourceTokensReviewed": "All were running furniture or PDF column/line-break fragments; no source prose was absent from Task 5."
+    "unmatchedSourceTokensReviewed": "Running furniture, PDF column/line-break fragments, and intentionally omitted sidebar callouts were excluded; all ordinary body prose remains present in Task 5."
   }
 }

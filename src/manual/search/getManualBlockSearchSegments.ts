@@ -21,10 +21,5 @@ export function getManualBlockSearchSegments(
         .map(value => String(value))
     case "figure":
       return [block.caption]
-    case "callout":
-      return [
-        ...(block.title ? [block.title] : []),
-        ...block.blocks.flatMap(getManualBlockSearchSegments),
-      ]
   }
 }

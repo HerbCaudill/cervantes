@@ -1,6 +1,5 @@
 import { ManualBlockList } from "@/components/ManualBlockList"
 import { getAdjacentManualTopics } from "@/manual/getAdjacentManualTopics"
-import { getVisibleManualBlocks } from "@/manual/getVisibleManualBlocks"
 import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
 import type { Manual, ManualSection, ManualTopic } from "@/manual/types"
 import { AppLink } from "@/navigation/AppLink"
@@ -15,7 +14,6 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
     topic.blocks[0]?.type === "heading" && topic.blocks[0].text === topic.title ?
       topic.blocks.slice(1)
     : topic.blocks
-  const blocks = getVisibleManualBlocks(manual, sourceBlocks)
 
   return (
     <article className="flex min-w-0 flex-col" data-reader-topic={topic.id}>
@@ -50,7 +48,7 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
         <h2 className="border-rule-hard border-b pb-[0.85rem] font-serif text-[23px] leading-[1.12] font-bold text-balance">
           {topic.title}
         </h2>
-        <ManualBlockList blocks={blocks} assets={manual.assets} />
+        <ManualBlockList blocks={sourceBlocks} assets={manual.assets} />
         <nav
           aria-label="Temas anterior y siguiente"
           className="border-rule-hard grid grid-cols-2 border-y font-sans text-xs"

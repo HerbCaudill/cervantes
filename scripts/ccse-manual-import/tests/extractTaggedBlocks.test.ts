@@ -124,7 +124,7 @@ describe("extractTaggedBlocks", () => {
     ])
   })
 
-  it("retains right-column source text as a callout", () => {
+  it("omits right-column source text from the generated manual", () => {
     const textById: TaggedTextById = new Map([
       [
         "callout",
@@ -138,17 +138,9 @@ describe("extractTaggedBlocks", () => {
       ],
     ])
 
-    expect(extractTaggedBlocks(node("Root", [node("P", [content("callout")])]), textById)).toEqual([
-      {
-        type: "callout",
-        blocks: [
-          {
-            type: "paragraph",
-            text: "El Reino de España es un Estado social y democrático de Derecho.",
-          },
-        ],
-      },
-    ])
+    expect(extractTaggedBlocks(node("Root", [node("P", [content("callout")])]), textById)).toEqual(
+      [],
+    )
   })
 })
 

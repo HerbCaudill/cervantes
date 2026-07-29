@@ -1,7 +1,7 @@
 import { assertNonBlank } from "@/manual/assertNonBlank"
 import type { ManualAssetId, ManualBlock } from "@/manual/types"
 
-/** Validate one semantic block and any nested callout content. */
+/** Validate one semantic manual block. */
 export function validateManualBlock(
   /** Semantic source block to validate */
   block: ManualBlock,
@@ -76,12 +76,7 @@ export function validateManualBlock(
       }
       return
 
-    case "callout":
-      if (block.title !== undefined) assertNonBlank(block.title, `${location} callout title`)
-      if (block.blocks.length === 0) throw new Error(`${location} callout is empty`)
-      block.blocks.forEach((nestedBlock, index) =>
-        validateManualBlock(nestedBlock, assetIds, `${location} callout block ${index + 1}`),
-      )
-      return
+    default:
+      throw new Error(`${location} has an unsupported block type`)
   }
 }

@@ -67,9 +67,7 @@ export function convertTaggedNode(
     }
 
     const paragraph = { type: "paragraph" as const, text }
-    if (x >= 410) {
-      return [{ block: { type: "callout", blocks: [paragraph] }, x }]
-    }
+    if (x >= 410) return []
     return [{ block: paragraph, x }]
   }
 

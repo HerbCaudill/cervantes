@@ -32,7 +32,7 @@ describe("manual reader", () => {
     expect(within(index).getAllByRole("link")).toHaveLength(expectedTopics + 5)
   })
 
-  it("renders real paragraphs, lists, tables, figures, captions, and callouts semantically", () => {
+  it("renders real paragraphs, lists, tables, figures, and captions semantically", () => {
     window.history.replaceState(null, "", "/manual/task-5/educacion-06")
     render(<App />)
     const article = screen.getByRole("article")
@@ -55,15 +55,6 @@ describe("manual reader", () => {
     expect(figure).not.toBeNull()
     expect(image).toHaveAttribute("src", "/manual/figures/figure-78-76.jpg")
     expect(within(figure!).getByText(/^FIGURA 76\./)).toBeInTheDocument()
-    expect(
-      within(article)
-        .getAllByRole("note")
-        .some(note =>
-          note.textContent?.includes(
-            "Para acceder a la Universidad se requiere el título de Bachillerato",
-          ),
-        ),
-    ).toBe(true)
   })
 
   it("labels every table cell for the stacked mobile presentation", () => {
@@ -143,18 +134,6 @@ describe("manual reader", () => {
     expect(error.mock.calls.flat().join(" ")).not.toContain(
       "Encountered two children with the same key",
     )
-  })
-
-  it("suppresses duplicated untitled callouts instead of leaving empty notes", () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
-    )
-    render(<App />)
-
-    expect(within(screen.getByRole("article")).queryByRole("note")).not.toBeInTheDocument()
-    expect(screen.queryByRole("complementary")).not.toBeInTheDocument()
   })
 
   it("renders the Felipe VI prose once while retaining its figure", () => {

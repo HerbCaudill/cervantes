@@ -86,15 +86,6 @@ describe("verified Task 5 manual content", () => {
         mutatedTask.topics[0].blocks.reverse()
       },
       (mutatedTask: typeof task) => {
-        const callout = mutatedTask.topics
-          .flatMap(topic => topic.blocks)
-          .find(block => block.type === "callout")
-        if (!callout || callout.blocks[0]?.type !== "paragraph") {
-          throw new Error("Task 5 paragraph callout is missing")
-        }
-        callout.blocks[0].text = "unexpected callout text"
-      },
-      (mutatedTask: typeof task) => {
         const list = mutatedTask.topics
           .flatMap(topic => topic.blocks)
           .find(block => block.type === "list")
@@ -277,20 +268,7 @@ describe("verified Task 5 manual content", () => {
     ])
   })
 
-  it("preserves source callouts and apparent source errors verbatim", () => {
-    const callouts = blocks.flatMap(block =>
-      block.type === "callout" && block.blocks[0]?.type === "paragraph" ?
-        [block.blocks[0].text]
-      : [],
-    )
-
-    expect(callouts).toContain(
-      "El rey de España es el jefe del Estado, tiene la máxima representación. Su papel consiste en actuar como mediador y garantizar el buen funcionamiento de las instituciones.",
-    )
-    expect(callouts).toContain(
-      "El número de teléfono 112 es gratuito y ofrece ayuda al ciudadano ante cualquier tipo de emergencia (sanitaria, incendio, salvamento o seguridad ciudadana) en la Unión Europea.",
-    )
-    expect(callouts).toContain("El IVA es un impuesto indirecto y se aplica al consumo.")
+  it("preserves apparent source errors verbatim", () => {
     expect(JSON.stringify(task)).toContain(
       "Tarjeta sanitaria de Cataluña, es un documentos necesario",
     )

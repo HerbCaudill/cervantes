@@ -10,6 +10,10 @@ describe("manual extraction draft", () => {
     expect(() => validateManual(manual)).not.toThrow()
   })
 
+  it("contains no imported callout blocks", () => {
+    expect(JSON.stringify(manualDraft)).not.toContain('"type":"callout"')
+  })
+
   it("uses sentence case for topic titles", () => {
     const uppercaseTitles = manual.sections
       .flatMap(section => section.topics)
@@ -178,13 +182,11 @@ describe("manual extraction draft", () => {
     )
 
     expect({
-      callouts: count("callout"),
       figures: count("figure"),
       lists: count("list"),
       paragraphs: count("paragraph"),
       tables: count("table"),
     }).toEqual({
-      callouts: 13,
       figures: 8,
       lists: 4,
       paragraphs: 69,
@@ -313,37 +315,19 @@ describe("manual extraction draft", () => {
     })
   })
 
-  it("keeps Task 2 callouts with their articles and figures beside source-page topics", () => {
+  it("keeps Task 2 figures beside their source-page topics", () => {
     const task = manual.sections.find(section => section.id === "task-2")
     const topicBlocks = new Map(
       task?.topics.map(topic => [
         topic.id,
-        topic.blocks.map(block =>
-          block.type === "figure" ? block.assetId
-          : block.type === "callout" ?
-            block.blocks
-              .flatMap(calloutBlock =>
-                calloutBlock.type === "paragraph" || calloutBlock.type === "heading" ?
-                  [calloutBlock.text]
-                : calloutBlock.type === "list" ? calloutBlock.items
-                : [],
-              )
-              .join(" ")
-          : block.type,
-        ),
+        topic.blocks.map(block => (block.type === "figure" ? block.assetId : block.type)),
       ]),
     )
 
     expect(topicBlocks.get("task-2-derechos-deberes-y-libertades")).toContain("figure-28-9")
-    expect(topicBlocks.get("task-2-articulo-19")?.join(" ")).toContain("El artículo 19 reconoce")
-    expect(topicBlocks.get("task-2-articulo-20")?.join(" ")).toContain("El artículo 20 reconoce")
     expect(topicBlocks.get("task-2-articulo-22")).toContain("figure-30-10")
-    expect(topicBlocks.get("task-2-articulo-28")?.join(" ")).toContain("El artículo 28 reconoce")
     expect(topicBlocks.get("task-2-articulo-31")).toContain("figure-30-11")
-    expect(topicBlocks.get("task-2-articulo-41")?.join(" ")).toContain("El artículo 41 reconoce")
-    expect(topicBlocks.get("task-2-articulo-45")?.join(" ")).toContain("El artículo 45 reconoce")
     expect(topicBlocks.get("task-2-articulo-54")).toContain("figure-31-12")
-    expect(topicBlocks.get("task-2-articulo-117")?.join(" ")).toContain("El artículo 117 designa")
     expect(topicBlocks.get("task-2-articulo-119")).toContain("figure-32-13")
   })
 
@@ -355,13 +339,11 @@ describe("manual extraction draft", () => {
     )
 
     expect({
-      callouts: blocks.filter(block => block.type === "callout").length,
       figures: blocks.filter(block => block.type === "figure").length,
       headings: blocks.filter(block => block.type === "heading").length,
       lists: blocks.filter(block => block.type === "list").length,
       paragraphs: blocks.filter(block => block.type === "paragraph").length,
     }).toEqual({
-      callouts: 7,
       figures: 5,
       headings: 0,
       lists: 10,
@@ -385,30 +367,6 @@ describe("manual extraction draft", () => {
       ],
       ["figure-32-13", "FIGURA 13. Tribunal Constitucional, Madrid. © Javier Perez Montes"],
     ])
-  })
-
-  it("preserves apparent Task 2 source errors without editorial rewriting", () => {
-    const task = manual.sections.find(section => section.id === "task-2")
-    const callouts =
-      task?.topics.flatMap(topic =>
-        topic.blocks.flatMap(block =>
-          block.type === "callout" ?
-            block.blocks.flatMap(calloutBlock =>
-              calloutBlock.type === "paragraph" || calloutBlock.type === "heading" ?
-                [calloutBlock.text]
-              : calloutBlock.type === "list" ? calloutBlock.items
-              : [],
-            )
-          : [],
-        ),
-      ) ?? []
-
-    expect(callouts).toContain(
-      "El artículo 45 reconoce el derecho del ciudadado a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo.",
-    )
-    expect(callouts).toContain(
-      "El artículo 117 designa a los jueces como los responsables de administrar la justicia de forma independiente y responsable. Mientras que el artículo 18 obliga a los ciudadanos a cumplir con las sentencias de los jueces y tribunales y colaborar con ellos cuando éstos lo requieran.",
-    )
   })
 
   it("reconstructs Task 3 around every source heading instead of PDF pages", () => {
@@ -482,14 +440,12 @@ describe("manual extraction draft", () => {
     )
 
     expect({
-      callouts: blocks.filter(block => block.type === "callout").length,
       figures: blocks.filter(block => block.type === "figure").length,
       headings: blocks.filter(block => block.type === "heading").length,
       lists: blocks.filter(block => block.type === "list").length,
       paragraphs: blocks.filter(block => block.type === "paragraph").length,
       tables: blocks.filter(block => block.type === "table").length,
     }).toEqual({
-      callouts: 5,
       figures: 15,
       headings: 0,
       lists: 1,
@@ -539,21 +495,11 @@ describe("manual extraction draft", () => {
     const task = manual.sections.find(section => section.id === "task-3")
     const texts =
       task?.topics.flatMap(topic =>
-        topic.blocks.flatMap(block =>
-          block.type === "paragraph" ? [block.text]
-          : block.type === "callout" ?
-            block.blocks.flatMap(calloutBlock =>
-              calloutBlock.type === "paragraph" ? [calloutBlock.text] : [],
-            )
-          : [],
-        ),
+        topic.blocks.flatMap(block => (block.type === "paragraph" ? [block.text] : [])),
       ) ?? []
 
     expect(texts).toContain(
       "Los parques nacionales de España son, en la actualidad: Islas Atlánticas de Galicia, Picos de Europa (Asturias, Castilla y León y Cantabria), Ordesa y Monte Perdido (Aragón), Aigüestortes y Estany de Sant Maurici (Cataluña), Monfragüe (Extremadura), Sierra de Guadarrama (Madrid), Cabañeros y Tablas de Daimiel (Castilla-La Mancha), Doñana, Sierra Nevada y Sierra de la Nieves (Andalucía), Archipiélago de Cabrera (Islas Baleares) y Caldera de Taburiente, Teide, Timanfaya y Garajonay (Canarias).",
-    )
-    expect(texts).toContain(
-      "España en 1916 aprueba la primera Ley de Parques Nacionales, comvirtiéndose en uno de los primeros países de Europa en proteger su naturaleza.",
     )
   })
 })

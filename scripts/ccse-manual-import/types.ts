@@ -112,7 +112,6 @@ export type DraftManualBlock =
   | DraftListBlock
   | DraftTableBlock
   | DraftFigureBlock
-  | DraftCalloutBlock
 
 /** Tagged source heading. */
 export interface DraftHeadingBlock {
@@ -162,16 +161,4 @@ export interface DraftFigureBlock {
   assetId: string
   /** Verbatim numbered caption */
   caption: string
-}
-
-/** Source sidebar content. */
-export interface DraftCalloutBlock {
-  /** Block discriminator */
-  type: "callout"
-  /** Optional source heading */
-  title?: string
-  /** Semantic sidebar blocks */
-  blocks: Array<
-    DraftHeadingBlock | DraftParagraphBlock | DraftListBlock | DraftTableBlock | DraftFigureBlock
-  >
 }
