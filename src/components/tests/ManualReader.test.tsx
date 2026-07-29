@@ -240,7 +240,7 @@ describe("manual reader", () => {
     expect(within(article).queryByRole("heading", { level: 4 })).not.toBeInTheDocument()
   })
 
-  it("shows automatically derived task progress and a resume action on both resting screens", () => {
+  it("shows automatically derived task progress and a resume action on the manual index", () => {
     const section = manual.sections[0]
     const topic = section.topics[1]
     const state: ReaderState = {
@@ -252,22 +252,14 @@ describe("manual reader", () => {
       },
     }
     localStorage.setItem(READER_STATE_STORAGE_KEY, JSON.stringify(state))
-    window.history.replaceState(null, "", "/")
-
-    const { unmount } = render(<App />)
+    window.history.replaceState(null, "", "/manual")
+    render(<App />)
 
     expect(screen.getByRole("link", { name: /Seguir leyendo/i })).toHaveAttribute(
       "href",
       `/manual/${section.id}/${getManualTopicSlug(section, topic)}`,
     )
     expect(screen.getByText("10 %")).toBeInTheDocument()
-
-    unmount()
-    window.history.replaceState(null, "", "/manual")
-    render(<App />)
-
-    expect(screen.getAllByRole("link", { name: /Seguir leyendo/i })).not.toHaveLength(0)
-    expect(screen.getAllByText("10 %")).not.toHaveLength(0)
   })
 
   it("resumes the latest semantic topic at its saved position", async () => {
@@ -281,7 +273,7 @@ describe("manual reader", () => {
       },
     }
     localStorage.setItem(READER_STATE_STORAGE_KEY, JSON.stringify(state))
-    window.history.replaceState(null, "", "/")
+    window.history.replaceState(null, "", "/manual")
 
     render(<App />)
     fireEvent.click(screen.getByRole("link", { name: /Seguir leyendo/i }))

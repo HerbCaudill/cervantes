@@ -65,11 +65,11 @@ test.describe("simplified practice interface", () => {
     )
   })
 
-  test("shows only the actionable queue count on the resting screen", async ({ page }) => {
+  test("shows the simplified review action on the resting screen", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto("/")
 
-    await expect(page.getByRole("button", { name: "Empezar repaso · 1 pregunta" })).toBeVisible()
+    await expect(page.getByRole("button", { name: "Empezar repaso" })).toBeVisible()
     await expect(page.getByText("Fijadas", { exact: true })).toHaveCount(0)
     await expect(page.getByText("17", { exact: true })).toHaveCount(0)
     await expect(page.getByRole("heading", { name: "Próximos 7 días" })).toHaveCount(0)
@@ -83,7 +83,7 @@ test.describe("simplified practice interface", () => {
   test("keeps grading and scheduling without showing scheduler details", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto("/")
-    await page.getByRole("button", { name: "Empezar repaso · 1 pregunta" }).click()
+    await page.getByRole("button", { name: "Empezar repaso" }).click()
 
     await expect(page.getByRole("list", { name: "0 repasadas, 1 en la cola" })).toBeVisible()
     await expect(page.getByText("Repasos", { exact: true })).toHaveCount(0)

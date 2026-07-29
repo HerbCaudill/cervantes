@@ -20,8 +20,8 @@ export function SectionStatsTable({ stats }: Props) {
         <thead className="border-rule-hard border-y text-[10px] tracking-[0.1em] uppercase">
           <tr>
             <th className="w-[55%] py-2 text-left font-medium">Sección</th>
-            <th className="py-2 text-right font-medium">Pend.</th>
-            <th className="py-2 text-right font-medium">Banco</th>
+            <th className="py-2 text-right font-medium">Pendiente</th>
+            <th className="py-2 text-right font-medium">Total</th>
           </tr>
         </thead>
         <tbody>

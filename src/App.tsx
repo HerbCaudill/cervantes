@@ -43,9 +43,6 @@ export function App() {
           : <PracticeHome
               stats={sectionStats}
               dueCount={dueQuestions.length}
-              manual={manual}
-              readerState={readerProgress.state}
-              resumePath={readerProgress.resumePath}
               onStart={() => setSessionQuestions(dueQuestions)}
             />
           }

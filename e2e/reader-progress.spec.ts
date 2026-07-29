@@ -55,14 +55,14 @@ test("resumes a topic after navigation and reload without touching flashcard sta
     .toHaveProperty(firstTopic.id)
 
   await page.evaluate(() => {
-    window.history.pushState(null, "", "/")
+    window.history.pushState(null, "", "/manual")
     window.dispatchEvent(
       new CustomEvent("cervantes:navigate", {
         detail: { scroll: "top" },
       }),
     )
   })
-  await expect(page).toHaveURL("/")
+  await expect(page).toHaveURL("/manual")
   await page.getByRole("link", { name: "Seguir leyendo" }).click()
   await expect(page).toHaveURL(firstTopicPath)
   await expect
@@ -80,9 +80,9 @@ test("starts safely when reader storage is corrupt", async ({ page }) => {
   const pageErrors: Error[] = []
   page.on("pageerror", error => pageErrors.push(error))
   await page.addInitScript(key => localStorage.setItem(key, "{"), READER_STATE_STORAGE_KEY)
-  await page.goto("/")
+  await page.goto("/manual")
 
-  await expect(page.getByRole("button", { name: "Seguir leyendo" })).toBeDisabled()
+  await expect(page.getByRole("link", { name: "Seguir leyendo" })).toHaveCount(0)
   await page.goto(firstTopicPath)
   await expect(page.getByRole("article")).toBeVisible()
   expect(pageErrors).toEqual([])
