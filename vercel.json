@@ -2,7 +2,19 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/practica",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/manual",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/manual/:sectionId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/manual/:sectionId/:topicSlug",
       "destination": "/index.html"
     }
   ]
