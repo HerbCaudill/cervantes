@@ -14,7 +14,7 @@ export function DeckNavigation({ activeDestination }: Props) {
         ariaCurrent={activeDestination === "practice" ? "page" : undefined}
         className={cn(
           "flex min-h-11 items-center pr-5 text-xs tracking-[0.11em] uppercase",
-          activeDestination === "practice" ? "text-red border-red border-b-2" : "text-faint",
+          activeDestination === "practice" ? "text-red border-red border-t-[3px]" : "text-faint",
         )}
       >
         Práctica
@@ -24,7 +24,7 @@ export function DeckNavigation({ activeDestination }: Props) {
         ariaCurrent={activeDestination === "manual" ? "page" : undefined}
         className={cn(
           "flex min-h-11 items-center px-5 text-xs tracking-[0.11em] uppercase",
-          activeDestination === "manual" ? "text-red border-red border-b-2" : "text-faint",
+          activeDestination === "manual" ? "text-red border-red border-t-[3px]" : "text-faint",
         )}
       >
         Manual
