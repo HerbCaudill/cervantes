@@ -3,6 +3,7 @@ import type { FigureCrop, ManualSectionId, PdfBounds } from "./types.ts"
 /** Visually audited bounds for numbered figures whose PDF structure omits the full artwork. */
 export const NUMBERED_FIGURE_CROP_OVERRIDES: Readonly<Partial<Record<string, PdfBounds>>> = {
   "figure-7-1": [440, 688.89, 562, 770.39],
+  "figure-8-2": [438.3764343, 454.7481064, 563.4408962, 605.1969102],
   "figure-9-4": [434.3097334, 89.3146715, 567.0809117, 770.1959229],
   "figure-13-7": [34, 79.89, 562, 440.39],
   "figure-15-8": [34.0157471, 379.0954075, 380.7874088, 606.2870139],
