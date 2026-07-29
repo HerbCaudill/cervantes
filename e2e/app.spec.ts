@@ -136,7 +136,7 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
   await page.goForward()
   await expect(page.getByRole("heading", { name: /Poderes del Estado/i })).toBeVisible()
 
-  await page.getByRole("link", { name: "Manual" }).click()
+  await page.getByRole("link", { name: "Manual", exact: true }).click()
   await page.getByRole("link", { name: "Buscar en el manual" }).click()
   await expect(page.getByRole("searchbox", { name: "Buscar en el manual" })).toBeVisible()
   await expect(page.getByRole("link", { name: "Práctica" })).toBeVisible()
