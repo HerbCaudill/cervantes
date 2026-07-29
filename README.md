@@ -31,6 +31,7 @@ not their content or persistence:
 | `scripts/ccse-manual-import`               | Reproducible PDF extraction and figure generation                                                                   | Runtime reader behavior                                    |
 | `public/manual`                            | Offline figure assets referenced by the manual manifest                                                             | Unreferenced or remotely hosted reader assets              |
 | `vite.config.ts`, `scripts/pwa`, `e2e/pwa` | Service-worker policy, build inventory checks, and installed-PWA verification                                       | Feature state migrations                                   |
+| `vercel.json`                              | Production SPA deep-link fallback                                                                                   | Application routes or access-control policy                |
 
 Stable question IDs and manual topic IDs are persistence keys. Do not rename or
 reuse them after release. Details of the manual model and reader storage schema
