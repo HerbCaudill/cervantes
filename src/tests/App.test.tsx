@@ -81,13 +81,17 @@ describe("App", () => {
     expect(correctButton).toBeDisabled()
   })
 
-  it("exits an active session from the navigation row", () => {
+  it("keeps only the primary destinations and search in the navigation during a review", () => {
     render(<App />)
     fireEvent.click(screen.getByRole("button", { name: /empezar repaso/i }))
 
-    fireEvent.click(screen.getByRole("button", { name: "Salir" }))
-
-    expect(screen.getByRole("button", { name: /empezar repaso/i })).toBeInTheDocument()
+    const navigation = screen.getByRole("navigation", { name: "Principal" })
+    expect(within(navigation).getByRole("link", { name: "Práctica" })).toBeInTheDocument()
+    expect(within(navigation).getByRole("link", { name: "Manual" })).toBeInTheDocument()
+    expect(
+      within(navigation).getByRole("link", { name: "Buscar en el manual" }),
+    ).toBeInTheDocument()
+    expect(within(navigation).queryByRole("button", { name: "Salir" })).not.toBeInTheDocument()
   })
 
   it("opens the manual from the top-level navigation", () => {

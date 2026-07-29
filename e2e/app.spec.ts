@@ -33,14 +33,20 @@ test("answers a question and grades it", async ({ page }) => {
 
   // the next official question's options are now shown
   await expect(page.getByRole("button", { name: "Constitución." })).toBeVisible()
-  await expect(page.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeVisible()
+  await expect(page.getByRole("progressbar", { name: "Progreso del repaso" })).toHaveAttribute(
+    "aria-valuenow",
+    "1",
+  )
 
   // visiting the manual does not restart the live review queue
   await page.getByRole("link", { name: "Manual", exact: true }).click()
   await expect(page.getByRole("heading", { name: "Manual CCSE" })).toBeVisible()
   await page.getByRole("link", { name: "Práctica" }).click()
   await expect(page.getByRole("button", { name: "Constitución." })).toBeVisible()
-  await expect(page.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeVisible()
+  await expect(page.getByRole("progressbar", { name: "Progreso del repaso" })).toHaveAttribute(
+    "aria-valuenow",
+    "1",
+  )
 })
 
 test.describe("simplified practice interface", () => {
@@ -85,7 +91,10 @@ test.describe("simplified practice interface", () => {
     await page.goto("/")
     await page.getByRole("button", { name: "Empezar repaso" }).click()
 
-    await expect(page.getByRole("list", { name: "0 repasadas, 1 en la cola" })).toBeVisible()
+    const progress = page.getByRole("progressbar", { name: "Progreso del repaso" })
+    await expect(progress).toHaveAttribute("aria-valuenow", "0")
+    await expect(progress).toHaveAttribute("aria-valuemax", "1")
+    await expect(page.getByRole("button", { name: "Salir" })).toHaveCount(0)
     await expect(page.getByText("Repasos", { exact: true })).toHaveCount(0)
     await expect(page.getByText("Facil.", { exact: true })).toHaveCount(0)
     await expect(page.getByText("Visto", { exact: true })).toHaveCount(0)

@@ -2,8 +2,8 @@ import { IconSearch } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 import { AppLink } from "@/navigation/AppLink"
 
-/** Top-level destinations and contextual session action. */
-export function DeckNavigation({ activeDestination, inSession, onExit }: Props) {
+/** Top-level destinations and manual search. */
+export function DeckNavigation({ activeDestination }: Props) {
   return (
     <nav
       aria-label="Principal"
@@ -36,15 +36,6 @@ export function DeckNavigation({ activeDestination, inSession, onExit }: Props) 
       >
         <IconSearch aria-hidden="true" size={20} stroke={1.6} />
       </AppLink>
-      {inSession && activeDestination === "practice" ?
-        <button
-          type="button"
-          onClick={onExit}
-          className="text-soft ml-auto min-h-11 pl-5 text-xs tracking-[0.11em] uppercase"
-        >
-          Salir
-        </button>
-      : null}
     </nav>
   )
 }
@@ -52,8 +43,4 @@ export function DeckNavigation({ activeDestination, inSession, onExit }: Props) 
 interface Props {
   /** Top-level destination represented by the current route */
   activeDestination: "practice" | "manual"
-  /** Whether a practice session is currently active */
-  inSession: boolean
-  /** Leave the active practice session */
-  onExit: () => void
 }
