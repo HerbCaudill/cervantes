@@ -30,7 +30,7 @@ export function ManualIndex({ manual, readerState, resumePath }: Props) {
 
             return (
               <li key={section.id} className="border-rule border-b">
-                <details open={index === 0}>
+                <details open>
                   <summary className="grid min-h-14 cursor-pointer list-none grid-cols-[2.5rem_1fr_auto] items-center gap-[0.6rem] [&::-webkit-details-marker]:hidden">
                     <span className="text-red font-mono text-[10.5px] tabular-nums">
                       {String(index + 1).padStart(2, "0")}
