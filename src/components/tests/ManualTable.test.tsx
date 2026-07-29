@@ -96,6 +96,25 @@ describe("ManualTable", () => {
 
     expect(screen.getByRole("table")).toHaveAttribute("data-mobile-layout", "table")
   })
+
+  it("uses the conventional mobile layout for Tables 9 and 10", () => {
+    for (const tableNumber of ["9", "10"]) {
+      const caption = `TABLA ${tableNumber}. Unidades de medida`
+      const block = {
+        type: "table",
+        caption,
+        headers: ["Magnitud", "Unidad", "Símbolo"],
+        rows: [[{ text: "Longitud" }, { text: "metro" }, { text: "m" }]],
+      } as TableBlock
+
+      render(<ManualTable block={block} assets={[]} />)
+
+      expect(screen.getByRole("table", { name: caption })).toHaveAttribute(
+        "data-mobile-layout",
+        "table",
+      )
+    }
+  })
 })
 
 /** Create the smallest valid table block needed by caption rendering tests. */

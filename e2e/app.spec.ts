@@ -347,7 +347,7 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   await expect(article).toHaveCSS("color", "rgb(232, 231, 224)")
 })
 
-test("keeps tables 2 and 3 conventional on narrow screens", async ({ page }) => {
+test("keeps Tables 2, 3, 9, and 10 conventional on narrow screens", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-1#poblacion-14")
 
@@ -374,6 +374,19 @@ test("keeps tables 2 and 3 conventional on narrow screens", async ({ page }) => 
   })
   await expect(presidentsTable.getByRole("columnheader")).toHaveCount(3)
   await expect(presidentsTable.getByRole("cell").first()).toHaveCSS("display", "table-cell")
+
+  await page.goto("/manual/task-5#unidades-de-medida-10")
+  const measurementsTable = page.getByRole("table", {
+    name: "TABLA 9. Principales magnitudes de medidas del SI",
+  })
+  const acceptedUnitsTable = page.getByRole("table", {
+    name: "TABLA 10. Unidades que no pertenecen al SI cuyo uso es aceptado por el Sistema y que están autorizadas",
+  })
+
+  await expect(measurementsTable.getByRole("columnheader")).toHaveCount(3)
+  await expect(measurementsTable.getByRole("cell").first()).toHaveCSS("display", "table-cell")
+  await expect(acceptedUnitsTable.getByRole("columnheader")).toHaveCount(4)
+  await expect(acceptedUnitsTable.getByRole("cell").first()).toHaveCSS("display", "table-cell")
 })
 
 test("removes standalone topic routes and navigates topics within a tarea", async ({ page }) => {
