@@ -134,9 +134,9 @@ describe("verified Task 5 manual content", () => {
     expect(topics.map(topic => [topic.id, topic.title])).toEqual([
       [
         "task-5-identificacion-personal-y-tramites-administrativos",
-        "IDENTIFICACIÓN PERSONAL Y TRÁMITES ADMINISTRATIVOS",
+        "Identificación personal y trámites administrativos",
       ],
-      ["task-5-guia-de-la-vida-diaria", "GUÍA DE LA VIDA DIARIA"],
+      ["task-5-guia-de-la-vida-diaria", "Guía de la vida diaria"],
       ["task-5-animales-domesticos", "Animales domésticos"],
       ["task-5-comidas-y-bebidas", "Comidas y bebidas"],
       ["task-5-calendario-dias-festivos-y-horarios", "Calendario: días festivos y horarios"],

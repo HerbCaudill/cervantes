@@ -1206,7 +1206,7 @@
       "topics": [
         {
           "id": "task-2-derechos-deberes-y-libertades",
-          "title": "DESTACADOS DERECHOS, DEBERES Y LIBERTADES",
+          "title": "Destacados derechos, deberes y libertades",
           "blocks": [
             {
               "type": "paragraph",
@@ -1650,7 +1650,7 @@
       "topics": [
         {
           "id": "task-3-geografia-fisica-y-politica",
-          "title": "GEOGRAFÍA FÍSICA Y POLÍTICA",
+          "title": "Geografía física y política",
           "blocks": [
             {
               "type": "paragraph",
@@ -1942,7 +1942,7 @@
       "topics": [
         {
           "id": "task-4-literatura-musica-y-artes-escenicas",
-          "title": "LITERATURA, MÚSICA Y ARTES ESCÉNICAS",
+          "title": "Literatura, música y artes escénicas",
           "blocks": [
             {
               "type": "paragraph",
@@ -2139,7 +2139,7 @@
         },
         {
           "id": "task-4-arquitectura-y-artes-plasticas",
-          "title": "ARQUITECTURA Y ARTES PLÁSTICAS",
+          "title": "Arquitectura y artes plásticas",
           "blocks": [
             {
               "type": "paragraph",
@@ -2293,7 +2293,7 @@
         },
         {
           "id": "task-4-ciencia-y-tecnologia",
-          "title": "CIENCIA Y TECNOLOGÍA",
+          "title": "Ciencia y tecnología",
           "blocks": [
             {
               "type": "paragraph",
@@ -2320,7 +2320,7 @@
         },
         {
           "id": "task-4-acontecimientos-relevantes-en-la-historia-de-espana",
-          "title": "ACONTECIMIENTOS RELEVANTES EN LA HISTORIA DE ESPAÑA (1252-2019)",
+          "title": "Acontecimientos relevantes en la historia de España (1252-2019)",
           "blocks": [
             {
               "type": "paragraph",
@@ -2447,7 +2447,7 @@
         },
         {
           "id": "task-4-fiestas-celebraciones-y-folclore",
-          "title": "FIESTAS, CELEBRACIONES Y FOLCLORE",
+          "title": "Fiestas, celebraciones y folclore",
           "blocks": [
             {
               "type": "paragraph",
@@ -2567,7 +2567,7 @@
         },
         {
           "id": "task-4-acontecimientos-culturales-y-deportivos",
-          "title": "ACONTECIMIENTOS CULTURALES Y DEPORTIVOS",
+          "title": "Acontecimientos culturales y deportivos",
           "blocks": [
             {
               "type": "paragraph",
@@ -2630,7 +2630,7 @@
         },
         {
           "id": "task-4-deportes",
-          "title": "DEPORTES",
+          "title": "Deportes",
           "blocks": [
             {
               "type": "paragraph",
@@ -2668,7 +2668,7 @@
       "topics": [
         {
           "id": "task-5-identificacion-personal-y-tramites-administrativos",
-          "title": "IDENTIFICACIÓN PERSONAL Y TRÁMITES ADMINISTRATIVOS",
+          "title": "Identificación personal y trámites administrativos",
           "blocks": [
             {
               "type": "paragraph",
@@ -2833,7 +2833,7 @@
         },
         {
           "id": "task-5-guia-de-la-vida-diaria",
-          "title": "GUÍA DE LA VIDA DIARIA",
+          "title": "Guía de la vida diaria",
           "blocks": [
             { "type": "heading", "level": 3, "text": "Vivienda" },
             {

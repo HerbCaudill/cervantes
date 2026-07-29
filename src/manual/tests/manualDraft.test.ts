@@ -10,6 +10,20 @@ describe("manual extraction draft", () => {
     expect(() => validateManual(manual)).not.toThrow()
   })
 
+  it("uses sentence case for topic titles", () => {
+    const uppercaseTitles = manual.sections
+      .flatMap(section => section.topics)
+      .map(topic => topic.title)
+      .filter(
+        title =>
+          /\p{L}/u.test(title) &&
+          title === title.toLocaleUpperCase("es") &&
+          title !== title.toLocaleLowerCase("es"),
+      )
+
+    expect(uppercaseTitles).toEqual([])
+  })
+
   it("retains every numbered table as structured content", () => {
     const tables = manual.sections.flatMap(section =>
       section.topics.flatMap(topic => topic.blocks.filter(block => block.type === "table")),
@@ -231,7 +245,7 @@ describe("manual extraction draft", () => {
     const task = manual.sections.find(section => section.id === "task-2")
 
     expect(task?.topics.map(topic => [topic.id, topic.title])).toEqual([
-      ["task-2-derechos-deberes-y-libertades", "DESTACADOS DERECHOS, DEBERES Y LIBERTADES"],
+      ["task-2-derechos-deberes-y-libertades", "Destacados derechos, deberes y libertades"],
       ["task-2-articulo-6", "Artículo 6"],
       ["task-2-articulo-10", "Artículo 10"],
       ["task-2-articulo-12", "Artículo 12"],
@@ -408,7 +422,7 @@ describe("manual extraction draft", () => {
     const task = manual.sections.find(section => section.id === "task-3")
 
     expect(task?.topics.map(topic => [topic.id, topic.title])).toEqual([
-      ["task-3-geografia-fisica-y-politica", "GEOGRAFÍA FÍSICA Y POLÍTICA"],
+      ["task-3-geografia-fisica-y-politica", "Geografía física y política"],
       [
         "task-3-accidentes-geograficos-mas-importantes-de-espana",
         "Accidentes geográficos más importantes de España",

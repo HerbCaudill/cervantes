@@ -98,16 +98,16 @@ describe("verified Task 4 manual content", () => {
 
   it("reconstructs the source around its seven semantic headings", () => {
     expect(topics.map(topic => [topic.id, topic.title])).toEqual([
-      ["task-4-literatura-musica-y-artes-escenicas", "LITERATURA, MÚSICA Y ARTES ESCÉNICAS"],
-      ["task-4-arquitectura-y-artes-plasticas", "ARQUITECTURA Y ARTES PLÁSTICAS"],
-      ["task-4-ciencia-y-tecnologia", "CIENCIA Y TECNOLOGÍA"],
+      ["task-4-literatura-musica-y-artes-escenicas", "Literatura, música y artes escénicas"],
+      ["task-4-arquitectura-y-artes-plasticas", "Arquitectura y artes plásticas"],
+      ["task-4-ciencia-y-tecnologia", "Ciencia y tecnología"],
       [
         "task-4-acontecimientos-relevantes-en-la-historia-de-espana",
-        "ACONTECIMIENTOS RELEVANTES EN LA HISTORIA DE ESPAÑA (1252-2019)",
+        "Acontecimientos relevantes en la historia de España (1252-2019)",
       ],
-      ["task-4-fiestas-celebraciones-y-folclore", "FIESTAS, CELEBRACIONES Y FOLCLORE"],
-      ["task-4-acontecimientos-culturales-y-deportivos", "ACONTECIMIENTOS CULTURALES Y DEPORTIVOS"],
-      ["task-4-deportes", "DEPORTES"],
+      ["task-4-fiestas-celebraciones-y-folclore", "Fiestas, celebraciones y folclore"],
+      ["task-4-acontecimientos-culturales-y-deportivos", "Acontecimientos culturales y deportivos"],
+      ["task-4-deportes", "Deportes"],
     ])
   })
 
