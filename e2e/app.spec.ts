@@ -347,7 +347,7 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   await expect(article).toHaveCSS("color", "rgb(232, 231, 224)")
 })
 
-test("keeps the two-column population table conventional on narrow screens", async ({ page }) => {
+test("keeps tables 2 and 3 conventional on narrow screens", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-1#poblacion-14")
 
@@ -367,6 +367,13 @@ test("keeps the two-column population table conventional on narrow screens", asy
   expect(wrapperBox).not.toBeNull()
   expect(lastCellBox).not.toBeNull()
   expect(lastCellBox!.x + lastCellBox!.width).toBeLessThanOrEqual(wrapperBox!.x + wrapperBox!.width)
+
+  await page.goto("/manual/task-1#participacion-ciudadana-15")
+  const presidentsTable = page.getByRole("table", {
+    name: "TABLA 3. Relación de presidentes de Gobierno y sus partidos políticos entre 1979 y 2024",
+  })
+  await expect(presidentsTable.getByRole("columnheader")).toHaveCount(3)
+  await expect(presidentsTable.getByRole("cell").first()).toHaveCSS("display", "table-cell")
 })
 
 test("removes standalone topic routes and navigates topics within a tarea", async ({ page }) => {

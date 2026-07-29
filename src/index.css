@@ -150,15 +150,15 @@
   }
 
   @media (max-width: 39.99rem) {
-    .manual-responsive-table:not([data-column-count="2"]),
-    .manual-responsive-table:not([data-column-count="2"]) tbody,
-    .manual-responsive-table:not([data-column-count="2"]) tr,
-    .manual-responsive-table:not([data-column-count="2"]) td {
+    .manual-responsive-table[data-mobile-layout="stacked"],
+    .manual-responsive-table[data-mobile-layout="stacked"] tbody,
+    .manual-responsive-table[data-mobile-layout="stacked"] tr,
+    .manual-responsive-table[data-mobile-layout="stacked"] td {
       display: block;
       width: 100%;
     }
 
-    .manual-responsive-table:not([data-column-count="2"]) thead {
+    .manual-responsive-table[data-mobile-layout="stacked"] thead {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -170,11 +170,11 @@
       border: 0;
     }
 
-    .manual-responsive-table:not([data-column-count="2"]) tbody tr {
+    .manual-responsive-table[data-mobile-layout="stacked"] tbody tr {
       padding-block: 0.35rem;
     }
 
-    .manual-responsive-table:not([data-column-count="2"]) td {
+    .manual-responsive-table[data-mobile-layout="stacked"] td {
       display: grid;
       grid-template-columns: minmax(6.5rem, 38%) minmax(0, 1fr);
       gap: 0.6rem;
@@ -182,7 +182,7 @@
       overflow-wrap: anywhere;
     }
 
-    .manual-responsive-table:not([data-column-count="2"]) td::before {
+    .manual-responsive-table[data-mobile-layout="stacked"] td::before {
       color: var(--red);
       content: attr(data-label);
       font-size: 10px;
