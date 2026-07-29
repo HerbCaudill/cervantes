@@ -7,7 +7,7 @@ export function ManualTable({ block }: Props) {
   return (
     <ManualMarginLayout note={getManualMarginNote(block.caption ?? "")}>
       <div className="max-w-full overflow-x-auto">
-        <table className="manual-responsive-table">
+        <table className="manual-responsive-table" data-column-count={block.headers.length}>
           {block.caption ?
             <caption>{block.caption}</caption>
           : null}

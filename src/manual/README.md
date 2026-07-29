@@ -95,6 +95,32 @@ The source-inventory test requires the structured asset manifest and
 assets are emitted and precached, while the browser suite decodes every
 declared figure.
 
+## QA sign-off
+
+The 2026-07-29 content and responsive audit covered all 71 topic routes at
+390 × 844 and 1280 × 900 in both light and dark palettes: 284 complete route
+renders containing 440 figure instances, 44 table instances, and 1,696 topic
+controls and links. The audit found no page, console, or network errors after
+loading; no document overflow; no malformed 40px marginal rows; no body text
+below the protected 17px size; no undecodable, out-of-bounds, or non-contained
+figures; no missing captions; no mismatched mobile table labels (including
+`null` source cells); and no topic control below the 44px target size.
+
+Representative practice, manual index, task index, search, and topic routes
+were also checked at 390 × 844 for landmarks, keyboard focus visibility,
+horizontal overflow, and 44px controls. Browser scenarios cover direct and
+history navigation, previous/next links across task boundaries, search and
+query history, progress and resume behavior, practice/manual switching, and
+offline PWA navigation. The callout projection was compared on every source
+callout route; the Felipe VI pull quote reported by the visual review appears
+once, with its local figure and caption intact.
+
+The pass exposed and fixed two presentation defects: the six-column population
+table clipped its final column at the wide reader measure, and light-palette
+faint text had only 2.87:1 contrast against paper. The table now uses a fixed
+layout with readable paired column proportions, and light faint text is 4.52:1.
+Both have browser regressions in `e2e/app.spec.ts`.
+
 ## Extraction draft
 
 Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and

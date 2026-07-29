@@ -320,6 +320,23 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   await expect(article).toHaveCSS("color", "rgb(232, 231, 224)")
 })
 
+test("keeps every population table column visible on wide screens", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 })
+  await page.goto("/manual/task-1/poblacion-14")
+
+  const table = page.getByRole("table", {
+    name: "TABLA 2. Número de habitantes por comunidades autónomas",
+  })
+  const wrapper = table.locator("..")
+  const lastPopulatedCell = table.getByRole("cell", { name: "1 568 492" })
+  const wrapperBox = await wrapper.boundingBox()
+  const cellBox = await lastPopulatedCell.boundingBox()
+
+  expect(wrapperBox).not.toBeNull()
+  expect(cellBox).not.toBeNull()
+  expect(cellBox!.x + cellBox!.width).toBeLessThanOrEqual(wrapperBox!.x + wrapperBox!.width)
+})
+
 test("moves between topics across task boundaries", async ({ page }) => {
   await page.goto("/manual/task-1/participacion-ciudadana-15")
 
@@ -376,6 +393,34 @@ test("keeps meaningful small manual text legible in both themes", async ({ page 
   await expect(darkPreviousLabel).toHaveCSS("color", "rgb(163, 164, 157)")
   expect(
     await darkPreviousLabel.evaluate(element => {
+      const colors = [
+        getComputedStyle(element).color,
+        getComputedStyle(document.body).backgroundColor,
+      ]
+      const luminances = colors.map(color =>
+        color
+          .match(/\d+/g)!
+          .slice(0, 3)
+          .map(channel => Number(channel) / 255)
+          .map(channel =>
+            channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4,
+          )
+          .reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0),
+      )
+      const [lighter, darker] = luminances.sort((left, right) => right - left)
+
+      return (lighter + 0.05) / (darker + 0.05)
+    }),
+  ).toBeGreaterThanOrEqual(4.5)
+})
+
+test("keeps faint interactive text legible in the light palette", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/manual")
+
+  const inactivePracticeTab = page.getByRole("link", { name: "Práctica" })
+  expect(
+    await inactivePracticeTab.evaluate(element => {
       const colors = [
         getComputedStyle(element).color,
         getComputedStyle(document.body).backgroundColor,
