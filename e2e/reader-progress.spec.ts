@@ -17,6 +17,7 @@ test("persists a topic after navigation and reload without touching flashcard st
   page,
 }) => {
   const flashcardState = JSON.stringify({ sentinel: { repetitions: 7 } })
+  await page.setViewportSize({ width: 390, height: 500 })
   await page.goto("/")
   await page.evaluate(({ key, value }) => localStorage.setItem(key, value), {
     key: STORAGE_KEY,
