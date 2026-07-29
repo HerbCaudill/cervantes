@@ -33,7 +33,7 @@ export function DeckNavigation({ activeDestination, searchQuery }: Props) {
   return (
     <nav
       aria-label="Principal"
-      className="border-rule flex min-h-11 items-stretch border-b px-[0.9rem] font-sans"
+      className="bg-paper border-rule sticky top-0 z-20 flex min-h-11 items-stretch border-b px-[0.9rem] font-sans"
     >
       <AppLink
         href="/"
