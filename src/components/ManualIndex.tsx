@@ -52,7 +52,7 @@ export function ManualIndex({ manual, readerState }: Props) {
                         <span className="text-soft font-mono text-[10px] tabular-nums">
                           {String(topicIndex + 1).padStart(2, "0")}
                         </span>
-                        <span className="font-serif text-sm">{topic.title}</span>
+                        <span className="font-serif text-xs">{topic.title}</span>
                       </AppLink>
                     </li>
                   ))}
