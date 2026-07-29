@@ -166,10 +166,10 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   const bodyText = article.getByText(
     "En España hay tres tipos de centros educativos según su financiación:",
   )
-  const marginalRow = bodyText.locator("xpath=../..")
-  expect(
-    await marginalRow.evaluate(element => getComputedStyle(element).gridTemplateColumns),
-  ).toMatch(/^40px /)
+  const bodyBlock = bodyText.locator("xpath=../..")
+  expect(await bodyBlock.evaluate(element => getComputedStyle(element).gridTemplateColumns)).toBe(
+    "none",
+  )
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
