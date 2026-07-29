@@ -173,7 +173,10 @@ describe("App", () => {
     fireEvent.click(screen.getByRole("button", { name: /bien/i }))
 
     expect(screen.getByText(questions[1].prompt)).toBeInTheDocument()
-    expect(screen.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeInTheDocument()
+    expect(screen.getByRole("progressbar", { name: "Progreso del repaso" })).toHaveAttribute(
+      "aria-valuenow",
+      "1",
+    )
     expect(loadStates()[first.id]?.repetitions).toBe(1)
 
     fireEvent.click(screen.getByRole("link", { name: "Manual" }))
@@ -181,7 +184,10 @@ describe("App", () => {
 
     expect(screen.queryByText(first.prompt)).not.toBeInTheDocument()
     expect(screen.getByText(questions[1].prompt)).toBeInTheDocument()
-    expect(screen.getByRole("list", { name: "1 repasadas, 299 en la cola" })).toBeInTheDocument()
+    expect(screen.getByRole("progressbar", { name: "Progreso del repaso" })).toHaveAttribute(
+      "aria-valuenow",
+      "1",
+    )
     expect(loadStates()[first.id]?.repetitions).toBe(1)
   })
 })

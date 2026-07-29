@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { GradeControls } from "@/components/GradeControls"
 import { QuestionCard } from "@/components/QuestionCard"
-import { QueueStrip, type QueueResult } from "@/components/QueueStrip"
+import { QueueStrip } from "@/components/QueueStrip"
 import type { Grade, Question } from "@/types"
 
 /**
@@ -13,7 +13,6 @@ import type { Grade, Question } from "@/types"
 export function ReviewSession({ initialQuestions, onReview, onComplete }: Props) {
   const [queue, setQueue] = useState<Question[]>(initialQuestions)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
-  const [results, setResults] = useState<QueueResult[]>([])
 
   const current = queue[0]
 
@@ -21,8 +20,6 @@ export function ReviewSession({ initialQuestions, onReview, onComplete }: Props)
   const handleGrade = (grade: Grade) => {
     if (!current) return
     onReview(current.id, grade)
-    const result = grade === "again" ? "fail" : "pass"
-    setResults(previous => [...previous, result])
     setSelectedIndex(null)
     if (grade !== "again" && queue.length === 1) {
       onComplete()
@@ -38,7 +35,10 @@ export function ReviewSession({ initialQuestions, onReview, onComplete }: Props)
 
   return (
     <div className="flex w-full flex-1 flex-col pt-[0.85rem]">
-      <QueueStrip results={results} queueLength={queue.length} />
+      <QueueStrip
+        completedCount={initialQuestions.length - queue.length}
+        totalCount={initialQuestions.length}
+      />
       <QuestionCard question={current} selectedIndex={selectedIndex} onSelect={setSelectedIndex} />
       {answered ?
         <div className="mt-auto pt-[0.85rem]">

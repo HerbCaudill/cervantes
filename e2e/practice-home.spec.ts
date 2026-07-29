@@ -65,7 +65,17 @@ test.describe("practice landing page", () => {
       expect(viewport.height - (tableBox.y + tableBox.height)).toBeLessThanOrEqual(20)
 
       await startReview.click()
-      await expect(page.getByRole("list", { name: "0 repasadas, 1 en la cola" })).toBeVisible()
+      const progress = page.getByRole("progressbar", { name: "Progreso del repaso" })
+      await expect(progress).toBeVisible()
+      await expect(progress).toHaveAttribute("aria-valuenow", "0")
+      await expect(progress).toHaveAttribute("aria-valuemax", "1")
+
+      const progressBox = await progress.boundingBox()
+      expect(progressBox).not.toBeNull()
+      if (!progressBox) return
+
+      expect(progressBox.height).toBeGreaterThanOrEqual(8)
+      expect(progressBox.width).toBeGreaterThan(300)
     })
   }
 })

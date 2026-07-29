@@ -1,43 +1,30 @@
-import { cn } from "@/lib/utils"
-
-/** Compact tick strip showing completed attempts, the current card, and the remaining queue. */
-export function QueueStrip({ results, queueLength }: Props) {
-  const ticks: Tick[] = [
-    ...results,
-    ...(queueLength > 0 ? (["current"] as const) : []),
-    ...Array.from({ length: Math.max(0, queueLength - 1) }, () => "remaining" as const),
-  ]
+/** Continuous progress through the cards in the initial review queue. */
+export function QueueStrip({ completedCount, totalCount }: Props) {
+  const completed = Math.min(Math.max(completedCount, 0), totalCount)
+  const percentage = totalCount === 0 ? 0 : (completed / totalCount) * 100
 
   return (
-    <ol
-      aria-label={`${results.length} repasadas, ${queueLength} en la cola`}
-      className="flex h-3 gap-px px-[0.9rem]"
+    <div
+      role="progressbar"
+      aria-label="Progreso del repaso"
+      aria-valuemin={0}
+      aria-valuemax={totalCount}
+      aria-valuenow={completed}
+      aria-valuetext={`${completed} de ${totalCount} tarjetas completadas`}
+      className="bg-rule-hard mx-[0.9rem] mb-3 h-2 overflow-hidden rounded-full"
     >
-      {ticks.map((tick, index) => (
-        <li
-          key={`${tick}-${index}`}
-          aria-hidden="true"
-          className={cn(
-            "h-1 flex-1",
-            tick === "pass" && "bg-green",
-            tick === "fail" && "bg-red",
-            tick === "current" && "bg-ink",
-            tick === "remaining" && "bg-rule-hard",
-          )}
-        />
-      ))}
-    </ol>
+      <div
+        aria-hidden="true"
+        className="bg-ink h-full transition-[width] duration-200"
+        style={{ width: `${percentage}%` }}
+      />
+    </div>
   )
 }
 
-/** One completed or queued attempt in the session. */
-export type QueueResult = "pass" | "fail"
-
-type Tick = QueueResult | "current" | "remaining"
-
 interface Props {
-  /** Results of attempts already graded */
-  results: QueueResult[]
-  /** Number of cards in the current queue, including the current card */
-  queueLength: number
+  /** Number of initial cards no longer in the review queue */
+  completedCount: number
+  /** Number of cards in the queue when the session began */
+  totalCount: number
 }
