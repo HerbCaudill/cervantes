@@ -15,7 +15,7 @@ IDs are persistent content keys, not display labels. Use the exported
 `MANUAL_SECTION_IDS` values for sections. Namespace topic IDs under their
 section (for example, `task-1-poder-legislativo`) and figure asset IDs with
 `figure-`. Never rename or reuse an ID after content ships, because saved reader
-state will depend on them. Public topic routes deliberately use semantic title
+state will depend on them. Public topic anchors deliberately use semantic title
 slugs with a source-order suffix, keeping page-oriented draft IDs out of URLs.
 
 Every figure block references an entry in `Manual.assets`; asset paths point to
@@ -25,19 +25,19 @@ and figure references without a valid local asset, caption, or alt text.
 
 ## Routes
 
-The Manual tab links to `/manual`, topics use
-`/manual/:sectionId/:topicSlug`, and search stays inside the Manual destination
-at `/manual/buscar`. `getManualTopicSlug` constructs topic links and
-`findManualTopicBySlug` resolves direct routes. All in-app links use the browser
-history API, so these paths are directly loadable and retain native back and
-forward behavior.
+The Manual tab links to `/manual`, each tarea uses `/manual/:sectionId`, topics
+use heading anchors such as `/manual/task-1#poder-legislativo-04`, and search
+stays inside the Manual destination at `/manual/buscar`. `getManualTopicSlug`
+constructs stable anchors and `getManualTopicHref` builds direct topic URLs.
+All in-app links use browser history, so these paths are directly loadable and
+retain native back and forward behavior.
 
 ## Reader components
 
 `ManualScreen` resolves route IDs against the structured manual. The index
-groups every topic under its task. `ManualTopicShell` renders semantic blocks
-in source order and provides a running head, a direct link back to the main
-index, and source-order previous/next links across task boundaries.
+groups every topic under its task. `ManualSectionReader` renders semantic blocks
+in source order and provides tarea context, an in-page topic index, and a direct
+link back to the main index.
 
 Reader blocks use native headings, paragraphs, lists, tables, figures, and
 captions. At viewports below 640px, semantic tables become stacked records whose
@@ -78,7 +78,7 @@ be repeated in every browser scenario:
 | Offline assets and service-worker updates                          | `scripts/pwa/tests/verifyPwaBuild.test.ts` and `e2e/pwa/offline-reader.spec.ts`                                                           |
 | Manual and practice coexistence                                    | `tests/App.test.tsx`, `e2e/app.spec.ts`, and the storage-isolation scenarios above                                                        |
 
-The all-topic browser smoke test checks every semantic route at 390px for a
+The all-topic browser smoke test checks every semantic anchor at 390px for a
 visible article and heading, horizontal overflow, and console or page errors.
 The source-inventory test requires the structured asset manifest and
 `public/manual` files to match exactly; the production build then proves those
@@ -87,8 +87,8 @@ declared figure.
 
 ## QA sign-off
 
-The 2026-07-29 content and responsive audit covered all 71 topic routes at
-390 × 844 and 1280 × 900 in both light and dark palettes: 284 complete route
+The 2026-07-29 content and responsive audit covered all 71 topic anchors at
+390 × 844 and 1280 × 900 in both light and dark palettes: 284 complete anchor
 renders containing 440 figure instances, 44 table instances, and 1,696 topic
 controls and links. The audit found no page, console, or network errors after
 loading; no document overflow; no malformed 40px marginal rows; no inconsistent
@@ -96,13 +96,12 @@ body typography; no undecodable, out-of-bounds, or non-contained
 figures; no missing captions; no mismatched mobile table labels (including
 `null` source cells); and no topic control below the 44px target size.
 
-Representative practice, manual index, search, and topic routes
+Representative practice, manual index, search, and topic anchors
 were also checked at 390 × 844 for landmarks, keyboard focus visibility,
 horizontal overflow, and 44px controls. Browser scenarios cover direct and
-history navigation, previous/next links across task boundaries, search and
-query history, progress and resume behavior, practice/manual switching, and
-offline PWA navigation. The Felipe VI prose appears once, with its local figure
-and caption intact.
+history navigation, same-page anchors, search and query history, progress and
+resume behavior, practice/manual switching, and offline PWA navigation. The
+Felipe VI prose appears once, with its local figure and caption intact.
 
 The pass exposed and fixed two presentation defects: the six-column population
 table clipped its final column at the wide reader measure, and light-palette

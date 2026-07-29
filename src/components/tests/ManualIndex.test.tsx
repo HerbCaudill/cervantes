@@ -30,6 +30,9 @@ describe("manual index", () => {
     expect(
       within(index).queryByRole("link", { name: /Índice de la Tarea/i }),
     ).not.toBeInTheDocument()
+    for (const link of within(index).getAllByRole("link")) {
+      expect(link.getAttribute("href")).toMatch(/^\/manual\/task-\d#[a-z0-9-]+$/)
+    }
   })
 
   it("lets readers collapse and reopen a tarea", () => {

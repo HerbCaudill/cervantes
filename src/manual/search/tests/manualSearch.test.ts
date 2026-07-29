@@ -128,7 +128,7 @@ describe("manual search", () => {
     expect(results[0]).toMatchObject({
       topicId: "task-1-constitution",
       topicTitle: "La Constitución española",
-      href: "/manual/task-1/la-constitucion-espanola-01",
+      href: "/manual/task-1#la-constitucion-espanola-01",
     })
     expect(results[0]?.excerpt).toContain("Constitución española")
   })

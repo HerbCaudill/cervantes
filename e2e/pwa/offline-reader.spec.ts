@@ -38,13 +38,13 @@ const offlineFigureAsset = manual.assets.find(asset => asset.id === offlineFigur
 if (!offlineFigureAsset) throw new Error(`Missing manual asset ${offlineFigureBlock.assetId}`)
 
 /** Online semantic route used to create reader state before losing the network. */
-const onlineFigureTopicPath = `/manual/${onlineFigureLocation.section.id}/${getManualTopicSlug(
+const onlineFigureTopicPath = `/manual/${onlineFigureLocation.section.id}#${getManualTopicSlug(
   onlineFigureLocation.section,
   onlineFigureLocation.topic,
 )}`
 
 /** Independent semantic route loaded only after losing the network. */
-const offlineFigureTopicPath = `/manual/${offlineFigureLocation.section.id}/${getManualTopicSlug(
+const offlineFigureTopicPath = `/manual/${offlineFigureLocation.section.id}#${getManualTopicSlug(
   offlineFigureLocation.section,
   offlineFigureLocation.topic,
 )}`
@@ -112,7 +112,7 @@ test("keeps the complete reader and local state available through offline use an
   expect((await offlineImageResponse).fromServiceWorker()).toBe(true)
 
   await page
-    .getByRole("navigation", { name: "Temas anterior y siguiente" })
+    .getByRole("navigation", { name: /Temas de la Tarea/ })
     .getByRole("link")
     .first()
     .click()

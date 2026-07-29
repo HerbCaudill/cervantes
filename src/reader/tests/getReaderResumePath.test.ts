@@ -21,7 +21,7 @@ describe("getReaderResumePath", () => {
     }
 
     expect(getReaderResumePath(manual, state)).toBe(
-      `/manual/${section.id}/${getManualTopicSlug(section, topic)}`,
+      `/manual/${section.id}#${getManualTopicSlug(section, topic)}`,
     )
   })
 

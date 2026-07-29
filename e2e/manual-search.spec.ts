@@ -43,7 +43,7 @@ test("searches locally, opens semantic results, and preserves query history", as
   const results = page.getByRole("list", { name: "Resultados de búsqueda" })
   await expect(results.getByRole("link").first()).toHaveAttribute(
     "href",
-    /^\/manual\/task-\d\/.+-\d{2}$/,
+    /^\/manual\/task-\d#.+-\d{2}$/,
   )
   await expect(
     results

@@ -119,11 +119,11 @@ describe("App", () => {
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
   })
 
-  it("supports direct links to manual topics and search", () => {
+  it("supports direct links to anchored manual topics and search", () => {
     window.history.replaceState(
       null,
       "",
-      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
+      "/manual/task-1#poderes-del-estado-gobierno-e-instituciones-01",
     )
     const { unmount } = render(<App />)
 
@@ -135,14 +135,14 @@ describe("App", () => {
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
   })
 
-  it("does not support removed manual task index routes", () => {
+  it("renders a complete tarea at its manual route", () => {
     window.history.replaceState(null, "", "/manual/task-1")
     render(<App />)
 
-    expect(screen.getByRole("heading", { name: "Página no encontrada" })).toBeInTheDocument()
     expect(
-      screen.queryByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
-    ).not.toBeInTheDocument()
+      screen.getByRole("heading", { name: "Gobierno, legislación y participación ciudadana" }),
+    ).toBeInTheDocument()
+    expect(document.querySelectorAll("[data-reader-topic]")).toHaveLength(15)
   })
 
   it("restores manual and practice screens with browser history", async () => {

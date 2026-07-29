@@ -1,4 +1,4 @@
-import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
+import { getManualTopicHref } from "@/manual/getManualTopicHref"
 import { getManualBlockSearchSegments } from "@/manual/search/getManualBlockSearchSegments"
 import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
 import { normalizeManualSearchText } from "@/manual/search/normalizeManualSearchText"
@@ -29,7 +29,7 @@ export function buildManualSearchIndexEntry(
     topicId: topic.id,
     topicTitle: topic.title,
     topicNumber: topicIndex + 1,
-    href: `/manual/${section.id}/${getManualTopicSlug(section, topic)}`,
+    href: getManualTopicHref(section, topic),
     segments,
     normalizedTitle: normalizeManualSearchText(topic.title),
     normalizedTokens: getManualSearchTokens(segments.join(" ")).map(token => token.normalized),

@@ -10,8 +10,8 @@ const manual = manualDraft as Manual
 const section = manual.sections[0]
 const firstTopic = section.topics[0]
 const secondTopic = section.topics[1]
-const firstTopicPath = `/manual/${section.id}/${getManualTopicSlug(section, firstTopic)}`
-const secondTopicPath = `/manual/${section.id}/${getManualTopicSlug(section, secondTopic)}`
+const firstTopicPath = `/manual/${section.id}#${getManualTopicSlug(section, firstTopic)}`
+const secondTopicPath = `/manual/${section.id}#${getManualTopicSlug(section, secondTopic)}`
 
 test("resumes a topic after navigation and reload without touching flashcard state", async ({
   page,
@@ -27,24 +27,29 @@ test("resumes a topic after navigation and reload without touching flashcard sta
   await page.evaluate(async () => {
     await document.fonts.ready
   })
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
-  const savedPosition = await page.evaluate(() => {
-    const maximumScroll = document.documentElement.scrollHeight - window.innerHeight
-    const target = Math.min(480, maximumScroll)
-    window.scrollTo(0, target)
-    return target
-  })
-  expect(savedPosition).toBeGreaterThan(0)
+  await page
+    .getByRole("navigation", { name: "Temas de la Tarea 1" })
+    .getByRole("link", { name: secondTopic.title })
+    .click()
+  await expect(page).toHaveURL(secondTopicPath)
   await expect
     .poll(() =>
       page.evaluate(
         ({ key, topicId }) =>
           JSON.parse(localStorage.getItem(key) ?? "null")?.topics?.[topicId]?.scrollPosition ??
           null,
-        { key: READER_STATE_STORAGE_KEY, topicId: firstTopic.id },
+        { key: READER_STATE_STORAGE_KEY, topicId: secondTopic.id },
       ),
     )
-    .toBe(savedPosition)
+    .toBeGreaterThan(0)
+  await expect
+    .poll(() =>
+      page.evaluate(
+        key => JSON.parse(localStorage.getItem(key) ?? "null")?.lastTopicId ?? null,
+        READER_STATE_STORAGE_KEY,
+      ),
+    )
+    .toBe(secondTopic.id)
   await expect
     .poll(() =>
       page.evaluate(
@@ -52,7 +57,7 @@ test("resumes a topic after navigation and reload without touching flashcard sta
         READER_STATE_STORAGE_KEY,
       ),
     )
-    .toHaveProperty(firstTopic.id)
+    .toHaveProperty(secondTopic.id)
 
   await page.evaluate(() => {
     window.history.pushState(null, "", "/manual")
@@ -64,15 +69,11 @@ test("resumes a topic after navigation and reload without touching flashcard sta
   })
   await expect(page).toHaveURL("/manual")
   await page.getByRole("link", { name: "Seguir leyendo" }).click()
-  await expect(page).toHaveURL(firstTopicPath)
-  await expect
-    .poll(() => page.evaluate(() => window.scrollY))
-    .toBeGreaterThanOrEqual(savedPosition - 2)
+  await expect(page).toHaveURL(secondTopicPath)
+  await expect(page.getByRole("heading", { name: secondTopic.title })).toBeInViewport()
 
   await page.reload()
-  await expect
-    .poll(() => page.evaluate(() => window.scrollY))
-    .toBeGreaterThanOrEqual(savedPosition - 2)
+  await expect(page.getByRole("heading", { name: secondTopic.title })).toBeInViewport()
   expect(await page.evaluate(key => localStorage.getItem(key), STORAGE_KEY)).toBe(flashcardState)
 })
 
@@ -88,28 +89,18 @@ test("starts safely when reader storage is corrupt", async ({ page }) => {
   expect(pageErrors).toEqual([])
 })
 
-test("starts new topic navigation at the top and leaves history restoration to the browser", async ({
-  page,
-}) => {
+test("keeps same-page topic anchors coherent through browser history", async ({ page }) => {
   await page.goto(firstTopicPath)
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
-  const savedPosition = await page.evaluate(() => {
-    const maximumScroll = document.documentElement.scrollHeight - window.innerHeight
-    const target = Math.min(420, maximumScroll)
-    window.scrollTo(0, target)
-    return target
-  })
-  expect(savedPosition).toBeGreaterThan(0)
-
   await page
-    .getByRole("link", { name: new RegExp(`Siguiente.*${secondTopic.title}`, "i") })
-    .evaluate(link => (link as HTMLAnchorElement).click())
+    .getByRole("navigation", { name: "Temas de la Tarea 1" })
+    .getByRole("link", { name: secondTopic.title })
+    .click()
   await expect(page).toHaveURL(secondTopicPath)
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+  await expect(page.getByRole("heading", { name: secondTopic.title })).toBeInViewport()
 
   await page.goBack()
   await expect(page).toHaveURL(firstTopicPath)
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0)
+  await expect(page.getByRole("heading", { name: firstTopic.title })).toBeInViewport()
 })
 
 test("keeps progress screens within a 390px viewport in both palettes", async ({ page }) => {

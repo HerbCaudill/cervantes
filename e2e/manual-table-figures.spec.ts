@@ -69,7 +69,7 @@ test("keeps row-associated figures inside responsive table cells", async ({ page
 /** Manual topics and exact source row associations covered at both reader widths. */
 const topics = [
   {
-    path: "/manual/task-4/acontecimientos-relevantes-en-la-historia-de-espana-1252-2019-04",
+    path: "/manual/task-4#acontecimientos-relevantes-en-la-historia-de-espana-1252-2019-04",
     tableName: "TABLA 5. Acontecimientos relevantes en la historia de España",
     figures: [
       ["1252", [47]],
@@ -82,7 +82,7 @@ const topics = [
     ],
   },
   {
-    path: "/manual/task-4/fiestas-celebraciones-y-folclore-05",
+    path: "/manual/task-4#fiestas-celebraciones-y-folclore-05",
     tableName: "TABLA 6. Fiestas españolas más conocidas",
     figures: [
       ["Fallas de Valencia", [55]],
@@ -93,7 +93,7 @@ const topics = [
     ],
   },
   {
-    path: "/manual/task-5/educacion-06",
+    path: "/manual/task-5#educacion-06",
     tableName: "TABLA 8. Sistema educativo español",
     figures: [["Educación Infantil", [75]]],
   },

@@ -5,7 +5,7 @@ const FIGURE_CAPTION =
 
 test("uses the reader red accent for wide table headings and figure numbers", async ({ page }) => {
   await page.setViewportSize({ width: 1000, height: 900 })
-  await page.goto("/manual/task-5/educacion-06")
+  await page.goto("/manual/task-5#educacion-06")
 
   const table = page.getByRole("table")
   const heading = table.getByRole("columnheader", { name: "Nivel educativo" })
@@ -20,7 +20,7 @@ test("uses the reader red accent for wide table headings and figure numbers", as
 
 test("uses the reader red accent for narrow responsive table labels", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-5/educacion-06")
+  await page.goto("/manual/task-5#educacion-06")
 
   const table = page.getByRole("table")
   const firstCell = table.getByRole("cell").first()

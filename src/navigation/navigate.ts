@@ -8,7 +8,7 @@ export function navigate(
   /** Scroll behavior for the destination */
   scroll: NavigationScrollMode = "top",
 ) {
-  if (`${window.location.pathname}${window.location.search}` === href) return
+  if (`${window.location.pathname}${window.location.search}${window.location.hash}` === href) return
   const detail: NavigationEventDetail = { scroll }
   window.dispatchEvent(new CustomEvent<NavigationEventDetail>(NAVIGATION_START_EVENT, { detail }))
   window.history.pushState(null, "", href)

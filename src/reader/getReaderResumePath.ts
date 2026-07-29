@@ -1,4 +1,4 @@
-import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
+import { getManualTopicHref } from "@/manual/getManualTopicHref"
 import type { Manual } from "@/manual/types"
 import type { ReaderState } from "@/reader/types"
 
@@ -13,7 +13,7 @@ export function getReaderResumePath(
 
   for (const section of manual.sections) {
     const topic = section.topics.find(candidate => candidate.id === state.lastTopicId)
-    if (topic) return `/manual/${section.id}/${getManualTopicSlug(section, topic)}`
+    if (topic) return getManualTopicHref(section, topic)
   }
 
   return null

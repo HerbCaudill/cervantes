@@ -9,7 +9,16 @@ describe("parseRoute", () => {
     })
   })
 
-  it("does not recognize removed task index routes", () => {
-    expect(parseRoute("/manual/task-1?from=search")).toEqual({ type: "not-found" })
+  it("recognizes a tarea reader route while ignoring its topic anchor", () => {
+    expect(parseRoute("/manual/task-1#poderes-del-estado-gobierno-e-instituciones-01")).toEqual({
+      type: "manual-section",
+      sectionId: "task-1",
+    })
+  })
+
+  it("does not recognize removed standalone topic routes", () => {
+    expect(parseRoute("/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01")).toEqual({
+      type: "not-found",
+    })
   })
 })

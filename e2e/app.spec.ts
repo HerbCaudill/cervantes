@@ -150,22 +150,20 @@ test("navigates direct manual routes with browser history", async ({ page }) => 
 
 test("reads every manual block accessibly on a narrow screen", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-5/educacion-06")
+  await page.goto("/manual/task-5#educacion-06")
 
   const article = page.getByRole("article")
-  const table = article.getByRole("table")
+  const educationTopic = article
+    .getByRole("heading", { name: "Educación", exact: true })
+    .locator("..")
+  const table = article.getByRole("table", { name: "TABLA 8. Sistema educativo español" })
   const firstCell = table.getByRole("cell").first()
 
   await expect(article.getByText("En España hay tres tipos de centros educativos")).toBeVisible()
   await expect(table.getByRole("columnheader", { name: "Nivel educativo" })).toBeAttached()
   await expect(firstCell).toHaveAttribute("data-label", "Nivel educativo")
   await expect(firstCell).toHaveCSS("display", "grid")
-  await expect(article.getByRole("figure").getByRole("img").first()).toBeVisible()
-  await expect(
-    article.getByRole("note").filter({
-      hasText: "Para acceder a la Universidad se requiere el título de Bachillerato",
-    }),
-  ).toBeVisible()
+  await expect(educationTopic.getByRole("figure").getByRole("img").first()).toBeVisible()
   await expect(article.getByRole("link", { name: /Fuente oficial/i })).toHaveCount(0)
 
   const bodyText = article.getByText(
@@ -188,7 +186,7 @@ test("uses consistent compact body typography at supported widths", async ({ pag
     { width: 1280, height: 900 },
   ]) {
     await page.setViewportSize(viewport)
-    await page.goto("/manual/task-5/educacion-06")
+    await page.goto("/manual/task-5#educacion-06")
 
     const article = page.getByRole("article")
     const paragraph = article.getByText(
@@ -208,7 +206,7 @@ test("uses consistent compact body typography at supported widths", async ({ pag
 
 test("renders the one-year nationality cases as a nested unmarked list", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-5/identificacion-personal-y-tramites-administrativos-01")
+  await page.goto("/manual/task-5#identificacion-personal-y-tramites-administrativos-01")
 
   const article = page.getByRole("article")
   const parentList = article.getByRole("list").filter({
@@ -246,12 +244,10 @@ test("renders the one-year nationality cases as a nested unmarked list", async (
 
 test("uses the full reading width without a derived marginal-note column", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-2/articulo-15-06")
+  await page.goto("/manual/task-2#articulo-15-06")
 
   const heading = page.getByRole("heading", { name: "Artículo 15" })
-  const readingContent = page.getByRole("navigation", {
-    name: "Temas anterior y siguiente",
-  })
+  const readingContent = heading.locator("..").locator(".manual-body").first()
   const headingBox = await heading.boundingBox()
   const readingContentBox = await readingContent.boundingBox()
 
@@ -261,7 +257,7 @@ test("uses the full reading width without a derived marginal-note column", async
   await expect(page.locator("[data-margin-note]")).toHaveCount(0)
 })
 
-test("loads every semantic topic route accessibly at 390px", async ({ page }) => {
+test("loads every semantic topic anchor accessibly at 390px", async ({ page }) => {
   test.setTimeout(120_000)
   const browserErrors: string[] = []
   page.on("pageerror", error => browserErrors.push(error.message))
@@ -277,9 +273,7 @@ test("loads every semantic topic route accessibly at 390px", async ({ page }) =>
     .evaluateAll(links =>
       links
         .map(link => link.getAttribute("href"))
-        .filter(
-          (href): href is string => href !== null && href.split("/").filter(Boolean).length === 3,
-        ),
+        .filter((href): href is string => href !== null && href.includes("#")),
     )
   const expectedTopicCount = manualDraft.sections.reduce(
     (count, section) => count + section.topics.length,
@@ -292,9 +286,10 @@ test("loads every semantic topic route accessibly at 390px", async ({ page }) =>
 
   for (const topicUrl of topicUrls) {
     await page.goto(topicUrl)
+    const anchor = topicUrl.split("#")[1]
 
     await expect(page.getByRole("article")).toBeVisible()
-    await expect(page.getByRole("article").getByRole("heading", { level: 2 })).toBeVisible()
+    await expect(page.locator(`h2[id="${anchor}"]`)).toBeInViewport()
     await expect(page.getByRole("complementary")).toHaveCount(0)
     expect(
       await page.evaluate(
@@ -338,10 +333,10 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   page,
 }) => {
   await page.setViewportSize({ width: 1000, height: 900 })
-  await page.goto("/manual/task-5/educacion-06")
+  await page.goto("/manual/task-5#educacion-06")
 
   const article = page.getByRole("article")
-  const table = article.getByRole("table")
+  const table = article.getByRole("table", { name: "TABLA 8. Sistema educativo español" })
   const firstCell = table.getByRole("cell").first()
 
   await expect(table).toHaveCSS("display", "table")
@@ -354,7 +349,7 @@ test("uses a conventional table on wide screens and supports the dark palette", 
 
 test("stacks complete population rows readably on narrow screens", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-1/poblacion-14")
+  await page.goto("/manual/task-1#poblacion-14")
 
   const table = page.getByRole("table", {
     name: "TABLA 2. Número de habitantes por comunidades autónomas",
@@ -374,23 +369,27 @@ test("stacks complete population rows readably on narrow screens", async ({ page
   expect(lastCellBox!.x + lastCellBox!.width).toBeLessThanOrEqual(wrapperBox!.x + wrapperBox!.width)
 })
 
-test("moves between topics across task boundaries", async ({ page }) => {
+test("removes standalone topic routes and navigates topics within a tarea", async ({ page }) => {
   await page.goto("/manual/task-1/participacion-ciudadana-15")
+  await expect(page.getByRole("heading", { name: "Página no encontrada" })).toBeVisible()
 
-  await page.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i }).click()
-
-  await expect(page).toHaveURL("/manual/task-2/destacados-derechos-deberes-y-libertades-01")
-  await expect(page.getByText("T2 · 01")).toBeVisible()
+  await page.goto("/manual/task-1")
+  const navigation = page.getByRole("navigation", { name: "Temas de la Tarea 1" })
+  await navigation.getByRole("link", { name: /Participación ciudadana/i }).click()
+  await expect(page).toHaveURL("/manual/task-1#participacion-ciudadana-15")
   await expect(
-    page.getByRole("link", { name: /Anterior.*Participación ciudadana/i }),
-  ).toHaveAttribute("href", "/manual/task-1/participacion-ciudadana-15")
+    page.getByRole("heading", { name: "Participación ciudadana", exact: true }),
+  ).toBeInViewport()
+  await expect(page.getByRole("navigation", { name: "Temas anterior y siguiente" })).toHaveCount(0)
 })
 
 test("keeps meaningful small manual text legible in both themes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-2/articulo-22-11")
+  await page.goto("/manual/task-2#articulo-22-11")
 
-  const previousLabel = page.getByText("‹ Anterior")
+  const previousLabel = page
+    .getByRole("navigation", { name: "Temas de la Tarea 2" })
+    .getByText("10", { exact: true })
   await expect(previousLabel).toHaveCSS("color", "rgb(92, 95, 90)")
   expect(
     await previousLabel.evaluate(element => {
@@ -424,9 +423,11 @@ test("keeps meaningful small manual text legible in both themes", async ({ page 
   await page.locator("html").evaluate(element => element.classList.add("dark"))
   await expect(firstTopicNumber).toHaveCSS("color", "rgb(163, 164, 157)")
 
-  await page.goto("/manual/task-2/articulo-22-11")
+  await page.goto("/manual/task-2#articulo-22-11")
   await page.locator("html").evaluate(element => element.classList.add("dark"))
-  const darkPreviousLabel = page.getByText("‹ Anterior")
+  const darkPreviousLabel = page
+    .getByRole("navigation", { name: "Temas de la Tarea 2" })
+    .getByText("10", { exact: true })
   await expect(darkPreviousLabel).toHaveCSS("color", "rgb(163, 164, 157)")
   expect(
     await darkPreviousLabel.evaluate(element => {

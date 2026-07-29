@@ -5,7 +5,8 @@ export function parseRoute(
   /** Browser pathname with an optional query string */
   locationPath: string,
 ): AppRoute {
-  const [pathname, queryString = ""] = locationPath.split("?", 2)
+  const [pathAndQuery] = locationPath.split("#", 1)
+  const [pathname, queryString = ""] = pathAndQuery.split("?", 2)
   const normalizedPath = pathname.replace(/\/+$/, "") || "/"
 
   if (normalizedPath === "/" || normalizedPath === "/practica") return { type: "practice" }
@@ -19,11 +20,10 @@ export function parseRoute(
 
   const segments = normalizedPath.split("/").filter(Boolean)
   if (segments[0] !== "manual") return { type: "not-found" }
-  if (segments.length === 3) {
+  if (segments.length === 2) {
     return {
-      type: "manual-topic",
+      type: "manual-section",
       sectionId: segments[1],
-      topicSlug: segments[2],
     }
   }
 

@@ -10,7 +10,7 @@ test("keeps numbered table captions semantic and visually split at reader widths
     { width: 1000, height: 900 },
   ]) {
     await page.setViewportSize(viewport)
-    await page.goto("/manual/task-5/educacion-06")
+    await page.goto("/manual/task-5#educacion-06")
 
     const table = page.getByRole("table", { name: CAPTION })
     const caption = table.locator("caption")

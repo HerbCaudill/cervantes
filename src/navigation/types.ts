@@ -3,7 +3,7 @@ export type AppRoute =
   | { type: "practice" }
   | { type: "manual-index" }
   | { type: "manual-search"; query: string }
-  | { type: "manual-topic"; sectionId: string; topicSlug: string }
+  | { type: "manual-section"; sectionId: string }
   | { type: "not-found" }
 
 /** Scroll behavior requested for a new in-app history entry. */

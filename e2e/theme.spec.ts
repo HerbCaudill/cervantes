@@ -32,10 +32,14 @@ test("uses white light paper while preserving the dark palette", async ({ page }
 })
 
 test("blends white-backed manual figures into the light paper", async ({ page }) => {
-  await page.goto("/manual/task-5/educacion-06")
+  await page.goto("/manual/task-5#educacion-06")
 
   const application = page.locator("#root > div")
-  const image = page.getByRole("article").getByRole("img").first()
+  const image = page
+    .getByRole("heading", { name: "Educación", exact: true })
+    .locator("..")
+    .getByRole("img")
+    .first()
 
   await expect(image).toBeVisible()
   await expect(application).toHaveCSS("background-color", "rgb(255, 255, 255)")

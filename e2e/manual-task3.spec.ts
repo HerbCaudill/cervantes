@@ -4,23 +4,24 @@ test("loads every verified Task 3 topic and source figure at 390px", async ({ pa
   await page.setViewportSize({ width: 390, height: 844 })
 
   const topics = [
-    ["/manual/task-3/geografia-fisica-y-politica-01", "GEOGRAFÍA FÍSICA Y POLÍTICA", 1],
+    ["/manual/task-3#geografia-fisica-y-politica-01", "GEOGRAFÍA FÍSICA Y POLÍTICA", 1],
     [
-      "/manual/task-3/accidentes-geograficos-mas-importantes-de-espana-02",
+      "/manual/task-3#accidentes-geograficos-mas-importantes-de-espana-02",
       "Accidentes geográficos más importantes de España",
       4,
     ],
-    ["/manual/task-3/el-clima-03", "El clima", 2],
-    ["/manual/task-3/division-territorial-de-espana-04", "División territorial de España", 8],
+    ["/manual/task-3#el-clima-03", "El clima", 2],
+    ["/manual/task-3#division-territorial-de-espana-04", "División territorial de España", 8],
   ] as const
 
   for (const [url, heading, figureCount] of topics) {
     await page.goto(url)
 
     const article = page.getByRole("article")
-    const images = article.getByRole("img")
+    const topic = article.getByRole("heading", { level: 2, name: heading }).locator("..")
+    const images = topic.getByRole("img")
 
-    await expect(article.getByRole("heading", { level: 2, name: heading })).toBeVisible()
+    await expect(topic.getByRole("heading", { level: 2, name: heading })).toBeVisible()
     await expect(images).toHaveCount(figureCount)
     for (let index = 0; index < figureCount; index += 1) {
       const image = images.nth(index)
@@ -44,7 +45,7 @@ test("loads every verified Task 3 topic and source figure at 390px", async ({ pa
 
 test("renders the complete Task 3 geographic table on its semantic route", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto("/manual/task-3/division-territorial-de-espana-04")
+  await page.goto("/manual/task-3#division-territorial-de-espana-04")
 
   const table = page.getByRole("table", {
     name: "TABLA 4 Comunidades autónomas, provincias, capitales de provincia y capitales de comunidades autónomas",

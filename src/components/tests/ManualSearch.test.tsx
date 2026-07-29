@@ -19,7 +19,7 @@ describe("manual search screen", () => {
     await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/))
     const results = screen.getByRole("list", { name: "Resultados de búsqueda" })
     const firstResult = within(results).getAllByRole("link")[0]
-    expect(firstResult).toHaveAttribute("href", expect.stringMatching(/^\/manual\/task-\d\//))
+    expect(firstResult).toHaveAttribute("href", expect.stringMatching(/^\/manual\/task-\d#/))
     expect(
       within(results).getAllByText(/constitución/i, { selector: "mark" }).length,
     ).toBeGreaterThan(0)

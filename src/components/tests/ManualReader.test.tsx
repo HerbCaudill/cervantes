@@ -14,6 +14,10 @@ describe("manual reader", () => {
     localStorage.clear()
     window.history.replaceState(null, "", "/manual")
     vi.spyOn(window, "scrollTo").mockImplementation(() => undefined)
+    Object.defineProperty(HTMLElement.prototype, "scrollIntoView", {
+      configurable: true,
+      value: vi.fn(),
+    })
   })
 
   afterEach(() => {
@@ -32,8 +36,23 @@ describe("manual reader", () => {
     expect(within(index).getAllByRole("link")).toHaveLength(expectedTopics)
   })
 
+  it("renders every tarea topic in source order with stable heading anchors", () => {
+    const section = manual.sections[4]
+    window.history.replaceState(null, "", `/manual/${section.id}`)
+    render(<App />)
+
+    const topicSections = Array.from(document.querySelectorAll<HTMLElement>("[data-reader-topic]"))
+
+    expect(
+      topicSections.map(topicSection => within(topicSection).getByRole("heading", { level: 2 }).id),
+    ).toEqual(section.topics.map(topic => getManualTopicSlug(section, topic)))
+    expect(topicSections.map(topicSection => topicSection.dataset.readerTopic)).toEqual(
+      section.topics.map(topic => topic.id),
+    )
+  })
+
   it("renders real paragraphs, lists, tables, figures, and captions semantically", () => {
-    window.history.replaceState(null, "", "/manual/task-5/educacion-06")
+    window.history.replaceState(null, "", "/manual/task-5#educacion-06")
     render(<App />)
     const article = screen.getByRole("article")
 
@@ -44,7 +63,9 @@ describe("manual reader", () => {
     ).toBeInTheDocument()
     expect(within(article).getAllByRole("list").length).toBeGreaterThan(0)
 
-    const table = within(article).getByRole("table")
+    const table = within(article).getByRole("table", {
+      name: "TABLA 8. Sistema educativo español",
+    })
     expect(within(table).getByRole("columnheader", { name: "Nivel educativo" })).toBeInTheDocument()
     expect(within(table).getByText("Enseñanza universitaria")).toBeInTheDocument()
 
@@ -58,7 +79,7 @@ describe("manual reader", () => {
   })
 
   it("labels every table cell for the stacked mobile presentation", () => {
-    window.history.replaceState(null, "", "/manual/task-5/educacion-06")
+    window.history.replaceState(null, "", "/manual/task-5#educacion-06")
     render(<App />)
 
     const firstRow = within(screen.getByRole("article")).getAllByRole("row")[1]
@@ -69,7 +90,7 @@ describe("manual reader", () => {
   })
 
   it("renders each population entry as a complete labeled two-cell row", () => {
-    window.history.replaceState(null, "", "/manual/task-1/poblacion-14")
+    window.history.replaceState(null, "", "/manual/task-1#poblacion-14")
     render(<App />)
 
     const table = within(screen.getByRole("article")).getByRole("table", {
@@ -92,7 +113,7 @@ describe("manual reader", () => {
     window.history.replaceState(
       null,
       "",
-      "/manual/task-5/identificacion-personal-y-tramites-administrativos-01",
+      "/manual/task-5#identificacion-personal-y-tramites-administrativos-01",
     )
     render(<App />)
 
@@ -121,10 +142,12 @@ describe("manual reader", () => {
 
   it("renders the normalized population headers without React key warnings", () => {
     const error = vi.spyOn(console, "error").mockImplementation(() => undefined)
-    window.history.replaceState(null, "", "/manual/task-1/poblacion-14")
+    window.history.replaceState(null, "", "/manual/task-1#poblacion-14")
     render(<App />)
 
-    const table = within(screen.getByRole("article")).getByRole("table")
+    const table = within(screen.getByRole("article")).getByRole("table", {
+      name: "TABLA 2. Número de habitantes por comunidades autónomas",
+    })
 
     expect(
       within(table)
@@ -140,7 +163,7 @@ describe("manual reader", () => {
     window.history.replaceState(
       null,
       "",
-      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
+      "/manual/task-1#poderes-del-estado-gobierno-e-instituciones-01",
     )
     render(<App />)
 
@@ -156,15 +179,14 @@ describe("manual reader", () => {
     ).toHaveAttribute("src", "/manual/figures/figure-8-2.jpg")
   })
 
-  it("shows running context and cross-task navigation without a repeated source attribution", () => {
-    window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
+  it("shows tarea context without previous or next topic controls", () => {
+    window.history.replaceState(null, "", "/manual/task-1#participacion-ciudadana-15")
     render(<App />)
 
-    expect(screen.getByText("T1 · 15")).toBeInTheDocument()
-    expect(screen.getByRole("link", { name: /Siguiente.*DESTACADOS DERECHOS/i })).toHaveAttribute(
-      "href",
-      "/manual/task-2/destacados-derechos-deberes-y-libertades-01",
-    )
+    expect(screen.getByText("Tarea 1")).toBeInTheDocument()
+    expect(
+      screen.queryByRole("navigation", { name: "Temas anterior y siguiente" }),
+    ).not.toBeInTheDocument()
 
     expect(screen.queryByRole("link", { name: /fuente oficial/i })).not.toBeInTheDocument()
     expect(document.body).not.toHaveTextContent(/Fuente oficial/i)
@@ -172,7 +194,7 @@ describe("manual reader", () => {
   })
 
   it("returns directly from a topic to the main manual index", () => {
-    window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
+    window.history.replaceState(null, "", "/manual/task-1#participacion-ciudadana-15")
     render(<App />)
 
     expect(screen.getByRole("link", { name: "← Índice del manual" })).toHaveAttribute(
@@ -183,14 +205,14 @@ describe("manual reader", () => {
   })
 
   it("does not repeat article numbers or dates in a marginal column", () => {
-    window.history.replaceState(null, "", "/manual/task-2/articulo-15-06")
+    window.history.replaceState(null, "", "/manual/task-2#articulo-15-06")
     render(<App />)
 
     expect(document.querySelector("[data-margin-note]")).not.toBeInTheDocument()
   })
 
   it("uses the source heading as the topic title without a redundant subheading", () => {
-    window.history.replaceState(null, "", "/manual/task-2/articulo-22-11")
+    window.history.replaceState(null, "", "/manual/task-2#articulo-22-11")
     render(<App />)
 
     const article = screen.getByRole("article")
@@ -217,12 +239,12 @@ describe("manual reader", () => {
 
     expect(screen.getByRole("link", { name: /Seguir leyendo/i })).toHaveAttribute(
       "href",
-      `/manual/${section.id}/${getManualTopicSlug(section, topic)}`,
+      `/manual/${section.id}#${getManualTopicSlug(section, topic)}`,
     )
     expect(screen.getByText("10 %")).toBeInTheDocument()
   })
 
-  it("resumes the latest semantic topic at its saved position", async () => {
+  it("resumes the latest semantic topic at its anchor", async () => {
     const section = manual.sections[0]
     const topic = section.topics[1]
     const state: ReaderState = {
@@ -234,20 +256,16 @@ describe("manual reader", () => {
     }
     localStorage.setItem(READER_STATE_STORAGE_KEY, JSON.stringify(state))
     window.history.replaceState(null, "", "/manual")
+    const scrollIntoView = vi
+      .spyOn(HTMLElement.prototype, "scrollIntoView")
+      .mockImplementation(() => undefined)
 
     render(<App />)
     fireEvent.click(screen.getByRole("link", { name: /Seguir leyendo/i }))
 
-    expect(window.location.pathname).toBe(
-      `/manual/${section.id}/${getManualTopicSlug(section, topic)}`,
-    )
-    await waitFor(() =>
-      expect(window.scrollTo).toHaveBeenCalledWith({
-        top: 320,
-        left: 0,
-        behavior: "auto",
-      }),
-    )
+    expect(window.location.pathname).toBe(`/manual/${section.id}`)
+    expect(window.location.hash).toBe(`#${getManualTopicSlug(section, topic)}`)
+    await waitFor(() => expect(scrollIntoView).toHaveBeenCalled())
   })
 
   it("persists the current offset and furthest progress on pagehide", async () => {
@@ -255,7 +273,7 @@ describe("manual reader", () => {
     window.history.replaceState(
       null,
       "",
-      `/manual/task-1/${getManualTopicSlug(manual.sections[0], topic)}`,
+      `/manual/task-1#${getManualTopicSlug(manual.sections[0], topic)}`,
     )
     Object.defineProperty(document.documentElement, "scrollHeight", {
       configurable: true,

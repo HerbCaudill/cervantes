@@ -9,7 +9,7 @@ test("left-aligns intrinsically sized manual figures beside three-line captions"
     { width: 1024, height: 768 },
   ]) {
     await page.setViewportSize(viewport)
-    await page.goto("/manual/task-5/servicios-sociales-y-programas-de-ayuda-08")
+    await page.goto("/manual/task-5#servicios-sociales-y-programas-de-ayuda-08")
 
     const image = page.getByRole("img", {
       name: "Logotipo de la Organización Nacional de Ciegos Españoles",
@@ -22,9 +22,12 @@ test("left-aligns intrinsically sized manual figures beside three-line captions"
       { exact: true },
     )
     const credit = caption.getByText("© ONCE", { exact: true })
-    const readingContent = page.getByRole("navigation", {
-      name: "Temas anterior y siguiente",
-    })
+    const readingContent = page
+      .getByRole("heading", {
+        name: "Servicios sociales y programas de ayuda",
+        exact: true,
+      })
+      .locator("..")
 
     await image.scrollIntoViewIfNeeded()
     await expect(image).toBeVisible()
@@ -71,7 +74,7 @@ test("left-aligns intrinsically sized manual figures beside three-line captions"
 })
 
 test("renders manual figure captions without a rule", async ({ page }) => {
-  await page.goto("/manual/task-5/servicios-sociales-y-programas-de-ayuda-08")
+  await page.goto("/manual/task-5#servicios-sociales-y-programas-de-ayuda-08")
 
   const caption = page
     .getByRole("img", {

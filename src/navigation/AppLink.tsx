@@ -23,6 +23,15 @@ export function AppLink({
       return
     }
 
+    const destination = new URL(href, window.location.origin)
+    if (
+      destination.pathname === window.location.pathname &&
+      destination.search === window.location.search &&
+      destination.hash
+    ) {
+      return
+    }
+
     event.preventDefault()
     navigate(href, restoreScroll ? "restore" : "top")
   }
