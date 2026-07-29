@@ -197,7 +197,8 @@ All in-app copy is Spanish. Comments, identifiers, and docs stay English.
   tokens above.
 - The marginal column holds ids and article numbers without the main column
   reflowing around them.
-- Prompt and manual body render at 20px and 17px respectively.
+- Prompt and manual body render at 20px and 16px respectively, with 1.45 leading
+  for manual paragraphs and lists.
 - Every tap target measures ≥ 44px.
 - All user-visible copy is Spanish; the glossary above is the authority.
 - No learned count, future due forecast, per-question scheduling state, or grade

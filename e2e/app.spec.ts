@@ -165,8 +165,6 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
   const bodyText = article.getByText(
     "En España hay tres tipos de centros educativos según su financiación:",
   )
-  await expect(bodyText).toHaveCSS("font-size", "17px")
-
   const marginalRow = bodyText.locator("xpath=../..")
   expect(
     await marginalRow.evaluate(element => getComputedStyle(element).gridTemplateColumns),
@@ -176,6 +174,30 @@ test("reads every manual block accessibly on a narrow screen", async ({ page }) 
       () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
     ),
   ).toBe(true)
+})
+
+test("uses consistent compact body typography at supported widths", async ({ page }) => {
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1280, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport)
+    await page.goto("/manual/task-5/educacion-06")
+
+    const article = page.getByRole("article")
+    const paragraph = article.getByText(
+      "En España hay tres tipos de centros educativos según su financiación:",
+    )
+    const list = article.getByRole("list").filter({
+      hasText: "Centros públicos: son centros laicos",
+    })
+
+    for (const readingBlock of [paragraph, list]) {
+      await expect(readingBlock).toHaveCSS("font-family", /serif/)
+      await expect(readingBlock).toHaveCSS("font-size", "16px")
+      await expect(readingBlock).toHaveCSS("line-height", "23.2px")
+    }
+  }
 })
 
 test("renders the one-year nationality cases as a nested unmarked list", async ({ page }) => {

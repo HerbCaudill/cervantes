@@ -45,7 +45,8 @@ and note roles for source callouts. Their fixed 40px marginal column carries
 compact article references, dates, and figure numbers without changing the body
 measure. At viewports below 640px, semantic tables become stacked records whose
 cells retain their source column labels; wider viewports use conventional
-tables. The official body text remains 17px in both layouts.
+tables. The official body text uses the same compact 16px size and 1.45 leading
+in both layouts.
 
 The structured manual remains source-faithful when the PDF repeats body prose
 inside a visual pull quote. `getVisibleManualBlocks` derives the reader and
@@ -101,8 +102,8 @@ The 2026-07-29 content and responsive audit covered all 71 topic routes at
 390 × 844 and 1280 × 900 in both light and dark palettes: 284 complete route
 renders containing 440 figure instances, 44 table instances, and 1,696 topic
 controls and links. The audit found no page, console, or network errors after
-loading; no document overflow; no malformed 40px marginal rows; no body text
-below the protected 17px size; no undecodable, out-of-bounds, or non-contained
+loading; no document overflow; no malformed 40px marginal rows; no inconsistent
+body typography; no undecodable, out-of-bounds, or non-contained
 figures; no missing captions; no mismatched mobile table labels (including
 `null` source cells); and no topic control below the 44px target size.
 

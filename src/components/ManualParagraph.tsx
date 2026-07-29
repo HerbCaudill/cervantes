@@ -2,7 +2,7 @@ import { ManualMarginLayout } from "@/components/ManualMarginLayout"
 import { getManualMarginNote } from "@/manual/getManualMarginNote"
 import type { ParagraphBlock } from "@/manual/types"
 
-/** Verbatim manual paragraph set at the protected 17px reading size. */
+/** Verbatim manual paragraph set in the shared compact reading style. */
 export function ManualParagraph({ block }: Props) {
   return (
     <ManualMarginLayout note={getManualMarginNote(block.text)}>
