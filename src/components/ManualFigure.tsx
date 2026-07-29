@@ -6,18 +6,16 @@ export function ManualFigure({ block, assets }: Props) {
   const asset = assets.find(candidate => candidate.id === block.assetId)
   if (!asset) return null
 
-  const figureNumber = block.caption.match(/^FIGURA\s+\d+/)?.[0] ?? null
-
   return (
-    <ManualMarginLayout note={figureNumber}>
-      <figure>
+    <ManualMarginLayout>
+      <figure className="grid grid-cols-2 items-start gap-3">
         <img
           src={asset.src}
           alt={asset.alt}
           loading="lazy"
-          className="border-rule-hard bg-paper h-auto max-h-[70dvh] w-full border object-contain"
+          className="bg-paper h-auto max-h-[70dvh] w-full object-contain"
         />
-        <figcaption className="text-soft border-rule border-b py-2 font-sans text-[11px] leading-[1.4]">
+        <figcaption className="text-soft border-rule min-w-0 border-b pb-2 font-sans text-[11px] leading-[1.4]">
           {block.caption}
         </figcaption>
       </figure>
