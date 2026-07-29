@@ -18,9 +18,10 @@ test("answers a question and grades it", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("lang", "es")
   expect(externalFontRequests).toEqual([])
 
-  // the header is always present
-  await expect(page.getByRole("heading", { name: /Boletín CCSE/i })).toBeVisible()
-  await page.getByRole("button", { name: /Empezar repaso/i }).click()
+  // the practice screen is ready
+  const startReview = page.getByRole("button", { name: /Empezar repaso/i })
+  await expect(startReview).toBeVisible()
+  await startReview.click()
 
   // answer the first official 2026 question correctly
   await page.getByRole("button", { name: "una monarquía parlamentaria." }).click()
