@@ -77,6 +77,23 @@ describe("manual reader", () => {
     expect(cells[1]).toHaveAttribute("data-label", "Descripción")
   })
 
+  it("keeps source nulls as empty labeled cells in partially filled table rows", () => {
+    window.history.replaceState(null, "", "/manual/task-1/poblacion-14")
+    render(<App />)
+
+    const table = within(screen.getByRole("article")).getByRole("table", {
+      name: "TABLA 2. Número de habitantes por comunidades autónomas",
+    })
+    const row = within(table).getByRole("cell", { name: "Cantabria" }).closest("tr")
+    const cells = within(row!).getAllByRole("cell")
+
+    expect(cells).toHaveLength(6)
+    expect(cells[4]).toBeEmptyDOMElement()
+    expect(cells[4]).toHaveAttribute("data-label", "Comunidades y ciudades autónomas")
+    expect(cells[5]).toBeEmptyDOMElement()
+    expect(cells[5]).toHaveAttribute("data-label", "Población")
+  })
+
   it("renders the one-year nationality cases as a nested unmarked list", () => {
     window.history.replaceState(
       null,

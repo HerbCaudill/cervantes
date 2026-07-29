@@ -231,6 +231,11 @@ test("keeps a real article note on one line inside the 40px margin at 390px", as
 
 test("loads every semantic topic route accessibly at 390px", async ({ page }) => {
   test.setTimeout(120_000)
+  const browserErrors: string[] = []
+  page.on("pageerror", error => browserErrors.push(error.message))
+  page.on("console", message => {
+    if (message.type() === "error") browserErrors.push(message.text())
+  })
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual")
 
@@ -265,6 +270,36 @@ test("loads every semantic topic route accessibly at 390px", async ({ page }) =>
       ),
     ).toBe(true)
   }
+
+  expect(browserErrors).toEqual([])
+})
+
+test("loads every declared manual figure as a decodable local image", async ({ page }) => {
+  await page.goto("/manual")
+
+  const failures = await page.evaluate(async assets => {
+    const results = await Promise.all(
+      assets.map(
+        asset =>
+          new Promise<string | null>(resolve => {
+            const image = new Image()
+            image.addEventListener(
+              "load",
+              () => resolve(image.naturalWidth > 0 ? null : `${asset.id}: empty image`),
+              { once: true },
+            )
+            image.addEventListener("error", () => resolve(`${asset.id}: ${asset.src}`), {
+              once: true,
+            })
+            image.src = asset.src
+          }),
+      ),
+    )
+
+    return results.filter((result): result is string => result !== null)
+  }, manualDraft.assets)
+
+  expect(failures).toEqual([])
 })
 
 test("uses a conventional table on wide screens and supports the dark palette", async ({

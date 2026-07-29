@@ -1,9 +1,16 @@
 import { rmSync, writeFileSync } from "node:fs"
 import { describe, expect, it } from "vitest"
+import manualDraft from "../../../src/manual/manual.draft.json" with { type: "json" }
 import { getManualAssetInventory } from "../getManualAssetInventory.ts"
 import { verifyPwaBuild } from "../verifyPwaBuild.ts"
 
 describe("verifyPwaBuild", () => {
+  it("matches every declared manual asset to exactly one bundled source file", () => {
+    const declaredAssetPaths = manualDraft.assets.map(asset => asset.src.replace(/^\//, "")).sort()
+
+    expect(declaredAssetPaths).toEqual(getManualAssetInventory().assetPaths)
+  })
+
   it("accepts every currently supported manual figure", () => {
     const inventory = getManualAssetInventory()
 

@@ -72,6 +72,29 @@ silently. Use `pnpm test:pw:pwa` for the Chromium production-preview scenario
 covering offline deep links, figures, search, navigation, progress, and
 service-worker updates without loss of reader or flashcard state.
 
+## Automated coverage
+
+The reader suite is intentionally layered so content-scale checks do not need to
+be repeated in every browser scenario:
+
+| Concern                                                            | Primary coverage                                                                                                                          |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Schema and source integrity                                        | `tests/validateManual.test.ts`, `tests/manualDraft.test.ts`, and the Task 3–5 content goldens                                             |
+| Semantic rendering and responsive layout                           | `components/tests/ManualReader.test.tsx`, `components/tests/ManualList.test.tsx`, `e2e/app.spec.ts`, and the task-specific browser suites |
+| Callout deduplication                                              | `tests/getVisibleManualBlocks.test.ts` and `e2e/manual-callout-deduplication.spec.ts`                                                     |
+| Routes, direct links, and history                                  | `tests/manualTopicRoutes.test.ts`, `navigation/tests/parseRoute.test.ts`, `tests/App.test.tsx`, and `e2e/app.spec.ts`                     |
+| Search normalization, excerpts, highlighting, and lazy cache reuse | `search/tests/manualSearch.test.ts`, `components/tests/ManualSearch.test.tsx`, and `e2e/manual-search.spec.ts`                            |
+| Progress, resume, corrupt state, and storage isolation             | `reader/tests`, `components/tests/ManualReader.test.tsx`, and `e2e/reader-progress.spec.ts`                                               |
+| Offline assets and service-worker updates                          | `scripts/pwa/tests/verifyPwaBuild.test.ts` and `e2e/pwa/offline-reader.spec.ts`                                                           |
+| Manual and practice coexistence                                    | `tests/App.test.tsx`, `e2e/app.spec.ts`, and the storage-isolation scenarios above                                                        |
+
+The all-topic browser smoke test checks every semantic route at 390px for a
+visible article and heading, horizontal overflow, and console or page errors.
+The source-inventory test requires the structured asset manifest and
+`public/manual` files to match exactly; the production build then proves those
+assets are emitted and precached, while the browser suite decodes every
+declared figure.
+
 ## Extraction draft
 
 Run `pnpm manual:extract` to download the checksum-pinned official 2026 PDF and

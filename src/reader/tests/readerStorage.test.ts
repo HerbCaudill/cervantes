@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { STORAGE_KEY } from "@/constants"
 import manualDraft from "@/manual/manual.draft.json"
 import type { Manual } from "@/manual/types"
@@ -12,6 +12,10 @@ const manual = manualDraft as Manual
 describe("reader storage", () => {
   beforeEach(() => {
     localStorage.clear()
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
   })
 
   it("uses a versioned key independent from flashcard review history", () => {
@@ -39,5 +43,30 @@ describe("reader storage", () => {
       lastTopicId: null,
       topics: {},
     })
+  })
+
+  it("starts empty when browser privacy settings block storage reads", () => {
+    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
+      throw new DOMException("Storage access denied", "SecurityError")
+    })
+
+    expect(loadReaderState(manual)).toEqual({
+      version: READER_STATE_VERSION,
+      lastTopicId: null,
+      topics: {},
+    })
+  })
+
+  it("keeps reading available when browser privacy settings block storage writes", () => {
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+      throw new DOMException("Storage access denied", "SecurityError")
+    })
+    const state: ReaderState = {
+      version: READER_STATE_VERSION,
+      lastTopicId: manual.sections[0].topics[0].id,
+      topics: {},
+    }
+
+    expect(() => saveReaderState(state)).not.toThrow()
   })
 })
