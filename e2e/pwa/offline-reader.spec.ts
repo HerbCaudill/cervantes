@@ -179,7 +179,7 @@ test("keeps the complete reader and local state available through offline use an
   expect(await page.evaluate(key => localStorage.getItem(key), STORAGE_KEY)).toBe(flashcardState)
 })
 
-test("never serves the application shell for API navigations", async ({ context, page }) => {
+test("never serves the application shell for excluded navigations", async ({ context, page }) => {
   await page.goto("/")
   await expect
     .poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller)))
@@ -189,7 +189,14 @@ test("never serves the application shell for API navigations", async ({ context,
   })
   await context.setOffline(true)
 
-  for (const path of ["/api", "/api/", "/api?x=1", "/api/thing"]) {
+  for (const path of [
+    "/api",
+    "/api/",
+    "/api?x=1",
+    "/api/thing",
+    "/assets/does-not-exist.js",
+    "/.git/config",
+  ]) {
     const apiPage = await context.newPage()
     await expect(apiPage.goto(path)).rejects.toThrow(/ERR_INTERNET_DISCONNECTED/)
     await apiPage.close()
