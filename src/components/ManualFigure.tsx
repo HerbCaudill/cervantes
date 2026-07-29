@@ -5,6 +5,7 @@ import type { FigureBlock, ManualAsset } from "@/manual/types"
 export function ManualFigure({ block, assets }: Props) {
   const asset = assets.find(candidate => candidate.id === block.assetId)
   if (!asset) return null
+  const captionMatch = /^(FIGURA \d+\.)(.*)$/s.exec(block.caption)
 
   return (
     <ManualMarginLayout>
@@ -16,7 +17,12 @@ export function ManualFigure({ block, assets }: Props) {
           className="bg-paper h-auto max-h-[70dvh] w-full object-contain"
         />
         <figcaption className="text-soft border-rule min-w-0 border-b pb-2 font-sans text-[11px] leading-[1.4]">
-          {block.caption}
+          {captionMatch ?
+            <>
+              <span className="text-red">{captionMatch[1]}</span>
+              {captionMatch[2]}
+            </>
+          : block.caption}
         </figcaption>
       </figure>
     </ManualMarginLayout>

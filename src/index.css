@@ -134,6 +134,7 @@
 
   .manual-responsive-table thead {
     border-block: 1px solid var(--rule-hard);
+    color: var(--red);
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -188,7 +189,7 @@
     }
 
     .manual-responsive-table td::before {
-      color: var(--soft);
+      color: var(--red);
       content: attr(data-label);
       font-size: 10px;
       letter-spacing: 0.1em;
