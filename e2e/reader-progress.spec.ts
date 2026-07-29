@@ -13,7 +13,7 @@ const secondTopic = section.topics[1]
 const firstTopicPath = `/manual/${section.id}#${getManualTopicSlug(section, firstTopic)}`
 const secondTopicPath = `/manual/${section.id}#${getManualTopicSlug(section, secondTopic)}`
 
-test("resumes a topic after navigation and reload without touching flashcard state", async ({
+test("persists a topic after navigation and reload without touching flashcard state", async ({
   page,
 }) => {
   const flashcardState = JSON.stringify({ sentinel: { repetitions: 7 } })
@@ -68,7 +68,8 @@ test("resumes a topic after navigation and reload without touching flashcard sta
     )
   })
   await expect(page).toHaveURL("/manual")
-  await page.getByRole("link", { name: "Seguir leyendo" }).click()
+  await expect(page.getByRole("link", { name: "Seguir leyendo" })).toHaveCount(0)
+  await page.locator(`a[href="${secondTopicPath}"]`).click()
   await expect(page).toHaveURL(secondTopicPath)
   await expect(page.getByRole("heading", { name: secondTopic.title })).toBeInViewport()
 
@@ -126,7 +127,7 @@ test("keeps progress screens within a 390px viewport in both palettes", async ({
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual")
 
-  await expect(page.getByRole("link", { name: "Seguir leyendo" }).last()).toBeVisible()
+  await expect(page.getByRole("link", { name: "Seguir leyendo" })).toHaveCount(0)
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,

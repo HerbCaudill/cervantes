@@ -46,12 +46,7 @@ export function App() {
         {route.type === "not-found" ?
           <ManualNotFound />
         : activeDestination === "manual" ?
-          <ManualScreen
-            manual={manual}
-            route={route}
-            readerState={readerProgress.state}
-            resumePath={readerProgress.resumePath}
-          />
+          <ManualScreen manual={manual} route={route} readerState={readerProgress.state} />
         : null}
       </main>
     </div>

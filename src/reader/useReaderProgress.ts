@@ -3,7 +3,6 @@ import type { Manual } from "@/manual/types"
 import { NAVIGATION_EVENT, NAVIGATION_START_EVENT } from "@/navigation/constants"
 import type { AppRoute, NavigationEventDetail, NavigationScrollMode } from "@/navigation/types"
 import { READER_STATE_SAVE_DELAY_MS } from "@/reader/constants"
-import { getReaderResumePath } from "@/reader/getReaderResumePath"
 import { getReaderTopicMeasurements } from "@/reader/getReaderTopicMeasurements"
 import { loadReaderState } from "@/reader/loadReaderState"
 import { openReaderTopic } from "@/reader/openReaderTopic"
@@ -173,17 +172,12 @@ export function useReaderProgress(
     [flush],
   )
 
-  return {
-    state,
-    resumePath: getReaderResumePath(manual, state),
-  }
+  return { state }
 }
 
 interface ReaderProgress {
   /** Current reader state, updated automatically while reading */
   state: ReaderState
-  /** Anchored route for resuming the most recently reached topic */
-  resumePath: string | null
 }
 
 type NavigationKind = NavigationScrollMode | "history" | "initial"

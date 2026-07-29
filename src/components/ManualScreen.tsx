@@ -7,9 +7,9 @@ import type { AppRoute } from "@/navigation/types"
 import type { ReaderState } from "@/reader/types"
 
 /** Resolve a manual route against structured content and render its route shell. */
-export function ManualScreen({ manual, route, readerState, resumePath }: Props) {
+export function ManualScreen({ manual, route, readerState }: Props) {
   if (route.type === "manual-index") {
-    return <ManualIndex manual={manual} readerState={readerState} resumePath={resumePath} />
+    return <ManualIndex manual={manual} readerState={readerState} />
   }
   if (route.type === "manual-search") return <ManualSearch manual={manual} query={route.query} />
   if (route.type === "not-found" || route.type === "practice") return <ManualNotFound />
@@ -35,6 +35,4 @@ interface Props {
   route: AppRoute
   /** Current local reader state */
   readerState: ReaderState
-  /** Route for the most recently opened valid topic */
-  resumePath: string | null
 }

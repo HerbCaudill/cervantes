@@ -74,7 +74,7 @@ be repeated in every browser scenario:
 | Semantic rendering and responsive layout                           | `components/tests/ManualReader.test.tsx`, `components/tests/ManualList.test.tsx`, `e2e/app.spec.ts`, and the task-specific browser suites |
 | Routes, direct links, and history                                  | `tests/manualTopicRoutes.test.ts`, `navigation/tests/parseRoute.test.ts`, `tests/App.test.tsx`, and `e2e/app.spec.ts`                     |
 | Search normalization, excerpts, highlighting, and lazy cache reuse | `search/tests/manualSearch.test.ts`, `components/tests/ManualSearch.test.tsx`, and `e2e/manual-search.spec.ts`                            |
-| Progress, resume, corrupt state, and storage isolation             | `reader/tests`, `components/tests/ManualReader.test.tsx`, and `e2e/reader-progress.spec.ts`                                               |
+| Progress, corrupt state, and storage isolation                     | `reader/tests`, `components/tests/ManualReader.test.tsx`, and `e2e/reader-progress.spec.ts`                                               |
 | Offline assets and service-worker updates                          | `scripts/pwa/tests/verifyPwaBuild.test.ts` and `e2e/pwa/offline-reader.spec.ts`                                                           |
 | Manual and practice coexistence                                    | `tests/App.test.tsx`, `e2e/app.spec.ts`, and the storage-isolation scenarios above                                                        |
 
@@ -99,8 +99,8 @@ figures; no missing captions; no mismatched mobile table labels (including
 Representative practice, manual index, search, and topic anchors
 were also checked at 390 × 844 for landmarks, keyboard focus visibility,
 horizontal overflow, and 44px controls. Browser scenarios cover direct and
-history navigation, same-page anchors, search and query history, progress and
-resume behavior, practice/manual switching, and offline PWA navigation. The
+history navigation, same-page anchors, search and query history, progress
+persistence, practice/manual switching, and offline PWA navigation. The
 Felipe VI prose appears once, with its local figure and caption intact.
 
 The pass exposed and fixed two presentation defects: the six-column population

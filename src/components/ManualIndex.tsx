@@ -5,7 +5,7 @@ import { getManualSectionProgress } from "@/reader/getManualSectionProgress"
 import type { ReaderState } from "@/reader/types"
 
 /** Manual landing page with direct routes to all five tasks and every extracted topic. */
-export function ManualIndex({ manual, readerState, resumePath }: Props) {
+export function ManualIndex({ manual, readerState }: Props) {
   return (
     <div className="flex flex-col px-[0.9rem] py-[0.85rem]">
       <div className="border-rule-hard flex min-h-11 items-center border-b">
@@ -13,16 +13,6 @@ export function ManualIndex({ manual, readerState, resumePath }: Props) {
           Manual CCSE
         </h2>
       </div>
-      {resumePath ?
-        <AppLink
-          href={resumePath}
-          restoreScroll
-          className="text-soft border-rule-hard flex min-h-11 items-center justify-between border-b font-sans text-xs tracking-[0.08em] uppercase"
-        >
-          <span>Seguir leyendo</span>
-          <span aria-hidden="true">→</span>
-        </AppLink>
-      : null}
       <nav aria-label="Índice completo del manual">
         <ol>
           {manual.sections.map((section, index) => {
@@ -81,6 +71,4 @@ interface Props {
   manual: Manual
   /** Current local reader state */
   readerState: ReaderState
-  /** Route for the most recently opened valid topic */
-  resumePath: string | null
 }

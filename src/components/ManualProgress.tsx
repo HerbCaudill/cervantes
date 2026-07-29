@@ -1,10 +1,9 @@
 import type { Manual } from "@/manual/types"
-import { AppLink } from "@/navigation/AppLink"
 import { getManualSectionProgress } from "@/reader/getManualSectionProgress"
 import type { ReaderState } from "@/reader/types"
 
 /** Automatic manual-reading summary shown on the resting practice screen. */
-export function ManualProgress({ manual, readerState, resumePath }: Props) {
+export function ManualProgress({ manual, readerState }: Props) {
   return (
     <section aria-labelledby="reading-heading">
       <h2 id="reading-heading" className="section-label border-rule-hard border-b pb-2">
@@ -27,24 +26,6 @@ export function ManualProgress({ manual, readerState, resumePath }: Props) {
           )
         })}
       </div>
-      {resumePath ?
-        <AppLink
-          href={resumePath}
-          restoreScroll
-          className="text-soft border-rule flex min-h-11 w-full items-center justify-between border-b font-sans text-xs tracking-[0.08em] uppercase"
-        >
-          <span>Seguir leyendo</span>
-          <span aria-hidden="true">→</span>
-        </AppLink>
-      : <button
-          type="button"
-          disabled
-          className="text-soft border-rule flex min-h-11 w-full items-center justify-between border-b font-sans text-xs tracking-[0.08em] uppercase disabled:cursor-not-allowed"
-        >
-          <span>Seguir leyendo</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      }
     </section>
   )
 }
@@ -54,6 +35,4 @@ interface Props {
   manual: Manual
   /** Current local reading progress */
   readerState: ReaderState
-  /** Route for the most recently opened valid topic */
-  resumePath: string | null
 }

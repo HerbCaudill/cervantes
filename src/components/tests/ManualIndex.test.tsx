@@ -15,7 +15,7 @@ const emptyReaderState: ReaderState = {
 
 describe("manual index", () => {
   it("shows every tarea and topic link without disclosure controls", () => {
-    render(<ManualIndex manual={manual} readerState={emptyReaderState} resumePath={null} />)
+    render(<ManualIndex manual={manual} readerState={emptyReaderState} />)
 
     const index = screen.getByRole("navigation", { name: "Índice completo del manual" })
     const expectedLinkCount = manual.sections.reduce(
@@ -41,7 +41,7 @@ describe("manual index", () => {
   })
 
   it("links each tarea heading to its continuous page", () => {
-    render(<ManualIndex manual={manual} readerState={emptyReaderState} resumePath={null} />)
+    render(<ManualIndex manual={manual} readerState={emptyReaderState} />)
 
     manual.sections.forEach((section, index) => {
       expect(
