@@ -48,11 +48,37 @@ test("searches locally, opens semantic results, and preserves query history", as
       .filter({ hasText: /constitución/i })
       .first(),
   ).toBeVisible()
+  await page.evaluate(() => {
+    const observedWindow = window as ManualSearchObservedWindow
+    observedWindow.manualSearchPreparationMutations = []
+    new MutationObserver(records => {
+      for (const record of records) {
+        if (record.oldValue?.includes("Preparando búsqueda")) {
+          observedWindow.manualSearchPreparationMutations.push(record.oldValue)
+        }
+        for (const node of record.addedNodes) {
+          if (node.textContent?.includes("Preparando búsqueda")) {
+            observedWindow.manualSearchPreparationMutations.push(node.textContent)
+          }
+        }
+      }
+    }).observe(document.body, {
+      characterData: true,
+      characterDataOldValue: true,
+      childList: true,
+      subtree: true,
+    })
+  })
 
   await results.getByRole("link").first().click()
   await expect(page.getByRole("article")).toBeVisible()
   await page.goBack()
   await expect(input).toHaveValue("CONSTITUCION ESPANOLA")
+  expect(
+    await page.evaluate(
+      () => (window as ManualSearchObservedWindow).manualSearchPreparationMutations,
+    ),
+  ).toEqual([])
 
   await page.getByRole("button", { name: "Limpiar búsqueda" }).click()
   await expect(page).toHaveURL("/manual/buscar")
@@ -121,3 +147,8 @@ test("does not return a topic supported only by a duplicated cross-task callout"
     "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
   )
 })
+
+interface ManualSearchObservedWindow extends Window {
+  /** Preparation-state DOM mutations observed after the first completed search */
+  manualSearchPreparationMutations: string[]
+}

@@ -39,8 +39,23 @@ export interface Manual {
 export interface ManualBodyTextIndex {
   /** Normalized character width of every indexed window */
   windowLength: number
-  /** Unique normalized body windows */
-  windows: ReadonlySet<string>
+  /** Leading-character multiplier used to advance the rolling hash */
+  hashLeadingPower: number
+  /** Original normalized segments used to verify hash candidates */
+  segments: readonly string[]
+  /** Source occurrences grouped by unsigned 32-bit window hash */
+  occurrencesByHash: ReadonlyMap<
+    number,
+    ManualBodyTextOccurrence | readonly ManualBodyTextOccurrence[]
+  >
+}
+
+/** Provenance for one normalized fixed-width body window. */
+export interface ManualBodyTextOccurrence {
+  /** Zero-based source segment index */
+  segmentIndex: number
+  /** Zero-based window start within the source segment */
+  start: number
 }
 
 /** One of the manual's five source tasks. */

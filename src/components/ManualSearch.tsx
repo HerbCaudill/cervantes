@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import type { FormEvent } from "react"
 import { ManualSearchHighlight } from "@/components/ManualSearchHighlight"
-import { getManualSearchIndex } from "@/manual/search/getManualSearchIndex"
+import { getManualSearchIndexAsync } from "@/manual/search/getManualSearchIndexAsync"
+import { peekManualSearchIndex } from "@/manual/search/peekManualSearchIndex"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
 import type { ManualSearchIndexEntry } from "@/manual/search/types"
 import type { Manual } from "@/manual/types"
@@ -11,13 +12,34 @@ import { navigate } from "@/navigation/navigate"
 /** Local full-text search contained within the Manual destination. */
 export function ManualSearch({ manual, query }: Props) {
   const [draft, setDraft] = useState(query)
-  const [index, setIndex] = useState<ManualSearchIndexEntry[] | null>(null)
+  const [indexState, setIndexState] = useState<ManualSearchIndexState>(() => ({
+    manual,
+    index: peekManualSearchIndex(manual),
+  }))
   const inputRef = useRef<HTMLInputElement>(null)
+  const index = indexState.manual === manual ? indexState.index : peekManualSearchIndex(manual)
   const results = useMemo(() => (index ? searchManualIndex(index, query) : []), [index, query])
   const normalizedQuery = query.trim().replace(/\s+/g, " ")
 
   useEffect(() => {
-    setIndex(getManualSearchIndex(manual))
+    let acceptsResult = true
+    const cachedIndex = peekManualSearchIndex(manual)
+    if (cachedIndex) {
+      setIndexState(currentState =>
+        currentState.manual === manual && currentState.index === cachedIndex ?
+          currentState
+        : { manual, index: cachedIndex },
+      )
+      return
+    }
+
+    void getManualSearchIndexAsync(manual).then(builtIndex => {
+      if (acceptsResult) setIndexState({ manual, index: builtIndex })
+    })
+
+    return () => {
+      acceptsResult = false
+    }
   }, [manual])
 
   useEffect(() => {
@@ -141,4 +163,11 @@ interface Props {
   manual: Manual
   /** Query decoded from the current search route */
   query: string
+}
+
+interface ManualSearchIndexState {
+  /** Manual identity associated with this state */
+  manual: Manual
+  /** Completed index, or null while the first build is running */
+  index: ManualSearchIndexEntry[] | null
 }

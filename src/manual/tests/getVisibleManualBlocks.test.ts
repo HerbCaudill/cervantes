@@ -66,6 +66,24 @@ describe("visible manual blocks", () => {
     ])
   })
 
+  it("retains subthreshold chunks when adjacent windows occur in different body segments", () => {
+    const firstChunk = "a".repeat(32)
+    const secondChunk = "b".repeat(32)
+    const calloutText = `${firstChunk}. ${secondChunk}`
+    const normalizedCallout = `${firstChunk} ${secondChunk}`
+    const manual = createManual([
+      paragraph(normalizedCallout.slice(0, 64)),
+      paragraph(normalizedCallout.slice(1)),
+      callout([paragraph(calloutText)]),
+    ])
+
+    expect(getVisibleManualBlocks(manual, manual.sections[0].topics[0].blocks)).toEqual([
+      paragraph(normalizedCallout.slice(0, 64)),
+      paragraph(normalizedCallout.slice(1)),
+      callout([paragraph(`${firstChunk}.`), paragraph(secondChunk)]),
+    ])
+  })
+
   it("recognizes duplicated prose from another topic", () => {
     const manual = createManual(
       [paragraph(duplicatedQuote)],

@@ -9,14 +9,14 @@ describe("manual search screen", () => {
     window.history.replaceState(null, "", "/manual/buscar")
   })
 
-  it("restores a routed query and returns highlighted semantic topic links", () => {
+  it("restores a routed query and returns highlighted semantic topic links", async () => {
     window.history.replaceState(null, "", "/manual/buscar?q=CONSTITUCION+ESPANOLA")
     render(<App />)
 
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toHaveValue(
       "CONSTITUCION ESPANOLA",
     )
-    expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/)
+    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/))
     const results = screen.getByRole("list", { name: "Resultados de búsqueda" })
     const firstResult = within(results).getAllByRole("link")[0]
     expect(firstResult).toHaveAttribute("href", expect.stringMatching(/^\/manual\/task-\d\//))
@@ -34,7 +34,7 @@ describe("manual search screen", () => {
 
     expect(window.location.pathname).toBe("/manual/buscar")
     expect(window.location.search).toBe("?q=constituci%C3%B3n+espa%C3%B1ola")
-    expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/)
+    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/))
 
     fireEvent.click(screen.getByRole("button", { name: "Limpiar búsqueda" }))
 
@@ -51,11 +51,15 @@ describe("manual search screen", () => {
     expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/)
   })
 
-  it("announces an unmatched query without rendering a result list", () => {
+  it("announces an unmatched query without rendering a result list", async () => {
     window.history.replaceState(null, "", "/manual/buscar?q=zzzinexistente")
     render(<App />)
 
-    expect(screen.getByRole("status")).toHaveTextContent("No hay resultados para «zzzinexistente».")
+    await waitFor(() =>
+      expect(screen.getByRole("status")).toHaveTextContent(
+        "No hay resultados para «zzzinexistente».",
+      ),
+    )
     expect(screen.queryByRole("list", { name: "Resultados de búsqueda" })).not.toBeInTheDocument()
   })
 

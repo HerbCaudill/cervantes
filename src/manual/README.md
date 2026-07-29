@@ -53,12 +53,14 @@ search representation by removing callout sentences with at least 64
 contiguous normalized characters already present in any non-callout block
 across the manual. The comparison works in both containment directions and
 retains complete unique sentences from mixed callouts. Each projection builds
-one fixed-width body-window index and reuses it for every callout, so overlap
-checks scale with the callout text rather than the full body corpus. Short
+one rolling-hash body-window index and reuses it for every callout, so overlap
+checks scale with the callout text rather than the full body corpus. Hash hits
+retain their source segment and offset, are verified against the original
+normalized text, and extend only along consecutive source positions. Short
 incidental matches stay visible, as do unique callout blocks and locally
-bundled figures. The search screen lazily builds and caches this projection
-after its first paint, keeping route startup responsive without eager
-module-load work.
+bundled figures. The search screen lazily builds and caches this projection in
+bounded main-thread phases after its first paint, while cached remounts render
+synchronously without eager module-load work.
 
 ## Offline build
 

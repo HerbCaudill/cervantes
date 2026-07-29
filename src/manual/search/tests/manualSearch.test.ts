@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest"
 import { buildManualSearchIndex } from "@/manual/search/buildManualSearchIndex"
 import { getManualSearchIndex } from "@/manual/search/getManualSearchIndex"
+import { getManualSearchIndexAsync } from "@/manual/search/getManualSearchIndexAsync"
 import { getManualSearchHighlightParts } from "@/manual/search/getManualSearchHighlightParts"
 import { getManualSearchTokens } from "@/manual/search/getManualSearchTokens"
+import { peekManualSearchIndex } from "@/manual/search/peekManualSearchIndex"
 import { searchManualIndex } from "@/manual/search/searchManualIndex"
 import manualDraft from "@/manual/manual.draft.json"
 import type { Manual, ManualBlock } from "@/manual/types"
@@ -295,6 +297,33 @@ describe("manual search", () => {
     const sourceManual = manualDraft as Manual
 
     expect(getManualSearchIndex(sourceManual)).toBe(getManualSearchIndex(sourceManual))
+  })
+
+  it("shares an in-flight build without exposing it as a completed cache entry", async () => {
+    const sourceManual = structuredClone(manualDraft) as Manual
+
+    const firstBuild = getManualSearchIndexAsync(sourceManual)
+    const secondBuild = getManualSearchIndexAsync(sourceManual)
+
+    expect(firstBuild).toBe(secondBuild)
+    expect(peekManualSearchIndex(sourceManual)).toBeNull()
+    const builtIndex = await firstBuild
+    expect(peekManualSearchIndex(sourceManual)).toBe(builtIndex)
+  })
+
+  it("does not reuse a completed index for a different manual identity", async () => {
+    const firstManual = structuredClone(manualDraft) as Manual
+    const secondManual = structuredClone(manualDraft) as Manual
+    secondManual.sections[0].title = "Identidad de manual independiente"
+
+    const firstIndex = await getManualSearchIndexAsync(firstManual)
+
+    expect(peekManualSearchIndex(firstManual)).toBe(firstIndex)
+    expect(peekManualSearchIndex(secondManual)).toBeNull()
+    await expect(getManualSearchIndexAsync(secondManual)).resolves.not.toBe(firstIndex)
+    expect(peekManualSearchIndex(secondManual)?.[0]?.sectionTitle).toBe(
+      "Identidad de manual independiente",
+    )
   })
 
   it("requires every query term while allowing them outside an exact phrase", () => {
