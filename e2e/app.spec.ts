@@ -347,7 +347,7 @@ test("uses a conventional table on wide screens and supports the dark palette", 
   await expect(article).toHaveCSS("color", "rgb(232, 231, 224)")
 })
 
-test("stacks complete population rows readably on narrow screens", async ({ page }) => {
+test("keeps the two-column population table conventional on narrow screens", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-1#poblacion-14")
 
@@ -362,7 +362,7 @@ test("stacks complete population rows readably on narrow screens", async ({ page
 
   await expect(table.getByRole("columnheader")).toHaveCount(2)
   await expect(table.getByRole("row")).toHaveCount(20)
-  await expect(firstCell).toHaveCSS("display", "grid")
+  await expect(firstCell).toHaveCSS("display", "table-cell")
   await expect(lastCell).toBeVisible()
   expect(wrapperBox).not.toBeNull()
   expect(lastCellBox).not.toBeNull()
