@@ -135,6 +135,15 @@ describe("App", () => {
     expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
   })
 
+  it("leaves not-found index navigation to the primary Manual tab", () => {
+    window.history.replaceState(null, "", "/manual/unknown")
+    render(<App />)
+
+    expect(screen.getByRole("heading", { name: "Página no encontrada" })).toBeInTheDocument()
+    expect(screen.queryByRole("link", { name: "Ir al índice del manual" })).not.toBeInTheDocument()
+    expect(screen.getByRole("link", { name: /^Manual$/ })).toHaveAttribute("href", "/manual")
+  })
+
   it("renders a complete tarea at its manual route", () => {
     window.history.replaceState(null, "", "/manual/task-1")
     render(<App />)

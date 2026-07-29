@@ -68,12 +68,6 @@ export function ManualSearch({ manual, query }: Props) {
 
   return (
     <div className="flex flex-col px-[0.9rem] py-[0.85rem]">
-      <AppLink
-        href="/manual"
-        className="text-soft flex min-h-11 items-center font-sans text-xs tracking-[0.08em] uppercase"
-      >
-        ← Índice del manual
-      </AppLink>
       <h2 className="border-rule-hard border-b py-[0.85rem] font-serif text-[23px] leading-[1.12] font-bold">
         Buscar en el manual
       </h2>

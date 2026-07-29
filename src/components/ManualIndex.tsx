@@ -54,7 +54,7 @@ export function ManualIndex({ manual, readerState, resumePath }: Props) {
                       <li key={topic.id} className="border-rule border-b last:border-b-0">
                         <AppLink
                           href={getManualTopicHref(section, topic)}
-                          className="grid min-h-11 grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-1"
+                          className="grid grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-[0.2rem]"
                         >
                           <span className="text-soft font-mono text-[10px] tabular-nums">
                             {String(topicIndex + 1).padStart(2, "0")}

@@ -183,7 +183,14 @@ describe("manual reader", () => {
     window.history.replaceState(null, "", "/manual/task-1#participacion-ciudadana-15")
     render(<App />)
 
-    expect(screen.getByText("Tarea 1")).toBeInTheDocument()
+    const tareaLabel = screen.getByText("Tarea 1")
+    const title = screen.getByRole("heading", {
+      level: 1,
+      name: "Gobierno, legislación y participación ciudadana",
+    })
+
+    expect(tareaLabel).toBeInTheDocument()
+    expect(tareaLabel.nextElementSibling).toBe(title)
     expect(
       screen.queryByRole("navigation", { name: "Temas anterior y siguiente" }),
     ).not.toBeInTheDocument()
@@ -193,14 +200,12 @@ describe("manual reader", () => {
     expect(document.body).not.toHaveTextContent(/Página PDF/i)
   })
 
-  it("returns directly from a topic to the main manual index", () => {
+  it("leaves index navigation to the primary Manual tab", () => {
     window.history.replaceState(null, "", "/manual/task-1#participacion-ciudadana-15")
     render(<App />)
 
-    expect(screen.getByRole("link", { name: "← Índice del manual" })).toHaveAttribute(
-      "href",
-      "/manual",
-    )
+    expect(screen.queryByRole("link", { name: "← Índice del manual" })).not.toBeInTheDocument()
+    expect(screen.getByRole("link", { name: /^Manual$/ })).toHaveAttribute("href", "/manual")
     expect(screen.queryByRole("link", { name: "← Tarea 1" })).not.toBeInTheDocument()
   })
 

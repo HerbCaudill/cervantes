@@ -63,6 +63,13 @@ describe("manual search screen", () => {
     expect(screen.queryByRole("list", { name: "Resultados de búsqueda" })).not.toBeInTheDocument()
   })
 
+  it("leaves index navigation to the primary Manual tab", () => {
+    render(<App />)
+
+    expect(screen.queryByRole("link", { name: "← Índice del manual" })).not.toBeInTheDocument()
+    expect(screen.getByRole("link", { name: /^Manual$/ })).toHaveAttribute("href", "/manual")
+  })
+
   it("renders highlighted source text without interpreting markup", () => {
     const { container } = render(
       <ManualSearchHighlight

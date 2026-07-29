@@ -11,17 +11,6 @@ export function ManualSectionReader({ manual, section, sectionNumber, readerStat
 
   return (
     <article className="flex min-w-0 flex-col" data-reader-section={section.id}>
-      <div className="border-rule-hard flex min-h-11 items-center justify-between border-b px-[0.9rem]">
-        <AppLink
-          href="/manual"
-          className="text-soft flex min-h-11 items-center font-sans text-xs tracking-[0.08em] uppercase"
-        >
-          ← Índice del manual
-        </AppLink>
-        <span className="shrink-0 pl-2 font-mono text-[10.5px] tabular-nums">
-          Tarea {sectionNumber}
-        </span>
-      </div>
       <div
         className="bg-rule h-px w-full"
         role="progressbar"
@@ -33,19 +22,22 @@ export function ManualSectionReader({ manual, section, sectionNumber, readerStat
         <span className="bg-red block h-px" style={{ width: `${progress}%` }} />
       </div>
       <div className="flex flex-col px-[0.9rem] py-[0.85rem]">
+        <span className="text-red pb-1 font-sans text-[11px] font-medium tracking-[0.08em]">
+          Tarea {sectionNumber}
+        </span>
         <h1 className="border-rule-hard border-b pb-[0.85rem] font-serif text-[25px] leading-[1.12] font-bold text-balance">
           {section.title}
         </h1>
         <nav
           aria-label={`Temas de la Tarea ${sectionNumber}`}
-          className="border-rule-hard border-b py-[0.5rem]"
+          className="border-rule-hard border-b py-[0.2rem]"
         >
           <ol>
             {section.topics.map((topic, topicIndex) => (
               <li key={topic.id}>
                 <AppLink
                   href={getManualTopicHref(section, topic)}
-                  className="grid min-h-11 grid-cols-[2.5rem_1fr] items-center gap-[0.6rem]"
+                  className="grid grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-[0.2rem]"
                 >
                   <span className="text-soft font-mono text-[10px] tabular-nums">
                     {String(topicIndex + 1).padStart(2, "0")}
