@@ -14,8 +14,8 @@ export function normalizePopulationTableBlock(
   const pairCount = Math.ceil(block.headers.length / 2)
   const rows = Array.from({ length: pairCount }, (_, pairIndex) =>
     block.rows
-      .map(row => [row[pairIndex * 2] ?? null, row[pairIndex * 2 + 1] ?? null])
-      .filter(row => row[0] !== null && row[1] !== null),
+      .map(row => [row[pairIndex * 2] ?? { text: null }, row[pairIndex * 2 + 1] ?? { text: null }])
+      .filter(row => row[0].text !== null && row[1].text !== null),
   ).flat()
 
   return {

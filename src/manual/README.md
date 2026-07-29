@@ -122,6 +122,13 @@ Poppler's `pdftoppm` command for deterministic 144-DPI figure rendering. The
 source population table is normalized during extraction from three horizontal
 community/population pairs into one ordered two-column list.
 
+Table cells use structured `{ text, figures? }` values. During extraction,
+row-associated figures are projected into the matching third-column cells in
+Tables 5 and 6, while Table 8 receives a third `Imagen` column for its
+Educación Infantil figure. The projection works across source-page topic
+boundaries and is idempotent, so regenerating content does not create
+standalone duplicates.
+
 The output is deliberately page-oriented draft content. Editorial verification
 tasks reconstruct final topic boundaries, resolve reading-order anomalies, and
 compare every block and crop with the source before the reader imports it.

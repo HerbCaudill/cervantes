@@ -233,7 +233,7 @@ describe("manual extraction draft", () => {
     ])
     expect(
       tables.find(table => table.type === "table" && table.caption?.startsWith("TABLA 2."))?.rows,
-    ).toContainEqual(["Comunidad Valencia", "5 319 285"])
+    ).toContainEqual([{ text: "Comunidad Valencia" }, { text: "5 319 285" }])
   })
 
   it("reconstructs Task 2 around every source heading instead of PDF pages", () => {
@@ -418,15 +418,27 @@ describe("manual extraction draft", () => {
       ],
     })
     expect(tables[0]?.rows).toHaveLength(52)
-    expect(tables[0]?.rows).toContainEqual(["Castilla-La Mancha", "Albacete", "Albacete", "Toledo"])
     expect(tables[0]?.rows).toContainEqual([
-      "Castilla y León",
-      "Ávila",
-      "Ávila",
-      "No hay una capital oficial. La sede de las administraciones está en Valladolid¹",
+      { text: "Castilla-La Mancha" },
+      { text: "Albacete" },
+      { text: "Albacete" },
+      { text: "Toledo" },
     ])
-    expect(tables[0]?.rows).toContainEqual([null, "Valladolid", "VallaVdolid", null])
-    expect(tables[0]?.rows.at(-1)).toEqual([null, "Melilla", null, null])
+    expect(tables[0]?.rows).toContainEqual([
+      { text: "Castilla y León" },
+      { text: "Ávila" },
+      { text: "Ávila" },
+      {
+        text: "No hay una capital oficial. La sede de las administraciones está en Valladolid¹",
+      },
+    ])
+    expect(tables[0]?.rows).toContainEqual([
+      { text: null },
+      { text: "Valladolid" },
+      { text: "VallaVdolid" },
+      { text: null },
+    ])
+    expect(tables[0]?.rows.at(-1)?.map(cell => cell.text)).toEqual([null, "Melilla", null, null])
     expect(paragraphs).toContain(
       "1 En el Estatuto de Autonomía no se establece una capitalidad, pero la Junta de Castilla y León y las Cortes tienen su sede en Valladolid.",
     )

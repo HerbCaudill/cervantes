@@ -4,6 +4,7 @@ import { join } from "node:path"
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs"
 import { createFigureCrops } from "./ccse-manual-import/createFigureCrops.ts"
 import { createTaggedTextById } from "./ccse-manual-import/createTaggedTextById.ts"
+import { embedTableRowFigures } from "./ccse-manual-import/embedTableRowFigures.ts"
 import { MANUAL_CONTENT_RANGES } from "./ccse-manual-import/constants.ts"
 import { extractTaggedBlocks } from "./ccse-manual-import/extractTaggedBlocks.ts"
 import { getManualFigureAlt } from "./ccse-manual-import/getManualFigureAlt.ts"
@@ -93,7 +94,7 @@ try {
     edition: "2026",
     sourceUrl: MANUAL_URL,
     assets,
-    sections,
+    sections: embedTableRowFigures(sections),
   }
   validateGeneratedManual(manual)
 

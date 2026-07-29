@@ -44,7 +44,7 @@ describe("extractTaggedBlocks", () => {
       {
         type: "table",
         headers: ["Lengua", "Organismo"],
-        rows: [["Castellano o español", "Real Academia Española"]],
+        rows: [[{ text: "Castellano o español" }, { text: "Real Academia Española" }]],
       },
     ])
   })
@@ -70,7 +70,7 @@ describe("extractTaggedBlocks", () => {
         type: "table",
         caption: "TABLA 1. Instituciones para la normalización de las lenguas españolas",
         headers: ["Lengua"],
-        rows: [["Gallego"]],
+        rows: [[{ text: "Gallego" }]],
       },
       {
         type: "figure",
@@ -119,7 +119,7 @@ describe("extractTaggedBlocks", () => {
         type: "table",
         caption: "TABLA 2. Número de habitantes por comunidades autónomas",
         headers: ["Comunidades y ciudades autónomas", "Población"],
-        rows: [["Andalucía", "8 631 862"]],
+        rows: [[{ text: "Andalucía" }, { text: "8 631 862" }]],
       },
     ])
   })

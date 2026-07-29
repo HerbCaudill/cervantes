@@ -60,9 +60,13 @@ export function validateManualBlock(
           )
         }
         row.forEach((cell, cellIndex) => {
-          if (cell !== null) {
-            assertNonBlank(cell, `${location} table row ${rowIndex + 1} cell ${cellIndex + 1}`)
-          }
+          const cellLocation = `${location} table row ${rowIndex + 1} cell ${cellIndex + 1}`
+          if (!cell || typeof cell !== "object" || !("text" in cell))
+            throw new Error(`${cellLocation} is not a structured table cell`)
+          if (cell.text !== null) assertNonBlank(cell.text, cellLocation)
+          cell.figures?.forEach((figure, figureIndex) =>
+            validateManualBlock(figure, assetIds, `${cellLocation} figure ${figureIndex + 1}`),
+          )
         })
       })
       return

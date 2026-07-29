@@ -48,7 +48,7 @@ const manual = {
               type: "table",
               caption: "Organización territorial",
               headers: ["Institución", "Ámbito"],
-              rows: [["Ayuntamiento", "Municipal"]],
+              rows: [[{ text: "Ayuntamiento" }, { text: "Municipal" }]],
             },
             {
               type: "figure",

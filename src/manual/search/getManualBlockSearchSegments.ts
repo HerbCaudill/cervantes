@@ -16,7 +16,13 @@ export function getManualBlockSearchSegments(
         : [item.text, ...getManualBlockSearchSegments(item.children)],
       )
     case "table":
-      return [block.caption, ...block.headers, ...block.rows.flat()]
+      return [
+        block.caption,
+        ...block.headers,
+        ...block.rows.flatMap(row =>
+          row.flatMap(cell => [cell.text, ...(cell.figures?.map(figure => figure.caption) ?? [])]),
+        ),
+      ]
         .filter(value => value !== undefined && value !== null)
         .map(value => String(value))
     case "figure":

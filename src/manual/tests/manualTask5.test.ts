@@ -97,7 +97,7 @@ describe("verified Task 5 manual content", () => {
           .flatMap(topic => topic.blocks)
           .find(block => block.type === "table")
         if (!table) throw new Error("Task 5 table is missing")
-        table.rows[0][0] = null
+        table.rows[0][0].text = null
       },
       (mutatedTask: typeof task) => {
         const figure = mutatedTask.topics
@@ -210,14 +210,15 @@ describe("verified Task 5 manual content", () => {
       "TABLA 11. Expresiones de medidas habituales",
     ])
     expect(tables[0]?.rows).toHaveLength(7)
-    expect(tables[0]?.rows[0]).toEqual([
+    expect(tables[0]?.rows[0].map(cell => cell.text)).toEqual([
       "Educación Infantil",
       "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito.",
+      null,
     ])
-    expect(tables[0]?.rows.at(-1)?.[0]).toBe(
+    expect(tables[0]?.rows.at(-1)?.[0].text).toBe(
       "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas.",
     )
-    expect(tables[2]?.rows).toEqual([
+    expect(tables[2]?.rows.map(row => row.map(cell => cell.text))).toEqual([
       ["Tiempo", "minuto", "min", "1 min = 60 s"],
       [null, "hora", "h", "1 h = 60 min"],
       [null, "día", "d", "1 d = 24 h"],
@@ -228,9 +229,13 @@ describe("verified Task 5 manual content", () => {
   })
 
   it("keeps every numbered figure in source order with exact source captions", () => {
-    const figures = blocks.flatMap(block =>
-      block.type === "figure" ? [[block.assetId, block.caption]] : [],
-    )
+    const figures = blocks.flatMap(block => {
+      if (block.type === "figure") return [[block.assetId, block.caption]]
+      if (block.type !== "table") return []
+      return block.rows.flatMap(row =>
+        row.flatMap(cell => cell.figures?.map(figure => [figure.assetId, figure.caption]) ?? []),
+      )
+    })
 
     expect(figures).toHaveLength(33)
     expect(figures[0]).toEqual([

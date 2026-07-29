@@ -48,7 +48,9 @@ export function createArtworkFigureCrops(
 
       const metadata = [
         block.headers[column],
-        ...block.rows.map(row => row[column]).filter((value): value is string => value !== null),
+        ...block.rows
+          .map(row => row[column]?.text)
+          .filter((value): value is string => value !== null && value !== undefined),
       ]
       const bounds: PdfBounds =
         closest ?

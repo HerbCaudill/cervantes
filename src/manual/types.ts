@@ -102,12 +102,17 @@ export interface TableBlock {
   caption?: string
   /** Column labels used by both wide and stacked layouts */
   headers: string[]
-  /** Data rows; null marks an intentionally empty source cell */
+  /** Structured data rows */
   rows: TableCell[][]
 }
 
-/** Verbatim table text or an explicitly empty source cell. */
-export type TableCell = string | null
+/** One structured table cell with verbatim text and optional source figures. */
+export interface TableCell {
+  /** Verbatim cell text; null marks an intentionally empty source cell */
+  text: string | null
+  /** Source figures associated with this row and column */
+  figures?: FigureBlock[]
+}
 
 /** A source figure referenced through the manual's local asset manifest. */
 export interface FigureBlock {

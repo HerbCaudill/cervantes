@@ -27,6 +27,15 @@ export function validateGeneratedManual(
             if (row.length !== block.headers.length) {
               throw new Error(`Generated malformed table in topic "${topic.id}"`)
             }
+            for (const cell of row) {
+              for (const figure of cell.figures ?? []) {
+                if (!assetIds.has(figure.assetId)) {
+                  throw new Error(
+                    `Generated table figure references unknown asset "${figure.assetId}"`,
+                  )
+                }
+              }
+            }
           }
         }
       }

@@ -25,7 +25,7 @@ export function extractTableBlock(
   })
   const sourceDataRows = populatedRows.length === 1 ? populatedRows : populatedRows.slice(1)
   const dataRows = sourceDataRows.map(row =>
-    Array.from({ length: columnCount }, (_, index) => row[index] ?? null),
+    Array.from({ length: columnCount }, (_, index) => ({ text: row[index] ?? null })),
   )
 
   return { type: "table", headers, rows: dataRows }

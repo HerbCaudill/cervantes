@@ -63,7 +63,7 @@ describe("verified Task 4 manual content", () => {
           .flatMap(topic => topic.blocks)
           .find(block => block.type === "table")
         if (!table) throw new Error("Task 4 table is missing")
-        table.rows[0][0] = null
+        table.rows[0][0].text = null
       },
       (mutatedTask: typeof task) => {
         const figure = mutatedTask.topics
@@ -136,7 +136,7 @@ describe("verified Task 4 manual content", () => {
     expect(tables).toHaveLength(1)
     expect(table?.caption).toBe("TABLA 5. Acontecimientos relevantes en la historia de España")
     expect(table?.headers).toEqual(["Fecha", "Época histórica", "Descripción"])
-    expect(table?.rows.map(row => row[0])).toEqual([
+    expect(table?.rows.map(row => row[0].text)).toEqual([
       "1252",
       "1492",
       "1519",
@@ -152,119 +152,133 @@ describe("verified Task 4 manual content", () => {
       "1992",
       "2014",
     ])
-    expect(table?.rows[3]).toEqual([
+    expect(table?.rows[3].map(cell => cell.text)).toEqual([
       "Siglos XVI-XVII",
       "Siglo de Oro del Imperio español",
       "Fue el primer imperio con grandes extensiones de territorio en todos los continentes, que incluía los territorios de América, del Pacífico, de Italia y de la Europa central. Los reinados más importantes de este período son los de Carlos I y Felipe II. A Carlos I se le considera el primer rey de España, porque con él se unificaron los distintos reinos de la península ibérica. Felipe II gobernó la mayor extensión de territorios del mundo por la unificación de los reinos de España y Portugal y sus respectivos territorios en América y Asia.",
     ])
-    expect(table?.rows[10]?.[2]).toContain("88 % a favor")
+    expect(table?.rows[10]?.[2].text).toContain("88 % a favor")
   })
 
-  it("keeps every numbered figure in source order with its exact caption", () => {
-    const figures = blocks.flatMap(block =>
-      block.type === "figure" && !block.assetId.includes("-artwork-") ?
-        [[block.assetId, block.caption]]
-      : [],
-    )
+  it("keeps every numbered figure with its exact caption", () => {
+    const figures = blocks.flatMap(block => {
+      if (block.type === "figure" && !block.assetId.includes("-artwork-"))
+        return [[block.assetId, block.caption]]
+      if (block.type !== "table") return []
+      return block.rows.flatMap(row =>
+        row.flatMap(cell => cell.figures?.map(figure => [figure.assetId, figure.caption]) ?? []),
+      )
+    })
 
-    expect(figures).toEqual([
+    expect(figures.toSorted((left, right) => left[0].localeCompare(right[0]))).toEqual(
       [
-        "figure-46-29",
-        "FIGURA 29. Don Quijote y Sancho Panza, personajes principales de la novela El ingenioso hidalgo don Quijote de la Mancha de Miguel de Cervantes",
-      ],
-      ["figure-47-30", "FIGURA 30. Retrato de Antonio Machado. © Autor desconocido."],
-      [
-        "figure-47-31",
-        "FIGURA 31. Manuscrito de La casa de Bernarda Alba, 1936. © Colección Fundación Federico García Lorca",
-      ],
-      [
-        "figure-48-32",
-        "FIGURA 32. Portada de El infinito en un junco de Irene Vallejo, Editorial Siruela",
-      ],
-      [
-        "figure-49-33",
-        "FIGURA 33. Rosalía, una de las cantantes españolas más famosas de la actualidad. © Pedro J Pacheco",
-      ],
-      ["figure-50-34", "FIGURA 34. Fotograma de Un perro Andaluz de Luis Buñuel. © Jennifer Mei"],
-      [
-        "figure-50-35",
-        "FIGURA 35. Cartel de promoción de la película La Librería de la directora de cine Isabel Coixet",
-      ],
-      ["figure-51-37", "FIGURA 37. Mezquita de Córdoba. © Salvatorecoco"],
-      ["figure-51-36", "FIGURA 36. La Alhambra de Granada. © Jebulon"],
-      ["figure-52-39", "FIGURA 39. Museo Guggenheim, Bilbao. © Naotake Murayama"],
-      [
-        "figure-52-38",
-        "FIGURA 38. Museo del Prado, Madrid. Museo del Prado, Madrid. © Emilio J. Rodríguez Posada",
-      ],
-      ["figure-53-40", "FIGURA 40. Museo Reina Sofía, Madrid. © Luis García"],
-      ["figure-53-41", "FIGURA 41. Museo Picasso, Barcelona. © uayebt"],
-      [
-        "figure-54-42",
-        "FIGURA 42. Palacio de Villahermosa (Museo Thyssen-Bornemisza). © Luis García",
-      ],
-      ["figure-54-43", "FIGURA 43. Fundación Miró, Barcelona. © Amador Álvarez"],
-      ["figure-55-44", "FIGURA 44. Centro Pompidou, Málaga. © Epizentrum"],
-      ["figure-55-45", "FIGURA 45. Teatro-Museo Dalí, Figueres. © Luidger"],
-      [
-        "figure-56-46",
-        "FIGURA 46. Observatorio de Calar Alto, es el observatorio astronómico más grande de Europa. © Digigalos",
-      ],
-      ["figure-57-47", "FIGURA 47. Alfonso X el Sabio en El libro de los juegos"],
-      ["figure-57-48", "FIGURA 48. Las Capitulaciones de Granada, Francisco Pradilla y Ortiz."],
-      [
-        "figure-58-49",
-        "FIGURA 49. Alegoría del emperador Carlos V como «gobernante del mundo», de Rubens.",
-      ],
-      [
-        "figure-58-50",
-        "FIGURA 50. Artilleros republicanos en el Fuerte de San Marcos, 1936, de Pascual Marín. © Fondo Marín-Kutxa Fototeka",
-      ],
-      [
-        "figure-58-51",
-        "FIGURA 51. Entrada de las tropas nacionales en San Sebastián (42/54), de Pascual Marín. © Fondo Marín-Kutxa Fototeka",
-      ],
-      [
-        "figure-59-52",
-        "FIGURA 52. Anverso de una moneda de cinco pesetas acuñada en 1949, con la efigie de Franco y la leyenda. © MrCharro",
-      ],
-      ["figure-59-53", "FIGURA 53. Carteles oficiales del Referéndum. © Anefo"],
-      [
-        "figure-59-54",
-        "FIGURA 54. Emblema oficial para los juegos de la XXV olimpiada Barcelona 1992, de Josep Maria Trias",
-      ],
-      [
-        "figure-60-56",
-        "FIGURA 56. Sevilla. El baile, de Joaquín Sorolla. Colección Sociedad Hispánica de América",
-      ],
-      ["figure-60-55", "FIGURA 55. Mascletá en la plaza del Ayuntamiento, Valencia. © MrCarlos11"],
-      ["figure-61-57", "FIGURA 57. Paco de Lucía. © Cornel Putan"],
-      [
-        "figure-61-58",
-        "FIGURA 58. Semana Santa 2005 en El Puerto de Santa María, Andalucía. © Emilio J. Rodríguez Posada",
-      ],
-      [
-        "figure-62-59",
-        "FIGURA 59. Puesto de venta de rosas en la Diada de Sant Jordi, Cataluña. © Francis Lenn",
-      ],
-      ["figure-62-60", "FIGURA 60. Arrojando tomates desde un camión, La Tomatina 2010. © flydime"],
-      [
-        "figure-62-61",
-        "FIGURA 61. Corriendo un encierro en sanfermines 2014, Pamplona-Iruña. © Guia Ilustrada",
-      ],
-      [
-        "figure-63-62",
-        "FIGURA 62. Acto de entrega del Premio Cervantes a Ida Vitale, en 2019, en el Paraninfo de la Universidad de Alcalá. © Pool Moncloa/Borja Puig de la Bellacasa",
-      ],
-      ["figure-63-63", "FIGURA 63. Feria del Libro 2023. Madrid. © Zarateman"],
-      ["figure-64-64", "FIGURA 64. Festival de Teatro Clásico de Mérida. © Ayuntamiento de Mérida"],
-      [
-        "figure-64-65",
-        "FIGURA 65. Vicente Aleixandre y Merlo, Premio Nobel de Literatura, 1977. © Anefo",
-      ],
-      ["figure-65-66", "FIGURA 66. Alcaraz en el Torneo de Roland Garros 2021. © Yannick JAMOT"],
-      ["figure-65-67", "FIGURA 67. La nadadora Mireia Belmonte © Mauricio V. Genta"],
-    ])
+        [
+          "figure-46-29",
+          "FIGURA 29. Don Quijote y Sancho Panza, personajes principales de la novela El ingenioso hidalgo don Quijote de la Mancha de Miguel de Cervantes",
+        ],
+        ["figure-47-30", "FIGURA 30. Retrato de Antonio Machado. © Autor desconocido."],
+        [
+          "figure-47-31",
+          "FIGURA 31. Manuscrito de La casa de Bernarda Alba, 1936. © Colección Fundación Federico García Lorca",
+        ],
+        [
+          "figure-48-32",
+          "FIGURA 32. Portada de El infinito en un junco de Irene Vallejo, Editorial Siruela",
+        ],
+        [
+          "figure-49-33",
+          "FIGURA 33. Rosalía, una de las cantantes españolas más famosas de la actualidad. © Pedro J Pacheco",
+        ],
+        ["figure-50-34", "FIGURA 34. Fotograma de Un perro Andaluz de Luis Buñuel. © Jennifer Mei"],
+        [
+          "figure-50-35",
+          "FIGURA 35. Cartel de promoción de la película La Librería de la directora de cine Isabel Coixet",
+        ],
+        ["figure-51-37", "FIGURA 37. Mezquita de Córdoba. © Salvatorecoco"],
+        ["figure-51-36", "FIGURA 36. La Alhambra de Granada. © Jebulon"],
+        ["figure-52-39", "FIGURA 39. Museo Guggenheim, Bilbao. © Naotake Murayama"],
+        [
+          "figure-52-38",
+          "FIGURA 38. Museo del Prado, Madrid. Museo del Prado, Madrid. © Emilio J. Rodríguez Posada",
+        ],
+        ["figure-53-40", "FIGURA 40. Museo Reina Sofía, Madrid. © Luis García"],
+        ["figure-53-41", "FIGURA 41. Museo Picasso, Barcelona. © uayebt"],
+        [
+          "figure-54-42",
+          "FIGURA 42. Palacio de Villahermosa (Museo Thyssen-Bornemisza). © Luis García",
+        ],
+        ["figure-54-43", "FIGURA 43. Fundación Miró, Barcelona. © Amador Álvarez"],
+        ["figure-55-44", "FIGURA 44. Centro Pompidou, Málaga. © Epizentrum"],
+        ["figure-55-45", "FIGURA 45. Teatro-Museo Dalí, Figueres. © Luidger"],
+        [
+          "figure-56-46",
+          "FIGURA 46. Observatorio de Calar Alto, es el observatorio astronómico más grande de Europa. © Digigalos",
+        ],
+        ["figure-57-47", "FIGURA 47. Alfonso X el Sabio en El libro de los juegos"],
+        ["figure-57-48", "FIGURA 48. Las Capitulaciones de Granada, Francisco Pradilla y Ortiz."],
+        [
+          "figure-58-49",
+          "FIGURA 49. Alegoría del emperador Carlos V como «gobernante del mundo», de Rubens.",
+        ],
+        [
+          "figure-58-50",
+          "FIGURA 50. Artilleros republicanos en el Fuerte de San Marcos, 1936, de Pascual Marín. © Fondo Marín-Kutxa Fototeka",
+        ],
+        [
+          "figure-58-51",
+          "FIGURA 51. Entrada de las tropas nacionales en San Sebastián (42/54), de Pascual Marín. © Fondo Marín-Kutxa Fototeka",
+        ],
+        [
+          "figure-59-52",
+          "FIGURA 52. Anverso de una moneda de cinco pesetas acuñada en 1949, con la efigie de Franco y la leyenda. © MrCharro",
+        ],
+        ["figure-59-53", "FIGURA 53. Carteles oficiales del Referéndum. © Anefo"],
+        [
+          "figure-59-54",
+          "FIGURA 54. Emblema oficial para los juegos de la XXV olimpiada Barcelona 1992, de Josep Maria Trias",
+        ],
+        [
+          "figure-60-56",
+          "FIGURA 56. Sevilla. El baile, de Joaquín Sorolla. Colección Sociedad Hispánica de América",
+        ],
+        [
+          "figure-60-55",
+          "FIGURA 55. Mascletá en la plaza del Ayuntamiento, Valencia. © MrCarlos11",
+        ],
+        ["figure-61-57", "FIGURA 57. Paco de Lucía. © Cornel Putan"],
+        [
+          "figure-61-58",
+          "FIGURA 58. Semana Santa 2005 en El Puerto de Santa María, Andalucía. © Emilio J. Rodríguez Posada",
+        ],
+        [
+          "figure-62-59",
+          "FIGURA 59. Puesto de venta de rosas en la Diada de Sant Jordi, Cataluña. © Francis Lenn",
+        ],
+        [
+          "figure-62-60",
+          "FIGURA 60. Arrojando tomates desde un camión, La Tomatina 2010. © flydime",
+        ],
+        [
+          "figure-62-61",
+          "FIGURA 61. Corriendo un encierro en sanfermines 2014, Pamplona-Iruña. © Guia Ilustrada",
+        ],
+        [
+          "figure-63-62",
+          "FIGURA 62. Acto de entrega del Premio Cervantes a Ida Vitale, en 2019, en el Paraninfo de la Universidad de Alcalá. © Pool Moncloa/Borja Puig de la Bellacasa",
+        ],
+        ["figure-63-63", "FIGURA 63. Feria del Libro 2023. Madrid. © Zarateman"],
+        [
+          "figure-64-64",
+          "FIGURA 64. Festival de Teatro Clásico de Mérida. © Ayuntamiento de Mérida",
+        ],
+        [
+          "figure-64-65",
+          "FIGURA 65. Vicente Aleixandre y Merlo, Premio Nobel de Literatura, 1977. © Anefo",
+        ],
+        ["figure-65-66", "FIGURA 66. Alcaraz en el Torneo de Roland Garros 2021. © Yannick JAMOT"],
+        ["figure-65-67", "FIGURA 67. La nadadora Mireia Belmonte © Mauricio V. Genta"],
+      ].toSorted((left, right) => left[0].localeCompare(right[0])),
+    )
   })
 
   it("keeps every artwork as one separately captioned figure without duplicate metadata tables", () => {
@@ -294,7 +308,19 @@ describe("verified Task 4 manual content", () => {
     const tables = blocks.filter(block => block.type === "table")
 
     expect({
-      figures: count("figure"),
+      figures:
+        count("figure") +
+        tables.reduce(
+          (total, table) =>
+            total +
+            table.rows.reduce(
+              (rowTotal, row) =>
+                rowTotal +
+                row.reduce((cellTotal, cell) => cellTotal + (cell.figures?.length ?? 0), 0),
+              0,
+            ),
+          0,
+        ),
       lists: count("list"),
       tables: count("table"),
     }).toEqual({ figures: 49, lists: 5, tables: 3 })

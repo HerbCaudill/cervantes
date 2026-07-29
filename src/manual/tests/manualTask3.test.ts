@@ -41,7 +41,7 @@ describe("verified Task 3 manual content", () => {
       .find(block => block.type === "table")
     if (!table) throw new Error("Task 3 table is missing")
 
-    table.rows[1][0] = "unexpected value"
+    table.rows[1][0].text = "unexpected value"
 
     expect(await getManualContentDigest(mutatedTask)).not.toBe(task3ContentGolden.taskSha256)
   })
@@ -100,7 +100,9 @@ describe("verified Task 3 manual content", () => {
       "Capital de la comunidad autónoma",
     ])
     expect(table?.rows).toHaveLength(52)
-    expect(table?.rows.filter(row => row[0] !== null)).toEqual([
+    expect(
+      table?.rows.filter(row => row[0].text !== null).map(row => row.map(cell => cell.text)),
+    ).toEqual([
       ["Andalucía", "Almería", "Almería", "Sevilla"],
       ["Aragón", "Huesca", "Huesca", "Zaragoza"],
       ["Principado de Asturias", "Asturias", "Oviedo", "Oviedo"],
@@ -130,8 +132,18 @@ describe("verified Task 3 manual content", () => {
       ["País Vasco", "Álava", "Vitoria", "No declarada. Sede de las administraciones: Vitoria"],
       ["Ciudades autónomas", "Ceuta", null, null],
     ])
-    expect(table?.rows).toContainEqual([null, "Valladolid", "VallaVdolid", null])
-    expect(table?.rows).toContainEqual([null, "Melilla", null, null])
+    expect(table?.rows.map(row => row.map(cell => cell.text))).toContainEqual([
+      null,
+      "Valladolid",
+      "VallaVdolid",
+      null,
+    ])
+    expect(table?.rows.map(row => row.map(cell => cell.text))).toContainEqual([
+      null,
+      "Melilla",
+      null,
+      null,
+    ])
     expect(paragraphs).toContain(
       "1 En el Estatuto de Autonomía no se establece una capitalidad, pero la Junta de Castilla y León y las Cortes tienen su sede en Valladolid.",
     )

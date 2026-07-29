@@ -15,7 +15,7 @@ export function ManualBlock({ block, assets }: Props) {
     case "list":
       return <ManualList block={block} />
     case "table":
-      return <ManualTable block={block} />
+      return <ManualTable block={block} assets={assets} />
     case "figure":
       return <ManualFigure block={block} assets={assets} />
   }

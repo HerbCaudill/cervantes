@@ -149,8 +149,16 @@ export interface DraftTableBlock {
   caption?: string
   /** Explicit column headers */
   headers: string[]
-  /** Source table rows */
-  rows: Array<Array<string | null>>
+  /** Structured source table rows */
+  rows: DraftTableCell[][]
+}
+
+/** One structured source table cell with optional associated figures. */
+export interface DraftTableCell {
+  /** Verbatim cell text; null marks an intentionally empty source cell */
+  text: string | null
+  /** Source figures associated with this row and column */
+  figures?: DraftFigureBlock[]
 }
 
 /** Numbered source figure. */

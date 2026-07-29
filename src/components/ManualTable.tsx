@@ -1,7 +1,8 @@
-import type { TableBlock } from "@/manual/types"
+import { ManualFigure } from "@/components/ManualFigure"
+import type { ManualAsset, TableBlock } from "@/manual/types"
 
 /** Semantic source table that becomes labeled records at narrow widths. */
-export function ManualTable({ block }: Props) {
+export function ManualTable({ block, assets }: Props) {
   const captionMatch = block.caption ? /^TABLA\s+(\d+)\.?\s+(.+)$/s.exec(block.caption) : null
 
   return (
@@ -34,7 +35,14 @@ export function ManualTable({ block }: Props) {
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <td key={cellIndex} data-label={block.headers[cellIndex]}>
-                  {cell}
+                  <div className="grid min-w-0 gap-3">
+                    {cell.text ?
+                      <span>{cell.text}</span>
+                    : null}
+                    {cell.figures?.map(figure => (
+                      <ManualFigure key={figure.assetId} block={figure} assets={assets} />
+                    ))}
+                  </div>
                 </td>
               ))}
             </tr>
@@ -48,4 +56,6 @@ export function ManualTable({ block }: Props) {
 interface Props {
   /** Structured table source block */
   block: TableBlock
+  /** Asset manifest used by figures embedded in table cells */
+  assets: ManualAsset[]
 }

@@ -23,7 +23,7 @@ describe("normalizePopulationTableBlock", () => {
         ["Canarias", "2 238 754", "Galicia", "2 705 833", "Comunidad Valencia", "5 319 285"],
         ["Cantabria", "590 851", "Madrid", "7 009 268", null, null],
         ["Castilla y León", "2 391 682", "Melilla", "85 985", null, null],
-      ],
+      ].map(row => row.map(text => ({ text }))),
     }
 
     expect(normalizePopulationTableBlock(table)).toEqual({
@@ -50,7 +50,7 @@ describe("normalizePopulationTableBlock", () => {
         ["País Vasco", "2 227 684"],
         ["La Rioja", "324 182"],
         ["Comunidad Valencia", "5 319 285"],
-      ],
+      ].map(row => row.map(text => ({ text }))),
     })
   })
 
@@ -59,7 +59,7 @@ describe("normalizePopulationTableBlock", () => {
       type: "table",
       caption: "TABLA 3. Otro contenido",
       headers: ["Comunidad", "Población", "Comunidad", "Población"],
-      rows: [["Andalucía", "8 631 862", "Aragón", "1 351 591"]],
+      rows: [["Andalucía", "8 631 862", "Aragón", "1 351 591"].map(text => ({ text }))],
     }
 
     expect(normalizePopulationTableBlock(table)).toBe(table)

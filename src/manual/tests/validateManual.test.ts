@@ -247,7 +247,7 @@ describe("validateManual", () => {
       {
         type: "table",
         headers: ["Institución", "Sede"],
-        rows: [["Congreso de los Diputados"]],
+        rows: [[{ text: "Congreso de los Diputados" }]],
       },
     ]
 
@@ -257,7 +257,7 @@ describe("validateManual", () => {
   it.each([
     {
       name: "headers",
-      table: { type: "table" as const, headers: [], rows: [["Madrid"]] },
+      table: { type: "table" as const, headers: [], rows: [[{ text: "Madrid" }]] },
     },
     {
       name: "rows",
@@ -265,7 +265,7 @@ describe("validateManual", () => {
     },
     {
       name: "blank cells",
-      table: { type: "table" as const, headers: ["Sede"], rows: [[" "]] },
+      table: { type: "table" as const, headers: ["Sede"], rows: [[{ text: " " }]] },
     },
   ])("rejects malformed tables with $name", ({ table }) => {
     const manual = createManual()
@@ -280,7 +280,16 @@ describe("validateManual", () => {
       {
         type: "table",
         headers: ["Comunidad", "Población", "Comunidad", "Población", "Comunidad", "Población"],
-        rows: [["Andalucía", "8 500 187", "Aragón", "1 351 591", null, null]],
+        rows: [
+          [
+            { text: "Andalucía" },
+            { text: "8 500 187" },
+            { text: "Aragón" },
+            { text: "1 351 591" },
+            { text: null },
+            { text: null },
+          ],
+        ],
       },
     ]
 
@@ -298,6 +307,67 @@ describe("validateManual", () => {
     ]
 
     expect(() => validateManual(manual)).toThrow(/unknown asset/i)
+  })
+
+  it("validates figures embedded in structured table cells", () => {
+    const manual = createManual()
+    manual.sections[0].topics[0].blocks = [
+      {
+        type: "table",
+        headers: ["Institución", "Imagen"],
+        rows: [
+          [
+            { text: "Congreso de los Diputados" },
+            {
+              text: null,
+              figures: [
+                {
+                  type: "figure",
+                  assetId: "figure-congreso",
+                  caption: "El Congreso de los Diputados.",
+                },
+              ],
+            },
+          ],
+        ],
+      },
+    ]
+
+    expect(() => validateManual(manual)).not.toThrow()
+    manual.sections[0].topics[0].blocks[0] = {
+      type: "table",
+      headers: ["Institución", "Imagen"],
+      rows: [
+        [
+          { text: "Congreso de los Diputados" },
+          {
+            text: null,
+            figures: [
+              {
+                type: "figure",
+                assetId: "figure-missing",
+                caption: "Figura no declarada.",
+              },
+            ],
+          },
+        ],
+      ],
+    }
+
+    expect(() => validateManual(manual)).toThrow(/unknown asset/i)
+  })
+
+  it("rejects legacy scalar table cells after the schema cutover", () => {
+    const manual = createManual()
+    manual.sections[0].topics[0].blocks = [
+      {
+        type: "table",
+        headers: ["Institución"],
+        rows: [["Congreso de los Diputados"]],
+      } as unknown as ManualBlock,
+    ]
+
+    expect(() => validateManual(manual)).toThrow(/structured table cell/i)
   })
 
   it.each([
@@ -361,7 +431,7 @@ function createManual(): Manual {
               type: "table",
               caption: "Instituciones y sedes",
               headers: ["Institución", "Sede"],
-              rows: [["Congreso de los Diputados", "Madrid"]],
+              rows: [[{ text: "Congreso de los Diputados" }, { text: "Madrid" }]],
             },
             {
               type: "figure",

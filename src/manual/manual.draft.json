@@ -4,7 +4,11 @@
   "edition": "2026",
   "sourceUrl": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf",
   "assets": [
-    { "id": "figure-7-1", "src": "/manual/figures/figure-7-1.jpg", "alt": "Bandera de España" },
+    {
+      "id": "figure-7-1",
+      "src": "/manual/figures/figure-7-1.jpg",
+      "alt": "Bandera de España"
+    },
     {
       "id": "figure-8-2",
       "src": "/manual/figures/figure-8-2.jpg",
@@ -594,7 +598,11 @@
               "type": "paragraph",
               "text": "La bandera de España tiene tres franjas (roja, amarilla y roja). Cada comunidad autónoma tiene su propia bandera y debe utilizarla junto a la española en sus edificios públicos y en sus actos oficiales."
             },
-            { "type": "figure", "assetId": "figure-7-1", "caption": "FIGURA 1. Bandera de España" },
+            {
+              "type": "figure",
+              "assetId": "figure-7-1",
+              "caption": "FIGURA 1. Bandera de España"
+            },
             {
               "type": "paragraph",
               "text": "En la Constitución se indica que el castellano es la lengua oficial de España. Todos los españoles tienen el derecho de usarla y el deber de conocerla. Las demás lenguas españolas serán también oficiales en las comunidades autónomas donde se usen, de acuerdo con sus respectivos estatutos. En España la enseñanza de las lenguas cooficiales es competencia de las comunidades autónomas."
@@ -619,22 +627,60 @@
                 "Organismos para la difusión y promoción de las lenguas y las culturas"
               ],
               "rows": [
-                ["Castellano o español", "Real Academia Española (RAE)", "Instituto Cervantes"],
                 [
-                  "Catalán",
-                  "Institut d'Estudis Catalans",
-                  "Institut Ramon Llull\nInstitut d'Estudis Baleàrics"
+                  {
+                    "text": "Castellano o español"
+                  },
+                  {
+                    "text": "Real Academia Española (RAE)"
+                  },
+                  {
+                    "text": "Instituto Cervantes"
+                  }
                 ],
                 [
-                  "Valenciano",
-                  "Acadèmia Valenciana de la Llengua",
-                  "Direcció General de Política Lingüística i Gestió del Multilingüisme"
+                  {
+                    "text": "Catalán"
+                  },
+                  {
+                    "text": "Institut d'Estudis Catalans"
+                  },
+                  {
+                    "text": "Institut Ramon Llull\nInstitut d'Estudis Baleàrics"
+                  }
                 ],
-                ["Gallego", "Real Academia Galega", "Secretaría Xeral de Política Lingüística"],
                 [
-                  "Vasco o euskera",
-                  "Real Academia de la Lengua Vasca\n-Euskaltzaindia",
-                  "Instituto Vasco Etxepare\nInstituto Navarro del Vascuence-Euskarabidea"
+                  {
+                    "text": "Valenciano"
+                  },
+                  {
+                    "text": "Acadèmia Valenciana de la Llengua"
+                  },
+                  {
+                    "text": "Direcció General de Política Lingüística i Gestió del Multilingüisme"
+                  }
+                ],
+                [
+                  {
+                    "text": "Gallego"
+                  },
+                  {
+                    "text": "Real Academia Galega"
+                  },
+                  {
+                    "text": "Secretaría Xeral de Política Lingüística"
+                  }
+                ],
+                [
+                  {
+                    "text": "Vasco o euskera"
+                  },
+                  {
+                    "text": "Real Academia de la Lengua Vasca\n-Euskaltzaindia"
+                  },
+                  {
+                    "text": "Instituto Vasco Etxepare\nInstituto Navarro del Vascuence-Euskarabidea"
+                  }
                 ]
               ],
               "caption": "TABLA 1. Instituciones para la normalización y promoción de las lenguas españolas"
@@ -736,7 +782,10 @@
               "type": "paragraph",
               "text": "En el Congreso de los Diputados también tiene lugar la investidura del presidente del Gobierno, a propuesta del rey, y es el sitio en el que se debaten las cuestiones de confianza o las mociones de censura al presidente. Por su parte, el Senado es la cámara de representación territorial de España."
             },
-            { "type": "paragraph", "text": "Hay distintos tipos de leyes:" },
+            {
+              "type": "paragraph",
+              "text": "Hay distintos tipos de leyes:"
+            },
             {
               "type": "list",
               "style": "unordered",
@@ -985,25 +1034,158 @@
               "type": "table",
               "headers": ["Comunidades y ciudades autónomas", "Población"],
               "rows": [
-                ["Andalucía", "8 631 862"],
-                ["Aragón", "1 351 591"],
-                ["Principado de Asturias", "1 009 599"],
-                ["Islas Baleares", "1 231 768"],
-                ["Canarias", "2 238 754"],
-                ["Cantabria", "590 851"],
-                ["Castilla y León", "2 391 682"],
-                ["Castilla - La Mancha", "2 104 433"],
-                ["Cataluña", "8 012 231"],
-                ["Ceuta", "83 179"],
-                ["Extremadura", "1 054 681"],
-                ["Galicia", "2 705 833"],
-                ["Madrid", "7 009 268"],
-                ["Melilla", "85 985"],
-                ["Murcia", "1 568 492"],
-                ["Navarra", "678 333"],
-                ["País Vasco", "2 227 684"],
-                ["La Rioja", "324 182"],
-                ["Comunidad Valencia", "5 319 285"]
+                [
+                  {
+                    "text": "Andalucía"
+                  },
+                  {
+                    "text": "8 631 862"
+                  }
+                ],
+                [
+                  {
+                    "text": "Aragón"
+                  },
+                  {
+                    "text": "1 351 591"
+                  }
+                ],
+                [
+                  {
+                    "text": "Principado de Asturias"
+                  },
+                  {
+                    "text": "1 009 599"
+                  }
+                ],
+                [
+                  {
+                    "text": "Islas Baleares"
+                  },
+                  {
+                    "text": "1 231 768"
+                  }
+                ],
+                [
+                  {
+                    "text": "Canarias"
+                  },
+                  {
+                    "text": "2 238 754"
+                  }
+                ],
+                [
+                  {
+                    "text": "Cantabria"
+                  },
+                  {
+                    "text": "590 851"
+                  }
+                ],
+                [
+                  {
+                    "text": "Castilla y León"
+                  },
+                  {
+                    "text": "2 391 682"
+                  }
+                ],
+                [
+                  {
+                    "text": "Castilla - La Mancha"
+                  },
+                  {
+                    "text": "2 104 433"
+                  }
+                ],
+                [
+                  {
+                    "text": "Cataluña"
+                  },
+                  {
+                    "text": "8 012 231"
+                  }
+                ],
+                [
+                  {
+                    "text": "Ceuta"
+                  },
+                  {
+                    "text": "83 179"
+                  }
+                ],
+                [
+                  {
+                    "text": "Extremadura"
+                  },
+                  {
+                    "text": "1 054 681"
+                  }
+                ],
+                [
+                  {
+                    "text": "Galicia"
+                  },
+                  {
+                    "text": "2 705 833"
+                  }
+                ],
+                [
+                  {
+                    "text": "Madrid"
+                  },
+                  {
+                    "text": "7 009 268"
+                  }
+                ],
+                [
+                  {
+                    "text": "Melilla"
+                  },
+                  {
+                    "text": "85 985"
+                  }
+                ],
+                [
+                  {
+                    "text": "Murcia"
+                  },
+                  {
+                    "text": "1 568 492"
+                  }
+                ],
+                [
+                  {
+                    "text": "Navarra"
+                  },
+                  {
+                    "text": "678 333"
+                  }
+                ],
+                [
+                  {
+                    "text": "País Vasco"
+                  },
+                  {
+                    "text": "2 227 684"
+                  }
+                ],
+                [
+                  {
+                    "text": "La Rioja"
+                  },
+                  {
+                    "text": "324 182"
+                  }
+                ],
+                [
+                  {
+                    "text": "Comunidad Valencia"
+                  },
+                  {
+                    "text": "5 319 285"
+                  }
+                ]
               ],
               "caption": "TABLA 2. Número de habitantes por comunidades autónomas"
             }
@@ -1049,17 +1231,83 @@
               "type": "table",
               "headers": ["Período", "Presidentes de Gobierno", "Partido político"],
               "rows": [
-                ["1979-1981", "Adolfo Suárez", "Unión de Centro Democrático (UCD)"],
-                ["1981-1982", "Leopoldo Calvo-Sotelo", "Unión de Centro Democrático (UCD)"],
-                ["1982-1996", "Felipe González", "Partido Socialista Obrero Español (PSOE)"],
-                ["1996-2004", "José María Aznar", "Partido Popular (PP)"],
                 [
-                  "2004-2011",
-                  "José Luis Rodríguez Zapatero",
-                  "Partido Socialista Obrero Español (PSOE)"
+                  {
+                    "text": "1979-1981"
+                  },
+                  {
+                    "text": "Adolfo Suárez"
+                  },
+                  {
+                    "text": "Unión de Centro Democrático (UCD)"
+                  }
                 ],
-                ["2011-2018", "Mariano Rajoy", "Partido Popular (PP)"],
-                ["2018-", "Pedro Sánchez", "Partido Socialista Obrero Español (PSOE)"]
+                [
+                  {
+                    "text": "1981-1982"
+                  },
+                  {
+                    "text": "Leopoldo Calvo-Sotelo"
+                  },
+                  {
+                    "text": "Unión de Centro Democrático (UCD)"
+                  }
+                ],
+                [
+                  {
+                    "text": "1982-1996"
+                  },
+                  {
+                    "text": "Felipe González"
+                  },
+                  {
+                    "text": "Partido Socialista Obrero Español (PSOE)"
+                  }
+                ],
+                [
+                  {
+                    "text": "1996-2004"
+                  },
+                  {
+                    "text": "José María Aznar"
+                  },
+                  {
+                    "text": "Partido Popular (PP)"
+                  }
+                ],
+                [
+                  {
+                    "text": "2004-2011"
+                  },
+                  {
+                    "text": "José Luis Rodríguez Zapatero"
+                  },
+                  {
+                    "text": "Partido Socialista Obrero Español (PSOE)"
+                  }
+                ],
+                [
+                  {
+                    "text": "2011-2018"
+                  },
+                  {
+                    "text": "Mariano Rajoy"
+                  },
+                  {
+                    "text": "Partido Popular (PP)"
+                  }
+                ],
+                [
+                  {
+                    "text": "2018-"
+                  },
+                  {
+                    "text": "Pedro Sánchez"
+                  },
+                  {
+                    "text": "Partido Socialista Obrero Español (PSOE)"
+                  }
+                ]
               ],
               "caption": "TABLA 3. Relación de presidentes de Gobierno y sus partidos políticos entre 1979 y 2024"
             }
@@ -1118,7 +1366,10 @@
           "id": "task-2-articulo-12",
           "title": "Artículo 12",
           "blocks": [
-            { "type": "paragraph", "text": "Los españoles son mayores de edad a los 18 años." }
+            {
+              "type": "paragraph",
+              "text": "Los españoles son mayores de edad a los 18 años."
+            }
           ]
         },
         {
@@ -1460,7 +1711,10 @@
               "type": "paragraph",
               "text": "España está situada en el sur de Europa y tiene frontera con Andorra, Francia, Portugal y Marruecos. Es el cuarto país más grande del continente, con una extensión de 505 944 km². Es uno de los países más montañosos de Europa, con una altitud media de 650 metros sobre el nivel del mar. La cifra oficial de habitantes es de 49 315 949 a 1 de julio de 2025."
             },
-            { "type": "paragraph", "text": "España está compuesta por:" },
+            {
+              "type": "paragraph",
+              "text": "España está compuesta por:"
+            },
             {
               "type": "list",
               "style": "unordered",
@@ -1587,73 +1841,734 @@
                 "Capital de la comunidad autónoma"
               ],
               "rows": [
-                ["Andalucía", "Almería", "Almería", "Sevilla"],
-                [null, "Cádiz", "Cádiz", null],
-                [null, "Córdoba", "Córdoba", null],
-                [null, "Granada", "Granada", null],
-                [null, "Huelva", "Huelva", null],
-                [null, "Jaén", "Jaén", null],
-                [null, "Málaga", "Málaga", null],
-                [null, "Sevilla", "Sevilla", null],
-                ["Aragón", "Huesca", "Huesca", "Zaragoza"],
-                [null, "Teruel", "Teruel", null],
-                [null, "Zaragoza", "Zaragoza", null],
-                ["Principado de Asturias", "Asturias", "Oviedo", "Oviedo"],
-                ["Islas Baleares", "Baleares", "Palma de Mallorca", "Palma de Mallorca"],
                 [
-                  "Canarias",
-                  "Las Palmas",
-                  "Las Palmas de Gran Canaria",
-                  "Capitalidad compartida entre Las Palmas de Gran Canaria y Santa Cruz de Tenerife"
+                  {
+                    "text": "Andalucía"
+                  },
+                  {
+                    "text": "Almería"
+                  },
+                  {
+                    "text": "Almería"
+                  },
+                  {
+                    "text": "Sevilla"
+                  }
                 ],
-                [null, "Santa Cruz de Tenerife", "Santa Cruz de Tenerife", null],
-                ["Cantabria", "Cantabria", "Santander", "Santander"],
-                ["Castilla-La Mancha", "Albacete", "Albacete", "Toledo"],
-                [null, "Ciudad Real", "Ciudad Real", null],
-                [null, "Cuenca", "Cuenca", null],
-                [null, "Guadalajara", "Guadalajara", null],
-                [null, "Toledo", "Toledo", null],
                 [
-                  "Castilla y León",
-                  "Ávila",
-                  "Ávila",
-                  "No hay una capital oficial. La sede de las administraciones está en Valladolid¹"
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Cádiz"
+                  },
+                  {
+                    "text": "Cádiz"
+                  },
+                  {
+                    "text": null
+                  }
                 ],
-                [null, "Burgos", "Burgos", null],
-                [null, "León", "León", null],
-                [null, "Palencia", "Palencia", null],
-                [null, "Salamanca", "Salamanca", null],
-                [null, "Segovia", "Segovia", null],
-                [null, "Soria", "Soria", null],
-                [null, "Valladolid", "VallaVdolid", null],
-                [null, "Zamora", "Zamora", null],
-                ["Cataluña", "Barcelona", "Barcelona", "Barcelona"],
-                [null, "Gerona", "Gerona", null],
-                [null, "Lérida", "Lérida", null],
-                [null, "Tarragona", "Tarragona", null],
-                ["Comunidad Valenciana", "Alicante", "Alicante", "Valencia"],
-                [null, "Castellón", "Castellón de la Plana", null],
-                [null, "Valencia", "Valencia", null],
-                ["Extremadura", "Badajoz", "Badajoz", "Mérida"],
-                [null, "Cáceres", "Cáceres", null],
-                ["Galicia", "La Coruña", "La Coruña", "Santiago de Compostela"],
-                [null, "Lugo", "Lugo", null],
-                [null, "Orense", "Orense", null],
-                [null, "Pontevedra", "Pontevedra", null],
-                ["La Rioja", "La Rioja", "Logroño", "Logroño"],
-                ["Comunidad de Madrid", "Madrid", "Madrid", "Madrid"],
-                ["Región de Murcia", "Murcia", "Murcia", "Murcia"],
-                ["Comunidad Foral de Navarra", "Navarra", "Pamplona", "Pamplona"],
                 [
-                  "País Vasco",
-                  "Álava",
-                  "Vitoria",
-                  "No declarada. Sede de las administraciones: Vitoria"
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Córdoba"
+                  },
+                  {
+                    "text": "Córdoba"
+                  },
+                  {
+                    "text": null
+                  }
                 ],
-                [null, "Guipúzcoa", "San Sebastián", null],
-                [null, "Vizcaya", "Bilbao", null],
-                ["Ciudades autónomas", "Ceuta", null, null],
-                [null, "Melilla", null, null]
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Granada"
+                  },
+                  {
+                    "text": "Granada"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Huelva"
+                  },
+                  {
+                    "text": "Huelva"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Jaén"
+                  },
+                  {
+                    "text": "Jaén"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Málaga"
+                  },
+                  {
+                    "text": "Málaga"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Sevilla"
+                  },
+                  {
+                    "text": "Sevilla"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Aragón"
+                  },
+                  {
+                    "text": "Huesca"
+                  },
+                  {
+                    "text": "Huesca"
+                  },
+                  {
+                    "text": "Zaragoza"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Teruel"
+                  },
+                  {
+                    "text": "Teruel"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Zaragoza"
+                  },
+                  {
+                    "text": "Zaragoza"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Principado de Asturias"
+                  },
+                  {
+                    "text": "Asturias"
+                  },
+                  {
+                    "text": "Oviedo"
+                  },
+                  {
+                    "text": "Oviedo"
+                  }
+                ],
+                [
+                  {
+                    "text": "Islas Baleares"
+                  },
+                  {
+                    "text": "Baleares"
+                  },
+                  {
+                    "text": "Palma de Mallorca"
+                  },
+                  {
+                    "text": "Palma de Mallorca"
+                  }
+                ],
+                [
+                  {
+                    "text": "Canarias"
+                  },
+                  {
+                    "text": "Las Palmas"
+                  },
+                  {
+                    "text": "Las Palmas de Gran Canaria"
+                  },
+                  {
+                    "text": "Capitalidad compartida entre Las Palmas de Gran Canaria y Santa Cruz de Tenerife"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Santa Cruz de Tenerife"
+                  },
+                  {
+                    "text": "Santa Cruz de Tenerife"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Cantabria"
+                  },
+                  {
+                    "text": "Cantabria"
+                  },
+                  {
+                    "text": "Santander"
+                  },
+                  {
+                    "text": "Santander"
+                  }
+                ],
+                [
+                  {
+                    "text": "Castilla-La Mancha"
+                  },
+                  {
+                    "text": "Albacete"
+                  },
+                  {
+                    "text": "Albacete"
+                  },
+                  {
+                    "text": "Toledo"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Ciudad Real"
+                  },
+                  {
+                    "text": "Ciudad Real"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Cuenca"
+                  },
+                  {
+                    "text": "Cuenca"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Guadalajara"
+                  },
+                  {
+                    "text": "Guadalajara"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Toledo"
+                  },
+                  {
+                    "text": "Toledo"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Castilla y León"
+                  },
+                  {
+                    "text": "Ávila"
+                  },
+                  {
+                    "text": "Ávila"
+                  },
+                  {
+                    "text": "No hay una capital oficial. La sede de las administraciones está en Valladolid¹"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Burgos"
+                  },
+                  {
+                    "text": "Burgos"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "León"
+                  },
+                  {
+                    "text": "León"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Palencia"
+                  },
+                  {
+                    "text": "Palencia"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Salamanca"
+                  },
+                  {
+                    "text": "Salamanca"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Segovia"
+                  },
+                  {
+                    "text": "Segovia"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Soria"
+                  },
+                  {
+                    "text": "Soria"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Valladolid"
+                  },
+                  {
+                    "text": "VallaVdolid"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Zamora"
+                  },
+                  {
+                    "text": "Zamora"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Cataluña"
+                  },
+                  {
+                    "text": "Barcelona"
+                  },
+                  {
+                    "text": "Barcelona"
+                  },
+                  {
+                    "text": "Barcelona"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Gerona"
+                  },
+                  {
+                    "text": "Gerona"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Lérida"
+                  },
+                  {
+                    "text": "Lérida"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Tarragona"
+                  },
+                  {
+                    "text": "Tarragona"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Comunidad Valenciana"
+                  },
+                  {
+                    "text": "Alicante"
+                  },
+                  {
+                    "text": "Alicante"
+                  },
+                  {
+                    "text": "Valencia"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Castellón"
+                  },
+                  {
+                    "text": "Castellón de la Plana"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Valencia"
+                  },
+                  {
+                    "text": "Valencia"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Extremadura"
+                  },
+                  {
+                    "text": "Badajoz"
+                  },
+                  {
+                    "text": "Badajoz"
+                  },
+                  {
+                    "text": "Mérida"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Cáceres"
+                  },
+                  {
+                    "text": "Cáceres"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Galicia"
+                  },
+                  {
+                    "text": "La Coruña"
+                  },
+                  {
+                    "text": "La Coruña"
+                  },
+                  {
+                    "text": "Santiago de Compostela"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Lugo"
+                  },
+                  {
+                    "text": "Lugo"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Orense"
+                  },
+                  {
+                    "text": "Orense"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Pontevedra"
+                  },
+                  {
+                    "text": "Pontevedra"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "La Rioja"
+                  },
+                  {
+                    "text": "La Rioja"
+                  },
+                  {
+                    "text": "Logroño"
+                  },
+                  {
+                    "text": "Logroño"
+                  }
+                ],
+                [
+                  {
+                    "text": "Comunidad de Madrid"
+                  },
+                  {
+                    "text": "Madrid"
+                  },
+                  {
+                    "text": "Madrid"
+                  },
+                  {
+                    "text": "Madrid"
+                  }
+                ],
+                [
+                  {
+                    "text": "Región de Murcia"
+                  },
+                  {
+                    "text": "Murcia"
+                  },
+                  {
+                    "text": "Murcia"
+                  },
+                  {
+                    "text": "Murcia"
+                  }
+                ],
+                [
+                  {
+                    "text": "Comunidad Foral de Navarra"
+                  },
+                  {
+                    "text": "Navarra"
+                  },
+                  {
+                    "text": "Pamplona"
+                  },
+                  {
+                    "text": "Pamplona"
+                  }
+                ],
+                [
+                  {
+                    "text": "País Vasco"
+                  },
+                  {
+                    "text": "Álava"
+                  },
+                  {
+                    "text": "Vitoria"
+                  },
+                  {
+                    "text": "No declarada. Sede de las administraciones: Vitoria"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Guipúzcoa"
+                  },
+                  {
+                    "text": "San Sebastián"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Vizcaya"
+                  },
+                  {
+                    "text": "Bilbao"
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": "Ciudades autónomas"
+                  },
+                  {
+                    "text": "Ceuta"
+                  },
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": null
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "Melilla"
+                  },
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": null
+                  }
+                ]
               ],
               "caption": "TABLA 4 Comunidades autónomas, provincias, capitales de provincia y capitales de comunidades autónomas"
             },
@@ -2045,117 +2960,215 @@
               "headers": ["Fecha", "Época histórica", "Descripción"],
               "rows": [
                 [
-                  "1252",
-                  "1252",
-                  "Alfonso X convierte a Toledo en referente de la cultura medieval. Toledo es conocida como la ciudad de las tres culturas: la judía, la musulmana y la cristiana."
+                  {
+                    "text": "1252"
+                  },
+                  {
+                    "text": "1252"
+                  },
+                  {
+                    "text": "Alfonso X convierte a Toledo en referente de la cultura medieval. Toledo es conocida como la ciudad de las tres culturas: la judía, la musulmana y la cristiana.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-57-47",
+                        "caption": "FIGURA 47. Alfonso X el Sabio en El libro de los juegos"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "1492",
-                  "1492",
-                  "Cristóbal Colón descubre América. Los Reyes Católicos conquistan Granada. Se publica la primera gramática de la lengua castellana."
+                  {
+                    "text": "1492"
+                  },
+                  {
+                    "text": "1492"
+                  },
+                  {
+                    "text": "Cristóbal Colón descubre América. Los Reyes Católicos conquistan Granada. Se publica la primera gramática de la lengua castellana.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-57-48",
+                        "caption": "FIGURA 48. Las Capitulaciones de Granada, Francisco Pradilla y Ortiz."
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "1519",
-                  "1519",
-                  "Magallanes y Juan Sebastián Elcano inician la primera vuelta al mundo."
+                  {
+                    "text": "1519"
+                  },
+                  {
+                    "text": "1519"
+                  },
+                  {
+                    "text": "Magallanes y Juan Sebastián Elcano inician la primera vuelta al mundo."
+                  }
                 ],
                 [
-                  "Siglos XVI-XVII",
-                  "Siglo de Oro del Imperio español",
-                  "Fue el primer imperio con grandes extensiones de territorio en todos los continentes, que incluía los territorios de América, del Pacífico, de Italia y de la Europa central. Los reinados más importantes de este período son los de Carlos I y Felipe II. A Carlos I se le considera el primer rey de España, porque con él se unificaron los distintos reinos de la península ibérica. Felipe II gobernó la mayor extensión de territorios del mundo por la unificación de los reinos de España y Portugal y sus respectivos territorios en América y Asia."
+                  {
+                    "text": "Siglos XVI-XVII"
+                  },
+                  {
+                    "text": "Siglo de Oro del Imperio español"
+                  },
+                  {
+                    "text": "Fue el primer imperio con grandes extensiones de territorio en todos los continentes, que incluía los territorios de América, del Pacífico, de Italia y de la Europa central. Los reinados más importantes de este período son los de Carlos I y Felipe II. A Carlos I se le considera el primer rey de España, porque con él se unificaron los distintos reinos de la península ibérica. Felipe II gobernó la mayor extensión de territorios del mundo por la unificación de los reinos de España y Portugal y sus respectivos territorios en América y Asia.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-58-49",
+                        "caption": "FIGURA 49. Alegoría del emperador Carlos V como «gobernante del mundo», de Rubens."
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "1705-1715",
-                  "Guerra de Sucesión",
-                  "Al morir sin heredero Carlos II, último rey de la dinastía de los Austrias, se inicia una guerra entre la casa Austria y los Borbones. Vencieron estos últimos y Felipe de Anjou fue coronado como Felipe V."
+                  {
+                    "text": "1705-1715"
+                  },
+                  {
+                    "text": "Guerra de Sucesión"
+                  },
+                  {
+                    "text": "Al morir sin heredero Carlos II, último rey de la dinastía de los Austrias, se inicia una guerra entre la casa Austria y los Borbones. Vencieron estos últimos y Felipe de Anjou fue coronado como Felipe V."
+                  }
                 ],
                 [
-                  "1808-1814",
-                  "Guerra de Independencia",
-                  "Guerra de los españoles contra la invasión francesa y el rey francés José Bonaparte, hermano de Napoleón. Cuando termina la guerra, Fernando VII vuelve a ser rey de España."
+                  {
+                    "text": "1808-1814"
+                  },
+                  {
+                    "text": "Guerra de Independencia"
+                  },
+                  {
+                    "text": "Guerra de los españoles contra la invasión francesa y el rey francés José Bonaparte, hermano de Napoleón. Cuando termina la guerra, Fernando VII vuelve a ser rey de España."
+                  }
                 ],
                 [
-                  "1895-1898",
-                  "Guerra de Cuba o desastre del 98",
-                  "España y Estados Unidos se enfrentaron en 1898 en la guerra de Cuba (o «desastre del 98»). España perdió la guerra y sus últimas colonias: la isla de Cuba, que se proclamó república independiente, y Puerto Rico, Filipinas y Guam, que pasaron a ser dependencias coloniales de Estados Unidos."
+                  {
+                    "text": "1895-1898"
+                  },
+                  {
+                    "text": "Guerra de Cuba o desastre del 98"
+                  },
+                  {
+                    "text": "España y Estados Unidos se enfrentaron en 1898 en la guerra de Cuba (o «desastre del 98»). España perdió la guerra y sus últimas colonias: la isla de Cuba, que se proclamó república independiente, y Puerto Rico, Filipinas y Guam, que pasaron a ser dependencias coloniales de Estados Unidos."
+                  }
                 ],
                 [
-                  "1936-1939",
-                  "Guerra Civil",
-                  "La guerra civil española fue un conflicto bélico entre los partidarios de la II República, proclamada en 1931 (los republicanos), y los sublevados, liderados por gran parte de los mandos del ejército (los nacionales)."
+                  {
+                    "text": "1936-1939"
+                  },
+                  {
+                    "text": "Guerra Civil"
+                  },
+                  {
+                    "text": "La guerra civil española fue un conflicto bélico entre los partidarios de la II República, proclamada en 1931 (los republicanos), y los sublevados, liderados por gran parte de los mandos del ejército (los nacionales).",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-58-50",
+                        "caption": "FIGURA 50. Artilleros republicanos en el Fuerte de San Marcos, 1936, de Pascual Marín. © Fondo Marín-Kutxa Fototeka"
+                      },
+                      {
+                        "type": "figure",
+                        "assetId": "figure-58-51",
+                        "caption": "FIGURA 51. Entrada de las tropas nacionales en San Sebastián (42/54), de Pascual Marín. © Fondo Marín-Kutxa Fototeka"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "1939-1975",
-                  "Franquismo",
-                  "El general Francisco Franco gana la Guerra Civil y se convierte en jefe del Estado español hasta su muerte. España está aislada hasta el inicio de la Guerra Fría por el rechazo internacional a la dictadura de Franco, caracterizada por el nacionalismo español excluyente, el catolicismo y el anticomunismo."
+                  {
+                    "text": "1939-1975"
+                  },
+                  {
+                    "text": "Franquismo"
+                  },
+                  {
+                    "text": "El general Francisco Franco gana la Guerra Civil y se convierte en jefe del Estado español hasta su muerte. España está aislada hasta el inicio de la Guerra Fría por el rechazo internacional a la dictadura de Franco, caracterizada por el nacionalismo español excluyente, el catolicismo y el anticomunismo.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-59-52",
+                        "caption": "FIGURA 52. Anverso de una moneda de cinco pesetas acuñada en 1949, con la efigie de Franco y la leyenda. © MrCharro"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "1975-1982",
-                  "Transición española",
-                  "La Transición española es el período comprendido entre la muerte de Francisco Franco (20 de noviembre de 1975) y las elecciones democráticas de octubre de 1982. Este período de transición fue liderado por Adolfo Suárez y el partido Unión de Centro Democrático. Las elecciones de 1982 las ganó el Partido Socialista Obrero Español (PSOE). Las primeras elecciones democráticas en España tras la dictadura de Franco se celebraron el 15 de junio de 1977. Las ganó el partido Unión de Centro Democrático (UCD), cuyo líder era Adolfo Suárez, que ya era presidente del Gobierno y continuó en el cargo tras los comicios."
+                  {
+                    "text": "1975-1982"
+                  },
+                  {
+                    "text": "Transición española"
+                  },
+                  {
+                    "text": "La Transición española es el período comprendido entre la muerte de Francisco Franco (20 de noviembre de 1975) y las elecciones democráticas de octubre de 1982. Este período de transición fue liderado por Adolfo Suárez y el partido Unión de Centro Democrático. Las elecciones de 1982 las ganó el Partido Socialista Obrero Español (PSOE). Las primeras elecciones democráticas en España tras la dictadura de Franco se celebraron el 15 de junio de 1977. Las ganó el partido Unión de Centro Democrático (UCD), cuyo líder era Adolfo Suárez, que ya era presidente del Gobierno y continuó en el cargo tras los comicios."
+                  }
                 ],
                 [
-                  "1978",
-                  "Referéndum sobre la Constitución",
-                  "El 6 de diciembre de 1978 se celebra el primer referéndum de la democracia española, para votar la Constitución. Hubo una alta participación y con un 88 % a favor."
+                  {
+                    "text": "1978"
+                  },
+                  {
+                    "text": "Referéndum sobre la Constitución"
+                  },
+                  {
+                    "text": "El 6 de diciembre de 1978 se celebra el primer referéndum de la democracia española, para votar la Constitución. Hubo una alta participación y con un 88 % a favor.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-59-53",
+                        "caption": "FIGURA 53. Carteles oficiales del Referéndum. © Anefo"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "1986",
-                  "Entrada de España en la CEE",
-                  "España entra en la Comunidad Económica Europea (CEE) el 1 de enero de 1986. En ese momento comienza una nueva etapa de transformación económica e institucional, por la integración europea: miembro del espacio Schengen (países que han eliminado sus fronteras interiores) y de la zona del euro (conjunto de países que tienen el euro como moneda oficial), está presente en las instituciones europeas como Consejo, Comisión Europea, Parlamento Europeo, Banco Central Europeo, etc."
+                  {
+                    "text": "1986"
+                  },
+                  {
+                    "text": "Entrada de España en la CEE"
+                  },
+                  {
+                    "text": "España entra en la Comunidad Económica Europea (CEE) el 1 de enero de 1986. En ese momento comienza una nueva etapa de transformación económica e institucional, por la integración europea: miembro del espacio Schengen (países que han eliminado sus fronteras interiores) y de la zona del euro (conjunto de países que tienen el euro como moneda oficial), está presente en las instituciones europeas como Consejo, Comisión Europea, Parlamento Europeo, Banco Central Europeo, etc."
+                  }
                 ],
                 [
-                  "1992",
-                  "Celebraciones",
-                  "En el año 1992 se celebran los Juegos Olímpicos de Barcelona, el quinto centenario de la llegada de Colón a América y la Exposición Universal de Sevilla; Madrid es la Capital Europea de la Cultura y se inaugura el tren de Alta Velocidad Española (AVE)."
+                  {
+                    "text": "1992"
+                  },
+                  {
+                    "text": "Celebraciones"
+                  },
+                  {
+                    "text": "En el año 1992 se celebran los Juegos Olímpicos de Barcelona, el quinto centenario de la llegada de Colón a América y la Exposición Universal de Sevilla; Madrid es la Capital Europea de la Cultura y se inaugura el tren de Alta Velocidad Española (AVE).",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-59-54",
+                        "caption": "FIGURA 54. Emblema oficial para los juegos de la XXV olimpiada Barcelona 1992, de Josep Maria Trias"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "2014",
-                  "Monarquía",
-                  "Felipe VI se convierte en rey de España, sucediendo a su padre, Juan Carlos I."
+                  {
+                    "text": "2014"
+                  },
+                  {
+                    "text": "Monarquía"
+                  },
+                  {
+                    "text": "Felipe VI se convierte en rey de España, sucediendo a su padre, Juan Carlos I."
+                  }
                 ]
               ],
               "caption": "TABLA 5. Acontecimientos relevantes en la historia de España"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-57-47",
-              "caption": "FIGURA 47. Alfonso X el Sabio en El libro de los juegos"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-57-48",
-              "caption": "FIGURA 48. Las Capitulaciones de Granada, Francisco Pradilla y Ortiz."
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-58-49",
-              "caption": "FIGURA 49. Alegoría del emperador Carlos V como «gobernante del mundo», de Rubens."
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-58-50",
-              "caption": "FIGURA 50. Artilleros republicanos en el Fuerte de San Marcos, 1936, de Pascual Marín. © Fondo Marín-Kutxa Fototeka"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-58-51",
-              "caption": "FIGURA 51. Entrada de las tropas nacionales en San Sebastián (42/54), de Pascual Marín. © Fondo Marín-Kutxa Fototeka"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-59-52",
-              "caption": "FIGURA 52. Anverso de una moneda de cinco pesetas acuñada en 1949, con la efigie de Franco y la leyenda. © MrCharro"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-59-53",
-              "caption": "FIGURA 53. Carteles oficiales del Referéndum. © Anefo"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-59-54",
-              "caption": "FIGURA 54. Emblema oficial para los juegos de la XXV olimpiada Barcelona 1992, de Josep Maria Trias"
             }
           ]
         },
@@ -2188,11 +3201,6 @@
               "caption": "FIGURA 56. Sevilla. El baile, de Joaquín Sorolla. Colección Sociedad Hispánica de América"
             },
             {
-              "type": "figure",
-              "assetId": "figure-60-55",
-              "caption": "FIGURA 55. Mascletá en la plaza del Ayuntamiento, Valencia. © MrCarlos11"
-            },
-            {
               "type": "paragraph",
               "text": "Los instrumentos musicales típicos del folclore español son: la guitarra, las castañuelas, la gaita, la dulzaina, el acordeón, el txistu y el tamboril."
             },
@@ -2205,49 +3213,138 @@
               "headers": ["Fiestas", "Fecha y localidad", "Símbolos relacionados con las fiestas"],
               "rows": [
                 [
-                  "Navidades",
-                  "Se celebran entre el 24 de diciembre y el 6 de enero.",
-                  "Símbolos u objetos: belén o nacimiento y árbol de Navidad. Tradiciones: cenar en familia la noche del 24 de diciembre, conocida como Nochebuena; tomar las 12 uvas la noche del 31 de diciembre, conocida como Nochevieja; colocar los zapatos el 5 de enero (víspera del día de Reyes) cerca de la ventana para recibir regalos; cabalgata de los Reyes Magos. Alimentos y bebidas: turrón, mazapán, polvorones, cava. Música: villancicos."
+                  {
+                    "text": "Navidades"
+                  },
+                  {
+                    "text": "Se celebran entre el 24 de diciembre y el 6 de enero."
+                  },
+                  {
+                    "text": "Símbolos u objetos: belén o nacimiento y árbol de Navidad. Tradiciones: cenar en familia la noche del 24 de diciembre, conocida como Nochebuena; tomar las 12 uvas la noche del 31 de diciembre, conocida como Nochevieja; colocar los zapatos el 5 de enero (víspera del día de Reyes) cerca de la ventana para recibir regalos; cabalgata de los Reyes Magos. Alimentos y bebidas: turrón, mazapán, polvorones, cava. Música: villancicos."
+                  }
                 ],
                 [
-                  "Carnavales",
-                  "Se celebran en febrero en toda España, pero los más conocidos son los de Tenerife y Cádiz.",
-                  "Símbolos y trajes: disfraces y máscaras. Tradiciones: desfiles, concursos, bailes. Alimentos: orejas de carnaval, buñuelos o tortilla de chorizo. Música: chirigotas en Cádiz."
+                  {
+                    "text": "Carnavales"
+                  },
+                  {
+                    "text": "Se celebran en febrero en toda España, pero los más conocidos son los de Tenerife y Cádiz."
+                  },
+                  {
+                    "text": "Símbolos y trajes: disfraces y máscaras. Tradiciones: desfiles, concursos, bailes. Alimentos: orejas de carnaval, buñuelos o tortilla de chorizo. Música: chirigotas en Cádiz."
+                  }
                 ],
                 [
-                  "Fallas de Valencia",
-                  "Se celebran en el mes de marzo, por la fiesta de San José (19 de marzo).",
-                  "Símbolos o trajes: ninots; traje de fallera o fallero. Tradiciones: quemar las fallas, ofrenda floral a la Virgen."
+                  {
+                    "text": "Fallas de Valencia"
+                  },
+                  {
+                    "text": "Se celebran en el mes de marzo, por la fiesta de San José (19 de marzo)."
+                  },
+                  {
+                    "text": "Símbolos o trajes: ninots; traje de fallera o fallero. Tradiciones: quemar las fallas, ofrenda floral a la Virgen.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-60-55",
+                        "caption": "FIGURA 55. Mascletá en la plaza del Ayuntamiento, Valencia. © MrCarlos11"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "Semana Santa",
-                  "Se suele celebrar en marzo o abril en toda España, pero la más famosa es en Andalucía.",
-                  "Símbolos u objetos: pasos, traje de nazareno. Tradiciones: procesiones religiosas. Alimentos: potaje de vigilia, pestiños y torrijas. Música: marcha procesional, saetas."
+                  {
+                    "text": "Semana Santa"
+                  },
+                  {
+                    "text": "Se suele celebrar en marzo o abril en toda España, pero la más famosa es en Andalucía."
+                  },
+                  {
+                    "text": "Símbolos u objetos: pasos, traje de nazareno. Tradiciones: procesiones religiosas. Alimentos: potaje de vigilia, pestiños y torrijas. Música: marcha procesional, saetas.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-61-58",
+                        "caption": "FIGURA 58. Semana Santa 2005 en El Puerto de Santa María, Andalucía. © Emilio J. Rodríguez Posada"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "Sant Jordi",
-                  "Se celebra el 23 de abril en Cataluña y Baleares.",
-                  "Objetos: rosas y libros. Tradiciones: regalar una rosa y un libro."
+                  {
+                    "text": "Sant Jordi"
+                  },
+                  {
+                    "text": "Se celebra el 23 de abril en Cataluña y Baleares."
+                  },
+                  {
+                    "text": "Objetos: rosas y libros. Tradiciones: regalar una rosa y un libro.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-62-59",
+                        "caption": "FIGURA 59. Puesto de venta de rosas en la Diada de Sant Jordi, Cataluña. © Francis Lenn"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "Romería del Rocío",
-                  "Se celebra 50 días después del Domingo de Pascua, en torno al mes de mayo. Almonte (Huelva).",
-                  "Objetos: carros, guitarra, castañuelas, traje rociero. Tradiciones: hacer la peregrinación hasta la ermita del Rocío en carros con caballos (también se puede hacer andando). En los descansos y por la noche, se bailan sevillanas. Música y baile: sevillanas y salve."
+                  {
+                    "text": "Romería del Rocío"
+                  },
+                  {
+                    "text": "Se celebra 50 días después del Domingo de Pascua, en torno al mes de mayo. Almonte (Huelva)."
+                  },
+                  {
+                    "text": "Objetos: carros, guitarra, castañuelas, traje rociero. Tradiciones: hacer la peregrinación hasta la ermita del Rocío en carros con caballos (también se puede hacer andando). En los descansos y por la noche, se bailan sevillanas. Música y baile: sevillanas y salve."
+                  }
                 ],
                 [
-                  "Noche de San Juan",
-                  "Se celebra la noche del 23 al 24 de junio en toda España.",
-                  "Tradiciones: encender hogueras con objetos antiguos (madera, papel…) y saltar por encima para demostrar valor y habilidad, y recibir lo nuevo que está por venir."
+                  {
+                    "text": "Noche de San Juan"
+                  },
+                  {
+                    "text": "Se celebra la noche del 23 al 24 de junio en toda España."
+                  },
+                  {
+                    "text": "Tradiciones: encender hogueras con objetos antiguos (madera, papel…) y saltar por encima para demostrar valor y habilidad, y recibir lo nuevo que está por venir."
+                  }
                 ],
                 [
-                  "Sanfermines",
-                  "Se celebran en julio, con motivo de las fiestas de San Fermín, en Pamplona (Comunidad de Navarra).",
-                  "Objetos y traje: pañuelo y fajín rojo, traje blanco. Tradiciones: correr los encierros delante de los toros que van a participar por la tarde en las corridas, bailes populares. Música y baile: jota navarra."
+                  {
+                    "text": "Sanfermines"
+                  },
+                  {
+                    "text": "Se celebran en julio, con motivo de las fiestas de San Fermín, en Pamplona (Comunidad de Navarra)."
+                  },
+                  {
+                    "text": "Objetos y traje: pañuelo y fajín rojo, traje blanco. Tradiciones: correr los encierros delante de los toros que van a participar por la tarde en las corridas, bailes populares. Música y baile: jota navarra.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-62-61",
+                        "caption": "FIGURA 61. Corriendo un encierro en sanfermines 2014, Pamplona-Iruña. © Guia Ilustrada"
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "La Tomatina",
-                  "Se celebra el último miércoles del mes de agosto en la localidad de Buñol (Comunidad Valenciana).",
-                  "Tradiciones: durante la semana de fiestas de la localidad, entre otras tradiciones, hay un día en el que los participantes (en su mayoría jóvenes) se tiran tomates los unos a los otros."
+                  {
+                    "text": "La Tomatina"
+                  },
+                  {
+                    "text": "Se celebra el último miércoles del mes de agosto en la localidad de Buñol (Comunidad Valenciana)."
+                  },
+                  {
+                    "text": "Tradiciones: durante la semana de fiestas de la localidad, entre otras tradiciones, hay un día en el que los participantes (en su mayoría jóvenes) se tiran tomates los unos a los otros.",
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-62-60",
+                        "caption": "FIGURA 60. Arrojando tomates desde un camión, La Tomatina 2010. © flydime"
+                      }
+                    ]
+                  }
                 ]
               ],
               "caption": "TABLA 6. Fiestas españolas más conocidas"
@@ -2256,26 +3353,6 @@
               "type": "figure",
               "assetId": "figure-61-57",
               "caption": "FIGURA 57. Paco de Lucía. © Cornel Putan"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-61-58",
-              "caption": "FIGURA 58. Semana Santa 2005 en El Puerto de Santa María, Andalucía. © Emilio J. Rodríguez Posada"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-62-59",
-              "caption": "FIGURA 59. Puesto de venta de rosas en la Diada de Sant Jordi, Cataluña. © Francis Lenn"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-62-60",
-              "caption": "FIGURA 60. Arrojando tomates desde un camión, La Tomatina 2010. © flydime"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-62-61",
-              "caption": "FIGURA 61. Corriendo un encierro en sanfermines 2014, Pamplona-Iruña. © Guia Ilustrada"
             }
           ]
         },
@@ -2324,14 +3401,94 @@
               "type": "table",
               "headers": ["Año", "Fecha y localidad", "Especialidad"],
               "rows": [
-                ["1904", "José Echegaray", "Literatura"],
-                ["1906", "Santiago Ramón y Cajal", "Fisiología y Medicina"],
-                ["1922", "Jacinto Benavente", "Literatura"],
-                ["1956", "Juan Ramón Jiménez", "Literatura"],
-                ["1959", "Severo Ochoa", "Fisiología y Medicina"],
-                ["1977", "Vicente Aleixandre", "Literatura"],
-                ["1989", "Camilo José Cela", "Literatura"],
-                ["2010", "Mario Vargas Llosa", "Literatura"]
+                [
+                  {
+                    "text": "1904"
+                  },
+                  {
+                    "text": "José Echegaray"
+                  },
+                  {
+                    "text": "Literatura"
+                  }
+                ],
+                [
+                  {
+                    "text": "1906"
+                  },
+                  {
+                    "text": "Santiago Ramón y Cajal"
+                  },
+                  {
+                    "text": "Fisiología y Medicina"
+                  }
+                ],
+                [
+                  {
+                    "text": "1922"
+                  },
+                  {
+                    "text": "Jacinto Benavente"
+                  },
+                  {
+                    "text": "Literatura"
+                  }
+                ],
+                [
+                  {
+                    "text": "1956"
+                  },
+                  {
+                    "text": "Juan Ramón Jiménez"
+                  },
+                  {
+                    "text": "Literatura"
+                  }
+                ],
+                [
+                  {
+                    "text": "1959"
+                  },
+                  {
+                    "text": "Severo Ochoa"
+                  },
+                  {
+                    "text": "Fisiología y Medicina"
+                  }
+                ],
+                [
+                  {
+                    "text": "1977"
+                  },
+                  {
+                    "text": "Vicente Aleixandre"
+                  },
+                  {
+                    "text": "Literatura"
+                  }
+                ],
+                [
+                  {
+                    "text": "1989"
+                  },
+                  {
+                    "text": "Camilo José Cela"
+                  },
+                  {
+                    "text": "Literatura"
+                  }
+                ],
+                [
+                  {
+                    "text": "2010"
+                  },
+                  {
+                    "text": "Mario Vargas Llosa"
+                  },
+                  {
+                    "text": "Literatura"
+                  }
+                ]
               ],
               "caption": "TABLA 7. Españoles galardonados con el premio Nobel"
             },
@@ -2388,7 +3545,10 @@
               "type": "paragraph",
               "text": "En España, las personas tienen un nombre, que puede ser simple (Ana) o compuesto (Juan Carlos), y dos apellidos. Generalmente, el primero es el primer apellido del padre y el segundo, el primer apellido de la madre, aunque los padres pueden decidir invertir el orden, de modo que el apellido de la madre sea el primero."
             },
-            { "type": "paragraph", "text": "Algunos documentos importantes en España son:" },
+            {
+              "type": "paragraph",
+              "text": "Algunos documentos importantes en España son:"
+            },
             {
               "type": "list",
               "style": "unordered",
@@ -2497,14 +3657,22 @@
                 "Ayudas fiscales a las familias: desgravación por hijos en la declaración de la renta y otras ayudas nacionales y autonómicas, como descuentos en transporte público, matrículas universitarias, tarifas de guardería o comedores escolares."
               ]
             },
-            { "type": "figure", "assetId": "figure-72-family", "caption": "© Unsplash" }
+            {
+              "type": "figure",
+              "assetId": "figure-72-family",
+              "caption": "© Unsplash"
+            }
           ]
         },
         {
           "id": "task-5-guia-de-la-vida-diaria",
           "title": "Guía de la vida diaria",
           "blocks": [
-            { "type": "heading", "level": 3, "text": "Vivienda" },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Vivienda"
+            },
             {
               "type": "paragraph",
               "text": "En España hay diferentes tipos de vivienda, según el lugar (zona urbana o zona rural) y la situación económica de las personas. El tipo de residencia más habitual es el piso en un edificio de viviendas. Otra modalidad es la vivienda unifamiliar, chalé o casa adosada a otras viviendas, con servicios comunes."
@@ -2650,43 +3818,94 @@
             },
             {
               "type": "table",
-              "headers": ["Nivel educativo", "Descripción"],
+              "headers": ["Nivel educativo", "Descripción", "Imagen"],
               "rows": [
                 [
-                  "Educación Infantil",
-                  "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
+                  {
+                    "text": "Educación Infantil"
+                  },
+                  {
+                    "text": "No es obligatoria Se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
+                  },
+                  {
+                    "text": null,
+                    "figures": [
+                      {
+                        "type": "figure",
+                        "assetId": "figure-77-75",
+                        "caption": "FIGURA 75. La educación infantil no es obligatoria y se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
+                      }
+                    ]
+                  }
                 ],
                 [
-                  "Educación Primaria",
-                  "Es obligatoria y gratuita. Consta de seis cursos académicos. Es la primera etapa obligatoria, de los 6 a los 12 años."
+                  {
+                    "text": "Educación Primaria"
+                  },
+                  {
+                    "text": "Es obligatoria y gratuita. Consta de seis cursos académicos. Es la primera etapa obligatoria, de los 6 a los 12 años."
+                  },
+                  {
+                    "text": null
+                  }
                 ],
                 [
-                  "Educación Secundaria Obligatoria (ESO)",
-                  "Es la segunda y última etapa obligatoria. Consta de cuatro cursos académicos. Se cursa de los 12 a los 16 años."
+                  {
+                    "text": "Educación Secundaria Obligatoria (ESO)"
+                  },
+                  {
+                    "text": "Es la segunda y última etapa obligatoria. Consta de cuatro cursos académicos. Se cursa de los 12 a los 16 años."
+                  },
+                  {
+                    "text": null
+                  }
                 ],
                 [
-                  "Bachillerato",
-                  "Dura dos cursos académicos. Se cursa entre los 16 y los 18 años. Este título permite el acceso a las distintas enseñanzas de educación superior."
+                  {
+                    "text": "Bachillerato"
+                  },
+                  {
+                    "text": "Dura dos cursos académicos. Se cursa entre los 16 y los 18 años. Este título permite el acceso a las distintas enseñanzas de educación superior."
+                  },
+                  {
+                    "text": null
+                  }
                 ],
                 [
-                  "Formación profesional (FP)",
-                  "Formación Profesional Básica: tiene una duración de dos cursos académicos y al finalizar se obtiene el Título Profesional Básico, que permite acceder a ciclos formativos de Grado Medio y equivale, a efectos laborales, al título de ESO. Ciclos formativos de Grado Medio: tienen una duración de dos cursos académicos y al completarlos se obtiene el título de Técnico, que permite incorporarse al mundo laboral o continuar con un ciclo formativo de Grado Superior. Para acceder es necesario contar con el título de Graduado en ESO o con el Título Profesional Básico. Ciclos formativos de Grado Superior: son estudios de educación superior. Duran dos años y permiten obtener el título de Técnico Superior, además de permitir acceder a estudios universitarios."
+                  {
+                    "text": "Formación profesional (FP)"
+                  },
+                  {
+                    "text": "Formación Profesional Básica: tiene una duración de dos cursos académicos y al finalizar se obtiene el Título Profesional Básico, que permite acceder a ciclos formativos de Grado Medio y equivale, a efectos laborales, al título de ESO. Ciclos formativos de Grado Medio: tienen una duración de dos cursos académicos y al completarlos se obtiene el título de Técnico, que permite incorporarse al mundo laboral o continuar con un ciclo formativo de Grado Superior. Para acceder es necesario contar con el título de Graduado en ESO o con el Título Profesional Básico. Ciclos formativos de Grado Superior: son estudios de educación superior. Duran dos años y permiten obtener el título de Técnico Superior, además de permitir acceder a estudios universitarios."
+                  },
+                  {
+                    "text": null
+                  }
                 ],
                 [
-                  "Enseñanza universitaria",
-                  "Para acceder se requiere el título de Bachillerato o un título de Técnico Superior de Formación Profesional. Los titulados en Bachillerato deberán realizar una Prueba de Acceso a la Universidad (PAU). Las enseñanzas universitarias se dividen en 3 ciclos: Grado: formación general orientada al ejercicio de actividades de carácter profesional. Se obtiene el título de Graduado, consta de un mínimo de 240 créditos² y una duración de unos 4 años. Máster: formación avanzada orientada a la especialización académica o profesional. El Máster Universitario consta de entre 60 y 120 créditos, según sea su duración de 1 o 2 años. Doctorado: formación avanzada en técnicas de investigación. Se obtiene el título de Doctor tras superar un período de formación e investigación, así como tras la elaboración y presentación de la tesis doctoral."
+                  {
+                    "text": "Enseñanza universitaria"
+                  },
+                  {
+                    "text": "Para acceder se requiere el título de Bachillerato o un título de Técnico Superior de Formación Profesional. Los titulados en Bachillerato deberán realizar una Prueba de Acceso a la Universidad (PAU). Las enseñanzas universitarias se dividen en 3 ciclos: Grado: formación general orientada al ejercicio de actividades de carácter profesional. Se obtiene el título de Graduado, consta de un mínimo de 240 créditos² y una duración de unos 4 años. Máster: formación avanzada orientada a la especialización académica o profesional. El Máster Universitario consta de entre 60 y 120 créditos, según sea su duración de 1 o 2 años. Doctorado: formación avanzada en técnicas de investigación. Se obtiene el título de Doctor tras superar un período de formación e investigación, así como tras la elaboración y presentación de la tesis doctoral."
+                  },
+                  {
+                    "text": null
+                  }
                 ],
                 [
-                  "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas.",
-                  "Enseñanzas artísticas: de música, danza, arte dramático, diseño o artes plásticas en ciclos formativos de grado elemental, medio o superior, según la categoría. Enseñanzas deportivas: se organizan en ciclos formativos de nivel medio y superior con los que se obtiene respectivamente el título de Técnico Deportivo o Técnico Deportivo Superior en la especialidad deportiva correspondiente. Enseñanza de idiomas en Escuelas Oficiales de Idiomas (EOI): se organizan en los tres niveles correspondientes al Marco Común Europeo de Referencia para las Lenguas y para acceder es requisito tener 16 años o más."
+                  {
+                    "text": "Enseñanzas de régimen especial: Enseñanzas artísticas, deportivas y de idiomas."
+                  },
+                  {
+                    "text": "Enseñanzas artísticas: de música, danza, arte dramático, diseño o artes plásticas en ciclos formativos de grado elemental, medio o superior, según la categoría. Enseñanzas deportivas: se organizan en ciclos formativos de nivel medio y superior con los que se obtiene respectivamente el título de Técnico Deportivo o Técnico Deportivo Superior en la especialidad deportiva correspondiente. Enseñanza de idiomas en Escuelas Oficiales de Idiomas (EOI): se organizan en los tres niveles correspondientes al Marco Común Europeo de Referencia para las Lenguas y para acceder es requisito tener 16 años o más."
+                  },
+                  {
+                    "text": null
+                  }
                 ]
               ],
               "caption": "TABLA 8. Sistema educativo español"
-            },
-            {
-              "type": "figure",
-              "assetId": "figure-77-75",
-              "caption": "FIGURA 75. La educación infantil no es obligatoria y se divide en dos ciclos, el primero de 0 a 3 años y el segundo de 3 a 6 años; este último no es obligatorio pero sí es gratuito."
             },
             {
               "type": "figure",
@@ -2710,7 +3929,10 @@
               "type": "paragraph",
               "text": "2 Cada crédito equivale a unas 25 horas de clases, estudio y tareas."
             },
-            { "type": "paragraph", "text": "Los tipos de centros educativos que encontramos son:" },
+            {
+              "type": "paragraph",
+              "text": "Los tipos de centros educativos que encontramos son:"
+            },
             {
               "type": "list",
               "style": "unordered",
@@ -2785,7 +4007,10 @@
               "type": "paragraph",
               "text": "El Sistema Nacional de Salud en España está formado por el conjunto de servicios y prestaciones sanitarias que garantizan los poderes públicos. La gestión sanitaria se reparte entre la Administración General del Estado, a través del Ministerio de Sanidad, y las comunidades autónomas, que tienen transferidas la mayoría de competencias. El Ministerio de Sanidad se encarga de coordinar y proponer la política sanitaria del Gobierno, así como de planificar y asegurar el derecho de la ciudadanía a la protección de la salud."
             },
-            { "type": "paragraph", "text": "Los establecimientos sanitarios son:" },
+            {
+              "type": "paragraph",
+              "text": "Los establecimientos sanitarios son:"
+            },
             {
               "type": "list",
               "style": "unordered",
@@ -2864,7 +4089,11 @@
               "type": "paragraph",
               "text": "El número de teléfono 112 es gratuito y ofrece ayuda al ciudadano ante cualquier tipo de emergencia (sanitaria, incendio, salvamento o seguridad ciudadana) en la Unión Europea."
             },
-            { "type": "figure", "assetId": "figure-82-emergency-112", "caption": "112" },
+            {
+              "type": "figure",
+              "assetId": "figure-82-emergency-112",
+              "caption": "112"
+            },
             {
               "type": "paragraph",
               "text": "El número de teléfono 016 es un servicio gratuito de atención a víctimas de violencia de género. Está disponible las 24 horas del día, los 365 días del año, y no deja rastro en la factura telefónica. Además, se ofrece atención en 53 idiomas, lo que facilita el acceso a mujeres de diferentes orígenes. El 016 proporciona información sobre recursos y derechos, asesoramiento jurídico en el momento y apoyo inmediato en situaciones de riesgo."
@@ -2951,9 +4180,39 @@
               "type": "table",
               "headers": ["Magnitud", "Nombre de la unidad", "Símbolo"],
               "rows": [
-                ["Longitud", "metro", "m"],
-                ["Masa", "kilogramo", "kg"],
-                ["Tiempo/ duración", "segundo", "s"]
+                [
+                  {
+                    "text": "Longitud"
+                  },
+                  {
+                    "text": "metro"
+                  },
+                  {
+                    "text": "m"
+                  }
+                ],
+                [
+                  {
+                    "text": "Masa"
+                  },
+                  {
+                    "text": "kilogramo"
+                  },
+                  {
+                    "text": "kg"
+                  }
+                ],
+                [
+                  {
+                    "text": "Tiempo/ duración"
+                  },
+                  {
+                    "text": "segundo"
+                  },
+                  {
+                    "text": "s"
+                  }
+                ]
               ],
               "caption": "TABLA 9. Principales magnitudes de medidas del SI"
             },
@@ -2961,12 +4220,90 @@
               "type": "table",
               "headers": ["Magnitud", "Nombre de la unidad", "Símbolo", "Valor en unidades SI"],
               "rows": [
-                ["Tiempo", "minuto", "min", "1 min = 60 s"],
-                [null, "hora", "h", "1 h = 60 min"],
-                [null, "día", "d", "1 d = 24 h"],
-                ["Área", "hectárea", "ha", "1 ha = 10 000 m²"],
-                ["Volumen", "litro", "l", "1 l = 1 dm³"],
-                ["Masa", "tonelada", "t", "1 t = 1000 kg"]
+                [
+                  {
+                    "text": "Tiempo"
+                  },
+                  {
+                    "text": "minuto"
+                  },
+                  {
+                    "text": "min"
+                  },
+                  {
+                    "text": "1 min = 60 s"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "hora"
+                  },
+                  {
+                    "text": "h"
+                  },
+                  {
+                    "text": "1 h = 60 min"
+                  }
+                ],
+                [
+                  {
+                    "text": null
+                  },
+                  {
+                    "text": "día"
+                  },
+                  {
+                    "text": "d"
+                  },
+                  {
+                    "text": "1 d = 24 h"
+                  }
+                ],
+                [
+                  {
+                    "text": "Área"
+                  },
+                  {
+                    "text": "hectárea"
+                  },
+                  {
+                    "text": "ha"
+                  },
+                  {
+                    "text": "1 ha = 10 000 m²"
+                  }
+                ],
+                [
+                  {
+                    "text": "Volumen"
+                  },
+                  {
+                    "text": "litro"
+                  },
+                  {
+                    "text": "l"
+                  },
+                  {
+                    "text": "1 l = 1 dm³"
+                  }
+                ],
+                [
+                  {
+                    "text": "Masa"
+                  },
+                  {
+                    "text": "tonelada"
+                  },
+                  {
+                    "text": "t"
+                  },
+                  {
+                    "text": "1 t = 1000 kg"
+                  }
+                ]
               ],
               "caption": "TABLA 10. Unidades que no pertenecen al SI cuyo uso es aceptado por el Sistema y que están autorizadas"
             },
@@ -2974,9 +4311,39 @@
               "type": "table",
               "headers": ["Término", "Volumen", "Masa"],
               "rows": [
-                ["Un cuarto…", "Un cuarto de litro (250 ml)", "Un cuarto de kilo (250 g)"],
-                ["Medio…", "Medio litro (500 ml)", "Medio kilo (500 g)"],
-                ["Tres cuartos…", "Tres cuartos de litro (750 ml)", "Tres cuartos de kilo (750 g)"]
+                [
+                  {
+                    "text": "Un cuarto…"
+                  },
+                  {
+                    "text": "Un cuarto de litro (250 ml)"
+                  },
+                  {
+                    "text": "Un cuarto de kilo (250 g)"
+                  }
+                ],
+                [
+                  {
+                    "text": "Medio…"
+                  },
+                  {
+                    "text": "Medio litro (500 ml)"
+                  },
+                  {
+                    "text": "Medio kilo (500 g)"
+                  }
+                ],
+                [
+                  {
+                    "text": "Tres cuartos…"
+                  },
+                  {
+                    "text": "Tres cuartos de litro (750 ml)"
+                  },
+                  {
+                    "text": "Tres cuartos de kilo (750 g)"
+                  }
+                ]
               ],
               "caption": "TABLA 11. Expresiones de medidas habituales"
             },
