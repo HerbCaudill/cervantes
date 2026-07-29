@@ -30,41 +30,43 @@ export function ManualIndex({ manual, readerState, resumePath }: Props) {
 
             return (
               <li key={section.id} className="border-rule border-b">
-                <details open>
-                  <summary className="grid min-h-14 cursor-pointer list-none grid-cols-[2.5rem_1fr_auto] items-center gap-[0.6rem] [&::-webkit-details-marker]:hidden">
-                    <span className="text-red font-mono text-[10.5px] tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-serif text-base">{section.title}</span>
-                    <span className="flex flex-col items-end gap-0.5">
-                      <span className="text-soft font-mono text-[10px]">{progress} %</span>
-                      <span className="text-soft font-sans text-[10px] tracking-[0.08em] uppercase">
-                        {section.topics.length} temas
-                      </span>
-                    </span>
-                  </summary>
-                  <span className="bg-rule relative block h-px w-full">
-                    <span
-                      className="bg-ink absolute inset-y-0 left-0"
-                      style={{ width: `${progress}%` }}
-                    />
+                <AppLink
+                  href={`/manual/${section.id}`}
+                  ariaLabel={`Tarea ${index + 1}: ${section.title}`}
+                  className="grid min-h-14 grid-cols-[2.5rem_1fr_auto] items-center gap-[0.6rem]"
+                >
+                  <span className="text-red font-mono text-[10.5px] tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
-                  <ol className="ml-[3.1rem]">
-                    {section.topics.map((topic, topicIndex) => (
-                      <li key={topic.id} className="border-rule border-b last:border-b-0">
-                        <AppLink
-                          href={getManualTopicHref(section, topic)}
-                          className="grid grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-[0.2rem]"
-                        >
-                          <span className="text-soft font-mono text-[10px] tabular-nums">
-                            {String(topicIndex + 1).padStart(2, "0")}
-                          </span>
-                          <span className="font-serif text-sm">{topic.title}</span>
-                        </AppLink>
-                      </li>
-                    ))}
-                  </ol>
-                </details>
+                  <span className="font-serif text-base">{section.title}</span>
+                  <span className="flex flex-col items-end gap-0.5">
+                    <span className="text-soft font-mono text-[10px]">{progress} %</span>
+                    <span className="text-soft font-sans text-[10px] tracking-[0.08em] uppercase">
+                      {section.topics.length} temas
+                    </span>
+                  </span>
+                </AppLink>
+                <span className="bg-rule relative block h-px w-full">
+                  <span
+                    className="bg-ink absolute inset-y-0 left-0"
+                    style={{ width: `${progress}%` }}
+                  />
+                </span>
+                <ol className="ml-[3.1rem]">
+                  {section.topics.map((topic, topicIndex) => (
+                    <li key={topic.id} className="border-rule border-b last:border-b-0">
+                      <AppLink
+                        href={getManualTopicHref(section, topic)}
+                        className="grid grid-cols-[2.5rem_1fr] items-center gap-[0.6rem] py-[0.2rem]"
+                      >
+                        <span className="text-soft font-mono text-[10px] tabular-nums">
+                          {String(topicIndex + 1).padStart(2, "0")}
+                        </span>
+                        <span className="font-serif text-sm">{topic.title}</span>
+                      </AppLink>
+                    </li>
+                  ))}
+                </ol>
               </li>
             )
           })}

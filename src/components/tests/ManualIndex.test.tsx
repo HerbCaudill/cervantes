@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from "@testing-library/react"
+import { render, screen, within } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
 import { ManualIndex } from "@/components/ManualIndex"
 import manualDraft from "@/manual/manual.draft.json"
@@ -14,37 +14,41 @@ const emptyReaderState: ReaderState = {
 }
 
 describe("manual index", () => {
-  it("expands every tarea and shows every topic link initially", () => {
+  it("shows every tarea and topic link without disclosure controls", () => {
     render(<ManualIndex manual={manual} readerState={emptyReaderState} resumePath={null} />)
 
     const index = screen.getByRole("navigation", { name: "Índice completo del manual" })
-    const tareas = index.querySelectorAll("details")
     const expectedLinkCount = manual.sections.reduce(
-      (count, section) => count + section.topics.length,
+      (count, section) => count + section.topics.length + 1,
       0,
     )
+    const topicLinks = within(index)
+      .getAllByRole("link")
+      .filter(link => link.getAttribute("href")?.includes("#"))
 
-    expect(tareas).toHaveLength(manual.sections.length)
-    tareas.forEach(tarea => expect(tarea).toHaveAttribute("open"))
+    expect(index.querySelector("details")).not.toBeInTheDocument()
+    expect(within(index).queryByRole("group")).not.toBeInTheDocument()
     expect(within(index).getAllByRole("link")).toHaveLength(expectedLinkCount)
+    expect(topicLinks).toHaveLength(
+      manual.sections.reduce((count, section) => count + section.topics.length, 0),
+    )
     expect(
       within(index).queryByRole("link", { name: /Índice de la Tarea/i }),
     ).not.toBeInTheDocument()
-    for (const link of within(index).getAllByRole("link")) {
+    for (const link of topicLinks) {
       expect(link.getAttribute("href")).toMatch(/^\/manual\/task-\d#[a-z0-9-]+$/)
     }
   })
 
-  it("lets readers collapse and reopen a tarea", () => {
+  it("links each tarea heading to its continuous page", () => {
     render(<ManualIndex manual={manual} readerState={emptyReaderState} resumePath={null} />)
 
-    const summary = screen.getByText(manual.sections[1].title)
-    const tarea = summary.closest("details")
-
-    expect(tarea).toHaveAttribute("open")
-    fireEvent.click(summary)
-    expect(tarea).not.toHaveAttribute("open")
-    fireEvent.click(summary)
-    expect(tarea).toHaveAttribute("open")
+    manual.sections.forEach((section, index) => {
+      expect(
+        screen.getByRole("link", {
+          name: `Tarea ${index + 1}: ${section.title}`,
+        }),
+      ).toHaveAttribute("href", `/manual/${section.id}`)
+    })
   })
 })

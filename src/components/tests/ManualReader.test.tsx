@@ -32,8 +32,11 @@ describe("manual reader", () => {
       0,
     )
     const index = screen.getByRole("navigation", { name: "Índice completo del manual" })
+    const topicLinks = within(index)
+      .getAllByRole("link")
+      .filter(link => link.getAttribute("href")?.includes("#"))
 
-    expect(within(index).getAllByRole("link")).toHaveLength(expectedTopics)
+    expect(topicLinks).toHaveLength(expectedTopics)
   })
 
   it("renders every tarea topic in source order with stable heading anchors", () => {
