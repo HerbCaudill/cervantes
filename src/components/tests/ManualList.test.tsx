@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest"
 import { ManualList } from "@/components/ManualList"
 
 describe("ManualList", () => {
-  it("derives the marginal note from recursively nested item text", () => {
+  it("renders recursively nested item text without a derived marginal note", () => {
     render(
       <ManualList
         block={{
@@ -23,7 +23,8 @@ describe("ManualList", () => {
       />,
     )
 
-    expect(document.querySelector("[data-margin-note='2020']")).toHaveTextContent("2020")
+    expect(screen.getByText("Normativa vigente desde 2020.")).toBeVisible()
+    expect(document.querySelector("[data-margin-note]")).not.toBeInTheDocument()
   })
 
   it("keeps existing string items as peer rows without nested lists", () => {

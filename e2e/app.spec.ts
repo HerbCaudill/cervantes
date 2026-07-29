@@ -239,17 +239,21 @@ test("renders the one-year nationality cases as a nested unmarked list", async (
   expect(new Set(rowTops).size).toBe(4)
 })
 
-test("keeps a real article note on one line inside the 40px margin at 390px", async ({ page }) => {
+test("uses the full reading width without a derived marginal-note column", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/manual/task-2/articulo-15-06")
 
-  const note = page.locator("[data-margin-note='Art.15']").first()
-  const noteBox = await note.boundingBox()
+  const heading = page.getByRole("heading", { name: "Artículo 15" })
+  const readingContent = page.getByRole("navigation", {
+    name: "Temas anterior y siguiente",
+  })
+  const headingBox = await heading.boundingBox()
+  const readingContentBox = await readingContent.boundingBox()
 
-  expect(noteBox).not.toBeNull()
-  expect(noteBox?.width).toBeLessThanOrEqual(40)
-  expect(noteBox?.height).toBeLessThanOrEqual(19)
-  await expect(page.getByRole("heading", { name: "Artículo 15" })).toBeVisible()
+  expect(headingBox).not.toBeNull()
+  expect(readingContentBox).not.toBeNull()
+  expect(headingBox!.x).toBeCloseTo(readingContentBox!.x, 0)
+  await expect(page.locator("[data-margin-note]")).toHaveCount(0)
 })
 
 test("loads every semantic topic route accessibly at 390px", async ({ page }) => {

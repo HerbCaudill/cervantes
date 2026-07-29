@@ -1,6 +1,3 @@
-import { ManualMarginLayout } from "@/components/ManualMarginLayout"
-import { getManualMarginNote } from "@/manual/getManualMarginNote"
-import { getManualBlockSearchSegments } from "@/manual/search/getManualBlockSearchSegments"
 import type { ListBlock } from "@/manual/types"
 
 /** Source list preserving flat and nested items verbatim. */
@@ -34,13 +31,7 @@ export function ManualList({ block, nested = false }: Props) {
     </List>
   )
 
-  if (nested) return list
-
-  return (
-    <ManualMarginLayout note={getManualMarginNote(getManualBlockSearchSegments(block).join(" "))}>
-      {list}
-    </ManualMarginLayout>
-  )
+  return list
 }
 
 interface Props {

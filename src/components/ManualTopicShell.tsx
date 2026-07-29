@@ -1,8 +1,6 @@
 import { ManualBlockList } from "@/components/ManualBlockList"
-import { ManualMarginLayout } from "@/components/ManualMarginLayout"
 import { getAdjacentManualTopics } from "@/manual/getAdjacentManualTopics"
 import { getVisibleManualBlocks } from "@/manual/getVisibleManualBlocks"
-import { getManualMarginNote } from "@/manual/getManualMarginNote"
 import { getManualTopicSlug } from "@/manual/getManualTopicSlug"
 import type { Manual, ManualSection, ManualTopic } from "@/manual/types"
 import { AppLink } from "@/navigation/AppLink"
@@ -49,11 +47,9 @@ export function ManualTopicShell({ manual, section, topic, sectionNumber, topicN
         <span className="bg-red block h-px" style={{ width: `${progress}%` }} />
       </div>
       <div className="flex flex-col gap-[0.85rem] px-[0.9rem] py-[0.85rem]">
-        <ManualMarginLayout note={getManualMarginNote(topic.title)}>
-          <h2 className="border-rule-hard border-b pb-[0.85rem] font-serif text-[23px] leading-[1.12] font-bold text-balance">
-            {topic.title}
-          </h2>
-        </ManualMarginLayout>
+        <h2 className="border-rule-hard border-b pb-[0.85rem] font-serif text-[23px] leading-[1.12] font-bold text-balance">
+          {topic.title}
+        </h2>
         <ManualBlockList blocks={blocks} assets={manual.assets} />
         <nav
           aria-label="Temas anterior y siguiente"

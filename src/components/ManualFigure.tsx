@@ -1,4 +1,3 @@
-import { ManualMarginLayout } from "@/components/ManualMarginLayout"
 import type { FigureBlock, ManualAsset } from "@/manual/types"
 
 /** Locally bundled source figure with its useful alt text and verbatim caption. */
@@ -8,24 +7,22 @@ export function ManualFigure({ block, assets }: Props) {
   const captionMatch = /^(FIGURA \d+\.)(.*)$/s.exec(block.caption)
 
   return (
-    <ManualMarginLayout>
-      <figure className="grid grid-cols-2 items-start gap-3">
-        <img
-          src={asset.src}
-          alt={asset.alt}
-          loading="lazy"
-          className="bg-paper h-auto max-h-[70dvh] w-full object-contain"
-        />
-        <figcaption className="text-soft border-rule min-w-0 border-b pb-2 font-sans text-[11px] leading-[1.4]">
-          {captionMatch ?
-            <>
-              <span className="text-red">{captionMatch[1]}</span>
-              {captionMatch[2]}
-            </>
-          : block.caption}
-        </figcaption>
-      </figure>
-    </ManualMarginLayout>
+    <figure className="grid grid-cols-2 items-start gap-3">
+      <img
+        src={asset.src}
+        alt={asset.alt}
+        loading="lazy"
+        className="bg-paper h-auto max-h-[70dvh] w-full object-contain"
+      />
+      <figcaption className="text-soft border-rule min-w-0 border-b pb-2 font-sans text-[11px] leading-[1.4]">
+        {captionMatch ?
+          <>
+            <span className="text-red">{captionMatch[1]}</span>
+            {captionMatch[2]}
+          </>
+        : block.caption}
+      </figcaption>
+    </figure>
   )
 }
 

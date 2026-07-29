@@ -103,12 +103,6 @@
     text-transform: uppercase;
   }
 
-  .manual-marginal-row {
-    display: grid;
-    grid-template-columns: 2.5rem minmax(0, 1fr);
-    column-gap: 0.6rem;
-  }
-
   .manual-body {
     font-family: var(--font-serif);
     font-size: 16px;

@@ -189,44 +189,11 @@ describe("manual reader", () => {
     expect(document.body).not.toHaveTextContent(/Página PDF/i)
   })
 
-  it("keeps article numbers in a dedicated marginal column", () => {
+  it("does not repeat article numbers or dates in a marginal column", () => {
     window.history.replaceState(null, "", "/manual/task-2/articulo-15-06")
     render(<App />)
 
-    const note = within(screen.getByRole("article")).getByText("Art.15", {
-      selector: "[data-margin-note]",
-    })
-    expect(note).toHaveAttribute("aria-hidden", "true")
-  })
-
-  it("keeps key dates in a dedicated marginal column", () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/manual/task-1/poderes-del-estado-gobierno-e-instituciones-01",
-    )
-    render(<App />)
-
-    const note = within(screen.getByRole("article")).getByText("1978", {
-      selector: "[data-margin-note]",
-    })
-    expect(note).toHaveAttribute("aria-hidden", "true")
-  })
-
-  it("renders in-prose article references from the integrated source in the margin", () => {
-    window.history.replaceState(null, "", "/manual/task-1/participacion-ciudadana-15")
-    render(<App />)
-
-    const article = screen.getByRole("article")
-
-    expect(within(article).getByText("Art.22", { selector: "[data-margin-note]" })).toHaveAttribute(
-      "aria-hidden",
-      "true",
-    )
-    expect(within(article).getByText("Art.6", { selector: "[data-margin-note]" })).toHaveAttribute(
-      "aria-hidden",
-      "true",
-    )
+    expect(document.querySelector("[data-margin-note]")).not.toBeInTheDocument()
   })
 
   it("uses the source heading as the topic title without a redundant subheading", () => {
