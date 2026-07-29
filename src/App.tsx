@@ -23,7 +23,10 @@ export function App() {
 
   return (
     <div className="bg-paper text-ink mx-auto flex min-h-dvh w-full max-w-xl flex-col">
-      <DeckNavigation activeDestination={activeDestination} />
+      <DeckNavigation
+        activeDestination={activeDestination}
+        searchQuery={route.type === "manual-search" ? route.query : null}
+      />
       <main className="flex flex-1 flex-col">
         <div
           className={

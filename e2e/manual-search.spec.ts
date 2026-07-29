@@ -35,6 +35,7 @@ test("searches locally, opens semantic results, and preserves query history", as
   await searchLink.click()
 
   const input = page.getByRole("searchbox", { name: "Buscar en el manual" })
+  await expect(input).toBeFocused()
   await input.fill("  CONSTITUCION   ESPANOLA  ")
   await page.getByRole("button", { name: "Buscar", exact: true }).click()
 
@@ -83,7 +84,8 @@ test("searches locally, opens semantic results, and preserves query history", as
     ),
   ).toEqual([])
 
-  await page.getByRole("button", { name: "Limpiar búsqueda" }).click()
+  await input.fill("")
+  await page.getByRole("button", { name: "Buscar", exact: true }).click()
   await expect(page).toHaveURL("/manual/buscar")
   await expect(page.getByRole("list", { name: "Resultados de búsqueda" })).toHaveCount(0)
   await page.goBack()
@@ -110,22 +112,18 @@ test("keeps search accessible within a 390px viewport in both palettes", async (
   await page.goto("/manual/buscar?q=constitucion")
 
   const input = page.getByRole("searchbox", { name: "Buscar en el manual" })
-  const searchLink = page
+  const searchButton = page
     .getByRole("navigation", { name: "Principal" })
-    .getByRole("link", { name: "Buscar en el manual" })
-  const searchLinkBox = await searchLink.boundingBox()
-  expect(searchLinkBox?.width).toBeGreaterThanOrEqual(44)
-  expect(searchLinkBox?.height).toBeGreaterThanOrEqual(44)
+    .getByRole("button", { name: "Buscar", exact: true })
+  const searchButtonBox = await searchButton.boundingBox()
+  expect(searchButtonBox?.width).toBeGreaterThanOrEqual(44)
+  expect(searchButtonBox?.height).toBeGreaterThanOrEqual(44)
   await expect(input).toBeVisible()
-  await input.focus()
+  await expect(input).toBeFocused()
   await expect(input).toHaveCSS("outline-style", "solid")
   await expect(input).toHaveCSS("outline-width", "2px")
   await expect(input).toHaveCSS("outline-color", "rgb(165, 28, 48)")
   await expect(page.getByRole("status")).toContainText(/resultados?/)
-  for (const name of ["Buscar", "Limpiar búsqueda"]) {
-    const box = await page.getByRole("button", { name, exact: true }).boundingBox()
-    expect(box?.height).toBeGreaterThanOrEqual(44)
-  }
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,

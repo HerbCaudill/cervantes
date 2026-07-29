@@ -104,7 +104,7 @@ describe("App", () => {
     expect(screen.queryByRole("link", { name: /Índice de la Tarea \d/ })).not.toBeInTheDocument()
   })
 
-  it("opens manual search from an icon in the primary navigation", () => {
+  it("opens and focuses manual search inside the primary navigation", async () => {
     render(<App />)
     const primaryNavigation = screen.getByRole("navigation", { name: "Principal" })
 
@@ -116,7 +116,10 @@ describe("App", () => {
     fireEvent.click(searchLink)
 
     expect(window.location.pathname).toBe("/manual/buscar")
-    expect(screen.getByRole("searchbox", { name: "Buscar en el manual" })).toBeInTheDocument()
+    const searchbox = within(primaryNavigation).getByRole("searchbox", {
+      name: "Buscar en el manual",
+    })
+    await waitFor(() => expect(searchbox).toHaveFocus())
   })
 
   it("supports direct links to anchored manual topics and search", () => {

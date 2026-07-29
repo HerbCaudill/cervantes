@@ -23,20 +23,24 @@ describe("manual search screen", () => {
     expect(
       within(results).getAllByText(/constitución/i, { selector: "mark" }).length,
     ).toBeGreaterThan(0)
+    expect(screen.queryByRole("heading", { name: "Buscar en el manual" })).not.toBeInTheDocument()
+    expect(screen.queryByText("Limpiar búsqueda")).not.toBeInTheDocument()
   })
 
-  it("submits and clears queries through browser history", async () => {
+  it("submits and clears routed queries from the header", async () => {
     render(<App />)
     const input = screen.getByRole("searchbox", { name: "Buscar en el manual" })
+    const searchButton = screen.getByRole("button", { name: "Buscar" })
 
     fireEvent.change(input, { target: { value: "constitución española" } })
-    fireEvent.click(screen.getByRole("button", { name: "Buscar" }))
+    fireEvent.click(searchButton)
 
     expect(window.location.pathname).toBe("/manual/buscar")
     expect(window.location.search).toBe("?q=constituci%C3%B3n+espa%C3%B1ola")
     await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent(/\d+ resultados?/))
 
-    fireEvent.click(screen.getByRole("button", { name: "Limpiar búsqueda" }))
+    fireEvent.change(input, { target: { value: "" } })
+    fireEvent.click(searchButton)
 
     expect(window.location.search).toBe("")
     expect(input).toHaveValue("")
@@ -67,6 +71,7 @@ describe("manual search screen", () => {
     render(<App />)
 
     expect(screen.queryByRole("link", { name: "← Índice del manual" })).not.toBeInTheDocument()
+    expect(screen.queryByText("Busca palabras o frases en todo el manual.")).not.toBeInTheDocument()
     expect(screen.getByRole("link", { name: /^Manual$/ })).toHaveAttribute("href", "/manual")
   })
 
