@@ -198,8 +198,8 @@ test("uses consistent compact body typography at supported widths", async ({ pag
 
     for (const readingBlock of [paragraph, list]) {
       await expect(readingBlock).toHaveCSS("font-family", /serif/)
-      await expect(readingBlock).toHaveCSS("font-size", "16px")
-      await expect(readingBlock).toHaveCSS("line-height", "23.2px")
+      await expect(readingBlock).toHaveCSS("font-size", "15px")
+      await expect(readingBlock).toHaveCSS("line-height", "21.75px")
     }
   }
 })

@@ -42,7 +42,7 @@ link back to the main index.
 Reader blocks use native headings, paragraphs, lists, tables, figures, and
 captions. At viewports below 640px, semantic tables become stacked records whose
 cells retain their source column labels; wider viewports use conventional
-tables. The official body text uses the same compact 16px size and 1.45 leading
+tables. The official body text uses the same compact 15px size and 1.45 leading
 in both layouts.
 
 The PDF's sidebar callouts repeat ordinary body prose, so the importer omits
