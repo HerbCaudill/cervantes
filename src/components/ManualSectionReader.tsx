@@ -1,3 +1,4 @@
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react"
 import { ManualTopicSection } from "@/components/ManualTopicSection"
 import { getManualTopicHref } from "@/manual/getManualTopicHref"
 import type { Manual, ManualSection } from "@/manual/types"
@@ -8,6 +9,8 @@ import type { ReaderState } from "@/reader/types"
 /** Continuous source-order reader for one complete manual tarea. */
 export function ManualSectionReader({ manual, section, sectionNumber, readerState }: Props) {
   const progress = getManualSectionProgress(section, readerState)
+  const previousSection = manual.sections[sectionNumber - 2]
+  const nextSection = manual.sections[sectionNumber]
 
   return (
     <article className="flex min-w-0 flex-col" data-reader-section={section.id}>
@@ -59,6 +62,43 @@ export function ManualSectionReader({ manual, section, sectionNumber, readerStat
             />
           ))}
         </div>
+        <nav
+          aria-label="Tareas anterior y siguiente"
+          className="border-rule-hard mt-[1.4rem] grid grid-cols-2 border-t pt-[0.85rem]"
+        >
+          {previousSection ?
+            <AppLink
+              href={`/manual/${previousSection.id}`}
+              ariaLabel={`Tarea anterior: Tarea ${sectionNumber - 1}, ${previousSection.title}`}
+              className="text-soft flex min-w-0 flex-col items-start gap-0.5 pr-2"
+            >
+              <span className="text-red flex items-center gap-1 font-sans text-[10px] tracking-[0.08em] uppercase">
+                <IconArrowLeft aria-hidden="true" size={14} stroke={1.5} />
+                Anterior
+              </span>
+              <span className="font-serif text-sm leading-tight">Tarea {sectionNumber - 1}</span>
+              <span className="text-faint font-sans text-[10px] leading-tight">
+                {previousSection.title}
+              </span>
+            </AppLink>
+          : <span aria-hidden="true" />}
+          {nextSection ?
+            <AppLink
+              href={`/manual/${nextSection.id}`}
+              ariaLabel={`Tarea siguiente: Tarea ${sectionNumber + 1}, ${nextSection.title}`}
+              className="text-soft flex min-w-0 flex-col items-end gap-0.5 pl-2 text-right"
+            >
+              <span className="text-red flex items-center gap-1 font-sans text-[10px] tracking-[0.08em] uppercase">
+                Siguiente
+                <IconArrowRight aria-hidden="true" size={14} stroke={1.5} />
+              </span>
+              <span className="font-serif text-sm leading-tight">Tarea {sectionNumber + 1}</span>
+              <span className="text-faint font-sans text-[10px] leading-tight">
+                {nextSection.title}
+              </span>
+            </AppLink>
+          : null}
+        </nav>
       </div>
     </article>
   )

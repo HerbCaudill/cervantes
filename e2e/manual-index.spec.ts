@@ -62,3 +62,26 @@ test("keeps the index and tarea topic lists compact", async ({ page }) => {
   expect(tareaLabelBox!.y + tareaLabelBox!.height).toBeLessThanOrEqual(tareaTitleBox!.y)
   await expect(tareaLabel).toHaveCSS("color", "rgb(165, 28, 48)")
 })
+
+test("moves between adjacent tareas from the end of the reader", async ({ page }) => {
+  await page.goto("/manual/task-3")
+
+  const navigation = page.getByRole("navigation", {
+    name: "Tareas anterior y siguiente",
+  })
+  const previousLink = navigation.getByRole("link", {
+    name: `Tarea anterior: Tarea 2, ${manualDraft.sections[1].title}`,
+  })
+  const nextLink = navigation.getByRole("link", {
+    name: `Tarea siguiente: Tarea 4, ${manualDraft.sections[3].title}`,
+  })
+
+  await expect(previousLink).toHaveAttribute("href", "/manual/task-2")
+  await nextLink.click()
+
+  await expect(page).toHaveURL("/manual/task-4")
+  await expect(
+    page.getByRole("heading", { level: 1, name: manualDraft.sections[3].title }),
+  ).toBeVisible()
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+})

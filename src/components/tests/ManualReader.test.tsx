@@ -211,6 +211,51 @@ describe("manual reader", () => {
     expect(document.body).not.toHaveTextContent(/Página PDF/i)
   })
 
+  it("links each tarea to its previous and next tareas", () => {
+    window.history.replaceState(null, "", "/manual/task-3")
+    const middleRender = render(<App />)
+
+    const middleNavigation = screen.getByRole("navigation", {
+      name: "Tareas anterior y siguiente",
+    })
+    expect(
+      within(middleNavigation).getByRole("link", {
+        name: "Tarea anterior: Tarea 2, Derechos y deberes fundamentales",
+      }),
+    ).toHaveAttribute("href", "/manual/task-2")
+    expect(
+      within(middleNavigation).getByRole("link", {
+        name: "Tarea siguiente: Tarea 4, Cultura e historia de España",
+      }),
+    ).toHaveAttribute("href", "/manual/task-4")
+
+    middleRender.unmount()
+    window.history.replaceState(null, "", "/manual/task-1")
+    const firstRender = render(<App />)
+
+    const firstNavigation = screen.getByRole("navigation", {
+      name: "Tareas anterior y siguiente",
+    })
+    expect(within(firstNavigation).queryByRole("link", { name: /Tarea anterior/ })).toBeNull()
+    expect(within(firstNavigation).getByRole("link", { name: /Tarea siguiente/ })).toHaveAttribute(
+      "href",
+      "/manual/task-2",
+    )
+
+    firstRender.unmount()
+    window.history.replaceState(null, "", "/manual/task-5")
+    render(<App />)
+
+    const lastNavigation = screen.getByRole("navigation", {
+      name: "Tareas anterior y siguiente",
+    })
+    expect(within(lastNavigation).getByRole("link", { name: /Tarea anterior/ })).toHaveAttribute(
+      "href",
+      "/manual/task-4",
+    )
+    expect(within(lastNavigation).queryByRole("link", { name: /Tarea siguiente/ })).toBeNull()
+  })
+
   it("leaves index navigation to the primary Manual tab", () => {
     window.history.replaceState(null, "", "/manual/task-1#participacion-ciudadana-15")
     render(<App />)
