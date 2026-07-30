@@ -1,4 +1,5 @@
 import { ManualFigure } from "@/components/ManualFigure"
+import { isNumericTableColumn } from "@/manual/isNumericTableColumn"
 import type { ManualAsset, TableBlock } from "@/manual/types"
 
 /** Semantic source table that becomes labeled records at narrow widths. */
@@ -8,6 +9,11 @@ export function ManualTable({ block, assets }: Props) {
   const usesConventionalMobileLayout =
     block.headers.length === 2 || tableNumber === "3" || tableNumber === "9" || tableNumber === "10"
   const mobileLayout = usesConventionalMobileLayout ? "table" : "stacked"
+  const numericColumns = new Set(
+    block.headers
+      .map((_, columnIndex) => columnIndex)
+      .filter(columnIndex => isNumericTableColumn(block.rows.map(row => row[columnIndex]))),
+  )
 
   return (
     <div className="max-w-full overflow-x-auto">
@@ -32,7 +38,11 @@ export function ManualTable({ block, assets }: Props) {
         <thead>
           <tr>
             {block.headers.map((header, columnIndex) => (
-              <th key={`${header}-${columnIndex}`} scope="col">
+              <th
+                key={`${header}-${columnIndex}`}
+                scope="col"
+                data-alignment={numericColumns.has(columnIndex) ? "numeric" : undefined}
+              >
                 {header}
               </th>
             ))}
@@ -42,7 +52,11 @@ export function ManualTable({ block, assets }: Props) {
           {block.rows.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
-                <td key={cellIndex} data-label={block.headers[cellIndex]}>
+                <td
+                  key={cellIndex}
+                  data-label={block.headers[cellIndex]}
+                  data-alignment={numericColumns.has(cellIndex) ? "numeric" : undefined}
+                >
                   <div className="grid min-w-0 gap-3">
                     {cell.text ?
                       <span>{cell.text}</span>

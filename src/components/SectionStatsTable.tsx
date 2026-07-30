@@ -20,26 +20,39 @@ export function SectionStatsTable({ stats }: Props) {
         <thead className="border-rule-hard border-y text-[10px] tracking-[0.1em] uppercase">
           <tr>
             <th className="w-[55%] py-2 text-left font-medium">Sección</th>
-            <th className="py-2 text-right font-medium">Pendiente</th>
-            <th className="py-2 text-right font-medium">Total</th>
+            <th className="py-2 text-right font-medium" data-alignment="numeric">
+              Pendiente
+            </th>
+            <th className="py-2 text-right font-medium" data-alignment="numeric">
+              Total
+            </th>
           </tr>
         </thead>
         <tbody>
           {stats.map(section => (
             <tr key={section.section} className="border-rule border-b">
               <th className="py-2 pr-3 text-left font-normal">{formatSection(section.section)}</th>
-              <td className={section.due > 0 ? "py-2 text-right" : "text-faint py-2 text-right"}>
+              <td
+                className={section.due > 0 ? "py-2 text-right" : "text-faint py-2 text-right"}
+                data-alignment="numeric"
+              >
                 {section.due}
               </td>
-              <td className="py-2 text-right">{section.bank}</td>
+              <td className="py-2 text-right" data-alignment="numeric">
+                {section.bank}
+              </td>
             </tr>
           ))}
         </tbody>
         <tfoot className="border-ink border-b font-medium">
           <tr>
             <th className="py-2 text-left">Total</th>
-            <td className="py-2 text-right">{totals.due}</td>
-            <td className="py-2 text-right">{totals.bank}</td>
+            <td className="py-2 text-right" data-alignment="numeric">
+              {totals.due}
+            </td>
+            <td className="py-2 text-right" data-alignment="numeric">
+              {totals.bank}
+            </td>
           </tr>
         </tfoot>
       </table>

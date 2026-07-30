@@ -13,6 +13,28 @@ describe("PracticeHome", () => {
     expect(screen.queryByRole("link", { name: "Seguir leyendo" })).not.toBeInTheDocument()
   })
 
+  it("marks practice statistics as numeric while leaving section labels textual", () => {
+    renderPracticeHome({ dueCount: 3 })
+
+    const tableHead = screen.getAllByRole("rowgroup")[0]
+    expect(within(tableHead).getByRole("columnheader", { name: "Sección" })).not.toHaveAttribute(
+      "data-alignment",
+    )
+
+    for (const header of ["Pendiente", "Total"]) {
+      expect(within(tableHead).getByRole("columnheader", { name: header })).toHaveAttribute(
+        "data-alignment",
+        "numeric",
+      )
+    }
+
+    const sectionRow = screen.getByRole("row", { name: "1 3 12" })
+    expect(within(sectionRow).getByRole("columnheader")).not.toHaveAttribute("data-alignment")
+    for (const cell of within(sectionRow).getAllByRole("cell")) {
+      expect(cell).toHaveAttribute("data-alignment", "numeric")
+    }
+  })
+
   it("starts a review from the primary action", () => {
     const onStart = vi.fn()
     renderPracticeHome({ onStart })

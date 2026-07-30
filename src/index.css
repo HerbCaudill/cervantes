@@ -141,6 +141,10 @@
     vertical-align: top;
   }
 
+  .manual-responsive-table [data-alignment="numeric"] {
+    text-align: right;
+  }
+
   .manual-responsive-table td {
     overflow-wrap: anywhere;
   }
