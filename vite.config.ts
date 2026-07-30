@@ -25,6 +25,19 @@ export default defineConfig({
         background_color: "#f3f3ef",
         theme_color: "#14161a",
         lang: "es",
+        icons: [
+          {
+            src: "/cervantes-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/cervantes-512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
       },
       workbox: {
         cleanupOutdatedCaches: true,
