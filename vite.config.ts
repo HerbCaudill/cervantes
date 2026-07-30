@@ -18,8 +18,8 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "Boletín CCSE",
-        short_name: "Boletín",
+        name: "Cervantes Study",
+        short_name: "Cervantes Study",
         start_url: "/",
         display: "standalone",
         background_color: "#f3f3ef",
