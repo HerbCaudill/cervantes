@@ -1,9 +1,25 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import { describe, expect, it, vi } from "vitest"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { ReviewSession } from "@/components/ReviewSession"
 import type { Question } from "@/types"
 
 describe("ReviewSession", () => {
+  beforeEach(() => {
+    vi.spyOn(Math, "random").mockReturnValue(0.999)
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it("randomizes the first card when a review session begins", () => {
+    vi.mocked(Math.random).mockReturnValue(0)
+
+    render(<ReviewSession initialQuestions={QUESTIONS} onReview={vi.fn()} onComplete={vi.fn()} />)
+
+    expect(screen.getByText("Segunda pregunta")).toBeInTheDocument()
+  })
+
   it("advances progress when a card leaves the review queue", () => {
     render(<ReviewSession initialQuestions={QUESTIONS} onReview={vi.fn()} onComplete={vi.fn()} />)
 

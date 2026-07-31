@@ -2,6 +2,7 @@ import { useState } from "react"
 import { GradeControls } from "@/components/GradeControls"
 import { QuestionCard } from "@/components/QuestionCard"
 import { QueueStrip } from "@/components/QueueStrip"
+import { shuffleQuestions } from "@/lib/shuffleQuestions"
 import type { Grade, Question } from "@/types"
 
 /**
@@ -11,7 +12,7 @@ import type { Grade, Question } from "@/types"
  * resting practice screen when the queue empties.
  */
 export function ReviewSession({ initialQuestions, onReview, onComplete }: Props) {
-  const [queue, setQueue] = useState<Question[]>(initialQuestions)
+  const [queue, setQueue] = useState<Question[]>(() => shuffleQuestions(initialQuestions))
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   const current = queue[0]

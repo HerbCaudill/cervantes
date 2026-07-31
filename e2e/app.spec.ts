@@ -4,6 +4,9 @@ import questionBank from "../src/data/questions.json" with { type: "json" }
 
 test("answers a question and grades it", async ({ page }) => {
   const externalFontRequests: string[] = []
+  await page.addInitScript(() => {
+    Math.random = () => 0.999999
+  })
   page.on("request", request => {
     if (
       request.url().includes("fonts.googleapis.com") ||

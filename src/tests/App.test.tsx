@@ -1,5 +1,5 @@
 import { act, fireEvent, render, screen, waitFor, within } from "@testing-library/react"
-import { beforeEach, describe, expect, it } from "vitest"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { App } from "@/App"
 import { questions } from "@/data/questions"
 import { loadStates } from "@/lib/loadStates"
@@ -8,6 +8,11 @@ describe("App", () => {
   beforeEach(() => {
     localStorage.clear()
     window.history.replaceState(null, "", "/")
+    vi.spyOn(Math, "random").mockReturnValue(0.999999)
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
   })
 
   it("shows navigation without the title and question-count masthead", () => {
